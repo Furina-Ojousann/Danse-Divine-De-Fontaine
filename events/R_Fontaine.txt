@@ -1,0 +1,769 @@
+add_namespace = R_Fontaine
+add_namespace = R_fontaine_parliament
+##### 基础事件 ###
+country_event = {
+	id = R_Fontaine.1 #提拔国防部长
+	is_triggered_only = yes 
+	picture = GFX_report_event_r_fontaine_1 
+	title = R_Fontaine.1.t 
+	desc = R_Fontaine.1.d 
+
+	option = {
+		name = R_Fontaine.1.a 
+		random_character = {
+			limit = { is_character = FRA_charles_de_gaulle }
+			unit_leader_event = R_Fontaine.2
+		}
+	}
+
+	option = {
+		name = R_Fontaine.1.b 
+		random_character = {
+			limit = { is_character = FRA_henri_giraud }
+			unit_leader_event = R_Fontaine.3
+		}
+	}
+}
+
+unit_leader_event = {
+	id = R_Fontaine.2 #任命戴高乐
+	picture = GFX_portrait_FRA_charles_de_gaulle 
+	is_triggered_only = yes 
+	title = R_Fontaine.2.t 
+	desc = R_Fontaine.2.d 
+
+	option = {
+		name = R_Fontaine.2.a 
+		FRA_charles_de_gaulle = {
+			remove_advisor_role = {
+				slot = theorist 
+			}
+			add_advisor_role = {
+				activate = yes 
+				advisor = {
+					slot = army_chief 
+					idea_token = Charles_de_Gaulle_Chief
+					can_be_fired = no 
+					traits = {
+						Ministre_des_armees_de_Gaulle
+					}
+				}
+			}
+		}
+	}
+}
+
+unit_leader_event = {
+	id = R_Fontaine.3 #任命吉罗
+	picture = GFX_portrait_FRA_henri_giraud 
+	is_triggered_only = yes 
+	title = R_Fontaine.3.t 
+	desc = R_Fontaine.3.d 
+
+	option = {
+		name = R_Fontaine.3.a 
+		FRA_henri_giraud = {
+			remove_advisor_role = {
+				slot = theorist 
+			}
+			add_advisor_role = {
+				activate = yes 
+				advisor = {
+					slot = army_chief 
+					idea_token = Henri_Giraud_Chief
+					can_be_fired = no 
+					traits = {
+						Ministre_des_armees_Giraud 
+					}
+				}
+			}
+		}
+	}
+}
+
+unit_leader_event = {
+	id = R_Fontaine.4 #娜维娅报告
+	title = R_Fontaine.4.t 
+	desc = R_Fontaine.4.d 
+	is_triggered_only = yes 
+	picture = GFX_portrait_fra_Navia_Caspar 
+
+	option = {
+		name = R_Fontaine.4.a 
+		add_political_power = 100 
+		FRA_Navia_Caspar = {
+			add_trait = {
+				slot = political_advisor 
+				trait = economic_coordinator 
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = R_Fontaine.16 
+				days = 7 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.5 #超级独裁
+	title = R_Fontaine.5.t 
+	desc = R_Fontaine.5.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_right_10 
+
+	option = {
+		name = R_Fontaine.5.a 
+		custom_effect_tooltip = R_Fontaine.5.tooltip
+		swap_ideas = {
+			remove_idea = FRA_disjointed_government 
+			add_idea = fra_last_dance_of_republic 
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.6 #一个幽灵
+	title = R_Fontaine.6.t 
+	desc = R_Fontaine.6.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_1 
+
+	immediate = {
+		hidden_effect = {
+			reduce_focus_completion_cost = {
+				focus = FRA_renew_strengthen_the_president_power 
+				cost = -365
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine.6.a
+		custom_effect_tooltip = R_Fontaine.6.tt
+		effect_tooltip = {
+			reduce_focus_completion_cost = {
+				focus = FRA_renew_strengthen_the_president_power 
+				cost = -365
+			}
+		}
+		country_event = {
+			id = R_Fontaine.7 
+			days = 5
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.7
+	title = R_Fontaine.7.t 
+	desc = R_Fontaine.7.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_2
+
+	option = {
+		name = R_Fontaine.7.a 
+		set_country_flag = r_fontaine_skip_strengthen_the_president_power_purpose
+		hidden_effect = { load_oob = Fontaine_force_focus_2 }
+		hidden_effect = {
+			country_event = {
+				id = R_Fontaine.8
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.8 
+	title = R_Fontaine.8.t
+	desc = R_Fontaine.8.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_right_8
+
+	option = {
+		name = R_Fontaine.8.a 
+		custom_effect_tooltip = R_Fontaine.8.tt
+		set_variable = { r_fontaine_bill_support_PF = 1 }
+		set_variable = { R_Socialist_is_regnal = 1 }
+		hidden_effect = {
+			country_event = {
+				id = R_Fontaine.9
+				days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.9
+	title = R_Fontaine.9.t 
+	desc = R_Fontaine.9.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_right_19 
+
+	option = {
+		name = R_Fontaine.9.a 
+		FRA_maurice_thorez = {
+			remove_country_leader_role = {
+				ideology = stalinism 
+			}
+			add_country_leader_role = {
+				country_leader = {
+					ideology = populist_socialism_revolutionary_front 
+					traits = {
+						staunch_stalinist
+					}
+				}
+			}
+		}
+		FRA_Adrienne_Charlotte = {
+			add_country_leader_role = {
+				promote_leader = yes 
+				country_leader = {
+					ideology = leninism 
+					traits = {
+						star_reporter 
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.10
+	title = R_Fontaine.10.t 
+	desc = R_Fontaine.10.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_3  
+
+	option = {
+		name = R_Fontaine.10.a 
+		log = "在R_Fontaine.10事件中"
+		set_country_flag = fontaine_show_player_context_parliament 
+		R_Fontaine_Start_Vote_Animation = yes 
+	}
+}
+
+country_event = {
+	id = R_Fontaine.11 
+	title = R_Fontaine.11.t
+	desc = R_Fontaine.11.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_Neuvillette_1 
+
+	option = {
+		name = R_Fontaine.11.a 
+		activate_mission = RFP_1936_presidential_election 
+		custom_effect_tooltip = R_Fontaine.11.tt
+	}
+}
+
+country_event = {
+	id = R_Fontaine.12
+	title = R_Fontaine.12.t 
+	desc = R_Fontaine.12.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_clorinde_6
+	immediate = {
+		hidden_effect = {
+			country_event = { id = R_Fontaine.13 hours = 12 }
+		}
+	}
+
+	option = {
+		name = R_Fontaine.12.a 
+	}
+}
+
+country_event = {
+	id = R_Fontaine.13
+	title = R_Fontaine.13.t
+	desc = R_Fontaine.13.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_4
+	immediate = {
+		hidden_effect = {
+			country_event = { id = R_Fontaine.14 hours = 12 }
+		}
+	}
+
+	option = {
+		name = R_Fontaine.13.a 
+	}
+}
+
+country_event = {
+	id = R_Fontaine.14 #就职
+	title = R_Fontaine.14.t
+	desc = R_Fontaine.14.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_15 
+
+	option = {
+		name = R_Fontaine.14.a 
+		add_stability = 0.05 
+		swap_ideas = {
+			remove_idea = fra_last_dance_of_republic 
+			add_idea = fra_last_dance_of_republic_improved 
+		}
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+		}
+		remove_ideas = assemblee_nationale 
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = no
+				}
+			}
+		}
+		FRA_Solenn_Clorinde = {
+			remove_unit_leader_role = yes 
+			remove_advisor_role = {
+				slot = political_advisor 
+			}
+			add_advisor_role = {
+				activate = yes 
+				advisor = {
+					slot = second_chief 
+					can_be_fired = no 
+					idea_token = Clorinde_PM
+					desc = clorinde_vice_president_desc
+					traits = {
+						constitutionalism_protector 
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.15 #修正案
+	title = R_Fontaine.15.t 
+	desc = R_Fontaine.15.d 
+	picture = GFX_report_event_fra_Furina_15 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.15.a 
+		set_country_flag = r_fontaine_try_labour_bill
+		activate_mission = RFP_start_labour_law_reform_voting 
+		unlock_decision_tooltip = RFP_investigate_economic_impact
+		unlock_decision_tooltip = RFP_compromise_a_weaker_labour_law
+		unlock_decision_tooltip = RFP_promise_further_social_reform 
+	}
+}
+
+country_event = {
+	id = R_Fontaine.16 #闹剧
+	title = R_Fontaine.16.t 
+	desc = R_Fontaine.16.d 
+	picture = GFX_report_event_fra_navia_4 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.16.a 
+		activate_shine_on_focus = FRA_renew_navia_reform_1 
+		reduce_focus_completion_cost = {
+			focus = FRA_renew_navia_reform_1
+			cost = 105
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.17 
+	title = R_Fontaine.17.t 
+	desc = R_Fontaine.17.d 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_renew_furina_in_Palais_de_l_Elysee 
+		date > 1936.11.30
+		date < 1937.2.10
+		ADR = { exists = yes not = { has_war_with = FRA } }
+	}
+	mean_time_to_happen = {
+		days = 30 
+	}
+	picture = GFX_report_event_fra_Furina_16 
+
+	option = {
+		name = R_Fontaine.17.a 
+		set_autonomy = {
+			target = ADR 
+			autonomy_state = autonomy_personal_union 
+		}
+		hidden_effect = {
+			ADR = {
+				set_politics = {
+					ruling_party = neutrality 
+				}
+				set_popularities = {
+					neutrality = 52 
+					democratic = 48
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.18 #劳动法的回报
+	title = R_Fontaine.18.t 
+	desc = R_Fontaine.18.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_gathering_protest 
+
+	option = {
+		name = R_Fontaine.18.a 
+		if = {
+			limit = { has_country_flag = fra_r_labour_law_version_1_integrated }
+			custom_effect_tooltip = R_Fontaine.18.tooltip.1
+
+			### 消费分配 ###
+			add_to_variable = {
+				R_Fontaine_Consumption_Progress_Total = 0.20
+				tooltip = modify_consumption_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Consumption_Monthly_Progress = 0.04 
+				tooltip = modify_consumption_monly_tooltip 
+			}
+
+			### 劳资协调 ###
+			add_to_variable = {
+				R_Fontaine_Labour_Progress_Total = 0.40
+				tooltip = modify_labour_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Labour_Monthly_Progress = 0.06 
+				tooltip = modify_labour_monly_tooltip 
+			}
+
+			### 政府信用 ###
+			add_to_variable = {
+				R_Fontaine_Trust_Progress_Total = 0.10
+				tooltip = modify_trust_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Trust_Monthly_Progress = 0.03
+				tooltip = modify_trust_monly_tooltip 
+			}
+
+		}
+		else_if = {
+			limit = { has_country_flag = fra_r_labour_law_version_2_integrated }
+			custom_effect_tooltip = R_Fontaine.18.tooltip.2
+
+			### 消费分配 ###
+			add_to_variable = {
+				R_Fontaine_Consumption_Progress_Total = 0.15
+				tooltip = modify_consumption_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Consumption_Monthly_Progress = 0.03 
+				tooltip = modify_consumption_monly_tooltip 
+			}
+
+			### 劳资协调 ###
+			add_to_variable = {
+				R_Fontaine_Labour_Progress_Total = 0.30
+				tooltip = modify_labour_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Labour_Monthly_Progress = 0.04 
+				tooltip = modify_labour_monly_tooltip 
+			}
+
+			### 政府信用 ###
+			add_to_variable = {
+				R_Fontaine_Trust_Progress_Total = 0.20
+				tooltip = modify_trust_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Trust_Monthly_Progress = 0.02
+				tooltip = modify_trust_monly_tooltip 
+			}
+
+		}
+		else_if = {
+			limit = { has_country_flag = fra_r_labour_law_version_3_integrated }
+			custom_effect_tooltip = R_Fontaine.18.tooltip.3
+
+			### 消费分配 ###
+			add_to_variable = {
+				R_Fontaine_Consumption_Progress_Total = 0.10
+				tooltip = modify_consumption_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Consumption_Monthly_Progress = 0.02 
+				tooltip = modify_consumption_monly_tooltip 
+			}
+
+			### 劳资协调 ###
+			add_to_variable = {
+				R_Fontaine_Labour_Progress_Total = 0.20
+				tooltip = modify_labour_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Labour_Monthly_Progress = 0.03 
+				tooltip = modify_labour_monly_tooltip 
+			}
+
+			### 政府信用 ###
+			add_to_variable = {
+				R_Fontaine_Trust_Progress_Total = 0.30
+				tooltip = modify_trust_direct_tooltip
+			}
+			add_to_variable = {
+				R_Fontaine_Trust_Monthly_Progress = 0.01
+				tooltip = modify_trust_monly_tooltip 
+			}
+
+		}
+	}
+}
+
+country_event = {
+	# 这个事件用于储存开始计数前的各政党支持率
+	id = R_fontaine_parliament.1000
+	is_triggered_only = yes 
+	hidden = yes 
+	immediate = {
+		hidden_effect = {
+			set_variable = { R_Storage_Fontaine_Communist_support = R_Fontaine_Communist_support }
+			set_variable = { R_Storage_Fontaine_Socialist_support = R_Fontaine_Socialist_support }
+			set_variable = { R_Storage_Fontaine_Liberalist_support = R_Fontaine_Liberalist_support }
+			set_variable = { R_Storage_Fontaine_Agrarianist_support = R_Fontaine_Agrarianist_support }
+			set_variable = { R_Storage_Fontaine_Toryism_support = R_Fontaine_Toryism_support }
+			set_variable = { R_Storage_Fontaine_Neutralist_support = R_Fontaine_Neutralist_support }
+
+			set_variable = { R_Fontaine_Communist_support = 0 }
+			set_variable = { R_Fontaine_Socialist_support = 0 }
+			set_variable = { R_Fontaine_Liberalist_support = 0 }
+			set_variable = { R_Fontaine_Agrarianist_support = 0 }
+			set_variable = { R_Fontaine_Toryism_support = 0 }
+			set_variable = { R_Fontaine_Neutralist_support = 100 }
+			
+			R_Fontaine_Refresh_From_popularity = yes 
+		}
+	}
+}
+
+country_event = {
+    id = R_fontaine_parliament.1001
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+        add_to_variable = { r_fontaine_vote_step = 1 }
+
+        R_Fontaine_Vote_Animation_Refresh_Frames = yes
+
+		if = {
+			limit = { check_variable = { r_fontaine_vote_step = 9 } }
+			set_country_flag = r_fontaine_show_situation 
+			if = {
+				limit = {
+					check_variable = {
+						r_fontaine_vote_oppose_total > r_fontaine_vote_support_total 
+					}
+				}
+				country_event = {
+					id = R_fontaine_parliament.1006
+					hours = 6 
+				}
+			}
+			else = {
+				country_event = {
+					id = R_fontaine_parliament.1005
+					hours = 6 
+				}
+			}
+		}
+
+		if = {
+            limit = { check_variable = { r_fontaine_vote_step < 10 } }
+            country_event = { id = R_fontaine_parliament.1001 hours = 5 }
+        }
+    }
+
+    #option = {
+    #    name = OK
+    #    hidden_effect = {
+    #        if = {
+    #            limit = { check_variable = { r_fontaine_vote_step < 10 } }
+   #             country_event = { id = R_fontaine_parliament.1001 hours = 1 }
+    #        }
+     #       else = {
+                # 动画结束：你可以选择保留最终红/蓝结果，或恢复原议会分布
+                # 若要恢复原议会分布：把 saved_* 写回并调用你原本刷新方法
+                #set_variable = { R_Fontaine_Communist_seats = r_fontaine_saved_comm_seats }
+                #set_variable = { R_Fontaine_Socialist_seats  = r_fontaine_saved_soc_seats }
+                #set_variable = { R_Fontaine_Liberalist_seats = r_fontaine_saved_lib_seats }
+               # set_variable = { R_Fontaine_Agrarianist_seats = r_fontaine_saved_agr_seats }
+               # set_variable = { R_Fontaine_Toryism_seats = r_fontaine_saved_tory_seats }
+                #set_variable = { R_Fontaine_Neutralist_seats = r_fontaine_saved_neu_seats }
+
+                # 恢复正常议会 UI
+                #R_Fontaine_Refresh_From_popularity = yes
+
+                # 取消“正在表决”状态（否则 GUI 会一直显示 bill UI）
+     #           clr_country_flag = r_fontaine_any_bill_ongoing
+    #        }
+    #    }
+   # }
+}
+
+country_event = {
+	id = R_fontaine_parliament.1002 #调试一
+	title = R_fontaine_parliament.1002.t 
+	desc = R_fontaine_parliament.1002.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_fontaine_parliament.1002.a 
+		log = "在R_fontaine_parliament.1002事件中"
+		R_Fontaine_Start_Vote_Animation = yes 
+	}
+}
+
+country_event = {
+	id = R_fontaine_parliament.1003 #调试二
+	title = R_fontaine_parliament.1003.t 
+	desc = R_fontaine_parliament.1003.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_fontaine_parliament.1003.a 
+		# 动画结束：你可以选择保留最终红/蓝结果，或恢复原议会分布
+        # 若要恢复原议会分布：把 saved_* 写回并调用你原本刷新方法
+        set_variable = { R_Fontaine_Communist_seats = r_fontaine_saved_comm_seats }
+      	set_variable = { R_Fontaine_Socialist_seats  = r_fontaine_saved_soc_seats }
+    	set_variable = { R_Fontaine_Liberalist_seats = r_fontaine_saved_lib_seats }
+        set_variable = { R_Fontaine_Agrarianist_seats = r_fontaine_saved_agr_seats }
+        set_variable = { R_Fontaine_Toryism_seats = r_fontaine_saved_tory_seats }
+        set_variable = { R_Fontaine_Neutralist_seats = r_fontaine_saved_neu_seats }
+
+        # 恢复正常议会 UI
+        R_Fontaine_Refresh_From_popularity = yes
+
+        # 取消“正在表决”状态（否则 GUI 会一直显示 bill UI）
+		clr_country_flag = r_fontaine_show_situation 
+        clr_country_flag = r_fontaine_any_bill_ongoing
+	}
+}
+
+country_event = {
+	id = R_fontaine_parliament.1004 #开始表决，可以多处调用
+	title = R_fontaine_parliament.1004.t 
+	desc = R_fontaine_parliament.1004.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_1 
+
+	option = {
+		name = R_fontaine_parliament.1004.a 
+		log = "在R_fontaine_parliament.1004事件中"
+		set_country_flag = fontaine_show_player_context_parliament 
+		R_Fontaine_Start_Vote_Animation = yes 
+	}
+}
+
+country_event = {
+	id = R_fontaine_parliament.1005 #法案通过
+	title = R_fontaine_parliament.1005.t 
+	desc = R_fontaine_parliament.1005.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_3
+
+	option = {
+		name = R_fontaine_parliament.1005.a 
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = r_fontaine_bill_president_system }
+				country_event = { id = R_Fontaine.11 days = 3 }
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = r_fontaine_bill_labour_reform 
+			}
+			if = {
+				limit = { check_variable = { r_fontaine_labour_bill_version = 1 } }
+				add_ideas = { fra_r_labour_law_version_1 }
+				set_country_flag = fra_r_labour_law_version_1_integrated
+			}
+			else_if = {
+				limit = { check_variable = { r_fontaine_labour_bill_version = 2 } }
+				add_ideas = { fra_r_labour_law_version_2 }
+				set_country_flag = fra_r_labour_law_version_2_integrated
+			}
+			else = { add_ideas = fra_r_labour_law_version_3 set_country_flag = fra_r_labour_law_version_3_integrated }
+			clr_country_flag = r_fontaine_try_labour_bill
+		}
+		custom_effect_tooltip = R_fontaine_parliament.vanish.tt
+		clr_country_flag = fontaine_show_player_context_parliament
+		clr_country_flag = r_fontaine_show_situation
+		R_Fontaine_Bill_over_clear = yes 
+
+		set_variable = { R_Fontaine_Communist_seats = r_fontaine_saved_comm_seats }
+      	set_variable = { R_Fontaine_Socialist_seats  = r_fontaine_saved_soc_seats }
+    	set_variable = { R_Fontaine_Liberalist_seats = r_fontaine_saved_lib_seats }
+        set_variable = { R_Fontaine_Agrarianist_seats = r_fontaine_saved_agr_seats }
+        set_variable = { R_Fontaine_Toryism_seats = r_fontaine_saved_tory_seats }
+        set_variable = { R_Fontaine_Neutralist_seats = r_fontaine_saved_neu_seats }
+
+        # 恢复正常议会 UI
+        R_Fontaine_Refresh_From_popularity = yes
+	}
+}
+
+country_event = {
+	id = R_fontaine_parliament.1006 #法案否决
+	title = R_fontaine_parliament.1006.t 
+	desc = R_fontaine_parliament.1006.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_assemblee_3
+
+	option = {
+		name = R_fontaine_parliament.1006.a 
+		custom_effect_tooltip = R_fontaine_parliament.vanish.tt
+
+		if = {
+			limit = { has_country_flag = r_fontaine_bill_labour_reform }
+			uncomplete_national_focus = {
+				focus = FRA_renew_labour_law_reform 
+			}
+			custom_effect_tooltip = r_fontaine_AD_bill_support_worsen_1
+			custom_effect_tooltip = r_fontaine_FR_bill_support_worsen_1
+			custom_effect_tooltip = r_fontaine_CF_bill_support_worsen_1
+			custom_effect_tooltip = r_fontaine_PTF_bill_support_worsen_1
+			custom_effect_tooltip = r_fontaine_PF_bill_support_worsen_1
+			### 法案失败次数的计数 ###
+			add_to_variable = { r_fontaine_bill_labour_reform_fail_count = 1 }
+		}
+
+		clr_country_flag = fontaine_show_player_context_parliament
+		clr_country_flag = r_fontaine_show_situation
+		R_Fontaine_Bill_over_clear = yes 
+
+		set_variable = { R_Fontaine_Communist_seats = r_fontaine_saved_comm_seats }
+      	set_variable = { R_Fontaine_Socialist_seats  = r_fontaine_saved_soc_seats }
+    	set_variable = { R_Fontaine_Liberalist_seats = r_fontaine_saved_lib_seats }
+        set_variable = { R_Fontaine_Agrarianist_seats = r_fontaine_saved_agr_seats }
+        set_variable = { R_Fontaine_Toryism_seats = r_fontaine_saved_tory_seats }
+        set_variable = { R_Fontaine_Neutralist_seats = r_fontaine_saved_neu_seats }
+
+        # 恢复正常议会 UI
+        R_Fontaine_Refresh_From_popularity = yes
+	}
+}

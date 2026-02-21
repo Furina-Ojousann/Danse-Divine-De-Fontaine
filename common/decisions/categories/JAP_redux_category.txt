@@ -1,0 +1,19 @@
+JAP_redux_main = {
+	icon = GFX_decision_category_jap_pacific_guardian 
+	allowed = {
+		original_tag = JAP 
+	}
+	visible = {
+		is_ai = no 
+		is_debug = yes 
+	}
+}
+
+JAP_polarization_category = {
+	allowed = {
+		original_tag = JAP 
+	}
+	visible = {
+		#
+	}
+}

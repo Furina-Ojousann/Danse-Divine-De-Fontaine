@@ -1,0 +1,39 @@
+capital = 1033 
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+	mobile_warfare = 1
+	trade_interdiction = 1
+	formation_flying = 1
+	synth_oil_experiments = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = yes 
+	election_frequency = 48 
+}
+
+set_popularities = {
+	democratic = 65
+	communism = 30
+	neutrality = 5 
+}
+
+create_country_leader = {
+	name = HAM_Council
+	picture = "gfx/leaders/HAM/portrait_ham_hamburg_council.png"
+	ideology = liberalism 
+}

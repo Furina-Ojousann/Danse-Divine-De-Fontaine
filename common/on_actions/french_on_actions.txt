@@ -1,0 +1,1239 @@
+on_actions = {
+	on_monthly_FRA = {
+		effect = {
+			FRA = {
+				if = {
+					limit = {
+						has_completed_focus = FRA_stabilizer_theory
+					}
+					set_temp_variable_to_random = {
+						var = france_month_inflation_rate_of_change
+						max = 0.1
+						min = -0.1
+					}
+				}
+				else = {
+					set_temp_variable_to_random = {
+						var = france_month_inflation_rate_of_change
+						max = 0.2 
+						min = -0.2 
+					}
+				}
+				multiply_temp_variable = {
+					france_month_inflation_rate_of_change = 0.01
+				}
+				add_to_variable = { france_economy_inflation = france_month_inflation_rate_of_change }
+				
+				economic_modifier_cal = yes 
+			}
+		}
+	}
+	on_mio_size_increased = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_tank_industry } 
+				}
+				FROM = {
+					mio:FRA_renault_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_infantry_industry } 
+				}
+				FROM = {
+					mio:FRA_mas_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_infantry_industry } 
+				}
+				FROM = {
+					mio:FRA_schneider_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_aviation_industry } 
+				}
+				FROM = {
+					mio:FRA_bloch_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_aviation_industry } 
+				}
+				FROM = {
+					mio:FRA_amiot_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_military_industrial_organization = fontaine_national_defense_corp has_mio_flag = FNDC_has_annex_aviation_industry } 
+				}
+				FROM = {
+					mio:FRA_morane_saulnier_organization = {
+						add_mio_size = 1 
+					}
+				}
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			random_country = {
+				limit = {
+					is_ai = yes 
+					not = { has_idea = ai_easy_experience }
+				}
+				add_ideas = ai_easy_experience 
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { original_tag = FRA has_country_flag = fra_furina_come_to_france has_completed_focus = FRA_Borodino controls_state = 219 }
+					FROM = { original_tag = SOV }
+					FROM.FROM = { state = 195 }
+				}
+				every_state = {
+					limit = {
+						or = {
+							state = 229
+							state = 230
+							state = 231
+							state = 826
+							state = 233
+							state = 827
+							state = 828
+							state = 821
+							state = 232
+							state = 234
+							state = 235
+							state = 238
+							state = 237
+							state = 236
+							state = 217 
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = FRA_south_russia_offensive 
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						is_owned_by = HEB 
+						state = 608 
+					}
+					FROM = {
+						tag = HEB 
+					}
+					ROOT = {
+						tag = JAP 
+					}
+				}
+				HEB = {
+					HEB_Song_zheyuan = {
+						set_nationality = CHI 
+					}
+					HEB_Song_zheyuan = {
+						set_nationality = CHI 
+					}
+				}
+				CHI = {
+					annex_country = {
+						target = HEB 
+						transfer_troops = yes 
+					}
+				}
+				HEB = {
+					every_core_state = {
+						remove_core_of = HEB 
+					}
+				}
+			}
+			if = {
+				limit = {  
+					FROM.FROM = {
+						is_owned_by = CHI 
+					}
+					FROM = {
+						original_tag = CHI 
+						is_ai = yes 
+					}
+					ROOT = {
+						original_tag = JAP 
+						is_ai = yes 
+					}
+				}
+				division_template = {
+					name = "Shituan"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+						artillery = {
+							x = 0
+							y = 0 
+						}
+					}
+				}
+				FROM.FROM = {
+					random_neighbor_state = {
+						limit = {
+							is_controlled_by = CHI 
+						}
+					}
+					create_unit = {
+						division = "name = \"Shituan\" division_template = \"Shituan\" start_experience_factor = 0.2"  
+						owner = CHI
+						count = 12
+					}
+				}
+				
+			}
+
+
+			if = {
+				limit = {
+					FROM.FROM = { state = 16 }
+					ROOT = {  
+						tag = FRC 
+						has_war_with = FRA 
+					}
+				}
+				country_event = Fontaine_revolution.145
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 716 }
+					ROOT = {
+						OR = {
+							original_tag = CHI 
+							original_tag = PRC 
+						}
+					}
+				}
+				set_province_name = {
+					id = 11771
+					name = VICTORY_POINTS_11771_new 
+				}
+			}
+
+			if = {
+				limit = {
+					FROM.FROM = { state = 328 }
+					ROOT = {
+						OR = {
+							original_tag = CHI 
+							original_tag = PRC 
+						}
+					}
+				}
+				set_province_name = {
+					id = 4572
+					name = VICTORY_POINTS_4572_new 
+				}
+			}
+		}
+	}
+	on_new_term_election = {
+		random_events = {
+			99999 = French.2 #1936年立法选举
+			99999 = Fontaine_empire_normal.8 #枫丹#1936年立法选举
+		}
+		random_events = {
+			99999 = Modify_Extra.1 #联合王国1945年选举
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = ENG 
+					}
+					ROOT = {
+						original_tag = FRA 
+						has_completed_focus = FRA_Trafalgar 
+					}
+					has_global_flag = fontaine_ireland_union 
+				}
+				FRA = {
+					add_to_faction = IRE 
+				}
+				IRE = {
+					declare_war_on = {
+						target = ENG 
+						type = take_state_focus 
+					}
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_country_flag = fra_furina_come_to_france 
+					has_completed_focus = FRA_because_her_morality 
+				}
+				france_parliament_stat_seat_and_frames = yes 
+			}
+			if = {
+				limit = {
+					has_country_flag = weekly_communism_increase 
+				}
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.015
+				}
+			}
+			if = {
+				limit = { has_country_flag = take_action_on_deflation }
+				add_to_variable = { france_economy_inflation = 0.005 }
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_completed_focus = FRA_a_great_promise
+					has_dynamic_modifier = {
+						modifier = FRA_wartime_mobilization 
+					}
+				}
+				fontaine_national_mobilization_calculation = yes 
+			}
+			if = {
+				limit = {
+					tag = FRA 
+					has_country_flag = fra_furina_come_to_france 
+					#has_country_flag = is_supporting_the_left_wing 
+				}
+				add_to_variable = { party_french_communist_party = 3 }
+				add_to_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = 3 }
+				set_temp_variable = { this_loop_times = 0 }
+				while_loop_effect = {
+					limit = {
+						check_variable = { this_loop_times = 6 compare = less_than_or_equals }
+					}
+					random_list = {
+						1 = {
+							add_to_variable = { party_Fontaine = -1 }
+							modifier = {
+								check_variable = { party_Fontaine < 1 }
+								add = -1
+							}
+						}
+						1 = {
+							add_to_variable = { party_Action_francaise = -1 }
+							modifier = {
+								check_variable = { party_Action_francaise < 1 }
+								add = -1
+							}
+						}
+						1 = {
+							add_to_variable = { party_Croix_de_Feu = -1 }
+							modifier = {
+								check_variable = { party_Croix_de_Feu < 1 }
+								add = -1
+							}
+						}
+						1 = {
+							add_to_variable = { party_Parti_radical = -1 }
+							modifier = {
+								check_variable = { party_Parti_radical < 1 }
+								add = -1
+							}
+						}
+						1 = {
+							add_to_variable = { party_Rassemblement_National = -1 }
+							modifier = {
+								check_variable = { party_Rassemblement_National < 1 }
+								add = -1
+							}
+						}
+					}
+					add_to_temp_variable = { this_loop_times = 1 }
+				}
+				refresh_gui = yes 
+			}
+		}
+	}
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = Fontaine_spain_war 
+					ROOT = {
+						original_tag = SPR 
+					}
+					FROM = {
+						original_tag = FRA 
+						has_country_flag = fra_furina_come_to_france 
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT 
+					}
+				}
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV 
+						has_government = communism 
+					}
+					ROOT = {
+						original_tag = FRA 
+						is_ai = no 
+						has_country_flag = fra_furina_come_to_france 
+					}
+				}
+				SOV = {
+					add_ideas = generic_war_of_resistence 
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+						has_government = communism 
+						is_ai = yes 
+					}
+					ROOT = {
+						original_tag = GER 
+						has_government = fascism 
+						is_ai = yes 
+					}
+				}
+				SOV = { add_ideas = generic_war_of_resistence }
+				GER = { add_timed_idea = { idea = GER_barbarossa days = 270 } }
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_ai = no 
+						is_major = yes 
+					}
+					ROOT = {
+						original_tag = GER 
+						is_ai = yes 
+						has_civil_war = no 
+					}
+				}
+				GER = {
+					set_technology = {
+						interwar_artillery = 1 
+						artillery1 = 1
+						artillery2 = 1
+						artillery3 = 1
+						
+						interwar_antitank = 1 
+						antitank1 = 1
+						antitank2 = 1
+
+						armor_tech_1 = 1
+						armor_tech_2 = 1 
+						basic_medium_tank_chassis = 1 
+						improved_medium_tank_chassis = 1
+						basic_heavy_tank_chassis = 1
+						improved_heavy_tank_chassis = 1 
+
+						radio = 1
+						improved_radio = 1 
+						tech_maintenance_company = 1
+						tech_maintenance_company2 = 1 
+						tech_logistics_company = 1
+						tech_logistics_company2 = 1 
+
+						special_forces_mountaineers = 1
+					}
+					complete_special_project = sp:sp_land_flamethrower_tank
+					create_equipment_variant = {
+						name = "1942 Medium Panzer"
+						type = medium_tank_chassis_2
+						modules = {
+							main_armament_slot = tank_medium_howitzer_2 
+							turret_type_slot = tank_medium_three_man_tank_turret
+							suspension_type_slot = tank_bogie_suspension 
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_2	
+							special_type_slot_2 = sloped_armor
+							special_type_slot_3 = secondary_turret_hmg   
+							special_type_slot_4 = easy_maintenance 
+						}
+						upgrades = {
+							tank_nsb_armor_upgrade = 5
+							tank_nsb_engine_upgrade = 0 
+						}
+					}
+					create_equipment_variant = {
+						name = "1942 Tank Destoryer"
+						type = heavy_tank_destroyer_chassis_2 
+						modules = {
+							main_armament_slot = tank_heavy_cannon_2 				#主武器
+							turret_type_slot = tank_heavy_three_man_tank_turret		#炮塔
+							suspension_type_slot = tank_bogie_suspension			#悬挂
+							armor_type_slot = tank_welded_armor						#装甲
+							engine_type_slot = tank_gasoline_engine				#引擎
+							special_type_slot_1 = easy_maintenance
+							special_type_slot_2 = sloped_armor 
+							special_type_slot_3 = expanded_fuel_tank 
+							special_type_slot_4 = dozer_blade 
+						}
+
+						upgrades = {
+							tank_nsb_engine_upgrade = 0 
+							tank_nsb_armor_upgrade = 9 
+						}
+					}
+					create_equipment_variant = {
+						name = "Flame Tank 1942"
+						type = medium_tank_flame_chassis_2
+						modules = {
+							main_armament_slot = flamethrower
+							turret_type_slot = tank_medium_two_man_tank_turret 
+							suspension_type_slot = tank_bogie_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = easy_maintenance
+							special_type_slot_2 = expanded_fuel_tank 
+							special_type_slot_3 = empty 
+							special_type_slot_4 = empty 
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 0
+							tank_nsb_armor_upgrade = 0
+						}
+					}
+
+					division_template = {
+						name = "Wehrmacht Panzer Division"
+						priority = 2
+						template_counter = 32
+						is_locked = yes 
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 1 y = 3 }
+							infantry = { x = 0 y = 4 }
+							infantry = { x = 1 y = 4 }
+							medium_armor = { x = 2 y = 0 }
+							medium_armor = { x = 2 y = 1 }
+							medium_armor = { x = 2 y = 2 }
+							medium_armor = { x = 2 y = 3 }
+							medium_armor = { x = 3 y = 0 }
+							medium_armor = { x = 3 y = 1 }
+							medium_armor = { x = 3 y = 2 }
+							heavy_tank_destroyer_brigade = { x = 4 y = 0 }
+						}
+						support = {
+							anti_air = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							rangers_support = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
+							medium_flame_tank = { x = 0 y = 4 }
+						}
+					}
+
+					capital_scope = {
+						create_unit = {
+							division = "name = \"1re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"2re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"3re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"4re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"5re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"6re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"7re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"8re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"9re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"10re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"11re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"12re Wehrmacht Panzer Division\" division_template = \"Wehrmacht Panzer Division\" start_experience_factor = 0.7 force_equipment_variants = { medium_tank_flame_chassis_2 = { creator = \"GER\" version_name = \"Flame Tank 1942\" } heavy_tank_destroyer_chassis_2 = { creator = \"GER\" version_name = \"1942 Tank Destoryer\"} }"  
+							owner = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = FRA 
+						has_idea = fra_fontaine_soviet_union_joint_defense_appointment 
+					}
+				}
+				SOV = {
+					add_to_war = {
+						targeted_alliance = FRA 
+						enemy = ROOT 
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_idea = fra_fontaine_soviet_union_joint_defense_appointment 
+				}
+				SOV = {
+					add_to_war = {
+						targeted_alliance = FRA 
+						enemy = FROM  
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = SOV  
+					has_idea = fra_fontaine_soviet_union_joint_defense_appointment 
+				}
+				FRA = {
+					add_to_war = {
+						targeted_alliance = SOV  
+						enemy = FROM  
+					}
+				}
+			}
+		}
+	}
+	on_send_volunteers = {
+		effect = {
+			if = {
+				limit = { 
+					ROOT = { original_tag = FRA has_completed_focus = FRA_speak_french }
+					FROM = { original_tag = QUE has_war_with = CAN }
+				}
+				add_to_variable = { fra_quebec_interfere_strength = 1 }
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			##############################################################################
+
+			
+
+			##############################################################################
+
+			set_global_flag = show_diplomacy_reminder_window
+			FROM = { save_global_event_target_as = winning_country }
+			ROOT = { save_global_event_target_as = losing_country }
+
+			if = {
+				limit = {
+					event_target:losing_country = {
+						any_allied_country = {
+							has_war_together_with = event_target:losing_country
+						}
+					}
+				}
+				set_global_flag = losing_country_multiple
+			}
+
+			if = {
+				limit = {
+					event_target:winning_country = {
+						any_allied_country = {
+							has_war_together_with = event_target:winning_country
+						}
+					}
+				}
+				set_global_flag = winning_country_multiple
+			}
+
+			add_to_variable = { global.peace_popup_dirty = 1 }
+
+			################################################################################
+
+			if = {
+				limit = {
+					FROM = {
+						original_tag = FRA 
+						has_country_flag = fra_furina_come_to_france 
+						has_completed_focus = FRA_watch_for_rhine 
+					}
+					ROOT = {
+						original_tag = GER 
+					}
+				}
+				set_global_flag = germany_has_defeated_by_fontaine
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = FRA 
+						has_country_flag = fra_furina_come_to_france 
+						has_completed_focus = FRA_watch_for_rhine 
+					}
+					ROOT = {
+						original_tag = ITA  
+					}
+				}
+				set_global_flag = italy_has_defeated_by_fontaine
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = FRC 
+					}
+					FROM = {
+						original_tag = FRA 
+						has_completed_focus = FRA_fontaine_need_order 
+					}
+				}
+				FRA = {
+					annex_country = {
+						target = FRC 
+					}
+					country_event = Fontaine_empire_normal.14 
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = POL 
+					}
+					FROM = {
+						original_tag = GER 
+						has_government = fascism 
+						
+						has_completed_focus = GER_molotov_ribbentrop_pact 
+						
+					}
+				}
+				SOV = {
+					transfer_state = 1073
+					transfer_state = 1077 
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = CHI 
+					}
+					FROM = {
+						tag = GXC 
+					}
+					FRA = {
+						has_completed_focus = FRA_attack_Nanking_Government 
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = CHI 
+					}
+					set_cosmetic_tag = CHI_republica
+					add_timed_idea = {
+						idea = CHI_constitution_preparation
+						days = 365
+					}
+				}
+			}
+
+
+			if = {
+				limit = {
+					ROOT = {
+						tag = FRA 
+						has_country_flag = fra_furina_come_to_france 
+					}
+					FROM = {
+						tag = FRC 
+					}
+				}
+				white_peace = FRC
+				FRA = {
+					change_tag_from = FRC 
+				}
+				news_event = {
+					id = Fontaine_revolution_news.1 
+					days = 3 
+				}
+				FRA = {
+					set_politics = {
+						ruling_party = communism 
+						elections_allowed = yes 
+						election_frequency = 48 
+					}
+					set_popularities = {
+						communism = 90 
+						democratic = 10 
+					}
+					set_variable = { total_seat_in_parliament = 604 }
+					custom_effect_tooltip = election_by_the_popularity
+					# democracy #
+					set_temp_variable = { total_democratic_support = party_popularity@democratic }
+					multiply_temp_variable = { total_democratic_support = total_seat_in_parliament }
+					set_temp_variable = { party_fontaine_temp_seat = total_democratic_support }
+					set_temp_variable = { party_Parti_radical_temp_seat = total_democratic_support }
+					set_temp_variable = { party_Rassemblement_National_temp_seat = total_democratic_support } 
+					multiply_temp_variable = { party_fontaine_temp_seat = 0.8 }
+					multiply_temp_variable = { party_Parti_radical_temp_seat = 0.1 }
+					multiply_temp_variable = { party_Rassemblement_National_temp_seat = 0.1 }
+					set_variable = { party_Fontaine = party_fontaine_temp_seat }
+					set_variable = { party_Rassemblement_National = party_Rassemblement_National_temp_seat }
+					set_variable = { party_Parti_radical = party_Parti_radical_temp_seat }
+					round_variable = party_Fontaine 
+					round_variable = party_Rassemblement_National 
+					round_variable = party_Parti_radical 
+					# communsim #
+					set_temp_variable = { total_communst_support = party_popularity@communism }
+					multiply_temp_variable = { total_communst_support = total_seat_in_parliament }
+					set_temp_variable = { party_french_communist_party_temp_seat = total_communst_support }
+					set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = total_communst_support }
+					multiply_temp_variable = { party_french_communist_party_temp_seat = 0.6 }
+					multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = 0.4 }
+					set_variable = { party_french_communist_party = party_french_communist_party_temp_seat }
+					set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat }
+					round_variable = party_french_communist_party 
+					round_variable = party_Section_Francaise_de_l_Internationale_Ouvriere 
+					# neu #
+					set_temp_variable = { total_neutrality_support = party_popularity@neutrality }
+					multiply_temp_variable = { total_neutrality_support = total_seat_in_parliament }
+					set_variable = { party_Action_francaise = total_neutrality_support }
+					round_variable = party_Action_francaise 
+					# fascism # 
+					set_temp_variable = { total_fascism_support = party_popularity@fascism }
+					multiply_temp_variable = { total_fascism_support = total_seat_in_parliament }
+					set_variable = { party_Croix_de_Feu = total_fascism_support }
+					round_variable = party_Croix_de_Feu 
+					refresh_gui = yes 
+					remove_advisor_role = {
+						slot = political_advisor
+						character = FRA_Neuvillette 
+					}
+					remove_advisor_role = {
+						slot = navy_chief 
+						character = FRA_Neuvillette 
+					}
+					FRA_Neuvillette = {
+						clr_character_flag = show_fontaine 
+					}
+					set_variable_to_random = {
+						var = the_corruption_of_party 
+						max = 10 
+						min = 0
+					}
+					### 重新计算腐败修正 ###
+					set_temp_variable = { the_corruption_of_party_temp = the_corruption_of_party }
+					multiply_temp_variable = { the_corruption_of_party_temp = 0.01 }
+					set_temp_variable = { corruption_political_power_cost_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_party_popularity_stability_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_neutrality_drift_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_production_speed_buildings_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_army_org_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_experience_gain_army_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_experience_gain_navy_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_experience_gain_air_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_consumer_goods_factor_temp = the_corruption_of_party_temp }
+					set_temp_variable = { corruption_research_speed_factor_temp = the_corruption_of_party_temp }
+
+					multiply_temp_variable = { corruption_political_power_cost_temp = 1 }
+					multiply_temp_variable = { corruption_party_popularity_stability_factor_temp = -0.10 }
+					multiply_temp_variable = { corruption_neutrality_drift_temp = 0.15 }
+					multiply_temp_variable = { corruption_production_speed_buildings_factor_temp = -0.10 }
+					multiply_temp_variable = { corruption_army_org_factor_temp = -0.10 }
+					multiply_temp_variable = { corruption_experience_gain_army_factor_temp = -0.15 }
+					multiply_temp_variable = { corruption_experience_gain_navy_factor_temp = -0.15 }
+					multiply_temp_variable = { corruption_experience_gain_air_factor_temp = -0.15 }
+					multiply_temp_variable = { corruption_consumer_goods_factor_temp = 0.20 }
+					multiply_temp_variable = { corruption_research_speed_factor_temp = -0.05 }
+
+					set_variable = { corruption_political_power_cost = corruption_political_power_cost_temp }
+					set_variable = { corruption_party_popularity_stability_factor = corruption_party_popularity_stability_factor_temp }
+					set_variable = { corruption_neutrality_drift = corruption_neutrality_drift_temp }
+					set_variable = { corruption_production_speed_buildings_factor = corruption_production_speed_buildings_factor_temp }
+					set_variable = { corruption_army_org_factor = corruption_army_org_factor_temp }
+					set_variable = { corruption_experience_gain_navy_factor = corruption_experience_gain_navy_factor_temp }
+					set_variable = { corruption_experience_gain_air_factor = corruption_experience_gain_air_factor_temp }
+					set_variable = { corruption_experience_gain_army_factor = corruption_experience_gain_army_factor_temp }
+					set_variable = { corruption_consumer_goods_factor = corruption_consumer_goods_factor_temp }
+					set_variable = { corruption_research_speed_factor = corruption_research_speed_factor_temp }
+
+					add_dynamic_modifier = { modifier = FRA_the_corruption }
+					add_dynamic_modifier = { modifier = FRA_dissenters }
+					add_ideas = provisional_government 
+					clr_country_flag = neuvillette_as_the_second_leader 
+					set_global_flag = fontaine_socialist
+					mark_focus_tree_layout_dirty = yes 
+					load_oob = FRA_after_civilwar
+					FRA_Furina_de_Fontaine = {
+						add_country_leader_role = {
+							promote_leader = yes 
+							country_leader = {
+								desc = furina_sinner_desc 
+								ideology = marxism 
+								traits = {
+									Fontaine_star 
+								}
+							}
+						}
+						if = {
+							limit = {
+								has_completed_focus = GFX_opera_of_trial 
+							}
+							add_country_leader_trait = {
+								ideology = communism 
+								trait = the_focus_of_the_world 
+							}
+						}
+					}
+					set_cosmetic_tag = fontaine_people_s_republic 
+					add_dynamic_modifier = {
+						modifier = FRA_the_red_army 
+					}
+					set_variable = {
+						FRA_the_red_army_army_core_attack_factor = FRC.FRA_the_red_army_army_core_attack_factor
+					}
+					set_variable = {
+						FRA_the_red_army_army_core_defence_factor = FRC.FRA_the_red_army_army_core_defence_factor
+					}
+					set_variable = {
+						FRA_the_red_army_army_morale_factor = FRC.FRA_the_red_army_army_morale_factor
+					}
+					set_variable = {
+						FRA_the_red_army_army_org_factor = FRC.FRA_the_red_army_army_org_factor
+					}
+					set_variable = {
+						FRA_the_red_army_experience_gain_irregular_infantry_combat_factor = FRC.FRA_the_red_army_experience_gain_irregular_infantry_combat_factor
+					}
+					set_variable = {
+						FRA_the_red_army_max_command_power = FRC.FRA_the_red_army_max_command_power
+					}
+					set_variable = {
+						FRA_the_red_army_max_planning = FRC.FRA_the_red_army_max_planning 
+					}
+					set_variable = {
+						FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor = FRC.FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor
+					}
+					set_variable = {
+						FRA_the_red_army_planning_speed = FRC.FRA_the_red_army_planning_speed
+					}
+					set_variable = {
+						FRA_the_red_army_political_power_factor = FRC.FRA_the_red_army_political_power_factor
+					}
+					set_variable = {
+						FRA_the_red_army_supply_consumption_factor = FRC.FRA_the_red_army_supply_consumption_factor
+					}
+					multiply_variable = {
+						FRA_the_red_army_army_core_attack_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_army_core_defence_factor = 0.4
+					}
+					multiply_variable = {
+						FRA_the_red_army_army_morale_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_army_org_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_experience_gain_irregular_infantry_combat_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_max_command_power = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_max_planning = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_planning_speed = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_political_power_factor = 0.4 
+					}
+					multiply_variable = {
+						FRA_the_red_army_supply_consumption_factor = 0.4 
+					}
+					if = {
+						limit = {
+							FRC = {
+								has_idea = fra_continue_philosophy_education
+							}
+						}
+						add_ideas = fra_continue_philosophy_education 
+					}
+					FRC = {
+						FRC_Marcel_Cachin = {
+							set_nationality = FRA 
+						}
+						FRC_Leon_Jouhaux = {
+							set_nationality = FRA 
+						}
+						#FRA_Adrienne_Charlotte = {
+						#	set_nationality = FRA 
+						#	set_country_flag = show_fontaine 
+						#}
+					}
+					#FRA_Adrienne_Charlotte = {
+					#	set_nationality = FRA 
+					#	set_country_flag = show_fontaine 
+					#}
+					FRA_maurice_thorez = {
+						add_trait = {
+							slot = political_advisor 
+							trait = proletariat_internationalist
+						}
+						remove_trait = {
+							trait = communist_revolutionary 
+							slot = political_advisor 
+						}
+					}
+					annex_country = {
+						target = FRC 
+					}
+					every_state = {
+						limit = {
+							is_controlled_by = FRC 
+						}
+						transfer_state_to = FRA 
+					}
+				}
+
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = ENG 
+					}
+					FROM = {
+						original_tag = FRA 
+						has_completed_focus = FRA_Trafalgar 
+					}
+					has_global_flag = fontaine_ireland_union 
+				}
+				IRE = {
+					every_country = {
+						limit = {
+							is_major = yes 
+							has_war_with = IRE 
+						}
+						ROOT = {
+							white_peace = PREV 
+						}
+					}
+					leave_faction = yes 
+					give_military_access = FRA 
+					diplomatic_relation = {
+						country = FRA 
+						relation = non_aggression_pact
+					}
+					FRA = {
+						give_guarantee = IRE 
+					}
+					NIR = {
+						transfer_state = 119 
+					}
+					set_autonomy = {
+						target = NIR 
+						autonomy_state = autonomy_integrated_puppet 
+					}
+					add_stability = 0.20 
+					add_ideas = ire_victory_from_england 
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_country_flag = fra_furina_come_to_france 
+						not = {
+							has_country_leader_ideology = anarchist_communism 
+							has_completed_focus = FRA_annul_the_nation 
+							has_completed_focus = FRA_because_her_morality 
+						}
+					}
+					ROOT = {
+						tag = GER 
+					}
+					FROM = {
+						OR = {
+							tag = FRA 
+							tag = ENG 
+							tag = USA 
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_faction_leader = yes 
+						ITA = {
+							is_in_faction_with = ROOT 
+						}
+					}
+					ITA = {
+						set_faction_leader = yes 
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_the_hurt_of_war 
+				}
+				every_country = {
+					limit = {
+						is_subject_of = ROOT  
+					}
+					FRA = {
+						annex_country = {
+							target = PREV 
+						}
+					}
+				}
+				FROM = {
+					white_peace = GER 
+					set_autonomy = {
+						target = GER 
+						autonomy_state = autonomy_supervised_state
+					}
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_country_flag = fra_furina_come_to_france 
+						not = {
+							has_country_leader_ideology = anarchist_communism 
+							has_completed_focus = FRA_annul_the_nation 
+							has_completed_focus = FRA_because_her_morality
+						}
+					}
+					ROOT = {
+						tag = ITA 
+					}
+					FROM = {
+						OR = {
+							tag = FRA 
+							tag = ENG 
+							tag = USA 
+						}
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_the_hurt_of_war 
+				}
+				every_country = {
+					limit = {
+						is_subject_of = ITA   
+					}
+					FRA = {
+						annex_country = {
+							target = PREV 
+						}
+					}
+				}
+				FROM = {
+					white_peace = ITA 
+					set_autonomy = {
+						target = ITA 
+						autonomy_state = autonomy_supervised_state
+					}
+				}
+				#log = "成功触发"
+			}
+		}
+	}
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = SOV 
+				}
+				drop_cosmetic_tag = yes 
+			}
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_country_flag = fra_furina_come_to_france 
+					not = { has_global_flag = fontaine_socialist }
+					has_government = communism 
+				}
+				FRA_Furina_de_Fontaine = {
+					add_country_leader_role = {
+						promote_leader = yes 
+						country_leader = {
+							ideology = marxism 
+							traits = {
+								star_idol_improved 
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

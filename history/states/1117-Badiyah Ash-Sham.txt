@@ -1,0 +1,14 @@
+state = {
+	id = 1117
+	name = 1117_Badiyah_Ash_Sham
+	manpower = 589
+	state_category = wasteland
+	history = {
+		owner = SYR 
+		add_core_of = SYR 
+		buildings = {
+			infrastructure = 1 
+		}
+	}
+	provinces = { 10383 12316 }
+}

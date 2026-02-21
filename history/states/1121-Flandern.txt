@@ -1,0 +1,25 @@
+state = {
+	id = 1121 
+	name = 1121_Flandern
+	manpower = 2070000
+	state_category = city 
+	history = {
+		owner = BEL 
+		add_core_of = BEL 
+		victory_points = { 
+			6560 10
+		}
+		victory_points = { 
+			3576 3 
+		}
+		buildings = {
+			infrastructure = 6 
+			industrial_complex = 2 
+			air_base = 5 
+			6560 = {
+				naval_base = 3
+			}
+		}
+	}
+	provinces = { 3576 6446 6560 13488 13486 }
+}

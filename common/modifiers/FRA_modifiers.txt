@@ -1,0 +1,36 @@
+FRA_send_volunteers_to_china = {
+	send_volunteer_size = 3 
+	send_volunteers_tension = -1 
+}
+
+FRA_alg_fra_trade = {
+	trade_cost_for_target_factor = -0.25 
+	trade_opinion_factor = 0.15 
+	extra_trade_to_target_factor = 0.05 
+	opinion_gain_monthly_factor = 0.5
+}
+
+FRA_volunteers_to_spain = {
+	send_volunteer_size = 5 
+}
+
+FRA_volunteer_common = {
+	send_volunteers_tension = -1 
+	send_volunteer_divisions_required = -1 
+	send_volunteer_size = 3 
+}
+
+FRA_anti_monarchy_effect = {
+	intel_network_gain_factor = 0.15 
+	boost_ideology_mission_factor = 0.20 
+}
+
+FRA_relation_with_communist_china = {
+	improve_relations_maintain_cost_factor = -0.75 
+	trade_opinion_factor = 0.50
+	send_volunteer_size = 1 
+	send_volunteers_tension = -0.75
+	lend_lease_tension = -0.75
+}
+
+

@@ -1,0 +1,46 @@
+characters = {
+	SNA_Angela_Merkel = {
+		name = SNA_Angela_Merkel
+		portraits = {
+			civilian = {
+				large = GFX_portrait_sna_Angela_Merkel
+			}
+		}
+		country_leader = {
+			ideology = christian_democracy 
+			traits = {
+				master_of_politics
+			}
+		}
+	}
+
+	SNA_Emmanuel_Macron = {
+		name = SNA_Emmanuel_Macron
+		portraits = {
+			civilian = {
+				large = GFX_portrait_sna_Emmanuel_Macron 
+			}
+		}
+		country_leader = {
+			ideology = paternalistic_conservatism 
+			traits = {
+				SWI_conservative_democrat
+			} 
+		}
+	}
+
+	SNA_Ikeda_Hayato = {
+		name = SNA_Ikeda_Hayato
+		portraits = {
+			civilian = {
+				large = GFX_portrait_sna_Ikeda_Hayato 
+			}
+		}
+		country_leader = {
+			ideology = national_conversatism 
+			traits = {
+				AFG_continuity_pm
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+
+state={
+	id=459
+	name="STATE_459" # Algiers
+	manpower = 3089944
+	state_category = city 
+	
+	resources={
+		steel=65 # was:26 was: 36
+		coal = 2 #initial distribution
+	}
+
+	history={
+		owner = FAG 
+		add_core_of = ALG
+		set_compliance = 96
+		start_resistance = yes
+		set_resistance = 1
+		victory_points = {
+			1145 15 
+		}
+		victory_points = {
+			7132 10 
+		}
+		victory_points = {
+			12711 1 
+		}
+		victory_points = {
+			4116 2 
+		}
+		victory_points = {
+			11923 5 
+		}
+		victory_points = {
+			10731 2 
+		}
+		victory_points = {
+			2049 2 
+		}
+		victory_points = {
+			5035 5 
+		}
+		victory_points = {
+			9964 5 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1 
+			air_base = 5
+			1145 = {
+				naval_base = 2
+			}
+			7132 = {
+				naval_base = 6
+			}
+		}
+	}
+
+	provinces={
+		1013 1145 4116 4131 4146 7132 9964 11923 11939 12760 12711 8088 10731 2049 1095 5035
+	}
+
+	local_supplies=0.0 
+}

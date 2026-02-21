@@ -1,0 +1,30 @@
+state={
+	id=440
+	name="STATE_440"
+	resources = {
+		steel = 8 
+		coal = 11
+	}
+	provinces={
+		4979 8007 8022 8106 9084 10139 10173 10887 10898 12792 10843 10066 12005
+	}
+	history={
+		owner = RAJ
+		add_core_of = PAK
+		add_core_of = KHL
+		victory_points = {
+			10066 20 
+		}
+		victory_points = {
+			12005 5 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+		}
+	}
+	manpower=16024000
+	buildings_max_level_factor=1.000
+	state_category = large_town 
+	local_supplies=0.500
+}

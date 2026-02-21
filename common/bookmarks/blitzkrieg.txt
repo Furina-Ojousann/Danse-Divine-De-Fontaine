@@ -1,0 +1,29 @@
+bookmarks = {
+	bookmark = {
+		name = "MISERABLE_WORLD"
+		desc = "MISERABLE_WORLD_DESC"
+		date = 1936.1.5.12
+		picture = "GFX_bookmark_miserable_world"
+		default_country = "FRA"
+	
+		FRA = {
+			minor = yes 
+			history = FONTAINE_HISTORY
+			ideology = democratic
+			ideas={
+				fra_political_polarization 
+				fra_fontiane_backbone 
+				fra_twilight_of_republic
+			}
+			focuses = {
+				FRA_1793
+				FRA_the_new_beginning
+				FRA_1871
+			}
+		}
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

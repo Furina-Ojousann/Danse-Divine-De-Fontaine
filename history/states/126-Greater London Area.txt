@@ -1,0 +1,50 @@
+state={
+	id=126
+	name="STATE_126"
+	manpower=9824296
+	
+	state_category = megalopolis
+
+	history={
+		owner = ENG
+		victory_points = {
+			11333 50 
+		}
+		set_province_name = {
+			id = 11333
+			name = VICTORY_POINTS_11333_RE 
+		}
+		buildings = {
+			infrastructure = 9 #was: 9
+			arms_factory = 2
+			industrial_complex = 3
+			#dockyard = 1
+			anti_air_building = 5
+			radar_station = 1
+			#air_base = 10
+
+			6103 = { 
+			    landmark_big_ben = {
+			        allowed = {
+			            has_dlc = "Gotterdammerung"
+			        }
+			        level = 1
+			    }
+			}
+
+		}
+		add_core_of = ENG
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 4
+			}
+		}
+	}
+
+	provinces={
+		11333 
+	}
+
+	local_supplies=0.0 
+}

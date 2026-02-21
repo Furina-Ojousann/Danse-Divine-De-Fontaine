@@ -1,0 +1,27 @@
+state = {
+	id = 1110
+	name = 1110_Beer_Sheva
+	manpower = 129000
+	state_category = rural 
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = ISR
+		victory_points = {
+			13452 5
+		}
+		victory_points = {
+			13451 3 
+		}
+		victory_points = {
+			1015 1
+		}
+		buildings = {
+			infrastructure = 3 
+			1015 = {
+				naval_base = 1 
+			}
+		}
+	}
+	provinces = { 13451 13452 13453 1015 7176 }
+}

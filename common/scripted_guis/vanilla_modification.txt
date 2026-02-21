@@ -1,0 +1,142 @@
+scripted_gui = {
+	fontaine_call_author_ui = {
+		window_name = Call_Author 
+		context_type = decision_category 
+		visible = { is_ai = no }
+	}
+	fontaine_subtechnologies_helicopter_ui = {
+		window_name = tech_subfolder_helicopter 
+		parent_window_name = support_folder 
+		visible = { always = yes }
+		effects = {
+			helicopter_equipment_bg_click = {
+				if = {
+					limit = { not = { check_variable = { displaying_index = 0 } } }
+					set_variable = { displaying_index = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { displaying_index = 1 } }
+					set_variable = { displaying_index = 0 }
+				}
+				else = {
+					set_variable = { displaying_index = 1 }
+				}
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3 
+				set_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+				if = {
+					limit = {
+						not = { has_country_flag = extraEvent5_has_displaced }
+						not = { is_special_project_completed = sp:sp_air_helicopter }
+					}
+					country_event = Modify_Extra.5 
+				}
+				if = {
+					limit = {
+						is_special_project_completed = sp:sp_air_helicopter 
+						date > 1941.12.31 
+					}
+					country_event = Modify_Extra.6 
+				}
+			}
+			helicopter_company_1_bg_click = {
+				if = {
+					limit = { not = { check_variable = { displaying_index = 0 } } }
+					set_variable = { displaying_index = 2 }
+				}
+				else_if = {
+					limit = { check_variable = { displaying_index = 2 } }
+					set_variable = { displaying_index = 0 }
+				}
+				else = {
+					set_variable = { displaying_index = 2 }
+				}
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3 
+				set_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+				if = {
+					limit = {
+						date > 1941.12.31
+						not = { has_tech = tech_unit_attack_helicopter_support_company_1 }
+						has_tech = tech_equipment_attack_helicopter
+					}
+					country_event = Modify_Extra.7 
+				}
+			}
+			helicopter_company_2_bg_click = {
+				if = {
+					limit = { not = { check_variable = { displaying_index = 0 } } }
+					set_variable = { displaying_index = 3 }
+				}
+				else_if = {
+					limit = { check_variable = { displaying_index = 3 } }
+					set_variable = { displaying_index = 0 }
+				}
+				else = {
+					set_variable = { displaying_index = 3 }
+				}
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3 
+				set_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+				if = {
+					limit = {
+						date > 1944.12.31
+						not = { has_tech = tech_unit_attack_helicopter_support_company_2 }
+						has_tech = tech_equipment_attack_helicopter
+						has_tech = tech_unit_attack_helicopter_support_company_1 
+					}
+					country_event = Modify_Extra.8 
+				}
+			}
+			helicopter_company_3_bg_click = {
+				if = {
+					limit = { not = { check_variable = { displaying_index = 0 } } }
+					set_variable = { displaying_index = 4 }
+				}
+				else_if = {
+					limit = { check_variable = { displaying_index = 4 } }
+					set_variable = { displaying_index = 0 }
+				}
+				else = {
+					set_variable = { displaying_index = 4 }
+				}
+				else = { set_country_flag = fontaine_subtech_is_displaying }
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+				clr_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3 
+				set_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3
+				if = {
+					limit = {
+						date > 1947.12.31
+						not = { has_tech = tech_unit_attack_helicopter_support_company_3 }
+						has_tech = tech_equipment_attack_helicopter
+						has_tech = tech_unit_attack_helicopter_support_company_1 
+						has_tech = tech_unit_attack_helicopter_support_company_2 
+					}
+					country_event = Modify_Extra.8 
+				}
+			}
+		}
+		properties = {
+			helicopter_equipment_bg = {
+				image = "[GetCurrentTechBackgroundLarge]"
+			}
+			helicopter_company_1_bg = {
+				image = "[GetCurrentTechBackgroundHelicopter1]"
+			}
+			helicopter_company_2_bg = {
+				image = "[GetCurrentTechBackgroundHelicopter2]"
+			}
+			helicopter_company_3_bg = {
+				image = "[GetCurrentTechBackgroundHelicopter3]"
+			}
+		}
+	}
+}

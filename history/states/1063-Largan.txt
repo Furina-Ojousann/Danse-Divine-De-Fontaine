@@ -1,0 +1,20 @@
+state = {
+	id = 1063
+	name = 1063_La_Gan
+	manpower = 2718
+	state_category = wasteland
+	history = { 
+		owner = FAG 
+		add_core_of = ALG 
+		buildings = {
+			infrastructure = 2 
+		}
+		victory_points = {
+			13432 3 
+		}
+		add_dynamic_modifier = {
+			modifier = Self_sufficient_oasis 
+		}
+	}
+	provinces = { 13432 }
+}

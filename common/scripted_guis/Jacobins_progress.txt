@@ -1,0 +1,18 @@
+scripted_gui = {
+	Jacobins_progress_gui = {
+		window_name = Societe_des_amis_de_laConstitution_reform_progress 
+		context_type = decision_category
+		visible = { always = yes }
+		properties = {
+			progress_liberty = {
+				frame = fontaine_liberty_progress
+			}
+			progress_equality = {
+				frame = fontaine_equality_progress
+			}
+			progress_fraternity = {
+				frame = fontaine_fraternity_progress
+			}
+		}
+	}
+}

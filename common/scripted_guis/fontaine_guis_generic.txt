@@ -1,0 +1,1300 @@
+scripted_gui = {
+	Japan_Empire_desc = {
+		window_name = Japan_History_Window 
+		context_type = player_context 
+		visible = {
+			has_country_flag = show_japan_history_window 
+		}
+		triggers = {
+			Description_Japan_visible = {
+				has_country_flag = japan_show_background 
+			}
+			
+		}
+		effects = {
+			Empire_click = {
+				clr_country_flag = show_japan_history_window 
+			}
+			Map_click = {
+				if = {
+					limit = { has_country_flag = japan_show_background }
+					clr_country_flag = japan_show_background 
+					clr_country_flag = japan_show_map 
+					set_variable = { japan_show_position_x = 20 }
+					set_variable = { japan_show_position_y = 67 }
+				}
+				else = {
+					set_country_flag = japan_show_background
+					set_country_flag = japan_show_map
+					clr_country_flag = japan_show_man 
+					clr_country_flag = japan_show_ojyu
+					clr_country_flag = japan_show_sakura 
+					set_variable = { japan_show_position_x = 10 }
+					set_variable = { japan_show_position_y = 20 }
+				}
+				
+			}
+			Sakura_click = {
+				if = {
+					limit = { has_country_flag = japan_show_background }
+					clr_country_flag = japan_show_background 
+					clr_country_flag = japan_show_sakura 
+					set_variable = { japan_show_position_x = 167 }
+					set_variable = { japan_show_position_y = 167 }
+				}
+				else = {
+					set_country_flag = japan_show_background
+					set_country_flag = japan_show_sakura
+					clr_country_flag = japan_show_man 
+					clr_country_flag = japan_show_ojyu
+					clr_country_flag = japan_show_map 
+					set_variable = { japan_show_position_x = 10 }
+					set_variable = { japan_show_position_y = 20 }
+				}
+			}
+			Ojyu_click = {
+				if = {
+					limit = { has_country_flag = japan_show_background }
+					clr_country_flag = japan_show_background 
+					clr_country_flag = japan_show_ojyu 
+					set_variable = { japan_show_position_x = 552 }
+					set_variable = { japan_show_position_y = 106 }
+				}
+				else = {
+					set_country_flag = japan_show_background
+					set_country_flag = japan_show_ojyu
+					clr_country_flag = japan_show_man 
+					clr_country_flag = japan_show_map 
+					clr_country_flag = japan_show_sakura 
+					set_variable = { japan_show_position_x = 10 }
+					set_variable = { japan_show_position_y = 20 }
+				}
+			}
+			Man_click = {
+				if = {
+					limit = { has_country_flag = japan_show_background }
+					clr_country_flag = japan_show_background 
+					clr_country_flag = japan_show_man 
+					set_variable = { japan_show_position_x = 702 }
+					set_variable = { japan_show_position_y = 184 }
+				}
+				else = {
+					set_country_flag = japan_show_background
+					set_country_flag = japan_show_man
+					clr_country_flag = japan_show_map 
+					clr_country_flag = japan_show_ojyu
+					clr_country_flag = japan_show_sakura 
+					set_variable = { japan_show_position_x = 10 }
+					set_variable = { japan_show_position_y = 20 }
+				}
+			}
+		}
+	}
+	Fontaine_design = {
+		window_name = Fotnaine_design
+		context_type = decision_category 
+		visible = { is_ai = no }
+		properties = {
+			Army_design = { x = army_design_show_position }
+			Furina_design = { x = furina_design_show_position }
+			Peruere_Snezhevna_design = { x = peruere_snezhevna_design_show_position }
+		}
+		effects = {
+			Army_design_click = {  
+				if = {
+					limit = { check_variable = { army_design_show_position = 75 } }
+					set_variable = { army_design_show_position = -300 }
+					clr_country_flag = fontaine_design_show_army_decisions 
+				}
+				else = {
+					set_variable = { army_design_show_position = 75 }
+					set_country_flag = fontaine_design_show_army_decisions
+				}
+			}
+			Furina_design_click = {
+				if = {
+					limit = { check_variable = { furina_design_show_position = 75 } }
+					set_variable = { furina_design_show_position = -350 }
+					clr_country_flag = fontaine_design_show_furina_decisions 
+				}
+				else = {
+					set_variable = { furina_design_show_position = 75 }
+					set_country_flag = fontaine_design_show_furina_decisions
+				}
+			}
+			Peruere_Snezhevna_design_click = {
+				if = {
+					limit = { check_variable = { peruere_snezhevna_design_show_position = 75 } }
+					set_variable = { peruere_snezhevna_design_show_position = -400 }
+					clr_country_flag = fontaine_design_show_peruere_decisions 
+				}
+				else = {
+					set_variable = { peruere_snezhevna_design_show_position = 75 }
+					set_country_flag = fontaine_design_show_peruere_decisions
+				}
+			}
+
+		}
+	}
+	Fontaine_start_icon = {
+		window_name = Fontaine_three_force_icon 
+		parent_window_token = politics_tab
+		visible = {
+			ROOT = { has_completed_focus = FRA_the_ceremony_for_a_new_king  }
+		}
+		effects = {
+			start_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = show_three_force
+					}
+					clr_country_flag = show_three_force
+				}
+				else = {
+					set_country_flag = show_three_force 
+				}
+			}
+		}
+	}
+	Three_force = {
+		window_name = Fontaine_three_force
+		parent_window_token = politics_tab 
+		visible = {
+			ROOT = { has_country_flag = show_three_force  }
+		}
+	}
+	France_Congress = {
+		window_name = France_Congress_grid
+		context_type = decision_category 
+		visible = {
+			original_tag = FRA 
+		}
+		dynamic_lists = {
+			parliament_grid = {
+				array = parliament_seats
+				change_scope = no
+				entry_container = parliament_seat_container
+				index = idx
+			}
+		}
+
+		properties = {
+			parliament_icon = {
+				x = seat_x^idx
+				y = seat_y^idx
+				frame = seat_frame^idx
+			}
+		}
+
+	}
+
+	Renew_Fontaine_economic_task = {
+		window_name = R_Fontaine_Economy 
+		parent_window_token = national_focus  
+		visible = {
+			original_tag = FRA 
+			has_idea = FRA_Navia_Caspar_political_advisor 
+			not = { has_country_flag = fontaine_resetting_accomplish }
+		}
+		properties = {
+			Consumption = {
+				frame = R_Consumption_frame 
+			}
+			Finance = {
+				frame = R_Finance_frame
+			}
+			Labour = {
+				frame = R_Labour_frame 
+			}
+			Price = {
+				frame = R_Price_frame 
+			}
+			Tax = {
+				frame = R_Tax_frame 
+			}
+			Trade = {
+				frame = R_Trade_frame 
+			}
+			Trust = {
+				frame = R_Trust_frame 
+			}
+		}
+	}
+
+	Renew_Fontaine_Parliament_Used_In_PlayerContext = {
+		window_name = Renew_Fontaine_Parliament_PlayerContext 
+		context_type = player_context 
+		visible = { original_tag = FRA is_ai = no has_country_flag = fontaine_show_parliament has_country_flag = fontaine_show_player_context_parliament }
+
+		dynamic_lists = {
+			playerContext_renew_parliament_grid = {
+				array = r_parliament_seats
+				change_scope = no
+				entry_container = renew_parliament_seat_container
+				index = idx
+			}
+		}
+
+		triggers = {
+			R_bill_ongoing_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing } #若有在表决的提案，显示
+			}
+			R_bill_description_bg_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_Bill_on_going_name_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_bill_support_situation_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing has_country_flag = r_fontaine_show_situation }
+			}
+			R_Fontaine_Parliament_desc_visible = {
+				ROOT = { not = { has_country_flag = r_fontaine_any_bill_ongoing } }
+			}
+			R_Fontaine_Bill_desc_visible = {
+				ROOT = { has_country_flag = r_fontaine_show_situation }
+			}
+		}
+
+		properties = {
+			renew_parliament_icon = {
+				x = r_seat_x^idx
+				y = r_seat_y^idx
+				frame = r_seat_frame^idx
+			}
+
+			R_bill_ongoing = {
+				image = "[GetCurrentBill]"
+			}
+
+			R_Bill_on_going_name = {
+				image = "[GetCurrentBillDescription]"
+			}
+		}
+	}
+
+	Renew_Fontaine_Parliament = {
+		window_name = Renew_Fontaine_Parliament_grid
+		#parent_scripted_gui = Renew_Fontaine_Parliament_Decorations_UI 
+		#parent_window_name = Renew_Fontaine_Parliament_Decorations
+		
+		context_type = decision_category 
+		visible = {
+			original_tag = FRA 
+		}
+		dynamic_lists = {
+			renew_parliament_grid = {
+				array = r_parliament_seats
+				change_scope = no
+				entry_container = renew_parliament_seat_container
+				index = idx
+			}
+		}
+
+		triggers = {
+			R_bill_ongoing_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing } #若有在表决的提案，显示
+			}
+			R_bill_description_bg_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_Bill_on_going_name_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_bill_support_situation_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing has_country_flag = r_fontaine_show_situation }
+			}
+			R_Fontaine_Parliament_desc_visible = {
+				ROOT = { not = { has_country_flag = r_fontaine_any_bill_ongoing } }
+			}
+			R_Fontaine_Bill_desc_visible = {
+				ROOT = { has_country_flag = r_fontaine_show_situation }
+			}
+		}
+
+		properties = {
+			renew_parliament_icon = {
+				x = r_seat_x^idx
+				y = r_seat_y^idx
+				frame = r_seat_frame^idx
+			}
+
+			R_bill_ongoing = {
+				image = "[GetCurrentBill]"
+			}
+
+			R_Bill_on_going_name = {
+				image = "[GetCurrentBillDescription]"
+			}
+		}
+
+	}
+
+	people_zeal_ui = {
+		window_name = People_zeal
+		context_type = decision_category 
+		visible = {
+			is_ai = no 
+		}
+		triggers = {
+			zeal_1_visible = {  
+				check_variable = { people_zeal_value < 20 }
+			}
+			zeal_1_active_visible = { 
+				check_variable = { people_zeal_value > 19.99 }
+			}
+			zeal_2_visible = {  
+				check_variable = { people_zeal_value < 40 }
+			}
+			zeal_2_active_visible = { 
+				check_variable = { people_zeal_value > 39.99 }
+			}
+			zeal_3_visible = {  
+				check_variable = { people_zeal_value < 60 }
+			}
+			zeal_3_active_visible = { 
+				check_variable = { people_zeal_value > 59.99 }
+			}
+			zeal_4_visible = {  
+				check_variable = { people_zeal_value < 80 }
+			}
+			zeal_4_active_visible = { 
+				check_variable = { people_zeal_value > 79.99 }
+			}
+			zeal_5_visible = {  
+				check_variable = { people_zeal_value < 100 }
+			}
+			zeal_5_active_visible = { 
+				check_variable = { people_zeal_value > 99.99 }
+			}
+		}
+	}
+	anarchist_map_button_ui = {
+		window_name = start_the_anarchist_ui 
+		parent_window_token = politics_tab 
+		visible = {
+			OR = {
+				AND = {
+					original_tag = FRA 
+					has_completed_focus = FRA_annul_the_nation 
+					is_ai = no 
+				}
+				#is_debug = yes 
+			}
+		}
+		effects = {
+			anarchist_ui_click = {
+				if = {
+					limit = {
+						has_country_flag = show_anarchist_map 
+					}
+					clr_country_flag = show_anarchist_map 
+				}
+				else = {
+					set_country_flag = show_anarchist_map
+				}
+			}
+		}
+
+	}
+	fontaine_anarchist_map_ui = {
+		window_name = anarchist_map 
+		context_type = player_context 
+		visible = {
+			is_ai = no 
+			tag = FRA 
+			has_country_flag = show_anarchist_map 
+		}
+		effects = {
+			Anarchist_State_1_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 1 } set_temp_variable = { this_unity = unity_1 } set_temp_variable = { this_chao = chao_1 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_2_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 2 } set_temp_variable = { this_unity = unity_2 } set_temp_variable = { this_chao = chao_2 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_3_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 3 } set_temp_variable = { this_unity = unity_3 } set_temp_variable = { this_chao = chao_3 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_4_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 4 } set_temp_variable = { this_unity = unity_4 } set_temp_variable = { this_chao = chao_4 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_5_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 5 } set_temp_variable = { this_unity = unity_5 } set_temp_variable = { this_chao = chao_5 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_6_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 6 } set_temp_variable = { this_unity = unity_6 } set_temp_variable = { this_chao = chao_6 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_7_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 7 } set_temp_variable = { this_unity = unity_7 } set_temp_variable = { this_chao = chao_7 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_8_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 8 } set_temp_variable = { this_unity = unity_8 } set_temp_variable = { this_chao = chao_8 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_9_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 9 } set_temp_variable = { this_unity = unity_9 } set_temp_variable = { this_chao = chao_9 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_10_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 10 } set_temp_variable = { this_unity = unity_10 } set_temp_variable = { this_chao = chao_10 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_11_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 11 } set_temp_variable = { this_unity = unity_11 } set_temp_variable = { this_chao = chao_11 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_12_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 12 } set_temp_variable = { this_unity = unity_12 } set_temp_variable = { this_chao = chao_12 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_13_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 13 } set_temp_variable = { this_unity = unity_13 } set_temp_variable = { this_chao = chao_13 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_14_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 14 } set_temp_variable = { this_unity = unity_14 } set_temp_variable = { this_chao = chao_14 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_15_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 15 } set_temp_variable = { this_unity = unity_15 } set_temp_variable = { this_chao = chao_15 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_16_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 16 } set_temp_variable = { this_unity = unity_16 } set_temp_variable = { this_chao = chao_16 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_17_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 17 } set_temp_variable = { this_unity = unity_17 } set_temp_variable = { this_chao = chao_17 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_18_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 18 } set_temp_variable = { this_unity = unity_18 } set_temp_variable = { this_chao = chao_18 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_19_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 19 } set_temp_variable = { this_unity = unity_19 } set_temp_variable = { this_chao = chao_19 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_20_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 20 } set_temp_variable = { this_unity = unity_20 } set_temp_variable = { this_chao = chao_20 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_21_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 21 } set_temp_variable = { this_unity = unity_21 } set_temp_variable = { this_chao = chao_21 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_22_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 22 } set_temp_variable = { this_unity = unity_22 } set_temp_variable = { this_chao = chao_22 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_23_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 23 } set_temp_variable = { this_unity = unity_23 } set_temp_variable = { this_chao = chao_23 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_24_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 24 } set_temp_variable = { this_unity = unity_24 } set_temp_variable = { this_chao = chao_24 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_25_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 25 } set_temp_variable = { this_unity = unity_25 } set_temp_variable = { this_chao = chao_25 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_26_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 26 } set_temp_variable = { this_unity = unity_26 } set_temp_variable = { this_chao = chao_26 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_27_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 27 } set_temp_variable = { this_unity = unity_27 } set_temp_variable = { this_chao = chao_27 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_28_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 28 } set_temp_variable = { this_unity = unity_28 } set_temp_variable = { this_chao = chao_28 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_29_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 29 } set_temp_variable = { this_unity = unity_29 } set_temp_variable = { this_chao = chao_29 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+			Anarchist_State_30_click = { if = { limit = { not = { check_variable = { show_state = 0 } } } set_variable = { show_state = 0 } } else = { set_variable = { show_state = 30 } set_temp_variable = { this_unity = unity_30 } set_temp_variable = { this_chao = chao_30 } set_variable = { show_state_unity = this_unity } set_variable = { show_state_chao = this_chao } } }
+		}
+		triggers = {
+			Anarchist_State_1_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 1 } } }
+			Anarchist_State_2_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 2 } } }
+			Anarchist_State_3_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 3 } } }
+			Anarchist_State_4_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 4 } } }
+			Anarchist_State_5_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 5 } } }
+			Anarchist_State_6_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 6 } } }
+			Anarchist_State_7_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 7 } } }
+			Anarchist_State_8_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 8 } } }
+			Anarchist_State_9_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 9 } } }
+			Anarchist_State_10_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 10 } } }
+			Anarchist_State_11_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 11 } } }
+			Anarchist_State_12_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 12 } } }
+			Anarchist_State_13_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 13 } } }
+			Anarchist_State_14_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 14 } } }
+			Anarchist_State_15_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 15 } } }
+			Anarchist_State_16_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 16 } } }
+			Anarchist_State_17_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 17 } } }
+			Anarchist_State_18_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 18 } } }
+			Anarchist_State_19_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 19 } } }
+			Anarchist_State_20_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 20 } } }
+			Anarchist_State_21_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 21 } } }
+			Anarchist_State_22_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 22 } } }
+			Anarchist_State_23_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 23 } } }
+			Anarchist_State_24_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 24 } } }
+			Anarchist_State_25_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 25 } } }
+			Anarchist_State_26_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 26 } } }
+			Anarchist_State_27_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 27 } } }
+			Anarchist_State_28_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 28 } } }
+			Anarchist_State_29_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 29 } } }
+			Anarchist_State_30_visible = { OR = { check_variable = { show_state = 0 } check_variable = { show_state = 30 } } }
+			unity_visible = { not = { check_variable = { show_state = 0 } } }
+			chao_visible = { not = { check_variable = { show_state = 0 } } }
+			unity_tt_visible = { not = { check_variable = { show_state = 0 } } }
+			chao_tt_visible = { not = { check_variable = { show_state = 0 } } }
+		}
+		properties = {
+			unity = { frame = show_state_unity }
+			chao = { frame = show_state_chao }
+			Anarchist_State_1 = { frame = state_1_level }
+			Anarchist_State_2 = { frame = state_2_level }
+			Anarchist_State_3 = { frame = state_3_level }
+			Anarchist_State_4 = { frame = state_4_level }
+			Anarchist_State_5 = { frame = state_5_level }
+			Anarchist_State_6 = { frame = state_6_level }
+			Anarchist_State_6 = { frame = state_6_level }
+			Anarchist_State_7 = { frame = state_7_level }
+			Anarchist_State_8 = { frame = state_8_level }
+			Anarchist_State_9 = { frame = state_9_level }
+			Anarchist_State_10 = { frame = state_10_level }
+			Anarchist_State_11 = { frame = state_11_level }
+			Anarchist_State_12 = { frame = state_12_level }
+			Anarchist_State_13 = { frame = state_13_level }
+			Anarchist_State_14 = { frame = state_14_level }
+			Anarchist_State_15 = { frame = state_15_level }
+			Anarchist_State_16 = { frame = state_16_level }
+			Anarchist_State_17 = { frame = state_17_level }
+			Anarchist_State_18 = { frame = state_18_level }
+			Anarchist_State_19 = { frame = state_19_level }
+			Anarchist_State_20 = { frame = state_20_level }
+			Anarchist_State_21 = { frame = state_21_level }
+			Anarchist_State_22 = { frame = state_22_level }
+			Anarchist_State_23 = { frame = state_23_level }
+			Anarchist_State_24 = { frame = state_24_level }
+			Anarchist_State_25 = { frame = state_25_level }
+			Anarchist_State_26 = { frame = state_26_level }
+			Anarchist_State_27 = { frame = state_27_level }
+			Anarchist_State_28 = { frame = state_28_level }
+			Anarchist_State_29 = { frame = state_29_level }
+			Anarchist_State_30 = { frame = state_30_level }
+		}
+	}
+	fontaine_election_map_button_ui = {
+		window_name = fontaine_election_map_button 
+		context_type = player_context 
+		visible = {
+			always = no 
+		}
+		effects = {
+			election_map_button_click = {
+				if = {
+					limit = {
+						has_country_flag = show_election_map 
+					}
+					clr_country_flag = show_election_map 
+				}
+				else = {
+					set_country_flag = show_election_map 
+				}
+			}
+		}
+	}
+	fontaine_election_map_gui = {
+		window_name = fontaine_election_map 
+		context_type = player_context 
+		visible = {
+			is_ai = no 
+			has_country_flag = show_election_map
+		}
+		effects = {
+			states_1_click = {
+				set_variable = { state_selected = 1 }
+			}
+			states_2_click = {
+				set_variable = { state_selected = 2 }
+			}
+			states_3_click = {
+				set_variable = { state_selected = 3 }
+			}
+			states_4_click = {
+				set_variable = { state_selected = 4 }
+			}
+			states_5_click = {
+				set_variable = { state_selected = 5 }
+			}
+			states_6_click = {
+				set_variable = { state_selected = 6 }
+			}
+			states_7_click = {
+				set_variable = { state_selected = 7 }
+			}
+			states_8_click = {
+				set_variable = { state_selected = 8 }
+			}
+			states_9_click = {
+				set_variable = { state_selected = 9 }
+			}
+			states_10_click = {
+				set_variable = { state_selected = 10 }
+			}
+			states_11_click = {
+				set_variable = { state_selected = 11 }
+			}
+			states_12_click = {
+				set_variable = { state_selected = 12 }
+			}
+			states_13_click = {
+				set_variable = { state_selected = 13 }
+			}
+			states_14_click = {
+				set_variable = { state_selected = 14 }
+			}
+			states_15_click = {
+				set_variable = { state_selected = 15 }
+			}
+			states_16_click = {
+				set_variable = { state_selected = 16 }
+			}
+			states_17_click = {
+				set_variable = { state_selected = 17 }
+			}
+			states_18_click = {
+				set_variable = { state_selected = 18 }
+			}
+			states_19_click = {
+				set_variable = { state_selected = 19 }
+			}
+			states_20_click = {
+				set_variable = { state_selected = 20 }
+			}
+			states_21_click = {
+				set_variable = { state_selected = 21 }
+			}
+			states_22_click = {
+				set_variable = { state_selected = 22 }
+			}
+			states_23_click = {
+				set_variable = { state_selected = 23 }
+			}
+			states_24_click = {
+				set_variable = { state_selected = 24 }
+			}
+			states_25_click = {
+				set_variable = { state_selected = 25 }
+			}
+			states_26_click = {
+				set_variable = { state_selected = 26 }
+			}
+			states_27_click = {
+				set_variable = { state_selected = 27 }
+			}
+			states_28_click = {
+				set_variable = { state_selected = 28 }
+			}
+			states_29_click = {
+				set_variable = { state_selected = 29 }
+			}
+			states_30_click = {
+				set_variable = { state_selected = 30 }
+			}
+			states_31_click = {
+				set_variable = { state_selected = 31 }
+			}
+			states_32_click = {
+				set_variable = { state_selected = 32 }
+			}
+			states_33_click = {
+				set_variable = { state_selected = 33 }
+			}
+			states_34_click = {
+				set_variable = { state_selected = 34 }
+			}
+			states_35_click = {
+				set_variable = { state_selected = 35 }
+			}
+			states_36_click = {
+				set_variable = { state_selected = 36 }
+			}
+			states_37_click = {
+				set_variable = { state_selected = 37 }
+			}
+			states_38_click = {
+				set_variable = { state_selected = 38 }
+			}
+			states_39_click = {
+				set_variable = { state_selected = 39 }
+			}
+			states_40_click = {
+				set_variable = { state_selected = 40 }
+			}
+			states_41_click = {
+				set_variable = { state_selected = 41 }
+			}
+			states_42_click = {
+				set_variable = { state_selected = 42 }
+			}
+			states_43_click = {
+				set_variable = { state_selected = 43 }
+			}
+			states_44_click = {
+				set_variable = { state_selected = 44 }
+			}
+			states_45_click = {
+				set_variable = { state_selected = 45 }
+			}
+			states_46_click = {
+				set_variable = { state_selected = 46 }
+			}
+			states_47_click = {
+				set_variable = { state_selected = 47 }
+			}
+			states_48_click = {
+				set_variable = { state_selected = 48 }
+			}
+			states_49_click = {
+				set_variable = { state_selected = 49 }
+			}
+			states_50_click = {
+				set_variable = { state_selected = 50 }
+			}
+			states_51_click = {
+				set_variable = { state_selected = 51 }
+			}
+			states_52_click = {
+				set_variable = { state_selected = 52 }
+			}
+			states_53_click = {
+				set_variable = { state_selected = 53 }
+			}
+		}
+		properties = {
+			states_1 = { frame = 1.party }
+			states_2 = { frame = 2.party }
+			states_3 = { frame = 3.party }
+			states_4 = { frame = 4.party }
+			states_5 = { frame = 5.party }
+			states_6 = { frame = 6.party }
+			states_7 = { frame = 7.party }
+			states_8 = { frame = 8.party }
+			states_9 = { frame = 9.party }
+			states_10 = { frame = 10.party }
+			states_11 = { frame = 11.party }
+			states_12 = { frame = 12.party }
+			states_13 = { frame = 13.party }
+			states_14 = { frame = 14.party }
+			states_15 = { frame = 15.party }
+			states_16 = { frame = 16.party }
+			states_17 = { frame = 17.party }
+			states_18 = { frame = 18.party }
+			states_19 = { frame = 19.party }
+			states_20 = { frame = 20.party }
+			states_21 = { frame = 21.party }
+			states_22 = { frame = 22.party }
+			states_23 = { frame = 23.party }
+			states_24 = { frame = 24.party }
+			states_25 = { frame = 25.party }
+			states_53 = { frame = 53.party }
+			states_27 = { frame = 27.party }
+			states_28 = { frame = 28.party }
+			states_29 = { frame = 29.party }
+			states_30 = { frame = 30.party }
+			states_31 = { frame = 31.party }
+			states_32 = { frame = 32.party }
+			states_33 = { frame = 33.party }
+			states_34 = { frame = 34.party }
+			states_35 = { frame = 35.party }
+			states_36 = { frame = 36.party }
+			states_37 = { frame = 37.party }
+			states_38 = { frame = 38.party }
+			states_39 = { frame = 39.party }
+			states_40 = { frame = 40.party }
+			states_41 = { frame = 41.party }
+			states_42 = { frame = 42.party }
+			states_43 = { frame = 43.party }
+			states_44 = { frame = 44.party }
+			states_45 = { frame = 45.party }
+			states_46 = { frame = 46.party }
+			states_47 = { frame = 47.party }
+			states_48 = { frame = 48.party }
+			states_49 = { frame = 49.party }
+			states_50 = { frame = 50.party }
+			states_51 = { frame = 51.party }
+			states_52 = { frame = 52.party }
+
+			selected_states = {
+				image = "[GETselectedstates]"
+				frame = THIS.party
+			}
+		}
+	}
+	fontaine_superevents_gui = {
+		window_name = Fontaine_superevents_window_view 
+		context_type = player_context 
+		triggers = {
+			superevents_window_visible = { 
+				has_country_flag = show_fontaine_revolution_superevent
+				is_ai = no 
+			}
+			superevents_opinion_visible = {
+				has_country_flag = show_fontaine_revolution_superevent
+				is_ai = no 
+			}
+		}
+		effects = {
+			superevents_opinion_click = {
+				clr_country_flag = show_fontaine_revolution_superevent 
+			}
+		}
+	}
+	fontaine_leader_group_gui = {
+		window_name = fontaine_leader_group
+		parent_window_token = politics_tab 
+		properties = {
+			communist_dip = {
+				image = "[GETdipminister]"
+			}
+			communist_minister = {
+				image = "[GETpolminister]"
+			}
+			communist_the_mil = {
+				image = "[GETmilminister]"
+			}
+			communist_the_chairman_portrait = {
+				frame = chairman_frame
+			}
+			communist_the_mil = {
+				frame = mil_frame
+			}
+			communist_minister = {
+				frame = minister_frame
+			}
+			communist_dip = {
+				frame = dip_frame
+			}
+		}
+		visible = {
+			has_country_flag = show_collective_leadership_gui 
+		}
+		triggers = {
+			communist_the_mil_gaulle_visible = {
+				has_country_flag = Gaulle_is_mil_minister 
+			}
+			communist_the_mil_gamelin_visible = {
+				has_country_flag = Gamelin_is_mil_minister 
+			}
+			communist_minister_charlotte_visible = {
+				has_country_flag = Charlotte_is_pol_minister 
+			}
+			communist_minister_cachin_visible = {
+				has_country_flag = Cachin_is_pol_minister  
+			}
+			communist_minister_navia_visible = {
+				has_country_flag = Navia_is_pol_minister
+			}
+			communist_minister_thorez_visible = {
+				has_country_flag = Thorez_is_pol_minister 
+			}
+			chairman_motion_no_confidence_visible = {
+				check_variable = {
+					chairman_frame = 2 
+				}
+			}
+			chairman_motion_close_visible = {
+				check_variable = {
+					chairman_frame = 2 
+				}
+			}
+			mil_motion_no_confidence_visible = {
+				check_variable = {
+					mil_frame = 2 
+				}
+			}
+			mil_motion_close_visible = {
+				check_variable = {
+					mil_frame = 2 
+				}
+			}
+			pol_motion_no_confidence_visible = {
+				check_variable = {
+					minister_frame = 2 
+				}
+			}
+			pol_motion_close_visible = {
+				check_variable = {
+					minister_frame = 2 
+				}
+			}
+			dip_motion_no_confidence_visible = {
+				check_variable = {
+					dip_frame = 2 
+				}
+			}
+			dip_motion_close_visible = {
+				check_variable = {
+					dip_frame = 2 
+				}
+			}
+		}
+		effects = {
+			communist_the_chairman_portrait_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chairman_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						chairman_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						chairman_frame = -1 
+					}
+				}
+			}
+			communist_the_mil_gamelin_click = {
+				if = {
+					limit = {
+						check_variable = {
+							mil_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						mil_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						mil_frame = -1 
+					}
+				}
+			}
+			communist_the_mil_gaulle_click = {
+				if = {
+					limit = {
+						check_variable = {
+							mil_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						mil_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						mil_frame = -1 
+					}
+				}
+			}
+			communist_minister_charlotte_click = {
+				if = {
+					limit = {
+						check_variable = {
+							minister_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						minister_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						minister_frame = -1 
+					}
+				}
+			}
+			communist_minister_cachin_click = {
+				if = {
+					limit = {
+						check_variable = {
+							minister_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						minister_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						minister_frame = -1 
+					}
+				}
+			}
+			communist_minister_navia_click = {
+				if = {
+					limit = {
+						check_variable = {
+							minister_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						minister_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						minister_frame = -1 
+					}
+				}
+			}
+			communist_minister_thorez_click = {
+				if = {
+					limit = {
+						check_variable = {
+							minister_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						minister_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						minister_frame = -1 
+					}
+				}
+			}
+			communist_dip_click = {
+				if = {
+					limit = {
+						check_variable = {
+							dip_frame = 1 
+						}
+					}
+					add_to_variable = { 
+						dip_frame = 1 
+					 }
+				}
+				else = {
+					add_to_variable = {
+						dip_frame = -1 
+					}
+				}
+			}
+		}
+	}
+	game_ending_gui = {
+		window_name = game_engding_ui
+		context_type = player_context 
+		visible = {
+			has_country_flag = show_ending_window
+		}
+		effects = {
+			the_ending_click = {
+				if = {
+					limit = {
+						not = {
+							has_country_flag = show_ending 
+						}
+					}
+					set_country_flag = show_ending 
+				}
+				else = {
+					clr_country_flag = show_ending 
+				}
+			}
+			other_info_click = {
+				if = {
+					limit = {
+						not = {
+							has_country_flag = show_other_info 
+						}
+					}
+					set_country_flag = show_other_info 
+				}
+				else = {
+					clr_country_flag = show_other_info 
+				}
+			}
+			the_plans_click = {
+				if = {
+					limit = {
+						not = {
+							has_country_flag = show_plans 
+						}
+					}
+					set_country_flag = show_plans
+				}
+				else = {
+					clr_country_flag = show_plans 
+				}
+			}
+			close_gui_com_click = {
+				clr_country_flag = show_ending_window 
+			}
+			close_gui_dem_click = {
+				clr_country_flag = show_ending_window 
+			}
+			close_gui_neu_click = {
+				clr_country_flag = show_ending_window 
+			}
+			close_gui_fas_click = {
+				clr_country_flag = show_ending_window 
+			}
+		}
+		triggers = {
+			the_end_title_visible = {
+				has_country_flag = show_ending 
+			}
+			the_ending_text_visible = {
+				has_country_flag = show_ending 
+			}
+			close_gui_com_visible = {
+				has_government = communism 
+			}
+			close_gui_dem_visible = {
+				has_government = democratic 
+			}
+			close_gui_neu_visible = {
+				has_government = neutrality 
+			}
+			close_gui_fas_visible = {
+				has_government = fascism  
+			}
+			the_other_info_text_visible = {
+				has_country_flag = show_other_info
+			}
+			the_other_info_visible = {
+				has_country_flag = show_other_info 
+			}
+			the_future_plans_visible = {
+				has_country_flag = show_plans 
+			}
+			the_future_plans_info_visible = {
+				has_country_flag = show_plans 
+			}
+		}
+	}
+	ply_gui = {
+		window_name = ply_manager_ui 
+		context_type = decision_category 
+		visible = {
+			is_ai = no 
+		}
+		properties = {
+			manager_portrait = {
+				image = "[Getmanagerportrait]"
+			}
+		}
+	}
+	start_the_parliament = {
+		window_name = start_the_parliament 
+		parent_window_token = politics_tab 
+		visible = {
+			original_tag = FRA
+			or = {
+				has_completed_focus = FRA_suppress_the_parliament 
+				has_completed_focus = FRA_collective_leadership 
+			}
+		}
+		effects = {
+			parliament_click = {
+				if = {
+					limit = {
+						has_country_flag = show_parliament
+					}
+					clr_country_flag = show_parliament 
+				}
+				else_if = {
+					limit = {
+						has_country_flag = show_collective_leadership_gui 
+					}
+					clr_country_flag = show_collective_leadership_gui 
+				}
+				else = {
+					if = {
+						limit = {
+							has_completed_focus = FRA_collective_leadership 
+						}
+						set_country_flag = show_collective_leadership_gui
+					}
+					else = {
+						set_country_flag = show_parliament 
+					}
+				}
+			}
+		}
+	}
+	portrait_of_furina = {
+		window_name = portraits_of_furina 
+		context_type = decision_category 
+		visible = {
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine 
+				ruling_only = yes 
+			}
+			original_tag = FRA 
+			is_ai = no 
+			has_country_flag = load_portrait_preview 
+		}
+	}
+	fontaine_communist_party_gui = {
+		window_name = fontaine_communist_party 
+		context_type = decision_category 
+		visible = {
+			is_ai = no 
+		}
+	}
+	revolution_world_map_gui = {
+		window_name = Revolution_World_Map 
+		context_type = decision_category 
+		visible = {
+			is_ai = no 
+		}
+		properties = {
+			Map_North_America = {
+				frame = world_map_north_america_frame 
+			}
+			Map_Africa = {
+				frame = world_map_africa_frame
+			}
+			Map_South_America = {
+				frame = world_map_south_america_frame 
+			}
+			Map_Far_East = {
+				frame = world_map_far_east_frame 
+			}
+			Map_Middle_East = {
+				frame = world_map_middle_east_frame 
+			}
+		}
+		effects = {
+			Map_North_America_click = {
+				if = {
+					limit = {
+						not = {
+							check_variable = {
+								world_map_north_america_frame = 1 
+							}
+						}
+					}
+					set_variable = { world_map_north_america_frame = 1 }
+				}
+				else = {
+					set_variable = { world_map_north_america_frame = 2 }
+					set_variable = { world_map_africa_frame = 1 }
+					set_variable = { world_map_far_east_frame = 1  }
+					set_variable = { world_map_south_america_frame = 1 }
+					set_variable = { world_map_middle_east_frame = 1 }
+				}
+			}
+			Map_South_America_click = {
+				if = {
+					limit = {
+						not = {
+							check_variable = {
+								world_map_south_america_frame = 1 
+							}
+						}
+					}
+					set_variable = { world_map_south_america_frame = 1 }
+				}
+				else = {
+					set_variable = { world_map_north_america_frame = 1 }
+					set_variable = { world_map_africa_frame = 1 }
+					set_variable = { world_map_far_east_frame = 1  }
+					set_variable = { world_map_south_america_frame = 2 }
+					set_variable = { world_map_middle_east_frame = 1 }
+				}
+			}
+			Map_Africa_click = {
+				if = {
+					limit = {
+						not = {
+							check_variable = {
+								world_map_africa_frame = 1 
+							}
+						}
+					}
+					set_variable = { world_map_africa_frame = 1 }
+				}
+				else = {
+					set_variable = { world_map_north_america_frame = 1 }
+					set_variable = { world_map_africa_frame = 2 }
+					set_variable = { world_map_far_east_frame = 1  }
+					set_variable = { world_map_south_america_frame = 1 }
+					set_variable = { world_map_middle_east_frame = 1 }
+				}
+			}
+			Map_Far_East_click = {
+				if = {
+					limit = {
+						not = {
+							check_variable = {
+								world_map_far_east_frame = 1 
+							}
+						}
+					}
+					set_variable = { world_map_far_east_frame = 1 }
+				}
+				else = {
+					set_variable = { world_map_north_america_frame = 1 }
+					set_variable = { world_map_africa_frame = 1 }
+					set_variable = { world_map_far_east_frame = 2  }
+					set_variable = { world_map_south_america_frame = 1 }
+					set_variable = { world_map_middle_east_frame = 1 }
+				}
+			}
+			Map_Middle_East_click = {
+				if = {
+					limit = {
+						not = {
+							check_variable = {
+								world_map_middle_east_frame = 1 
+							}
+						}
+					}
+					set_variable = { world_map_middle_east_frame = 1 }
+				}
+				else = {
+					set_variable = { world_map_north_america_frame = 1 }
+					set_variable = { world_map_africa_frame = 1 }
+					set_variable = { world_map_far_east_frame = 1  }
+					set_variable = { world_map_south_america_frame = 1 }
+					set_variable = { world_map_middle_east_frame = 2 }
+				}
+			}
+		}
+	}
+	anarchy_window = {
+		window_name = anarchy_dip_window 
+		parent_window_token = selected_country_view_diplomacy 
+		context_type = selected_country_context 
+		visible = {
+			THIS = {
+				original_tag = ZZZ 
+			}
+		}
+	}
+}

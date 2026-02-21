@@ -1,0 +1,14 @@
+state = {
+	id = 1104
+	name = 1104_TS_4
+	manpower = 28900
+	state_category = rural 
+	history = {
+		owner = ADR 
+		add_core_of = ADR 
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 13447 }
+}

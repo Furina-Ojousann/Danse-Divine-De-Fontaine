@@ -1,0 +1,168 @@
+defined_text = {
+	name = GetWinnerAllies
+	text = {
+		trigger = {
+			has_global_flag = winning_country_multiple
+		}
+		localization_key = PEACE_POPUP_COUNTRY_PLURAL
+	}
+	text = {
+		localization_key = PEACE_POPUP_COUNTRY_SINGULAR
+	}
+}
+
+defined_text = {
+	name = GetWarConsequence
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = FRA 
+				not = { has_country_flag = fra_furina_come_to_france }
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_FRA
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = FRA 
+				has_country_flag = fra_furina_come_to_france
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_FONTAINE
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = GER 
+				has_government = fascism 
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_GER_FAS 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = GER 
+				has_government = neutrality 
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_GER_NEU 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = GER 
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_GER 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = USA  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_USA 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = SOV 
+				has_government = communism  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_SOV 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = FIN  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_FIN 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = CHI  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_CHI 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = PRC  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_PRC 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = POL  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_POL 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = MAN  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_MAN 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = SWE  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_SWE 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = ENG  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_ENG 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = JAP  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_JAP 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = ITA   
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_ITA 
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				tag = SPA  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_SPA  
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				tag = SPD  
+			}
+		}
+		localization_key = PEACE_POPUP_FLAVOR_SPD 
+	}
+	text = {
+		localization_key = PEACE_POPUP_FLAVOR_GENERAL 
+	}
+}

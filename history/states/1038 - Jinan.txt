@@ -1,0 +1,69 @@
+state = {
+
+	id = 1038
+	name = "STATE_1038"
+	manpower = 25582133
+	state_category = town 
+	
+	resources = {
+		steel = 4 
+		coal = 3 
+	}
+	
+	history = {
+
+		owner = SND
+		add_core_of = SND 
+		add_core_of = CHI
+		add_core_of = PRC
+
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				transfer_state_to = SND
+				add_core_of = SND
+			}
+		}
+
+		victory_points = {
+			1069 10 # Jinan
+		}
+
+		victory_points = {
+			4181 3 # Linyi
+		}
+
+		victory_points = {
+			1104 3 # Yantai
+		}
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 3
+			1104 = {
+				naval_base = 1
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+
+		1938.10.25 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender" 
+				}
+			}	
+			owner = CHI
+			controller = JAP		
+		}
+	}
+
+	provinces = {
+		1069 1084 1124 4010 4037 4071 4181 7129 7055 7092 7160 7189 7200 9956 9987 10003 10043 10072 10102 10119 11933 11962 11980 12015 12045 12069 12093 1104 1154 1184 1200 4089 4157 4186 7089 7105 9971 10018 12074
+	}
+
+	local_supplies = 4.0 
+}

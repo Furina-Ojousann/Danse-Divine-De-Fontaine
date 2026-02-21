@@ -1,0 +1,83 @@
+ideas = {
+	country = {
+		ex_britain_rearmament_limited = {
+			picture = gre_schachtplan 
+			allowed = { original_tag = ENG }
+			available = { has_capitulated = no arms_factory > 4 }
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		ex_britain_rearmament_general = {
+			picture = gre_schachtplan 
+			allowed = { original_tag = ENG }
+			available = { has_capitulated = no arms_factory > 4 }
+			modifier = {
+				production_speed_arms_factory_factor = 0.10 
+				consumer_goods_factor = -0.30
+			}
+		}
+
+		ex_britain_rearmament_widespread = {
+			picture = gre_schachtplan 
+			allowed = { original_tag = ENG }
+			available = { has_capitulated = no arms_factory > 4 }
+			modifier = {
+				production_speed_arms_factory_factor = 0.10 
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.15
+				consumer_goods_factor = -0.30
+			}
+		}
+
+		ex_britain_rearmament_final = {
+			picture = gre_schachtplan 
+			allowed = { original_tag = ENG }
+			available = { has_capitulated = no arms_factory > 4 }
+			modifier = {
+				production_speed_arms_factory_factor = 0.10 
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.15
+				consumer_goods_factor = -0.30
+			}
+			equipment_bonus = {
+				mechanized = {
+					build_cost_ic = -0.10 
+				}
+			}
+		}
+
+		ex_britain_economic_reform_fuild_iteration = {
+			picture = generic_central_management
+			allowed = { original_tag = ENG } 
+			modifier = {
+				consumer_goods_factor = 0.10
+				stability_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.10 
+			}
+		}
+
+		ex_britain_economic_reform_expand_spending = {
+			picture = generic_central_management
+			allowed = { original_tag = ENG } 
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_infrastructure_factor = 0.20 
+				production_speed_industrial_infrastructure_factor = 0.20
+			}
+		}
+
+		ex_britain_economic_reform_integrated = {
+			picture = generic_central_management
+			allowed = { original_tag = ENG } 
+			modifier = {
+				consumer_goods_factor = 0.20
+				stability_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.10 
+				production_speed_infrastructure_factor = 0.20 
+				production_speed_industrial_infrastructure_factor = 0.20
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+state = {
+	id = 1077
+	name = 1077_Slonim
+	manpower = 218900
+	state_category = rural 
+	history = {
+		owner = POL 
+		add_core_of = POL
+		add_core_of = BLR 
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 6359 6413 9359 3366 }
+}

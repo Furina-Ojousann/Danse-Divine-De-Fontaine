@@ -1,0 +1,2372 @@
+ideas = {
+	labour_law = {
+		use_list_view = yes 
+		law = yes 
+		fra_r_labour_law_version_1 = {
+			allowed = { original_tag = FRA }
+			visible = { has_idea = fra_r_labour_law_version_1 }
+			allowed_to_remove = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.20
+				industrial_capacity_factory = -0.05
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.10
+				stability_factor = 0.05 
+			}
+		}
+		fra_r_labour_law_version_2 = {
+			allowed = { original_tag = FRA }
+			visible = { has_idea = fra_r_labour_law_version_2 }
+			allowed_to_remove = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_cost = 0.05 
+				stability_factor = 0.02 
+				#industrial_capacity_factory = -0.05
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+				#stability_factor = 0.05 
+			}
+		}
+		fra_r_labour_law_version_3 = {
+			allowed = { original_tag = FRA }
+			visible = { has_idea = fra_r_labour_law_version_3 }
+			allowed_to_remove = { always = no }
+			modifier = {
+				#consumer_goods_factor = 0.10
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				#production_factory_efficiency_gain_factor = 0.05
+				war_stability_factor = -0.02 
+				stability_factor = -0.05 
+			}
+		}
+		fra_r_labour_law_navia_plan = {
+			picture = fra_navia_economic_proposal
+			allowed_to_remove = { always = no }
+			visible = { has_idea = fra_r_labour_law_navia_plan }
+		}
+	}
+	country = {
+		fra_navia_economic_proposal = {
+			allowed = { original_tag = FRA }
+			modifier = {
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+			}
+		}
+		fra_last_dance_of_republic = {
+			picture = fra_disjointed_parliament 
+			modifier = {
+				political_power_factor = 0.05 
+				party_popularity_stability_factor = -0.10 
+				democratic_drift = -0.02 
+				liberalism_temp_drift = -0.02 
+				conservatism_temp_drift = -0.02 
+			}
+		}
+		fra_last_dance_of_republic_improved = {
+			name = fra_last_dance_of_republic
+			picture = fra_disjointed_parliament 
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+				political_power_factor = 0.15
+				political_advisor_cost_factor = -0.33 
+			}
+		}
+		fic_colony_budget = {
+			picture = SWE_wargames
+			available = {
+				OVERLORD = {
+					original_tag = FRA 
+				}
+			}
+			modifier = {
+				industrial_factory_donations = 3
+				military_factory_donations = 1 
+				acclimatization_hot_climate_gain_factor = 0.20 
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.35 
+			}
+		}
+		fra_economy_situation = {
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			#这个民族精神仅做摆设
+		}
+		fra_wartime_equality = {
+			modifier = {
+				stability_factor = -0.01
+				political_power_cost = 0.02
+				conscription_factor = 0.04
+			}
+		}
+		fra_wartime_equality_2 = {
+			name = fra_wartime_equality 
+			picture = fra_wartime_equality
+			modifier = {
+				stability_factor = -0.02
+				political_power_cost = 0.04
+				conscription_factor = 0.08
+			}
+		}
+		fra_wartime_equality_3 = {
+			name = fra_wartime_equality 
+			picture = fra_wartime_equality
+			modifier = {
+				stability_factor = -0.03
+				political_power_cost = 0.06
+				conscription_factor = 0.12
+			}
+		}
+		fra_wartime_equality_4 = {
+			name = fra_wartime_equality 
+			picture = fra_wartime_equality
+			modifier = {
+				stability_factor = -0.04
+				political_power_cost = 0.08
+				conscription_factor = 0.16
+			}
+		}
+		fra_wartime_equality_5 = {
+			name = fra_wartime_equality 
+			picture = fra_wartime_equality
+			modifier = {
+				stability_factor = -0.05
+				political_power_cost = 0.10
+				conscription_factor = 0.20
+				industrial_capacity_factory = 0.05
+				army_org_factor = 0.10 
+			}
+		}
+		fra_legion_of_honour = {
+			modifier = {
+				grant_medal_cost_factor = -0.35 
+				army_org_regain = 0.10
+				special_forces_cap = 0.15
+			}
+			available = {
+				has_capitulated = no 
+			}
+		}
+		fra_military_police_force = {
+			modifier = {
+				resistance_activity = -0.10 
+				root_out_resistance_effectiveness_factor = 0.50 
+				resistance_decay = 0.20 
+				required_garrison_factor = -0.25 
+				compliance_growth = 0.10 
+				political_power_cost = 0.15 
+			}
+			equipment_bonus = {
+				motorbike_equipment = {
+					build_cost_ic = -0.20 
+				}
+			}
+		}
+		ire_victory_from_england = {
+			picture = hol_caved_to_the_british
+			modifier = {
+				political_power_gain = 0.15 
+				war_support_factor = 0.20 
+				army_core_defence_factor = 0.10 
+			}
+		}
+		pap_furina_s_higher = {
+			modifier = {
+				political_power_gain = -0.50 
+				stability_factor = -0.10 
+				cic_to_overlord_factor = 0.10 
+				army_core_defence_factor = 0.25 
+			}
+		}
+		fra_rhine_customs_union_leader = {
+			picture = fra_rhine_customs_union 
+			modifier = {
+				can_master_build_for_us = 1
+				political_power_cost = 0.05 
+				subjects_autonomy_gain = 0.10 
+			}
+		}
+		fra_rhine_customs_union = {
+			modifier = {
+				cic_to_overlord_factor = 0.20 
+				extra_trade_to_overlord_factor = 0.25
+				production_speed_industrial_complex_factor = 0.10 
+				political_power_gain = 0.15
+				research_sharing_per_country_bonus_factor = 0.05 
+			}
+		}
+		fra_marine_invasion_for_britian = {
+			picture = generic_navy_cruiser_warfare
+			modifier = {
+				amphibious_invasion = 0.20 
+				naval_invasion_penalty = -0.35
+				invasion_preparation = -0.50
+				shore_bombardment_bonus = 0.25
+			}
+		}
+		fra_air_preparation_for_britain = {
+			picture = generic_air_interception
+			modifier = {
+				fighter_sortie_efficiency = 0.25
+				air_nav_efficiency = 0.20 
+				air_superiority_detect_factor = 0.15 
+				ground_attack_factor = 0.20 
+			}
+		}
+		fra_right_wing_strike = {
+			modifier = {
+				conscription_factor = -0.65
+				consumer_goods_factor = 0.80
+				industrial_capacity_factory = -1
+				industrial_capacity_dockyard = -1 
+				war_support_factor = -0.50 
+				stability_factor = -0.20 
+			}
+		}
+		fra_martial_law = {
+			cancel = {
+				has_government = communism 
+			}
+			modifier = {
+				conscription_factor = -0.25
+				consumer_goods_factor = 0.20
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				war_support_factor = -0.50
+				political_power_cost = 1 
+			}
+		}
+		fra_collapse_of_grand_narrative = {
+			#消解的宏大叙事
+			modifier = {
+				party_popularity_stability_factor = -0.20 
+				political_power_cost = 0.10 
+				non_core_manpower = -0.05 
+				conscription = -0.002
+				production_factory_efficiency_gain_factor = -0.45
+				production_factory_max_efficiency_factor = -0.10
+				drift_defence_factor = -1 
+			}
+		}
+		fra_reenchantment = {
+			#复魅
+			modifier = {
+				war_support_factor = 0.05 
+				army_org_factor = 0.10
+			}
+		}
+		fra_martial_law_further = {
+			picture = fra_martial_law 
+			modifier = {
+				conscription_factor = -0.05
+				war_support_factor = -0.10
+				political_power_cost = 0.25
+				stability_weekly = 0.01 
+			}
+			available = {
+				has_stability < 1 
+			}
+			on_remove = {
+				country_event = Fontaine_empire_normal.16 
+			}
+		}
+		fra_nuclear_development = {
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				consumer_goods_factor = 0.10 
+			}
+		}
+		fra_nuclear_development_1 = {
+			name = fra_nuclear_development 
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				consumer_goods_factor = -0.10
+				sp_nuclear_reactor_speed_factor = 0.20
+			}
+		}
+		fra_nuclear_development_2 = {
+			name = fra_nuclear_development 
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				consumer_goods_factor = 0.10
+				sp_nuclear_bomb_speed_factor = 0.20
+			}
+		}
+		fra_nuclear_development_3 = {
+			name = fra_nuclear_development 
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				consumer_goods_factor = -0.10
+				sp_nuclear_bomb_speed_factor = 0.20
+				sp_nuclear_reactor_speed_factor = 0.20
+			}
+		}
+		fra_french_navy_industry = {
+			modifier = {
+				industrial_capacity_dockyard = 0.10 
+			}
+		}
+		fra_sea_supporting_force = {
+			modifier = {
+				experience_loss_factor = -0.20 
+				weekly_bombing_war_support = 0.002
+				weekly_casualties_war_support = 0.001
+				weekly_convoys_war_support = 0.002
+			}
+		}
+		fra_french_air_industry = {
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10 
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.20
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.15
+				}
+			}
+		}
+		fra_ultimate_deterrence = {
+			picture = generic_ultimate_deterrence 
+			modifier = {
+				political_power_gain = 0.20
+				defensive_war_stability_factor = 0.20
+				enemy_declare_war_tension = 0.45
+				enemy_justify_war_goal_time = 0.75
+				embargo_cost_factor = -0.90
+				guarantee_cost = -0.80
+			}
+		}
+		fra_french_navy_industry_1 = {
+			picture = fra_french_navy_industry
+			modifier = {
+				industrial_capacity_dockyard = 0.10
+			}
+			equipment_bonus = {
+				screen_ship = {
+					build_cost_ic = -0.10
+				}
+				capital_ship = {
+					build_cost_ic = -0.10
+				}
+			}
+		}
+		fra_french_navy_industry_2 = {
+			picture = fra_french_navy_industry
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				repair_speed_factor = 0.25
+			}
+			equipment_bonus = {
+				screen_ship = {
+					reliability = 0.05 
+				}
+				capital_ship = {
+					reliability = 0.05 
+					armor_value = 0.10 
+				}
+			}
+		}
+		fra_french_navy_industry_3 = {
+			picture = fra_french_navy_industry
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				repair_speed_factor = 0.25
+			}
+			equipment_bonus = {
+				screen_ship = {
+					reliability = 0.05 
+					build_cost_ic = -0.10
+				}
+				capital_ship = {
+					build_cost_ic = -0.10
+					reliability = 0.05 
+					armor_value = 0.10 
+				}
+			}
+		}
+		fra_french_massive_naval_building = {
+			picture = AUS_naval_efficiency_idea
+			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_cost = 0.15
+			}
+			equipment_bonus = {
+				ship_hull_carrier = {
+					build_cost_ic = -0.10
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.10
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.20
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.15
+				}
+			}
+		}
+		fra_communist_party_active = {
+			picture = generic_shield_against_communism
+			modifier = {
+				communism_drift = 0.15
+				political_power_cost = 0.20 
+				stability_factor = -0.10 
+				consumer_goods_factor = -0.15 
+			}
+		}
+		fra_forgein_laboror = {
+			picture = fra_foreign_laboror
+			modifier = {
+				stability_factor = -0.05 
+				conscription_factor = 0.15 
+				industrial_capacity_factory = 0.10 
+				industrial_capacity_dockyard = 0.10 
+			}
+		}
+		fra_500_consumpution_agreement = {
+			picture = can_wartime_prices_and_trade_board
+			targeted_modifier = {
+				tag = CHI  
+				trade_opinion_factor = 0.50
+				resource_trade_cost_bonus_per_factory = 8
+			}
+		}
+		fra_support_of_nationalist_capitalist = {
+			picture = gre_schachtplan 
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_industrial_complex_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.15
+			}
+			research_bonus = {
+				industry = 0.10 
+			}
+		}
+		fra_world_interest = {
+			picture = generic_flexible_foreign_policy2
+			available = {
+				is_major = yes 
+			}
+			modifier = {
+				political_power_factor = 0.05
+				improve_relations_maintain_cost_factor = -0.20
+				operative_slot = 1 
+				guarantee_tension = -0.75
+				guarantee_cost = -0.50
+			}
+			rule = {
+				can_create_factions = yes 
+				can_guarantee_other_ideologies = yes 
+			}
+		}
+		fra_country_anti_communist = {
+			picture = ARG_anti_soviet
+			modifier = {
+				neutrality_drift = 0.05 
+				democratic_drift = 0.02
+				fascism_drift = 0.01
+				communism_drift = -0.10 
+			}
+		}
+		CAN_conscription_crisis_worse = {
+			picture = tfv_can_conscription_crisis
+			available = {
+				any_controlled_state = {
+					is_core_of = QUE 
+				}
+			}
+			modifier = {
+				conscription_factor = -0.50 
+				stability_factor = -0.20 
+				war_stability_factor = -0.10
+				industrial_capacity_factory = -0.20 
+			}
+		}
+		fra_quebec_collapse = {
+			picture = fra_collapse_of_quebec 
+			modifier = {
+				surrender_limit = -0.20 
+				army_core_defence_factor = -0.40
+				army_core_attack_factor = -0.10 
+				army_org_factor = -0.20 
+			}
+		}
+		fra_french_state = {
+			modifier = {
+				stability_factor = 0.10 
+				political_power_gain = 0.25
+				fascism_acceptance = 5
+			}
+			targeted_modifier = {
+				tag = FRA
+				trade_opinion_factor = 0.50 
+				trade_cost_for_target_factor = -0.60
+				mic_to_target_factor = 0.40 
+				cic_to_target_factor = 0.50 
+			}
+		}
+		fra_quebec_war_que = {
+			picture = ITA_bandits_war
+			modifier = {
+				ai_call_ally_desire_factor = -999
+			}
+			targeted_modifier = {
+				tag = CAN 
+				attack_bonus_against = -3
+				defense_bonus_against = 3 
+			}
+		}
+		fra_quebec_war_can = {
+			picture = ITA_bandits_war
+			modifier = {
+				ai_call_ally_desire_factor = -999
+			}
+			targeted_modifier = {
+				tag = QUE  
+				attack_bonus_against = -3
+				defense_bonus_against = 3 
+			}
+		}
+		fra_export_fuel_first = {
+			picture = generic_stockpile_fuel
+			available = {
+				oil > 0 
+			}
+			modifier = {
+				country_resource_oil = -20 
+				production_speed_buildings_factor = 0.05 
+				trade_opinion_factor = 0.20 
+			}
+		}
+		fra_antiwar_movement = {
+			picture = BEL_the_kings_surrender
+			modifier = {
+				conscription_factor = -0.20 
+				army_core_attack_factor = -0.10 
+				army_core_defence_factor = -0.10 
+				industrial_capacity_factory = -0.15 
+			}
+		}
+		fra_popular_front_1 = {
+			picture = GER_iron_front
+			modifier = {
+				stability_factor = 0.10 
+				political_advisor_cost_factor = -0.30 
+			}
+		}
+		fra_popular_front_2 = {
+			picture = GER_iron_front
+			modifier = {
+				stability_factor = 0.05 
+				political_advisor_cost_factor = -0.15 
+				research_speed_factor = 0.05 
+				non_core_manpower = 0.03 
+				special_project_speed_factor = 0.10 
+				consumer_goods_factor = -0.10 
+			}
+		}
+		fra_popular_front_3 = {
+			picture = GER_iron_front
+			modifier = {
+				research_speed_factor = 0.05 
+				non_core_manpower = 0.03 
+				special_project_speed_factor = 0.10 
+				consumer_goods_factor = -0.10 
+				army_org_regain = 0.10 
+				max_planning_factor = 0.10
+				supply_consumption_factor = -0.05 
+				max_command_power = 30 
+			}
+		}
+		fra_offer_fuel_for_army_first = {
+			picture = generic_fuel_reserves
+			modifier = {
+				fuel_gain_factor = 0.20 
+				max_fuel_factor = 0.15
+				army_fuel_consumption_factor = -0.05
+				navy_fuel_consumption_factor = -0.05
+				air_fuel_consumption_factor = -0.05 
+			}
+		}
+		fra_soviet_support = {
+			picture = saf_soviet_advisers
+			allowed = {
+				original_tag = FRC 
+			}
+			available = {
+				country_exists = SOV 
+				SOV = { has_government = communism }
+			}
+			modifier = {
+				land_reinforce_rate = 0.02
+				army_org_factor = 0.05
+				coordination_bonus = 0.05
+			}
+		}
+		fra_puppet_of_french = {
+			picture = RAJ_trickle_down_economy
+			cancel = {
+				AND = {
+					is_in_faction_with = SOV 
+					has_government = communism
+				}
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.40
+				mic_to_target_factor = 0.20
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		fra_spring_of_manufacturing = {
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			picture = raj_ordnance_factory_medak
+			modifier = {
+				political_power_gain = 0.15 
+				production_speed_buildings_factor = 0.10 
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+		fra_control_the_europe = {
+			picture = FRA_la_deluge
+			allowed = {
+				original_tag = FRA 
+			}
+			available = {
+				has_capitulated = no 
+				is_subject = no 
+			}
+			modifier = {
+				breakthrough_factor = 0.10
+				org_loss_when_moving = -0.20
+				army_speed_factor = 0.10
+				puppet_cost_factor = -0.50 
+				annex_cost_factor = -0.25
+			}
+			rule = {
+				can_force_government = yes 
+				can_create_collaboration_government = yes 
+				can_create_factions = yes 
+			}
+			on_remove = {
+				if = {
+					limit = {
+						has_war_with_major = yes 
+					}
+					add_war_support = -0.20 
+					if = {
+						limit = {
+							surrender_progress > 0.49 
+						}
+						add_ideas = FRA_defeatism 
+					}
+					#add_ideas = FRA_defeatism 
+				}
+			}
+		}
+		fra_new_industiral_cartel = {
+			picture = GER_wirtschaftswunder
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				political_power_cost = 0.05 
+				custom_modifier_tooltip = fra_new_industiral_cartel_tt
+				production_factory_max_efficiency_factor = 0.10 
+				local_resources_factor = 0.05 
+				production_speed_buildings_factor = 0.10
+				resource_trade_cost_bonus_per_factory = 1 
+				production_lack_of_resource_penalty_factor = 0.20 
+				production_factory_efficiency_gain_factor = -0.05 
+			}
+			research_bonus = {
+				industry = -0.05 
+			}
+			on_add = {
+				add_to_variable = {
+					france_economy_growth = -0.01 
+				}
+			}
+			on_remove = {
+				add_to_variable = {
+					france_economy_growth = 0.01 
+				}
+			}
+		}
+		fra_french_tank_industry_1 = {
+			picture = generic_armor
+			equipment_bonus = {
+				armor = {
+					armor_value = 0.10
+					#defence = 0.10 
+				}
+			}
+		}
+		fra_french_tank_industry_2 = {
+			name = fra_french_tank_industry_1 
+			picture = generic_armor
+			equipment_bonus = {
+				armor = {
+					armor_value = 0.20
+					defence = 0.10  
+					soft_attack = 0.10 
+					hard_attack = 0.10
+					hardness = 0.05 
+					breakthrough = 0.10 
+					build_cost_ic = 0.10 
+				}
+			}
+		}
+		fra_health_of_soldier = {
+			picture = BEL_scars_of_ww1 
+			modifier = {
+				army_org_factor = 0.05 
+				conscription_factor = 0.05 
+				weekly_casualties_war_support = 0.002
+				custom_modifier_tooltip = SWI_spirit_of_saint_bernard_idea_tooltip
+			}
+			
+		}
+		fra_fascist_patriotism = {
+			picture = AFG_adopt_nufus
+			modifier = {
+				conscription = 0.01
+				mobilization_speed = 0.20 
+				mobilization_laws_cost_factor = -0.20
+			}
+		}
+		fra_french_tank_industry_3 = {
+			name = fra_french_tank_industry_1 
+			picture = generic_armor
+			equipment_bonus = {
+				armor = {
+					soft_attack = 0.05
+					maximum_speed = 0.10 
+				}
+			}
+		}
+		fra_french_tank_industry_4 = {
+			name = fra_french_tank_industry_1 
+			picture = generic_armor
+			equipment_bonus = {
+				armor = {
+					soft_attack = 0.10 
+					build_cost_ic = -0.10
+					maximum_speed = 0.10 
+				}
+			}
+		}
+		fra_french_mech = {
+			picture = eng_preparing_the_second_front
+			equipment_bonus = {
+				mechanized = {
+					build_cost_ic = -0.10 
+					#soft_attack = 0.10 
+				}
+			}
+		}
+		fra_national_investment_idea = {
+			picture = ARG_rapid_militarization
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				stability_factor = 0.05 
+				political_power_cost = 0.05 
+				custom_modifier_tooltip = fra_national_investment_idea_tt
+			}
+			on_add = {
+				add_to_variable = { france_economy_growth = 0.01 }
+			}
+			on_remove = {
+				add_to_variable = { france_economy_growth = -0.01 }
+			}
+		}
+		fra_national_investment_idea_2 = {
+			name = fra_national_investment_idea
+			picture = ARG_rapid_militarization
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				stability_factor = 0.05 
+				political_power_cost = 0.10 
+				#economy_cost_factor = -0.15 
+				consumer_goods_factor = -0.20 
+				production_speed_arms_factory_factor = 0.10 
+				industrial_capacity_factory = 0.10 
+				custom_modifier_tooltip = fra_national_investment_idea_tt
+			}
+			on_add = {
+				add_to_variable = { france_economy_growth = 0.01 }
+			}
+			on_remove = {
+				add_to_variable = { france_economy_growth = -0.01 }
+			}
+		}
+		fra_price_very_fast_raise = {
+			picture = chi_hyper_inflation5
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				stability_factor = -0.15
+				consumer_goods_factor = -0.40
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = fra_price_normal_raise 
+					days = 30 
+				}
+			}
+		}
+		fra_price_normal_raise = {
+			picture = chi_hyper_inflation3
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				stability_factor = -0.10 
+				consumer_goods_factor = -0.30 
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = fra_price_slow_raise 
+					days = 60 
+				}
+			}
+		}
+		fra_price_slow_raise = {
+			picture = chi_hyper_inflation2
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				stability_factor = -0.05 
+				consumer_goods_factor = -0.20 
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = fra_price_higher 
+					days = 730
+				}
+			}
+		}
+		fra_price_higher = {
+			picture = chi_hyper_inflation
+			allowed = {
+				original_tag = FRA 
+			}
+			allowed_civil_war = {
+				always = yes 
+			}
+			modifier = {
+				consumer_goods_factor = -0.10 
+			}
+		}
+		FRA_communist_cabinet = {
+			picture = FIN_socialist_welfare
+			available = {
+				or = {
+					has_government = democratic 
+					has_government = communism 
+				}
+			}
+			allowed = {
+				tag = FRA 
+			}
+			allowed_civil_war = {
+				or = {
+					has_government = communism 
+					has_government = democratic 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.15 
+				neutrality_drift = -0.1
+				fascism_drift = -0.05 
+				stability_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.05 
+			}
+		}
+		FRA_communist_cabinet_improved = {
+			picture = FIN_socialist_welfare
+			available = {
+				or = {
+					has_government = democratic 
+					has_government = communism 
+				}
+			}
+			allowed = {
+				tag = FRA 
+			}
+			allowed_civil_war = {
+				or = {
+					has_government = communism 
+					has_government = democratic 
+				}
+			}
+			modifier = {
+				political_power_gain = 0.05 
+				neutrality_drift = -0.15
+				fascism_drift = -0.15 
+				stability_factor = 0.05  
+				production_factory_max_efficiency_factor = 0.05 
+			}
+		}
+		FRA_the_national_worker_union = {
+			picture = generic_production_bonus 
+			cancel = {
+				has_government = fascism 
+			}
+			modifier = {
+				industrial_capacity_factory = -0.05 
+				production_factory_efficiency_gain_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.10 
+				political_power_gain = 0.10
+			}
+			research_bonus = {
+				cat_production = 0.1 
+			}
+		}
+		fra_some_corruption = {
+			picture = ARG_political_corruption_modifier
+			modifier = {
+				consumer_goods_factor = 0.05 
+			}
+		}
+		fra_two_tag_civilwar = {
+			available = {
+				has_war = yes 
+			}
+			modifier = {
+				war_stability_factor = 0.20 
+			}
+			rule = {
+				can_join_factions = no 
+			}
+		}
+
+		isr_grave_of_millennial_wanderers = {
+			allowed = { original_tag = ISR }
+			modifier = {
+				drift_defence_factor = 0.50
+				army_org_regain = 0.10
+				army_core_defence_factor = 0.25
+				mobilization_speed = 0.40 
+			}
+		}
+
+		isr_kibbutz = {
+			allowed = { original_tag = ISR }
+			modifier = {
+				#monthly_population = 0.15
+				production_speed_infrastructure_factor = 0.10 
+				conscription_factor = 0.15
+				global_building_slots_factor = 0.25 
+			}
+		}
+
+		isr_nation_balance_jews_1 = {
+			allowed = {
+				original_tag = ISR 
+			}
+			modifier = {
+				democratic_drift = 0.08 
+				communism_drift = 0.05
+				research_speed_factor = 0.05 
+			}
+		}
+		isr_nation_balance_jews_2 = {
+			picture = isr_nation_balance_jews_1 
+			allowed = {
+				original_tag = ISR 
+			}
+			modifier = {
+				democratic_drift = 0.12 
+				communism_drift = 0.10 
+				research_speed_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.10 
+			}
+		}
+		isr_nation_balance_arabs_1 = {
+			allowed = {
+				original_tag = ISR 
+			}
+			modifier = {
+				communism_drift = 0.08
+				neutrality_drift = 0.05 
+				consumer_goods_factor = -0.10 
+			}
+		}
+		isr_nation_balance_arabs_2 = {
+			picture = isr_nation_balance_arabs_1
+			allowed = {
+				original_tag = ISR 
+			}
+			modifier = {
+				communism_drift = 0.12
+				stability_factor = -0.05 
+				neutrality_drift = 0.08 
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.10 
+			}
+		}
+		isr_national_balance = {
+			allowed = {
+				original_tag = ISR 
+			}
+			modifier = {
+				stability_factor = 0.05
+				political_advisor_cost_factor = -0.10 
+			}
+		}
+		isr_nationalist = {
+			available = {
+				neutrality > 0
+			}
+			modifier = {
+				conscription_factor = -0.10 
+				training_time_army_factor = 0.15 
+				stability_factor = -0.05 
+				neutrality_drift = 0.02 
+			}
+		}
+		isr_great_compromise = {
+			available = {
+				has_civil_war = no 
+			}
+			modifier = {
+				political_power_factor = -0.05 
+				party_popularity_stability_factor = 0.10 
+				trade_laws_cost_factor = -0.10 
+				economy_cost_factor = -0.10 
+			}
+		}
+		isr_condominium = {
+			allowed = {
+				original_tag = ISR
+			}
+		}
+		isr_state_steel_industry = {
+			modifier = {
+				country_resource_steel = 21 
+				industrial_capacity_factory = 0.05 
+				local_resources_factor = 0.05 
+				consumer_goods_factor = 0.10 
+			}
+		}
+		isr_national_extreme_unbalance = {
+			modifier = {
+				stability_factor = -0.10 
+				stability_weekly = -0.005 
+				war_support_factor = -0.20 
+				production_speed_buildings_factor = -0.50 
+			}
+		}
+
+		islam_socialism = {
+			picture = generic_intel_bonus
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				neutrality_drift = -0.07
+				stability_factor = -0.05 
+				consumer_goods_factor = -0.10 
+				research_speed_factor = 0.03 
+			}
+		}
+		soviet_oil = {
+			picture = can_wartime_prices_and_trade_board
+			available = {
+				is_in_faction_with = SOV 
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05 
+				country_resource_oil = 64 
+				country_resource_aluminium = 24
+			}
+		}
+		fontaine_industry = {
+			picture = fra_total_machinerizd_district
+			available = {
+				is_in_faction_with = FRA 
+			}
+			research_bonus = {
+				industry = 0.15 
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10 
+				production_factory_efficiency_gain_factor = 0.05 
+				industrial_capacity_factory = 0.05 
+			}
+		}
+		kur_fontaine_support = {
+			picture = FRA_scw_intervention_republicans_focus 
+			allowed = {
+				original_tag = KUR 
+			}
+			available = {
+				not = {
+					has_war_with = FRA 
+				}
+			}
+			modifier = {
+				weekly_casualties_war_support = 0.002
+				army_core_attack_factor = 0.10 
+				army_core_defence_factor = 0.15 
+				heat_attrition = -0.10 
+			}
+		}
+		fra_three_world = {
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				war_support_factor = 0.05 
+				command_power_gain_mult = 0.20 
+			}
+		}
+		fra_revolution_spread = {
+			picture = fra_three_world 
+			modifier = {
+				war_stability_factor = 0.05 
+				command_power_gain_mult = 0.20 
+				operative_slot = 1 
+				party_popularity_stability_factor = 0.10 
+				communism_drift = 0.05 
+			}
+		}
+		FRA_reorganize_the_headquarter = {
+			picture = SOV_war_heroes
+			modifier = {
+				max_planning_factor = 0.05 
+				planning_speed = 0.25 
+				max_command_power = 75 
+				command_power_gain_mult = 0.25 
+			}
+		}
+
+		FRA_nationwide_martial_law_idea = {
+			modifier = {
+				political_power_factor = -1 
+				fascism_drift = -1 
+				neutrality_drift = -1 
+				party_popularity_stability_factor = -0.15 
+			}
+		}
+
+		FRA_Military_ban = {
+			picture = generic_army_problems
+			modifier = {
+				command_power_gain_mult = -1 
+				experience_gain_army_factor = -1 
+				planning_speed = -1 
+				max_planning_factor = -1 
+				army_speed_factor = -1 
+			}
+		}
+
+		fra_Moman_agreement = {
+			modifier = {
+				stability_factor = 0.1 
+				consumer_goods_factor = 0.15 
+				industrial_capacity_factory = -0.05 
+				industrial_capacity_dockyard = -0.05 
+				production_factory_max_efficiency_factor = 0.05 
+				production_factory_efficiency_gain_factor = 0.1 
+			}
+		}
+
+		fra_Moman_agreement_2 = {
+			picture = fra_Moman_agreement 
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = 0.1
+				consumer_goods_factor = 0.2 
+				industrial_capacity_factory = -0.05 
+				industrial_capacity_dockyard = -0.05 
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.15 
+				 
+			}
+			research_bonus = {
+				industry = 0.1 
+			}
+		}
+
+		fra_unconditional_basic_income_idea = {
+			picture = fra_Moman_agreement 
+			modifier = {
+				consumer_goods_factor = 0.20
+				political_power_cost = 0.15 
+				stability_factor = 0.20
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+
+		fra_furina_s_hand = {
+			available = {
+				has_country_flag = fra_furina_come_to_france 
+			}
+			modifier = {
+				consumer_goods_factor = -0.15 
+				production_speed_buildings_factor = 0.05 
+			}
+		}
+
+		fra_furina_s_hand_2 = {
+			available = {
+				has_country_flag = fra_furina_come_to_france 
+			}
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.1 
+				conscription_factor = 0.15 
+				no_supply_grace = 24
+			}
+		}
+
+		anti_fascism_union_partner = {
+			picture = SPR_anti_fascist_crusade 
+			available = {
+				is_in_faction_with = FRA 
+				not = {
+					has_government = fascism 
+				}
+			}
+			modifier = {
+				fascism_acceptance = -100 
+				fascism_drift = -0.15 
+				max_planning_factor = 0.05 
+				planning_speed = 0.1 
+			}
+		}
+
+		anti_fascism_union_partner_2 = {
+			picture = SPR_anti_fascist_crusade 
+			available = {
+				not = {
+					has_government = fascism 
+				}
+			}
+			on_remove = {
+				leave_faction = yes 
+			}
+			modifier = {
+				fascism_acceptance = -100 
+				fascism_drift = -0.15 
+				max_planning_factor = 0.1
+				planning_speed = 0.15
+				army_attack_factor = 0.1
+				army_defence_factor = 0.15 
+				non_core_manpower = 0.01 
+				resistance_target = -0.25 
+			}
+		}
+
+		guangzhou_bay_exchange = {
+			picture = SPR_seize_the_gold_reserves 
+			modifier = {
+				consumer_goods_factor = -0.1 
+			}
+		}
+
+		guangzhou_bay_purchase = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = 0.1 
+			}
+		}
+
+		vichy_pact = {
+			available = {
+				is_in_faction_with = GER 
+			}
+			modifier = {
+				war_support_factor = -0.05 
+				political_power_gain = -0.15 
+				land_doctrine_cost_factor = 0.5 
+				ai_get_ally_desire_factor = -999
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.25
+				}
+				artillery_equipment = {
+					build_cost_ic = 0.25
+				}
+				support_equipment = {
+					build_cost_ic = 0.15 
+				}
+				armor = {
+					build_cost_ic = 0.8 
+				}
+			}
+		}
+
+		fra_attack_methodically = {
+			picture = CZE_planning_bonus
+			available = {
+				any_country = {
+					original_tag = SPR
+					exists = yes 
+					or = {
+						has_government = neutrality 
+						has_government = fascism 
+					}
+				}
+			}
+			modifier = {
+				max_planning_factor = 0.05 
+				experience_loss_factor = -0.1 
+				experience_gain_factor = 0.10
+				experience_gain_army_factor = 0.10
+			}
+		}
+
+		fra_whole_nation_strike = {
+			available = {
+				has_country_flag = fontaine_whole_nation_strike_start_up 
+			}
+			modifier = {
+				industrial_capacity_dockyard = -0.75 
+				industrial_capacity_factory = -0.75 
+				stability_weekly = -0.01
+				war_support_factor = -0.25 
+				political_power_cost = 0.15 
+				consumer_goods_factor = 0.5 
+				communism_drift = 0.05 
+			}
+		}
+
+		fra_whole_nation_strike_1 = {
+			available = {
+				has_country_flag = fontaine_whole_nation_strike_start_up 
+			}
+			picture = fra_whole_nation_strike
+			modifier = {
+				industrial_capacity_dockyard = -0.75 
+				industrial_capacity_factory = -0.75 
+				war_support_factor = -0.25 
+				political_power_cost = 0.15 
+				consumer_goods_factor = 0.5 
+			}
+		}
+
+		fra_french_spanish_intelligence_team = {
+			picture = generic_spy_intel
+			modifier = {
+				consumer_goods_factor = 0.01 
+				operative_slot = 1 
+			}
+		}
+
+		fra_french_spanish_intelligence_team_2 = {
+			picture = generic_spy_intel
+			modifier = {
+				consumer_goods_factor = 0.03 
+				operative_slot = 1 
+			}
+		}
+
+		fra_Chaotic_organization = {
+			modifier = {
+				political_power_gain = -0.05
+				war_stability_factor = -0.1
+				disabled_ideas = 1
+			}
+		}
+
+		fra_country_of_laborers = {
+			modifier = {
+				war_support_factor = 0.05 
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05 
+				drift_defence_factor = 0.25
+			}
+		}
+
+		fra_furina_s_hand_frc = {
+			picture = fra_furina_s_hand 
+			modifier = {
+				conscription_factor = 0.1 
+				consumer_goods_factor = -0.15 
+			}
+		}
+
+		fra_the_last_strike = {
+			picture = MEX_revolutionary_army
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.05 
+				army_speed_factor = 0.15 
+				breakthrough_factor = 0.10 
+				org_loss_when_moving = -0.25 
+				political_power_cost = 0.5 
+				experience_loss_factor = 0.10 
+			}
+			on_remove = {
+				if = {
+					limit = {
+						has_war_with = FRA 
+					}
+					add_political_power = -150
+					add_war_support = -0.05 
+				}
+			}
+		}
+
+		fra_continue_philosophy_education = {
+			modifier = {
+				stability_weekly = 0.002
+				research_speed_factor = 0.05
+				communism_drift = 0.05 
+				resistance_target = 0.15
+				political_power_cost = 0.05
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		fra_short_of_consum = {
+			cancel = {
+				OR = {
+					num_of_civilian_factories > 24 
+					AND = {
+						controls_state = 16 
+						controls_state = 18 
+						controls_state = 17 
+						controls_state = 27 
+					}
+				}
+			}
+			modifier = {
+				stability_factor = -0.05 
+				conscription_factor = -0.1 
+				industrial_capacity_factory = -0.1 
+				industrial_capacity_dockyard = -0.1 
+			}
+		}
+
+		fra_supply_issue = {
+			picture = fra_short_of_consum
+			cancel = {
+				OR = {
+					num_of_civilian_factories > 24 
+					AND = {
+						controls_state = 16 
+						controls_state = 18 
+						controls_state = 17 
+						controls_state = 27 
+					}
+				}
+			}
+			modifier = {
+				stability_factor = -0.1 
+				conscription_factor = -0.2 
+				industrial_capacity_factory = -0.15 
+				industrial_capacity_dockyard = -0.15 
+				monthly_population = -0.05
+			}
+		}
+
+		fra_run_out_everything = {
+			picture = fra_short_of_consum 
+			cancel = {
+				OR = {
+					num_of_civilian_factories > 24 
+					AND = {
+						controls_state = 16 
+						controls_state = 18 
+						controls_state = 17 
+						controls_state = 27 
+					}
+				}
+			}
+			modifier = {
+				stability_factor = -0.2 
+				conscription_factor = -0.5 
+				industrial_capacity_factory = -0.2 
+				industrial_capacity_dockyard = -0.2 
+				monthly_population = -0.1 
+				army_attack_factor = -0.1 
+				army_defence_factor = -0.1 
+			}
+		}
+
+		fra_the_influence_of_fontaine_1 = {
+			picture = fra_the_influence_of_fontaine 
+			available = {
+				FRA = {
+					exists = yes 
+				}
+			}
+			allowed_civil_war = {
+				not = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.05 
+				stability_factor = 0.02 
+				consumer_goods_factor = -0.04 
+				production_speed_buildings_factor = 0.01 
+				democratic_drift = 0.01 
+			}
+		}
+		spr_united_popular_front = {
+			picture = SPR_the_popular_front
+			allowed = {
+				original_tag = SPR
+				NOT = { has_government = fascism }
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				war_support_factor = 0.05 
+				drift_defence_factor = -0.25 
+				political_power_cost = 0.05 
+			}
+			targeted_modifier = {
+				tag = SPA 
+				attack_bonus_against = 0.1 
+				defense_bonus_against = 0.1 
+			}
+		}
+		fra_the_influence_of_fontaine_2 = {
+			picture = fra_the_influence_of_fontaine 
+			available = {
+				FRA = {
+					exists = yes 
+				}
+			}
+			allowed_civil_war = {
+				not = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.1
+				stability_factor = 0.04 
+				consumer_goods_factor = -0.08 
+				production_speed_buildings_factor = 0.02
+				democratic_drift = 0.02
+			}
+		}
+		fra_the_influence_of_fontaine_3 = {
+			picture = fra_the_influence_of_fontaine 
+			available = {
+				FRA = {
+					exists = yes 
+				}
+			}
+			allowed_civil_war = {
+				not = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.15 
+				stability_factor = 0.06 
+				consumer_goods_factor = -0.12 
+				production_speed_buildings_factor = 0.03 
+				democratic_drift = 0.03 
+			}
+		}
+		fra_the_influence_of_fontaine_4 = {
+			picture = fra_the_influence_of_fontaine 
+			available = {
+				FRA = {
+					exists = yes 
+				}
+			}
+			allowed_civil_war = {
+				not = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.2 
+				stability_factor = 0.08 
+				consumer_goods_factor = -0.16 
+				production_speed_buildings_factor = 0.04 
+				democratic_drift = 0.04 
+			}
+		}
+		fra_the_influence_of_fontaine_5 = {
+			picture = fra_the_influence_of_fontaine 
+			available = {
+				FRA = {
+					exists = yes 
+				}
+			}
+			allowed_civil_war = {
+				not = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.25 
+				stability_factor = 0.1 
+				consumer_goods_factor = -0.2 
+				production_speed_buildings_factor = 0.05 
+				democratic_drift = 0.05
+				autonomy_gain_trade_factor = -0.5 
+				autonomy_gain_warscore_factor = -0.5 
+				autonomy_gain = -0.25 
+				extra_trade_to_overlord_factor = 0.15 
+				overlord_trade_cost_factor = -0.25  
+			}
+		}
+
+		fra_marines = {
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				special_forces_no_supply_grace = 72 
+				special_forces_min = 10 
+				special_forces_cap = 0.25 
+				modifier_army_sub_unit_marines_attack_factor = 0.10 
+				modifier_army_sub_unit_marines_defence_factor = 0.10
+				modifier_army_sub_unit_marines_max_org_factor = 0.15 
+			}
+		}
+
+		fra_twilight_of_republic = {
+			modifier = {
+				surrender_limit = -0.5
+				party_popularity_stability_factor = -0.10  
+			}
+		}
+
+		fra_political_polarization = {
+			modifier = {
+				drift_defence_factor = -0.50 
+				democratic_drift = -0.02 
+			}
+		}
+
+		fra_anarchist_society = {
+			modifier = {
+				political_power_factor = -0.25 
+				party_popularity_stability_factor = -0.10 
+				research_speed_factor = 0.05
+				drift_defence_factor = -0.50 
+				production_speed_infrastructure_factor = 0.20 
+				production_speed_industrial_complex_factor = 0.10 
+				production_speed_arms_factory_factor = 0.05 
+				industrial_capacity_factory = 0.10 
+				industrial_capacity_dockyard = 0.10 
+				local_building_slots_factor = 0.15 
+				conscription_factor = 0.15 
+			}
+		}
+
+		fra_liberal_mind = {
+			modifier = {
+				research_speed_factor = 0.10 
+				drift_defence_factor = -0.50 
+				communism_drift = 0.07
+				neutrality_drift = 0.03
+				democratic_drift = 0.05
+				political_power_gain = 0.15  
+			}
+		}
+
+		fra_anarchist_world_policy = {
+			modifier = {
+				justify_war_goal_time = -0.80 
+				annex_cost_factor = -0.75 
+				generate_wargoal_tension = -1 
+				war_stability_factor = 0.20 
+				war_support_factor = 0.20 
+			}
+		}
+
+		fra_commune_militia = {
+			picture = citizen_militia_2
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.10
+				stability_factor = 0.10
+				political_power_factor = 0.05
+				training_time_army_factor = -0.10
+			}
+		}
+
+		fra_fontiane_backbone = {
+			modifier = {
+				political_power_gain = 0.15 
+				political_advisor_cost_factor = -0.10 
+				production_factory_max_efficiency_factor = 0.05 
+				experience_gain_navy = 0.10 
+			}
+		}
+
+		fra_to_the_rural = {
+		}
+
+		fra_to_the_rural_1 = {
+			name = fra_to_the_rural 
+			picture = fra_to_the_rural 
+			modifier = {
+				research_speed_factor = -0.01 
+				political_power_gain = 0.05
+				custom_modifier_tooltip = fra_to_the_rural_1_tt
+			}
+		}
+
+		fra_to_the_rural_2 = {
+			name = fra_to_the_rural 
+			picture = fra_to_the_rural 
+			modifier = {
+				research_speed_factor = 0.02 
+				communism_drift = 0.03 
+				political_power_gain = 0.10 
+				custom_modifier_tooltip = fra_to_the_rural_1_tt 
+			}
+		}
+
+		fra_expand_the_investion_to_commune = {
+			picture = generic_economic_increase 
+			modifier = {
+				consumer_goods_factor = 0.05 
+			}
+		}
+		fra_expand_the_investion_to_commune_1 = {
+			picture = generic_economic_increase 
+			name = fra_expand_the_investion_to_commune 
+			modifier = {
+				consumer_goods_factor = 0.10 
+			}
+		}
+		fra_expand_the_investion_to_commune_2 = {
+			name = fra_expand_the_investion_to_commune 
+			picture = generic_economic_increase 
+			modifier = {
+				consumer_goods_factor = 0.15 
+			}
+		}
+
+		fra_union_of_stalinist_and_maoist = {
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				political_power_gain = 0.30 
+				political_advisor_cost_factor = -0.10 
+			}
+		}
+
+		fra_nkvd = {
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				operative_slot = 1 
+				agency_upgrade_time = -0.15 
+				enemy_operative_capture_chance_factor = 0.10 
+				enemy_operative_intel_extraction_rate = -0.15 
+				encryption_factor = 0.25
+			}
+		}
+
+		fra_hurry_development = {
+			picture = generic_production_bonus 
+			modifier = {
+				political_power_cost = 0.25 
+				neutrality_drift = 0.05 
+				custom_modifier_tooltip = fra_hurry_development_tt
+			}
+		}
+
+		fra_union_of_stalinist_and_maoist_1 = {
+			picture = fra_union_of_stalinist_and_maoist
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				political_power_gain = 0.40 
+				political_advisor_cost_factor = -0.20 
+				consumer_goods_expected_value = -0.05 
+				party_popularity_stability_factor = -0.05
+			}
+		}
+
+		fra_continue_the_revolution = {
+			picture = fra_twilight_of_republic
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				custom_modifier_tooltip = fra_continue_the_revolution_tt
+				communism_drift = 0.05 
+				drift_defence_factor = 0.50 
+				enemy_operative_capture_chance_factor = 0.15 
+				stability_factor = -0.05 
+				political_power_gain = -0.10 
+			}
+		}
+
+		fra_long_road_to_hometown_idea = {
+			picture = CHL_liberal_party_in_power
+			modifier = {
+				special_forces_no_supply_grace = 72 
+				special_forces_min = 10 
+				special_forces_cap = 0.25 
+				modifier_army_sub_unit_marines_attack_factor = 0.10 
+				modifier_army_sub_unit_marines_defence_factor = 0.10
+				modifier_army_sub_unit_marines_max_org_factor = 0.15 
+				army_core_attack_factor = 0.25 
+				army_core_defence_factor = 0.25 
+				no_supply_grace = 36 
+				army_speed_factor = 0.15 
+				org_loss_when_moving = -0.25 
+			}
+		}
+
+		fra_patriots = {
+			available = {
+				tag = FRO 
+			}
+			modifier = {
+				weekly_manpower = 500 
+				no_supply_grace = 36 
+				war_support_factor = 0.6 
+				weekly_casualties_war_support = 0.002
+				surrender_limit = 1 
+			}
+		}
+
+		fra_improved_medical_system = {
+			available = {
+				has_idea = fra_sigewinne_clement 
+			}
+			modifier = {
+				monthly_population = 0.1 
+				stability_factor = 0.02 
+				wounded_chance_factor = -0.05 
+				sickness_chance = -0.10 
+			}
+			research_bonus = {
+				hospital_tech = 0.15 
+			}
+		}
+
+		fra_fontaine_soviet_union_joint_defense_appointment = {
+			available = {
+				has_government = communism 
+				has_civil_war = no 
+				OR = {
+					GER = {
+						has_government = fascism 
+					}
+					ITA = {
+						has_government = fascism 
+					}
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = fra_fontaine_soviet_union_joint_defense_appointment_tt
+			}
+		}
+
+		french_industrial_guide = {
+			picture = generic_production_bonus 
+			available = {
+				not = {
+					has_war_with = FRA 
+				}
+			}
+			allowed = {
+				or = {
+					original_tag = CHI 
+					original_tag = PRC 
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.15 
+				production_factory_max_efficiency_factor = 0.1 
+				industrial_capacity_factory = 0.05 
+			}
+		}
+
+		the_success_of_kai_shek_s_plan = {
+			picture = chi_chinese_unity
+			available = {
+				has_war_with = JAP 
+			}
+			modifier = {
+				stability_factor = 0.05 
+				political_power_factor = 0.1 
+			}
+			targeted_modifier = {
+				tag = JAP 
+				defense_bonus_against = 0.1 
+			}
+		}
+
+		national_emergency_law = {
+			picture = generic_intel_bonus 
+			available = {
+				has_war = yes 
+			}
+			modifier = {
+				war_stability_factor = 0.05 
+				political_power_factor = 0.1 
+				neutrality_drift = 0.005 
+				mobilization_laws_cost_factor = -0.25 
+				economy_cost_factor = -0.25 
+			}
+		}
+
+		reemployment_of_laid_off_workers = {
+			picture = ARG_construction_guilds
+			modifier = {
+				conscription_factor = 0.10 
+				production_factory_efficiency_gain_factor = 0.1 
+				political_power_cost = 0.15 
+				stability_factor = -0.05 
+				consumer_goods_factor = 0.20 
+			}
+		}
+		
+		tank_production = {
+			picture = man_five_year_plan_tank
+			equipment_bonus = {
+				medium_tank_chassis = {
+					build_cost_ic = -0.2 
+				}
+				light_tank_chassis = {
+					build_cost_ic = -0.25
+				}
+				heavy_tank_chassis = {
+					build_cost_ic = -0.15 
+				}
+			}
+		}
+
+		FRA_care_for_misery0={
+			modifier={
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.03
+				stability_factor = 0.1
+			}
+		}
+		FRA_care_for_misery1={
+			modifier={
+				consumer_goods_factor = 0.06
+				stability_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		FRA_care_for_misery2={
+			modifier={
+				consumer_goods_factor = 0.06
+				stability_factor = 0.1
+				stability_weekly = 0.002
+				war_support_weekly = 0.002
+				conscription_factor = 0.1
+				war_support_factor = 0.05
+			}
+		}
+		FRA_care_for_misery3={
+			modifier={
+				consumer_goods_factor = 0.06
+				stability_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				party_popularity_stability_factor = 0.1
+				war_stability_factor = 0.1
+			}
+		}
+		FRA_care_for_misery12={
+			modifier={
+				political_power_factor = 0.05
+				consumer_goods_factor = 0.09
+				stability_factor = 0.15
+				stability_weekly = 0.002
+				war_support_weekly = 0.002
+				conscription_factor = 0.1
+				war_support_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		FRA_care_for_misery13={
+			modifier={
+				political_power_factor = 0.05
+				consumer_goods_factor = 0.09
+				stability_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				party_popularity_stability_factor = 0.1
+				war_stability_factor = 0.1
+			}
+		}
+		FRA_care_for_misery23={
+			modifier={
+				political_power_factor = 0.05
+				consumer_goods_factor = 0.09
+				stability_factor = 0.1
+				stability_weekly = 0.002
+				war_support_weekly = 0.002
+				conscription_factor = 0.1
+				war_support_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				party_popularity_stability_factor = 0.1
+				war_stability_factor = 0.1
+			}
+		}
+		FRA_care_for_misery={
+			modifier={
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.12
+				stability_factor = 0.15
+				stability_weekly = 0.002
+				war_support_weekly = 0.002
+				conscription_factor = 0.1
+				war_support_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				party_popularity_stability_factor = 0.1
+				war_stability_factor = 0.1
+			}
+		}
+
+		FRA_the_judge0 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     			economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+			}
+		}
+		FRA_the_judge1 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     			economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		FRA_the_judge2 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				high_command_cost_factor = -0.4
+				air_chief_cost_factor = -0.4
+				army_chief_cost_factor = -0.4
+				navy_chief_cost_factor = -0.4
+				neutrality_drift = 0.1
+			}
+		}
+		FRA_the_judge3 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				monthly_population = 0.15
+				resistance_growth = -0.1
+				compliance_gain = 0.05
+			}
+		}
+		FRA_the_judge12 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				high_command_cost_factor = -0.4
+				air_chief_cost_factor = -0.4
+				army_chief_cost_factor = -0.4
+				navy_chief_cost_factor = -0.4
+				neutrality_drift = 0.1
+			}
+		}
+		FRA_the_judge13 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				monthly_population = 0.15
+				resistance_growth = -0.1
+				compliance_gain = 0.05
+			}
+		}
+		FRA_the_judge23 = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				high_command_cost_factor = -0.4
+				air_chief_cost_factor = -0.4
+				army_chief_cost_factor = -0.4
+				navy_chief_cost_factor = -0.4
+				neutrality_drift = 0.1
+				monthly_population = 0.15
+				resistance_growth = -0.1
+				compliance_gain = 0.05
+			}
+		}
+		FRA_the_judge = {
+			modifier={
+				political_advisor_cost_factor = -0.2
+				trade_laws_cost_factor = -0.2
+     				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.2
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				high_command_cost_factor = -0.4
+				air_chief_cost_factor = -0.4
+				army_chief_cost_factor = -0.4
+				navy_chief_cost_factor = -0.4
+				neutrality_drift = 0.1
+				monthly_population = 0.15
+				resistance_growth = -0.1
+				compliance_gain = 0.05
+			}
+		}
+
+	}
+	hidden_ideas = {
+		economic_deflation = {
+			available = {
+				check_variable = {
+					france_economy_inflation < 0
+				}
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.10 
+				industrial_capacity_dockyard = -0.05 
+				industrial_capacity_factory = -0.05 
+			}
+			research_bonus = {
+				industry = -0.10 
+			}
+		}
+		economic_bad_inflation = {
+			available = {
+				check_variable = {
+					france_economy_inflation > 0.1999
+				}
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.50 
+				consumer_goods_factor = 0.25 
+				stability_factor = -0.20
+			}
+		}
+		economic_hyperunemployment = {
+			available = {
+				check_variable = {
+					france_economy_unemployment > 0.099 
+				}
+			}
+			modifier = {
+				stability_weekly = -0.002
+				communism_drift = 0.005 
+				fascism_drift = 0.005 
+			}
+		}
+		economic_lowerunemployment = {
+			available = {
+				check_variable = {
+					france_economy_unemployment < 0.04 
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = -0.10 
+				monthly_population = -0.15 
+			}
+		}
+		zeal_1 = {
+			available = {
+				check_variable = {
+					people_zeal_value > 19.99
+				}
+			}
+			modifier = {
+				political_power_gain = 0.10
+			}
+		}
+		zeal_2 = {
+			available = {
+				check_variable = {
+					people_zeal_value > 39.99
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.10 
+			}
+		}
+		zeal_3 = {
+			available = {
+				check_variable = {
+					people_zeal_value > 59.99 
+				}
+			}
+			modifier = {
+				#used in on actions 
+			}
+		}
+		zeal_4 = {
+			available = {
+				check_variable = {
+					people_zeal_value > 79.99 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.15 
+				army_attack_factor = 0.05 
+				production_speed_buildings_factor = 0.05 
+			}
+		}
+		zeal_5 = {
+			available = {
+				check_variable = {
+					people_zeal_value > 99.99 
+				}
+			}
+			modifier = {
+				political_power_cost = 0.15 
+				army_attack_factor = 0.10 
+				research_speed_factor = 0.05 
+				production_speed_buildings_factor = 0.10 
+			}
+		}
+		sov_start_attack_since_1944 = {
+			available = {
+				is_ai = yes 
+				has_war_with = GER 
+				has_government = communism 
+			}
+			modifier = {
+				supply_consumption_factor = -0.50 
+				terrain_penalty_reduction = 0.30 
+				attrition = -0.10 
+				army_speed_factor = 0.20 
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.40 
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.40  
+				}
+				armor = {
+					build_cost_ic = -0.20 
+				}
+			}
+			targeted_modifier = {
+				tag = GER 
+				breakthrough_bonus_against = 0.30 
+				attack_bonus_against_cores = 0.40 
+				defense_bonus_against = 0.20 
+				defense_bonus_against_cores = 0.30
+				attack_bonus_against = 0.20 
+			}
+		}
+		mil_minster_gamelin = {
+			modifier = {
+				experience_gain_army_factor = 0.10 
+				production_speed_bunker_factor = 0.10 
+				stability_factor = 0.05 
+			}
+			do_effect = {
+				has_idea = maurice_gamelin 
+				has_completed_focus = FRA_collective_leadership 
+			}
+		}
+		dip_minister_cholrinde = {
+			modifier = {
+				consumer_goods_factor = -0.20 
+			}
+			do_effect = {
+				has_idea = FRA_Solenn_Clorinde_political_advisor 
+				has_completed_focus = FRA_collective_leadership 
+			}
+		}
+		machinery_production = {
+			allowed = {
+				always = no 
+			}
+			equipment_bonus = {
+				fontaine_artillery_machinery = {
+					build_cost_ic = -0.2 
+				}
+				fontaine_attackive_machinery = {
+					build_cost_ic = -0.2 
+				}
+				fontaine_defence_machinery = {
+					build_cost_ic = -0.2 
+				}
+			}
+		}
+	}
+}

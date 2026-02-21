@@ -1,0 +1,18 @@
+state = {
+	id = 1107 
+	name = 1107_Haifa
+	manpower = 89000
+	state_category = rural 
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = ISR
+		victory_points = {
+			1201 10 
+		}
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 13455 1201 }
+}

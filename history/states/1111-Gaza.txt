@@ -1,0 +1,19 @@
+state = {
+	id = 1111
+	name = 1111_Gaza
+	manpower = 729000
+	state_category = town 
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = ISR
+		victory_points = {
+			4088 10
+		}
+		buildings = {
+			infrastructure = 3 
+			industrial_complex = 1 
+		}
+	}
+	provinces = { 4088 11970 }
+}

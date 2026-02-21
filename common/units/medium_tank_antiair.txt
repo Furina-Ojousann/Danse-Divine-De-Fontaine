@@ -1,0 +1,41 @@
+sub_units = {
+	medium_tank_antiair = {
+		abbreviation = "SMTA"
+		sprite = armor 
+		map_icon_category = armored
+		priority = 0 
+		ai_priority = 0 
+		active = no 
+		affects_speed = yes 
+		type = {
+			support
+			anti_air
+			armor 
+		}
+		group = support 
+		categories = {
+			category_support_battalions
+			category_army
+			category_anti_air
+			category_all_armor
+		}
+		same_support_type = anti_air 
+		combat_width = 0 
+		max_strength = 12
+		max_organisation = 40 
+		default_morale = 0.30 
+		manpower = 350 
+		training_time = 180 
+		weight = 0.30 
+		supply_consumption = 0.10
+		can_be_parachuted = yes 
+
+		essential = {
+			medium_tank_aa_chassis 
+		}
+
+		need = {
+			medium_tank_aa_chassis = 12 
+		}
+	}
+}

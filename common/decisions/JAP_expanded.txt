@@ -1,0 +1,361 @@
+JAP_polarization_category = {
+	#TODO
+	jap_bop_polarization_left_5 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.05 
+			}
+		}
+	}
+	jap_bop_polarization_left_10 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.10
+			}
+		}
+	}
+	jap_bop_polarization_left_15 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.15 
+			}
+		}
+	}
+	jap_bop_polarization_left_20 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.20 
+			}
+		}
+	}
+	jap_bop_polarization_left_25 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.25 
+			}
+		}
+	}
+	jap_bop_polarization_left_50 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value = -0.50 
+			}
+		}
+	}
+	jap_bop_polarization_right_5 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.05 
+			}
+		}
+	}
+	jap_bop_polarization_right_10 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.10
+			}
+		}
+	}
+	jap_bop_polarization_right_15 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.15 
+			}
+		}
+	}
+	jap_bop_polarization_right_20 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.20 
+			}
+		}
+	}
+	jap_bop_polarization_right_25 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.25 
+			}
+		}
+	}
+	jap_bop_polarization_right_50 = {
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = JAP_polarization
+				value =  0.50 
+			}
+		}
+	}
+}
+
+JAP_redux_main = {
+	JAP_inazuma_launch = {
+		icon = GFX_decision_CHL_mapuche_liberate_nahua
+		fire_only_once = yes 
+		complete_effect = {
+			set_global_flag = Inazuma_launched
+			set_cosmetic_tag = Inazuma 
+			set_politics = {
+				ruling_party = democratic 
+				elections_allowed = yes 
+				election_frequency = 48 
+				last_election = 1934.6.7
+			}
+			set_popularities = {
+				democratic = 30
+				neutrality = 24
+				communism = 12
+				fascism = 22
+				populist_socialism = 12
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = Inazuma_neutrality_party 
+				name = Inazuma_neutrality_party 
+			}
+			set_party_name = {
+				ideology = democratic 
+				long_name = Inazuma_democratic_party 
+				name = Inazuma_democratic_party 
+			}
+			set_party_name = {
+				ideology = communism
+				long_name = Inazuma_communism_party 
+				name = Inazuma_communism_party 
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = Inazuma_fascism_party 
+				name = Inazuma_fascism_party 
+			}
+			set_party_name = {
+				ideology = populist_socialism 
+				long_name = Inazuma_populist_socialist_party 
+				name = Inazuma_populist_socialist_party 
+			}
+			promote_character = JAP_Raiden_Ei 
+			add_country_leader_role = {
+				character = JAP_Raiden_Ei 
+				promote_leader = yes 
+				country_leader = {
+					ideology = constitutional_conservatism 
+					traits = {
+						silent_ruler 
+					}
+				}
+			}
+			JAP_emperor_hirohito = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			retire_character = JAP_emperor_hirohito 
+			add_ideas = Mejiro_McQueen 
+			promote_character = {
+				character = JAP_Kamisato_Ayato 
+				ideology = fascism 
+			}
+			promote_character = {
+				character = JAP_Naganohara_Yoimiya 
+				ideology = populist_socialism  
+			}
+			promote_character = {
+				character = JAP_Kujou_Sara 
+				ideology = neutrality 
+			}
+			promote_character = {
+				character = JAP_Tamamo_Cross 
+				ideology = communism 
+			}
+			add_ideas = Kujou_Sara_army_chief 
+			add_ideas = Keisuke_Okada 
+			retire_character = JAP_akira_muto 
+			retire_character = JAP_harukichi_hyakutake 
+			retire_character = JAP_hatazo_adachi 
+			retire_character = JAP_hisaichi_terauchi 
+			retire_character = JAP_hitoshi_imamura 
+			retire_character = JAP_iwane_matsui 
+			retire_character = JAP_jo_iimura
+			retire_character = JAP_kanji_ishiwara
+			retire_character = JAP_keisuke_fujie 
+			retire_character = JAP_kenji_doihara 
+			retire_character = JAP_kenkichi_ueda
+			retire_character = JAP_kiichiro_higuchi
+			retire_character = JAP_kuniaki_koiso
+			retire_character = JAP_masaharu_homma 
+			retire_character = JAP_masaharu_homma 
+			retire_character = JAP_naruhiko_higashikuni 
+			retire_character = JAP_nobutake_kondo
+			retire_character = JAP_otozo_yamada
+			retire_character = JAP_rikichi_ando
+			retire_character = JAP_sadao_araki 
+			retire_character = JAP_seishiro_itagaki 
+			retire_character = JAP_shigeru_honjo
+			retire_character = JAP_shizuichi_tanaka
+			retire_character = JAP_takashi_sakai
+			retire_character = JAP_tomoyuki_yamashita
+			retire_character = JAP_yasuji_okamura 
+			retire_character = JAP_masatane_kanda 
+			remove_ideas = state_shintoism
+			remove_ideas = JAP_zaibatsus 
+			remove_ideas = JAP_duplicate_research_efforts
+			remove_ideas = JAP_militarism 
+			remove_ideas = military_politics_dualization_1 
+			remove_ideas = JAP_interservice_rivalry_balanced
+			add_ideas = jap_Rot_und_Schwarz
+			add_ideas = jap_Three_Decades_of_Shimazu
+			add_ideas = jap_Kazoku_and_Konzern
+			add_ideas = jap_South_Manchuria_Railway_Co 
+			load_focus_tree = Inazuma 
+			set_country_flag = show_japan_history_window
+		}
+	}
+
+	jap_populist_socialism_test = {
+		fire_only_once = yes 
+		complete_effect = {
+			set_popularities = {
+				populist_socialism = 48
+				communism = 46
+				democratic = 6
+			}
+			set_politics = {
+				ruling_party = populist_socialism 
+			}
+		}
+	}
+}
+
+debug_decisions = {
+	jap_meme_come_to_democracy = {
+		icon = GFX_decision_generic_independence 
+		fire_only_once = yes 
+		allowed = {
+			original_tag = JAP 
+		}
+		visible = {
+			is_ai = no 
+		}
+		complete_effect = {
+			recruit_character = JAP_Koizumi_Shinjiro 
+			JAP_Koizumi_Shinjiro = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = liberal_conservatism
+						traits = { constitutional_reformer }
+					}
+				}
+			}
+			set_politics = {
+				ruling_party = democratic  
+				elections_allowed = yes 
+				election_frequency = 48 
+			}
+			set_popularities = {
+				democratic = 89
+				neutrality = 10
+				communism = 1 
+			}
+			set_party_name = {
+				ideology = democratic 
+				long_name = JAP_liberal_democrats_long
+				name = JAP_liberal_democrats
+			}
+			set_party_name = {
+				ideology = neutrality  
+				long_name = JAP_liberal_democrats_long
+				name = JAP_liberal_democrats
+			}
+			JAP_Koizumi_Shinjiro = {
+				promote_character = yes 
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_imperial_influence_dm
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_state_shinotism_dm
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_early_industrialization_efforts_dm 
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_imperial_army_dm
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_imperial_navy_dm
+			}
+			remove_dynamic_modifier = {
+				modifier = JAP_army_and_naval_air_services_dm 
+			}
+			remove_ideas = JAP_militarism 
+			remove_ideas = JAP_army_faction_tier_2_equal_navy
+			remove_ideas = JAP_naval_faction_tier_2_equal_army 
+			remove_ideas = JAP_zaibatsu_faction_tier_2
+			remove_ideas = JAP_government_faction_tier_2
+			remove_ideas = JAP_separate_air_services
+			remove_ideas = JAP_japanese_armor_doctrine
+			remove_ideas = MTG_naval_treaty_adherent 
+			add_ideas = free_trade 
+			add_ideas = disarmed_nation 
+			add_ideas = civilian_economy  
+		}
+	}
+}

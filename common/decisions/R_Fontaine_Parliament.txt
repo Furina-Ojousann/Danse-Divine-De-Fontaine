@@ -1,0 +1,517 @@
+French_Fontaine_parliament = {
+	### 国民议会 ###
+	### RFP 是Reword Fontaine Parliament的缩写 ###
+	RFP_1936_presidential_election = {
+		# 1936年总统直选 #
+		icon = GFX_decision_hol_radio_oranje 
+		days_mission_timeout = 90 
+		selectable_mission = yes 
+		activation = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_1936_presidential_election.tt.2
+				has_war_with_major = yes 
+				threat > 0.89
+				any_country = {
+					is_major = yes 
+					or = { has_government = communism has_government = fascism }
+					ic_ratio = {
+						tag = PREV 
+						ratio > 1 
+					}
+				}
+			}
+			has_war_with_major = yes 
+			threat > 0.89
+			any_country = {
+				is_major = yes 
+				or = { has_government = communism has_government = fascism }
+				ic_ratio = {
+					tag = PREV 
+					ratio > 1 
+				}
+			}
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = neutrality 
+				popularity = 0.45
+			}
+			set_party_name = {
+				ideology = neutrality
+				name = RFP_temporary_commuttee
+				long_name = RFP_temporary_commuttee_long 
+			}
+			set_politics = {
+				ruling_party = neutrality 
+				elections_allowed = no 
+			}
+			FRA_Furina_de_Fontaine = {
+				add_country_leader_role = {
+					promote_leader = yes 
+					country_leader = {
+						ideology = junta 
+						traits = { r_fontaine_hearts_of_people_lie }
+					}
+				}
+			}
+			set_cosmetic_tag = Fontaine_republican_junta
+		}
+		timeout_effect = {
+			custom_effect_tooltip = RFP_1936_presidential_election.tt.1
+			add_stability = 0.02
+			country_event = { id = R_Fontaine.12 hours = 6 }
+		}
+	}
+
+	RFP_start_labour_law_reform_voting = {
+		#开始就劳动法修正案进行表决
+		icon = GFX_decision_eng_trade_unions_support 
+		visible = { has_completed_focus = FRA_renew_labour_law_reform has_country_flag = r_fontaine_bill_labour_reform }
+		fire_only_once = yes 
+		cost = 30 
+		activation = { always = no }
+		days_mission_timeout = 31 
+		selectable_mission = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = r_fontaine_bill_expectation_at_least_ambiguous
+				set_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_CF }
+				add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_AD }
+				add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_FR }
+				add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PF }
+				add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PTF }
+				add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_independent }
+				check_variable = { support_this_bill_seats_total > 2.39 }
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = FRA_renew_labour_law_reform_tt 
+			hidden_effect = { log = "在劳动法逾时执行中" R_Fontaine_Start_Vote_Animation = yes set_country_flag = fontaine_show_player_context_parliament }
+		}
+		complete_effect = {
+			custom_effect_tooltip = r_fontaine_start_bill_voting
+			hidden_effect = {
+				log = "在劳动法主动执行中"
+				set_country_flag = fontaine_show_player_context_parliament 
+				R_Fontaine_Start_Vote_Animation = yes 
+			}
+			if = {
+				limit = {
+					set_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_CF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_AD }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_FR }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PTF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_independent }
+					check_variable = { support_this_bill_seats_total > 4.79 }
+				}
+				custom_effect_tooltip = r_fontaine_bill_very_good_expectation
+			}
+			else_if = {
+				limit = {
+					set_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_CF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_AD }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_FR }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PTF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_independent }
+					check_variable = { support_this_bill_seats_total > 3.59 }
+				}
+				custom_effect_tooltip = r_fontaine_bill_good_expectation
+			}
+			else_if = {
+				limit = {
+					set_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_CF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_AD }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_FR }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PTF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_independent }
+					check_variable = { support_this_bill_seats_total > 2.39 }
+				}
+				custom_effect_tooltip = r_fontaine_bill_ambiguous_expectation
+			}
+			else_if = {
+				limit = {
+					set_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_CF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_AD }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_FR }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_PTF }
+					add_to_temp_variable = { support_this_bill_seats_total = r_fontaine_bill_support_independent }
+					check_variable = { support_this_bill_seats_total > 1.19 }
+				}
+				custom_effect_tooltip = r_fontaine_bill_bad_expectation
+			}
+			else = {
+				custom_effect_tooltip = r_fontaine_bill_very_bad_expectation
+			}
+
+			effect_tooltip = {
+				custom_effect_tooltip = r_fontaine_after_bill_accepted
+				if = {
+					limit = { check_variable = { r_fontaine_labour_bill_version = 1 } }
+					add_ideas = fra_r_labour_law_version_1 
+				}
+				else_if = {
+					limit = { check_variable = { r_fontaine_labour_bill_version = 2 } }
+					add_ideas = fra_r_labour_law_version_2 
+				}
+				else = {
+					add_ideas = fra_r_labour_law_version_3 
+				}
+			}
+		}
+
+	}
+
+	RFP_investigate_economic_impact = {
+		icon = GFX_decision_generic_merge_plant_materiel 
+		visible = {
+			has_country_flag = r_fontaine_bill_labour_reform
+			has_country_flag = r_fontaine_try_labour_bill 
+		}
+		fire_only_once = yes 
+		days_remove = 14 
+		cost = 30 
+		remove_effect = {
+			custom_effect_tooltip = r_fontaine_AD_bill_support_boost_1
+			add_to_variable = { r_fontaine_bill_support_AD = 0.10 }
+			clamp_variable = { var = r_fontaine_bill_support_AD max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_CF_bill_support_boost_1
+			add_to_variable = { r_fontaine_bill_support_CF = 0.10 }
+			clamp_variable = { var = r_fontaine_bill_support_CF max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_FR_bill_support_boost_1
+			add_to_variable = { r_fontaine_bill_support_FR = 0.10 }
+			clamp_variable = { var = r_fontaine_bill_support_FR max = 1.0 min = 0.0 }
+		}
+	}
+
+	RFP_lobby_for_suppport = {
+		icon = GFX_decision_eng_propaganda_campaigns
+		visible = {
+			has_country_flag = r_fontaine_bill_labour_reform
+			has_country_flag = r_fontaine_try_labour_bill 
+		}
+		fire_only_once = yes 
+		days_remove = 14 
+		cost = 100 
+		remove_effect = {
+
+			custom_effect_tooltip = r_fontaine_PF_bill_support_boost_2
+			add_to_variable = { r_fontaine_bill_support_PF = 0.20 }
+			clamp_variable = { var = r_fontaine_bill_support_PF max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_CF_bill_support_boost_2
+			add_to_variable = { r_fontaine_bill_support_CF = 0.20 }
+			clamp_variable = { var = r_fontaine_bill_support_CF max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_AD_bill_support_boost_2
+			add_to_variable = { r_fontaine_bill_support_AD = 0.20 }
+			clamp_variable = { var = r_fontaine_bill_support_AD max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_FR_bill_support_boost_2
+			add_to_variable = { r_fontaine_bill_support_FR = 0.20 }
+			clamp_variable = { var = r_fontaine_bill_support_FR max = 1.0 min = 0.0 }
+
+		}
+	}
+
+	RFP_compromise_a_weaker_labour_law = {
+		icon = GFX_decision_eng_ally_imperialist_coup 
+		visible = {
+			has_country_flag = r_fontaine_bill_labour_reform
+			has_country_flag = r_fontaine_try_labour_bill 
+			check_variable = { r_fontaine_labour_bill_version = 1 }
+		}
+		fire_only_once = yes 
+		days_remove = 7 
+		cost = 10 
+		remove_effect = {
+			custom_effect_tooltip = r_fontaine_after_bill_accepted 
+			add_to_variable = { r_fontaine_labour_bill_version = 1 }
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = fra_r_labour_law_version_1 
+					add_idea = fra_r_labour_law_version_2 
+				}
+			}
+			custom_effect_tooltip = r_fontaine_AD_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_AD = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_AD max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_CF_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_CF = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_CF max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_FR_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_FR = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_FR max = 1.0 min = 0.0 }
+		}
+	}
+
+	RFP_further_compromise_for_labour_law = {
+		icon = GFX_decision_CHL_mapuche_liberate_nahua 
+		visible = {
+			has_country_flag = r_fontaine_bill_labour_reform
+			has_country_flag = r_fontaine_try_labour_bill 
+			check_variable = { r_fontaine_labour_bill_version = 2 }
+		}
+		fire_only_once = yes 
+		days_remove = 7 
+		cost = 10 
+		remove_effect = {
+			custom_effect_tooltip = r_fontaine_after_bill_accepted 
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = fra_r_labour_law_version_2
+					add_idea = fra_r_labour_law_version_3
+				}
+			}
+			custom_effect_tooltip = r_fontaine_AD_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_AD = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_AD max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_CF_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_CF = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_CF max = 1.0 min = 0.0 }
+			custom_effect_tooltip = r_fontaine_FR_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_FR = 0.30 }
+			clamp_variable = { var = r_fontaine_bill_support_FR max = 1.0 min = 0.0 }
+		}
+	}
+
+	RFP_promise_further_social_reform = {
+		icon = GFX_decision_eng_trade_unions_demand 
+		visible = {
+			has_country_flag = r_fontaine_bill_labour_reform
+			has_country_flag = r_fontaine_try_labour_bill 
+		}
+		fire_only_once = yes 
+		days_remove = 21 
+		cost = 100 
+		remove_effect = {
+			add_popularity = {
+				ideology = populist_socialism
+				popularity = 0.02 
+			}
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.02 
+			}
+
+			custom_effect_tooltip = r_fontaine_PF_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_PF = 0.60 }
+			clamp_variable = { var = r_fontaine_bill_support_PF max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_PTF_bill_support_boost_3
+			add_to_variable = { r_fontaine_bill_support_PTF = 0.60 }
+			clamp_variable = { var = r_fontaine_bill_support_PTF max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_AD_bill_support_worsen_1 
+			add_to_variable = { r_fontaine_bill_support_AD = -0.10 }
+			clamp_variable = { var = r_fontaine_bill_support_AD max = 1.0 min = 0.0 }
+
+			custom_effect_tooltip = r_fontaine_FR_bill_support_worsen_1 
+			add_to_variable = { r_fontaine_bill_support_FR = -0.10 }
+			clamp_variable = { var = r_fontaine_bill_support_FR max = 1.0 min = 0.0 }
+
+		}
+	}
+
+	RFP_navia_plan_boost_consumption = {
+		icon = GFX_decision_navia_plan_1 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_consumption_trigger 
+				check_variable = {
+					R_Fontaine_Consumption_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Consumption_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { NEP_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { NEP_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { NEP_production_factory_max_efficiency_factor = 0.05 tooltip = production_speed_dockyard_factor_tt }
+		}
+	}
+
+	RFP_navia_plan_boost_labour = {
+		icon = GFX_decision_navia_plan_2 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_labour_trigger 
+				check_variable = {
+					R_Fontaine_Labour_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Labour_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_stability_factor = 0.05 tooltip = stability_factor_tt }
+			add_to_variable = { NEP_war_stability_factor = 0.10 tooltip = war_support_factor_tt }
+			add_to_variable = { NEP_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { NEP_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { NEP_production_factory_efficiency_gain_factor = 0.10 tooltip = production_factory_efficiency_gain_factor_tt }
+		}
+	}
+
+	RFP_navia_plan_boost_price = {
+		icon = GFX_decision_navia_plan_3 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_price_trigger 
+				check_variable = {
+					R_Fontaine_Price_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Price_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_stability_factor = 0.05 tooltip = stability_factor_tt }
+			add_to_variable = { NEP_line_change_production_efficiency_factor = 0.10 tooltip = line_change_production_efficiency_factor_tt }
+			if = { limit = { check_variable = { R_Fontaine_Finance_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Finance_Monthly_Progress = 0.02 tooltip = modify_finance_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Trust_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Trust_Monthly_Progress = 0.02 tooltip = modify_trust_monly_tooltip } }
+		}
+	}
+
+	RFP_navia_plan_boost_finance = {
+		icon = GFX_decision_navia_plan_4 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_finance_trigger 
+				check_variable = {
+					R_Fontaine_Finance_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Finance_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { NEP_global_building_slots_factor = 0.15 tooltip = global_building_slots_factor_tt }
+		}
+	}
+
+	RFP_navia_plan_boost_trust = {
+		icon = GFX_decision_navia_plan_5 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_trust_trigger 
+				check_variable = {
+					R_Fontaine_Trust_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Trust_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			if = { limit = { check_variable = { R_Fontaine_Consumption_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Consumption_Monthly_Progress = 0.04 tooltip = modify_consumption_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Labour_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Labour_Monthly_Progress = 0.04 tooltip = modify_labour_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Price_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Price_Monthly_Progress = 0.04 tooltip = modify_price_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Finance_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Finance_Monthly_Progress = 0.04 tooltip = modify_finance_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Tax_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Tax_Monthly_Progress = 0.04 tooltip = modify_tax_monly_tooltip } }
+			if = { limit = { check_variable = { R_Fontaine_Trade_Progress_Total > 1 } } add_to_variable = { R_Fontaine_Trade_Monthly_Progress = 0.04 tooltip = modify_trade_monly_tooltip } }
+		}
+	}
+
+	RFP_navia_plan_boost_tax = {
+		icon = GFX_decision_navia_plan_6 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_tax_trigger 
+				check_variable = {
+					R_Fontaine_Tax_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Tax_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { NEP_political_power_cost = -0.20 tooltip = political_power_cost_tt }
+		}
+	}
+
+	RFP_navia_plan_boost_trade = {
+		icon = GFX_decision_navia_plan_7 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RFP_navia_plan_boost_trade_trigger 
+				check_variable = {
+					R_Fontaine_Trade_Progress_Total > 0.99 
+				}
+			}
+		}
+		complete_effect = {
+			set_variable = { R_Trade_frame = 2 }
+			custom_effect_tooltip = r_fontaine_modifiy_nep_tooltip
+			add_to_variable = { NEP_industrial_capacity_factory = 0.10 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { NEP_industrial_capacity_dockyard = 0.10 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { NEP_min_export = 0.10 tooltip = min_export_tt }
+		}
+	}
+
+	RFP_navia_plan_finish_all = {
+		icon = GFX_decision_generic_consumer_goods
+		visible = {
+			has_completed_focus = FRA_renew_navia_plan 
+			is_debug = yes
+			is_ai = no 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			add_to_variable = { R_Fontaine_Consumption_Progress_Total = 1 tooltip = modify_consumption_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Consumption_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Labour_Progress_Total = 1 tooltip = modify_labour_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Labour_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Price_Progress_Total = 1 tooltip = modify_price_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Price_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Finance_Progress_Total = 1 tooltip = modify_finance_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Finance_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Trust_Progress_Total = 1 tooltip = modify_trust_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Trust_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Tax_Progress_Total = 1 tooltip = modify_tax_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Tax_Monthly_Progress max = 1.00 min = 0.00 }
+
+			add_to_variable = { R_Fontaine_Trade_Progress_Total = 1 tooltip = modify_trade_direct_tooltip }
+			clamp_variable = { var = R_Fontaine_Trade_Monthly_Progress max = 1.00 min = 0.00 }
+		}
+	}
+}

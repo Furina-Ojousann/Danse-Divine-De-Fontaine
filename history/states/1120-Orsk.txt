@@ -1,0 +1,19 @@
+state = {
+	id = 1120 
+	name = 1120_Orsk
+	manpower = 289000
+	resources = {
+		steel = 9 
+		coal = 8 
+	}
+	state_category = town 
+	history = {
+		owner = SOV 
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 4 
+			industrial_complex = 1 
+		}
+	}
+	provinces = { 4215 4261 10196 10224 7281 7233 }
+}

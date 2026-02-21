@@ -1,0 +1,11 @@
+state = {
+	id = 1116
+	name = 1116_Sainyabuli
+	manpower = 21900
+	state_category = pastoral
+	history = {
+		owner = FIC
+		add_core_of = LAO
+	}
+	provinces = { 10330 10356 10456 }
+}

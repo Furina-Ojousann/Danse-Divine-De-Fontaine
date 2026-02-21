@@ -1,0 +1,159 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_generic_motorized_equipment"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_motorized_equipment_main_arms"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms.png"
+	}
+	spriteType = {
+		name = "GFX_generic_motorized_equipment_engine"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_engine.png"
+	}
+	spriteType = {
+		name = "GFX_EMSI_mot_main_weapon"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_additional_machine_guns.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_general_supply"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_mot_general_supply.png"
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_special_equipment_general"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_mot_general_supply.png"
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_main_arms_rocket"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_rocket_category.png"
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_main_arms_slot"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_category.png"
+	}
+	spriteType = {
+		name = "GFX_motorized_infantry_gun_1"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1936.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_motorized_infantry_gun_2"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1939.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_motorized_infantry_gun_3"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1942.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_motorized_infantry_gun_4"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1944.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_motorized_infantry_gun_1"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1936.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_motorized_infantry_gun_2"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1939.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_motorized_infantry_gun_3"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1942.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_motorized_infantry_gun_4"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_gun_1944.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_gasoline_engine"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/tank_module_gasoline_engine.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_diesel_engine"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/tank_module_diesel_engine.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_basic_motorized_armor"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_armor_basic.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_improved_motorized_armor"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_armor_improved.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_advanced_motorized_armor"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_armor_advanced.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_EMI_mot_truck_suspension"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_truck_suspension.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_tank_suspension"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_tank_suspension.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_EMI_mot_anti_tank_equipment_1"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_tank_equipment_1.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_anti_tank_equipment_2"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_tank_equipment_2.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_special_equipment_anti_tank_equipment"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_tank_equipment_category.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_EMI_mot_anti_air_equipment_1"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_air_equipment_1.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_anti_air_equipment_2"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_air_equipment_2.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_mot_special_equipment_anti_air_equipment"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_anti_air_equipment_category.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_EMI_motorized_rocket_artillery_gun_1"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_rocket_1.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_EMI_motorized_rocket_artillery_gun_2"
+		textureFile = "gfx/equipmentdesigner/motorized_equipment/generic_motorized_equipment_main_arms_rocket_2.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_motorized_rocket_gun_equipment_medium"
+		texturefile = "gfx/interface/technologies/GER_motorized_rocket_unit.dds"
+	}	
+}

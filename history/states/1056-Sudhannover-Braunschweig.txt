@@ -1,0 +1,30 @@
+state = {
+	id = 1056
+	name = 1056_Sudhannover-Braunschweig
+	manpower = 897000
+	state_category = city 
+	history = {
+		owner = GER
+		add_core_of = GER
+		add_core_of = HAN
+		add_core_of = PRE 
+		victory_points = {
+			6377 10 # Hannover
+		}
+		victory_points = {
+			11493 5 
+		}
+		victory_points = {
+			6513 3 
+		}
+		set_province_name = {
+			id = 11493
+			name = 11493_R
+		}
+		buildings = {
+			infrastructure = 7 
+			industrial_complex = 1 
+		}
+	}
+	provinces = { 3234 3395 6377 11493 11402 6513 }
+}

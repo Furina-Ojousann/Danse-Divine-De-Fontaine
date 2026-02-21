@@ -1,0 +1,11 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_superevents_window_1"
+		textureFile = "gfx/interface/superevents/superevents_window_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_superevents_opinion_1"
+		textureFile = "gfx/interface/superevents/superevents_opinion_1.png"
+	}
+}

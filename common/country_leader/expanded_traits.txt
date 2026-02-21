@@ -1,0 +1,957 @@
+leader_traits = {
+
+	re_army_chief_planning_1 = { #
+		sprite = 5
+		planning_speed = 0.05 
+		max_planning = 0.10 
+		experience_gain_army = 0.20 
+
+		command_cap_increase = 10 
+		command_power = 0
+	}
+
+	son_of_war = {
+		random = no  
+		political_power_factor = -0.15 
+		war_stability_factor = 0.10
+		production_factory_max_efficiency_factor = 0.05 
+	}
+
+	traitorous_officer = {
+		random = no 
+		communism_acceptance = -75
+		targeted_modifier = {
+			tag = SOV 
+			attack_bonus_against = 0.10 
+		}
+	}
+
+	turkic_ethnologist = {
+		random = no 
+		conscription_factor = -0.05 
+		political_power_factor = 0.10 
+		war_support_factor = 0.05 
+	}
+
+	r_fontaine_hearts_of_people_lie = {
+		random = no 
+		war_stability_factor = 0.40
+		mobilization_speed = 0.25
+		weekly_casualties_war_support = 0.002 
+		weekly_bombing_war_support = 0.002 
+		weekly_convoys_war_support = 0.002 
+	}
+	
+	international_fuel_carter = {
+		random = no 
+	}
+
+	north_butcher = {
+		random = no 
+		army_core_attack_factor = 0.25
+		army_core_defence_factor = 0.25
+		supply_node_range = 0.30 
+		targeted_modifier = {
+			tag = SOV 
+			attack_bonus_against = 0.25
+			defense_bonus_against = 0.25
+			breakthrough_bonus_against = 0.50 
+		}
+	}
+
+	president_running_with_scissors = {
+		random = no 
+		stability_factor = -0.05
+		army_core_attack_factor = -0.10
+		join_faction_tension = 0.50 
+		political_power_factor = 0.10 
+	}
+
+	algeria_governor = {
+		random = no 
+		political_power_gain = -0.10 
+		resistance_target = -0.05 
+		resistance_growth = -0.20
+		compliance_growth = -0.10 
+	}
+
+	algeria_autonomy_advocate = {
+		random = no 
+		neutrality_drift = 0.01
+		neutrality_acceptance = 25 
+		stability_factor = 0.10 
+	}
+
+	algeria_general_terror = {
+		random = no 
+		stability_weekly = -0.005
+		no_compliance_gain = 1 
+		war_stability_factor = 0.40 
+		resistance_growth = -0.05 
+		supply_consumption_factor = -0.20 
+		resistance_target = 0.15
+	}
+
+	algeria_autonomy_activitor = {
+		random = no 
+		autonomy_gain = 0.10 
+		populist_socialism_drift = 0.02
+		democratic_drift = 0.01 
+		political_power_factor = -0.25
+		industrial_capacity_factory = 0.10 
+	}
+
+	algeria_corruption_old_revolution = {
+		random = no 
+		consumer_goods_factor = 0.20 
+		stability_factor = 0.15 
+		communism_drift = -0.02 
+	}
+
+	monarchist_philosopher = {
+		random = no 
+		communism_acceptance = -75
+		democratic_acceptance = -75
+		stability_factor = 0.10 
+		war_stability_factor = 0.20 
+	}
+
+	rechtsgerichteter_jurist = {
+		random = no 
+		sprite = 13
+		war_stability_factor = 0.10 
+		mobilization_speed = 0.25 
+		fascism_drift = 0.03
+		neutrality_drift = 0.03 
+	}
+
+	todeshandler = {
+		random = no 
+		sprite = 10
+		production_speed_arms_factory_factor = 0.10 
+		production_factory_start_efficiency_factor = 0.20 
+		production_factory_efficiency_gain_factor = 0.10 
+		monthly_population = -0.15
+	}
+
+	naturforscher = {
+		random = no 
+		sprite = 1 
+		research_speed_factor = 0.03 
+		non_core_manpower = 0.02
+		terrain_penalty_reduction = 0.10 
+	}
+
+	Ministre_des_armees_de_Gaulle = {
+		random = no 
+		sprite = 8 
+		armor_track_mastery_gain_factor = 0.20
+		experience_gain_army = 0.40 
+		command_cap_increase = 50 
+		army_armor_attack_factor = 0.10 
+		equipment_bonus = {
+			armor = {
+				breakthrough = 0.15
+				maximum_speed = 0.10 
+			}
+		}
+	}
+
+	nationalist_revolutionary = {
+		random = no 
+		army_attack_factor = 0.05
+		weekly_casualties_war_support = 0.002
+		weekly_bombing_war_support = 0.002
+		weekly_convoys_war_support = 0.002 
+		conscription_factor = -0.05
+	}
+
+	Ministre_des_armees_Giraud = {
+		random = no 
+		sprite = 8 
+		infantry_track_mastery_gain_factor = 0.10
+		operations_track_mastery_gain_factor = 0.10
+		experience_gain_army = 0.40 
+		command_cap_increase = 50 
+		army_infantry_defence_factor = 0.10 
+		army_armor_defence_factor = 0.10 
+		equipment_bonus = {
+			mechanized = {
+				build_cost_ic = -0.10 
+			}
+		}
+	}
+
+	military_prime_minister_1 = {
+		random = no 
+		war_stability_factor = 0.10 
+		political_power_factor = 0.05 
+		party_popularity_stability_factor = -0.15 
+	}
+
+	military_prime_minister_2 = {
+		random = no 
+		war_stability_factor = 0.10 
+		ai_join_ally_desire_factor = -30 
+		ai_focus_military_equipment_factor = 0.20 
+	}
+
+	colonial_authority = {
+		random = no 
+		non_core_manpower = 0.03 
+		resistance_target = -0.10 
+		compliance_growth = -0.02
+	}
+
+	economic_coordinator = {
+		random = no 
+		political_power_factor = 0.10 
+		production_speed_buildings_factor = 0.05 
+		production_speed_facility_factor = 0.10 
+		mobilization_speed = -0.25 
+		custom_modifier_tooltip = economic_coordinator_tt
+	}
+
+	rearmer_coordinator = {
+		random = no 
+		sprite = 18 
+		party_popularity_stability_factor = -0.05
+		industrial_capacity_factory = 0.05 
+		production_speed_arms_factory_factor = 0.10 
+		mobilization_speed = 0.25 
+	}
+
+	controversial_subject = {
+		random = no 
+		stability_factor = 0.10 
+		political_power_cost = 0.05 
+		communism_acceptance = -50
+	}
+
+	SCAP_democratic = {
+		random = no 
+		democratic_acceptance = 50 
+		democratic_drift = 0.20
+		stability_weekly = 0.003 
+		political_power_factor = -0.10 
+	}
+
+	SCAP_communist = {
+		random = no 
+		communism_acceptance = 50
+		communism_drift = 0.20 
+		stability_weekly = 0.003 
+		political_power_factor = -0.10 
+	}
+
+	puppet_legislature = {
+		random = no 
+		political_power_gain = 0.15
+	}
+
+	silent_ruler = {
+		random = no 
+		stability_factor = 0.25 
+	}
+
+	re_army_chief_planning_2 = { #
+		sprite = 5
+		max_planning = 0.075 
+		planning_speed = 0.15
+		experience_gain_army = 0.30
+
+		command_cap_increase = 20
+		command_power = 0
+	}
+
+	re_army_chief_planning_3 = { #
+		sprite = 5
+		max_planning = 0.10 
+		planning_speed = 0.20 
+		experience_gain_army = 0.40
+
+		command_cap_increase = 30
+		command_power = 0
+	}
+
+	re_army_logistics_1 = {  # Ground units suffer 4% less attrition
+		sprite = 6
+		attrition = -0.10 
+		supply_consumption_factor = -0.05
+		#experience_gain_army = @experience_gain_low
+
+		command_cap_increase = 10
+		command_power = 0
+	}
+
+	re_army_logistics_2 = {  # Ground units suffer 8% less attrition
+		sprite = 6
+		attrition = -0.15
+		supply_consumption_factor = -0.075
+		#experience_gain_army = @experience_gain_medium
+
+		command_cap_increase = 20
+		command_power = 0
+	}
+
+	re_army_logistics_3 = {  # Ground units suffer 12% less attrition
+		sprite = 6
+		attrition = -0.20
+		supply_consumption_factor = -0.10 
+		#experience_gain_army = @experience_gain_high
+
+		command_cap_increase = 30
+		command_power = 0
+	}
+
+	the_grave_guard_of_moscow = {
+		random = no 
+		stability_factor = -0.1 
+		drift_defence_factor = -0.25 
+		fascism_drift = 0.02
+	}
+
+	army_politics = {
+		random = no 
+		sprite = 12
+		army_org_factor = 0.05
+		army_morale_factor = 0.1 
+		training_time_army_factor = 0.1 
+	}
+
+	propaganda_minister = {
+		random = no 
+		sprite = 13 
+	}
+
+	constitutionalism_protector = {
+		random = no 
+		democratic_acceptance = 30 
+		democratic_drift = 0.03
+		party_popularity_stability_factor = 0.10 
+		send_volunteer_size = 3 
+		operative_slot = 1 
+	}
+
+	kaiser_of_the_old_continent = {
+		random = no 
+		subjects_autonomy_gain = -0.25
+		puppet_cost_factor = -0.25
+		annex_cost_factor = 0.15
+		compliance_growth = 0.25 
+		army_attack_against_major_factor = 0.10
+	}
+
+	modest_economist = {
+		random = no 
+		sprite = 13 
+		democratic_drift = 0.05
+		party_popularity_stability_factor = 0.10
+		production_speed_infrastructure_factor = 0.20 
+		production_speed_industrial_complex_factor = 0.10 
+	}
+
+	empire_maintainer = {
+		random = no 
+		guarantee_cost = -0.25
+		civil_war_involvement_tension = 0.05 
+		war_support_factor = 0.10 
+		root_out_resistance_effectiveness_factor = 0.50
+		send_volunteer_size = 1 
+	}
+
+	lord_of_capitalism = {
+		random = no 
+		sprite = 13 
+		line_change_production_efficiency_factor = -0.20
+		production_factory_start_efficiency_factor = 0.10 
+		cic_construction_boost_factor = 0.15
+		economy_cost_factor = -0.33
+		production_speed_buildings_factor = 0.05 
+	}
+
+	psychoanalyst = {
+		random = no 
+		sprite = 12
+		custom_modifier_tooltip = psychoanalyst_tt
+		fascism_drift = -0.01 
+		political_power_gain = 0.01
+	}
+
+	healing_from_war = {
+		random = no 
+		sprite = 13
+		war_support_factor = -0.05
+		production_speed_arms_factory_factor = -0.20
+		industry_repair_factor = 0.50
+		consumer_goods_factor = -0.35
+		stability_weekly = 0.002
+		production_speed_industrial_complex_factor = 0.20
+	}
+
+	serious_technocrat = {
+		random = no 
+		sprite = 13
+		consumer_goods_factor = 0.05
+		political_power_cost = 0.10 
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.20
+		production_factory_efficiency_gain_factor = -0.10
+		production_speed_arms_factory_factor = 0.10
+	}
+
+	precise_dessert_chef = {
+		random = no 
+		supply_consumption_factor = 0.02
+		no_supply_grace = 12
+		army_strength_factor = 0.10
+		custom_modifier_tooltip = precise_dessert_chef_tt
+	}
+
+	retired_officer_france = {
+		random = no 
+		war_support_factor = 0.05 
+		war_stability_factor = 0.10 
+		justify_war_goal_time = -0.35
+	}
+
+	navy_cabinet = {
+		random = no 
+		experience_gain_navy_factor = 0.05 
+		navy_chief_cost_factor = -0.25 
+	}
+
+	jap_democratic_reformer = {
+		random = no 
+		sprite = 9 
+		democratic_drift = 0.20 
+		communism_drift = 0.02
+		political_power_factor = 0.10 
+	}
+
+	rehabilitater = {
+		random = no 
+		#repair_speed_infrastructure_factor = 0.25 
+		#repair_speed_industrial_complex_factor = 0.25 
+		industry_repair_factor = 0.15 
+		production_speed_industrial_complex_factor = 0.10 
+		war_support_factor = -0.10 
+	}
+
+	critical_mission = {
+		random = no 
+		stability_factor = 0.20 
+		political_power_factor = 0.10 
+		war_support_weekly = -0.0050
+		surrender_limit = -0.75
+	}
+
+	loafer = {
+		random = no 
+		sprite = 15 
+		operative_slot = 1 
+		agency_upgrade_time = -0.25
+		decryption_factor = 0.15
+		intel_network_gain_factor = 0.25
+		own_operative_detection_chance_factor = -0.5 
+	}
+
+	experience_shortage = {
+		random = no 
+		political_advisor_cost_factor = 0.10 
+		political_power_gain = 0.05 
+	}
+
+	emperor_of_japan = {
+		random = no  
+		stability_factor = 0.30 
+	}
+
+	emperor_of_japan_religion_combined = {
+		stability_factor = 0.30 
+		weekly_casualties_war_support = 0.002 
+		army_org_regain = 0.20 
+		mobilization_speed = 0.25 
+	}
+
+	confused_parliament = {
+		random = no 
+		political_power_cost = 0.80 
+	}
+
+	quite_parliament = {
+		random = no 
+	}
+
+	ordered_parliament = {
+		random = no 
+		political_power_gain = 0.10
+	}
+
+	cam_tutor = {
+		random = no 
+		communism_drift = 0.05 
+		political_power_gain = 0.50
+	}
+
+	national_idol = {
+		random = no 
+		sprite = 12 
+		political_power_factor = 0.1
+		consumer_goods_factor = -0.10 
+		conscription_factor = 0.05 
+	}
+
+	jap_diplomat = {
+		random = no 
+		communism_acceptance = 75 
+		fascism_acceptance = 75 
+		trade_opinion_factor = 0.1 
+		political_power_factor = 0.05 
+		targeted_modifier = {
+			tag = PHI 
+			justify_war_goal_time = -0.75 
+		}
+		targeted_modifier = {
+			tag = INS  
+			justify_war_goal_time = -0.75 
+		}
+		targeted_modifier = {
+			tag = MAL  
+			justify_war_goal_time = -0.75 
+		}
+	}
+
+	great_mathematician = {
+		random = no 
+		research_speed_factor = 0.03 
+	}
+
+	pater_patriae_korean = {
+		random = no 
+		stability_factor = 0.10 
+		political_advisor_cost_factor = -0.15  
+	}
+
+	provisional_government_fra = {
+		random = no 
+		political_power_factor = 0.10  
+		drift_defence_factor = 0.25
+		communism_drift = 0.05 
+		neutrality_drift = 0.01 
+		democratic_drift = 0.02 
+	}
+
+	seasoned_guerrilla_fighter = {
+		random = no 
+		army_core_defence_factor = 0.03 
+		war_support_factor = 0.05 
+	}
+
+	warlord = {
+		random = no 
+		political_power_cost = 0.05
+		war_stability_factor = 0.05 
+		ai_focus_defense_factor = 0.5 
+		ai_get_ally_desire_factor = -500 	
+	}
+
+	commune_committee = {
+		random = no 
+		political_power_gain = 0.30 
+		communism_drift = 0.03 
+		neutrality_drift = 0.01 
+	}
+
+	scholar = {
+		random = yes 
+		war_support_factor = -0.05
+		political_power_factor = 0.1 
+		research_speed_factor = 0.05 
+	}
+
+	symbol_of_national_unity = {
+		random = no 
+		party_popularity_stability_factor = 0.20 
+		custom_modifier_tooltip = symbol_of_national_unity_tt
+	}
+
+	order_bureaucrat = {
+		random = no 
+		sprite = 14 
+		neutrality_drift = 0.05 
+		civilian_intel_to_others = -0.15
+		local_intel_to_enemies = -0.20 
+		stability_weekly = 0.002
+	}
+
+	puppet_controller = {
+		random = no 
+		political_power_factor = 0.25
+		political_advisor_cost_factor = -0.10
+		puppet_cost_factor = -0.75
+		party_popularity_stability_factor = -0.05
+	}
+
+	kodaha_soldider = {
+		random = no 
+		stability_factor = -0.10 
+		army_org_regain = 0.10 
+		training_time_army_factor = -0.10 
+		conscription_factor = 0.20 
+	}
+
+	left_wing_opposer_systemized = {
+		random = no 
+		sprite = 13
+		communism_acceptance = 20 
+		stability_factor = 0.10 
+		political_power_gain = 0.15
+		production_factory_max_efficiency_factor = 0.05 
+	}
+
+	jap_daihonei_minister_land = {
+		random = no 
+		sprite = 18 
+		experience_gain_army = 0.40 
+		command_cap_increase = 90 
+		max_planning = 0.10 
+		army_morale_factor = 0.15
+	}
+
+	jap_daihonei_minister_navy = {
+		random = no 
+		sprite = 3 
+		experience_gain_navy = 0.30
+		political_power_gain = 0.05
+		repair_speed_factor = 0.15  
+		industrial_capacity_dockyard = 0.10  
+		command_cap_increase = 30 
+	}
+
+	jap_princess_of_morality = {
+		random = no 
+		sprite = 13 
+		stability_factor = 0.15 
+		production_speed_industrial_complex_factor = 0.10 
+		production_speed_infrastructure_factor = 0.10 
+	}
+
+	current_economist = {
+		random = no 
+		sprite = 10 
+		political_power_cost = 0.10
+		consumer_goods_factor = 0.05 
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.15
+		stability_factor = 0.10 
+	}
+
+	constitutional_reformer = {
+		random = no 
+		party_popularity_stability_factor = 0.10 
+		political_power_factor = 0.25
+		political_advisor_cost_factor = 0.05
+		democratic_acceptance = 50 
+		fascism_acceptance = -20 
+	}
+
+	star_idol = {
+		random = no 
+		party_popularity_stability_factor = 0.10
+		war_support_factor = 0.05
+	}
+
+	star_idol_improved = {
+		random = no 
+		party_popularity_stability_factor = 0.15
+		political_power_factor = 0.05
+		war_support_factor = 0.10
+	}
+
+	Fontaine_star = {
+		random = no 
+		party_popularity_stability_factor = 0.1 
+		political_power_factor = 0.05 
+	}
+
+	dim_star = {
+		random = no 
+		party_popularity_stability_factor = 0.05 
+		political_power_factor = 0.01 
+	}
+
+	resister = {
+		random = no 
+		defensive_war_stability_factor = 0.25 
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+	}
+
+	police_leader = {
+		random = no 
+		sprite = 9 
+		stability_weekly = 0.001
+		political_power_gain = 0.15 
+		conscription_factor = 0.05 
+	}
+
+	flexible_contacter = {
+		random = no 
+		sprite = 9 
+		political_power_factor = 0.10
+		political_advisor_cost_factor = -0.15
+		enemy_operative_capture_chance_factor = 0.10 
+		enemy_operative_intel_extraction_rate = -0.15 
+		encryption_factor = 0.05 
+		operative_slot = 1 
+	}
+
+	by_the_flood_of_nationalist = {
+		random = no 
+		drift_defence_factor = -0.50
+		fascism_acceptance = 20 
+		fascism_drift = 0.02 
+		neutrality_drift = 0.02 
+	}
+
+	inudstry_constructer = {
+		random = no 
+		political_power_gain = 0.15
+		production_speed_industrial_complex_factor = 0.10 
+		production_speed_infrastructure_factor = 0.10 
+	}
+
+	judge_war_love = {
+		random = no 
+		war_support_factor = 0.10 
+		war_stability_factor = 0.20 
+		political_power_factor = 0.15 
+		stability_weekly = 0.002
+		monthly_population = 0.20 
+		opinion_gain_monthly_factor = 0.20 
+	}
+
+	unity_conference = {
+		random = no 
+		political_power_factor = 0.10 
+		political_advisor_cost_factor = -0.20
+		defensive_war_stability_factor = 0.40
+		ai_focus_peaceful_factor = 0.25
+	}
+
+	rural_constructer = {
+		sprite = 14 
+		stability_factor = 0.05
+		consumer_goods_factor = -0.10 
+		production_speed_infrastructure_factor = 0.10 
+	}
+
+	father_of_constitution = {
+		random = no 
+		political_power_factor = 0.10
+		economy_cost_factor = -0.33
+		trade_laws_cost_factor = -0.33
+	}
+
+	military_politic_unity = {
+		random = no 
+		political_power_factor = 0.05
+		production_speed_arms_factory_factor = 0.10
+		army_chief_cost_factor = -0.50
+		high_command_cost_factor = -0.50
+	}
+
+	father_of_Nations_widow = {
+		random = no 
+		stability_factor = 0.20 
+		production_factory_max_efficiency_factor = 0.10
+		communism_acceptance = 50
+		democratic_acceptance = 50 
+	}
+
+	duel_agent = {
+		random = no 
+		sprite = 9 
+		trade_opinion_factor = 0.25
+		faction_trade_opinion_factor = 0.75
+		justify_war_goal_time = -0.4
+		lend_lease_tension = -0.5 
+		send_volunteer_divisions_required = -0.2
+		send_volunteers_tension = -0.5
+		send_volunteer_size = 5
+	}
+
+	liberal_economist = {
+		random = no 
+		sprite = 13 
+		trade_opinion_factor = 0.1 
+		improve_relations_maintain_cost_factor = -0.75 
+		production_factory_efficiency_gain_factor = 0.15
+		political_power_gain = 0.05 
+		communism_acceptance = -80 
+		stability_factor = -0.05 
+	}
+
+	nominal_leader = {
+		random = no 
+		political_power_gain = 0.05 
+		drift_defence_factor = -0.5 
+	}
+
+	kamisama_forever = {
+		random = no 
+		party_popularity_stability_factor = -0.15
+		war_support_factor = -0.15
+		army_core_defence_factor = -0.25 
+	}
+
+	german_leader = {
+		random = no 
+		sprite = 15 
+		extra_trade_to_overlord_factor = 0.25 
+		overlord_trade_cost_factor = -0.25
+		autonomy_gain_trade_factor = -0.75 
+		stability_factor = -0.15 
+		political_power_cost = 0.5 
+		custom_modifier_tooltip = cant_dependence
+	}
+
+	torso_of_justice = {
+		random = no 
+		sprite = 13 
+		stability_factor = 0.1
+		defensive_war_stability_factor = 0.15 
+		weekly_casualties_war_support = 0.005
+		compliance_gain = 0.025
+	}
+
+	the_focus_of_the_world = {
+		random = no 
+		trade_opinion_factor = 0.25 
+		opinion_gain_monthly_factor = 0.5 
+		improve_relations_maintain_cost_factor = -0.5 
+		democratic_acceptance = 45 
+		communism_acceptance = 45 
+		ai_focus_peaceful_factor = 0.25
+		political_power_gain = 0.05 
+	}
+
+	medical_worker = {
+		random = no 
+		sprite = 9 
+		monthly_population = 0.10 
+		weekly_casualties_war_support = 0.002
+		experience_loss_factor = -0.10 
+	}
+
+	fight_until_death = {
+		random = no 
+		army_core_attack_factor = 0.05  
+		army_core_defence_factor = 0.25
+	}
+
+	a_talent_of_one_state = {
+		random = no 
+		political_power_factor = 0.1 
+		communism_drift = 0.05 
+		local_building_slots_factor = 0.10
+		army_defence_factor = 0.15 
+		army_org_regain = 0.1 
+	}
+
+	be_careful_with_china = {
+		random = no 
+		political_power_cost = 0.05 
+		stability_factor = 0.05 
+		targeted_modifier = {
+			tag = CHI
+			generate_wargoal_tension_against = 0.75
+		}
+	}
+
+	indecisive = {
+		political_power_factor = -0.1 
+		trade_opinion_factor = 0.05
+	}
+
+	godress_of_wisdom = {
+		random = no 
+		sprite = 13 
+		research_speed_factor = 0.10 
+		production_factory_max_efficiency_factor = 0.05 
+		political_power_gain = 0.15 
+	}
+
+	good_manager = {
+		random = no 
+		sprite = 13 
+		political_power_factor = 0.1 
+		stability_factor = 0.05 
+		production_factory_max_efficiency_factor = 0.05 
+		production_speed_buildings_factor = 0.05 
+	}
+
+
+	star_rail_pionner = {
+		random = no 
+		sprite = 14
+		war_stability_factor = 0.1 
+		research_speed_factor = 0.05
+		drift_defence_factor = 0.25 
+		production_factory_efficiency_gain_factor = 0.1 
+	}
+
+	innocent_god = {
+		random = no 
+		stability_factor = 0.05 
+	}
+
+	jap_tough = {
+		random = no 
+		fascism_drift = 0.05 
+		war_support_factor = 0.10 
+		consumer_goods_factor = -0.15
+		production_speed_industrial_complex_factor = -0.20
+	}
+
+	french_corporatist = {
+		random = no 
+		sprite = 10 
+		production_factory_max_efficiency_factor = -0.05 
+		industrial_capacity_factory = 0.1 
+		industrial_capacity_dockyard = 0.1 
+		political_power_cost = 0.05 
+	}
+
+	star_reporter = {
+		random = no 
+		sprite = 13 
+		communism_drift = 0.15  
+		party_popularity_stability_factor = 0.1 
+		political_power_factor = 0.05
+		compliance_growth = 0.10 
+	}
+
+	contradictory_protecter = {
+		random = no 
+		party_popularity_stability_factor = -0.10 
+		drift_defence_factor = 0.25 
+		army_core_defence_factor = 0.05 
+	}
+
+	first_secretary = {
+		random = no 
+		communism_drift = 0.05 
+		political_power_gain = 0.1 
+		party_popularity_stability_factor = 0.05 
+	}
+
+	conscience_of_fontaine = {
+		random = no 
+		political_power_factor = 0.15 
+		compliance_growth = 0.10 
+		drift_defence_factor = 0.5 
+		communism_drift = 0.05 
+	}
+}

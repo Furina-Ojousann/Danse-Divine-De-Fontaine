@@ -1,0 +1,17 @@
+state = {
+	id = 1105
+	name = 1105_TS_5
+	manpower = 28970
+	state_category = city_state 
+	history = {
+		owner = LIC 
+		add_core_of = LIC 
+		victory_points = {
+			13448 3 
+		}
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 13448 }
+}

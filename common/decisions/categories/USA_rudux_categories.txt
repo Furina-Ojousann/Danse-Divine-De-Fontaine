@@ -1,0 +1,21 @@
+USA_rural_moderation_category = {
+	icon = GFX_decision_category_generic_industry
+	allowed = {
+		original_tag = USA 
+	}
+	visible = {
+		has_completed_focus = USA_rural_electrification_administration 
+	}
+}
+
+USA_over_there_category = {
+	picture = GFX_decision_cat_picture_generic_south_american_naval_race
+	icon = GFX_decision_category_military_operation 
+	visible_when_empty = yes 
+	allowed = {
+		original_tag = USA 
+	}
+	visible = {
+		has_completed_focus = USA_fight_oversea 
+	}
+}

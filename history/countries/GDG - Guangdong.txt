@@ -1,0 +1,70 @@
+capital = 592
+set_stability = 0.6
+set_war_support = 0.3
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no 
+}
+set_popularities = {
+	neutrality = 78
+	democratic = 22 
+}
+create_country_leader = {
+	name = "陈济棠"
+	id = 076588
+	picture = "gfx/leaders/GDG/portrait_GDG_chen_jitang.png"
+	traits = {
+		industry_reformer 
+	}
+	ideology = junta 
+}
+create_corps_commander = {
+	name = "陈济棠"
+	id = 076588
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+	traits = {
+		politically_connected
+		war_hero
+		infantry_officer
+	}
+}
+create_country_leader = {
+	name = "岸信介"
+	picture = "gfx/leaders/GDG/portrait_GDG_Kishi_Nobusuke.png"
+	ideology = rexism 
+	traits = {
+		anti_communist_crusader 
+		baron_of_terror
+	}
+}
+create_country_leader = {
+	name = "邓小平"
+	picture = "gfx/leaders/GDG/portrait_GDG_deng_xiaoping.png"
+	ideology = neo_democracy
+	traits = {
+		master_of_politics
+	}
+}
+create_country_leader = {
+	name = "张静江"
+	picture = "gfx/leaders/GDG/portrait_GDG_Zhang_jingjiang.png"
+	ideology = paternalistic_conservatism
+	traits = {
+		SWI_democratic_capitalist
+	}
+}
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	mass_assault = 1
+	fleet_in_being = 1
+	basic_train = 1
+	tech_engineers = 1 
+	tech_support = 1 
+}

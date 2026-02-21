@@ -1,0 +1,43 @@
+
+state={
+	id=460
+	name="STATE_460" # Constantine
+	manpower = 2343837
+	
+	state_category = large_town 
+
+	history={
+		owner = FAG 
+		add_core_of = ALG
+		set_compliance = 92
+		start_resistance = yes 
+		set_resistance = 1
+		victory_points = {
+			7081 5 
+		}
+		victory_points = {
+			12051 10  
+		}
+		victory_points = {
+			7166 3 
+		}
+		victory_points = {
+			1901 3 
+		}
+		victory_points = {
+			9976 2
+		}
+		buildings = {
+			infrastructure = 2
+			7081 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces={
+		1901 1958 4903 8061 1058 1160 4046 7065 7081 7166 9976 10078 11953 12051 13077 
+	}
+
+	local_supplies=0.0 
+}

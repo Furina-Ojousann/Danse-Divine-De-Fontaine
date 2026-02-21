@@ -1,0 +1,427 @@
+scripted_gui = {
+	Fontaine_party_gui = {
+		window_name = Fontainebleau_Conference_pie_chart 
+		context_type = player_context
+		parent_window_token = politics_tab   
+		visible = {
+			has_country_flag = show_parliament 
+		}
+		triggers = {
+			party_pie_chart_visible = {
+				not = {
+					has_country_flag = show_support_pie_chart
+				}
+			}
+			fra_support_pie_chart_visible = {
+				has_country_flag = show_support_pie_chart
+			}
+			national_emergency_frame_click = {
+				#has_war_with_major = yes 
+				#enemies_strength_ratio > 0.8 
+				#any_enemy_country = {
+				#	ic_ratio = {
+				#		tag = ROOT
+				#		ratio > 0.75
+				#	}
+				#}
+			}
+		}
+		effects = {
+			party_pie_chart_click = {
+				set_country_flag = show_support_pie_chart 
+			}
+			fra_support_pie_chart_click = {
+				clr_country_flag = show_support_pie_chart 
+			}
+			national_emergency_frame_click = {
+				if = {
+					limit = {
+						check_variable = { national_emergency_frame = 1 }
+					}
+					add_to_variable = { national_emergency_frame = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { national_emergency_frame = 2 }
+					}
+					add_to_variable = { national_emergency_frame = -1 }
+				}
+				set_variable = { party_Fontaine = 608 }
+				set_variable = { party_Action_francaise = 0 }
+				set_variable = { party_Croix_de_Feu = 0 }
+				set_variable = { party_Parti_radical = 0 }
+				set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = 0 }
+				set_variable = { party_Rassemblement_National = 0 }
+				set_variable = { party_french_communist_party = 0 }
+				refresh_gui = yes 
+				add_ideas = national_emergency_law 
+			}
+		}
+		properties = {
+			national_emergency = {
+				frame = national_emergency_frame
+			}
+			pie0 = { frame = party_pie_chart^0 }
+			pie1 = { frame = party_pie_chart^1 }
+			pie2 = { frame = party_pie_chart^2 }
+			pie3 = { frame = party_pie_chart^3 }
+			pie4 = { frame = party_pie_chart^4 }
+			pie5 = { frame = party_pie_chart^5 }
+			pie6 = { frame = party_pie_chart^6 }
+			pie7 = { frame = party_pie_chart^7 }
+			pie8 = { frame = party_pie_chart^8 }
+			pie9 = { frame = party_pie_chart^9 }
+			pie10 = { frame = party_pie_chart^10 }
+			pie11 = { frame = party_pie_chart^11 }
+			pie12 = { frame = party_pie_chart^12 }
+			pie13 = { frame = party_pie_chart^13 }
+			pie14 = { frame = party_pie_chart^14 }
+			pie15 = { frame = party_pie_chart^15 }
+			pie16 = { frame = party_pie_chart^16 }
+			pie17 = { frame = party_pie_chart^17 }
+			pie18 = { frame = party_pie_chart^18 }
+			pie19 = { frame = party_pie_chart^19 }
+			pie20 = { frame = party_pie_chart^20 }
+			pie21 = { frame = party_pie_chart^21 }
+			pie22 = { frame = party_pie_chart^22 }
+			pie23 = { frame = party_pie_chart^23 }
+			pie24 = { frame = party_pie_chart^24 }
+			pie25 = { frame = party_pie_chart^25 }
+			pie26 = { frame = party_pie_chart^26 }
+			pie27 = { frame = party_pie_chart^27 }
+			pie28 = { frame = party_pie_chart^28 }
+			pie29 = { frame = party_pie_chart^29 }
+			pie30 = { frame = party_pie_chart^30 }
+			pie31 = { frame = party_pie_chart^31 }
+			pie32 = { frame = party_pie_chart^32 }
+			pie33 = { frame = party_pie_chart^33 }
+			pie34 = { frame = party_pie_chart^34 }
+			pie34 = { frame = party_pie_chart^34 }
+			pie35 = { frame = party_pie_chart^35 }
+			pie36 = { frame = party_pie_chart^36 }
+			pie37 = { frame = party_pie_chart^37 }
+			pie38 = { frame = party_pie_chart^38 }
+			pie39 = { frame = party_pie_chart^39 }
+			pie40 = { frame = party_pie_chart^40 }
+			pie41 = { frame = party_pie_chart^41 }
+			pie42 = { frame = party_pie_chart^42 }
+			pie43 = { frame = party_pie_chart^43 }
+			pie44 = { frame = party_pie_chart^44 }
+			pie45 = { frame = party_pie_chart^45 }
+			pie46 = { frame = party_pie_chart^46 }
+			pie47 = { frame = party_pie_chart^47 }
+			pie48 = { frame = party_pie_chart^48 }
+			pie49 = { frame = party_pie_chart^49 }
+			pie50 = { frame = party_pie_chart^50 }
+			pie51 = { frame = party_pie_chart^51 }
+			pie52 = { frame = party_pie_chart^52 }
+			pie53 = { frame = party_pie_chart^53 }
+			pie54 = { frame = party_pie_chart^54 }
+			pie55 = { frame = party_pie_chart^55 }
+			pie56 = { frame = party_pie_chart^56 }
+			pie57 = { frame = party_pie_chart^57 }
+			pie58 = { frame = party_pie_chart^58 }
+			pie59 = { frame = party_pie_chart^59 }
+			pie60 = { frame = party_pie_chart^60 }
+			pie61 = { frame = party_pie_chart^61 }
+			pie62 = { frame = party_pie_chart^62 }
+			pie63 = { frame = party_pie_chart^63 }
+			pie64 = { frame = party_pie_chart^64 }
+			pie65 = { frame = party_pie_chart^65 }
+			pie66 = { frame = party_pie_chart^66 }
+			pie67 = { frame = party_pie_chart^67 }
+			pie68 = { frame = party_pie_chart^68 }
+			pie69 = { frame = party_pie_chart^69 }
+			pie70 = { frame = party_pie_chart^70 }
+			pie71 = { frame = party_pie_chart^71 }
+			pie72 = { frame = party_pie_chart^72 }
+			pie73 = { frame = party_pie_chart^73 }
+			pie74 = { frame = party_pie_chart^74 }
+			pie75 = { frame = party_pie_chart^75 }
+			pie76 = { frame = party_pie_chart^76 }
+			pie77 = { frame = party_pie_chart^77 }
+			pie78 = { frame = party_pie_chart^78 }
+			pie79 = { frame = party_pie_chart^79 }
+			pie80 = { frame = party_pie_chart^80 }
+			pie81 = { frame = party_pie_chart^81 }
+			pie83 = { frame = party_pie_chart^83 }
+			pie82 = { frame = party_pie_chart^82 }
+			pie84 = { frame = party_pie_chart^84 }
+			pie85 = { frame = party_pie_chart^85 }
+			pie86 = { frame = party_pie_chart^86 }
+			pie87 = { frame = party_pie_chart^87 }
+			pie88 = { frame = party_pie_chart^88 }
+			pie89 = { frame = party_pie_chart^89 }
+			pie90 = { frame = party_pie_chart^90 }
+			pie91 = { frame = party_pie_chart^91 }
+			pie92 = { frame = party_pie_chart^92 }
+			pie93 = { frame = party_pie_chart^93 }
+			pie94 = { frame = party_pie_chart^94 }
+			pie95 = { frame = party_pie_chart^95 }
+			pie96 = { frame = party_pie_chart^96 }
+			pie97 = { frame = party_pie_chart^97 }
+			pie98 = { frame = party_pie_chart^98 }
+			pie99 = { frame = party_pie_chart^99 }
+
+			support0 = { frame = fra_support_pie_chart^0 }
+			support1 = { frame = fra_support_pie_chart^1 }
+			support2 = { frame = fra_support_pie_chart^2 }
+			support3 = { frame = fra_support_pie_chart^3 }
+			support4 = { frame = fra_support_pie_chart^4 }
+			support5 = { frame = fra_support_pie_chart^5 }
+			support6 = { frame = fra_support_pie_chart^6 }
+			support7 = { frame = fra_support_pie_chart^7 }
+			support8 = { frame = fra_support_pie_chart^8 }
+			support9 = { frame = fra_support_pie_chart^9 }
+			support10 = { frame = fra_support_pie_chart^10 }
+			support11 = { frame = fra_support_pie_chart^11 }
+			support12 = { frame = fra_support_pie_chart^12 }
+			support13 = { frame = fra_support_pie_chart^13 }
+			support14 = { frame = fra_support_pie_chart^14 }
+			support15 = { frame = fra_support_pie_chart^15 }
+			support16 = { frame = fra_support_pie_chart^16 }
+			support17 = { frame = fra_support_pie_chart^17 }
+			support18 = { frame = fra_support_pie_chart^18 }
+			support19 = { frame = fra_support_pie_chart^19 }
+			support20 = { frame = fra_support_pie_chart^20 }
+			support21 = { frame = fra_support_pie_chart^21 }
+			support22 = { frame = fra_support_pie_chart^22 }
+			support23 = { frame = fra_support_pie_chart^23 }
+			support24 = { frame = fra_support_pie_chart^24 }
+			support25 = { frame = fra_support_pie_chart^25 }
+			support26 = { frame = fra_support_pie_chart^26 }
+			support27 = { frame = fra_support_pie_chart^27 }
+			support28 = { frame = fra_support_pie_chart^28 }
+			support29 = { frame = fra_support_pie_chart^29 }
+			support30 = { frame = fra_support_pie_chart^30 }
+			support31 = { frame = fra_support_pie_chart^31 }
+			support32 = { frame = fra_support_pie_chart^32 }
+			support33 = { frame = fra_support_pie_chart^33 }
+			support34 = { frame = fra_support_pie_chart^34 }
+			support34 = { frame = fra_support_pie_chart^34 }
+			support35 = { frame = fra_support_pie_chart^35 }
+			support36 = { frame = fra_support_pie_chart^36 }
+			support37 = { frame = fra_support_pie_chart^37 }
+			support38 = { frame = fra_support_pie_chart^38 }
+			support39 = { frame = fra_support_pie_chart^39 }
+			support40 = { frame = fra_support_pie_chart^40 }
+			support41 = { frame = fra_support_pie_chart^41 }
+			support42 = { frame = fra_support_pie_chart^42 }
+			support43 = { frame = fra_support_pie_chart^43 }
+			support44 = { frame = fra_support_pie_chart^44 }
+			support45 = { frame = fra_support_pie_chart^45 }
+			support46 = { frame = fra_support_pie_chart^46 }
+			support47 = { frame = fra_support_pie_chart^47 }
+			support48 = { frame = fra_support_pie_chart^48 }
+			support49 = { frame = fra_support_pie_chart^49 }
+			support50 = { frame = fra_support_pie_chart^50 }
+			support51 = { frame = fra_support_pie_chart^51 }
+			support52 = { frame = fra_support_pie_chart^52 }
+			support53 = { frame = fra_support_pie_chart^53 }
+			support54 = { frame = fra_support_pie_chart^54 }
+			support55 = { frame = fra_support_pie_chart^55 }
+			support56 = { frame = fra_support_pie_chart^56 }
+			support57 = { frame = fra_support_pie_chart^57 }
+			support58 = { frame = fra_support_pie_chart^58 }
+			support59 = { frame = fra_support_pie_chart^59 }
+			support60 = { frame = fra_support_pie_chart^60 }
+			support61 = { frame = fra_support_pie_chart^61 }
+			support62 = { frame = fra_support_pie_chart^62 }
+			support63 = { frame = fra_support_pie_chart^63 }
+			support64 = { frame = fra_support_pie_chart^64 }
+			support65 = { frame = fra_support_pie_chart^65 }
+			support66 = { frame = fra_support_pie_chart^66 }
+			support67 = { frame = fra_support_pie_chart^67 }
+			support68 = { frame = fra_support_pie_chart^68 }
+			support69 = { frame = fra_support_pie_chart^69 }
+			support70 = { frame = fra_support_pie_chart^70 }
+			support71 = { frame = fra_support_pie_chart^71 }
+			support72 = { frame = fra_support_pie_chart^72 }
+			support73 = { frame = fra_support_pie_chart^73 }
+			support74 = { frame = fra_support_pie_chart^74 }
+			support75 = { frame = fra_support_pie_chart^75 }
+			support76 = { frame = fra_support_pie_chart^76 }
+			support77 = { frame = fra_support_pie_chart^77 }
+			support78 = { frame = fra_support_pie_chart^78 }
+			support79 = { frame = fra_support_pie_chart^79 }
+			support80 = { frame = fra_support_pie_chart^80 }
+			support81 = { frame = fra_support_pie_chart^81 }
+			support83 = { frame = fra_support_pie_chart^83 }
+			support82 = { frame = fra_support_pie_chart^82 }
+			support84 = { frame = fra_support_pie_chart^84 }
+			support85 = { frame = fra_support_pie_chart^85 }
+			support86 = { frame = fra_support_pie_chart^86 }
+			support87 = { frame = fra_support_pie_chart^87 }
+			support88 = { frame = fra_support_pie_chart^88 }
+			support89 = { frame = fra_support_pie_chart^89 }
+			support90 = { frame = fra_support_pie_chart^90 }
+			support91 = { frame = fra_support_pie_chart^91 }
+			support92 = { frame = fra_support_pie_chart^92 }
+			support93 = { frame = fra_support_pie_chart^93 }
+			support94 = { frame = fra_support_pie_chart^94 }
+			support95 = { frame = fra_support_pie_chart^95 }
+			support96 = { frame = fra_support_pie_chart^96 }
+			support97 = { frame = fra_support_pie_chart^97 }
+			support98 = { frame = fra_support_pie_chart^98 }
+			support99 = { frame = fra_support_pie_chart^99 }
+		}
+	}
+
+
+#	the_second_leader_gui = {
+#		window_name = the_second_leader 
+#		context_type = selected_country_context 
+#		parent_window_token = selected_country_view_diplomacy 
+#
+#		visible = {	
+#			THIS = {
+#				or = {
+#					has_country_flag = neuvillette_as_the_second_leader 
+#					has_country_flag = charlotte_as_the_second_leader 
+#					has_country_flag = furina_as_the_second_leader 
+#					has_country_flag = clorinde_as_the_second_leader 
+#				}
+#			}
+#		}
+#		effects = {
+#			change_leader_button_click = {
+#				ROOT = {
+#					if = {
+#						limit = {
+#							has_country_flag = show_second_leader
+#						}
+#						clr_country_flag = show_second_leader 
+#					}
+#					else_if = {
+#						limit = { 
+#							not = {
+#								has_country_flag = show_second_leader 
+#							}
+#						}
+#						set_country_flag = show_second_leader 
+#					}
+#				}
+#			}
+#		}
+#
+#		triggers = {
+#			the_second_leader_portrait_visible = {
+#				ROOT = {
+#					has_country_flag = show_second_leader 
+#				}
+#			}
+#		}
+#
+#		properties = {
+#			the_second_leader_portrait = {
+#				image = "[GetPortrait]"
+#			}
+#		}
+#
+#	}
+#
+#	the_second_leader_gui_pol = {
+#		window_name = the_second_leader_pol
+#		context_type = player_context 
+#		parent_window_token = politics_tab 
+
+#		visible = {
+#			THIS = {
+#				or = {
+#					has_country_flag = neuvillette_as_the_second_leader 
+#					has_country_flag = charlotte_as_the_second_leader 
+#					has_country_flag = furina_au_the_second_leader 
+#					has_country_flag = clorinde_as_the_second_leader 
+#				}
+#			}
+#		}
+#		effects = {
+#			change_leader_button_click = {
+#				ROOT = {
+#					if = {
+#						limit = {
+#							has_country_flag = show_second_leader
+#						}
+#						clr_country_flag = show_second_leader 
+#					}
+#					else_if = {
+#						limit = { 
+#							not = {
+#								has_country_flag = show_second_leader 
+#							}
+#						}
+#						set_country_flag = show_second_leader 
+#					}
+#				}
+#			}
+#		}
+#
+#		triggers = {
+#			the_second_leader_portrait_visible = {
+#				ROOT = {
+#					has_country_flag = show_second_leader 
+#				}
+#			}
+#			leader_frame2_visible = {
+#				ROOT = {
+#					has_country_flag = show_second_leader 
+#				}
+#			}
+#			leader_name_visible = {
+#				ROOT = {
+#					has_country_flag = show_second_leader 
+#				}
+#			}
+#		}
+
+#		properties = {
+#			the_second_leader_portrait = {
+#				image = "[GetPortrait]"
+#			}
+#		}
+#	}
+
+#	furina = {
+#		window_name = furina_two_situation 
+#		context_type = player_context 
+#		visible = {
+#			has_country_flag = fra_furina_come_to_france 
+#		}
+#		properties = {
+#			furina_two_situation_button = {
+#				image = "[GetFurinaportrait]"
+#			}
+#		}
+#		triggers = {
+#			furina_two_situation_button_visible = {
+#				has_country_flag = show_furina 
+#			}
+#		}
+#		effects = {
+#			furina_3_click = {
+#				if = {
+#					limit = {
+#						has_country_flag = show_furina 
+#					}
+#					clr_country_flag = show_furina 
+#				}
+#				else = {
+#					set_country_flag = show_furina 
+#				}
+#			}
+#			furina_two_situation_button_click = {
+#				if = {
+#					limit = {
+#						has_country_flag = furina_being_happy 
+#					}
+#					clr_country_flag = furina_being_happy 
+#					set_country_flag = furina_hard_working 
+#				}
+#				else = {
+#					clr_country_flag = furina_hard_working 
+#					set_country_flag = furina_being_happy
+#				}
+#			}
+#		}
+#	}
+}

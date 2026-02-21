@@ -1,0 +1,31 @@
+on_actions = {
+	on_monthly_FRA = {
+		effect = {
+			if = {
+				limit = { has_completed_focus = FRA_renew_navia_plan }
+
+				add_to_variable = { R_Fontaine_Consumption_Progress_Total = R_Fontaine_Consumption_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Consumption_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Labour_Progress_Total = R_Fontaine_Labour_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Labour_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Price_Progress_Total = R_Fontaine_Price_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Price_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Finance_Progress_Total = R_Fontaine_Finance_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Finance_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Trust_Progress_Total = R_Fontaine_Trust_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Trust_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Tax_Progress_Total = R_Fontaine_Tax_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Tax_Monthly_Progress max = 1.00 min = 0.00 }
+
+				add_to_variable = { R_Fontaine_Trade_Progress_Total = R_Fontaine_Trade_Monthly_Progress }
+				clamp_variable = { var = R_Fontaine_Trade_Monthly_Progress max = 1.00 min = 0.00 }
+
+			}
+		}
+	}
+}

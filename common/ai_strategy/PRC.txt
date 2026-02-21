@@ -1,0 +1,156 @@
+
+PRC_no_production_industry = {
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		#CB_is_on_action = yes 
+		always = yes
+	}
+	abort = {
+		#CHI_is_no_longer_an_agricultural_country = yes
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 1000
+	}
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = -1000
+	}
+}
+CN_tech = {
+	allowed = {
+		is_literally_china = yes
+	}
+	enable = {
+		has_war_with_major = yes
+		or = {
+			not = { has_tech = gw_artillery }
+			not = { has_tech = interwar_antitank }
+			not = { has_tech = interwar_antiair }
+			not = { has_tech = tech_support }
+			not = { has_tech = tech_engineers }
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = research_weight_factor
+		id = gw_artillery
+		value = 9999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = interwar_antitank
+		value = 9999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = interwar_antiair
+		value = 9999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_support
+		value = 9999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_engineers
+		value = 9999
+	}
+}
+PRC_yanan_defend = {
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		num_of_controlled_states < 2
+		622 = {
+			any_neighbor_state = {
+				controller = { has_War_with = ROOT }
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = spare_unit_factor
+		value = -1000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = CHI
+		value = 100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = XSM
+		value = 100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = SHX
+		value = 100
+	}
+}
+PRC_infantry_production = {
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+	ai_strategy = { 
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+	ai_strategy = { 
+		type = equipment_variant_production_factor
+		id = infantry_equipment
+		value = 10
+	}
+}
+PRC_unit_buffer = {
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		not = { has_completed_focus = PRC_proclaim_the_peoples_republic }
+	}
+	abort = {
+		has_completed_focus = PRC_proclaim_the_peoples_republic
+	}
+	ai_strategy = {
+		type = front_control
+		priority = 10
+		strategic_region = 245
+		ratio > 0.85
+		execution_type = balanced
+		execute_order = no
+	}
+	ai_strategy = {
+		type = front_unit_request
+		strategic_region = 245
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "CHI"
+		value = 100
+	}
+	#ai_strategy = {
+	#	type = put_unit_buffers
+	#	ratio = 1
+	#	states = {
+	#		622
+	#	}
+	#	#subtract_fronts_from_need = yes
+	#}
+}

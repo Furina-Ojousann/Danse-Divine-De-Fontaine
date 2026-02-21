@@ -1,0 +1,11 @@
+state = {
+	id = 1115
+	name = 1115_Cam_WP
+	manpower = 1029000
+	state_category = pastoral 
+	history = {
+		owner = FIC 
+		add_core_of = CAM 
+	}
+	provinces = { 10134 4251 4302 10177 1353 12447 12460 10467 }
+}

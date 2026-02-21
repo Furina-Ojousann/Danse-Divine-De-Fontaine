@@ -1,0 +1,553 @@
+characters = {
+	GER_Der_Deutsche_Bundestag = {
+		name = GER_Der_Deutsche_Bundestag
+		portraits = {
+			civilian = {
+				small = GFX_idea_GER_Der_Deutsche_Bundestag 
+			}
+		}
+		advisor = {
+			slot = second_chief 
+			allowed = {
+				original_tag = GER 
+			}
+			can_be_fired = no 
+			idea_token = Der_Deutsche_Bundestag
+			traits = {
+				puppet_legislature 
+			}
+		}
+	}
+
+	GER_Karl_Schmitt = {
+		name = GER_Kral_Schmitt 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Germany_Karl_Schmitt 
+				small = GFX_idea_germany_karl_schmitt 
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			available = { not = { has_government = communism } }
+			idea_token = german_karl_schmitt
+			traits = {
+				rechtsgerichteter_jurist
+			}
+		}
+	}
+
+	GER_Alfried_Krupp = {
+		name = GER_Alfried_Krupp 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Magnitogorsk_Alfried_Krupp
+				small = GFX_idea_germany_alfried_krupp 
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = german_alfried_krupp
+			available = { not = { has_government = communism } }
+			visible = {
+				MNG = { exists = no }
+			}
+			traits = {
+				todeshandler 
+			}
+		}
+	}
+
+	GER_Ernst_Schafer = {
+		name = GER_Ernst_Schafer
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Germany_Ernst_Schafer
+				small = GFX_idea_germany_ernst_schafer 
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = german_ernst_schafer
+			traits = { naturforscher }
+		}
+	}
+
+	MNG_Alfried_Krupp = {
+		name = MNG_Alfried_Krupp
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Magnitogorsk_Alfried_Krupp 
+			}
+		}
+		country_leader = {
+			ideology = rexism
+			desc = MNG_Alfried_Krupp_Description 
+			traits = {
+				son_of_war 
+			}
+		}
+	}
+
+	CZE_Emil_Hacha = {
+		name = CZE_Emil_Hacha 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Czech_Emil_Hacha
+			}
+		}
+		country_leader = {
+			ideology = agrarianism
+			traits = {
+				president_running_with_scissors 
+			}
+		}
+	}
+
+	BSK_Zeki_Velidi_Togan = {
+		name = BSK_Zeki_Velidi_Togan 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Bashkortostan_Zeki_Velidi_Togan 
+			}
+		}
+		country_leader = {
+			ideology = moderatism 
+			traits = {
+				turkic_ethnologist 
+			}
+		}
+	}
+
+	KAR_Vladimir_Kirpichnikov = {
+		name = KAR_Vladimir_Kirpichnikov 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Kareliya_Vladimir_Kirpichnikov 
+			}
+		}
+		country_leader = {
+			ideology = junta 
+			traits = {
+				traitorous_officer  
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				war_hero
+				infantry_officer 
+			}
+		}
+	}
+
+	GER_Kurt_von_Schleicher = {
+		name = GER_Kurt_von_Schleicher
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GER_Kurt_von_Schleicher 
+			}
+		}
+		country_leader = {
+			ideology = national_conversatism 
+		}
+	}
+
+	PRC_peoples_represent_conference = {
+		name = PRC_peoples_represent_conference 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_prc_peoples_represent_conference 
+			}
+		}
+	}
+
+	CZE_milan_hodza = {
+		name = CZE_milan_hodza 
+		portraits = {
+			civilian = {
+				small = GFX_idea_cze_milan_hodza 
+			}
+		}
+		advisor = {
+			slot = second_chief 
+			idea_token = Milan_Hodza 
+			can_be_fired = no 
+			traits = { moderate_reformist }
+		}
+	}
+
+	CZE_vladimir_matous = {
+		name = CZE_vladimir_matous 
+		portraits = {
+			civilian = {
+				small = GFX_idea_cze_vladimir_matous 
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = vladimir_matous
+			traits = { captain_of_industry }
+		}
+	}
+
+	Satono = {
+		name = "Satono"
+		portraits = {
+			army = {
+				large = GFX_portrait_ply_satono_author 
+				small = GFX_idea_ply_Satono_Daimondo 
+			}
+		}
+		corps_commander = {
+			visible = {
+				is_ai = no 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			traits = {
+				modder 
+			}
+		}
+	}
+
+	JAP_Raiden_Ei = {
+		name = JAP_Raiden_Ei 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Raiden_Shogun 
+				small = GFX_idea_jap_Raiden_Ei 
+			}
+			army = {
+				large = GFX_portrait_jap_Raiden_Shogun_army 
+			}
+		}
+		advisor = {
+			slot = second_chief 
+			idea_token = Raiden_Ei
+			traits = {
+				silent_ruler 
+			}
+			can_be_fired = no 
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+		field_marshal = {
+			skill = 5 
+			attack_skill = 6
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				brilliant_strategist
+				organizer 
+				harsh_leader 
+				war_hero 
+				politically_connected 
+			}
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+	}
+
+	JAP_Mejiro_Mcqueen = {
+		name = JAP_Mejiro_Mcqueen 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Mejiro_Mcqueen 
+				small = GFX_idea_jap_Mejiro_Mcqueen 
+			}
+		}
+		advisor = {
+			slot = second_chief 
+			idea_token = Mejiro_McQueen 
+			traits = {
+				constitutional_reformer 
+			}
+			desc = JAP_Mejiro_Mcqueen_desc 
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+			can_be_fired = no 
+		}
+	}
+
+	JAP_Naganohara_Yoimiya = {
+		name = JAP_Naganohara_Yoimiya 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Naganohara_Yoimiya 
+				small = GFX_idea_jap_Naganohara_Yoimiya_pm 
+			}
+		}
+		country_leader = {
+			ideology = populist_socialism_revolutionary_front  
+		}
+	}
+
+	JAP_Tamamo_Cross = {
+		name = JAP_Tamamo_Cross 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Tamamo_Cross 
+				small = GFX_idea_ply_Tamamo_Cross 
+			}
+			army = {
+				large = GFX_portrait_jap_Tamamo_Cross_army 
+			}
+		}
+		country_leader = {
+			ideology = leninism  
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 2
+			traits = {
+				brilliant_strategist 
+				hidden_sympathies 
+			}
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+	}
+
+	JAP_Kujou_Sara = {
+		name = JAP_Kujou_Sara 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Kujou_Sara 
+				small = GFX_idea_jap_Kujou_Sara_pm
+			}
+			army = {
+				small = GFX_idea_jap_Kujou_Sara 
+			}
+		}
+		country_leader = {
+			ideology = junta 
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			traits = {
+				career_officer 
+				war_hero 
+				organizer 
+			}
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+		advisor = {
+			slot = army_chief 
+			can_be_fired = no 
+			idea_token = Kujou_Sara_army_chief
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+			traits = {
+				jap_daihonei_minister_land 
+			}
+		}
+	}
+
+	JAP_Kamisato_Ayato = {
+		name = JAP_Kamisato_Ayato 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Kamisato_Ayato 
+				small = GFX_idea_jap_Kamisato_Ayato_pm 
+			}
+		}
+		country_leader = {
+			ideology = rexism 
+		}
+	}
+
+	JAP_Kamisato_Ayaka = {
+		name = JAP_Kamisato_Ayaka 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_Kamisato_Ayaka 
+				small = GFX_idea_jap_Kamisato_Ayaka 
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = Kamisato_Ayaka 
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+			traits = {
+				jap_princess_of_morality 
+			}
+		}
+	}
+
+	JAP_Teiemu_Operao = {
+		name = JAP_Teiemu_Operao 
+		portraits = {
+			army = {
+				large = GFX_portrait_jap_Teiemu_operao 
+				small = GFX_portrait_ply_Teiemu_operao 
+			}
+		}
+		corps_commander = {
+			skill = 5 
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			traits = {
+				brilliant_strategist 
+				harsh_leader 
+				career_officer 
+				trait_reckless 
+			}
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+	}
+
+	JAP_Oguri_Cap = {
+		name = JAP_Oguri_Cap 
+		portraits = {
+			army = {
+				large = GFX_portrait_ply_Oguri_Cup 
+				small = GFX_idea_ply_Oguri_Cup 
+			}
+			civilian = {
+				large = GFX_portrait_jap_Oguri_Cap 
+			}
+		}
+		corps_commander = {
+			skill = 4 
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+			traits = {
+				brilliant_strategist 
+				jaeger 
+				desert_fox 
+				career_officer 
+			}
+			visible = {
+				has_global_flag = Inazuma_launched 
+			}
+		}
+	}
+
+	JAP_Koizumi_Shinjiro = {
+		name = JAP_Koizumi_Shinjiro 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_jap_koizumi_shinjiro 
+				small = GFX_idea_jap_koizumi_shinjiro 
+			}
+		}
+	}
+
+	MCO_Louis_II = {
+		name = MCO_Louis_II
+		portraits = {
+			civilian = {
+				large = GFX_portrait_mco_louis_ii 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+		}
+	}
+
+	ADR_Conseil_General = {
+		name = ADR_Conseil_General 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_adr_conseil_general 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+		}
+	}
+
+	SMO_Grand_Council = {
+		name = SMO_Grand_Council
+		portraits = {
+			civilian = {
+				large = GFX_portrait_smo_grand_council 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+		}
+	}
+
+	LIC_Franz_I = {
+		name = LIC_Franz_I
+		portraits = {
+			civilian = {
+				large = GFX_portrait_lic_franz_i 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+		}
+	}
+
+	SOV_Georgy_Malenkov = {
+		name = SOV_Georgy_Malenkov
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Soviet_Georgy_Malenkov 
+			}
+		}
+
+		country_leader = {
+			ideology = stalinism 
+		}
+	}
+
+	PAP_Pio_Xi = {
+		name = ITA_papa_pio_xi 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ITA_papa_pio_xi 
+				small = GFX_portrait_ITA_papa_pio_xi_small 
+			}
+		}
+		country_leader = {
+			ideology = theocracy 
+		}
+	}
+
+	PAP_Pio_Xii = {
+		name = ITA_papa_pio_xii 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ITA_papa_pio_xii
+				small = GFX_portrait_ITA_papa_pio_xii_small 
+			}
+		}
+		country_leader = {
+			ideology = theocracy 
+		}
+	}
+}

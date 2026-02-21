@@ -1,0 +1,515 @@
+ideas = {
+	industrial_concern = {
+		EAEC = {
+			allowed = {
+				or = {
+					original_tag = FRA 
+					original_tag = GER 
+					original_tag = ITA 
+				}
+			}
+			available = {
+				any_country = {
+					or = {
+						original_tag = ITA 
+						original_tag = FRA 
+						original_tag = GER 
+					}
+					has_completed_focus = FRA_European_Atomic_Energy_Community 
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.10 
+				political_power_cost = 0.05 
+			}
+			research_bonus = {
+				nuclear = 0.25 
+			}
+		}
+	}
+	country = {
+		cze_skoda_industry_resetted = {
+			modifier = {
+				global_building_slots_factor = 0.25 
+				production_factory_max_efficiency_factor = 0.10
+				production_speed_buildings_factor = 0.05
+				production_speed_facility_factor = 0.05 
+			}
+			research_bonus = {
+				industry = 0.20 
+			}
+		}
+		cze_defense_of_democratic = {
+			available = {
+				has_government = democratic 
+			}
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+				political_power_factor = 0.05
+				research_speed_factor = 0.03 
+			}
+		}
+		generic_anarchy = {
+			modifier = {
+				resistance_target = -1 
+				resistance_growth = -1 
+				conscription_factor = -1 
+				consumer_goods_factor = 3
+				research_speed_factor = -0.85
+			}
+			rule = {
+				can_join_factions = no 
+				can_create_factions = no 
+				can_send_volunteers = no 
+				can_access_market = no 
+				can_be_spymaster = no 
+			}
+		}
+		GER_barbarossa = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.10
+			}
+
+			modifier = {
+				winter_attrition_factor = -0.15
+				terrain_penalty_reduction = 0.10 
+			}
+		}
+		generic_war_of_resistence = {
+			available = {
+				has_defensive_war = yes 
+			}
+			modifier = {
+				army_core_attack_factor = 0.10 
+				army_core_defence_factor = 0.15
+				supply_combat_penalties_on_core_factor = -0.65 
+				mobilization_speed = 0.50 
+				winter_attrition_factor = -0.35 
+				compliance_growth_on_our_occupied_states = -0.75 
+				acclimatization_cold_climate_gain_factor = 0.50 
+				surrender_limit = 1
+			}
+		}
+		CHI_new_national_revolution = {
+			picture = generic_reserve_divisions
+			modifier = {
+				breakthrough_factor = 0.10
+				army_speed_factor = 0.05 
+				army_strength_factor = 0.10 
+				offensive_war_stability_factor = 0.40
+			}
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.20 
+			}
+		}
+		CHI_constitution_preparation = {
+			picture = gre_schachtplan2
+			modifier = {
+				political_power_cost = 0.15
+				democratic_acceptance = 50 
+				democratic_drift = 0.15
+				neutrality_drift = -0.10
+			}
+			on_remove = {
+				set_politics = {
+					ruling_party = democratic 
+					election_frequency = 60
+					elections_allowed = yes 
+				}
+				add_ideas = CHI_constitution_of_chinese_republic 
+				country_event = chinacommon.6
+			}
+		}
+		CHI_constitution_of_chinese_republic = {
+			picture = gre_schachtplan
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+				political_power_gain = 0.20
+				conscription_factor = 0.10
+			}
+		}
+		CHI_rise_of_democracy = {
+			picture = GER_limited_democratic_principles
+			available = {
+				has_government = communism 
+			}
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+				political_power_factor = -0.05 
+				communism_drift = 0.05
+				democratic_drift = 0.03
+				democratic_acceptance = 40 
+			}
+		}
+		CHI_guangzhou_government_reform = {
+			picture = chi_warlord_integration5
+			modifier = {
+				political_power_factor = -0.10
+				local_building_slots_factor = 0.20
+				consumer_goods_factor = -0.10
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+		CHI_immature_army = {
+			picture = base_area_war_economy
+			modifier = {
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.10 
+				army_org_factor = -0.05
+				army_org_regain = 0.10
+				breakthrough_factor = 0.05
+				recon_factor = 0.10
+				conscription_factor = 0.10 
+				army_armor_attack_factor = -0.80
+				army_armor_defence_factor = -0.80
+				army_armor_speed_factor = -0.80
+			}
+		}
+		generic_offer_weapon = {
+			picture = generic_license_production
+			available = {
+				has_completed_focus = generic_produce_weapon
+			}
+			modifier = {
+				ai_desired_divisions_factor = -10
+				consumer_goods_factor = 0.20
+				industrial_capacity_factory = 0.30
+			}
+		}
+		generic_offer_more_factories = {
+			picture = generic_improved_industries
+			available = {
+				has_completed_focus = generic_build_more_factories 
+			}
+			modifier = {
+				local_building_slots_factor = 0.30
+				production_speed_buildings_factor = 0.20 
+				mic_to_overlord_factor = 0.20
+				cic_to_overlord_factor = 0.20
+			}
+		}
+		expand_the_fleet_plan = {
+			picture = generic_naval_invasion
+			modifier = {
+				war_support_weekly = -0.002
+				industrial_capacity_dockyard = 0.10 
+				naval_invasion_penalty = -0.30 
+				naval_invasion_prep_speed = 0.20
+			}
+			equipment_bonus = {
+				capital_ship = {
+					build_cost_ic = -0.10 
+				}
+				screen_ship = {
+					build_cost_ic = -0.10 
+				}
+			}
+		}
+		expand_the_fleet_plan_2 = {
+			picture = generic_naval_invasion
+			name = expand_the_fleet_plan 
+			modifier = {
+				industrial_capacity_dockyard = 0.10 
+				naval_invasion_penalty = -0.3  
+				naval_invasion_prep_speed = 0.20
+			}
+			equipment_bonus = {
+				capital_ship = {
+					build_cost_ic = -0.10 
+				}
+				screen_ship = {
+					build_cost_ic = -0.10 
+				}
+			}
+		}
+		united_armed_intervention = {
+			picture = anti_soviet_pact
+			cancel = {
+				FRA = { has_capitulated = yes }
+			}
+			modifier = {
+				democratic_acceptance = 999 
+				neutrality_acceptance = 999
+				fascism_acceptance = 999
+			}
+			targeted_modifier = {
+				tag = FRA 
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.35 
+			}
+		}
+		short_tern_economy_strike = {
+			picture = fra_short_of_consum 
+			modifier = {
+				production_speed_buildings_factor = -0.2 
+				consumer_goods_factor = 0.25 
+				political_power_cost = 0.2 
+			}
+		}
+		military_politics_dualization_1 = {
+			picture = ARG_infamous_decade
+			available = {
+				
+			}
+			modifier = {
+				land_doctrine_cost_factor = 0.1 
+				army_org_factor = -0.1 
+				naval_doctrine_cost_factor = 0.05 
+				army_org_factor = -0.05 
+				navy_org_factor = -0.02 
+				political_power_factor = -0.1 
+				war_stability_factor = 0.1 
+				justify_war_goal_time = -0.15 
+				army_core_defence_factor = 0.1 
+				naval_critical_score_chance_factor = 0.25 
+				mobilization_laws_cost_factor = -0.40
+				economy_cost_factor = -0.15 
+			}
+		}
+		military_politics_dualization_2 = {
+			picture = ARG_infamous_decade
+			available = {
+				
+			}
+			modifier = {
+				land_doctrine_cost_factor = 0.05
+				army_org_factor = -0.02
+				political_power_factor = 0.05
+				war_stability_factor = 0.05
+				justify_war_goal_time = -0.05
+				naval_critical_score_chance_factor = 0.15
+				mobilization_laws_cost_factor = -0.15
+			}
+		}
+		jap_revolutionism = {
+			picture = MEX_revolutionary_army
+			available = {
+				has_government = communism 
+			}
+			allowed = {
+				original_tag = JAP 
+			}
+			modifier = {
+				war_support_factor = 0.2 
+				army_org_factor = 0.05 
+				production_speed_buildings_factor = 0.1 
+				industry_free_repair_factor = 0.25 
+				communism_drift = 0.05 
+			}
+		}
+		jap_daitoa_senso = {
+			picture = generic_japanese_conflict 
+			modifier = {
+				compliance_growth = 0.20 
+				resistance_damage_to_garrison = -0.15
+				required_garrison_factor = -0.50 
+				acclimatization_hot_climate_gain_factor = 0.15 
+				heat_attrition_factor = -0.25
+				naval_defense_factor = 0.05 
+				repair_speed_factor = 0.25 
+				naval_invasion_prep_speed = 0.25
+				naval_invasion_penalty = -0.20 
+			}
+		}
+		military_politics_dualization_3 = {
+			picture = ARG_infamous_decade
+			available = {
+				has_government = fascism 
+				original_tag = JAP 
+			}
+			modifier = {
+				land_doctrine_cost_factor = 0.15
+				naval_doctrine_cost_factor = 0.1
+				political_power_factor = -0.15
+				conscription = 0.02 
+				war_stability_factor = 0.25
+				army_org_factor = -0.2 
+				weekly_casualties_war_support = 0.002
+				justify_war_goal_time = -0.5
+				army_core_defence_factor = 0.15
+				naval_critical_score_chance_factor = 0.4
+				mobilization_laws_cost_factor = -0.75
+				economy_cost_factor = -0.5 
+			}
+		}
+		decadent_country = {
+			picture = generic_purge
+			cancel = {
+				is_subject = no 
+				not = {
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				stability_factor = -0.30 
+				war_support_factor = -0.10 
+				production_speed_buildings_factor = -0.20 
+				research_speed_factor = -0.30 
+				industrial_capacity_dockyard = -0.20 
+				industrial_capacity_factory = -0.20 
+				political_power_factor = -0.30 
+				experience_gain_army_factor = -0.10 
+				max_planning = -0.05 
+				planning_speed = -0.20
+				army_org_factor = -0.10 
+				communism_drift = 0.02 
+				democratic_drift = 0.02 
+			}
+			on_remove = {
+				add_ideas = the_beginning_of_modern 
+			}
+		}
+
+		the_beginning_of_modern = {
+			picture = generic_political_support
+			cancel = {
+				num_of_factories > 49 
+			}
+			modifier = {
+				research_speed_factor = -0.1 
+				industrial_capacity_dockyard = -0.1 
+				industrial_capacity_factory = -0.1 
+				production_speed_buildings_factor = -0.05 
+				political_power_gain = 0.05 
+				war_support_factor = 0.05 
+				communism_drift = 0.01
+				democratic_drift = 0.01 
+			}
+		}
+	}
+	hidden_ideas = {
+		ex_landforce_size_limitation = {
+			picture = generic_army_problems
+			available = {
+				if = {
+					limit = { OR = { original_tag = SOV original_tag = GER original_tag = USA } }
+					num_divisions > 300 
+				}
+				else_if = {
+					limit = { OR = { original_tag = FRA original_tag = ENG original_tag = ITA original_tag = JAP original_tag = CHI original_tag = PRC } }
+					num_divisions > 200 
+				}
+				else_if = {
+					limit = { OR = { original_tag = POL original_tag = SWE original_tag = SPR original_tag = TUR original_tag = RAJ } }
+					num_divisions > 100 
+				}
+				else = {
+					num_divisions > 50 
+				}
+			}
+			modifier = {
+				training_time_army_factor = 100
+			}
+		}
+
+		ex_research_helicopter = {
+			modifier = {
+				research_speed_factor = -0.03
+				consumer_goods_factor = 0.05 
+			}
+		}
+		ex_research_helicopter_strategy = {
+			modifier = {
+				land_mastery_gain_factor = -0.03 
+			}
+		}
+		ai_easy_experience = {
+			cancel = {
+				is_ai = no 
+			}
+			modifier = {
+				unit_artillery_brigade_design_cost_factor = -0.80 
+				unit_anti_air_design_cost_factor = -0.80 
+				unit_anti_tank_design_cost_factor = -0.80 
+				unit_anti_tank_brigade_design_cost_factor = -0.80 
+				unit_artillery_design_cost_factor = -0.80 
+				unit_engineer_design_cost_factor = -0.80 
+				unit_infantry_design_cost_factor = -0.80 
+				unit_mechanized_design_cost_factor = -0.80 
+				unit_medium_armor_design_cost_factor = -0.80 
+				unit_heavy_tank_destroyer_brigade_design_cost_factor = -0.80 
+				unit_field_hospital_design_cost_factor = -0.80 
+			}
+		}
+		ger_ai_balance = {											#德国AI修正
+			cancel = {
+				is_ai = no 
+			}
+			modifier = {
+				#conscription = 0.02									#2%适役人口
+				#heat_attrition_factor = -0.20 						#-20%炎热损耗
+				terrain_penalty_reduction = 0.20					#20%地形惩罚降低
+				supply_consumption_factor = -0.20					#-20%补给消耗
+				production_factory_max_efficiency_factor = 0.05		#5%生产效率上限
+				production_speed_buildings_factor = 0.10			#10%建造速度
+				#breakthrough_factor = 0.10 							#10%突破
+				#army_org_factor = 0.10								#10%陆军组织度
+				attrition = -0.05									#-5%损耗
+				#army_attack_against_major_factor = 0.10
+				#army_defence_against_major_factor = 0.10 
+
+				medium_tank_chassis_design_cost_factor = -0.8		#-80%中型坦克设计花费
+				small_plane_airframe_design_cost_factor = -0.8		#-80%战斗机设计花费
+				unit_infantry_design_cost_factor = -0.8				#-80%步兵单位编成花费		——这些都是帮AI节约经验用的
+
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.35 							#-35%战斗机生产花费
+				}
+				medium_tank_chassis = {
+					build_cost_ic = -0.35							#-65%中型坦克生产花费
+				}
+				heavy_tank_destroyer_chassis = {
+					build_cost_ic = -0.20 
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.30
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.20
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.20
+				}
+			}
+		}
+		ai_limit = {
+			cancel = {
+				is_ai = no 
+				is_major = yes 
+			}
+			modifier = {
+				consumer_goods_expected_value = 1
+				consumer_goods_factor = 100
+				industrial_capacity_dockyard = -100 
+				industrial_capacity_factory = -100 
+				#political_power_factor = -1 
+				experience_gain_army_factor = -1 
+				experience_gain_air_factor = -1 
+				experience_gain_navy_factor = -1 
+				training_time_factor = 100
+			}
+			rule = {
+				can_be_spymaster = no 
+				can_create_factions = no 
+			}
+		}
+	}
+}

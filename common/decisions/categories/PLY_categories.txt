@@ -1,0 +1,13 @@
+PLY_the_power_outside_our_timeline = {
+	icon = GFX_decision_category_generic_foreign_policy 
+	priority = 999 
+	visible = {
+		is_ai = no 
+		has_global_flag = show_this_character 
+		any_character = {
+			has_character_flag = the_ply_manager 
+		}
+	}
+	visible_when_empty = yes 
+	scripted_gui = ply_gui 
+}

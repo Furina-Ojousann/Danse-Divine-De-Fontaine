@@ -1,0 +1,57 @@
+
+state={
+	id=129
+	name="STATE_129"
+	manpower = 2212021
+	
+	state_category = city
+	
+	resources={
+		steel = 32 # was: 20
+		coal = 18 #initial distribution
+	}
+
+	history={
+		owner = ENG
+		victory_points = {
+			6237 10 #Nottingham
+		}
+		victory_points = {
+			13467 10 
+		}
+		victory_points = {
+			13470 5 
+		}
+		victory_points = {
+			13474 5 
+		}
+		victory_points = {
+			11279 3 #Leicester
+		}
+		victory_points = {
+			296 5 
+		}
+		victory_points = {
+			9322 1 
+		}
+		buildings = {
+			infrastructure = 4 #was: 8
+			arms_factory = 2
+			industrial_complex = 1
+			air_base = 5
+		}
+		add_core_of = ENG
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+				industrial_complex = 2
+			}
+		}
+	}
+
+	provinces={
+		364 3353 6237 9250 9268 9322 11279 296 13474 13475 13467 13468 13469 13470
+	}
+
+	local_supplies=0.0 
+}

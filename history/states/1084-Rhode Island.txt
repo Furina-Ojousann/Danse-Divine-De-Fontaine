@@ -1,0 +1,18 @@
+state = {
+	id = 1084
+	name = 1084_Rhode_Is
+	manpower = 569000
+	state_category = city 
+	history = {
+		owner = USA
+		add_core_of = USA 
+		buildings = {
+			infrastructure = 7 
+			dockyard = 1 
+			11830 = {
+				naval_base = 3 
+			}
+		}
+	}
+	provinces = { 11830 }
+}

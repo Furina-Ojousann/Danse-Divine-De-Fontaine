@@ -1,0 +1,261 @@
+FRA_suppress_the_disrevolution_category = {
+	icon = GFX_decision_category_infiltration 
+	picture = GFX_decision_cat_picture_suppress_the_disrevolution 
+	priority = 50 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_suppress_the_disrevolution 
+	}
+	visible_when_empty = yes 
+}
+
+FRA_congress = {
+	priority = 200
+	visible = {
+		original_tag = FRA 
+		has_completed_focus = FRA_because_her_morality 
+		not = { has_country_flag = fontaine_1936_election_has_finished }
+	}
+	visible_when_empty = yes 
+	scripted_gui = France_Congress 
+}
+
+FRA_fontaine_three_force_decision = {
+	icon = GFX_decision_category_generic_monarchism 
+	priority = 9999
+	visible_when_empty = yes 
+	scripted_gui = Fontaine_design 
+	visible = {
+		original_tag = FRA 
+		has_completed_focus = FRA_the_ceremony_for_a_new_king 
+	}
+}
+
+FRA_commune_military = {
+	icon = GFX_decision_category_intervention_overseas 
+	priority = 50 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_country_flag = allow_show_commune_military 
+	}
+}
+
+FRA_interest_of_politics = {
+	icon = GFX_decision_category_generic_propaganda 
+	picture = GFX_decision_cat_picture_fra_interest_of_politics 
+	visible_when_empty = yes 
+	scripted_gui = people_zeal_ui
+	priority = 40 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_the_interest_of_politics 
+	}
+}
+
+FRA_the_campaign_of_levant = {
+	icon = GFX_decision_category_generic_formable_nations 
+	priority = 25 
+	allowed = {
+		or = {
+			original_tag = FRA 
+			original_tag = ENG 
+		}
+	}
+	visible = {
+		ISR = { 
+			exists = yes 
+			has_idea = isr_condominium 
+			is_subject = no 
+		}
+	}
+}
+
+FRA_revolution_world_map = {
+	icon = GFX_decision_category_SOV_civil_puppet_interaction 
+	priority = 30 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_global_action 
+		has_government = communism 
+		is_subject = no 
+		#is_debug = yes 
+	}
+	visible_when_empty = yes 
+	scripted_gui = revolution_world_map_gui 
+}
+
+FRA_Human_Unity = {
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_anarchist_human_unity 
+	}
+}
+
+FRA_colony_policy = {
+	icon = GFX_decision_category_generic_economy 
+	priority = 40 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_continue_the_land_policy_to_colony 
+	}
+}
+
+FRA_Furina_s_cruise = {
+	icon = GFX_decision_furina_s_cruise
+	picture = GFX_decision_cat_picture_furina_s_cruise
+	priority = 50 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		OR = {
+			FRA_Solenn_Clorinde = {
+				is_country_leader = yes 
+			}
+			FRA_Furina_de_Fontaine = {
+				is_country_leader = yes 
+			}
+		}
+		has_completed_focus = FRA_the_Mainland_Cruise 
+	}
+}
+
+FRA_the_europe_unite = {
+	priority = 60 
+	picture = GFX_decision_cat_picture_FRA_the_europe_unite 
+	icon = GFX_decision_category_power_struggle 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_Furina_Plan 
+		not = {
+			has_completed_focus = FRA_the_end_of_european_war 
+		}
+	}
+	visible_when_empty = yes 
+}
+
+FRA_National_parliament = {
+	#scripted_gui = Fontaine_party_gui 
+	priority = 60 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		always = no 
+	}
+	visible_when_empty = yes 
+}
+
+FRA_Fontainebleau_conference_category = {
+	icon = GFX_decision_fra_Fontainebleau_conference
+	picture = GFX_decision_cat_picture_fra_Fontainebleau_conference 
+	priority = 50 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_Fontainebleau_conference 
+		has_country_flag = Fontainebleau_Conference_is_going_on 
+	}
+}
+
+FRA_mediate_sino_japan_war = {
+	icon = GFX_decision_category_jap_southern_expansion 
+	priority = 40 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_mediate_2nd_sino_jap_war 
+	}
+}
+
+FRA_judge_the_war_crimes_category = {
+	icon = GFX_decision_fra_judge_the_war_crimes_category 
+	picture = GFX_decision_cat_picture_judge_the_war_crimes 
+	priority = 30 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_judge_the_war_crimes 
+	}
+}
+
+FRA_the_reform_of_jacobins = {
+	icon = GFX_decision_category_generic_propaganda
+	priority = 40 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_completed_focus = FRA_Societe_des_amis_de_laConstitution 
+		not = {
+			has_government = communism 
+		}
+	}
+	scripted_gui = Jacobins_progress_gui 
+	visible_when_empty = yes 
+}
+
+FRA_enable_the_mod = {
+	icon = GFX_decision_enable_the_mod 
+	picture = GFX_decision_cat_picture_enable_the_mod 
+	priority = 999 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		is_ai = no 
+	}
+}
+
+FRA_the_whole_nation_strike = {
+	icon = GFX_decision_category_SOV_permanent_revolution 
+	picture = GFX_decision_cat_picture_fontaine_whole_nation_strike 
+	priority = 999 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		has_country_flag = fontaine_whole_nation_strike_start_up 
+	}
+}
+
+FRA_the_task_of_communist_party = {
+	icon = GFX_decision_fra_communist_task 
+	visible_when_empty = yes 
+	priority = 9999 
+	visible = {
+		has_completed_focus = FRA_5_major_issue_the_party_face 
+		has_government = communism 
+	}
+	scripted_gui = fontaine_communist_party_gui 
+}
+
+FRA_surpress_the_landlord = {
+	icon = GFX_decision_category_sov_great_patriotic_war 
+	priority = 100 
+	visible = {
+		has_completed_focus = FRA_dissolve_antirevolutions 
+		any_controlled_state = {
+			has_dynamic_modifier = {
+				modifier = FRA_landlord_resistance 
+			}
+		}
+	}
+}

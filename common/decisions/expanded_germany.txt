@@ -1,0 +1,74 @@
+Expanded_German_Debug_Category = {
+
+	Ex_Come_Back_Schleicher = {
+		icon = GFX_decision_generic_arrest
+		visible = {
+			not = {
+				has_country_leader = {
+					character = GER_Kurt_von_Schleicher 
+					ruling_only = yes 
+				}
+			}
+		}
+		complete_effect = {
+			if = { limit = { not = { has_character = GER_Kurt_von_Schleicher } } recruit_character = GER_Kurt_von_Schleicher }
+			GER_Kurt_von_Schleicher = {
+				promote_character = yes 
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes 
+				election_frequency = 48 
+			}
+			add_popularity = {
+				ideology = fascism 
+				popularity = -1 
+			}
+			hidden_effect = {
+				set_popularities = {
+					communism = 31
+					neutrality = 54 
+					liberalism_temp = 2
+					conservatism_temp = 7
+					populist_socialism = 6
+				}
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = GER_neutrality_party_cabinet_long
+				name = GER_neutrality_party_cabinet
+			}
+			set_cosmetic_tag = GER_Weimarer
+		}
+	}
+
+	Ex_Massacre_of_Communists = {
+		icon = GFX_decision_generic_assassination 
+		visible = {
+			has_country_leader = {
+				character = GER_Kurt_von_Schleicher 
+				ruling_only = yes 
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { communism_support_temp = party_popularity@communism }
+			multiply_temp_variable = { communism_support_temp = -100000 }
+			set_temp_variable = { communism_support_temp_upper = communism_support_temp }
+			multiply_temp_variable = { communism_support_temp_upper = 1.2 }
+			set_temp_variable = { communism_support_temp_lower = communism_support_temp }
+			multiply_temp_variable = { communism_support_temp_lower = 0.8 }
+			set_temp_variable_to_random = {
+				var = communist_to_kill
+				max = communism_support_temp_upper
+				min = communism_support_temp_lower 
+			}
+			round_temp_variable = communist_to_kill 
+			add_manpower = communist_to_kill 
+			add_popularity = {
+				ideology = communism
+				popularity = -1 
+			}
+			add_country_leader_trait = north_butcher 
+		}
+	}
+}

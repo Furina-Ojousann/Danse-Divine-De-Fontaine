@@ -1,0 +1,208 @@
+focus_tree = {
+	id = siam_focus
+	country = {
+		base = 0 
+		modifier = {
+			add = 5 
+			original_tag = SIA 
+		}
+	}
+	focus = {
+		id = SIA_Constitution_Defense_Monument
+		icon = GFX_focus_RAJ_protest_against_the_howell_monument 
+		cost = 5
+		x = 5
+		y = 0 
+		completion_reward = {
+			add_political_power = 100 
+			add_stability = 0.05
+			add_ideas = sia_constitution_defense 
+		}
+	}
+	focus = {
+		id = SIA_Moderization_never_stop
+		icon = GFX_focus_DEN_no_regulations 
+		cost = 8
+		relative_position_id = SIA_Constitution_Defense_Monument 
+		prerequisite = {
+			focus = SIA_Constitution_Defense_Monument 
+		}
+		x = 0 
+		y = 1
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			add_tech_bonus = {
+				name = SIA_Moderization_never_stop
+				bonus = 1 
+				uses = 2 
+				category = industry 
+			}
+		}
+	}
+	focus = {
+		id = SIA_develop_always_matters
+		icon = GFX_focus_generic_industrialists 
+		cost = 8
+		relative_position_id = SIA_Moderization_never_stop 
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = SIA_Moderization_never_stop 
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIA_develop_always_matters 
+				bonus = 1 
+				uses = 1 
+				category = construction_tech 
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 1 
+				add_building_construction = {
+					type = steel_mill 
+					level = 1 
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIA_manage_royal_capital
+		icon = GFX_focus_rom_royal_dictatorship 
+		cost = 5
+		relative_position_id = SIA_develop_always_matters 
+		prerequisite = {
+			focus = SIA_develop_always_matters 
+		}
+		x = 1 
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 2 
+				}
+			}
+			custom_effect_tooltip = SIA_manage_royal_capital_tt
+			add_ideas = sia_royal_capital_4 
+		}
+	}
+	focus = {
+		id = SIA_no_more_socialism
+		icon = GFX_goal_anti_comintern_pact 
+		cost = 5
+		relative_position_id = SIA_develop_always_matters 
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = SIA_develop_always_matters 
+		}
+		completion_reward = {
+			#
+		}
+	}
+	focus = {
+		id = SIA_let_corporatism
+		icon = GFX_focus_ICE_state_corporatism 
+		cost = 5
+		relative_position_id = SIA_no_more_socialism 
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SIA_no_more_socialism 
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = SIA_rural_education
+		icon = GFX_focus_ITA_grande_rivolta_rurale 
+		cost = 8
+		relative_position_id = SIA_Moderization_never_stop
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = SIA_Moderization_never_stop 
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05 
+			swap_ideas = {
+				remove_idea = sia_rural_backward_5
+				add_idea = sia_rural_backward_4
+			}
+		}
+	}
+	focus = {
+		id = SIA_From_Siam_to_Thailand
+		icon = GFX_focus_BRA_anaue 
+		cost = 8
+		relative_position_id = SIA_rural_education
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SIA_rural_education 
+		}
+		completion_reward = {
+			set_cosmetic_tag = SIA_Thailand
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.10 
+			}
+			army_experience = 50 
+			add_ideas = sia_strengthen_Thailand_nationalism 
+		}
+	}
+	focus = {
+		id = SIA_asian_s_ambition
+		icon = GFX_focus_PER_fascist_reach_out_to_japan 
+		cost = 5
+		relative_position_id = SIA_Moderization_never_stop 
+		x = -1 
+		y = 1
+		prerequisite = {
+			focus = SIA_Moderization_never_stop 
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = potential_allies
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = SIA 
+					modifier = potential_allies
+				}
+			}
+			add_tech_bonus = {
+				name = SIA_asian_s_ambition 
+				bonus = 0.5
+				uses = 1 
+				category = mio_cat_tech_all_destroyer_and_modules
+			}
+			add_tech_bonus = {
+				name = SIA_asian_s_ambition 
+				bonus = 1 
+				uses = 1 
+				category = cat_torpedoes 
+			}
+			add_tech_bonus = {
+				name = SIA_asian_s_ambition 
+				bonus = 1 
+				uses = 1 
+				category = electronics 
+			}
+			add_tech_bonus = {
+				name = SIA_asian_s_ambition 
+				bonus = 1 
+				uses = 1 
+				category = industry  
+			}
+		}
+	}
+}

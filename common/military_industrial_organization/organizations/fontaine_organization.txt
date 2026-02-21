@@ -1,0 +1,687 @@
+fontaine_military_organization = {
+	icon = GFX_idea_fra_Fontaine_Energy_Engineering_Production_Firm 
+	allowed = {
+		has_dlc = "Arms Against Tyranny" 
+		or = {
+			original_tag = SOV 
+			original_tag = FRA 
+		}
+	}
+	visible = {
+		FRA = {
+			has_country_flag = fra_furina_come_to_france
+		}
+	}
+	available = {
+		FRA = {
+			has_completed_focus = FRA_Fontaine_Energy_Physical_Mechines 
+		}
+	}
+	equipment_type = {
+		mio_fontaine_energy_equipements 
+		mio_cat_eq_all_medium_tank 
+	}
+	research_categories = {
+		mio_cat_eq_all_medium_tank mio_cat_tech_medium_armor_and_modules 
+	}
+	research_bonus = 0.20 
+	tree_header_text = {
+		text = "特化自律机械"
+		x = 3
+	}
+	initial_trait = {
+		name = fontaine_military_organization 
+		equipment_bonus = {
+			armor_value = 0.10  
+			reliability_factor = 0.05 
+			soft_attack = 0.05 
+			hard_attack = 0.05 
+			ap_attack = 0.10 
+		}
+		limit_to_equipment_type = {
+			fontaine_artillery_machinery 
+			fontaine_attackive_machinery 
+			fontaine_defence_machinery 
+		}
+	}
+	trait = {
+		token = wisdom_machinery 
+		name = wisdom_machinery
+		icon = GFX_mio_wisdom 
+		position = {
+			x = 1
+			y = 0
+		}
+		equipment_bonus = {
+			breakthrough = 0.10 
+			defense = 0.15 
+			soft_attack = 0.05 
+			hard_attack = 0.05 
+		}
+		limit_to_equipment_type = {
+			fontaine_artillery_machinery 
+			fontaine_attackive_machinery 
+			fontaine_defence_machinery 
+		}
+	}
+
+	trait = {
+		token = improve_productivity
+		name = improve_productivity 
+		icon = GFX_mio_improve_productivity 
+		position = {
+			x = 4
+			y = 0
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.15 
+		}
+		limit_to_equipment_type = {
+			fontaine_artillery_machinery 
+			fontaine_attackive_machinery 
+			fontaine_defence_machinery 
+		}
+	}
+
+	trait = {
+		token = combat_skill
+		name = combat_skill 
+		icon = GFX_generic_mio_department_icon_infantry_technology 
+		position = {
+			x = 0
+			y = 1 
+		}
+		all_parents = {
+			wisdom_machinery 
+		}
+		equipment_bonus = {
+			soft_attack = 0.10 
+		}
+		limit_to_equipment_type = {
+			fontaine_attackive_machinery 
+		}
+	}
+
+	trait = {
+		token = efficient_bomb
+		name = efficient_bomb 
+		icon = GFX_generic_mio_department_icon_tank_general_spg 
+		position = {
+			x = 2
+			y = 1 
+		}
+		all_parents = {
+			wisdom_machinery 
+		}
+		equipment_bonus = {
+			soft_attack = 0.05 
+			hard_attack = 0.05 
+			defense = 0.10 
+		}
+		limit_to_equipment_type = {
+			fontaine_artillery_machinery  
+		}
+	}
+
+	trait = {
+		token = special_steel
+		name = special_steel
+		icon = GFX_generic_mio_department_icon_tank_general_armor 
+		relative_position_id = improve_productivity 
+		position = {
+			x = 0 
+			y = 1 
+		}
+		all_parents = {
+			improve_productivity 
+		}
+		equipment_bonus = {
+			hardness = 0.10 
+			armor_value = 0.10 
+		}
+	}
+
+	trait = {
+		token = tank_research
+		name = tank_research 
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+		relative_position_id = improve_productivity 
+		position = {
+			x = 5
+			y = 0 
+		}
+		limit_to_equipment_type = {
+			medium_tank_chassis
+			heavy_tank_chassis 
+		}
+		equipment_bonus = {
+			hardness = 0.05 
+			armor_value = 0.05 
+		}
+	}
+
+	trait = {
+		token = anti_infantry
+		name = anti_infantry 
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_spg 
+		relative_position_id = tank_research 
+		position = {
+			x = -1 
+			y = 1 
+		}
+		all_parents = {
+			tank_research 
+		}
+		limit_to_equipment_type = {
+			medium_tank_chassis
+			heavy_tank_chassis 
+		}
+		equipment_bonus = {
+			soft_attack = 0.10 
+		}
+	}
+
+	trait = {
+		token = anti_armor 
+		name = anti_armor 
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at 
+		relative_position_id = tank_research 
+		position = {
+			x = 1
+			y = 1 
+		}
+		all_parents = {
+			tank_research 
+		}
+		limit_to_equipment_type = {
+			medium_tank_chassis
+			heavy_tank_chassis 
+		}
+		equipment_bonus = {
+			ap_attack = 0.15 
+		}
+	}
+
+	trait = {
+		token = auto_manufacture
+		name = auto_manufacture 
+		icon = GFX_generic_mio_trait_icon_efficiency_cap 
+		relative_position_id = tank_research 
+		position = {
+			x = -3
+			y = 1 
+		}
+		all_parents = {
+			improve_productivity
+			tank_research 
+		}
+		limit_to_equipment_type = {
+			medium_tank_chassis
+			heavy_tank_chassis 
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15 
+			production_efficiency_cap_factor = 0.10 
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.10 
+		}
+	}
+}
+
+fontaine_national_defense_corp = {
+	icon = GFX_idea_fra_national_defense_corp 
+	allowed = { has_dlc = "Arms Against Tyranny" original_tag = FRA }
+	available = { FROM = { has_capitulated = no } }
+	#visible = { FROM = { has_completed_focus = FRA_renew_start_rearmament } }
+	equipment_type = {
+		armor
+		infantry_equipment 
+		anti_air_equipment
+		artillery_equipment
+		anti_tank_equipment
+		rocket_artillery_equipment
+	}
+	research_categories = {
+		support_tech
+		infantry_weapons
+		mio_cat_all_artillery_equipment
+		mio_cat_tech_all_armor_and_modules 
+		mio_cat_tech_all_motorized_mechanized
+	}
+	initial_trait = {
+		name = fontaine_national_defense_corp_initial_trait
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_funds_gain = 0.20 
+			military_industrial_organization_design_team_assign_cost = -1 
+		}
+	}
+	tree_header_text = { text = production_apartment x = 1 }
+	tree_header_text = { text = production_apartment x = 3 }
+	tree_header_text = { text = annexation_apartment x = 5 }
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_supply_consumption 
+		token = FNDC_estiblish_production_department
+		name = FNDC_estiblish_production_department 
+		position = { x = 1 y = 0 }
+		organization_modifier = {
+			military_industrial_organization_policy_cost = -1 
+			military_industrial_organization_size_up_requirement = -0.25 
+		}
+		on_complete = {
+			FROM = {
+				mio:fontaine_national_defense_corp = {
+					add_mio_funds = 5000 
+				}
+				add_tech_bonus = {
+					name = FNDC_estiblish_production_department 
+					uses = 1 
+					bonus = 1 
+					ahead_reduction = 1
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_production_capacity 
+		token = FNDC_erect_production_line
+		name = FNDC_erect_production_line 
+		position = { x = 1 y = 1 }
+		parent = { traits = { FNDC_estiblish_production_department } }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.10 
+			production_resource_penalty_factor = 0.20 
+		}
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = FNDC_erect_production_line 
+					technology = tech_improved_equipment_conversion 
+					uses = 1 
+					bonus = 3 
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_naval_range 
+		token = FNDC_designated_legal_representative
+		name = FNDC_designated_legal_representative 
+		relative_position_id = FNDC_erect_production_line 
+		position = { x = 0 y = 2 }
+		any_parent = { FNDC_erect_production_line FNDC_technique_stock }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05 
+		}
+		on_complete = {
+			FROM = {
+				add_stability = 0.01
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.01 
+				}
+				mio:fontaine_national_defense_corp = {
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = 0.05 
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_maximum_speed 
+		token = FNDC_university_conbination
+		name = FNDC_university_conbination 
+		relative_position_id = FNDC_technique_stock
+		position = { x = -1  y = -1 }
+		parent = { traits = { FNDC_facilitate_research } }
+		mutually_exclusive = {
+			FNDC_one_for_hundred 
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_sub_detection 
+		token = FNDC_facilitate_research
+		name = FNDC_facilitate_research 
+		available = {
+			FROM = {
+				num_of_civilian_factories > 59 
+				amount_research_slots > 3 
+				num_researched_technologies > 65
+			}
+		}
+		relative_position_id = FNDC_technique_stock 
+		position = { x = 0 y = -2 }
+		organization_modifier = {
+			military_industrial_organization_policy_cooldown = -0.75 
+		}
+		on_complete = {
+			FROM = {
+				1050 = {
+					add_building_construction = {
+						type = air_facility 
+						level = 1 
+						province = 3546
+					}
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_detection 
+		token = FNDC_one_for_hundred
+		name = FNDC_one_for_hundred 
+		relative_position_id = FNDC_technique_stock 
+		mutually_exclusive = {
+			FNDC_university_conbination 
+		}
+		position = { x = 1 y = -1 }
+		parent = { traits = { FNDC_facilitate_research } }
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05 
+		}
+		on_complete = {
+			FROM = {
+				generate_scientist_character = {
+					traits = {
+						scientist_trait_bright
+					}
+					skills = {
+						specialization_air = 2 
+					}
+				}
+				generate_scientist_character = {
+					traits = {
+						scientist_trait_bright
+					}
+					skills = {
+						specialization_land = 2 
+					}
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_max_strength 
+		token = FNDC_technique_stock
+		name = FNDC_technique_stock 
+		relative_position_id = FNDC_erect_production_line 
+		any_parent = { FNDC_university_conbination FNDC_one_for_hundred }
+		position = { x = 2 y = 1 }
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.10 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_air_superiority 
+		token = FNDC_shaping_corporate_image
+		name = FNDC_shaping_corporate_image 
+		relative_position_id = FNDC_technique_stock 
+		position = { x = 0 y = 2 }
+		parent = { traits = { FNDC_technique_stock } }
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.10 
+		}
+		on_complete = {
+			FROM = {
+				add_stability = 0.05 
+				add_political_power = 100 
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.02 
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_hardness
+		token = FNDC_annex_worker_union
+		name = FNDC_annex_worker_union 
+		relative_position_id = FNDC_shaping_corporate_image 
+		position = { x = -1 y = 1 }
+		all_parents = {
+			FNDC_designated_legal_representative
+			FNDC_shaping_corporate_image 
+		}
+		on_complete = {
+			FROM = {
+				add_popularity = {
+					ideology = communism 
+					popularity = -0.01 
+				}
+				add_popularity = {
+					ideology = populist_socialism
+					popularity = -0.01 
+				}
+			}
+		}
+		production_bonus = {
+			production_capacity_factor = 0.10 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_production 
+		token = FNDC_annex_tank_industry
+		name = FNDC_annex_tank_industry 
+		position = { x = 5 y = 0 }
+		available = {
+			FROM = {
+				mio:fontaine_national_defense_corp = {
+					has_mio_size > FNDC_annex_industry_level_need
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05 
+		}
+		on_complete = {
+			custom_effect_tooltip = FNDC_annex_tank_industry_tt
+			set_mio_flag = FNDC_has_annex_tank_industry
+			FROM = { add_to_variable = { FNDC_annex_industry_level_need = 3 } }
+			FROM = {
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.02 
+				}
+				mio:FRA_renault_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_tank_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_infantry_production 
+		token = FNDC_annex_infantry_industry
+		name = FNDC_annex_infantry_industry 
+		relative_position_id = FNDC_annex_tank_industry 
+		position = { x = 1 y = 1 }
+		available = {
+			FROM = {
+				mio:fontaine_national_defense_corp = {
+					has_mio_size > FNDC_annex_industry_level_need
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05 
+		}
+		on_complete = {
+			custom_effect_tooltip = FNDC_annex_tank_industry_tt
+			set_mio_flag = FNDC_has_annex_infantry_industry
+			FROM = { add_to_variable = { FNDC_annex_industry_level_need = 3 } }
+			FROM = {
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.05
+				}
+				mio:FRA_mas_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_infantry_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+				mio:FRA_schneider_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_artillery_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_air_transport_production 
+		token = FNDC_annex_aviation_partment
+		name = FNDC_annex_aviation_partment 
+		relative_position_id = FNDC_annex_tank_industry 
+		position = { x = 2 y = 2 }
+		available = {
+			FROM = {
+				mio:fontaine_national_defense_corp = {
+					has_mio_size > FNDC_annex_industry_level_need
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05 
+		}
+		on_complete = {
+			custom_effect_tooltip = FNDC_annex_tank_industry_tt
+			set_mio_flag = FNDC_has_annex_aviation_industry
+			FROM = { add_to_variable = { FNDC_annex_industry_level_need = 3 } }
+			FROM = {
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.05
+				}
+				mio:FRA_amiot_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_heavy_airplane_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+				mio:FRA_bloch_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_medium_airplane_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+				mio:FRA_morane_saulnier_organization = {
+					set_mio_icon = GFX_idea_fra_national_defense_corp 
+					set_mio_name_key = FNDC_light_airplane_department
+					add_mio_size = 1 
+					add_mio_funds_gain_factor = -0.25 
+					add_mio_research_bonus = -0.05 
+					custom_effect_tooltip = FNDC_annex_tank_industry_tt_2
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_efficiency_cap 
+		token = FNDC_social_common_fund
+		name = FNDC_social_common_fund 
+		relative_position_id = FNDC_technique_stock 
+		position = { x = 2 y = 1 }
+		parent = { traits = { FNDC_technique_stock } }
+		any_parent = {
+			FNDC_annex_aviation_partment
+			FNDC_annex_infantry_industry
+			FNDC_annex_tank_industry 
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = -0.05 
+		}
+		on_complete = {
+			FROM = {
+				add_stability = 0.05 
+				add_political_power = 100 
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.02 
+				}
+			}
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_weight 
+		token = FNDC_slave_workers
+		name = FNDC_slave_workers 
+		relative_position_id = FNDC_social_common_fund 
+		position = { x = -1 y = 1 }
+		parent = { traits = { FNDC_social_common_fund } }
+		mutually_exclusive = {
+			FNDC_lowpaid_workers
+		}
+		available = {
+			FROM = { has_government = fascism }
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_ap_attack 
+		token = FNDC_lowpaid_workers
+		name = FNDC_lowpaid_workers 
+		relative_position_id = FNDC_social_common_fund 
+		position = { x = 1 y = 1 }
+		parent = { traits = { FNDC_social_common_fund } }
+		mutually_exclusive = {
+			FNDC_slave_workers 
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_build_cost_ic 
+		token = FNDC_staff_restoration_plan
+		name = FNDC_staff_restoration_plan 
+		relative_position_id = FNDC_social_common_fund 
+		position = { x = -1 y = 2 }
+		parent = { traits = { FNDC_shaping_corporate_image } }
+		any_parent = {
+			FNDC_slave_workers
+			FNDC_lowpaid_workers 
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = -0.05 
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15 
+		}
+	}
+}

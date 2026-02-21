@@ -1,0 +1,20 @@
+state = {
+	id = 1064
+	name = 1064_In_Salah
+	manpower = 3198
+	state_category = wasteland
+	history = { 
+		owner = FAG
+		add_core_of = ALG 
+		buildings = {
+			infrastructure = 2 
+		}
+		victory_points = {
+			13433 5 
+		}
+		add_dynamic_modifier = {
+			modifier = Self_sufficient_oasis 
+		}
+	}
+	provinces = { 13433 }
+}

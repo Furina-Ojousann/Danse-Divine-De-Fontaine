@@ -1,0 +1,17 @@
+state = {
+	id = 1095
+	name = 1095_Umbria
+	manpower = 589000
+	state_category = town  
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = PAP 
+		buildings = {
+			industrial_complex = 1 
+			infrastructure = 6 
+			air_base = 3 
+		}
+	}
+	provinces = { 9794 6926 11861 3885 }
+}

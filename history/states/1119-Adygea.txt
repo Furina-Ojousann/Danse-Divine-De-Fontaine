@@ -1,0 +1,17 @@
+state = {
+	id = 1119 
+	name = 1119_Adygea
+	manpower = 289000
+	state_category = rural 
+	history = {
+		owner = SOV 
+		add_core_of = SOV 
+		victory_points = {
+			11681 3 
+		}
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 11681 }
+}

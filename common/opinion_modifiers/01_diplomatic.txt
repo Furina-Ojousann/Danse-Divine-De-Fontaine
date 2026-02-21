@@ -1,0 +1,48 @@
+opinion_modifiers = {
+	anti_fascist_union = {
+		value = -50 
+	}
+	return_the_guangzhoubay = {
+		value = 40 
+	}
+	embargo_our_enemy = {
+		value = 15 
+	}
+	offer_light_weapon = {
+		value = 5 
+	}
+	offer_heavy_weapon = {
+		value = 10 
+	}
+	offer_humanitarianist_help = {
+		value = 10 
+	}
+	support_our_zeal = {
+		value = 15 
+	}
+	support_us_suppress_bandits = {
+		value = 15 
+	}
+	try_coup = {
+		value = -100 
+	}
+	contect_spain = {
+		value = 20 
+	}
+	suspicious_method = {
+		value = -5 
+	}
+	supported_chinese_warload = {
+		value = 30 
+	}
+	japan_america_convention = {
+		value = 25 
+	}
+	japan_america_convention_trade = {
+		value = 100 
+		trade = yes 
+	}
+	potential_allies = {
+		value = 25 
+	}
+}

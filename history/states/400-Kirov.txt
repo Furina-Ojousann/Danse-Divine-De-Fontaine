@@ -1,0 +1,28 @@
+
+state = {
+	id = 400
+	name = "STATE_400"
+	manpower = 2115475
+	resources = {
+		aluminium = 24 # was: 20
+	}
+
+	state_category = large_town 
+
+	history = {
+		owner = SOV
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = SOV
+		victory_points = {
+			6124 3
+		}
+	}
+
+	provinces = {
+		31 123 146 189 272 359 370 1336 3027 3127 3139 3264 3270 3363 3394 4326 6025 6124 6162 6274 6288 6297 7346 9283 9293 9370 11087 11111 11124 11352 11365 12203 
+	}
+
+	local_supplies = 0.0 
+}

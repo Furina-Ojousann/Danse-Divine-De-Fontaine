@@ -1,0 +1,26 @@
+state = {
+	id = 1049
+	name = 1049_Hanshin
+	manpower = 6890000
+	state_category = megalopolis 
+	history = {
+		owner = JAP 
+		add_core_of = JAP 
+		victory_points = {
+			7072 40 # Osaka
+		}
+		victory_points = {
+			9985 20 
+		}
+		buildings = {
+			infrastructure = 7 
+			arms_factory = 1 
+			industrial_complex = 3 
+			dockyard = 1 
+			7072 = {
+				naval_base = 3
+			}
+		}
+	}
+	provinces = { 7072 9985 }
+}

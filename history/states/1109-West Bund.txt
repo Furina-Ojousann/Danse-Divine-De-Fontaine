@@ -1,0 +1,18 @@
+state = {
+	id = 1109
+	name = 1109_WB
+	manpower = 1697687
+	state_category = town 
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = ISR
+		#victory_points = {
+		#	1086 3 
+		#}
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 1086 7107 }
+}

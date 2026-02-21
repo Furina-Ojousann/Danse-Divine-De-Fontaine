@@ -1,0 +1,45 @@
+autonomy_state = {
+	id = comrade_state
+	min_freedom_level = 0.95 
+	manpower_influence = 0.1 
+	rule = {
+		can_not_declare_war = yes 
+		can_decline_call_to_war = yes 
+		can_be_spymaster = no 
+	}
+	allowed = {
+		OVERLORD = {
+			original_tag = GER 
+		}
+		ROOT = {
+			original_tag = FRA 
+			has_country_flag = fra_furina_come_to_france 
+		}
+	}
+	modifier = {
+		autonomy_manpower_share = 0.0
+		extra_trade_to_overlord_factor = 0.1
+		overlord_trade_cost_factor = -0.1
+		peace_score_ratio_transferred_to_overlord = 0.05
+		lend_lease_tension_with_overlord = -0.5
+	}
+	ai_subject_wants_higher = {
+		factor = 0.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+	can_take_level = {
+		not = {
+			has_idea = fra_heinrich_himmler
+		}
+	}
+	can_lose_level = {
+		always = no 
+	}
+}

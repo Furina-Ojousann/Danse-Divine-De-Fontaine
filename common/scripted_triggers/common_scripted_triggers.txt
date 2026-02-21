@@ -1,0 +1,86 @@
+infantry_equipment_is_outdated = {
+	#陆军武器过时
+	or = {
+		not = { has_tech = infantry_weapons }
+		not = { has_tech = infantry_weapons1 }
+		not = { has_tech = support_weapons }
+		AND = {
+			date > 1938.11.1
+			not = { has_tech = infantry_weapons2 }
+		}
+		AND = {
+			date > 1938.11.1
+			not = { has_tech = support_weapons2 }
+		}
+		AND = {
+			date > 1939.11.1
+			not = { has_tech = improved_infantry_weapons }
+		}
+		AND = {
+			date > 1940.11.1 
+			not = { has_tech = support_weapons3 }
+		}
+		AND = {
+			date > 1940.11.1 
+			not = { has_tech = improved_infantry_weapons_2 }
+		}
+		AND = {
+			date > 1940.11.1 
+			not = { has_tech = support_weapons3 }
+		}
+		AND = {
+			date > 1942.11.1 
+			not = { has_tech = advanced_infantry_weapons }
+		}
+		AND = {
+			date > 1940.11.1 
+			not = { has_tech = support_weapons3 }
+		}
+	}
+}
+
+artillery_equipment_is_outdated = {
+	#火炮过时
+	or = {
+		not = { has_tech = gw_artillery }
+		not = { has_tech = interwar_artillery }
+		AND = {
+			date > 1939.11.1
+			not = { has_tech = artillery1 }
+		}
+		AND = {
+			date > 1940.11.1
+			not = { has_tech = artillery2 }
+		}
+		AND = {
+			date > 1941.6.1
+			not = { has_tech = artillery3 }
+		}
+		AND = {
+			date > 1942.11.1
+			not = { has_tech = artillery4 }
+		}
+		AND = {
+			date > 1943.11.1
+			not = { has_tech = artillery5 }
+		}
+	}
+}
+
+armor_equipment_is_outdated = {
+	or = {
+		not = { has_tech = gwtank_chassis }
+		AND = {
+			date > 1938.9.1
+			not = { has_tech = basic_medium_tank_chassis }
+		}
+		AND = {
+			date > 1940.9.1
+			not = { has_tech = improved_medium_tank_chassis }
+		}
+		AND = {
+			date > 1943.9.1
+			not = { has_tech = advanced_medium_tank_chassis }
+		}
+	}
+}

@@ -1,0 +1,685 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_r_fontaine_1"
+		textureFile = "gfx/event_pictures/report_event_r_fontaine_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_assemblee_1"
+		textureFile = "gfx/event_pictures/report_event_fra_assemblee_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_assemblee_2"
+		textureFile = "gfx/event_pictures/report_event_fra_assemblee_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_assemblee_3"
+		textureFile = "gfx/event_pictures/report_event_fra_assemblee_3.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_assemblee_4"
+		textureFile = "gfx/event_pictures/report_event_fra_assemblee_4.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_assemblee_5"
+		textureFile = "gfx/event_pictures/report_event_fra_assemblee_5.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_karl_marx"
+		textureFile = "gfx/event_pictures/report_event_karl_marx.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_eng_afterwar_election"
+		textureFile = "gfx/event_pictures/report_event_eng_afterwar_election.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_1"
+		textureFile = "gfx/event_pictures/report_event_fra_right_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_2"
+		textureFile = "gfx/event_pictures/report_event_fra_right_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_3"
+		textureFile = "gfx/event_pictures/report_event_fra_right_3.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_4"
+		textureFile = "gfx/event_pictures/report_event_fra_right_4.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_5"
+		textureFile = "gfx/event_pictures/report_event_fra_right_5.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_6"
+		textureFile = "gfx/event_pictures/report_event_fra_right_6.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_7"
+		textureFile = "gfx/event_pictures/report_event_fra_right_7.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_8"
+		textureFile = "gfx/event_pictures/report_event_fra_right_8.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_9"
+		textureFile = "gfx/event_pictures/report_event_fra_right_9.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_10"
+		textureFile = "gfx/event_pictures/report_event_fra_right_10.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_11"
+		textureFile = "gfx/event_pictures/report_event_fra_right_11.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_12"
+		textureFile = "gfx/event_pictures/report_event_fra_right_12.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_13"
+		textureFile = "gfx/event_pictures/report_event_fra_right_13.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_14"
+		textureFile = "gfx/event_pictures/report_event_fra_right_14.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_15"
+		textureFile = "gfx/event_pictures/report_event_fra_right_15.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_16"
+		textureFile = "gfx/event_pictures/report_event_fra_right_16.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_17"
+		textureFile = "gfx/event_pictures/report_event_fra_right_17.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_18"
+		textureFile = "gfx/event_pictures/report_event_fra_right_18.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_19"
+		textureFile = "gfx/event_pictures/report_event_fra_right_19.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_20"
+		textureFile = "gfx/event_pictures/report_event_fra_right_20.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_21"
+		textureFile = "gfx/event_pictures/report_event_fra_right_21.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_22"
+		textureFile = "gfx/event_pictures/report_event_fra_right_22.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_23"
+		textureFile = "gfx/event_pictures/report_event_fra_right_23.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_24"
+		textureFile = "gfx/event_pictures/report_event_fra_right_24.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_25"
+		textureFile = "gfx/event_pictures/report_event_fra_right_25.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_26"
+		textureFile = "gfx/event_pictures/report_event_fra_right_26.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_right_27"
+		textureFile = "gfx/event_pictures/report_event_fra_right_27.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_fontaine_1936_strike"
+		textureFile = "gfx/event_pictures/news_event_fontaine_1936_strike.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_fontaine_maid_become_leader"
+		textureFile = "gfx/event_pictures/news_event_fontaine_maid_become_leader.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_fontaine_martial_law"
+		textureFile = "gfx/event_pictures/news_event_fontaine_martial_law.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_quebec"
+		textureFile = "gfx/event_pictures/report_event_quebec.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fontaine_science_1"
+		textureFile = "gfx/event_pictures/report_event_fontaine_science_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fontaine_science_2"
+		textureFile = "gfx/event_pictures/report_event_fontaine_science_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_1"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_10"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_10.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_2"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_3"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_3.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_4"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_4.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_5"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_5.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_6"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_6.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_7"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_7.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_my_school"
+		textureFile = "gfx/event_pictures/report_event_my_school.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_spr_Caballero_2"
+		textureFile = "gfx/event_pictures/report_event_spr_Caballero_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_4"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_4.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_library"
+		textureFile = "gfx/event_pictures/report_event_fra_library.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_1"
+		textureFile = "gfx/event_pictures/report_event_fra_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_spr_1"
+		textureFile = "gfx/event_pictures/report_event_spr_1.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_anti_fontaine_alliance_formed"
+		textureFile = "gfx/event_pictures/news_event_anti_fontaine_alliance_formed.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_5"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_5.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_6"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_6.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_7"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_7.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_8"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_8.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_9"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_9.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_10"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_10.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_11"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_11.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_16"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_16.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_17"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_17.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_spanish_fontaine_war"
+		textureFile = "gfx/event_pictures/news_event_spanish_fontaine_war.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_independence_of_algeria"
+		textureFile = "gfx/event_pictures/news_event_independence_of_algeria.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_strike_1"
+		textureFile = "gfx/event_pictures/report_event_fra_strike_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_strike_2"
+		textureFile = "gfx/event_pictures/report_event_fra_strike_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_strike_3"
+		textureFile = "gfx/event_pictures/report_event_fra_strike_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_picture_fontaine_whole_nation_strike"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_fontaine_whole_nation_strike.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_picture_fra_interest_of_politics"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_fra_interest_of_politics.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_charlotte_1"
+		textureFile = "gfx/event_pictures/report_event_fra_charlotte_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_fontaine_revolution"
+		textureFile = "gfx/event_pictures/news_event_fontaine_revolution.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_1"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_2"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_3"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_kurdish_win_the_war"
+		textureFile = "gfx/event_pictures/news_event_kurdish_win_the_war.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_turkey_win_the_war"
+		textureFile = "gfx/event_pictures/news_event_turkey_win_the_war.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_12"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_12.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_13"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_13.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_commune_14"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_14.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_commune_15"
+		textureFile = "gfx/event_pictures/report_event_fra_commune_15.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_prc_mao_s_lecture"
+		textureFile = "gfx/event_pictures/report_event_prc_mao_s_lecture.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_picture_suppress_the_disrevolution"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_suppress_the_disrevolution.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_Eos_s_Triumph"
+		textureFile = "gfx/event_pictures/report_event_Eos_s_Triumph.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_3"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_2"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_4"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_4.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_spr_Caballero"
+		textureFile = "gfx/event_pictures/report_event_spr_Caballero.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_5"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_5.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_6"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_6.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_7"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_7.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_8"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_8.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_9"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_9.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_11"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_11.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_14"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_14.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_15"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_15.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_16"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_16.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Francois_de_La_Rocque"
+		textureFile = "gfx/event_pictures/report_event_fra_Francois_de_La_Rocque.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_fontaine_return_guangzhou_bay"
+		textureFile = "gfx/event_pictures/news_event_fontaine_return_guangzhou_bay.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_Clorinde_1"
+		textureFile = "gfx/event_pictures/news_event_Clorinde_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_6"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_6.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_7"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_7.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_8"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_8.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_9"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_9.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_10"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_10.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_furina_1"
+		textureFile = "gfx/event_pictures/news_event_furina_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_furina_2"
+		textureFile = "gfx/event_pictures/news_event_furina_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_furina_3"
+		textureFile = "gfx/event_pictures/news_event_furina_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_Clorinde_Mao_tse_tung"
+		textureFile = "gfx/event_pictures/news_event_Clorinde_Mao_tse_tung.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_french_colony_empire"
+		textureFile = "gfx/event_pictures/report_event_french_colony_empire.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_1"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_2"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_3"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_4"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_4.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_paris"
+		textureFile = "gfx/event_pictures/report_event_fra_paris.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_Neuvillette_1"
+		textureFile = "gfx/event_pictures/report_event_Neuvillette_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_1"
+		textureFile = "gfx/event_pictures/report_event_judge_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_2"
+		textureFile = "gfx/event_pictures/report_event_judge_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_3"
+		textureFile = "gfx/event_pictures/report_event_judge_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_4"
+		textureFile = "gfx/event_pictures/report_event_judge_4.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_5"
+		textureFile = "gfx/event_pictures/report_event_judge_5.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_6"
+		textureFile = "gfx/event_pictures/report_event_judge_6.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_judge_7"
+		textureFile = "gfx/event_pictures/report_event_judge_7.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_algeria"
+		textureFile = "gfx/event_pictures/report_event_fra_algeria.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_nilou"
+		textureFile = "gfx/event_pictures/report_event_nilou.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_spr_2"
+		textureFile = "gfx/event_pictures/report_event_spr_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ita_air_crash"
+		textureFile = "gfx/event_pictures/report_event_ita_air_crash.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_chiori_1"
+		textureFile = "gfx/event_pictures/report_event_fra_chiori_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_chiori_2"
+		textureFile = "gfx/event_pictures/report_event_fra_chiori_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_chiori_3"
+		textureFile = "gfx/event_pictures/report_event_fra_chiori_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navia_1"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navia_2"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_2.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fra_navia_3"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navia_4"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_4.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navia_5"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_5.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navia_6"
+		textureFile = "gfx/event_pictures/report_event_fra_navia_6.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_12"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_12.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_13"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_13.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_generic_1"
+		textureFile = "gfx/event_pictures/report_event_fra_generic_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_generic_2"
+		textureFile = "gfx/event_pictures/report_event_fra_generic_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_clorinde_5"
+		textureFile = "gfx/event_pictures/report_event_fra_clorinde_5.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_jap_death_of_Takahashi_Korekiyo"
+		textureFile = "gfx/event_pictures/report_event_jap_death_of_Takahashi_Korekiyo.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_jap_1"
+		textureFile = "gfx/event_pictures/report_event_jap_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_jap_2"
+		textureFile = "gfx/event_pictures/report_event_jap_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_jap_3"
+		textureFile = "gfx/event_pictures/report_event_jap_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_jap_4"
+		textureFile = "gfx/event_pictures/report_event_jap_4.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_soviet_death_of_stalin"
+		textureFile = "gfx/event_pictures/report_event_soviet_death_of_stalin.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_soviet_lavrentiy_beria"
+		textureFile = "gfx/event_pictures/report_event_soviet_lavrentiy_beria.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_soviet_death_of_stalin"
+		textureFile = "gfx/event_pictures/news_event_soviet_death_of_stalin.png"
+	}
+}

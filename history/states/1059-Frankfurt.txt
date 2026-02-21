@@ -1,0 +1,34 @@
+state = {
+	id = 1059
+	name = 1059_Frankfurt
+	manpower = 890000
+	state_category = regional_industrial_centre
+	history = {
+		owner = GER
+		add_core_of = GER 
+		add_core_of = HES 
+		add_core_of = PRE 
+		set_demilitarized_zone = yes 
+		victory_points = {
+			6444 3 # Wiesbaden
+		}
+
+		victory_points = {
+			6488 40 # Frankfurt
+		}
+		victory_points = {
+			589 3 
+		}
+		victory_points = {
+			3574 3
+		}
+		buildings = {
+			infrastructure = 9 
+			industrial_complex = 3
+			air_base = 10 
+		}
+	}
+	provinces = {
+		6444 6488 589 3574 9486
+	}
+}

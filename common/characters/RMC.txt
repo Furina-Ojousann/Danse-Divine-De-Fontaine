@@ -1,0 +1,782 @@
+characters = {
+	RMC_Siegfried_Kasche = {
+		name = RMC_Siegfried_Kasche
+		portraits = {
+			civilian = {
+				large = GFX_portrait_rmc_Siegfried_Kasche
+			}
+		}
+		country_leader = {
+			ideology = nazism 
+			traits = {
+				the_grave_guard_of_moscow 
+			}
+		}
+		field_marshal = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+			traits = {
+				politically_connected
+				organizer
+				armor_officer 
+			}
+		}
+	}
+
+	CHI_Liang_shuming = {
+		name = CHI_Liang_shuming
+		portraits = {
+			civilian = {
+				large = GFX_portrait_chi_liang_shuming
+				small = GFX_idea_chi_liang_shuming 
+			}
+		}
+		
+	}
+
+	CHI_Zhang_junmai = {
+		name = CHI_Zhang_junmai
+		portraits = {
+			civilian = {
+				large = GFX_portrait_chi_zhang_junmai
+				small = GFX_idea_chi_zhang_junmai
+			}
+		}
+		
+	}
+
+	CHI_Song_qingling = {
+		name = CHI_Song_qingling
+		portraits = {
+			civilian = {
+				large = GFX_portrait_chi_song_qingling
+				small = GFX_idea_chi_song_qingling
+			}
+		}
+		
+	}
+
+	USA_John_Nance_Garner = {
+		name = USA_John_Nance_Garner
+		portraits = {
+			civilian = {
+				small = GFX_idea_usa_John_Nance_Garner 
+			}
+		}
+		advisor = {
+			slot = second_chief 
+			idea_token = nance_garner 
+			visible = {
+				tag = USA 
+			}
+			can_be_fired = no 
+			cost = 0 
+			traits = {
+				economist 
+			}
+		}
+	}
+
+	PLY_Bronya_Zaychik = {
+		name = PLY_Bronya_Zaychik 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Bronya_Zaychik 
+				small = GFX_idea_ply_Bronya_Zaychik 
+			}
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+			traits = {
+				inflexible_strategist 
+				career_officer
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = bronya_Zaychik 
+			traits = {
+				good_manager 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 50 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -50 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_Nahida = {
+		name = PLY_Nahida
+		portraits = {
+			army = {
+				large = GFX_portrait_ply_Nahida 
+				small = GFX_idea_ply_nahida 
+			}
+		}
+		field_marshal = {
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			traits = {
+				politically_connected 
+				organizer 
+				caustic_personality 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = nahida 
+			traits = { 
+				godress_of_wisdom 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 50 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -50 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_Acheron = {
+		name = PLY_Acheron
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Acheron 
+				small = GFX_idea_ply_Acheron 
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 5
+			traits = {
+				organizer
+				harsh_leader 
+				brilliant_strategist 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = army_chief 
+			idea_token = ply_acheron 
+			cost = 200 
+			traits = {
+				army_chief_offensive_3  
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 50 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -50 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_otto_von_Bismarck = {
+		name = PLY_otto_von_Bismarck
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_otto_von_Bismarck 
+				small = GFX_idea_ply_otto_von_Bismarck 
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			traits = {
+				organizer
+				brilliant_strategist 
+				war_hero 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = high_command 
+			idea_token = ply_otto_von_Bismarck 
+			traits = {
+				army_politics  
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 30 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -30 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_Prince_of_Wales = {
+		name = PLY_Prince_of_Wales
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Prince_of_Wales 
+				small = GFX_idea_ply_Prince_of_Wales 
+			}
+		}
+		navy_leader = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 4
+			traits = {
+				arctic_water_expert
+				ironside
+				superior_tactician
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = high_command 
+			idea_token = ply_Prince_of_Wales 
+			traits = {
+				navy_capital_ship_3  
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 30 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -30 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_Raiden_Shogun = {
+		name = PLY_Raiden_Shogun
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Raiden_Shogun 
+				small = GFX_idea_ply_Raiden_Shogun 
+			}
+		}
+		corps_commander = {
+			skill = 5
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 1
+			traits = {
+				brilliant_strategist
+				organizer 
+				war_hero 
+				trait_cautious
+				skilled_staffer
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_sparkle = {
+		name = PLY_sparkle
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_sparkle 
+				small = GFX_idea_ply_sparkle 
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			traits = {
+				
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = sparkle
+			available = {
+			}
+			traits = {
+				loafer 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 30 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -30 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_Suffren = {
+		name = PLY_Suffren
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Suffren 
+				small = GFX_idea_ply_Suffren 
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			traits = {
+				
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_March_7th = {
+		name = PLY_March_7th
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_March_7th 
+				small = GFX_idea_ply_march_7th
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4 
+			traits = {
+				career_officer 
+				trait_reckless 
+			}
+			visible = {
+				has_global_flag = show_this_character 
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = march_7th 
+			traits = {
+				star_rail_pionner 
+			}
+			visible = {
+				has_global_flag = show_this_character 
+			}
+			on_add = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = 40 
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = {
+						ply_strength = -40 
+					}
+				}
+			}
+		}
+	}
+
+	PLY_topaz = {
+		name = PLY_topaz
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Topaz 
+				small = GFX_idea_ply_topaz 
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			traits = {
+				brilliant_strategist
+				career_officer
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Meisho_Udotou = {
+		name = PLY_Meisho_Udotou
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Meisho_Udotou
+				small = GFX_idea_ply_Meisho_Udotou
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+			traits = {
+				cavalry_officer 
+				cautious
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Teiemu_operao = {
+		name = PLY_Teiemu_operao
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Teiemu_operao
+				small = GFX_idea_ply_Teiemu_operao
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = T_M_Opera_O
+			cost = 200 
+			traits = {
+				army_chief_maneuver_3 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		field_marshal = {
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			traits = {
+				brilliant_strategist
+				cavalry_officer
+				trait_reckless
+				media_personality 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Kitasan_Buraku = {
+		name = PLY_Kitasan_Buraku
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Kitasan_Buraku 
+				small = GFX_idea_ply_Kitasan_Buraku 
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			traits = {
+				cavalry_officer
+				trait_reckless
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Satono_Daimondo = {
+		name = PLY_Satono_Daimondo
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Satono_Daimondo 
+				small = GFX_idea_ply_Satono_Daimondo
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 2
+			traits = {
+				cautious 
+				inflexible_strategist 
+				cavalry_officer 
+				considerate
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Oguri_Cup = {
+		name = PLY_Oguri_Cup
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Oguri_Cup 
+				small = GFX_idea_ply_Oguri_Cup 
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = Oguri_Cup
+			traits = {
+				army_cavalry_3
+			}
+			cost = 100
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		corps_commander = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+			traits = {
+				brilliant_strategist 
+				cavalry_officer 
+				cavalry_expert 
+				cavalry_leader 
+				war_hero 
+				jaeger
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Daiwasu_kareto = {
+		name = PLY_Daiwasu_kareto
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Daiwasu_kareto
+				small = GFX_idea_ply_Daiwasu_kareto 
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			traits = {
+				cavalry_officer 
+				harsh_leader 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_TokaiTeio = {
+		name = PLY_TokaiTeio 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_TokaiTeio
+				small = GFX_idea_ply_TokaiTeio 
+			}
+		}
+		corps_commander = {
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 2
+			traits = {
+				brilliant_strategist
+				cavalry_officer 
+				politically_connected 
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = TokaiTeio
+			cost = 150 
+			traits = {
+				current_economist
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_Mejiro_Makuin = {
+		name = PLY_Mejiro_Makuin
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_Mejiro_Makuin
+				small = GFX_idea_ply_Mejiro_Makuin 
+			}
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 5
+			traits = {
+				politically_connected
+				inflexible_strategist
+				cautious
+				cavalry_officer
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = Mejiro_Makuin
+			traits = { constitutional_reformer }
+			cost = 200 
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+	PLY_enterprise = {
+		name = PLY_enterprise
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ply_enterprise
+				small = GFX_idea_ply_Enterprise 
+			}
+		}
+		advisor = {
+			slot = navy_chief 
+			idea_token = uss_enterprice_cv6
+			cost = 200 
+			traits = {
+				navy_chief_naval_aviation_3
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+		navy_leader = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 6
+			coordination_skill = 5
+			traits = {
+				aviation_enthusiast
+				superior_tactician
+				naval_lineage
+				gentlemanly
+				air_controller
+			}
+			visible = {
+				has_global_flag = show_this_character
+			}
+		}
+	}
+
+}

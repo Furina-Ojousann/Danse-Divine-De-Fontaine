@@ -1,0 +1,388 @@
+SOV_basic_uninterested_regions = { #苏联永远不会感兴趣的地方
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		always = yes 
+	}
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -999
+	}
+	ai_strategy = {
+        type = area_priority
+        id = suez
+        value = -999
+    }
+
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = -999 #less focus here
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = oceania
+		value = -999
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = -999
+	}
+
+	ai_strategy = {
+		type = garrison 
+		value = -999
+	}
+}
+
+SOV_europe_is_dangerous = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		OR = {
+			GER = {
+				AND = {
+					exists = yes 
+					not = { is_in_faction_with = SOV }
+					has_offensive_war = yes 
+				}
+			}
+			ENG = {
+				AND = {
+					exists = yes 
+					not = { is_in_faction_with = SOV }
+					OR = {
+						has_war_with = SOV 
+						focus_progress = {
+							focus = ENG_war_with_ussr 
+							progress > 0 
+						}
+					}
+				}
+			}
+			USA = {
+				AND = {
+					exists = yes 
+					not = { is_in_faction_with = SOV }
+					has_war_with = SOV  
+				}
+			}
+			FRA = {
+				AND = {
+					exists = yes 
+					not = { is_in_faction_with = SOV }
+					has_war_with = SOV  
+				}
+			}
+		}
+	}
+	abort = {
+		any_country = {
+			or = {
+				tag = USA
+				tag = FRA
+				tag = ENG
+				tag = GER
+				tag = ITA 
+			}
+			is_faction_leader = yes 
+			has_capitulated = yes 
+		}
+		has_war = no 
+	}
+	ai_strategy = {
+		type = area_priority
+		id = europe 
+		value = 999 
+	}
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = 35
+	}
+}
+
+SOV_try_attack_usa = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		not = {
+			any_country = {
+				capital_scope = {
+					is_on_continent = europe 
+				}
+				has_war_with = SOV 
+				has_capitulated = no 
+			}
+		}
+		USA = { has_war_with = SOV }
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = north_america 
+		value = 450 
+	}
+}
+
+SOV_deal_with_asia = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		OR = {
+			DDR = {
+				exists = yes 
+				is_in_faction_with = SOV  
+			}
+			any_country = {
+				AND = {
+					original_tag = GER 
+					is_in_faction_with = SOV 
+				}
+			}
+		}
+		not = {
+			has_war_with = ENG 
+			has_war_with = USA 
+			has_war_with = FRA 
+		}
+		JAP = {
+			has_offensive_war = yes 
+			not = { is_in_faction_with = SOV }
+		}
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = asia  
+		value = 450 
+	}
+}
+
+SOV_invade_iran = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		has_completed_focus = SOV_preemptive_invasion_of_iran 
+	}
+	abort = {
+		PER = {
+			has_capitulated = yes 
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = middle_east 
+		value = 120 
+	}
+}
+
+SOV_dont_waste_experience_forming_templates = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		always = yes 
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority 	#陆军经验花费优先级
+		id = division_template 			#编辑陆军编制
+		value = -9999					#千万不要花在这里
+	}
+}
+
+SOV_defense_germany = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		is_neighbor_of = GER 
+	}
+	abort = {
+		GER = { 
+			has_capitulated = yes 
+		}
+	}
+	ai_strategy = {
+		type = front_unit_request	
+		tag = "GER" 
+		value = 999
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = GER 
+		value = 999
+	}
+}
+
+SOV_attack_manchuria = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		is_neighbor_of = MAN 
+		has_completed_focus = SOV_the_threat_from_the_land_of_the_rising_sun 
+	}
+	abort = {
+		JAP = {
+			has_capitulated = yes 
+		}
+	}
+	ai_strategy = {
+		type = front_unit_request	
+		tag = "MAN" 
+		value = 300
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = MAN 
+		value = 300
+	}
+}
+
+SOV_save_pp = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		always = yes 
+	}
+	ai_strategy = {
+    	type = pp_spend_priority
+    	id = relation
+    	value = -999
+	}
+	ai_strategy = {
+    	type = pp_spend_priority
+    	id = idea 
+    	value = 500
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = decision
+		value = 100
+	}
+}
+
+SOV_build_inf_first = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		date < 1936.10.1
+	}
+	abort_when_not_enabled = yes 
+	ai_strategy = {
+		type = building_target
+		id = infrastructure
+		value = 999
+	}
+}
+
+SOV_build_mio = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		date > 1936.9.30
+		date < 1939.9.1
+	}
+	abort_when_not_enabled = yes 
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 999
+	}
+}
+SOV_build_mio = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		date > 1938.9.1
+		date < 1944.12.1
+	}
+	abort_when_not_enabled = yes 
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 999
+	}
+}
+
+SOV_build_a_research = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		has_built = {
+			type = land_facility
+			value = 0
+		}
+	}
+	abort_when_not_enabled = yes 
+	ai_strategy = {
+		type = building_target
+		id = land_facility
+		value = 100
+	}
+}
+
+SOV_dont_attack_too_early = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		has_war_with = GER 
+	}
+	abort = {
+		date > 1942.10.1
+		has_completed_focus = SOV_lessons_of_war 
+	}
+	ai_strategy = {
+		type = front_control 
+		tag = SOV  
+		ratio > 0.90
+		priority = 100 
+		ordertype = front 
+		execution_type = careful 
+		execute_order = no 
+	}
+}
+SOV_attack_when_sufficiently_prepared = {
+	allowed = {
+		original_tag = SOV 
+	}
+	enable = {
+		date > 1942.10.1
+		has_completed_focus = SOV_lessons_of_war 
+		has_equipment = {
+			infantry_equipment > 10000
+		}
+		has_equipment = {
+			artillery_equipment > 1000 
+		}
+	}
+	abort = {
+		not = {
+			has_war_with = GER 
+		}
+	}
+	ai_strategy = {
+		type = front_control 
+		tag = SOV  
+		ratio > 0.90
+		priority = 100 
+		ordertype = front 
+		execution_type = careful 
+		execute_order = yes  
+	}
+}
+

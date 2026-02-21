@@ -1,0 +1,398 @@
+on_actions = {
+	on_weekly_FRA = {
+		effect = {
+			if = {
+				limit = {
+					not = { has_idea = zeal_1 }
+					check_variable = {
+						people_zeal_value > 19.99 
+					}
+				}
+				add_ideas = zeal_1 
+			}
+
+			if = {
+				limit = {
+					not = { has_idea = zeal_2 }
+					check_variable = {
+						people_zeal_value > 39.99 
+					}
+				}
+				add_ideas = zeal_2 
+			}
+
+			if = {
+				limit = {
+					not = { has_idea = zeal_3 }
+					check_variable = {
+						people_zeal_value > 59.99 
+					}
+				}
+				add_ideas = zeal_3
+			}
+
+			if = {
+				limit = {
+					not = { has_idea = zeal_4 }
+					check_variable = {
+						people_zeal_value > 79.99 
+					}
+				}
+				add_ideas = zeal_4 
+			}
+
+			if = {
+				limit = {
+					not = { has_idea = zeal_5 }
+					check_variable = {
+						people_zeal_value > 99.99 
+					}
+				}
+				add_ideas = zeal_5
+			}
+
+			clamp_variable = {
+				var = people_zeal_value 
+				min = 0 
+				max = 100 
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = SOV 
+					has_war_with = GER 
+					date > 1944.6.1 
+					surrender_progress > 0.50 
+				}
+				add_ideas = sov_start_attack_since_1944 
+			}
+			if = {
+				limit = {
+					original_tag = GER 
+					check_variable = {
+						GER_industrial_consumer_goods_factor > 0.40 
+					}
+				} 
+				set_variable = { GER_industrial_consumer_goods_factor = 0.40 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = FRA_the_interest_of_politics
+				}
+				add_to_variable = { people_zeal_value = people_zeal_monthly_change }
+			}
+			if = {
+				limit = {
+					has_country_flag = do_let_mumber_work 
+				}
+				add_to_variable = { people_zeal_value = 5 }
+			}
+			if = {
+				limit = {
+					has_country_flag = do_fra_stalinist_defense_cynicism 
+				}
+				add_to_variable = { people_zeal_value = 3.5 }
+			}
+			if = {
+				limit = {
+					has_country_flag = do_fra_stalinist_expand_scienice 
+				}
+				add_to_variable = { people_zeal_value = 1.5  }
+			}
+			if = {
+				limit = {
+					has_country_flag = do_strengthen_the_workplace_demoractory
+				}
+				add_to_variable = { people_zeal_value = 1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = FRA_the_commune_economy 
+					}
+				}
+				add_to_variable = { people_zeal_value = monthly_zeal_change_by_economy }
+			}
+			clamp_variable = {
+				var = people_zeal_value 
+				min = 0 
+				max = 100 
+			}
+
+
+			if = {
+				limit = {
+					has_completed_focus = FRA_annul_the_nation 
+					original_tag = FRA 
+				}
+				refresh_the_state_unity_and_chao = yes 
+			}
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_completed_focus = FRA_anarchist_human_unity 
+				}
+				every_controlled_state = {
+					if = {
+						limit = {
+							occupation_law = fontaine_renormalization 
+							compliance > 59.9
+						}
+						add_core_of = FRA 
+					}
+					if = {
+						limit = {
+							has_state_flag = has_raise_compliance 
+							compliance > 79.9
+						}
+						add_core_of = FRA 
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = FRA 
+					has_government = communism 
+					has_country_flag = fra_furina_come_to_france 
+					has_country_flag = charlotte_as_the_second_leader 
+					has_dynamic_modifier = {
+						modifier = FRA_the_corruption 
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = start_normal_purge 
+					}
+					set_temp_variable = { the_corruption_value_to_add = -10 }
+				}
+				else_if = {
+					limit = {
+						has_country_flag = start_massive_purge 
+					}
+					set_temp_variable = { the_corruption_value_to_add = -20 }
+				}
+				else = {
+					set_temp_variable_to_random = {
+						var = the_corruption_value_to_add
+						max = 3.5
+						min = 1.5
+					}
+				}
+				add_to_variable = { the_corruption_of_party = the_corruption_value_to_add }
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = FRA_the_commune_economy 
+						}
+					}
+					add_to_variable = { the_corruption_of_party = monthly_corruption_change_value_by_economy }
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = FRA_dissenters 
+						}
+					}
+					add_to_variable = { the_corruption_of_party = monthly_corruption_change_value_by_dissender }
+				}
+				if = {
+					limit = {
+						has_completed_focus = FRA_collective_leadership 
+						has_idea = Adrienne_Charlotte_politics 
+					}
+					add_to_variable = { the_corruption_of_party = monthly_corruption_change_value_by_communist_minister }
+				}
+				#add_to_variable = { the_corruption_of_party = monthly_corruption_change_by_other_things }
+				if = {
+					limit = {
+						check_variable = {
+							people_zeal_value > 59.99 
+						}
+					}
+					add_to_variable = { the_corruption_of_party = -0.20 }
+				}
+				if = {
+					limit = {
+						has_idea = fra_hurry_development 
+					}
+					add_to_variable = { the_corruption_of_party = 0.20 }
+				}
+				if = {
+					limit = {
+						has_country_flag = do_strengthen_the_workplace_demoractory 
+					}
+					add_to_variable = { the_corruption_of_party = -0.10  }
+				}
+				if = {
+					limit = {
+						has_idea = fra_to_the_rural_2 
+					}
+					add_to_variable = { the_corruption_of_party = -0.10 }
+				}
+				set_temp_variable = { people_zeal_value_temp = people_zeal_value }
+				multiply_temp_variable = { people_zeal_value_temp = -0.01 }
+				set_variable = { monthly_corruption_change_by_zeal = people_zeal_value_temp }
+				if = {
+					limit = {
+						has_idea = fra_continue_the_revolution
+					}
+					add_to_variable = { the_corruption_of_party = monthly_corruption_change_by_zeal }
+				}
+				calculate_the_corruption_modifier = yes 
+			}
+
+		}
+	}
+	on_release_as_free = {
+		effect = {
+			if = {
+				limit = {  
+					FROM = { original_tag = FRA has_country_flag = FRA_colonies_french_completed }
+				}
+				ROOT = { add_ideas = fra_puppet_of_french }
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = {  
+					FROM = { original_tag = FRA has_country_flag = FRA_colonies_french_completed }
+				}
+				ROOT = { add_ideas = fra_puppet_of_french }
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = GER 
+						has_government = neutrality 
+					}
+					FROM = {
+						original_tag = GER
+						has_government = fascism 
+					}
+				}
+				retire_character = GER_rudolf_hess 
+				add_advisor_role = {
+					character = GER_ludwig_beck
+					activate = yes 
+					advisor = {
+						slot = second_chief
+						traits = {
+							rearmament_proponent
+						}
+					}
+				}
+			}
+		}
+	}
+	on_leave_faction = {
+		effect = {
+			if = {
+			limit = {
+				has_country_flag = comintern_partner 
+			}
+			clr_country_flag = comintern_partner
+		}
+		if = {
+			limit = {
+				is_faction_leader = yes 
+				has_country_flag = comintern_leader 
+			}
+			clr_country_flag = comintern_leader 
+		}
+		}
+		
+	}
+	on_unit_leader_level_up = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_idea_with_trait = precise_dessert_chef
+					}
+				}
+				character = {
+					if = {
+						limit = {
+							is_army_leader = yes 
+						}
+						add_logistics = 1 
+					}
+				}
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = GER 
+					}
+					FROM = {
+						tag = SOV 
+					}
+				}
+				set_country_flag = germany_declare_war_on_soviet_union
+			}
+		}
+	}
+
+	#on_capitulation = {
+	#	effect = {
+	#		if = {
+	#			limit = {
+	#				FRA = {
+	#					has_country_flag = fra_furina_come_to_france 
+	#				}
+	#				FROM = {
+	#					tag = GER 
+	#				}
+	#				ROOT = {
+	#					OR = {
+	#						tag = FRA 
+	#						tag = ENG 
+	#						tag = USA 
+	#					}
+	#				}
+	#			}
+	#			white_peace = GER 
+	#			set_autonomy = {
+	#				target = GER 
+	#				autonomy_state = autonomy_supervised_state
+	#			}
+	#		}
+	#		if = {
+	#			limit = {
+	#				FRA = {
+	#					has_country_flag = fra_furina_come_to_france 
+	#				}
+	#				FROM = {
+	#					tag = ITA 
+	#				}
+	#				ROOT = {
+	#					OR = {
+	#						tag = FRA 
+	#						tag = ENG 
+	#						tag = USA 
+	#					}
+	#				}
+	#			}
+	#			white_peace = ITA 
+	#			set_autonomy = {
+	#				target = ITA  
+	#				autonomy_state = autonomy_supervised_state
+	#			}
+	#		}
+	#	}
+	#}
+	
+}

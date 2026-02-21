@@ -1,0 +1,5853 @@
+add_namespace = French 
+add_namespace = French_news
+add_namespace = french.test
+add_namespace = fontaine_personal
+
+### country events ###
+
+country_event = {
+	id = french.test.0
+	title = french.text.1.t
+	desc = french.text.1.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_physics_lab_02 
+
+	option = {
+		name = french.text.1.a
+		if = {
+			limit = {
+				FROM = {
+					has_completed_focus = generic_build_more_factories 
+				}
+			}
+			FROM = {
+				uncomplete_national_focus = {
+					focus = generic_build_more_factories
+				}
+			}
+		}
+		FROM = {
+			complete_national_focus = generic_produce_weapon 
+		}
+		
+	}
+
+	option = {
+		name = french.text.1.b 
+		if = {
+			limit = {
+				FROM = {
+					has_completed_focus = generic_produce_weapon  
+				}
+			}
+			FROM = {
+				uncomplete_national_focus = {
+					focus = generic_produce_weapon
+				}
+			}
+		}
+		FROM = {
+			complete_national_focus = generic_build_more_factories  
+		}
+		
+	}
+
+	option = {
+		name = french.text.1.c 
+		if = {
+			limit = {
+				FROM = {
+					has_completed_focus = generic_produce_weapon  
+				}
+			}
+			FROM = {
+				uncomplete_national_focus = {
+					focus = generic_produce_weapon
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				FROM = {
+					has_completed_focus = generic_build_more_factories 
+				}
+			}
+			FROM = {
+				uncomplete_national_focus = {
+					focus = generic_build_more_factories
+				}
+			}
+		}
+
+		FROM = {
+			complete_national_focus = generic_be_annexed 
+		}
+		
+
+	}
+}
+
+country_event = {
+	id = French.0 #获得枫丹将领
+	is_triggered_only = yes 
+
+	immediate = {
+		if = {
+			limit = {
+				ROOT = {
+					not = {
+						tag = FRA 
+					}
+				}
+			}
+			FRA = {
+				FRA_Solenn_Clorinde = {
+					set_nationality = ROOT 
+				}
+				FRA_Adrienne_Charlotte = {
+					set_nationality = ROOT 
+				}
+				FRA_Navia_Caspar = {
+					set_nationality = ROOT  
+				}
+				FRA_Lyney_Snezhevich = {
+					set_nationality = ROOT  
+				}
+				FRA_Chiori = {
+					set_nationality = ROOT  
+				}
+				FRA_Yvonne_Chevreuse = {
+					set_nationality = ROOT  
+				}
+				FRA_Neuvillette = {
+					set_nationality = ROOT  
+				}
+				FRA_Sigewinne_Clement = {
+					set_nationality = ROOT  
+				}
+				FRA_Wriothesley = {
+					set_nationality = ROOT  
+				}
+				FRA_Emilie = {
+					set_nationality = ROOT  
+				}
+				FRA_Escoffier_Vesta = {
+					set_nationality = ROOT
+				}
+			}
+		}
+		FRA_Solenn_Clorinde = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Adrienne_Charlotte = {
+			set_character_flag = show_fontaine
+		}
+		FRA_Navia_Caspar = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Lyney_Snezhevich = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Chiori = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Escoffier_Vesta = {
+			set_character_flag = show_fontaine
+		}
+		FRA_Yvonne_Chevreuse = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Neuvillette = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Sigewinne_Clement = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Wriothesley = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Emilie = {
+			set_character_flag = show_fontaine 
+		}
+	}
+}
+
+country_event = {
+	id = French.1 #皮埃尔·赖伐尔辞职
+	title = French.1.t 
+	desc = French.1.d 
+	fire_only_once = yes 
+	trigger = {
+		date > 1936.1.24 
+		tag = FRA 
+		FRA_pierre_laval = {
+			is_country_leader = yes 
+		}
+	}
+	mean_time_to_happen = {
+		days = 5 
+	}
+	picture = GFX_report_event_fra_laval_resigned 
+	option = {
+		name = French.1.a  
+		promote_character = FRA_Albert_Sarraut 
+		add_political_power = 25 
+	}
+}
+
+country_event = {
+	id = French.2 #1936年法国大选
+	title = French.2.t 
+	desc = French.2.d 
+	
+	trigger = {
+		date > 1936.1.1
+		date < 1937.1.1 
+		original_tag = FRA 
+		has_elections = yes 
+		has_government = democratic 
+		has_capitulated = no 
+		not = {
+			has_country_flag = fra_furina_come_to_france 
+		}
+	}
+
+	is_triggered_only = yes 
+
+	picture = GFX_report_event_FIN_risto_ryti_speech 
+
+	option = {
+		name = French.2.a #人民阵线 
+		ai_chance = {
+			base = 10 
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = FRA_ai_behavior 
+						option = FASCIST
+					}
+					has_game_rule = {
+						rule = FRA_ai_behavior 
+						option = ORLEANIST
+					}
+					has_game_rule = {
+						rule = FRA_ai_behavior 
+						option = LEGITIMIST
+					}
+					has_game_rule = {
+						rule = FRA_ai_behavior 
+						option = BONAPARTIST
+					}
+				}
+			}
+		}
+		promote_character = FRA_leon_blum 
+		complete_national_focus = FRA_form_the_popular_front
+		add_political_power = 50 
+		set_party_name = {
+			ideology = democratic
+			long_name = "法国共产党、工人国际法国支部以及激进党"
+			name = "人民阵线"
+		} 
+	}
+	option = {
+		name = French.2.b 
+		ai_chance = {
+			base = 10 
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = FRA_ai_behavior
+						option = DEMOCRATIC
+					}
+					has_game_rule = {
+						rule = FRA_ai_behavior
+						option = COMMUNIST 
+					}
+					has_game_rule = {
+						rule = FRA_ai_behavior 
+						option = DEFAULT 
+					}
+				}
+			}
+		}
+		promote_character = FRA_pierre_etienne_flandin 
+		complete_national_focus = FRA_revive_the_national_bloc 
+		add_political_power = 50 
+		set_party_name = {
+			ideology = democratic
+			long_name = "民主共和联盟-独立激进党"
+			name = "民主共和联盟"
+		}
+	}
+}
+
+country_event = {
+	id = French.3 #芙芙掌控了法国！
+	picture = GFX_report_event_fra_Furina_1
+	title = French.3.t 
+	desc = French.3.d 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			FCA = { set_cosmetic_tag = Fontaine_Colony_Central_Africa }
+			FWA = { set_cosmetic_tag = Fontaine_Colony_Western_Africa }
+			################################################
+			#		对的，我们模组总共只添加了这些人物        #
+			################################################
+			recruit_character = FRA_Solenn_Clorinde
+			recruit_character = FRA_Furina_de_Fontaine 
+			recruit_character = FRA_Lyney_Snezhevich
+			recruit_character = FRA_Adrienne_Charlotte 
+			recruit_character = FRA_Chiori 
+			recruit_character = AUS_Ludwig_Heinrich_Edler_von_Mises 
+			recruit_character = FRA_Yvonne_Chevreuse
+			recruit_character = FRA_Navia_Caspar 
+			recruit_character = FRA_Neuvillette 
+			recruit_character = FRA_Sigewinne_Clement 
+			recruit_character = FRA_Wriothesley 
+			recruit_character = FRA_Emilie 
+			recruit_character = FRA_provisional_government 
+			recruit_character = FRA_Escoffier_Vesta 
+			recruit_character = FRA_heinrich_himmler 
+			recruit_character = FRA_Peruere_Snezhevna 
+			recruit_character = FRA_Commune_Committee 
+			################################################
+		}
+	}
+	option = {
+		name = French.3.a
+		hidden_effect = {
+			news_event = {
+				id = French_news.1 
+				days = 1 
+			}
+		}
+		set_country_flag = fra_furina_come_to_france 
+		if = {
+			limit = {
+				not = { has_government = democratic }
+			}
+			set_politics = {
+				ruling_party = democratic 
+				elections_allowed = yes 
+			}
+			set_popularities = {
+				democratic = 27
+				liberalism_temp = 14
+				conservatism_temp = 15
+				populist_socialism = 19
+				communism = 15
+				neutrality = 3
+				fascism = 7 
+			}
+		}
+		FRA_Furina_de_Fontaine = {
+			add_country_leader_role = {
+				promote_leader = yes 
+				country_leader = {
+					ideology = big_tent 
+					desc = "FRA_Furina_de_Fontaine_desc" 
+					traits = {
+						star_idol 
+					} 
+				}
+			}
+		}
+		set_country_flag = fontaine_resetting_accomplish 
+		#hidden_effect = {
+		#	FRA_Neuvillette = {
+		#		add_country_leader_role = {
+		#			country_leader = {
+		#				ideology = paternalistic_conservatism 
+		#				traits = {
+		#					master_of_politics 
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+		set_country_leader_description = {
+			desc = FRA_Furina_de_Fontaine_desc 
+		}
+		FRA_Solenn_Clorinde = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Escoffier_Vesta = {
+			set_character_flag = show_fontaine
+		}
+		FRA_Adrienne_Charlotte = {
+			set_character_flag = show_fontaine
+		}
+		FRA_Navia_Caspar = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Lyney_Snezhevich = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Chiori = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Yvonne_Chevreuse = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Neuvillette = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Sigewinne_Clement = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Wriothesley = {
+			set_character_flag = show_fontaine 
+		}
+		FRA_Emilie = {
+			set_character_flag = show_fontaine 
+		}
+		set_cosmetic_tag = FRA_Fontaine 
+		set_party_name = {
+			ideology = democratic 
+			long_name = R_Fontaine_Democratic_long
+			name = R_Fontaine_Democratic
+		}
+		set_party_name = {
+			ideology = communism 
+			long_name = R_Fontaine_Communism_long
+			name = R_Fontaine_Communism
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = R_Fontaine_neutrality_long
+			name = R_Fontaine_neutrality
+		}
+		set_party_name = {
+			ideology = fascism 
+			long_name = R_Fontaine_fascism_long
+			name = R_Fontaine_fascism
+		}
+		set_party_name = {
+			ideology = populist_socialism 
+			long_name = FRA_popular_front_long 
+			name = FRA_popular_front
+		}
+		mark_focus_tree_layout_dirty = yes 
+	}
+}
+
+
+country_event = {
+	id = French.4 #审判序幕
+	picture = GFX_report_event_Eos_s_Triumph
+	title = French.4.t 
+	desc = French.4.d 
+	is_triggered_only = yes 
+	option = {
+		name = French.4.a 
+		add_command_power = 50 
+	}
+}
+
+country_event = {
+	id = French.5 #审判
+	picture = GFX_report_event_fra_Furina_3
+	title = French.5.t 
+	desc = French.5.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.5.a 
+		add_political_power = 100 
+		country_event = {
+			id = French.6 
+			days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = French.6 #政客
+	picture = GFX_report_event_fra_Furina_2
+	title = French.6.t 
+	desc = French.6.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.6.a 
+		add_stability = 0.05 
+		remove_ideas = FRA_disjointed_government
+		FRA_Assemblee_nationale = {
+			remove_trait = {
+				slot = second_chief 
+				trait = confused_parliament 
+			}
+			add_trait = {
+				trait = quite_parliament
+				slot = second_chief 
+			}
+		}
+		retire_character = FRA_pierre_laval 
+		retire_character = FRA_philippe_petain 
+		retire_character = FRA_marcel_bucard 
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05 
+		}
+		add_popularity = {
+			ideology = communism  
+			popularity = 0.025 
+		}
+		country_event = {
+			id = French.7 
+			days = 7 
+		}
+		add_manpower = -287 
+	}
+}
+
+country_event = {
+	id = French.7 #老将军们
+	picture = GFX_report_event_fra_Furina_2
+	title = French.7.t 
+	desc = French.7.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.7.a 
+		remove_ideas = FRA_victors_of_wwi 
+		army_experience = 150 
+		add_manpower = -17 
+		retire_character = FRA_maxime_weygand 
+		retire_character = FRA_alphonse_georges 
+		retire_character = FRA_antoinemariebenoit_besson 
+		set_country_flag = old_guards_disappeared
+		add_war_support = 0.05 
+		FRA_charles_de_gaulle = {
+			promote_leader = yes 
+		}
+		FRA_jean_de_lattre_de_tassigny = {
+			promote_leader = yes 
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief 
+					idea_token = FRA_jean_de_lattre_de_tassigny_army_chief
+					traits = {
+						army_chief_offensive_3
+					}
+					cost = 100 
+				}
+			}
+		}
+		country_event = {
+			id = French.8 
+			days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = French.8 #闭幕
+	title = French.8.t 
+	desc = French.8.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_2
+
+	option = {
+		name = French.8.a 
+		add_manpower = -2314 
+		capital_scope = {
+			set_demilitarized_zone = no 
+		}
+		remove_ideas = FRA_nationwide_martial_law_idea
+		remove_ideas = FRA_Military_ban 
+		add_stability = 0.3 
+	}
+}
+
+country_event = {
+	id = French.9 #第一届枫丹国民议会
+	picture = GFX_report_event_fra_Furina_4
+	title = French.9.t 
+	desc = French.9.d 
+	is_triggered_only = yes 
+	option = {
+		name = French.9.a 
+		complete_national_focus = FRA_support_workers 
+	}
+	option = {
+		name = French.9.b 
+		complete_national_focus = FRA_support_capitains 
+	}
+}
+
+country_event = {
+	id = French.10 #经济好转!
+	picture = GFX_report_event_gathering_protest 
+	title = French.10.t 
+	desc = French.10.d 
+	
+	trigger = {
+		has_completed_focus = FRA_Poincare_reform 
+		or = {
+			has_idea = FRA_inefficient_economy_1 
+			has_idea = FRA_inefficient_economy_2 
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 180 
+	}
+
+	option = {
+		name = French.10.a 
+		if = {
+			limit = {
+				has_idea = FRA_inefficient_economy_1 
+			}
+			remove_ideas = FRA_inefficient_economy_1 
+		}
+		else_if = {
+			limit = {
+				has_idea = FRA_inefficient_economy_2 
+			}
+			swap_ideas = {
+				remove_idea = FRA_inefficient_economy_2 
+				add_idea = FRA_inefficient_economy_1 
+			}
+		}
+		add_offsite_building = {
+			type = arms_factory 
+			level = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.999 ##芙宁娜访问结束 - 兜底
+	title = French.11.t 
+	desc = French.11.d 
+	picture = GFX_report_event_fra_Furina_2
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_the_Mainland_Cruise 
+		not = {
+			has_active_mission = FRA_mission_to_Belgium 
+			has_active_mission = FRA_mission_to_cze
+			has_active_mission = FRA_mission_to_rom
+			has_active_mission = FRA_mission_to_spr
+			has_active_mission = FRA_mission_to_yug 
+		}
+		has_country_flag = fra_furina_is_curising 
+	}
+	fire_only_once = yes 
+
+	mean_time_to_happen = {
+		days = 1 
+	}
+
+	option = {
+		name = French.11.a 
+		promote_character = FRA_Furina_de_Fontaine 
+		add_political_power = 50 
+		clr_country_flag = fra_furina_is_curising 
+		custom_effect_tooltip = available_political_advisor 
+		show_ideas_tooltip = FRA_Solenn_Clorinde_political_advisor 
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = assemblee_nationale 
+			add_ideas = Neuvillette_political 
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.11 #芙宁娜访问结束
+	title = French.11.t 
+	desc = French.11.d 
+	picture = GFX_report_event_fra_Furina_2
+	is_triggered_only = yes 
+
+	option = {
+		name = French.11.a 
+		promote_character = FRA_Furina_de_Fontaine 
+		add_political_power = 50 
+		clr_country_flag = fra_furina_is_curising 
+		custom_effect_tooltip = available_political_advisor 
+		show_ideas_tooltip = FRA_Solenn_Clorinde_political_advisor 
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = assemblee_nationale 
+			add_ideas = Neuvillette_political 
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.12 #比利时
+	title = French.12.t 
+	desc = French.12.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution 
+
+	option = {
+		name = French.12.a 
+		diplomatic_relation = {
+			country = BEL 
+			relation = guarantee 
+		}
+		BEL = {
+			set_country_flag = will_attend_the_union
+		}
+	}
+
+	option = {
+		name = French.12.b 
+	}
+}
+
+country_event = {
+	id = French.13 #捷克
+	title = French.13.t 
+	desc = French.13.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_3 
+
+	option = {
+		name = French.13.a 
+		diplomatic_relation = {
+			country = CZE  
+			relation = guarantee 
+		}
+		CZE = {
+			set_country_flag = will_attend_the_union 
+		}
+	}
+}
+
+country_event = {
+	id = French.14 #南斯拉夫
+	title = French.14.t 
+	desc = French.14.d 
+	picture = GFX_report_event_yugoslavian_king_peter 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.14.a 
+		diplomatic_relation = {
+			country = YUG 
+			relation = guarantee 
+		}
+		YUG = {
+			set_country_flag = will_attend_the_union 
+		}
+	}
+
+	option = {
+		name = French.14.b 
+	}
+}
+
+country_event = {
+	id = French.15 #西班牙
+	title = French.15.t 
+	desc = French.15.d 
+	picture = GFX_report_event_spr_Caballero
+	is_triggered_only = yes 
+
+	option = {
+		name = French.15.a 
+		add_ideas = SPR_equipment_shipments
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -5000 
+			producer = FRA 
+		}
+		SPR = {
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = 5000
+				producer = FRA 
+			}
+			set_country_flag = will_attend_the_union 
+		}
+	}
+
+	option = {
+		name = French.15.b 
+		every_country_with_original_tag = {
+			original_tag_to_check = SPR 
+			limit = {
+				has_government = democratic 
+			}
+			add_stability = 0.05 
+		}
+	}
+}
+
+country_event = {
+	id = French.16 #罗马尼亚
+	title = French.16.t 
+	desc = French.16.d 
+	picture = GFX_report_event_rom_mistress 
+	is_triggered_only = yes 
+	option = {
+		name = French.16.a 
+		#country_event = {
+		#	id = French.11 
+		#	days = 2 
+		#}
+		ROM = {
+			set_country_flag = will_attend_the_union 
+		}
+	}
+}
+
+country_event = {
+	id = French.17 #德国反对
+	title = French.17.t 
+	desc = French.17.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.17.a 
+		add_to_variable = {
+			FRA_disagreement = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.18 #德国赞成
+	title = French.18.t 
+	desc = French.18.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.18.a 
+	}
+}
+
+country_event = {
+	id = French.19 #意大利反对
+	title = French.19.t 
+	desc = French.19.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.19.a 
+		add_to_variable = {
+			FRA_disagreement = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.20 #意大利赞成
+	title = French.20.t 
+	desc = French.20.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.20.a 
+	}
+}
+
+country_event = {
+	id = French.21 #英国反对
+	title = French.21.t 
+	desc = French.21.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.21.a 
+		add_to_variable = {
+			FRA_disagreement = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.22 #英国赞成
+	title = French.22.t 
+	desc = French.22.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.22.a 
+	}
+}
+
+country_event = {
+	id = French.23 #美国反对
+	title = French.23.t 
+	desc = French.23.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.23.a 
+		add_to_variable = {
+			FRA_disagreement = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.24 #美国赞成
+	title = French.24.t 
+	desc = French.24.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.24.a 
+	}
+}
+
+country_event = {
+	id = French.25 #苏联反对
+	title = French.25.t 
+	desc = French.25.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.25.a 
+		add_to_variable = {
+			FRA_disagreement = 1 
+		}
+	}
+}
+
+country_event = {
+	id = French.26 #苏联赞成
+	title = French.26.t 
+	desc = French.26.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy 
+	timeout_days = 5  
+	is_triggered_only = yes 
+
+	option = {
+		name = French.26.a 
+	}
+}
+
+country_event = {
+	id = French.27 #莱茵兰提案
+	title = French.27.t 
+	desc = French.27.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.27.a 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = French.17
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = French.19
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = French.21
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = French.23 
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = French.25
+			}
+		}
+		ai_chance = {
+			base = 10 
+		}
+	}
+
+	option = {
+		name = French.27.b 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = French.18
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = French.20
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = French.22
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = French.24 
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = French.26
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = GER 
+				factor = 0 
+			}
+			modifier = {
+				tag = USA 
+				add = -3 
+			}
+			modifier = {
+				tag = ENG 
+				add = -8 
+			}
+			modifier = {
+				has_opinion = {
+					target = FRA
+					value > 69 
+				}
+				add = 5 
+			}
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.28 #莱茵兰提案被通过
+	title = French.28.t 
+	desc = French.28.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_hol_cabinet_gerbrandy 
+
+	option = {
+		name = French.28.a 
+		transfer_state = 51 
+		transfer_state = 42 
+		add_state_core = 51 
+		add_state_core = 42 
+		add_popularity = {
+			ideology = democratic 
+			popularity = -0.03 
+		}
+		GER = {
+			remove_state_core = 51 
+			remove_state_core = 42 
+			add_war_support = 0.05 
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.1 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.29 #莱茵兰提案被否决
+	title = French.29.t 
+	desc = French.29.d 
+	picture = GFX_report_event_hol_cabinet_gerbrandy 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.29.a 
+		GER = {
+			add_war_support = -0.03 
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.05 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.30 #意大利殖民地提案
+	title = French.30.t 
+	desc = French.30.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.30.a 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = {
+					id = French.17 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = {
+					id = French.19 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = {
+					id = French.21 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = {
+					id = French.23 
+					days = 10 
+				} 
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = {
+					id = French.25
+					days = 10 
+				}
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = SOV 
+				has_government = communism 
+				factor = 0 
+			}
+		}
+	}
+
+	option = {
+		name = French.30.b 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = {
+					id = French.18 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = {
+					id = French.20 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = {
+					id = French.22 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = {
+					id = French.24 
+					days = 10 
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = {
+					id = French.26 
+					days = 10 
+				}
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = ITA 
+				factor = 0 
+			}
+			modifier = {
+				tag = GER 
+				add = 20  
+			}
+			modifier = {
+				tag = USA 
+				add = 50 
+			}
+			modifier = {
+				tag = SOV 
+				has_government = communism 
+				add = 90 
+			}
+			modifier = {
+				tag = ENG 
+				add = -3 
+			}
+			modifier = {
+				has_opinion = {
+					target = FRA
+					value > 69 
+				}
+				add = 5 
+			}
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add =  5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.31 #提案通过
+	title = French.31.t 
+	desc = French.31.d 
+	picture = GFX_report_event_hol_cabinet_gerbrandy 
+	is_triggered_only = yes 
+	
+
+	option = {
+		name = French.31.a 
+		set_variable = {
+			FRA_disagreement = 0 
+		}
+		if = {
+			limit = {
+				has_global_flag = is_voting_austria_independence 
+			}
+			every_core_state = {
+				limit = {
+					is_core_of = AUS 
+					is_owned_by = GER 
+				}
+				transfer_state_to = AUS 
+			}
+			AUS = {
+				set_politics = {
+					ruling_party = neutrality 
+					elections_allowed = yes 
+					election_frequency = 48 
+				}
+				set_popularities = {
+					neutrality = 30 
+					democratic = 40 
+					communism = 30 
+				}
+				add_stability = 0.05 
+			}
+			GER = {
+				add_popularity = {
+					ideology = democratic 
+					popularity = -0.03 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = is_voting_italian_colony_independence 
+			}
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = LBA 
+						is_owned_by = ITA 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = LBA 
+						is_owned_by = ITA 
+					}
+					transfer_state_to = LBA 
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						is_owned_by = ITA 
+						is_core_of = ETH 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = ETH 
+						is_owned_by = ITA 
+					}
+					transfer_state_to = ETH 
+				}
+				if = {
+					limit = {
+						550 = {
+							is_owned_by = ITA 
+						}
+					}
+					ETH = {
+						transfer_state = 550 
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						is_owned_by = ITA 
+						is_core_of = SOM 
+					}
+				}
+				ITA = {
+					release = SOM 
+				}
+			}
+
+			if = {
+				limit = {
+					any_state = {
+						is_owned_by = ITA 
+						is_core_of = ALB 
+					}
+				}
+				ITA = {
+					release = ALB 
+				}
+			}
+
+			if = {
+				limit = {
+					any_state = {
+						is_owned_by = ITA 
+						is_core_of = YUG
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = ITA 
+						is_core_of = YUG 
+					}
+					transfer_state_to = YUG
+				}
+			}
+
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = GRE 
+						is_owned_by = ITA 
+					}
+				}
+				every_core_state = {
+					limit = {
+						is_core_of = GRE 
+						is_owned_by = ITA 
+					}
+					transfer_state_to = GRE 
+				}
+			}
+
+			clr_global_flag = is_voting_italian_colony_independence 
+		}
+		if = {
+			limit = {
+				has_global_flag = is_voting_germanunion 
+			}
+			clr_global_flag = is_voting_germanunion 
+			WGR = {
+				set_cosmetic_tag = OLG_union
+				if = {
+					limit = {
+						GER = {
+							owns_state = 493
+						}
+					}
+					transfer_state = 493
+				}
+				add_state_core = 493
+			}
+			SHL = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 58
+						}
+					}
+					transfer_state = 58
+					add_state_core = 58
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 909
+						}
+					}
+					transfer_state = 909
+					add_state_core = 909
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 912
+						}
+					}
+					transfer_state = 912
+					add_state_core = 912
+				}
+			}
+			WUR = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 489
+						}
+					}
+					transfer_state = 489
+					add_state_core = 489 
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 50
+						}
+					}
+					transfer_state = 50
+					add_state_core = 50 
+				}
+
+			}
+			HAN = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 59
+						}
+					}
+					transfer_state = 59
+					add_state_core = 59 
+				}
+			}
+			BAY = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 54
+						}
+					}
+					transfer_state = 54
+					add_state_core = 54 
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 52
+						}
+					}
+					transfer_state = 52
+					add_state_core = 52 
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 53
+						}
+					}
+					transfer_state = 53
+					add_state_core = 53
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 42
+						}
+					}
+					transfer_state = 42
+					add_state_core = 42
+				}
+			}
+			MEK = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 61
+						}
+					}
+					transfer_state = 61
+					add_state_core = 61
+				}
+			}
+			SAX = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 65
+						}
+					}
+					transfer_state = 65
+					add_state_core = 65
+				}
+
+			}
+			AUS = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 848
+						}
+					}
+					transfer_state = 848
+					add_state_core = 848
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 153
+						}
+					}
+					transfer_state = 153
+					add_state_core = 153
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 152
+						}
+					}
+					transfer_state = 152
+					add_state_core = 152
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 4
+						}
+					}
+					transfer_state = 4
+					add_state_core = 4
+				}
+			}
+			CZE = {
+				if = {
+					limit = {
+						GER = {
+							owns_state = 9
+						}
+					}
+					transfer_state = 9
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 75
+						}
+					}
+					transfer_state = 75
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 69
+						}
+					}
+					transfer_state = 69
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 74
+						}
+					}
+					transfer_state = 74
+				}
+				if = {
+					limit = {
+						GER = {
+							owns_state = 72
+						}
+					}
+					transfer_state = 72
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = is_voting_Rhineland_union 
+			}
+			clr_global_flag = is_voting_Rhineland_union 
+			set_autonomy = {
+				target = GER 
+				autonomy_state = autonomy_integrated_puppet
+			}
+			GER = {
+				set_cosmetic_tag = Rhine_federation
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.32 #提案被否决
+	title = French.32.t 
+	desc = French.32.d 
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes 
+	option = {
+		name = French.32.a 
+	}
+}
+
+country_event = {
+	id = French.33 #德意志的命运
+	title = French.33.t 
+	desc = French.33.d 
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes 
+
+	option = {
+		name = French.33.a 
+		add_stability = -0.05
+		GER = {
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.05 
+			}
+			add_war_support = -0.02 
+		}
+	}
+
+	option = {
+		name = French.33.b 
+		custom_effect_tooltip = start_voting
+		activate_mission = FRA_germanunion 
+		set_country_flag = is_voting 
+		set_global_flag = is_voting_germanunion
+		hidden_effect = {
+			country_event = {
+				id = French.17 
+				days = 10 
+			}
+			if = {
+				limit = {
+					ENG = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				country_event = {
+					id = French.21 
+					days = 10 
+				}
+			}
+			country_event = {
+				id = French.20 
+				days = 10 
+			}
+			if = {
+				limit = {
+					SOV = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				random_list = {
+					80 = {
+						country_event = {
+							id = French.25
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = -20 
+						}
+						modifier = {
+							communism > 0.44 
+							add = -20 
+						}
+						modifier = {
+							has_completed_focus = FRA_support_workers 
+							add = -20 
+						}
+					}
+					20 = {
+						country_event = {
+							id = French.26 
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = 20 
+						}
+						modifier = {
+							communism > 0.44 
+							add = 20 
+						}
+						modifier = {
+							has_completed_focus = FRA_support_workers 
+							add = 20 
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					USA = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				random_list = {
+					90 = {
+						country_event = {
+							id = French.23 
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = -20 
+						}
+						modifier = {
+							USA = {
+								has_opinion = {
+									target = FRA 
+									value > 79 
+								}
+							}
+							add = -10 
+						}
+					}
+					10 = {
+						country_event = {
+							id = French.24
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = 20 
+						}
+						modifier = {
+							USA = {
+								has_opinion = {
+									target = FRA 
+									value > 79 
+								}
+							}
+							add = 10 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = French.33.c 
+		custom_effect_tooltip = start_voting 
+		set_country_flag = is_voting 
+		set_global_flag = is_voting_Rhineland_union
+		activate_mission = FRA_Rhine_federation 
+		hidden_effect = {
+			country_event = {
+				id = French.17 
+				days = 10 
+			}
+			if = {
+				limit = {
+					ENG = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				country_event = {
+					id = French.21 
+					days = 10 
+				}
+			}
+			country_event = {
+				id = French.20 
+				days = 10 
+			}
+			if = {
+				limit = {
+					SOV = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				random_list = {
+					80 = {
+						country_event = {
+							id = French.25
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = -20 
+						}
+						modifier = {
+							communism > 0.44 
+							add = -20 
+						}
+						modifier = {
+							has_completed_focus = FRA_support_workers 
+							add = -20 
+						}
+					}
+					20 = {
+						country_event = {
+							id = French.26 
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = 20 
+						}
+						modifier = {
+							communism > 0.44 
+							add = 20 
+						}
+						modifier = {
+							has_completed_focus = FRA_support_workers 
+							add = 20 
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					USA = {
+						has_country_flag = attend_the_conference 
+					}
+				}
+				random_list = {
+					90 = {
+						country_event = {
+							id = French.23 
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = -20 
+						}
+						modifier = {
+							USA = {
+								has_opinion = {
+									target = FRA 
+									value > 79 
+								}
+							}
+							add = -10 
+						}
+					}
+					10 = {
+						country_event = {
+							id = French.24
+							days = 10 
+						}
+						modifier = {
+							has_idea = FRA_Solenn_Clorinde_political_advisor 
+							add = 20 
+						}
+						modifier = {
+							USA = {
+								has_opinion = {
+									target = FRA 
+									value > 79 
+								}
+							}
+							add = 10 
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.34 #中共还是国民党
+	title = French.34.t 
+	desc = French.34.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_china_chiang_kai_shek 
+	option = {
+		name = French.34.a 
+		mark_focus_tree_layout_dirty = yes 
+		set_country_flag = support_cpc
+		add_ai_strategy = {
+			type = befriend
+			id = PRC 
+			value = 100 
+		}
+		PRC = {
+			add_opinion_modifier = {
+				target = FRA 
+				modifier = support_our_zeal  
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = FRA 
+				value = 50 
+			}
+		}
+	}
+	option = {
+		name = French.34.b 
+		mark_focus_tree_layout_dirty = yes 
+		set_country_flag = support_kmt
+		add_ai_strategy = {
+			type = befriend
+			id = CHI 
+			value = 100 
+		}
+		CHI = {
+			add_opinion_modifier = {
+				target = FRA 
+				modifier = support_us_suppress_bandits  
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = FRA 
+				value = 50 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.35 #归还条件
+	picture = GFX_report_event_japan_europe_pact 
+	title = French.35.t 
+	desc = French.35.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.35.a 
+		set_global_flag = fontaine_suggested_exchange_guangzhou_bay_by_cash
+		add_political_power = -25
+		if = {
+			limit = {
+				has_country_flag = support_cpc
+			}
+			PRC = {
+				country_event = French.36 
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt
+			}
+			CHI = {
+				country_event = French.36 
+			}
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					custom_effect_tooltip = needs_approval
+					add_ideas = guangzhou_bay_purchase 
+				}
+				add_ideas = guangzhou_bay_exchange 
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt
+				}
+				CHI = {
+					custom_effect_tooltip = needs_approval
+					add_ideas = guangzhou_bay_purchase 
+				}
+				add_ideas = guangzhou_bay_exchange 
+			}
+		}
+	}
+
+	option = {
+		name = French.35.b 
+		set_global_flag = fontaine_suggested_exchange_guangzhou_bay_by_allies_promise
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			PRC = {
+				country_event = {
+					id = French.42
+					days = 3 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			CHI = {
+				country_event = {
+					id = French.42  
+					days = 3 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = French.35.c 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			PRC = {
+				country_event = {
+					id = French.39 
+					days = 3 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			CHI = {
+				country_event = {
+					id = French.39 
+					days = 3 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.36 
+	picture = GFX_report_event_japan_europe_pact 
+	title = French.36.t
+	desc = French.36.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.36.a 
+		FRA = {
+			country_event = {
+				id = French.38
+				days = 5 
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = PRC 
+				add = 5 
+			}
+			modifier = {
+				tag = CHI 
+				add = -5 
+			}
+			modifier = {
+				has_opinion = {
+					target = FRA
+					value > 69 
+				}
+				add = -3 
+			}
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add = -2 
+			}
+		}
+	}
+
+	option = {
+		name = French.36.b 
+		FRA = {
+			country_event = {
+				id = French.37 
+				days = 5 
+			}
+		}
+		effect_tooltip = {
+			transfer_state = 728 
+			add_timed_idea = {
+				idea = guangzhou_bay_purchase 
+				days = 30 
+			}
+		}
+		ai_chance = {
+			base = 10 
+		}
+	}
+}
+
+country_event = {
+	id = French.37 #中国同意了
+	picture = GFX_report_event_japan_europe_pact 
+	title = French.37.t 
+	desc = French.37.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.37.a 
+		add_stability = 0.02 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			news_event = French_news.2 
+			random_other_country = {
+				limit = {
+					original_tag = PRC 
+				}
+				transfer_state = 728 
+				if = {
+					limit = {
+						has_global_flag = fontaine_suggested_exchange_guangzhou_bay_by_cash 
+					}
+					add_timed_idea = {
+						idea = guangzhou_bay_purchase 
+						days = 30 
+					}
+					FRA = {
+						add_timed_idea = {
+							idea = guangzhou_bay_exchange 
+							days = 30 
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			news_event = French_news.4
+			random_other_country = {
+				limit = {
+					original_tag = CHI  
+				}
+				transfer_state = 728 
+				if = {
+					limit = {
+						has_global_flag = fontaine_suggested_exchange_guangzhou_bay_by_cash 
+					}
+					add_timed_idea = {
+						idea = guangzhou_bay_purchase 
+						days = 30 
+					}
+					FRA = {
+						add_timed_idea = {
+							idea = guangzhou_bay_exchange 
+							days = 30 
+						}
+					}
+				}
+			}
+		}
+		#if = {
+		#	limit = {
+		#		has_global_flag = fontaine_suggested_exchange_guangzhou_bay_by_cash 
+		#	}
+		#	add_timed_idea = {
+		#		idea = guangzhou_bay_exchange
+		#		days = 30 
+		#	}
+		#	CHI = {
+		#		transfer_state = 728 
+		#		add_timed_idea = {
+		#			idea = guangzhou_bay_purchase 
+		#			days = 30 
+		#		}
+		#	}
+		#}
+	}
+}
+
+country_event = {
+	id = French.38 #中国拒绝了
+	picture = GFX_report_event_japan_europe_pact 
+	title = French.38.t 
+	desc = French.38.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.38.a 
+		add_stability = 0.02 
+		add_political_power = -10 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			PRC = {
+				country_event = {
+					id = French.39 
+					days = 3 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			CHI = {
+				country_event = {
+					id = French.39 
+					days = 3 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = French.38.b 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			PRC = {
+				country_event = {
+					id = French.40 
+					days = 3 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			CHI = {
+				country_event = {
+					id = French.40 
+					days = 3 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.39 #枫丹愿意无偿归还广州湾
+	picture = GFX_report_event_fra_Furina_3 
+	title = French.39.t 
+	desc = French.39.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.39.a 
+		transfer_state = 728 
+		add_political_power = 100 
+		add_ai_strategy = {
+			type = befriend 
+			id = FRA 
+			value = 50 
+		}
+		add_opinion_modifier = {
+			target = FRA 
+			modifier = return_the_guangzhoubay 
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = PRC 
+				}
+			}
+			random_country = {
+				limit = {
+					is_ai = no 
+				}
+				news_event = French_news.2 
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = CHI 
+				}
+			}
+			random_country = {
+				limit = {
+					is_ai = no 
+				}
+				news_event = French_news.4
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.40 #枫丹要求再三考虑
+	picture = GFX_report_event_japan_europe_pact 
+	title = French.40.t 
+	desc = French.40.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.40.a 
+		FRA = {
+			country_event = {
+				id = French.37 
+			}
+		}
+	}
+
+	option = {
+		name = French.40.b 
+		add_war_support = 0.03 
+		add_command_power = -50 
+		transfer_state = 728 
+		FRA = {
+			country_event = {
+				id = French.41 
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.41 #中国入侵了广州湾
+	picture = GFX_report_event_china_infiltration 
+	title = French.41.t 
+	desc = French.41.d 
+	is_triggered_only = yes 
+	option = {
+		name = French.41.a 
+		add_political_power = -10 
+	}
+	option = {
+		name = French.41.b 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			add_opinion_modifier = {
+				target = PRC 
+				modifier = embargo 
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			add_opinion_modifier = {
+				target = CHI  
+				modifier = embargo 
+			}
+		}
+	}
+	option = {
+		name = French.41.c 
+		if = {
+			limit = {
+				has_country_flag = support_cpc 
+			}
+			clr_country_flag = support_cpc
+			set_country_flag = support_kmt 
+			mark_focus_tree_layout_dirty = yes 
+		}
+		if = {
+			limit = {
+				has_country_flag = support_kmt 
+			}
+			clr_country_flag = support_kmt
+			set_country_flag = support_cpc 
+			mark_focus_tree_layout_dirty = yes 
+		}
+	}
+}
+
+country_event = {
+	id = French.42 #枫丹希望以结盟承诺换取广州湾
+	picture = GFX_report_event_fra_Furina_2 
+	title = French.42.t 
+	desc = French.42.d
+	is_triggered_only = yes 
+
+	option = {
+		name = French.42.a 
+		add_political_power = 50 
+		set_country_flag = will_attend_the_union 
+		FRA = {
+			country_event = {
+				id = French.37
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.43 #殖民地的疑虑
+	picture = GFX_report_event_french_colony_empire
+	title = French.43.t 
+	desc = French.43.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.43.a 
+		add_political_power = 25 
+		add_popularity = {
+			ideology = communism 
+			popularity = 0.02 
+		}
+	}
+}
+
+country_event = {
+	id = French.44 #克洛琳德的叛逃
+	picture = GFX_report_event_fra_clorinde_1 
+	fire_only_once = yes 
+	title = French.44.t
+	desc = French.44.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.44.a 
+		effect_tooltip = {
+			set_cosmetic_tag = fontaine_resistance_organization
+			promote_character = FRA_Solenn_Clorinde
+			add_war_support = 0.05 
+		}
+		hidden_effect = {
+			country_event = {
+				id = French.46 
+				days = 20 
+				random_days = 30 
+			}
+		}
+		FRO = {
+			transfer_state = 543
+			set_capital = {
+				state = 543 
+			}
+			change_tag_from = ROOT 
+			ENG = {
+				add_to_faction = FRO  
+			}
+			add_to_war = {
+				targeted_alliance = ENG 
+				enemy = GER 
+			}
+			#add_ideas = fra_patriots 
+		}
+		every_core_state = {
+			add_core_of = FRO 
+		}
+		hidden_effect = {
+			news_event = French_news.3 
+		}
+	}
+
+	option = {
+		name = French.44.b 
+		add_stability = -0.05 
+		FRO = {
+			transfer_state = 543
+			set_capital = {
+				state = 543 
+			}
+		}
+		ENG = {
+			add_to_faction = FRO 
+		}
+		FRO = {
+			add_to_war = {
+				targeted_alliance = ENG 
+				enemy = GER 
+			}
+			#add_ideas = fra_patriots
+		}
+		every_core_state = {
+			add_core_of = FRO 
+		}
+		hidden_effect = {
+			news_event = French_news.3 
+		}
+		hidden_effect = {
+			country_event = {
+				id = French.46 
+				days = 20 
+				random_days = 30 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.45 #战败
+	picture = GFX_report_event_fra_Furina_5
+	fire_only_once = yes 
+	title = French.45.t 
+	desc = French.45.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.45.a 
+		if = {
+			limit = {
+				has_war_with = GER 
+			}
+			GER = {
+				transfer_state = 29
+				transfer_state = 18 
+				transfer_state = 17 
+				transfer_state = 28 
+			}
+		}
+		if = {
+			limit = {
+				has_war_with = ITA 
+			}
+			ITA = {
+				transfer_state = 735 
+				transfer_state = 1 
+			}
+		}
+		ENG = {
+			set_faction_leader = yes 
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = GER 
+			}
+			add_ai_strategy = {
+				type = dont_join_wars_with 
+				id = FRA
+				value = 9999
+			}
+		}
+		leave_faction = yes 
+		if = {
+			limit = {
+				GER = {
+					is_faction_leader = yes 
+					has_war_with = ROOT 
+				}
+			}
+			white_peace = GER 
+			GER = {
+				set_autonomy = {
+					target = FRA
+					autonomy_state = comrade_state 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ITA = {
+					is_faction_leader = yes 
+					has_war_with = ROOT 
+				}
+			}
+			white_peace = ITA 
+			ITA = {
+				set_autonomy = {
+					target = FRA
+					autonomy_state = comrade_state 
+				}
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality 
+			elections_allowed = no 
+		}
+		add_country_leader_role = {
+			character = FRA_Furina_de_Fontaine 
+			promote_leader = yes 
+			country_leader = {
+				ideology = despotism 
+				traits = {
+					#nominal_leader 
+					kamisama_forever 
+				}
+			}
+		}
+		set_cosmetic_tag = fontaine_provisional_government
+		add_ideas = fra_heinrich_himmler #希姆莱
+		if = {
+			limit = {
+				has_idea = MTG_naval_treaty_adherent
+			}
+			remove_ideas = MTG_naval_treaty_adherent 
+		}
+		if = {
+			limit = {
+				has_idea = MTG_naval_treaty_adherent_reduced
+			}
+			remove_ideas = MTG_naval_treaty_adherent_reduced 
+		}
+		if = {
+			limit = {
+				has_idea = FRA_victors_of_wwi 
+			}
+			remove_ideas = FRA_victors_of_wwi 
+		}
+		if = {
+			limit = {
+				has_idea = FRA_disjointed_government 
+			}
+			remove_ideas = FRA_disjointed_government 
+		}
+		effect_tooltip = {
+			GER = {
+				country_event = france.14 
+			}
+		}
+		add_ideas = vichy_pact 
+		random_enemy_country = {
+			limit = {
+				is_faction_leader = yes 
+			}
+			white_peace = PREV
+		}
+		country_event = {
+			id = French.44 
+			days = 5 
+			random_days = 15 
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = GER 
+				}
+				add_ai_strategy = {
+					type = diplo_action_desire
+					id = FRA  
+					target = call_allies  
+					value = -999
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.46 #逃离临时政府
+	picture = GFX_report_event_fra_Furina_7
+	fire_only_once = yes 
+	title = French.46.t 
+	desc = French.46.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.46.a
+		transfer_units_fraction = {
+			target = FRO 
+			size = 0.1 
+			stockpile_ratio = 0.05 
+			army_ratio = 0.05 
+			air_ratio = 0.15
+			navy_ratio = 0.4 
+		}
+		ROOT = {
+			FRA_charles_de_gaulle = {
+				set_nationality = FRO 
+			}
+			FRA_Navia_Caspar = {
+				set_nationality = FRO 
+			}
+			FRA_Yvonne_Chevreuse = {
+				set_nationality = FRO 
+			}
+			FRA_Adrienne_Charlotte = {
+				set_nationality = FRO 
+			}
+		}
+		FRO = {
+			country_event = French.47 
+		}
+	}
+}
+
+country_event = {
+	id = French.47 #投身抵抗
+	picture = GFX_report_event_fra_clorinde_1 
+	title = French.47.t 
+	desc = French.47.d 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = {
+		name = French.47.a 
+		set_country_flag = get_new_leader 
+		effect_tooltip = {
+			create_corps_commander = {
+				name = "马里-皮埃尔·柯尼希"
+				#GFX = GFX_portrait_fra_marie_pierre_koenig
+				skill = 3
+				traits = {  }
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "乔治·卡特鲁斯"
+				#GFX = GFX_portrait_fra_georges_catroux
+				skill = 3
+				traits = {  }
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			FRA = {
+				transfer_units_fraction = {
+					target = FRO 
+					size = 0.1 
+					stockpile_ratio = 0.05 
+					army_ratio = 0.05 
+					air_ratio = 0.15
+					navy_ratio = 0.4 
+				}
+			}
+			FRA = {
+				FRA_charles_de_gaulle = {
+					set_nationality = FRO 
+				}
+				FRA_Navia_Caspar = {
+					set_nationality = FRO 
+				}
+				FRA_Yvonne_Chevreuse = {
+					set_nationality = FRO 
+				}
+				FRA_Adrienne_Charlotte = {
+					set_nationality = FRO 
+				}
+				FRA_Chiori = {
+					set_nationality = FRO 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.48 #克洛琳德访问日本
+	picture = GFX_report_event_fra_clorinde_2
+	title = French.48.t 
+	desc = French.48.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.48.a 
+		remove_mission = FRA_mediating 
+		add_political_power = -15 
+		add_war_support = 0.02
+		set_country_flag = offer_weapon_for_chinese
+		unlock_decision_tooltip = FRA_operate_the_consensuses_machine 
+		unlock_decision_tooltip = FRA_appeal_enbargo_japan 
+		unlock_decision_tooltip = FRA_offer_industrial_technology 
+		unlock_decision_tooltip = FRA_offer_heavy_weapon
+		unlock_decision_tooltip = FRA_offer_light_weapon
+		unlock_decision_tooltip = FRA_offer_support_equipment
+		unlock_decision_tooltip = FRA_mediate_on_chinese_s_side 
+		unlock_decision_tooltip = FRA_volunteers_to_china 
+	}
+}
+
+country_event = {
+	id = French.49 #对日禁运
+	picture = GFX_report_event_china_ledo_road 
+	title = French.49.t 
+	desc = French.49.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.49.a
+		add_political_power = 25  
+		ai_chance = {
+			base = 15 
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add = -5 
+			}
+			modifier = {
+				has_opinion = {
+					target = JAP
+					value < 10
+				}
+				add = -5 
+			}
+			modifier = {
+				JAP = {
+					has_same_ideology = no  
+				}
+				add = -5 
+			}
+		}
+	}
+
+	option = {
+		name = French.49.b 
+		FRA = {
+			country_event = {
+				id = French.50 
+				days = 7 
+			}
+		}
+		CHI = {
+			add_opinion_modifier = {
+				target = ROOT 
+				modifier = embargo_our_enemy 
+			}
+		}
+		add_stability = 0.01 
+		add_political_power = 5 
+		diplomatic_relation = {
+			country = JAP 
+			relation = embargo 
+			active = yes 
+		}
+		ai_chance = {
+			base = 20 
+			modifier = {
+				any_enemy_country = {
+					or = {
+						tag = CHI 
+						tag = PRC 
+						is_chinese_warlord = yes 
+					}
+				}
+				factor = 0 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.50 
+	picture = GFX_report_event_china_ledo_road 
+	title = French.50.t 
+	desc = French.50.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.50.a 
+		add_political_power = 10 
+		effect_tooltip = {
+			FROM = {
+				add_stability = 0.01 
+				add_political_power = 5 
+				diplomatic_relation = {
+					country = JAP 
+					relation = embargo 
+					active = yes 
+				}
+				CHI = {
+					add_opinion_modifier = {
+						target = FROM 
+						modifier = embargo_our_enemy 
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.51 #太平洋反法西斯倡议
+	picture = GFX_report_event_fra_Furina_3 
+	title = French.51.t 
+	desc = French.51.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.51.a
+		FRA = {
+			country_event = {
+				id = French.52 
+				days = 3 
+			}
+		}
+		effect_tooltip = {
+			add_war_support = 0.15 
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee 
+			}
+			FRA = {
+				diplomatic_relation = {
+					country = FRA 
+					relation = guarantee 
+				}
+			}
+			CHI = {
+				add_ideas = the_success_of_kai_shek_s_plan 
+			}
+		}
+		ai_chance = {
+			base = 5 
+			modifier = {
+				has_opinion = {
+					target = JAP 
+					value < -19 
+				}
+				add = 5 
+			}
+			modifier = {
+				has_opinion = {
+					target = FRA
+					value > 19 
+				}
+				add = 5 
+			}
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add = 5 
+			}
+			modifier = {
+				has_country_leader = {
+					character = USA_franklin_delano_roosevelt 
+					ruling_only = yes 
+				}
+				add = 5 
+			}
+			modifier = {
+				FRA = {
+					is_ai = no 
+				}
+				add = 10 
+			}
+		}
+	}
+
+	option = {
+		name = French.51.b
+		FRA = {
+			country_event = {
+				id = French.53 
+				days = 3 
+			}
+		}
+		add_political_power = 50 
+		ai_chance = {
+			base = 15 
+			modifier = {
+				has_completed_focus = USA_neutrality_act 
+				add = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.52 #获得国会批准
+	picture = GFX_report_event_generic_usa_treaty 
+	title = French.52.t 
+	desc = French.52.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.52.a 
+		CHI = {
+			add_ideas = the_success_of_kai_shek_s_plan
+		}
+		USA = {
+			add_war_support = 0.15 
+			diplomatic_relation = {
+				country = FRA 
+				relation = guarantee 
+				active = yes 
+			}
+		}
+		diplomatic_relation = {
+			country = USA 
+			relation = guarantee 
+			active = yes 
+		}
+	}
+}
+
+country_event = {
+	id = French.53 #未获得批准
+	picture = GFX_report_event_usa_election_generic 
+	title = French.53.t 
+	desc = French.53.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.53.a 
+		add_political_power = -25 
+	}
+}
+
+country_event = {
+	id = French.54 #审判者们
+	picture = GFX_report_event_Neuvillette_1 
+	title = French.54.t 
+	desc = French.54.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.54.a 
+		set_country_flag = has_called_judges
+	}
+}
+
+country_event = {
+	id = French.55 #希特勒，戈林与希姆莱
+	picture = GFX_report_event_judge_1 
+	title = French.55.t 
+	desc = French.55.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.55.a 
+		GER = {
+			retire_character = GER_adolf_hitler 
+			retire_character = GER_hermann_goring 
+			retire_character = GER_heinrich_himmler 
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05 
+			}
+		}
+		country_event = {
+			id = French.56 
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = French.56 #戈培尔，鲍曼与施佩尔
+	picture = GFX_report_event_judge_2 
+	title = French.56.t 
+	desc = French.56.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.56.a 
+		GER = {
+			retire_character = GER_joseph_goebbels 
+			retire_character = GER_martin_bormann 
+			retire_character = GER_joachim_von_ribbentrop
+			retire_character = GER_albert_speer 
+		}
+		country_event = {
+			id = French.57 
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = French.57 #其他
+	picture = GFX_report_event_judge_3 
+	title = French.57.t 
+	desc = French.57.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.57.a 
+		GER = {
+			retire_character = GER_alfred_jodl
+			retire_character = GER_ferdinand_schorner 
+			retire_character = GER_hjalmar_schacht 
+			retire_character = GER_walther_funk 
+		}
+	}
+}
+
+country_event = {
+	id = French.58 #芙宁娜神论获得更多人认同
+	title = French.58.t 
+	desc = French.58.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_5 
+	option = {
+		name = French.58.a 
+		custom_effect_tooltip = French.58.tt
+		add_to_variable = {
+			fra_virtue_stability_factor = 0.1 
+		}
+	}
+}
+
+country_event = {
+	id = French.59 #司法改革第一幕 - 废除死刑？
+	title = French.59.t 
+	desc = French.59.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_6 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = French.60
+				days = 11
+			}
+		}
+	}
+	option = {
+		name = French.59.a 
+		add_to_variable = {
+			fra_judicial_reform_stability_factor = -0.1
+		}
+		add_to_variable = {
+			fra_judicial_reform_industry_free_repair_factor = 0.5 
+		}
+		add_to_variable = {
+			fra_judicial_reform_monthly_population = 0.1
+		}
+		add_to_variable = {
+			fra_judicial_reform_production_speed_buildings_factor = 0.05 
+		}
+	}
+	option = {
+		name = French.59.b 
+		add_to_variable = {
+			fra_judicial_reform_stability_factor = -0.05 
+		}
+		add_to_variable = {
+			fra_judicial_reform_industry_free_repair_factor = 0.35 
+		}
+		add_to_variable = {
+			fra_judicial_reform_monthly_population = 0.08
+		}
+		add_to_variable = {
+			fra_judicial_reform_production_speed_buildings_factor = 0.03 
+		}
+	}
+	option = {
+		name = French.59.c 
+	}
+}
+
+country_event = {
+	id = French.60 #司法改革其二 - 陪审团制度的去留
+	title = French.60.t 
+	desc = French.60.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_3 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = French.61
+				days = 11
+			}
+		}
+	}
+	option = {
+		name = French.60.a 
+		add_to_variable = {
+			fra_judicial_reform_stability_factor = 0.05 
+		}
+		add_to_variable = {
+			fra_judicial_reform_political_power_gain = -0.10 
+		}
+	}
+	option = {
+		name = French.60.b 
+	}
+}
+
+country_event = {
+	id = French.61 #量刑的再考虑
+	title = French.61.t 
+	desc = French.61.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_7 
+	option = {
+		name = French.61.a 
+		add_to_variable = {
+			fra_judicial_reform_political_power_gain = -0.05 
+		}
+		add_to_variable = {
+			fra_judicial_reform_stability_factor = 0.05 
+		}
+		add_to_variable = {
+			fra_judicial_reform_monthly_population = 0.05 
+		}
+		add_to_variable = {
+			fra_judicial_reform_production_speed_buildings_factor = 0.02
+		}
+	}
+}
+
+country_event = {
+	id = French.62 #阿尔及尔会议
+	title = French.62.t
+	desc = French.62.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_algeria 
+	option = {
+		name = French.62.a 
+		unlock_national_focus = FRA_meet_local_leaders 
+		add_political_power = 25 
+		set_country_flag = support_locals
+	}
+	option = {
+		name = French.62.b 
+		unlock_national_focus = FRA_meet_pieds_noirs 
+		custom_effect_tooltip = French.62.tt 
+		add_political_power = 25 
+		set_country_flag = support_pieds_noirs
+	}
+}
+
+country_event = {
+	id = French.63 #枫丹的新国庆日
+	title = French.63.t 
+	desc = French.63.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_5 
+	option = {
+		name = French.63.a 
+		set_country_flag = will_hold_birthday_each_year
+		custom_effect_tooltip = French.63.tt 
+	}
+}
+
+#country_event = {
+#	id = French.64.parent #干脆再额外写一个触发器得了
+#	hidden = yes 
+#	fire_only_once = yes 
+#	timeout_days = 1 
+#	trigger = {
+#		original_tag = FRA 
+#		date > 1936.10.12
+#	}
+#	mean_time_to_happen = {
+#		days = 1
+##	option = {
+#		country_event = French.64 
+#	}
+#}
+
+country_event = {
+	id = French.64 
+	hidden = yes 
+	is_triggered_only = yes 
+	option = {
+		country_event = {
+			id = French.64 
+			days = 365 
+		}
+		if = {
+			limit = {
+				has_country_flag = will_hold_birthday_each_year 
+			}
+			country_event = French.65 
+		}
+	}
+}
+
+country_event = {
+	id = French.65 #芙宁娜的生日！
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_9 
+	desc = French.65.d
+	title = French.65.t 
+	option = {
+		name = French.65.a 
+		add_political_power = 25 
+		army_experience = 5 
+		air_experience = 5 
+		navy_experience = 5 
+	}
+}
+
+
+country_event = {
+	id = French.66 #致谢
+	title = French.66.t 
+	desc = French.66.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_nilou 
+	option = {
+		name = French.66.a 
+		custom_effect_tooltip = French.66.tt
+		set_country_flag = show_ending_window 
+		set_country_flag = show_ending
+		hidden_effect = {
+			play_song = "Yorushika_forget_it_please"
+		}
+	}
+}
+
+country_event = {
+	id = French.67 #境外势力活动迹象
+	title = French.67.t 
+	desc = French.67.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.67.a 
+		add_stability = -0.05 
+	}
+}
+
+country_event = {
+	id = French.68 #又一场政变
+	title = French.68.t 
+	desc = French.68.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.68.a 
+		random_list = {
+			50 = {
+				modifier = {
+					democratic > 0.19 
+					add = 10 
+				}
+				modifier = {
+					democratic > 0.24
+					add = 5 
+				}
+				modifier = {
+					democratic > 0.29
+					add = 5 
+				}
+				modifier = {
+					democratic > 0.34
+					add = 5 
+				}
+				modifier = {
+					democratic > 0.39
+					add = 5 
+				}
+				modifier = {
+					democratic > 0.44
+					add = 5 
+				}
+				modifier = {
+					democratic > 0.49
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 29 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 39 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 49 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 59 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 69 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 79 
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 89  
+						}
+					}
+					add = 5 
+				}
+				modifier = {
+					FRA = {
+						network_strength = {
+							target = ROOT 
+							state = 41 
+							value > 99 
+						}
+					}
+					add = 5 
+				}
+				add_popularity = {
+					ideology = democratic 
+					popularity = 0.2 
+				}
+				if = {
+					limit = {
+						not = {
+							has_government = democratic 
+						}
+					}
+					set_politics = {
+						ruling_party = democratic 
+						elections_allowed = yes 
+					}
+				}
+				retire_country_leader = yes 
+				SPR_francisco_largo_caballero = {
+					set_portraits = {
+						civilian = {
+							large = GFX_portrait_spr_Francisco_Largo_Caballero 
+						}
+					}
+				}
+				add_country_leader_role = {
+					character = SPR_francisco_largo_caballero 
+					promote_leader = yes 
+					country_leader = {
+						ideology = socialism 
+					}
+				}
+				add_ai_strategy = {
+					type = befriend 
+					id = FRA 
+					value = 250 
+				}
+				add_stability = 0.05 
+				FRA = {
+					country_event = {
+						id = French.69 
+						days = 1 
+					}
+				}
+			}
+			50 = {
+				add_stability = -0.05 
+				add_political_power = 50 
+				add_ai_strategy = {
+					type = befriend 
+					id = FRA 
+					value = -500 
+				}
+				add_popularity = {
+					ideology = democratic 
+					popularity = -0.2 
+				}
+				SPR_francisco_largo_caballero = {
+					set_nationality = FRA 
+				}
+				add_opinion_modifier = {
+					target = FRA 
+					modifier = try_coup 
+				}
+				FRA = {
+					country_event = {
+						id = French.70 
+						days = 2 
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.69 #政变成功
+	title = French.69.t 
+	desc = French.69.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_spr_Caballero_2
+	option = {
+		name = French.69.a 
+		set_global_flag = spanish_coup_completed
+		if = {
+			limit = {
+				has_idea = fra_french_spanish_intelligence_team 
+			}
+			remove_ideas = fra_french_spanish_intelligence_team 
+		}
+		random_country = {
+			limit = {
+				original_tag = SPR 
+				or = {
+					has_government = democratic 
+					has_government = communism 
+				}
+
+			}
+			swap_ideas = {
+				remove_idea = fra_the_influence_of_fontaine_1 
+				add_idea = fra_the_influence_of_fontaine_4 
+			}
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					tag = D01 
+				}
+			}
+			add_to_war = {
+				targeted_alliance = D01 
+				enemy = SPA 
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = SPR 
+				}
+			}
+			add_to_war = {
+				targeted_alliance = SPR 
+				enemy = SPA 
+			}
+		}
+		add_political_power = 50 
+		effect_tooltip = {
+			SPR = {
+				add_popularity = {
+					ideology = democratic 
+					popularity = 0.2 
+				}
+				if = {
+					limit = {
+						not = {
+							has_government = democratic 
+						}
+					}
+					set_politics = {
+						ruling_party = democratic 
+						elections_allowed = yes 
+					}
+				}
+				retire_country_leader = yes 
+				add_country_leader_role = {
+					character = SPR_francisco_largo_caballero 
+					promote_leader = yes 
+					country_leader = {
+						ideology = socialism 
+					}
+				}
+				add_stability = 0.05 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.70 #政变失败
+	title = French.70.t 
+	desc = French.70.d 
+	picture = GFX_report_event_spr_1 
+	is_triggered_only = yes 
+	option = {
+		name = French.70.a 
+		add_political_power = -25 
+		if = {
+			limit = {
+				has_idea = fra_french_spanish_intelligence_team 
+			}
+			remove_ideas = fra_french_spanish_intelligence_team 
+		}
+		random_operative = {
+			limit = {
+				has_trait = operative_magician 
+			}
+			force_operative_leader_into_hiding = 79 
+		}
+		effect_tooltip = {
+			SPR = {
+				add_stability = -0.05 
+				add_political_power = 50 
+				add_popularity = {
+					ideology = democratic 
+					popularity = -0.2 
+				}
+				SPR_francisco_largo_caballero = {
+					set_nationality = FRA 
+				}
+				add_opinion_modifier = {
+					target = FRA 
+					modifier = try_coup 
+				}
+			}
+		}
+	}
+	option = {
+		name = French.70.b 
+		add_threat = 0.05 
+		set_global_flag = Fontaine_spain_war
+		hidden_effect = {
+			news_event = French_news.6
+		}
+		random_operative = {
+			limit = {
+				has_trait = operative_magician 
+			}
+			force_operative_leader_into_hiding = 79 
+		}
+		if = {
+			limit = {
+				SPA = { exists = yes }
+			}
+			declare_war_on = {
+				target = SPA 
+				type = puppet_wargoal_focus 
+			}
+		}
+		if = {
+			limit = {
+				SPB = { exists = yes }
+			}
+			declare_war_on = {
+				target = SPB 
+				type = puppet_wargoal_focus 
+			}
+		}
+		if = {
+			limit = {
+				SPC = { exists = yes }
+			}
+			declare_war_on = {
+				target = SPC 
+				type = puppet_wargoal_focus 
+			}
+		}
+		if = {
+			limit = {
+				SPD = { exists = yes }
+			}
+			declare_war_on = {
+				target = SPD 
+				type = puppet_wargoal_focus 
+			}
+		}
+		if = {
+			limit = {
+				D01 = { exists = yes }
+			}
+			declare_war_on = {
+				target = D01 
+				type = puppet_wargoal_focus 
+			}
+		}
+		effect_tooltip = {
+			SPR = {
+				add_stability = -0.05 
+				add_political_power = 50 
+				add_popularity = {
+					ideology = democratic 
+					popularity = -0.2 
+				}
+				SPR_francisco_largo_caballero = {
+					set_nationality = FRA 
+				}
+				add_opinion_modifier = {
+					target = FRA 
+					modifier = try_coup 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.71 #联络苏联
+	title = French.71.t 
+	desc = French.71.d 
+	is_triggered_only = yes 
+	option = {
+		name = French.71.a 
+		add_political_power = 15 
+		FRA = {
+			country_event = {
+				id = French.73 
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				FRA = {
+					communism > 0.29 
+				}
+				add = -5 
+			}
+		}
+	}
+	option = {
+		name = French.71.b 
+		FRA = {
+			country_event = {
+				id = French.72 
+				days = 3 
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = SPR 
+				or = {
+					has_government = communism 
+					has_government = democratic 
+				}
+				not = {
+					tag = SPC 
+				}
+			}
+			remove_ideas = SPR_popular_front_1
+			remove_ideas = SPR_popular_front_3
+			remove_ideas = SPR_popular_front_2
+			remove_ideas = SPR_popular_front_4
+			add_ideas = spr_united_popular_front 
+			add_stability = 0.05  
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				FRA = {
+					has_completed_focus = FRA_support_workers 
+				}
+				add = 3 
+			}
+			modifier = {
+				FRA = {
+					has_completed_focus = FRA_meet_local_leaders 
+				}
+				add = 4 
+			}
+			modifier = {
+				has_guaranteed = FRA 
+				add = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.72 #苏联认同 
+	title = French.72.t 
+	desc = French.72.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_stalin_02 
+
+	option = {
+		name = French.72.a 
+		add_political_power = 25 
+		random_other_country = {
+			limit = {
+				original_tag = SPR 
+				not = {
+					tag = SPC 
+				}
+				or = {
+					has_government = communism 
+					has_government = democratic 
+				}
+			}
+			expand_our_influence_in_spain = yes 
+		}
+		effect_tooltip = {
+			random_other_country = {
+				limit = {
+					original_tag = SPR 
+					not = {
+						tag = SPC 
+					}
+					or = {
+						has_government = communism 
+						has_government = democratic 
+					}
+				}
+				swap_ideas = {
+					remove_idea = SPR_popular_front_1 
+					add_idea = spr_united_popular_front 
+				}
+				add_stability = 0.05 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.73 #苏联不认同
+	title = French.73.t 
+	desc = French.73.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_stalin_02 
+
+	option = {
+		name = French.73.a 
+		add_political_power = 35 
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.01 
+		}
+	}
+}
+
+country_event = {
+	id = French.74 #阿萨尼亚的回礼
+	picture = GFX_report_event_spr_2
+	fire_only_once = yes 
+	title = French.74.t 
+	desc = French.74.d 
+	trigger = {
+		has_global_flag = SPR_democrats_won 
+		original_tag = FRA 
+		has_country_flag = has_send_volunteers_to_spain 
+		not = {
+			has_completed_focus = FRA_coup_in_spanish_republic 
+		}
+	}
+	mean_time_to_happen = {
+		days = 30 
+	}
+	option = {
+		name = French.74.a 
+		add_political_power = 5 
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1
+			producer = SPR 
+		}
+	}
+}
+
+country_event = {
+	id = French.75 #国家法西斯党
+	picture = GFX_report_event_judge_4 
+	title = French.75.t 
+	desc = French.75.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.75.a 
+		hidden_effect = {
+			country_event = {
+				id = French.76 
+				days = 2 
+				random_days = 3 
+			}
+		}
+		add_political_power = 25 
+		ITA = {
+			retire_character = ITA_benito_mussolini 
+			retire_character = ITA_rodolfo_graziani 
+			add_stability = 0.01 
+			add_popularity = {
+				ideology = fascism 
+				popularity = -0.15 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.76 #空难
+	picture = GFX_report_event_ita_air_crash 
+	title = French.76.t 
+	desc = French.76.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.76.a 
+		add_political_power = 5 
+		ITA = {
+			retire_character = ITA_italo_balbo 
+			air_experience = 1 
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment 
+				amount = -1 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.77 #天皇
+	title = French.77.t 
+	desc = French.77.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_judge_6 
+
+	option = {
+		name = French.77.a 
+		JAP = {
+			retire_character = JAP_emperor_hirohito 
+			remove_ideas = JAP_militarism
+			add_war_support = -0.75 
+			set_popularities = {
+				fascism = 0 
+				neutrality = 0 
+				democratic = 55 
+				communism = 45 
+			}
+			add_stability = -0.2 
+		}
+		country_event = {
+			id = French.78 
+			days = 3 
+		}
+	}
+
+	option = {
+		name = French.77.b 
+		JAP = {
+			remove_ideas = JAP_militarism
+			add_war_support = -0.45 
+			add_stability = -0.05 
+			set_popularities = {
+				fascism = 20
+				neutrality = 0 
+				democratic = 45 
+				communism = 35 
+			}
+		}
+		country_event = {
+			id = French.78 
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = French.78 #恶犬
+	title = French.78.t 
+	desc = French.78.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_judge_7 
+
+	option = {
+		name = French.78.a 
+		retire_character = JAP_yasuji_okamura 
+		retire_character = JAP_shunroku_hata 
+		retire_character = JAP_kenji_doihara
+		retire_character = JAP_iwane_matsui
+		retire_character = JAP_sadao_araki
+		retire_character = JAP_seishiro_itagaki
+		retire_character = JAP_kenji_doihara  
+		country_event = {
+			id = French.79 
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = French.79 
+	title = French.79.t 
+	desc = French.79.d 
+	picture = GFX_report_event_judge_5
+	is_triggered_only = yes 
+	option = {
+		name = French.79.a 
+		retire_character = JAP_hideki_tojo 
+		retire_character = JAP_hiroshi_oshima
+		custom_effect_tooltip = some_one_was_not_appear
+	}
+}
+
+country_event = {
+	id = French.80 
+	hidden = yes 
+	is_triggered_only = yes 
+	option = {
+		if = {
+			limit = {
+				has_country_flag = neuvillette_as_the_second_leader 
+			}
+			clr_country_flag = neuvillette_as_the_second_leader
+			set_country_flag = charlotte_as_the_second_leader
+		}
+		else = {
+			clr_country_flag = charlotte_as_the_second_leader 
+			set_country_flag = neuvillette_as_the_second_leader 
+		}
+	}
+}
+
+country_event = {
+	id = French.81 #苏联希望获得斯洛伐克
+	title = French.81.t 
+	desc = French.81.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_SOV_purge_aircraft_1 
+
+	option = {
+		name = French.81.a 
+		CZE = { 
+			add_stability = 0.01
+			if = {
+				limit = {
+					country_exists = SLO 
+				}
+				annex_country = {
+					target = SLO 
+					transfer_troops = yes 
+				}
+			}
+			if = {
+				limit = {
+					CZE = {
+						not = {
+							owns_state = 664 
+						}
+					}
+				}
+				transfer_state = 664 
+			}
+			if = {
+				limit = {
+					CZE = {
+						not = {
+							owns_state = 73 
+						}
+					}
+				}
+				transfer_state = 73 
+			}
+		}
+	}
+
+	option = {
+		name = French.81.b 
+		if = {
+			limit = {
+				country_exists = SLO 
+			}
+			SOV = {
+				set_autonomy = {
+					target = SLO 
+					autonomy_state = autonomy_satellite 
+				}
+			}
+			SLO = {
+				set_popularities = {
+					communism = 62 
+					democratic = 38 
+				}
+				hidden_effect = {
+					kill_ideology_leader = communism 
+				}
+				create_country_leader = {
+					name = "Klement Gottwald"
+					picture = "gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.png"
+					ideology = stalinism 
+				}
+			}
+			CZE = {
+				if = {
+					limit = {
+						has_idea = CZE_divided_nation 
+					}
+					remove_ideas = CZE_divided_nation 
+				}
+			}
+			if = {
+				limit = {
+					SLO = {
+						not = {
+							owns_state = 664 
+						}
+					}
+				}
+				SLO = {
+					transfer_state = 664 
+					add_state_core = 664
+				}
+				
+			}
+			if = {
+				limit = {
+					SLO = {
+						not = {
+							owns_state = 73 
+						}
+					}
+				}
+				SLO = {
+					transfer_state = 73 
+					add_state_core = 73 
+				}
+			}
+		}
+
+		else = {
+			SLO = {
+				transfer_state = 70 
+				transfer_state = 71 
+				if = {
+					limit = {
+						SLO = {
+							not = {
+								owns_state = 664 
+							}
+						}
+					}
+					transfer_state = 664 
+				}
+				if = {
+					limit = {
+						SLO = {
+							not = {
+								owns_state = 73 
+							}
+						}
+					}
+					transfer_state = 73 
+				}
+			}
+			SOV = {
+				set_autonomy = {
+					target = SLO 
+					autonomy_state = autonomy_satellite 
+				}
+			}
+			SLO = {
+				set_popularities = {
+					communism = 62 
+					democratic = 38 
+				}
+				hidden_effect = {
+					kill_ideology_leader = communism 
+				}
+				create_country_leader = {
+					name = "Klement Gottwald"
+					picture = "gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.png"
+					ideology = stalinism 
+				}
+			}
+			CZE = {
+				if = {
+					limit = {
+						has_idea = CZE_divided_nation 
+					}
+					remove_ideas = CZE_divided_nation 
+				}
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = French.82 #斯洛伐克决定独立
+	title = French.82.t 
+	desc = French.82.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_soviet_purge_speech 
+
+	option = {
+		name = French.82.a 
+		SLO = {
+			transfer_state = 70 
+			transfer_state = 71 
+			transfer_state = 73 
+			transfer_state = 664
+			set_politics = {
+				ruling_party = democratic 
+				elections_allowed = yes 
+				election_frequency = 60 
+			}
+			set_popularities = {
+				democratic = 54 
+				communism = 46 
+			}
+			add_stability = 0.05 
+		}
+		CZE = {
+			if = {
+				limit = {
+					has_idea = CZE_divided_nation 
+				}
+				remove_ideas = CZE_divided_nation 
+				add_stability = 0.05 
+				add_popularity = {
+					ideology = fascism  
+					popularity = -0.05
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.83 #奥地利独立提案
+	title = French.83.t 
+	desc = French.83.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_american_hunger_march
+	option = {
+		name = French.83.a 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = French.18
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = French.20
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = French.22
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = French.24 
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = French.26
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = GER 
+				factor = 0 
+			}
+			modifier = {
+				tag = ENG 
+				factor = 0 
+			}
+			modifier = {
+				tag = USA 
+				add = 15 
+			}
+			modifier = {
+				tag = SOV 
+				add = 5 
+			}
+		}
+	}
+	option = {
+		name = French.83.b 
+		if = {
+			limit = {
+				tag = GER 
+			}
+			FRA = {
+				country_event = French.17
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA 
+			}
+			FRA = {
+				country_event = French.19
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG 
+			}
+			FRA = {
+				country_event = French.21
+			}
+		}
+		if = {
+			limit = {
+				tag = USA 
+			}
+			FRA = {
+				country_event = French.23 
+			}
+		}
+		if = {
+			limit = {
+				tag = SOV 
+			}
+			FRA = {
+				country_event = French.25
+			}
+		}
+		ai_chance = {
+			base = 10 
+			modifier = {
+				tag = ITA 
+				factor = 0 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.84 #工会与共产党的矛盾激化
+	title = French.84.t 
+	desc = French.84.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_french_liberation 
+
+	option = {
+		name = French.84.a 
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05 
+		}
+		add_stability = 0.05 
+		hidden_effect = {
+			country_event = {
+				id = French.85 
+				days = 13 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.85 #回归秩序
+	title = French.85.t
+	desc = French.85.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_french_liberation
+
+	option = {
+		name = French.85.a 
+		add_stability = 0.05 
+		if = {
+			limit = {
+				has_idea = fra_whole_nation_strike 
+			}
+			remove_ideas = fra_whole_nation_strike 
+		}if = {
+			limit = {
+				has_idea = fra_whole_nation_strike_1
+			}
+			remove_ideas = fra_whole_nation_strike_1 
+		}
+	}
+}
+
+country_event = {
+	id = French.86 #流亡
+	picture = GFX_report_event_fra_charlotte_2
+	title = French.86.t 
+	desc = French.86.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.86.a 
+		clr_country_flag = fontaine_whole_nation_strike_start_up 
+		set_country_flag = fontaine_social_democracy_start
+		mark_focus_tree_layout_dirty = yes 
+		FRA_Adrienne_Charlotte = {
+			set_nationality = SOV 
+		}
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.2
+		}
+	}
+}
+
+country_event = {
+	id = French.87 #调试
+	title = French.87.t 
+	desc = French.87.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_my_school 
+
+	option = {
+		name = French.87.a 
+	}
+}
+
+country_event = {
+	id = French.88 #芙宁娜计划
+	title = French.88.t 
+	desc = French.88.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.88.a 
+		add_dynamic_modifier = {
+			modifier = FRA_the_furina_plan 
+		}
+		add_to_variable = { FRA_the_furina_plan_consumer_goods_factor = -0.1 }
+		add_to_variable = { FRA_the_furina_plan_production_speed_industrial_complex_factor = 0.05 }
+		FRA = {
+			country_event = {
+				id = French.89 
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 15 
+			modifier = {
+				FRA = {
+					has_idea = FRA_Solenn_Clorinde_political_advisor 
+				}
+				add = 5 
+			}
+		}
+	}
+
+	option = {
+		name = French.88.b 
+		add_political_power = 50 
+		FRA = {
+			country_event = {
+				id = French.90 
+				days = 6 
+			}
+		}
+		ai_chance = {
+			base = 5 
+			modifier = {
+				add = 5 
+				has_government = neutrality 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.89 #倡议批准
+	title = French.89.t 
+	desc = French.89.d 
+	picture = GFX_report_event_BRA_us_cooperation 
+	is_triggered_only = yes 
+	option = {
+		name = French.89.a 
+		add_to_variable = { plan_approval_numbers = 1 }
+		if = {
+			limit = {
+				FROM = {
+					is_major = yes 
+				}
+			}
+			custom_effect_tooltip = furina_approval_major
+			add_to_variable = { FRA_the_furina_plan_political_power_gain = 0.1 }
+			add_to_variable = { FRA_the_furina_plan_consumer_goods_factor = 0.05 }
+		}
+		else = {
+			custom_effect_tooltip = furina_approval_minor
+			add_to_variable = { FRA_the_furina_plan_political_power_gain = 0.02 }
+			add_to_variable = { FRA_the_furina_plan_consumer_goods_factor = 0.01 }
+		}
+	}
+}
+
+country_event = {
+	id = French.90 #倡议否决
+	title = French.90.t 
+	desc = French.90.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_FIN_risto_ryti_speech
+
+	option = {
+		name = French.90.a 
+		add_political_power = -5 
+	}
+}
+
+country_event = {
+	id = French.91 #经济震荡
+	title = French.91.t 
+	desc = French.91.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_gathering_protest 
+	immediate = {
+		hidden_effect = {
+			add_timed_idea = {
+				idea = short_tern_economy_strike 
+				days = 60 
+			}
+		}
+	}
+
+	option = {
+		name = French.91.t 
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = short_tern_economy_strike 
+				days = 60 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.92 #三国元首会晤
+	title = French.92.t 
+	desc = French.92.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_11 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = French.93 
+				days = 10 
+			}
+		}
+	}
+
+	option = {
+		name = French.92.a 
+	}
+}
+
+country_event = {
+	id = French.93 #极右翼恐怖分子袭击会场
+	is_triggered_only = yes 
+	title = French.93.t 
+	desc = French.93.d 
+	picture = GFX_report_event_fra_clorinde_4
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = French.94 
+				days = 20 
+			}
+		}
+	}
+
+	option = {
+		name = French.93.a 
+		add_stability = -0.01 
+	}
+}
+
+country_event = {
+	id = French.94 #暴力事件
+	picture = GFX_report_event_spr_anarchist_uprising2 
+	title = French.94.t 
+	desc = French.94.d 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = French.95 
+				days = 20 
+			}
+		}
+	}
+
+	option = {
+		name = French.94.a 
+		random_owned_state = {
+			damage_building = {
+				type = infrastructure
+				damage = 1 
+			}
+		}
+		GER = {
+			random_owned_state = {
+				damage_building = {
+					type = infrastructure
+					damage = 1 
+				}
+			}
+		}
+		ITA = {
+			random_owned_state = {
+				damage_building = {
+					type = infrastructure
+					damage = 1 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.95 #最后准备
+	title = French.95.t 
+	desc = French.95.d 
+	picture = GFX_report_event_fra_paris 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.95.a 
+		add_political_power = 50 
+	}
+}
+
+country_event = {
+	id = French.96 #大典
+	title = French.96.t
+	desc = French.96.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_3 
+	option = {
+		name = French.96.a 
+		add_stability = 0.1
+		add_political_power = 150 
+		set_cosmetic_tag = EUR_UNIFIED 
+		set_temp_variable = {
+			modifier_multiply_factor = fra_support_of_eruope_unite 
+		}
+		set_temp_variable = {
+			FRA_the_unite_political_power_gain_temp = -1 
+		}
+		set_temp_variable = {
+			FRA_the_unite_stability_factor_temp = -0.2 
+		}
+		set_temp_variable = {
+			unite_disagree = fra_support_of_eruope_unite 
+		}
+		multiply_temp_variable = {
+			unite_disagree = 0.01
+		}
+		multiply_temp_variable = {
+			FRA_the_unite_political_power_gain_temp = unite_disagree 
+		}
+		multiply_temp_variable = {
+			FRA_the_unite_stability_factor_temp = unite_disagree 
+		}
+		set_variable = {
+			FRA_the_unite_political_power_gain = FRA_the_unite_political_power_gain_temp 
+		}
+		set_variable = {
+			FRA_the_unite_stability_factor = FRA_the_unite_stability_factor_temp 
+		}
+		add_dynamic_modifier = {
+			modifier = FRA_the_unite 
+		}
+		annex_country = {
+			target = GER 
+			transfer_troops = yes 
+		}
+		annex_country = {
+			target = ITA 
+			transfer_troops = yes 
+		}
+		every_state = {
+			limit = {
+				or = {
+					is_core_of = ITA 
+					is_core_of = GER 
+				}
+			}
+			add_core_of = FRA 
+		}
+		news_event = { id = wtt_news.62 hours = 6 }
+	}
+}
+
+country_event = {
+	id = French.97 #在枫丹国家图书馆
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_library 
+	title = French.97.t 
+	desc = French.97.d 
+	option = {
+		name = French.97.a 
+		set_country_flag = furina_has_started_considering
+		hidden_effect = {
+			
+				country_event = {
+					id = French.99 
+					days = 14 
+					random_days = 14 
+				}
+			
+		}
+	}
+}
+
+country_event = {
+	id = French.98 #乱与治
+	is_triggered_only = yes 
+	picture = GFX_report_event_Neuvillette_1  
+	title = French.98.t 
+	desc = French.98.d 
+	option = {
+		name = French.98.a 
+		complete_national_focus = FRA_judge_the_crime_of_people 
+	}
+}
+
+country_event = {
+	id = French.99 #一段复杂的历史
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_1   
+	title = French.99.t 
+	desc = French.99.d 
+	option = {
+		name = French.99.a 
+		complete_national_focus = FRA_rethink_our_republican 
+	}
+}
+
+country_event = {
+	id = French.100 #两次生死沉浮
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2    
+	title = French.100.t 
+	desc = French.100.d 
+	option = {
+		name = French.100.a 
+		hidden_effect = {
+			country_event = {
+				id = French.101 
+				days = 3 
+				random_days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.101 #以古映今
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_5     
+	title = French.101.t 
+	desc = French.101.d 
+	option = {
+		name = French.101.a 
+		complete_national_focus = FRA_so_where_to_go 
+	}
+}
+
+country_event = {
+	id = French.102 #......没有结局的故事？
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_5     
+	title = French.102.t 
+	desc = French.102.d 
+	option = {
+		name = French.102.a 
+		set_country_flag = choose_1789_revolution
+		mark_focus_tree_layout_dirty = yes  
+	}
+	option = {
+		name = French.102.b 
+		set_country_flag = choose_1871_revolution
+		mark_focus_tree_layout_dirty = yes 
+	}
+}
+
+country_event = {
+	id = French.103 #在延安
+	title = French.103.t
+	desc = French.103.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_prc_mao_s_lecture 
+
+	option = {
+		name = French.103.a 
+		add_political_power = 50 
+		add_popularity = {
+			ideology = communism 
+			popularity = 0.02
+		}
+		add_relation_modifier = {
+			target = PRC 
+			modifier = FRA_relation_with_communist_china
+		}
+	}
+}
+
+country_event = {
+	id = French.104 
+	title = French.104.t
+	desc = French.104.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_gre_allied_diplomacy
+
+	option = {
+		name = French.104.a 
+		CAN = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = western_betrayal
+			}
+		}
+		add_opinion_modifier = {
+			target = CAN
+			modifier = rejected_demands
+		}
+		hidden_effect = {
+			country_event = {
+				id = French.105 
+				days = 10
+				random_days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.105
+	is_triggered_only = yes 
+	title = French.105.t 
+	desc = French.105.d 
+	picture = GFX_report_event_canadian_tank 
+
+	option = {
+		name = French.105.a 
+		news_event = {
+			id = French_news.8
+			days = 7
+		}
+		QUE = { 
+			transfer_state = 468
+			create_country_leader = {
+				name = "莫里斯·杜普莱西斯"
+				picture = "gfx/leaders/QUE/portrait_que_Maurice_Duplessis.png"
+				ideology = paternalistic_conservatism 
+				traits = {
+					inudstry_constructer 
+					by_the_flood_of_nationalist
+				}
+			}
+			add_war_support = 0.20
+			set_capital = {
+				state = 468
+			}
+			add_victory_points = {
+				province = 12149
+				value = 18
+			}
+			hidden_effect = {
+				create_corps_commander = {
+					name = "乔治·瓦尼埃"
+					picture = "gfx/leaders/QUE/portrait_que_Georges_Phileas_Vanier.png"
+					skill = 3
+					attack_skill = 2
+					defense_skill = 4
+					planning_skill = 4
+					logistics_skill = 3
+					traits = { war_hero career_officer infantry_officer }
+				}
+
+				create_corps_commander = {
+					name = "让·维克多·阿兰德"
+					picture = "gfx/leaders/QUE/portrait_que_Jean_Victor_Allard.png"
+					skill = 3
+					attack_skill = 4
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 3
+					traits = { trait_reckless career_officer infantry_officer }
+				}
+
+				country_event = {
+					id = French.106 
+					days = 7
+				}
+
+			}
+		}
+		hidden_effect = {
+			CAN = {
+				transfer_units_fraction = {
+					target = QUE 
+					army_ratio = 0.4
+					navy_ratio = 0.4 
+					air_ratio = 0.1 
+					stockpile_ratio = 0.3 
+					size = 0.4
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French.106 #魁北克起义
+	hidden = yes 
+	title = weather_none
+	desc = weather_none
+	is_triggered_only = yes 
+	immediate = {
+		every_state = {
+			limit = {
+				not = { is_controlled_by = QUE }
+				is_core_of = QUE 
+			}
+			set_state_owner_to = QUE
+		}
+		CAN = { 
+			declare_war_on = {
+				target = QUE 
+				type = annex_everything 
+			}
+			add_ideas = fra_quebec_war_can 
+		}
+		QUE = { add_ideas = fra_quebec_war_que }
+	}
+}
+
+country_event = {
+	id = French.107 #魁北克志愿军
+	picture = GFX_report_event_canadian_soldiers 
+	title = French.107.t
+	desc = French.107.d 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		QUE = {
+			exists = yes 
+			has_war_with = CAN 
+		}
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = French.107.a 
+		custom_effect_tooltip = French.107.a.tt
+		add_to_variable = { fra_quebec_interfere_strength = 1 }
+		QUE = {
+			set_temp_variable_to_random = {
+				var = manpower_to_add
+				max = 8000
+				min = 2000 
+			}
+			round_temp_variable = manpower_to_add
+			if = { limit = { FRA = { fascism > 0.05 } } multiply_temp_variable = { manpower_to_add = 1.05 } }
+			if = { limit = { FRA = { communism > 0.15 } } multiply_temp_variable = { manpower_to_add = 1.10 } }
+			set_temp_variable = { infantry_equipment_to_add = manpower_to_add }
+			multiply_temp_variable = { infantry_equipment_to_add = 0.20 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = infantry_equipment_to_add
+				producer = FRA 
+			}
+			add_manpower = manpower_to_add 
+		}
+	}
+}
+
+country_event = {
+	id = French.108 #封锁圣劳伦斯河口
+	fire_only_once = yes 
+	picture = GFX_report_event_ast_navy
+	title = French.108.t
+	desc = French.108.d 
+	mean_time_to_happen = {
+		days = 2 
+	}
+	trigger = {
+		original_tag = FRA 
+		QUE = {
+			exists = yes 
+			has_war_with = CAN 
+		}
+		ships_in_area = {
+			area = 55
+			size > 14
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_to_variable = { fra_quebec_interfere_strength = 1 }
+		}
+	}
+
+	option = {
+		name = French.108.a 
+		custom_effect_tooltip = French.107.a.tt 
+		navy_experience = 10
+	}
+
+}
+
+country_event = {
+	id = French.109 #魁北克城在燃烧
+	picture = GFX_report_event_quebec 
+	title = French.109.t 
+	desc = French.109.d 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			CAN = { remove_ideas = fra_quebec_war_can }
+			QUE = { remove_ideas = fra_quebec_war_que add_ideas = fra_quebec_collapse }
+		}
+	}
+
+	option = {
+		name = French.109.a 
+		add_stability = -0.01 
+		add_political_power = -20
+		add_war_support = -0.07
+		effect_tooltip = {
+			QUE = { add_ideas = fra_quebec_collapse }
+		}
+	}
+}
+
+country_event = {
+	id = French.110 #加拿大妥协案
+	title = French.110.t
+	desc = French.110.d 
+	picture = GFX_report_event_canada_patriation 
+	is_triggered_only = yes 
+
+	option = {
+		name = French.110.a 
+		QUE = {
+			white_peace = CAN 
+			remove_ideas = fra_quebec_war_que 
+		}
+		CAN = {
+			remove_ideas = fra_quebec_war_can
+			add_war_support = -0.05 
+			set_autonomy = {
+				target = QUE 
+				autonomy_state = autonomy_dominion 
+			}
+		}
+		QUE = {
+			give_military_access = FRA 
+			add_ideas  = fra_french_state 
+		}
+		give_guarantee = QUE 
+	}
+
+	option = {
+		name = French.110.b 
+	}
+}
+
+country_event = {
+	id = French.111 #雷达完成
+	hidden = yes 
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		days = 1 
+	}
+	trigger = {
+		original_tag = FRA 
+		is_special_project_completed = sp:sp_air_radar
+	}
+	immediate = {
+		add_to_variable = { FRA_navy_force_naval_detection = 0.15 }
+	}
+}
+
+country_event = {
+	id = French.112 #布鲁姆辞职
+	title = French.112.t
+	desc = French.112.d 
+	fire_only_once = yes 
+
+	picture = GFX_report_event_fra_library
+
+	trigger = {
+		original_tag = FRA
+		has_completed_focus = FRA_form_the_popular_front 
+		or = {
+			has_idea = FRA_inefficient_economy_1
+			has_idea = FRA_inefficient_economy_2
+		}
+		SPR_scw_in_progress = yes
+		any_neighbor_country = {
+			has_government = fascism 
+		}
+		has_idea = FRA_disjointed_government 
+		FRA_leon_blum = {
+			is_country_leader = yes 
+		}
+		date > 1937.4.1
+	}
+
+	mean_time_to_happen = {
+		days = 60 
+	}
+
+	option = {
+		name = French.112.a
+		promote_character = FRA_Camille_Chautemps 
+		add_political_power = 50 
+		set_party_name = {
+			ideology = democratic 
+			long_name = "人民阵线-激进党"
+			name = "人民阵线-激进党"
+		}
+	}
+}
+
+country_event = {
+	id = French.113 #肖当跑路，布鲁姆回归
+	title = French.113.t
+	desc = French.113.d
+	fire_only_once = yes 
+
+	picture = GFX_report_event_fra_library
+
+	trigger = {
+		original_tag = FRA
+		FRA_Camille_Chautemps = {
+			is_country_leader = yes 
+		}
+		GER = {
+			controls_state = 4 
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2 
+	}
+
+	option = {
+		name = French.113.a 
+		promote_character = FRA_leon_blum 
+		add_war_support = 0.05 
+		set_party_name = {
+			ideology = democratic 
+			long_name = "人民阵线-工人国际法国支部"
+			name = "人民阵线-工人国际法国支部"
+		}
+		set_country_flag = blum_s_second_time
+	}
+}
+
+country_event = {
+	id = French.114
+	title = French.114.t 
+	desc = French.114.d 
+	fire_only_once = yes 
+
+	picture = GFX_report_event_fra_library
+
+	trigger = {
+		original_tag = FRA
+		has_country_flag = blum_s_second_time 
+		SPR_scw_in_progress = yes
+	}
+
+	mean_time_to_happen = {
+		days = 32 
+	}
+
+	option = {
+		name = French.114.a
+		promote_character = FRA_edouard_daladier 
+		set_party_name = {
+			ideology = democratic 
+			long_name = "激进党"
+			name = "激进党"
+		}
+	}
+	
+}
+
+country_event = {
+	id = French.115
+	title = French.115.t
+	desc = French.115.d
+	fire_only_once = yes 
+
+	picture = GFX_report_event_fra_library
+
+	trigger = {
+		original_tag = FRA
+		has_country_leader = {
+			character = FRA_edouard_daladier
+			ruling_only = yes 
+		}
+		FIN = {
+			has_war_with = SOV 
+		}
+		not = {
+			has_completed_focus = FRA_support_the_finns 
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 7 
+	}
+
+	option = {
+		name = French.115.a
+		promote_character = FRA_paul_reynaud 
+		add_war_support = 0.05 
+		set_party_name = {
+			ideology = democratic 
+			long_name = "民主共和联盟"
+			name = "民主共和联盟"
+		}
+	}
+}
+
+country_event = {
+	id = French.116 #反战
+	title = French.116.t 
+	desc = French.116.d 
+	fire_only_once = yes 
+	picture = GFX_report_event_soldiers_in_france 
+	trigger = {
+		original_tag = FRA 
+		has_war_with_major = yes 
+		not = { has_country_flag = fra_furina_come_to_france  }
+		not = { has_government = communism }
+		not = { has_completed_focus = FRA_ban_communism }
+		not = { has_completed_focus = FRA_remove_comintern_effect }
+	}
+
+	option = {
+		name = French.116.a 
+		add_timed_idea = {
+			idea = fra_antiwar_movement 
+			days = 450 
+		}
+	}
+}
+
+
+
+### news ###
+news_event = {
+	id = French_news.1 #芙宁娜掌控了法国
+	picture = GFX_news_event_furina_1 
+	title = French_news.1.t 
+	desc = French_news.1.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.1.a 
+	}
+}
+
+news_event = {
+	id = French_news.2 #枫丹向中共归还了广州湾
+	picture = GFX_news_event_Clorinde_Mao_tse_tung 
+	title = French_news.2.t
+	desc = French_news.2.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.2.a 
+		trigger = {
+			tag = FRA 
+		}
+	}
+
+	option = {
+		name = French_news.2.b 
+		trigger = {
+			not = {
+				tag = FRA 
+				tag = CHI 
+				tag = PRC 
+				is_chinese_warlord = yes 
+			}
+		}
+	}
+
+	option = {
+		name = French_news.2.c 
+		trigger = {
+			or = {
+				tag = CHI 
+				tag = PRC 
+				is_chinese_warlord = yes 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = French_news.3 #枫丹抵抗运动的成立
+	picture = GFX_news_event_Clorinde_1 
+	title = French_news.3.t 
+	desc = French_news.3.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.3.a 
+		trigger = {
+			or = {
+				tag = FRO 
+				is_in_faction_with = FRO 
+			}
+		}
+	}
+
+	option = {
+		name = French_news.3.b 
+		trigger = {
+			not = {
+				tag = FRO 
+				is_in_faction_with = FRO 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = French_news.4 #枫丹向中华民国归还广州湾
+	picture = GFX_news_event_fontaine_return_guangzhou_bay
+	title = French_news.4.t 
+	desc = French_news.4.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.4.a 
+		trigger = {
+			tag = FRA 
+		}
+	}
+
+	option = {
+		name = French_news.4.c
+		trigger = {
+			not = {
+				tag = FRA 
+				tag = CHI 
+				tag = PRC 
+				is_chinese_warlord = yes 
+			}
+		}
+	}
+
+	option = {
+		name = French_news.4.b 
+		trigger = {
+			or = {
+				tag = CHI 
+				tag = PRC 
+				is_chinese_warlord = yes 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = French_news.5 #欧洲反法西斯倡议
+	picture = GFX_news_event_furina_3 
+	title = French_news.5.t 
+	desc = French_news.5.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.5.a 
+		trigger = {
+			is_in_faction_with = FRA 
+		}
+	}
+
+	option = {
+		name = French_news.5.b 
+		trigger = {
+			has_government = fascism 
+		}
+	}
+
+	option = {
+		name = French_news.5.c 
+		trigger = {
+			not = {
+				has_government = fascism 
+				is_in_faction_with = FRA 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = French_news.6 #西枫战争
+	picture = GFX_news_event_spanish_fontaine_war 
+	title = French_news.6.t 
+	desc = French_news.6.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = French_news.6.a 
+	}
+}
+
+news_event = {
+	id = French_news.7 #阿尔及利亚独立
+	picture = GFX_news_event_independence_of_algeria
+	is_triggered_only = yes 
+	title = French_news.7.t 
+	desc = French_news.7.d 
+	
+	option = {
+		name = French_news.7.a 
+		FRA = {
+			add_threat = -0.03 
+		}
+	}
+}
+
+news_event = {
+	id = French_news.8 #魁北克起义
+	title = French_news.8.t
+	desc = French_news.8.d 
+	is_triggered_only = yes 
+	picture = GFX_news_event_canadian_soldiers
+
+	option = {
+		name = French_news.8.a 
+		activate_mission = fra_support_quebec_mission
+		trigger = {
+			original_tag = FRA
+		}
+	}
+
+	option = {
+		name = French_news.8.b 
+		trigger = {
+			not = { original_tag = FRA }
+		}
+	}
+}
+
+### test ### 
+
+country_event = {
+	id = french.test.1 
+	picture = GFX_report_event_fra_Furina_11 
+	title = french.test.1.t 
+	desc = french.test.1.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = french.test.1.a 
+		FRA_Furina_de_Fontaine = {
+			set_portraits = {
+				civilian = {
+					large = GFX_portrait_fra_Furina_de_Fontaine_quan 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = french.test.1.b 
+		FRA_Furina_de_Fontaine = {
+			set_portraits = {
+				civilian = {
+					large = GFX_portrait_fra_Furina_de_Fontaine
+				}
+			}
+		}
+	}
+
+	option = {
+		name = french.test.1.c
+		FRA_Furina_de_Fontaine = {
+			set_portraits = {
+				civilian = {
+					large = GFX_portrait_fra_Furina_de_Fontaine_B
+				}
+			}
+		} 
+	}
+
+	option = {
+		name = french.test.1.d.2
+		FRA_Furina_de_Fontaine = {
+			set_portraits = {
+				civilian = {
+					large = GFX_portrait_fra_Furina_de_Fontaine_A
+				}
+			}
+		} 
+	}
+}
+
+
+country_event = {
+	id = french.test.2 
+	hidden = yes 
+	fire_only_once = yes 
+	trigger = {
+		tag = GER 
+		has_completed_focus = GER_remilitarize_the_rhineland  
+		any_owned_state = {
+			is_demilitarized_zone = yes 
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		every_owned_state = {
+			limit = {
+				is_demilitarized_zone = yes 
+			}
+			set_demilitarized_zone = no 
+		}
+	}
+}
+
+country_event = {
+	id = french.test.3 
+	is_triggered_only = yes 
+
+	option = {
+		set_party_name = {
+			ideology = neutrality
+			long_name = fontaine_neu_rename_long 
+			name = fontaine_neu_rename
+		}
+		set_politics = {
+			ruling_party = neutrality  
+			elections_allowed = yes 
+			election_frequency = 48 
+		}
+		set_popularities = {
+			neutrality = 61
+			democratic = 13
+			communism = 20
+			fascism = 6
+		}
+		add_country_leader_role = {
+			character = FRA_Furina_de_Fontaine 
+			promote_leader = yes 
+			country_leader = {
+				ideology = national_corporatism 
+				traits = {
+					Fontaine_star 
+				}
+			}
+		}
+		FRA_Marcel_Deat = {
+			add_advisor_role = {
+				advisor = {
+					slot = second_chief 
+					traits = {
+						
+					}
+					idea_token = marcel_deat 
+				}
+			}
+		}
+		add_ideas = marcel_deat 
+		set_cosmetic_tag = fontaine_people_s_republic 
+	}
+}
+
+country_event = {
+	id = french.test.4 
+	hidden = yes 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = GER 
+		date > 1942.1.1
+		has_war_with_major = yes 
+		has_capitulated = no 
+		has_government = fascism 
+	}
+
+	immediate = {
+		if = { limit = { not = { has_tech = antitank2 } } set_technology = { antitank2 = 1 } }
+		if = { limit = { not = { has_tech = improved_heavy_tank_chassis } } set_technology = { improved_heavy_tank_chassis = 1 } }
+		if = { limit = { not = { has_tech = armor_tech_1 } } set_technology = { armor_tech_1 = 1 } }
+		if = { limit = { not = { has_tech = armor_tech_2 } } set_technology = { armor_tech_2 = 1 } }
+		if = { limit = { not = { has_tech = tech_maintenance_company } } set_technology = { tech_maintenance_company = 1 } }
+		if = { limit = { not = { has_tech = tech_maintenance_company2 } } set_technology = { tech_maintenance_company2 = 1 } }
+
+		create_equipment_variant = {
+			type = heavy_tank_destroyer_chassis_2 
+			modules = {
+				main_armament_slot = tank_auto_cannon_2 
+				turret_type_slot = tank_heavy_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = sloped_armor
+				special_type_slot_2 = easy_maintenance 
+				special_type_slot_3 = expanded_fuel_tank 
+				special_type_slot_4 = expanded_fuel_tank
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = 11
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = french.test.5 
+	is_triggered_only = yes 
+	hidden = yes 
+	immediate = {
+		set_temp_variable = { num_civil_factory = num_of_civilian_factories }
+		multiply_temp_variable = {
+			num_civil_factory = france_economy_growth 
+		}
+		round_variable = num_civil_factory 
+		add_offsite_building = {
+			type = industrial_complex 
+			level = num_civil_factory
+		}
+		country_event = {
+			id = french.test.5 
+			days = 365 
+		}
+	}
+}
+
+
+
+
+#帷幕
+country_event = {
+	id = French.500
+
+	title = French.500.t
+	desc = French.500.d 
+
+	is_triggered_only = yes
+
+	option = {
+		name = French.500.a 
+
+		#设置国家标签
+		set_country_flag = fra_furina_social_democracy
+
+		mark_focus_tree_layout_dirty = yes
+
+		if = {
+			limit = {
+				has_idea = fra_whole_nation_strike 
+			}
+			remove_ideas = fra_whole_nation_strike 
+		}if = {
+			limit = {
+				has_idea = fra_whole_nation_strike_1
+			}
+			remove_ideas = fra_whole_nation_strike_1 
+		} 
+	}
+
+}
+
+#意料外的拜访
+country_event = {
+	id = French.501
+
+	title = French.501.t 
+	desc = French.501.d 
+
+	is_triggered_only = yes
+
+	option = {
+		name = French.501.a 
+	}
+}
+
+#芙宁娜在工会的演说
+country_event = {
+	id = French.502
+
+	title = French.502.t 
+	desc = French.502.d 
+
+	is_triggered_only = yes 
+	option = {
+		name = French.502.a 
+	}
+}
+
+#风雨前夜：第二次审判
+country_event = {
+	id = French.503
+
+	title = French.503.t 
+	desc = French.503.d 
+
+	is_triggered_only = yes 
+	option = {
+		name = French.503.a
+	}
+}
+
+### 枫丹个人事件 ###
+
+country_event = {
+	id = fontaine_personal.1 # 千织 故国神游
+	title = fontaine_personal.1.t
+	desc = fontaine_personal.1.d 
+	trigger = {
+		original_tag = FRA 
+		has_country_flag = fra_furina_come_to_france 
+		always = no # this event is now outdated
+	}
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		days = 360 
+	}
+	picture = GFX_report_event_fra_chiori_1
+	option = {
+		name = fontaine_personal.1.a 
+	}
+}
+
+country_event = {
+	id = fontaine_personal.2 #娜维亚
+	title = fontaine_personal.2.t
+	desc = fontaine_personal.2.d
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_country_flag = fra_furina_come_to_france 
+		always = no # this event is now outdated
+	}
+	mean_time_to_happen = {
+		days = 400 
+	}
+	picture = GFX_report_event_fra_navia_1
+
+	option = {
+		name = fontaine_personal.2.a 
+	}
+
+}
+
+country_event = {
+	id = fontaine_personal.3 #芙宁娜-初尝酒味
+	title = fontaine_personal.3.t 
+	desc = fontaine_personal.3.d
+	picture = GFX_report_event_fra_Furina_12 
+	trigger = {
+		original_tag = FRA 
+		has_government = communism 
+		has_country_flag = fra_furina_come_to_france 
+	}
+	mean_time_to_happen = {
+		days = 300 
+	}
+	fire_only_once = yes 
+
+	option = {
+		name = fontaine_personal.3.a 
+	}
+}

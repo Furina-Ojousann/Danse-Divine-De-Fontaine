@@ -1,0 +1,18 @@
+state = {
+	id = 1078
+	name = 1078_Brovary
+	manpower = 988900
+	state_category = city 
+	resources = {
+		steel = 31
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV 
+		add_core_of = UKR 
+		buildings = {
+			infrastructure = 4 
+		}
+	}
+	provinces = { 489 11557 582 9543 11530 9491 }
+}

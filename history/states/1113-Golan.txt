@@ -1,0 +1,15 @@
+state = {
+	id = 1113
+	name = 1113_Golan
+	manpower = 21900
+	state_category = pastoral 
+	history = {
+		owner = SYR
+		add_core_of = SYR
+		add_claim_by = ISR
+		buildings = {
+			infrastructure = 1 
+		}
+	}
+	provinces = { 13463 }
+}

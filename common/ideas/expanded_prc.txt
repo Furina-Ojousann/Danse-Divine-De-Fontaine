@@ -1,0 +1,210 @@
+ideas = {
+	country = {
+		prc_the_legacy_of_long_match = {
+			allowed = {
+				tag = PRC 
+			}
+			modifier = {
+				supply_consumption_factor = -0.05 
+				army_org_factor = 0.1 
+				army_morale_factor = -0.2 
+				training_time_army_factor = 0.2 
+				recon_factor = 0.05
+			}
+		}
+		prc_the_peoples_liberian_army = {
+			allowed = {
+				tag = PRC
+			}
+			modifier = {
+				supply_consumption_factor = -0.05 
+				army_org_factor = 0.1 
+				recon_factor = 0.05
+				land_reinforce_rate = 0.02 
+				max_planning = 0.05 
+			}
+		}
+		prc_prepare_for_the_civil_war = {
+			picture = NOR_sivog
+			allowed = {
+				original_tag = PRC 
+			}
+			cancel = {
+				not = {
+					country_exists = CHI 
+				}
+				controls_state = 608 
+				controls_state = 613 
+			}
+			targeted_modifier = {
+				tag = CHI 
+				attack_bonus_against = 0.10 
+				defense_bonus_against = 0.10
+			}
+		}
+
+		prc_prepare_for_the_civil_war_1 = {
+			picture = NOR_sivog
+			allowed = {
+				original_tag = PRC 
+			}
+			cancel = {
+				not = {
+					country_exists = CHI  
+				}
+				controls_state = 608 
+				controls_state = 613
+			}
+			modifier = {
+				experience_gain_army_factor = 0.05 
+				army_org_factor = 0.10 
+			}
+			targeted_modifier = {
+				tag = CHI 
+				attack_bonus_against = 0.10 
+				defense_bonus_against = 0.10
+			}
+		}
+
+		prc_prepare_for_the_civil_war_2 = {
+			picture = NOR_sivog
+			allowed = {
+				original_tag = PRC 
+			}
+			cancel = {
+				not = {
+					country_exists = CHI 
+				}
+				controls_state = 608 
+				controls_state = 613 
+			}
+			modifier = {
+				experience_gain_army_factor = 0.05 
+				army_org_factor = 0.10 
+				army_speed_factor = 0.15 
+				breakthrough_factor = 0.2 
+			}
+			targeted_modifier = {
+				tag = CHI 
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+
+		fra_resistance_without_support = {
+			picture = generic_disjointed_gov
+			available = {
+				not = { has_government = communism  }
+			}
+			modifier = {
+				surrender_limit = -0.50
+			}
+			targeted_modifier = {
+				tag = FRC 
+				attack_bonus_against = -0.20
+				defense_bonus_against = -0.40
+			}
+		}
+
+		western_blockade = {
+			picture = FRA_factory_strikes 
+			do_effect = {
+				num_of_available_civilian_factories < 20 
+				is_in_faction = no 
+			}
+			modifier = {
+				political_power_factor = -0.10 
+				production_speed_buildings_factor = -0.20 
+				research_speed_factor = -0.10 
+			}
+		}
+
+		western_blockade_2 = {
+			picture = FRA_factory_strikes 
+			do_effect = {
+				is_in_faction = no 
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.05 
+				consumer_goods_factor = -0.20 
+				political_power_factor = 0.05 
+				communism_drift = 0.25
+			}
+		}
+
+		support_to_forgein = {
+			picture = generic_deal_with_the_devil
+			do_effect = {
+				has_government = communism 
+				any_country = {
+					has_country_flag = china_supported 
+				}
+			}
+			modifier = {
+				consumer_goods_factor = 0.15 
+				political_power_factor = 0.10 
+				communism_drift = 100 
+				democratic_acceptance = 50 
+				communism_drift = 0.10 
+			}
+		}
+	}
+	hidden_ideas = {
+		Chi_resistence_1 = {
+			available = {
+				surrender_progress > 0.20
+			}
+			modifier = {
+				army_core_defence_factor = 0.10
+				org_loss_at_low_org_factor = -0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+				}
+			}
+		}
+		Chi_resistence_2 = {
+			available = {
+				surrender_progress > 0.40
+			}
+			modifier = {
+				army_core_defence_factor = 0.25
+				org_loss_at_low_org_factor = -0.40
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.30
+				}
+			}
+		}
+		Chi_resistence_3 = {
+			available = {
+				surrender_progress > 0.60
+			}
+			modifier = {
+				army_core_defence_factor = 0.40
+				org_loss_at_low_org_factor = -0.55
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.50
+				}
+			}
+		}
+		Chi_resistence_4 = {
+			available = {
+				surrender_progress > 0.80
+			}
+			modifier = {
+				army_core_defence_factor = 0.80
+				org_loss_at_low_org_factor = -0.80
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.90
+				}
+			}
+		}
+	}
+}

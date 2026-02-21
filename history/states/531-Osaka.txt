@@ -1,0 +1,66 @@
+
+state = {
+	id = 531
+	name = "STATE_531" # Kansai
+	manpower = 6015000 # was 11015000
+	state_category = metropolis 
+	resources = {
+		aluminium = 3 # was: 6
+	}
+
+	history = {
+
+		owner = JAP
+		add_core_of = JAP
+
+		buildings = {
+			infrastructure = 4 #was: 8
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 1
+			1136 = {
+				naval_base = 6
+			}
+
+
+		}
+
+		victory_points = {
+			11960 30 # Kyoto
+		}
+
+		victory_points = {
+			1051 10 
+		}
+
+		victory_points = {
+			7113 5 
+		}
+
+		victory_points = {
+			1136 1 # Maizuru
+		}
+
+		victory_points = {
+			4142 5 
+		}
+
+		victory_points = {
+			12031 10 
+		}
+
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+				industrial_complex = 5
+			}
+		}
+
+	}
+
+	provinces = {
+		1051 1133 1136 4142 7113 11960 12031 12522 7878 4229
+	}
+
+	local_supplies = 9.0 
+}

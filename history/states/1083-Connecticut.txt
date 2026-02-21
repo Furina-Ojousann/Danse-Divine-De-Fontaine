@@ -1,0 +1,22 @@
+state = {
+	id = 1083
+	name = 1083_Connecticut
+	manpower = 1768000
+	state_category = large_city 
+	history = {
+		owner = USA
+		add_core_of = USA 
+		victory_points = {
+			6909 10
+		}
+		buildings = {
+			infrastructure = 6 
+			industrial_complex = 2 
+			9832 = {
+				naval_base = 3
+
+			}
+		}
+	}
+	provinces = { 9847 9850 6909 9832 }
+} 

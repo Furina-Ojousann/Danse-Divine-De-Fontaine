@@ -1,0 +1,29 @@
+
+state={
+	id=567
+	name="STATE_567" # Bratsk
+	manpower = 410183
+	state_category = rural
+	
+	resources={
+		aluminium=26 # was: 34
+		coal = 12
+	}
+
+	history={
+		owner = SOV
+		victory_points = {
+			12523 2 
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = SOV
+	}
+
+	provinces={
+		4750 7876 7769 1803 7802 7863 12523 4782 1697 1837 4842
+	}
+
+	local_supplies=0.0 
+}

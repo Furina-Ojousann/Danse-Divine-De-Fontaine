@@ -1,0 +1,74 @@
+sub_units = {
+	air_assault_company = {
+		abbreviation = "AAC"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = yes
+
+		type = {
+			infantry
+			support
+		}
+
+		hills = {
+			attack = 0.10 
+			movement = 0.10 
+		}
+		forest = {
+			attack = 0.10 
+			movement = 0.10 
+		}
+		jungle = {
+			attack = 0.10 
+			movement = 0.10 
+		}
+		desert = {
+			attack = 0.10 
+			movement = 0.10 
+		}
+		marsh = {
+			attack = 0.10 
+			movement = 0.10 
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_helicopter_support_companies
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 20 
+		max_organisation = 30
+		default_morale = 0.3
+		manpower = 480
+		training_time = 180
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.10
+		can_be_parachuted = no
+		recon = 2.5
+
+		# Important Ability
+		
+		essential = {
+			support_equipment
+			Attack_Helicopter 
+		}
+		
+		need = {
+			Attack_Helicopter = 12
+			support_equipment = 15
+		}
+		
+	}
+}

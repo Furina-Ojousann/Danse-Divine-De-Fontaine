@@ -1,0 +1,21 @@
+state = {
+	id = 1053
+	name = 1053_Eupen-Malmedy
+	manpower = 58900
+	resources = {
+		coal = 32
+	}
+	state_category = rural 
+	history = {
+		owner = BEL 
+		add_core_of = BEL 
+		add_claim_by = GER 
+		buildings = {
+			infrastructure = 6
+			3488 = { dam = 1 }
+		}
+	}
+	provinces = {
+		3488
+	}
+}

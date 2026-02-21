@@ -1,0 +1,69 @@
+state = {
+	id = 127
+	name = "STATE_127" # Sussex
+	manpower = 3193383
+
+	resources = {
+		coal = 6 #initial distribution
+	}
+
+	state_category = large_city
+
+	history = {
+
+		owner = ENG
+		add_core_of = ENG
+
+		victory_points = { 
+			9458 15 # Portsmouth
+		}
+
+		victory_points = {
+			13070 5 
+		}
+
+		victory_points = {
+			11446 5 
+		}
+
+		victory_points = {
+			6489 10 
+		}
+
+		victory_points = {
+			507 2 
+		}
+
+		buildings = {
+			infrastructure = 4 #was: 8
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 2
+			fuel_silo = 1
+			anti_air_building = 2
+			radar_station = 1
+			air_base = 10
+			9458 = {
+				naval_base = 10
+			}
+			13070 = {
+				# HM Dockyard, Chatham
+				naval_facility = 1
+			}
+		}
+		
+		1939.1.1 = {
+			buildings = {
+				dockyard = 3
+				industrial_complex = 2
+			}
+		}
+
+	}
+
+	provinces = {
+		507 6489 9458 11446 13070 
+	}
+
+	local_supplies = 16.0 
+}

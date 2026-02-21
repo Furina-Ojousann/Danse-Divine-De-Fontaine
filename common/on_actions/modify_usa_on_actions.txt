@@ -1,0 +1,31 @@
+on_actions = {
+
+	on_monthly_USA = {
+		effect = {
+			if = {
+				limit = { has_dynamic_modifier = { modifier = USA_the_1929_depression } }
+				add_to_variable = { usa_the_depression_progress = -0.001 }
+				if = {
+					limit = { 
+						has_dynamic_modifier = {
+							modifier = USA_works_progress_administration_during_depression
+						}
+					}
+					add_to_variable = { usa_the_depression_progress = wpa_depression_progress_decrease_monthly }
+				}
+				usa_depression_progress = yes 
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = USA_works_progress_administration_during_depression
+					}
+					not = { has_completed_focus = USA_Tax_law  }
+				}
+				add_to_variable = {
+					wpa_consumer_goods_factor = wpa_monthly_consumer_factor
+				}
+			}
+		}
+	}
+}

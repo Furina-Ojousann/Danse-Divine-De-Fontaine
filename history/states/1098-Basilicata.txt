@@ -1,0 +1,15 @@
+state = {
+	id = 1098
+	name = 1098_Basilicata
+	manpower = 318500
+	state_category = town 
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = TTS  
+		buildings = {
+			infrastructure = 4 
+		}
+	}
+	provinces = { 3958 3968 6972 9856 }
+}

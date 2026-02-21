@@ -1,0 +1,4 @@
+focus = {
+	current = FRA_renew_furina_in_Palais_de_l_Elysee 
+	progress = 0 
+}

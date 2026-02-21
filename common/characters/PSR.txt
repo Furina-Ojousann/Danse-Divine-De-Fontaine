@@ -1,0 +1,13 @@
+characters = {
+	PSR_soleyman_mirza_eskandari = {
+		name = PSR_soleyman_mirza_eskandari
+		portraits = {
+			civilian = {
+				large = GFX_portrait_psr_soleyman_mirza_eskandari
+			}
+		}
+		country_leader = {
+			ideology = marxism 
+		}
+	}
+}

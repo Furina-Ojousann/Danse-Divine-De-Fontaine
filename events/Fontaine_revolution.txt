@@ -1,0 +1,3667 @@
+add_namespace = Fontaine_revolution
+add_namespace = Fontaine_revolution_start
+add_namespace = Fontaine_revolution_news
+
+country_event = {
+	id = Fontaine_revolution_start.1 #勒阿弗尔罢工
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		date > 1936.5.7
+		has_country_flag = fra_furina_come_to_france 
+		not = {
+			has_completed_focus = FRA_because_her_morality 
+			has_completed_focus = FRA_renew_furina_in_Palais_de_l_Elysee 
+		}
+		not = {
+			has_government = communism 
+		}
+		or = {
+			has_idea = FRA_inefficient_economy_1
+			has_idea = FRA_inefficient_economy_2 
+		}
+	}
+	mean_time_to_happen = {
+		days = 1 
+	}
+	title = Fontaine_revolution_start.1.t
+	desc = Fontaine_revolution_start.1.d 
+	picture = GFX_report_event_fra_strike_3 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution_start.2 
+				days = 5 
+				random_days = 10 
+			}
+		}
+	}
+	option = {
+		name = Fontaine_revolution_start.1.a 
+		15 = {
+			set_demilitarized_zone = yes 
+			add_dynamic_modifier = {
+				modifier = FRA_strike_area 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution_start.2 #广泛响应
+	is_triggered_only = yes 
+	title = Fontaine_revolution_start.2.t
+	desc = Fontaine_revolution_start.2.d 
+	picture = GFX_report_event_fra_strike_3 
+	option = {
+		name = Fontaine_revolution_start.2.a 
+		add_stability = -0.05 
+		every_owned_state = {
+			limit = {
+				or = {
+					state = 29 
+					state = 1017 
+					state = 17 
+					state = 18 
+					state = 27 
+					state = 20 
+					state = 16 
+					state = 785 
+				}
+			}
+			set_demilitarized_zone = yes 
+			add_dynamic_modifier = {
+				modifier = FRA_strike_area 
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution_start.3 
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution_start.3 #小心安抚
+	is_triggered_only = yes 
+	title = Fontaine_revolution_start.3.t
+	desc = Fontaine_revolution_start.3.d 
+	picture = GFX_report_event_fra_strike_3 
+	option = {
+		name = Fontaine_revolution_start.3.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution_start.4 
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution_start.4 #表决陷入僵持
+	is_triggered_only = yes 
+	title = Fontaine_revolution_start.4.t
+	desc = Fontaine_revolution_start.4.d 
+	picture = GFX_report_event_fra_strike_3 
+	option = {
+		name = Fontaine_revolution_start.4.a 
+		set_country_flag = slove_by_furina 
+		country_event = {
+			id = Fontaine_revolution_start.5 
+			days = 7 
+		}
+	}
+	option = {
+		name = Fontaine_revolution_start.4.b 
+		#set_country_flag = slove_by_money
+		country_event = {
+			id = Fontaine_revolution_start.5 
+			days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution_start.5 #法案通过
+	is_triggered_only = yes 
+	title = Fontaine_revolution_start.5.t
+	desc = Fontaine_revolution_start.5.d 
+	picture = GFX_report_event_fra_strike_3 
+	option = {
+		name = Fontaine_revolution_start.5.a 
+		activate_mission = fra_slove_the_economic_problem 
+		custom_effect_tooltip = Fontaine_revolution_start.5.tt
+		every_owned_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+			set_demilitarized_zone = no 
+			remove_dynamic_modifier = {
+				modifier = FRA_strike_area 
+			}
+		}
+		add_stability = 0.10 
+		if = {
+			limit = {
+				has_country_flag = slove_by_furina  
+			}
+			FRA_Furina_de_Fontaine = {
+				swap_country_leader_traits = {
+					remove = star_idol 
+					add = star_idol_improved 
+				}
+			}
+		}
+		else = {
+			add_timed_idea = {
+				idea = fra_some_corruption 
+				days = 60 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.1 #没有再就业的下岗工人
+	trigger = {
+		always = no 
+		tag = FRA 
+		has_completed_focus = FRA_Fontaine_Energy_Physical_Mechines 
+		has_completed_focus = FRA_support_workers 
+		has_completed_focus = FRA_Fontaine_cabinet 
+		has_war_with_major = no 
+		not = { has_government = communism }
+		GER = {
+			OR = {
+				not = {
+					has_completed_focus = GER_demand_sudetenland 
+				}
+				AND = {
+					has_completed_focus = GER_demand_sudetenland 
+					not = {
+						has_government = fascism 
+					}
+				}
+			}
+		}
+	}
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		# days = 80 
+		# DEBUG 
+		days = 5
+		modifier = {
+			communism > 34 
+			factor = 0.5 
+		}
+	}
+	title = Fontaine_revolution.1.t 
+	desc = Fontaine_revolution.1.d 
+	picture = GFX_report_event_fra_strike_1 
+
+	option = {
+		name = Fontaine_revolution.1.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.2 
+				days = 5 
+				random_days = 10 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.2 #同病相怜
+	title = Fontaine_revolution.2.t 
+	desc = Fontaine_revolution.2.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2 
+
+	option = {
+		name = Fontaine_revolution.2.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.3 
+				days = 5 
+				random_days = 15 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.3 #安静的城市
+	title = Fontaine_revolution.3.t 
+	desc = Fontaine_revolution.3.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_3 
+
+	option = {
+		name = Fontaine_revolution.3.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.4 
+				days = 5 
+				random_days = 10 
+			}
+			country_event = {
+				id = Fontaine_revolution.5 
+				days = 10
+				random_days = 10 
+			}
+			country_event = {
+				id = Fontaine_revolution.6 
+				days = 15 
+				random_days = 15  
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.4 #停摆的北部工业区
+	title = Fontaine_revolution.4.t 
+	desc = Fontaine_revolution.4.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_SWE_baltic_extradition 
+
+	option = {
+		name = Fontaine_revolution.4.a 
+		set_country_flag = north_land_has_striked
+		if = {
+			limit = {
+				has_full_control_of_state = 1017  
+			}
+			1017  = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 29 
+			}
+			29 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 785 
+			}
+			785 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.5 #罗讷河谷罢工
+	title = Fontaine_revolution.5.t 
+	desc = Fontaine_revolution.5.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_SWE_internment_camp 
+
+	option = {
+		name = Fontaine_revolution.5.a 
+		set_country_flag = Rhone_Valley_has_striked 
+		if = {
+			limit = {
+				has_full_control_of_state = 20 
+			}
+			20 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 27 
+			}
+			27 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 17 
+			}
+			17 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.6 #普罗旺斯罢工
+	title = Fontaine_revolution.6.t 
+	desc = Fontaine_revolution.6.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_SWE_psilander_affair 
+
+	option = {
+		name = Fontaine_revolution.6.a 
+		set_country_flag = Provence_has_striked
+		if = {
+			limit = {
+				has_full_control_of_state = 21 
+			}
+			21 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 851 
+			}
+			851 = {
+				add_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.7 #全国总罢工
+	fire_only_once = yes 
+	title = Fontaine_revolution.7.t 
+	desc = Fontaine_revolution.7.d 
+	picture = GFX_report_event_hungary_gains_transylvania 
+	trigger = {
+		tag = FRA 
+		has_country_flag = north_land_has_striked 
+		has_country_flag = Provence_has_striked
+		has_country_flag = Rhone_Valley_has_striked 
+	}
+	mean_time_to_happen = {
+		days = 15 
+	}
+
+	option = {
+		name = Fontaine_revolution.7.a 
+		every_core_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = FRA_strike_area 
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = FRA_strike_area 
+			}
+		}
+		add_ideas = fra_whole_nation_strike 
+		add_stability = -0.05 
+		add_political_power = -25 
+		clr_country_flag = north_land_has_striked 
+		clr_country_flag = Provence_has_striked 
+		clr_country_flag = Rhone_Valley_has_striked 
+		set_country_flag = fontaine_whole_nation_strike_start_up
+		unlock_decision_category_tooltip = FRA_the_whole_nation_strike 
+		activate_mission = FRA_civilwar_is_coming 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.8 #芙宁娜呼吁人们保持冷静
+	title = Fontaine_revolution.8.t 
+	desc = Fontaine_revolution.8.d 
+	picture = GFX_report_event_fra_Furina_5
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.8.a 
+		effect_tooltip = {
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 20 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.9 
+	title = Fontaine_revolution.9.t 
+	desc = Fontaine_revolution.9.d 
+	picture = GFX_report_event_fra_Furina_5
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.9.a 
+		effect_tooltip = {
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 20 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.10 
+	title = Fontaine_revolution.10.t 
+	desc = Fontaine_revolution.10.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_7 
+
+	option = {
+		name = Fontaine_revolution.10.a 
+#		if = {
+#			limit = {
+#				has_country_leader = {
+#					character = FRA_Furina_de_Fontaine
+#					ruling_only = yes 
+#				}
+#			}
+#			swap_ruler_traits = {
+#				remove = star_idol 
+#				add = Fontaine_star 
+#			}
+#			set_country_leader_portrait = {
+#				portrait = portrait_fra_Furina_de_Fontaine_Jacobins 
+#			}
+#		}
+		if = {
+			limit = {
+				FRA_Furina_de_Fontaine = {
+					has_ideology = socialism 
+				}
+			}
+			FRA_Furina_de_Fontaine = {
+				swap_country_leader_traits = {
+					ideology = socialism 
+					remove = star_idol 
+					add = Fontaine_star 
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				FRA_Furina_de_Fontaine = {
+					has_ideology = liberal_radicalism 
+				}
+			}
+			FRA_Furina_de_Fontaine = {
+				swap_country_leader_traits = {
+					ideology = liberal_radicalism  
+					remove = star_idol 
+					add = Fontaine_star 
+				}
+			}
+		}
+		FRA_Furina_de_Fontaine = {
+			set_portraits = {
+				civilian = {
+					large = portrait_fra_Furina_de_Fontaine_Jacobins 
+				}
+			}
+		}
+		effect_tooltip = {
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 20 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.11 #夏洛蒂的就职
+	title = Fontaine_revolution.11.t 
+	desc = Fontaine_revolution.11.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_charlotte_1 
+
+	option = {
+		name = Fontaine_revolution.11.a 
+		remove_ideas = fra_whole_nation_strike 
+		clr_country_flag = fontaine_whole_nation_strike_start_up 
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = FRA_Adrienne_Charlotte 
+				promote_leader = yes 
+				country_leader = {
+					ideology = marxism 
+					traits = {
+						star_reporter 
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.12 #无果的镇压
+	title = Fontaine_revolution.12.t 
+	desc = Fontaine_revolution.12.d 
+	picture = GFX_report_event_gre_winter_soldiers_celebrating
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.12.a 
+		remove_mission = FRA_civilwar_is_coming 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.13 
+				days = 5 
+				random_days = 5 
+			}
+		}
+		FRC = {
+			transfer_state = 29
+			transfer_state = 18 
+			transfer_state = 785 
+			add_state_core = 29
+			add_state_core = 18
+			add_state_core = 785
+			set_capital = {
+				state = 29 
+			}
+			hidden_effect = {
+				load_oob = FRC 
+				add_manpower = 400000
+				inherit_technology = FRA 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.13 #叛将
+	title = Fontaine_revolution.13.t 
+	desc = Fontaine_revolution.13.d 
+	fire_only_once = yes 
+	trigger = {
+		country_exists = FRC 
+		original_tag = FRA 
+		has_country_flag = fontaine_whole_nation_strike_start_up 
+	}
+	mean_time_to_happen = {
+		days = 2 
+	}
+	picture = GFX_report_event_fra_charlotte_1 
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.14
+				days = 10 
+				random_days = 5
+			}
+			#FRA_Adrienne_Charlotte = {
+			#	set_nationality = FRC 
+			#}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.13.a 
+		effect_tooltip = {
+			FRA_Adrienne_Charlotte = {
+				set_nationality = FRC 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.13.b 
+		effect_tooltip = {
+			FRA_Adrienne_Charlotte = {
+				set_nationality = FRC 
+			}
+		}
+		FRC = {
+			change_tag_from = FRA 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.14 #最终裁决
+	title = Fontaine_revolution.14.t 
+	desc = Fontaine_revolution.14.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_10 
+	option = {
+		name = Fontaine_revolution.14.a 
+		custom_effect_tooltip = thirty_days_ultimatum
+		FRC = {
+			country_event = Fontaine_revolution.15 
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = FRA 
+						is_owned_by = FRA 
+					}
+					add_core_of = FRC 
+				}
+			}
+		}
+		add_war_support = 0.01 
+		add_stability = -0.1 
+		remove_ideas = fra_whole_nation_strike 
+		set_country_flag = thirty_days_ultimatum_start
+		set_global_flag = fontaine_civilwar_start
+		activate_mission = FRA_repress_commune 
+		FRA_Furina_de_Fontaine = {
+			swap_country_leader_traits = {
+				ideology = socialism
+				remove = star_idol
+				add = contradictory_protecter
+			}
+			set_leader_description = "furina_sinner_desc"
+			set_portraits = {
+				civilian = {
+					large = portrait_fra_Furina_de_Fontaine_Jacobins 
+				}
+			}
+		}
+		set_country_leader_description = {
+			desc = furina_sinner_desc 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.15 #最后通牒
+	title = Fontaine_revolution.15.t
+	desc = Fontaine_revolution.15.d 
+	picture = GFX_report_event_canadian_tank 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.15.a 
+		add_war_support = 0.05 
+		activate_mission = frc_fontaine_republic_is_going_to_declare_war_on_us 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.16 #普罗旺斯地区的异动
+	title = Fontaine_revolution.16.t 
+	desc = Fontaine_revolution.16.d 
+	picture = GFX_report_event_bul_officers_burgas 
+	fire_only_once = yes 
+	trigger = {
+		tag = FRA 
+		country_exists = FRC 
+		has_war_with = FRC 
+		not = {
+			has_government = communism 
+		}
+		not = { has_completed_focus = FRA_fontaine_need_order }
+	}
+	mean_time_to_happen = {
+		days = 35 
+	}
+	option = {
+		name = Fontaine_revolution.16.a 
+		851 = {
+			set_demilitarized_zone = yes 
+		}
+		21 = {
+			set_demilitarized_zone = yes 
+		}
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.17 
+				days = 10 
+				random_days = 20 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.17 #普罗旺斯的暴动
+	title = Fontaine_revolution.17.t 
+	desc = Fontaine_revolution.17.d 
+	picture = GFX_report_event_bulgarian_soldiers
+	is_triggered_only = yes 
+	
+	option = {
+		name = Fontaine_revolution.17.a 
+		if = {
+			limit = {
+				not = {
+					has_government = communism 
+				}
+			}
+			FRC = {
+				hidden_effect = {
+					country_event = Fontaine_revolution.18 
+				}
+				transfer_state = 851 
+				transfer_state = 21 
+				851 = {
+					create_unit = {
+						division = "name = \"1re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"3re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"4me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+				}
+				21 = {
+					create_unit = {
+						division = "name = \"5re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"6me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"7re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"8me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.18 #普罗旺斯起义
+	title = Fontaine_revolution.18.t
+	desc = Fontaine_revolution.18.d 
+	picture = GFX_report_event_bulgarian_soldiers 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.18.a 
+		transfer_state = 851 
+			transfer_state = 21
+			851 = {
+				create_unit = {
+					division = "name = \"1re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"4me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+			21 = {
+				create_unit = {
+					division = "name = \"5re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"6me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"7re militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"8me militia\" division_template = \"militia\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.19 #工作会议之一 党的领导
+	title = Fontaine_revolution.19.t 
+	desc = Fontaine_revolution.19.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_2 
+
+	option = {
+		name = Fontaine_revolution.19.a 
+		remove_ideas = fra_Chaotic_organization 
+		promote_character = FRC_maurice_thorez 
+		set_country_flag = show_second_leader 
+		set_country_flag = charlotte_as_the_second_leader 
+		add_stability = 0.05 
+		country_event = {
+			id = Fontaine_revolution.20 
+			days = 6
+		}
+		custom_effect_tooltip = the_leader_changed_while_soul_not_change
+		add_to_variable = { FRA_the_red_army_army_core_attack_factor = 0.05 }
+		add_to_variable = { FRA_the_red_army_army_core_defence_factor = 0.25 }
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.20
+	title = Fontaine_revolution.20.t 
+	desc = Fontaine_revolution.20.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_1 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.21 
+				days = 6
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.20.a 
+		custom_effect_tooltip = unlock_focus_to_learn_soviet_red_army
+		set_country_flag = fra_learn_sov
+	}
+	option = {
+		name = Fontaine_revolution.20.b 
+		custom_effect_tooltip = unlock_focus_to_learn_cpc_army
+		set_country_flag = fra_learn_cpc
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.21 
+	title = Fontaine_revolution.21.t
+	desc = Fontaine_revolution.21.d 
+	picture = GFX_report_event_fra_commune_3 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.21.a 
+		custom_effect_tooltip = selected_planned_economy
+		set_global_flag = selected_planned_economy
+	}
+
+	option = {
+		name = Fontaine_revolution.21.b 
+		custom_effect_tooltip = selected_commune_economy
+		set_global_flag = selected_commune_economy
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.22 #共同防御协定
+	title = Fontaine_revolution.22.t 
+	desc = Fontaine_revolution.22.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.22.a
+		add_ideas = fra_fontaine_soviet_union_joint_defense_appointment 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.23 
+				days = 2 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.22.b 
+		add_political_power = 50 
+		add_stability = 0.01 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.24 
+				days = 2 
+			}
+		}
+		ai_chance = {
+			base = 0 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.23 #协议被批准
+	title = Fontaine_revolution.23.t 
+	desc = Fontaine_revolution.23.d 
+	is_triggered_only = yes
+	picture = GFX_report_event_fra_charlotte_1 
+
+	option = {
+		name = Fontaine_revolution.23.a 
+		add_ideas = fra_fontaine_soviet_union_joint_defense_appointment 
+		add_stability = 0.01 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.24 #协议被否决
+	title = Fontaine_revolution.24.t 
+	desc = Fontaine_revolution.24.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_charlotte_2 
+
+	option = {
+		name = Fontaine_revolution.24.a 
+		add_war_support = 0.05 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.25 #揭发吸血鬼克洛琳德的补充材料
+	title = Fontaine_revolution.25.t 
+	desc = Fontaine_revolution.25.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_clorinde_2
+
+	option = {
+		name = Fontaine_revolution.25.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.29 #调查开始
+	title = Fontaine_revolution.29.t 
+	desc = Fontaine_revolution.29.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.29.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.30 #多年成果
+	picture = GFX_report_event_fra_generic_2
+	title = Fontaine_revolution.30.t 
+	desc = Fontaine_revolution.30.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.30.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.31 #千夫所指
+	picture = GFX_report_event_fra_generic_1
+	title = Fontaine_revolution.31.t 
+	desc = Fontaine_revolution.31.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.31.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.32 #不改口供
+	picture = GFX_report_event_fra_clorinde_5 
+	title = Fontaine_revolution.32.t 
+	desc = Fontaine_revolution.32.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.32.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.40 #记忆
+	picture = GFX_report_event_fra_Furina_13  
+	title = Fontaine_revolution.40.t 
+	desc = Fontaine_revolution.40.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.40.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.26 #划定阶级成分
+	title = Fontaine_revolution.26.t 
+	desc = Fontaine_revolution.26.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_9
+
+	option = {
+		name = Fontaine_revolution.26.a 
+		add_political_power = 15 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.27 #团练的兴起
+	title = Fontaine_revolution.27.t 
+	desc = Fontaine_revolution.27.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_FIN_heimosodat_volunteers 
+	option = {
+		name = Fontaine_revolution.27.a 
+		add_stability = -0.05
+		custom_effect_tooltip = Fontaine_revolution.27.tt
+		set_variable = { fra_dissenters_stability_weekly_factor = -0.0047 }
+		31 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		25 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		33 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		26 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		20 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		22 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		32 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		19 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+		806 = { add_dynamic_modifier = { modifier = FRA_landlord_resistance } }
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.28 #名单
+	title = Fontaine_revolution.28.t 
+	desc = Fontaine_revolution.28.d 
+	is_triggered_only = yes 
+
+	picture = GFX_report_event_fra_commune_2 
+
+	option = {
+		name = Fontaine_revolution.28.a 
+		navy_experience = 150 
+		army_experience = 150 
+		add_stability = -0.05 
+		add_war_support = 0.20 
+		retire_character = FRA_francois_darlan 
+		retire_character = FRA_charles_huntziger 
+
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.41 #枫苏共同防御协定作废
+	title = Fontaine_revolution.41.t 
+	desc = Fontaine_revolution.41.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_10 
+	option = {
+		name = Fontaine_revolution.41.a 
+		add_political_power = -50 
+		add_war_support = 0.02 
+		SOV = {
+			remove_ideas = fra_fontaine_soviet_union_joint_defense_appointment 
+		}
+		remove_ideas = fra_fontaine_soviet_union_joint_defense_appointment 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.42 #酝酿中的阴谋？
+	title = Fontaine_revolution.42.t 
+	desc = Fontaine_revolution.42.d 
+	picture = GFX_report_event_fra_commune_2 
+	fire_only_once = yes 
+	immediate = {
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = Fontaine_revolution.43
+					days = 30 
+					random_days = 30 
+				}
+			}
+		}
+	}
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_annul_the_nation 
+		not = { has_idea = fra_fontaine_soviet_union_joint_defense_appointment }
+		any_neighbor_country = {
+			is_major = yes 
+			has_government = fascism 
+		}
+	}
+	mean_time_to_happen = {
+		days = 15 
+	}
+
+	option = {
+		name = Fontaine_revolution.42.a 
+		add_war_support = 0.05 
+		custom_effect_tooltip = Fontaine_revolution.42.tt
+		set_country_flag = allow_show_commune_military
+		set_global_flag = fontaine_war_is_going_to_start
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.43 #反法同盟倡议
+	title = Fontaine_revolution.43.t
+	desc = Fontaine_revolution.43.d
+	fire_only_once = yes 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.43.a 
+		add_war_support = 0.20 
+		if = {
+			limit = {
+				original_tag = ENG 
+			}
+			dismantle_faction = yes 
+			create_faction = anti_fontaine_alliance 
+			set_global_flag = anti_fontaine_alliance_has_been_formed 
+			set_country_flag = anti_fontaine_alliance_creator 
+			add_to_faction = GER 
+			add_to_faction = ITA
+			if = {
+				limit = {
+					has_global_flag = nationalist_victory 
+				}
+				add_to_faction = SPA 
+			}
+			news_event = Fontaine_revolution.44 
+		}
+		else_if = {
+			limit = {
+				original_tag = USA 
+			}
+			ENG = {
+				add_to_faction = USA 
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					has_country_flag = anti_fontaine_alliance_creator 
+					has_war_with = ROOT 
+				}
+			}
+			random_country = {
+				limit = {
+					has_country_flag = anti_fontaine_alliance_creator
+					has_war_with = ROOT 
+				}
+				white_peace = PREV 
+			}
+		}
+		add_to_variable = { anti_fontaine_alliance_numbers = 1 }
+		add_ideas = united_armed_intervention
+		add_ai_strategy = {
+			type = alliance 
+			id = GER 
+			value = 999 
+		}
+		add_ai_strategy = {
+			type = alliance 
+			id = ITA 
+			value = 999 
+		}
+		add_ai_strategy = {
+			type = alliance 
+			id = SPA  
+			value = 999 
+		}
+		GER = {
+			add_ideas = united_armed_intervention 
+			add_ai_strategy = {
+				type = alliance 
+				id = ENG  
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = ITA 
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = SPA  
+				value = 999 
+			}
+		}
+		ITA = {
+			add_ideas = united_armed_intervention
+			add_ai_strategy = {
+				type = alliance 
+				id = GER 
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = ENG  
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = SPA  
+				value = 999 
+			}
+		}
+		SPA = {
+			add_ideas = united_armed_intervention
+			add_ai_strategy = {
+				type = alliance 
+				id = GER 
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = ITA 
+				value = 999 
+			}
+			add_ai_strategy = {
+				type = alliance 
+				id = ENG  
+				value = 999 
+			}
+		}
+		ai_chance = {
+			base = 50 
+			modifier = {
+				original_tag = SPR 
+				or = {
+					has_government = democratic
+					has_government = communism 
+				}
+				factor = 0 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.43.b 
+		add_stability = 0.05 
+		ai_chance = {
+			base = 5 
+			modifier = {
+				original_tag = GER 
+				factor = 0 
+			}
+			modifier = {
+				original_tag = ITA 
+				factor = 0 
+			}
+			modifier = {
+				original_tag = ENG  
+				factor = 0 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = Fontaine_revolution.44 #大洋协约的成立
+	picture = GFX_news_event_anti_fontaine_alliance_formed
+	title = Fontaine_revolution.44.t 
+	desc = Fontaine_revolution.44.d
+	fire_only_once = yes 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			set_global_flag = new_has_been_published
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.44.a
+		trigger = {
+			not = {
+				tag = FRA 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.44.b 
+		trigger = {
+			tag = FRA 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.45 #停战倡议
+	is_triggered_only = yes 
+	title = Fontaine_revolution.45.t
+	desc = Fontaine_revolution.45.d
+	picture = GFX_report_event_fra_commune_5 
+
+	option = {
+		name = Fontaine_revolution.45.a 
+		add_political_power = -200 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.46 
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 2 
+			modifier = {
+				has_war_support < 0.5 
+				add = 3 
+			}
+			modifier = {
+				casualties_inflicted_by = {
+					opponent = FRA 
+					thousands > 100
+				}
+				add = 1 
+			}
+			modifier = {
+				casualties_inflicted_by = {
+					opponent = FRA 
+					thousands > 200
+				}
+				add = 2
+			}
+			modifier = {
+				casualties_inflicted_by = {
+					opponent = FRA 
+					thousands > 300
+				}
+				add = 3 
+			}
+			modifier = {
+				casualties_inflicted_by = {
+					opponent = FRA 
+					thousands > 400
+				}
+				add = 4 
+			}
+			modifier = {
+				casualties_inflicted_by = {
+					opponent = FRA 
+					thousands > 500
+				}
+				add = 5 
+			}
+			modifier = {
+				factor = 0 
+				USA = {
+					is_in_faction_with = ROOT 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.45.b 
+		add_stability = -0.30 
+		add_war_support = -0.30 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.47 
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 5 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.46 #英国同意停战
+	title = Fontaine_revolution.46.t 
+	desc = Fontaine_revolution.46.d	
+	is_triggered_only = yes	
+	picture = GFX_report_event_fra_strike_2
+
+	option = {
+		name = Fontaine_revolution.46.a 
+		every_country = {
+			limit = {
+				has_war_with = ROOT 
+				OR = { original_tag = ENG original_tag = GER original_tag = ITA original_tag = SPR original_tag = USA }
+				has_capitulated = yes  
+			}
+			annex_country = {
+				target = PREV 
+			}
+		}
+		random_country = {
+			limit = {
+				has_war_with = ROOT 
+				OR = { original_tag = ENG original_tag = GER original_tag = ITA original_tag = SPR original_tag = USA }
+				has_capitulated = no 
+			}
+			white_peace = ROOT 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.47 #拒绝停战
+	title = Fontaine_revolution.47.t 
+	desc = Fontaine_revolution.47.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2
+
+	option = {
+		name = Fontaine_revolution.47.a 
+		set_country_flag = reject_peace
+		mark_focus_tree_layout_dirty = yes 
+		add_war_support = 0.05 
+		uncomplete_national_focus = {
+			focus = FRA_anarchist_time_to_end_the_war 
+		}
+		#custom_effect_tooltip = Fontaine_revolution.47.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.48 #达摩克里斯之剑
+	title = Fontaine_revolution.48.t
+	desc = Fontaine_revolution.48.d
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		ENG = { is_in_faction_with = GER }
+		has_global_flag = anti_fontaine_alliance_has_been_formed 
+	}
+	mean_time_to_happen = {
+		days = 28  
+	}
+	option = {
+		name = Fontaine_revolution.48.a 
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = Fontaine_revolution.49 
+					days = 14 
+					random_days = 36 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.49 
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		declare_war_on = {
+			target = FRA
+			type = puppet_wargoal_focus
+		}
+		country_event = {
+			id = Fontaine_revolution.50
+			days = 14 
+			random_days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.50 #宣战低地三国
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		declare_war_on = {
+			target = BEL
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = HOL 
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = LUX
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.101 #五大辩题
+	title = Fontaine_revolution.101.t
+	desc = Fontaine_revolution.101.d 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.112 
+				days = 7 
+			}
+		}
+	}
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_2 
+	option = {
+		name = Fontaine_revolution.101.a
+		custom_effect_tooltip = expand_the_influence_of_yanan_faction
+		custom_effect_tooltip = expand_the_influence_of_ussr_faction
+		add_to_variable = { fra_strength_soviet = 5 }
+		add_to_variable = { fra_strength_yanan = 5 }
+	}
+	option = {
+		name = Fontaine_revolution.101.b
+		custom_effect_tooltip = expand_the_influence_of_anarchist_faction
+		add_to_variable = { fra_strength_union = 5 }
+	}
+	option = {
+		name = Fontaine_revolution.101.c
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.10 
+		}
+		custom_effect_tooltip = add_corruption_per_month_1
+		add_to_variable = { monthly_corruption_change_value_by_dissender = 0.80 }
+		custom_effect_tooltip = Fontaine_revolution.101.b.t
+		add_to_variable = { commune_economy_production_speed_industrial_complex_factor = 0.10 }
+		add_to_variable = { production_speed_infrastructure_factor = 0.10 }
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.102 #枫丹共产党党内选举
+	picture = GFX_report_event_fra_commune_4 
+	title = Fontaine_revolution.102.t
+	desc = Fontaine_revolution.102.desc
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.101
+				days = 5 
+			}
+		}
+	}
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.102.a 
+	}
+	option = {
+		name = Fontaine_revolution.102.b 
+		set_country_flag = vote_charlotte
+	}
+	option = {
+		name = Fontaine_revolution.102.c
+		set_country_flag = vote_cachin
+	}
+	option = {
+		name = Fontaine_revolution.102.d 
+		#custom_effect_tooltip = Fontaine_revolution.102.d.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.103 #我们的名字
+	title = Fontaine_revolution.103.t 
+	desc = Fontaine_revolution.103.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_5 
+	option = {
+		name = Fontaine_revolution.103.a 
+		set_cosmetic_tag = fontaine_commune
+		add_stability = 0.02
+	}
+	option = {
+		name = Fontaine_revolution.103.b 
+		set_cosmetic_tag = fontaine_liberal_district
+		add_war_support = 0.02 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.104 #人民公社运动
+	picture = GFX_report_event_fra_commune_6
+	title = Fontaine_revolution.104.t 
+	desc = Fontaine_revolution.104.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.104.a 
+		add_stability = -0.05 
+		785 = {
+			add_extra_state_shared_building_slots = 2 
+		}
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.105
+				days = 60 
+				random_days = 30 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.104.b 
+		add_stability = 0.05 
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.10 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.105 #人民公社扩展到了全国
+	picture = GFX_report_event_fra_commune_7 
+	title = Fontaine_revolution.105.t 
+	desc = Fontaine_revolution.105.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.105.a 
+		set_country_flag = commune_win
+		add_stability = -0.05 
+		custom_effect_tooltip = will_strengthen_the_union_10
+		add_to_variable = { fra_strength_union = 10 }
+		add_popularity = {
+			ideology = communism 
+			popularity = 0.05 
+		}
+		custom_effect_tooltip = Fontaine_revolution.105.tt
+		add_to_variable = { commune_economy_consumer_goods_factor = -0.15 }
+	}
+
+	option = {
+		name = Fontaine_revolution.105.b 
+		add_stability = 0.05 
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.10 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.106 #公社的放权问题
+	picture = GFX_report_event_fra_commune_8 
+	title = Fontaine_revolution.106.t 
+	desc = Fontaine_revolution.106.d 
+	fire_only_once = yes 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.106.a 
+		add_political_power = 100 
+		add_stability = -0.05 
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.10
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.106.b 
+	}
+
+	option = {
+		name = Fontaine_revolution.106.c 
+		custom_effect_tooltip = Fontaine_revolution.106.c.tt
+		complete_national_focus = FRA_the_new_beginning 
+		set_country_flag = the_council_is_forced_canceled
+		complete_national_focus = FRA_anarchism_economy 
+		trigger = {
+			has_global_flag = fontaine_civilwar_start 
+			check_variable = {
+				fra_strength_union > 49
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.107 #农民进城
+	title = Fontaine_revolution.107.t 
+	desc = Fontaine_revolution.107.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.108
+				days = 20 
+				random_days = 20 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.107.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.108 #旗帜招展
+	title = Fontaine_revolution.108.t 
+	desc = Fontaine_revolution.108.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_spr_Caballero 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.109
+				days = 20 
+				random_days = 10 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.108.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.109 #再见
+	title = Fontaine_revolution.109.t 
+	desc = Fontaine_revolution.109.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_charlotte_3  
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.110 
+				days = 20 
+				random_days = 20 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.109.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.110 #再见
+	title = Fontaine_revolution.110.t 
+	desc = Fontaine_revolution.110.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_9  
+
+	option = {
+		name = Fontaine_revolution.110.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.111 #再见，沫芒宫
+	title = Fontaine_revolution.111.t
+	desc = Fontaine_revolution.111.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_clorinde_1 
+
+	option = {
+		name = Fontaine_revolution.111.a 
+		custom_effect_tooltip = Fontaine_revolution.111.a.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.112 #莫里斯·多列士的开幕致辞
+	title = Fontaine_revolution.112.t
+	desc = Fontaine_revolution.112.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_2 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.113 
+				days = 7 
+			}
+		}
+	}
+
+	option = {
+		name =  Fontaine_revolution.112.a
+		add_political_power = 50 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.113 #夏洛蒂的报告
+	title = Fontaine_revolution.113.t
+	desc = Fontaine_revolution.113.d
+	is_triggered_only = yes
+	picture = GFX_report_event_fra_charlotte_4 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.114 
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.113.a
+		custom_effect_tooltip = will_strengthen_the_yanan_15 
+		add_to_variable = { fra_strength_yanan = 15 }
+	}
+
+	option = {
+		name = Fontaine_revolution.113.b
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.114 #加香的讲话
+	title = Fontaine_revolution.114.t
+	desc = Fontaine_revolution.114.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_11 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.115
+				days = 7 
+			}
+		}
+	}
+	
+	option = {
+		name = Fontaine_revolution.114.a
+		custom_effect_tooltip = will_strengthen_the_yanan_10 
+		add_to_variable = { fra_strength_yanan = 10 }
+		custom_effect_tooltip = will_strengthen_the_soviet_10
+		add_to_variable = { fra_strength_soviet = 10 }
+	}
+
+	option = {
+		name = Fontaine_revolution.114.b
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.115 #娜维娅的讲话
+	is_triggered_only = yes 
+	title = Fontaine_revolution.115.t 
+	desc = Fontaine_revolution.115.d 
+	picture = GFX_report_event_fra_navia_2 
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = commune_win }
+				country_event = {
+					id = Fontaine_revolution.106
+					days = 3
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.115.a 
+		custom_effect_tooltip = will_strengthen_the_union_15
+		add_to_variable = { fra_strength_union = 15 }
+		set_country_flag = navia_has_finished_speaking
+	}
+
+	option = {
+		name = Fontaine_revolution.115.b 
+		set_country_flag = navia_has_finished_speaking
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.116 #议程结束
+	#is_triggered_only = yes 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_country_flag = navia_has_finished_speaking 
+		not = { has_completed_focus = FRA_anarchism_economy }
+		not = { has_country_flag = the_council_is_forced_canceled }
+	}
+	mean_time_to_happen = {
+		days = 7 
+	}
+	title = Fontaine_revolution.116.t 
+	desc = Fontaine_revolution.116.d 
+	picture = GFX_report_event_fra_commune_13  
+
+	option = {
+		name = Fontaine_revolution.116.a 
+		country_event = {
+			id = Fontaine_revolution.117
+			hours = 12 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.117 #选举日
+	is_triggered_only = yes 
+	title = Fontaine_revolution.117.t 
+	desc = Fontaine_revolution.117.desc 
+	picture = GFX_report_event_fra_commune_12 
+
+	option = {
+		name = Fontaine_revolution.117.a 
+		set_country_flag = Thorez_is_pol_minister 
+		complete_national_focus = FRA_the_new_beginning
+		complete_national_focus = FRA_socialism_of_the_people
+		hidden_effect = {
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = provisional_government 
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+		add_advisor_role = {
+			activate = yes 
+			character = FRA_maurice_thorez 
+			advisor = {
+				idea_token = maurice_thorez_second_chief
+				slot = second_chief
+				can_be_fired = no 
+				traits = {
+					staunch_stalinist
+				}
+			}
+		}
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > fra_strength_union 
+			}
+			check_variable = {
+				fra_strength_soviet > fra_strength_yanan  
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.117.b 
+		set_country_flag = Charlotte_is_pol_minister 
+		set_country_flag = charlotte_as_the_second_leader 
+		complete_national_focus = FRA_the_new_beginning
+		complete_national_focus = FRA_socialism_of_the_people
+		hidden_effect = {
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = provisional_government 
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+		add_ideas = Adrienne_Charlotte_politics 
+		trigger = { 
+			check_variable = {
+				fra_strength_yanan > fra_strength_union 
+			}
+			check_variable = {
+				fra_strength_yanan > fra_strength_soviet
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.117.c 
+		set_country_flag = Cachin_is_pol_minister 
+		complete_national_focus = FRA_the_new_beginning
+		complete_national_focus = FRA_socialism_of_the_people 
+		hidden_effect = {
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = provisional_government 
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+		add_advisor_role = {
+			activate = yes 
+			character = FRC_Marcel_Cachin 
+			advisor = {
+				slot = second_chief 
+				idea_token = frc_marcel_cachin_second_leader
+				traits = {
+					conscience_of_fontaine 
+				}
+				can_be_fired = no 
+			}
+		}
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > fra_strength_soviet
+			}
+			check_variable = {
+				fra_strength_yanan > fra_strength_union 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.117.d 
+		set_country_flag = Navia_is_pol_minister 
+		complete_national_focus = FRA_the_new_beginning
+		complete_national_focus = FRA_socialism_of_the_people
+		hidden_effect = {
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+			remove_ideas = provisional_government 
+			FRA_provisional_government = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+		add_ideas = navia_caspar_second_leader 
+		trigger = {
+			check_variable = {
+				fra_strength_union > fra_strength_soviet
+			}
+			check_variable = {
+				fra_strength_union > fra_strength_yanan 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.118 #更换军事领导人的测试事件
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		set_country_flag = show_collective_leadership_gui 
+		set_variable = {
+			mil_frame = 1 
+		}
+		set_variable = {
+			minister_frame = 1 
+		}
+		set_variable = {
+			dip_frame = 1 
+		}
+		set_variable = {
+			chairman_frame = 1 
+		}
+		if = {
+			limit = {
+				has_country_flag = Gamelin_is_mil_minister 
+			}
+			clr_country_flag = Gamelin_is_mil_minister 
+			set_country_flag = Gaulle_is_mil_minister 
+		}
+		else = {
+			clr_country_flag = Gaulle_is_mil_minister
+			set_country_flag = Gamelin_is_mil_minister 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.119 #更换领导人
+	is_triggered_only = yes 
+	option = {
+		set_country_flag = Charlotte_is_pol_minister 
+		clr_country_flag = Thorez_is_pol_minister
+		clr_country_flag = Cachin_is_pol_minister
+		clr_country_flag = Navia_is_pol_minister 
+	}
+	option = {
+		clr_country_flag = Charlotte_is_pol_minister 
+		set_country_flag = Thorez_is_pol_minister
+		clr_country_flag = Cachin_is_pol_minister
+		clr_country_flag = Navia_is_pol_minister 
+	}
+	option = {
+		clr_country_flag = Charlotte_is_pol_minister 
+		clr_country_flag = Thorez_is_pol_minister
+		set_country_flag = Cachin_is_pol_minister
+		clr_country_flag = Navia_is_pol_minister 
+	}
+	option = {
+		clr_country_flag = Charlotte_is_pol_minister 
+		clr_country_flag = Thorez_is_pol_minister
+		clr_country_flag = Cachin_is_pol_minister
+		set_country_flag = Navia_is_pol_minister 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.120 #土耳其宣战库尔德人
+	hidden = yes 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = TUR
+		is_ai = yes 
+		has_global_flag = fontaine_support_kurdish 
+		country_exists = KUR 
+		any_state = {
+			is_core_of = KUR 
+			is_controlled_by = ROOT 
+		}
+	}
+	mean_time_to_happen = {
+		days = 35 
+	}
+	immediate = {
+		KUR = {
+			transfer_state = 350 
+			transfer_state = 352 
+			add_war_support = 0.20 
+		}
+		350 = {
+			create_unit = {
+				division = "name = \"1st Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+			create_unit = {
+				division = "name = \"1st Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+			create_unit = {
+				division = "name = \"1st Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+			create_unit = {
+				division = "name = \"1st Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+		}
+		352 = {
+			create_unit = {
+				division = "name = \"5th Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Cavalry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+			create_unit = {
+				division = "name = \"5th Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Cavalry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+			create_unit = {
+				division = "name = \"5th Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Cavalry\" start_experience_factor = 0.4"  
+				owner = KUR
+			}
+		}
+		add_war_support = 0.20 
+		declare_war_on = {
+			target = KUR 
+			type = annex_everything 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.121 #土耳其入侵库尔德斯坦
+	title = Fontaine_revolution.121.t 
+	desc = Fontaine_revolution.121.d 
+	trigger = {
+		original_tag = FRA 
+		has_global_flag = fontaine_support_kurdish 
+		KUR = {
+			has_war_with = TUR 
+		}
+	}
+	fire_only_once = yes 
+	picture = GFX_report_event_fra_strike_2 
+
+	option = {
+		name = Fontaine_revolution.121.a 
+		add_relation_modifier = {
+			target = KUR 
+			modifier = FRA_volunteer_common 
+		}
+		activate_mission = fra_stop_the_war 
+		KUR = {
+			add_ideas = kur_fontaine_support 
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.05 
+			}
+			custom_effect_tooltip = Fontaine_revolution.121.tt 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.122 #库尔德战后选举
+	title = Fontaine_revolution.122.t 
+	desc = Fontaine_revolution.122.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_13 
+
+	option = {
+		name = Fontaine_revolution.122.a 
+		add_political_power = 100 
+		KUR = {
+			set_cosmetic_tag = KUR_people_republic
+		}
+		set_autonomy = {
+			target = KUR 
+			autonomy_state = autonomy_dominion 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.123 #政变！
+	is_triggered_only = yes 
+	option = {
+		FRA = {
+			country_event = {
+				id = Fontaine_revolution.124
+				days = 3 
+			}
+		}
+		set_politics = {
+			ruling_party = communism 
+		}
+		add_ai_strategy = {
+			type = befriend 
+			id = FRA 
+			value = 150
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FRA 
+			value = 100 
+		}
+		ai_chance = {
+			base = 5 
+			modifier = {
+				communism > 0.44
+				add = 5
+			}
+			modifier = {
+				communism > 0.49 
+				add = 5 
+			}
+			modifier = {
+				communism > 0.54 
+				add = 5
+			}
+			modifier = {
+				communism > 0.59
+				add = 80 
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_state = {
+				is_controlled_by = ROOT 
+				is_capital = no 
+			}
+		}
+		FRA = {
+			country_event = {
+				id = Fontaine_revolution.125 
+				days = 3 
+			}
+		}
+		set_politics = {
+			ruling_party = communism 
+		}
+		set_temp_variable = {
+			neutrality_support = party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = neutrality_support 
+		}
+		ai_chance = {
+			base = 10 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.124 #政变完全成功
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_14 
+	title = Fontaine_revolution.124.t 
+	desc = Fontaine_revolution.124.d 
+
+	option = {
+		name = Fontaine_revolution.124.a 
+		add_political_power = 50 
+	}
+
+}
+
+country_event = {
+	id = Fontaine_revolution.125 #反革命势力反扑
+	title = Fontaine_revolution.125.t
+	desc = Fontaine_revolution.125.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_15 
+
+	option = {
+		name = Fontaine_revolution.125.a 
+		add_relation_modifier = {
+			target = FROM 
+			modifier = FRA_volunteer_common 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.126 #加入阿拉伯联合共和国？
+	is_triggered_only = yes 
+	option = {
+		#加入
+		every_core_state = {
+			add_core_of = ARB 
+		}
+		ARB = {
+			annex_country = {
+				target = ROOT 
+				transfer_troops = yes 
+			}
+		}
+		if = {
+			limit = {
+				not = { has_global_flag = arabs_unity_has_set_up }
+			}
+			set_global_flag = arabs_unity_has_set_up
+		}
+		
+		ai_chance = {
+			base = 9 
+		}
+	}
+
+	option = {
+		#拒绝
+		add_political_power = 100 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.127 #新的成员国
+	trigger = {
+		original_tag = ARB 
+		has_global_flag = arabs_unity_has_set_up 
+		any_country = {
+			or = {
+				original_tag = SAU 
+				original_tag = IRQ 
+				original_tag = YEM 
+				original_tag = YEM 
+			}
+			has_government = communism 
+			exists = yes 
+			is_ai = yes 
+		}
+	}
+	mean_time_to_happen = {
+		days = 14 
+	}
+	option = {
+		random_country = {
+			limit = {
+				or = {
+					original_tag = SAU 
+					original_tag = IRQ 
+					original_tag = YEM 
+					original_tag = YEM 
+				}
+				has_government = communism 
+				exists = yes 
+				is_ai = yes 
+			}
+			country_event = {
+				id = Fontaine_revolution.126
+				days = 3 
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = Fontaine_revolution.128 #黎凡特联盟方案
+	title = Fontaine_revolution.128.t 
+	desc = Fontaine_revolution.128.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.128.a 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.129
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 75
+			modifier = {
+				FRA = {
+					num_of_factories > 149
+				}
+				add = 25 
+			}
+		}
+	}
+	option = {
+		name = Fontaine_revolution.128.b 
+		FROM = {
+			country_event = {
+				id = Fontaine_revolution.130 
+				days = 3 
+			}
+		}
+		ai_chance = {
+			base = 25 
+			modifier = {
+				has_war_with_major = yes 
+				factor = 0 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.129 
+	title = Fontaine_revolution.129.t 
+	desc = Fontaine_revolution.129.d
+	picture = GFX_report_event_fra_commune_12 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.129.a 
+		diplomatic_relation = {
+			country = ISR 
+			relation = guarantee
+		}
+		diplomatic_relation = {
+			country = ISR
+			relation = military_access
+		}
+		ENG = {
+			diplomatic_relation = {
+				country = ISR 
+				relation = guarantee
+			}
+			diplomatic_relation = {
+				country = ISR
+				relation = military_access
+			}
+		}
+		ISR = {
+			transfer_state = 454
+			transfer_state = 455
+			transfer_state = 553
+			transfer_state = 554
+			transfer_state = 677
+			transfer_state = 799 
+			every_owned_state = {
+				add_core_of = ISR 
+			}
+			set_cosmetic_tag = Levant_Union
+			set_party_name = {
+				ideology = neutrality
+				long_name = Levant_Union_neutrality_party
+				name = Levant_Union_neutrality_party 
+			}
+			set_party_name = {
+				ideology = communism 
+				long_name = Levant_Union_communism_party 
+				name = Levant_Union_communism_party 
+			}
+			set_party_name = {
+				ideology = democratic 
+				long_name = Levant_Union_democratic_party
+				name = Levant_Union_democratic_party
+			}
+			set_party_name = {
+				ideology = fascism 
+				long_name = Levant_Union_fascism_party 
+				name = Levant_Union_fascism_party 
+			}
+			add_ideas = isr_condominium 
+			hidden_effect = {
+				add_ideas = isr_national_balance 
+				add_ideas = isr_nationalist 
+				add_ideas = isr_great_compromise 
+				kill_ideology_leader = communism 
+				create_country_leader = {
+					name = "Michel Aflaq"
+					picture = "gfx/leaders/ISR_PAL/portrait_isr_Michel_Aflaq.png"
+					ideology = baathism 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.130 
+	title = Fontaine_revolution.130.t
+	desc = Fontaine_revolution.130.d 
+	picture = GFX_report_event_fra_commune_13 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.130.a 
+		ISR = {
+			transfer_state = 553
+			transfer_state = 554
+			transfer_state = 677
+			transfer_state = 799 
+			every_owned_state = {
+				add_core_of = ISR 
+			}
+			set_cosmetic_tag = Levant_Union
+			set_party_name = {
+				ideology = neutrality
+				long_name = Levant_Union_neutrality_party
+				name = Levant_Union_neutrality_party 
+			}
+			set_party_name = {
+				ideology = communism 
+				long_name = Levant_Union_communism_party 
+				name = Levant_Union_communism_party 
+			}
+			set_party_name = {
+				ideology = democratic 
+				long_name = Levant_Union_democratic_party
+				name = Levant_Union_democratic_party
+			}
+			set_party_name = {
+				ideology = fascism 
+				long_name = Levant_Union_fascism_party 
+				name = Levant_Union_fascism_party 
+			}
+			hidden_effect = {
+				add_ideas = isr_national_balance 
+				add_ideas = isr_nationalist 
+				add_ideas = isr_great_compromise 
+				kill_ideology_leader = communism 
+				create_country_leader = {
+					name = "Michel Aflaq"
+					picture = "gfx/leaders/ISR_PAL/portrait_isr_Michel_Aflaq.png"
+					ideology = baathism 
+				}
+			}
+		}
+		set_autonomy = {
+			target = ISR 
+			autonomy_state = autonomy_dominion 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.131 #黎凡特联盟崩溃
+	title = Fontaine_revolution.131.t
+	desc = Fontaine_revolution.131.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_15 
+
+	option = {
+		name = Fontaine_revolution.131.a 
+		ISR = {
+			drop_cosmetic_tag = yes 
+			remove_ideas = isr_condominium 
+			remove_ideas = isr_national_extreme_unbalance
+			remove_ideas = isr_great_compromise 
+			add_stability = 0.20 
+			add_war_support = 0.20 
+			hidden_effect = {
+				inherit_technology = FRA 
+				set_technology = {
+					militia_tech = 1 
+				}
+				if = { limit = { not = { has_government = communism } } set_politics = { ruling_party = democratic } }
+				division_template = {
+					name = "Israel Guard Army"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						military_police = { x = 0 y = 3 }
+					}
+				}
+				division_template = {
+					name = "Israel Volunteer"
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 0 y = 2 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+						irregular_infantry = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1st Infantry Division\" division_template = \"Israel Guard Army\" start_experience_factor = 0.4"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"2rd Infantry Division\" division_template = \"Israel Guard Army\" start_experience_factor = 0.4"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"3nd Infantry Division\" division_template = \"Israel Guard Army\" start_experience_factor = 0.4"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"4th Infantry Division\" division_template = \"Israel Guard Army\" start_experience_factor = 0.4"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"5th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"6th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"7th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"8th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"9th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+					create_unit = {
+						division = "name = \"10th Infantry Division\" division_template = \"Israel Volunteer\" start_experience_factor = 0.1"  
+						owner = ISR  
+					}
+				}
+			}
+		}
+		JOR = {
+			transfer_state = 455 
+			hidden_effect = {
+				inherit_technology = ISR 
+				add_war_support = 0.20 
+				declare_war_on = {
+					target = ISR 
+					type = annex_everything 
+				}
+				division_template = {
+					name = "National Guard Army"
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 0 y = 2 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+						irregular_infantry = { x = 1 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1th Infantry Division\" division_template = \"National Guard Army\" start_experience_factor = 0.2"  
+						owner = JOR 
+					}
+					create_unit = {
+						division = "name = \"1th Infantry Division\" division_template = \"National Guard Army\" start_experience_factor = 0.2"  
+						owner = JOR 
+					}
+					create_unit = {
+						division = "name = \"1th Infantry Division\" division_template = \"National Guard Army\" start_experience_factor = 0.2"  
+						owner = JOR 
+					}
+				}
+
+			}
+		}
+		SYR = {
+			transfer_state = 554
+			transfer_state = 677 
+			transfer_state = 799 
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism 
+				}
+				create_country_leader = {
+					name = "Michel Aflaq"
+					picture = "gfx/leaders/ISR_PAL/portrait_isr_Michel_Aflaq.png"
+					ideology = baathism 
+				}
+				inherit_technology = ISR 
+				declare_war_on = {
+					target = ISR 
+					type = annex_everything 
+				}
+				division_template = {
+					name = "Syria Liberation Army"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Syria Volunteer"
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 0 y = 2 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+						irregular_infantry = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1th Infantry Division\" division_template = \"Syria Liberation Army\" start_experience_factor = 0.3"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"2th Infantry Division\" division_template = \"Syria Liberation Army\" start_experience_factor = 0.3"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"3th Infantry Division\" division_template = \"Syria Liberation Army\" start_experience_factor = 0.3"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"4th Infantry Division\" division_template = \"Syria Volunteer\" start_experience_factor = 0.1"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"5th Infantry Division\" division_template = \"Syria Volunteer\" start_experience_factor = 0.1"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"6th Infantry Division\" division_template = \"Syria Volunteer\" start_experience_factor = 0.1"  
+						owner = SYR  
+					}
+					create_unit = {
+						division = "name = \"7th Infantry Division\" division_template = \"Syria Volunteer\" start_experience_factor = 0.1"  
+						owner = SYR  
+					}
+				}
+			}
+		}
+		LEB = {
+			transfer_state = 553 
+			hidden_effect = {
+				set_politics = {
+					ruling_party = democratic 
+				}
+				inherit_technology = ISR 
+				declare_war_on = {
+					target = ISR
+					type = annex_everything 
+				}
+				division_template = {
+					name = "Lebanon Volunteer"
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 0 y = 2 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+						irregular_infantry = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1th Lebanon Volunteer\" division_template = \"Lebanon Volunteer\" start_experience_factor = 0.4"  
+						owner = LEB   
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.132 #采用伊斯兰社会主义
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		days = 21 
+	}
+	trigger = {
+		FRA = { has_completed_focus = FRA_islam_socialism }
+		has_government = communism 
+		not = { has_idea = islam_socialism }
+		or = {
+			capital_scope = {
+				is_on_continent = middle_east 
+			}
+			original_tag = ALG 
+			original_tag = LBA 
+			original_tag = LBA 
+			original_tag = EGY 
+			original_tag = SAU 
+			original_tag = MOR 
+			original_tag = TUN 
+			original_tag = WES 
+			original_tag = MRT
+		}
+	}
+	immediate = {
+		add_ideas = islam_socialism
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.133 #枫丹南部的视察
+	title = Fontaine_revolution.133.t 
+	desc = Fontaine_revolution.133.d 
+	picture = GFX_report_event_fra_charlotte_3 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.133.a 
+		custom_effect_tooltip = Fontaine_revolution.133.tt
+		add_political_power = 50 
+		add_to_variable = {
+			people_zeal_value = 10 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.134 #更改计划指标
+	title = Fontaine_revolution.134.t 
+	desc = Fontaine_revolution.134.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_14 
+	immediate = {
+		hidden_effect = {
+			activate_mission = fra_raise_the_plan_mission 
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.134.a 
+		set_temp_variable = { the_plan_to_add = 1.1 }
+		set_temp_variable = { the_num_factories_now = num_of_factories }
+		multiply_temp_variable = { the_num_factories_now = the_plan_to_add }
+		round_temp_variable = the_num_factories_now 
+		set_variable = { the_goal_factory_number = the_num_factories_now }
+		set_country_flag = add_10_percent
+		effect_tooltip = {
+			activate_mission = fra_raise_the_plan_mission 
+		}
+		#activate_mission = fra_raise_the_plan_mission 
+	}
+	option = {
+		name = Fontaine_revolution.134.b 
+		set_temp_variable = { the_plan_to_add = 1.2 }
+		set_temp_variable = { the_num_factories_now = num_of_factories }
+		multiply_temp_variable = { the_num_factories_now = the_plan_to_add }
+		round_temp_variable = the_num_factories_now 
+		set_variable = { the_goal_factory_number = the_num_factories_now }
+		set_country_flag = add_20_percent
+		effect_tooltip = {
+			activate_mission = fra_raise_the_plan_mission 
+		}
+	}
+	option = {
+		name = Fontaine_revolution.134.c 
+		set_temp_variable = { the_plan_to_add = 1.5 }
+		set_temp_variable = { the_num_factories_now = num_of_factories }
+		multiply_temp_variable = { the_num_factories_now = the_plan_to_add }
+		round_temp_variable = the_num_factories_now 
+		set_variable = { the_goal_factory_number = the_num_factories_now }
+		set_country_flag  = add_50_percent
+		custom_effect_tooltip = Fontaine_revolution.134.tt
+		effect_tooltip = {
+			activate_mission = fra_raise_the_plan_mission 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.135 #皮毛论
+	title = Fontaine_revolution.135.t 
+	desc = Fontaine_revolution.135.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_charlotte_5 
+
+	option = {
+		name = Fontaine_revolution.135.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.136 #工农兵大学生
+	title = Fontaine_revolution.136.t 
+	desc = Fontaine_revolution.136.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_charlotte_6 
+
+	option = {
+		name = Fontaine_revolution.136.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.137 #大肃托
+	title = Fontaine_revolution.137.t
+	desc = Fontaine_revolution.137.d 
+	picture = GFX_report_event_fra_commune_10 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.137.a 
+		add_political_power = 150 
+		custom_effect_tooltip = decrease_people_zeal_10 
+		add_to_variable = { people_zeal_value = -10 }
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.10 
+		}
+	}
+	option = {
+		name = Fontaine_revolution.137.b 
+		add_political_power = -50 
+		custom_effect_tooltip = add_people_zeal_15 
+		add_to_variable = { people_zeal_value = 15 }
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.138 #整风运动
+	title = Fontaine_revolution.138.t 
+	desc = Fontaine_revolution.138.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_commune_2 
+	option = {
+		name = Fontaine_revolution.138.a 
+		set_country_flag = try_socialist_democracy
+		activate_mission = fra_stalinist_start_democracy 
+		custom_effect_tooltip = will_decrease_corruption_20 
+		add_to_variable = { the_corruption_of_party = -20 }
+		custom_effect_tooltip = add_people_zeal_25 
+		add_to_variable = { people_zeal_value = 25 }
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.139 
+				days = 90 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.139 #对于右派的攻击
+	title = Fontaine_revolution.139.t 
+	desc = Fontaine_revolution.139.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2 
+	option = {
+		name = Fontaine_revolution.139.a 
+		set_country_flag = attack_the_rights
+		add_stability = -0.05
+		add_political_power = -100 
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.140 
+	hidden = yes 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_multifunctional_commune 
+		not = { has_idea = fra_expand_the_investion_to_commune has_idea = fra_expand_the_investion_to_commune_1 has_idea = fra_expand_the_investion_to_commune_2 }
+	}
+	immediate = {
+		add_to_variable = { commune_economy_consumer_goods_factor = commune_value_to_add_consume }
+		add_to_variable = { commune_economy_local_building_slots_factor = commune_value_to_add_local_building_slots_factor }
+		add_to_variable = { commune_economy_monthly_population = commune_value_to_add_monthly_population }
+		add_to_variable = { commune_economy_conscription_factor = commune_value_to_add_conscription_factor }
+		#add_to_variable = { monthly_corruption_change_by_other_things = 0 }
+		add_to_variable = { monthly_corruption_change_value_by_economy = commune_value_to_add_corruption }
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.141 #非洲农业联盟
+	title = Fontaine_revolution.141.t
+	desc = Fontaine_revolution.141.d
+	picture = GFX_report_event_fra_commune_16 
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = afrcian_agriculture_union_has_set_up
+		}
+	}
+	option = {
+		name = Fontaine_revolution.141.a 
+		add_political_power = 10 
+		random_state = {
+			limit = {
+				not = { is_core_of = FRA }
+				state = 779
+			}
+			add_resistance_target = 20
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 10 
+			#add_compliance = -10 
+		}
+		random_state = {
+			limit = {
+				not = { is_core_of = ENG  }
+				state = 274
+			}
+			add_resistance_target = 20
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 10 
+			#add_compliance = -10 
+		}
+		random_state = {
+			limit = {
+				not = { is_core_of = FRA }
+				state = 777
+			}
+			add_resistance_target = 20
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 10 
+			#add_compliance = -10 
+		}
+		random_state = {
+			limit = {
+				not = { is_core_of = ENG }
+				state = 700
+			}
+			add_resistance_target = 20
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 10 
+			#add_compliance = -10 
+		}
+		random_state = {
+			limit = {
+				not = { is_core_of = FRA }
+				state = 776
+			}
+			add_resistance_target = 20
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 10 
+			#add_compliance = -10 
+		}
+		random_state = {
+			limit = {
+				not = { is_core_of = FRA }
+				state = 80
+			}
+			add_resistance_target = 25
+			set_state_flag = africa_agricalture_union_is_here
+			#add_resistance = 15 
+			#add_compliance = -20  
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.142 #向内陆扩张
+	picture = GFX_report_event_fra_commune_17 
+	title = Fontaine_revolution.142.t
+	desc = Fontaine_revolution.142.d
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		any_state = {
+			has_state_flag = africa_agricalture_union_is_here 
+			is_controlled_by = FRA 
+		}
+		count_triggers = {
+			amount = 4 
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 779
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 274 
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 777
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 700
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 776
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 80
+				resistance > 45 
+			}
+		}
+	}
+	option = { 
+		name = Fontaine_revolution.142.a 
+		add_political_power = 10
+		every_owned_state = {
+			limit = {
+				has_state_flag = africa_agricalture_union_is_here  
+				resistance > 45 
+			}
+			add_extra_state_shared_building_slots = 2 
+		}
+		every_owned_state = {
+			limit = {
+				or = {
+					state = 556 
+					state = 899
+					state = 898
+					state = 778 
+					state = 781 
+					state = 558
+					state = 902 
+					state = 901 
+					state = 900
+				}
+			}
+			add_resistance_target = 20 
+			add_resistance = 15 
+			add_compliance = -20
+			set_state_flag = africa_agricalture_union_is_here 
+		}
+	}
+
+}
+
+country_event = {
+	id = Fontaine_revolution.143 #非洲农村的社会主义高潮
+	title = Fontaine_revolution.143.t
+	desc = Fontaine_revolution.143.d
+	picture = GFX_report_event_fra_commune_16 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		any_state = {
+			has_state_flag = africa_agricalture_union_is_here 
+			is_controlled_by = FRA 
+		}
+		count_triggers = {
+			amount = 8 
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 779
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 274 
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 777
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 700
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 776
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 80
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 556
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 899
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 898
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 778
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 781
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 558
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 902
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 901
+				resistance > 45 
+			}
+			any_state = {
+				has_state_flag = africa_agricalture_union_is_here 
+				is_controlled_by = FRA 
+				state = 900
+				resistance > 45 
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.143.a
+		add_political_power = 100 
+		custom_effect_tooltip = Fontaine_revolution.143.tt
+		set_country_flag = africa_agricalture_union_success
+		every_owned_state = {
+			limit = {
+				has_state_flag = africa_agricalture_union_is_here 
+			}
+			add_extra_state_shared_building_slots = 2 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.144 #共产主义，美好的明天
+	title = Fontaine_revolution.144.t
+	desc = Fontaine_revolution.144.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_karl_marx 
+
+	option = {
+		name = Fontaine_revolution.144.a
+		set_country_flag = show_ending_window 
+		set_country_flag = show_ending
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.145 #巴黎
+	title = Fontaine_revolution.145.t
+	desc = Fontaine_revolution.145.d 
+	picture = GFX_report_event_fra_commune_13 
+	is_triggered_only = yes 
+	option = {
+		name = Fontaine_revolution.145.a 
+		add_war_support = 0.10
+		effect_tooltip = {
+			FRA = {
+				FRA_Furina_de_Fontaine = {
+					set_nationality = FRC 
+				}
+			}
+		}
+		FRA = {
+			add_ideas = fra_resistance_without_support 
+			hidden_effect = {
+				set_cosmetic_tag = fontaine_provisional_government
+				set_party_name = {
+					ideology = neutrality
+					long_name = "委员会"
+					name = "委员会"
+				}
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no 
+			}
+			create_country_leader = {
+				name = "紧急国事委员会"
+				picture = GFX_portrait_fra_government 
+				ideology = junta 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.146 #国际纵队
+	title = Fontaine_revolution.146.t
+	desc = Fontaine_revolution.146.d
+	#is_triggered_only = yes 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRC 
+		has_war_with = FRA 
+	}
+	mean_time_to_happen = {
+		days = 14
+	}
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	immediate = {
+		hidden_effect = {
+			division_template = {
+				name = "Brigades internationales"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					artillery_brigade = { x = 2 y = 0 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					recon = { x = 0 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"1re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.146.a 
+		army_experience = 50
+		effect_tooltip = {
+			division_template = {
+				name = "Brigades internationales"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					artillery_brigade = { x = 2 y = 0 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					recon = { x = 0 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"1re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3re Brigades internationales\" division_template = \"Brigades internationales\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.147 #苏联支援
+	title = Fontaine_revolution.147.t
+	desc = Fontaine_revolution.147.d 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRC
+		has_war_with = FRA 
+		SOV = {
+			exists = yes 
+			has_government = communism 
+			not = { has_completed_focus = SOV_beaten_but_not_defeated }
+			surrender_progress < 0.50
+		}
+	}
+	mean_time_to_happen = {
+		days = 28
+	}
+	picture = GFX_report_event_SOV_purge_aircraft_1
+	option = {
+		name = Fontaine_revolution.147.a 
+		add_ideas = fra_soviet_support 
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.50
+			category = land_doctrine
+			name = Fontaine_revolution.147.t
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.148 #新想法
+	title = Fontaine_revolution.148.t
+	desc = Fontaine_revolution.148.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.148.a 
+		country_event = {
+			id = Fontaine_revolution.149
+			hours = 12 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.149
+	title = Fontaine_revolution.149.t
+	desc = Fontaine_revolution.149.d
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.150
+				days = 2 
+			}
+			country_event = {
+				id = Fontaine_revolution.151
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = Fontaine_revolution.149.a 
+		custom_effect_tooltip = Fontaine_revolution.149.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.150
+	title = Fontaine_revolution.150.t
+	desc = Fontaine_revolution.150.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.150.a
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.151
+	title = Fontaine_revolution.151.t
+	desc = Fontaine_revolution.151.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_revolution.151.a 
+		custom_effect_tooltip = Fontaine_revolution.151.tt
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_revolution.152
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.152
+	title = Fontaine_revolution.152.t
+	desc = Fontaine_revolution.152.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fontaine_science_1 
+
+	option = {
+		name = Fontaine_revolution.152.a 
+		custom_effect_tooltip = Fontaine_revolution.152.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_revolution.153
+	title = Fontaine_revolution.153.t
+	desc = Fontaine_revolution.153.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fontaine_science_2 
+
+	option = {
+		name = Fontaine_revolution.153.a 
+		custom_effect_tooltip = Fontaine_revolution.153.tt 
+	}
+}
+
+###新闻###
+
+news_event = {
+	id = Fontaine_revolution_news.1 #枫丹革命
+	title = Fontaine_revolution_news.1.t 
+	desc = Fontaine_revolution_news.1.d 
+	is_triggered_only = yes 
+	picture = GFX_news_event_fontaine_revolution
+
+	option = {
+		name = Fontaine_revolution_news.1.a 
+		set_country_flag = show_fontaine_revolution_superevent
+		set_global_flag = fontaine_socialist 
+		hidden_effect = { play_song = "superevents_fontaine_revolution" } 
+	}
+}
+
+news_event = {
+	id = Fontaine_revolution_news.2 #库尔德赢得独立战争
+	title = Fontaine_revolution_news.2.t 
+	desc = Fontaine_revolution_news.2.d 
+	is_triggered_only = yes 
+	picture = GFX_news_event_kurdish_win_the_war 
+
+	option = {
+		name = Fontaine_revolution_news.2.a 
+	}
+}
+
+news_event = {
+	id = Fontaine_revolution_news.3 #土耳其镇压成功
+	title = Fontaine_revolution_news.3.t 
+	desc = Fontaine_revolution_news.3.d 
+	is_triggered_only = yes 
+	picture = GFX_news_event_turkey_win_the_war 
+
+	option = {
+		name = Fontaine_revolution_news.3.a 
+	}
+}

@@ -1,0 +1,24 @@
+state=
+{
+	id=457
+	name="STATE_457" # Arabian Desert
+	manpower = 2194
+	
+	state_category = wasteland
+
+	impassable = yes 
+	
+	history = {
+		owner = EGY
+		buildings = {
+			infrastructure = 1
+		}
+
+		add_core_of = EGY
+	}
+	provinces={
+		12889 
+	}
+
+	local_supplies=0.0 
+}

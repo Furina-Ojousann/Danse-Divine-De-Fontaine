@@ -1,0 +1,20 @@
+state = {
+	id = 1065
+	name = 1065_Tamanrasset
+	manpower = 45900
+	state_category = pastoral 
+	history = {
+		owner = FAG
+		add_core_of = ALG 
+		buildings = {
+			infrastructure = 3 
+		}
+		victory_points = {
+			13434 3 
+		}
+		add_dynamic_modifier = {
+			modifier = Self_sufficient_oasis 
+		}
+	}
+	provinces = { 13434 }
+}

@@ -1,0 +1,72 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_textillustration_PNF_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_PNF_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_NSDAP_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_NSDAP_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_KPCC_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_KPCC_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_KMT_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_KMT_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_TORY_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_TORY_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_DEMOCRATS_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_DEMOCRATS_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_CPC_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_CPC_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_SPD_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_SPD_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_POPULAR_FRONT_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_POPULAR_FRONT_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_CF_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_CF_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_LDP_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_LDP_desc.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_fontaine_liberalism_charlotte"
+		textureFile = "gfx/interface/textillustration/textillustration_fontaine_liberalism_charlotte.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_fontaine_liberalism_navia"
+		textureFile = "gfx/interface/textillustration/textillustration_fontaine_liberalism_navia.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_textillustration_fontaine_liberalism_neuvillette"
+		textureFile = "gfx/interface/textillustration/textillustration_fontaine_liberalism_neuvillette.png"
+		legacy_lazy_load = no 
+	}
+}

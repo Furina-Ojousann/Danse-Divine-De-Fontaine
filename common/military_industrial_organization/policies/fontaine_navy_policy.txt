@@ -1,0 +1,39 @@
+mio_policy_navy_colony_fleet = {
+	icon = GFX_idea_generic_coastal_defense_ships2 
+	allowed = {
+		OR ={
+			has_mio_equipment_type = screen_ship
+			has_mio_equipment_type = mio_cat_eq_all_cruiser
+		}
+	}
+	available = { 
+		has_mio_size > 5 
+		FROM = {
+			original_tag = FRA 
+			has_completed_focus = FRA_protect_aboard_french 
+		}
+	}
+	production_bonus = {
+		same_as_mio = {
+			production_cost_factor = -0.20
+		}
+	}
+	equipment_bonus = {
+		mio_cat_eq_all_cruiser = {
+			naval_range = 0.30 
+			fuel_consumption_factor = -0.10 
+			naval_light_gun_hit_chance_factor = -0.20
+			naval_heavy_gun_hit_chance_factor = -0.20 
+			reliability_factor = -0.05
+		}
+		mio_cat_eq_all_destroyer = {
+			naval_range = 0.30 
+			sub_attack = 0.05 
+			reliability_factor = -0.10
+		}
+		same_as_mio = {
+			
+			
+		}
+	}
+}

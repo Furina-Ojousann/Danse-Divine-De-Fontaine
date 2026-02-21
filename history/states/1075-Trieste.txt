@@ -1,0 +1,21 @@
+state = {
+	id = 1075
+	name = 1075_Trieste
+	manpower = 109890
+	state_category = city 
+	history = {
+		owner = ITA
+		add_core_of = ITA 
+		victory_points = {
+			13436 5 
+		}
+		buildings = {
+			infrastructure = 7 
+			dockyard = 1 
+			13436 = {
+				naval_base = 6 
+			}
+		}
+	}
+	provinces = { 13436 }
+}

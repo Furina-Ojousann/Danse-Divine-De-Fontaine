@@ -1,0 +1,54 @@
+usa_depression_progress = {
+	### 设定基础数值 ###
+	set_variable = { usa_depression_consumer_goods_factor = 0.80 }
+	set_variable = { usa_depression_production_speed_buildings_factor = -0.60 }
+	set_variable = { usa_depression_political_power_cost = 1 }
+	set_variable = { usa_depression_conscription_factor = -0.75 }
+	set_variable = { usa_depression_industrial_capacity_factory = -0.50 }
+	set_variable = { usa_depression_industrial_capacity_dockyard = -0.50 }
+	set_variable = { usa_depression_local_resources_factor = -0.65 }
+	set_variable = { usa_depression_war_stability_factor = -0.40 }
+	set_variable = { usa_depression_fuel_gain_factor = -0.45 }
+	set_variable = { usa_depression_production_factory_efficiency_gain_factor = -0.30 }
+	set_variable = { usa_depression_production_factory_start_efficiency_factor = -0.20 }
+
+	### 临时乘数 ###
+	set_temp_variable = { usa_depression_multiplier = usa_the_depression_progress }
+	set_temp_variable = { usa_temp_usa_depression_consumer_goods_factor = usa_depression_consumer_goods_factor  }
+	set_temp_variable = { usa_temp_usa_depression_political_power_cost = usa_depression_political_power_cost  }
+	set_temp_variable = { usa_temp_usa_depression_production_speed_buildings_factor = usa_depression_production_speed_buildings_factor  }
+	set_temp_variable = { usa_temp_usa_depression_conscription_factor = usa_depression_conscription_factor  }
+	set_temp_variable = { usa_temp_usa_depression_industrial_capacity_factory = usa_depression_industrial_capacity_factory  }
+	set_temp_variable = { usa_temp_usa_depression_industrial_capacity_dockyard = usa_depression_industrial_capacity_dockyard  }
+	set_temp_variable = { usa_temp_usa_depression_local_resources_factor = usa_depression_local_resources_factor  }
+	set_temp_variable = { usa_temp_usa_depression_war_stability_factor = usa_depression_war_stability_factor  }
+	set_temp_variable = { usa_temp_usa_depression_fuel_gain_factor = usa_depression_fuel_gain_factor  }
+	set_temp_variable = { usa_temp_usa_depression_production_factory_efficiency_gain_factor = usa_depression_production_factory_efficiency_gain_factor  }
+	set_temp_variable = { usa_temp_usa_depression_production_factory_start_efficiency_factor = usa_depression_production_factory_start_efficiency_factor  }
+
+	multiply_temp_variable = { usa_temp_usa_depression_consumer_goods_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_political_power_cost = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_production_speed_buildings_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_conscription_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_industrial_capacity_factory = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_industrial_capacity_dockyard = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_local_resources_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_war_stability_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_fuel_gain_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_production_factory_efficiency_gain_factor = usa_depression_multiplier }
+	multiply_temp_variable = { usa_temp_usa_depression_production_factory_start_efficiency_factor = usa_depression_multiplier }
+
+	### 重新设定 ###
+	set_variable = { usa_depression_consumer_goods_factor = usa_temp_usa_depression_consumer_goods_factor }
+	set_variable = { usa_depression_production_speed_buildings_factor = usa_temp_usa_depression_production_speed_buildings_factor }
+	set_variable = { usa_depression_political_power_cost = usa_temp_usa_depression_political_power_cost }
+	set_variable = { usa_depression_conscription_factor = usa_temp_usa_depression_conscription_factor }
+	set_variable = { usa_depression_industrial_capacity_factory = usa_temp_usa_depression_industrial_capacity_factory }
+	set_variable = { usa_depression_industrial_capacity_dockyard = usa_temp_usa_depression_industrial_capacity_dockyard }
+	set_variable = { usa_depression_local_resources_factor = usa_temp_usa_depression_local_resources_factor }
+	set_variable = { usa_depression_war_stability_factor = usa_temp_usa_depression_war_stability_factor }
+	set_variable = { usa_depression_fuel_gain_factor = usa_temp_usa_depression_fuel_gain_factor }
+	set_variable = { usa_depression_production_factory_efficiency_gain_factor = usa_temp_usa_depression_production_factory_efficiency_gain_factor }
+	set_variable = { usa_depression_production_factory_start_efficiency_factor = usa_temp_usa_depression_production_factory_start_efficiency_factor }
+	
+}

@@ -1,0 +1,31 @@
+bookmarks = {
+	bookmark = {
+		name = "FONTAINE_TALE"
+		desc = "FONTAINE_TALE_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_bookmark_fontiane_tale"
+		default_country = "FRA"
+		default = yes
+
+		# minors from DLC ####
+		"FRA"={
+			minor = yes
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				fra_union_of_stalinist_and_maoist
+				fra_to_the_rural
+				fra_continue_the_revolution 
+			}
+			focuses = {
+				FRA_the_unforgettable_1871
+				FRA_renew_the_parliament_issue
+				FRA_renew_unity_and_get_ready
+			}
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

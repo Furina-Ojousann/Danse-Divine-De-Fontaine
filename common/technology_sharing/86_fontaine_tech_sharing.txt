@@ -1,0 +1,13 @@
+tech_sharing_group = {
+	id = Fontaine_Soviet_tech_share
+	name = Fontaine_Soviet_tech_share
+	desc = Fontaine_Soviet_tech_share_desc 
+	picture = GFX_technology_sharing_default
+	research_sharing_per_country_bonus = 0.20 
+	available = {
+		has_government = communism 
+		FRA = {
+			is_in_faction_with = SOV 
+		}
+	}
+}

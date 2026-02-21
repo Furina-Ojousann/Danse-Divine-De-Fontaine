@@ -1,0 +1,169 @@
+division_template = {
+	name = "militia"
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 0 y = 2 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
+		irregular_infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+	}
+	priority = 1 
+}
+
+division_template = {
+	name = "commune army"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+		artillery_brigade = { x = 3 y = 2 }
+		artillery_brigade = { x = 3 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+	priority = 3 
+}
+
+units = {
+	division = {
+		name = "2 commune militia"
+		location = 11420
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "1 commune militia"
+		location = 11420
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "3 commune militia"
+		location = 6585
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "4 commune militia"
+		location = 6585
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "5 commune militia"
+		location = 9561
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "6 commune militia"
+		location = 9561
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "7 commune militia"
+		location = 11549
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "8 commune militia"
+		location = 6545
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "9 commune militia"
+		location = 5291
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "10 commune militia"
+		location = 13011
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "11 commune militia"
+		location = 13011
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+
+	division = {
+		name = "12 commune militia"
+		location = 575
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "13 commune militia"
+		location = 11548
+		division_template = "militia"
+		start_experience_factor = 0.2
+		
+	}
+	division = {
+		name = "1 commune army"
+		location = 11483
+		division_template = "commune army"
+		start_experience_factor = 0.4
+		
+	}
+	division = {
+		name = "2 commune army"
+		location = 11548
+		division_template = "commune army"
+		start_experience_factor = 0.4
+		
+	}
+	division = {
+		name = "3 commune army"
+		location = 3476
+		division_template = "commune army"
+		start_experience_factor = 0.4
+		
+	}
+	division = {
+		name = "4 commune army"
+		location = 13011
+		division_template = "commune army"
+		start_experience_factor = 0.4
+		
+	}
+}

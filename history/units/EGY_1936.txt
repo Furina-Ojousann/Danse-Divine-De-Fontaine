@@ -1,0 +1,181 @@
+division_template = {
+	name = "Royal Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = {
+			x = 0 
+			y = 0 
+		}
+		recon = {
+			x = 0 
+			y = 1 
+		}
+	}
+}
+
+division_template = {
+	name = "Local Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Cavalry"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1st Royalist Guard"
+		location = 7011 
+		division_template = "Royal Guard"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "2st Royalist Guard"
+		location = 4076 
+		division_template = "Royal Guard"
+		start_experience_factor = 0.45
+	}
+	division = {
+		name = "3st Royalist Guard"
+		location = 9989 
+		division_template = "Royal Guard"
+		start_experience_factor = 0.45
+	}
+
+	division = {
+		name = "Cairo garrison"
+		location = 7011 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "1st garrison"
+		location = 7079 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "2st garrison"
+		location = 5078 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "3st garrison"
+		location = 9989 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "4st garrison"
+		location = 1071 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "5st garrison"
+		location = 1155 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "6st garrison"
+		location = 4073 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "7st garrison"
+		location = 10097 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+	division = {
+		name = "8st garrison"
+		location = 12826 
+		division_template = "Local Guard" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.4
+	}
+
+	division = {
+		name = "1st Cavalry"
+		location = 3996
+		division_template = "Cavalry"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.8
+	}
+	division = {
+		name = "2st Cavalry"
+		location = 11979
+		division_template = "Cavalry"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.8
+	}
+	division = {
+		name = "3st Cavalry"
+		location = 10795
+		division_template = "Cavalry"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.8
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "ENG"
+		}
+		requested_factories = 2
+		progress = 0.55
+		efficiency = 100
+	}	
+}

@@ -1,0 +1,1893 @@
+add_namespace = Fontaine_empire_furina_personal
+add_namespace = Fontaine_empire_normal
+add_namespace = Fontaine_final
+add_namespace = Fontaine_empire_news
+
+country_event = {
+	id = Fontaine_empire_furina_personal.1
+	is_triggered_only = yes 
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.2 #自慰
+	is_triggered_only = yes 
+	title = Fontaine_empire_furina_personal.2.t 
+	desc = Fontaine_empire_furina_personal.2.d 
+	picture = GFX_report_event_fra_right_11
+
+	option = {
+		name = Fontaine_empire_furina_personal.2.a 
+		add_to_variable = { furina_metal_health = 5 }
+	}
+
+	option = {
+		name = Fontaine_empire_furina_personal.2.b 
+		add_to_variable = { furina_metal_health = -5 }
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.3 #尼斯假期
+	title = Fontaine_empire_furina_personal.3.t
+	desc = Fontaine_empire_furina_personal.3.d 
+	picture = GFX_report_event_fra_right_12
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.3.a 
+		add_to_variable = { furina_metal_health = 10 }
+		hidden_effect = {
+			country_event = Fontaine_empire_furina_personal.4 
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_furina_personal.3.b 
+		hidden_effect = {
+			country_event = Fontaine_empire_furina_personal.5
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_furina_personal.3.c 
+		add_to_variable = { furina_metal_health = -20 }
+		hidden_effect = {
+			country_event = Fontaine_empire_furina_personal.6 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.4 #尼斯假期 - 度假
+	title = Fontaine_empire_furina_personal.4.t
+	desc = Fontaine_empire_furina_personal.4.d 
+	picture = GFX_report_event_fra_right_13
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.4.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.5 #尼斯假期 - 观舰
+	title = Fontaine_empire_furina_personal.5.t
+	desc = Fontaine_empire_furina_personal.5.d 
+	picture = GFX_report_event_fra_right_15
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.5.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.6 #尼斯假期 - 无法挽回
+	title = Fontaine_empire_furina_personal.6.t
+	desc = Fontaine_empire_furina_personal.6.d 
+	picture = GFX_report_event_fra_right_14
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.6.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.7 #一日日程
+	title = Fontaine_empire_furina_personal.7.t
+	desc = Fontaine_empire_furina_personal.7.d 
+	picture = GFX_report_event_fra_right_14
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.7.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_furina_personal.8 #一年
+	title = Fontaine_empire_furina_personal.8.t
+	desc = Fontaine_empire_furina_personal.8.d 
+	picture = GFX_report_event_fra_right_15
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_furina_personal.8.a 
+		add_to_variable = { furina_metal_health = -5 }
+	}
+}
+
+country_event = {
+	id = Fontaine_final.1 #结束？
+	title = Fontaine_final.1.t
+	desc = Fontaine_final.1.d 
+	picture = GFX_report_event_fra_right_17 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_final.1.a 
+		country_event = Fontaine_final.2 
+	}
+}
+
+country_event = {
+	id = Fontaine_final.2 #结束？
+	title = Fontaine_final.2.t
+	desc = Fontaine_final.2.d 
+	picture = GFX_report_event_fra_right_17 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_final.2.a 
+	}
+	option = {
+		name = Fontaine_final.2.b 
+		country_event = Fontaine_final.3 	
+	}
+}
+
+country_event = {
+	id = Fontaine_final.3 #结束？
+	title = Fontaine_final.3.t
+	desc = Fontaine_final.3.d 
+	picture = GFX_report_event_fra_right_16
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_final.3.a 
+		set_country_flag = fontaine_stories_over
+		custom_effect_tooltip = Fontaine_final.3.a.tt
+		mark_focus_tree_layout_dirty = yes 
+		hidden_effect = {
+			FRA_Peruere_Snezhevna = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes
+				}
+			}
+		}
+		remove_ideas = Peruere_Snezhevna
+		hidden_effect = {
+			play_song = "Yorushika_Shayou"
+			add_ideas = cabinet_vacancy 
+			FRA_Peruere_Snezhevna = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_final.4 #结束？
+	title = Fontaine_final.4.t
+	desc = Fontaine_final.4.d 
+	picture = GFX_report_event_fra_right_16
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_final.4.a 
+		custom_effect_tooltip = Fontaine_final.4.tt 
+		country_event = {
+			id = Fontaine_final.6 
+			days = 1 
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.30 
+		}
+		add_popularity = {
+			ideology = fascism 
+			popularity = -0.30 
+		}
+		add_popularity = {
+			ideology = communism 
+			popularity = 0.30
+		}
+		add_popularity = {
+			ideology = democratic  
+			popularity = 0.30
+		}
+		set_country_leader_portrait = {
+			portrait = GFX_portrait_fra_Furina_de_Fontaine_final 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_final.5 #屠杀
+	title = Fontaine_final.5.t 
+	desc = Fontaine_final.5.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_Furina_10 
+
+	option = {
+		name = Fontaine_final.5.a 
+		add_stability = -0.20 
+		add_manpower = -57813
+		set_country_leader_portrait = {
+			portrait = GFX_portrait_fra_Furina_de_Fontaine_sinner 
+		}
+		set_country_flag = show_ending_window 
+		set_country_flag = show_ending
+	}
+}
+
+country_event = {
+	id = Fontaine_final.6 #任命克洛琳德
+	title = Fontaine_final.6.t 
+	desc = Fontaine_final.6.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_right_27 
+
+	option = {
+		name = Fontaine_final.6.a
+		hidden_effect = {
+			FRA_vacancy_cabinet = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes 
+				}
+			}
+			remove_ideas = cabinet_vacancy 
+		}
+		add_ideas = Clorinde_Prime_Minister 
+		FRA_Solenn_Clorinde = {
+			set_portraits = {
+				civilian = {
+					small = GFX_idea_fra_Solenn_Clorinde_PM 
+				}
+			}
+		}
+		hidden_effect = {
+			FRA_vacancy_cabinet = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+		set_country_flag = show_ending_window 
+		set_country_flag = show_ending
+	}
+}
+
+news_event = {
+	id = Fontaine_empire_news.1 #阿蕾奇诺出任55任总理
+	picture = GFX_news_event_fontaine_maid_become_leader 
+	title = Fontaine_empire_news.1.t
+	desc = Fontaine_empire_news.1.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_news.1.a 
+	}
+}
+
+news_event = {
+	id = Fontaine_empire_news.2 #戒严
+	picture = GFX_news_event_fontaine_martial_law
+	title = Fontaine_empire_news.2.t
+	desc = Fontaine_empire_news.2.d
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_news.2.a 
+	}
+}
+
+news_event = {
+	id = Fontaine_empire_news.3 #苏联远东秩序崩溃
+	picture = GFX_news_event_soviet_soldiers_ruins 
+	title =  Fontaine_empire_news.3.t
+	desc = Fontaine_empire_news.3.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_news.3.a 
+	}
+
+}
+
+country_event = {
+	id = Fontaine_empire_normal.1 #准备立法选举
+	title = Fontaine_empire_normal.1.t
+	desc = Fontaine_empire_normal.1.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_spr_franco_victory 
+
+	option = {
+		name = Fontaine_empire_normal.1.a 
+		add_political_power = 100 
+		custom_effect_tooltip = Fontaine_empire_normal.1.tt
+		set_party_name = {
+			ideology = communism 
+			long_name = Peoples_front_communist
+			name = Peoples_front_communist
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = Peoples_front_democratic
+			name = Peoples_front_democratic
+		}
+		activate_mission = fra_left_wing_won_support_from_labor
+		activate_mission = fra_sfio_strike 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.2 #超党派政治联盟
+	title = Fontaine_empire_normal.2.t
+	desc = Fontaine_empire_normal.2.d 
+	picture = GFX_report_event_fra_right_1
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.2.a 
+		show_ideas_tooltip = Peruere_Snezhevna 
+		custom_effect_tooltip = Fontaine_empire_normal.2.tt
+		france_parliament_stat_seat_from_ideology_support = yes 
+		france_parliament_stat_seat_and_frames = yes 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.3 #带来秩序
+	title = Fontaine_empire_normal.3.t
+	desc = Fontaine_empire_normal.3.d
+	picture = GFX_report_event_fra_right_2 
+	is_triggered_only = yes
+
+	option = {
+		name = Fontaine_empire_normal.3.a 
+		show_ideas_tooltip = Wriothesley 
+		custom_effect_tooltip = Fontaine_empire_normal.3.tt
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.6
+				days = 10
+				random_days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.4 #铁路所及之处
+	title = Fontaine_empire_normal.4.t
+	desc = Fontaine_empire_normal.4.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_strike_2
+
+	option = {
+		name = Fontaine_empire_normal.4.a 
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = fascism 
+			popularity = 0.05 
+		}
+		custom_effect_tooltip = Fontaine_empire_normal.4.tt
+		france_parliament_stat_seat_from_ideology_support = yes 
+		france_parliament_stat_seat_and_frames = yes 
+		custom_effect_tooltip = the_expection_has_updated
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.5 
+				days = 3
+				random_days = 2 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.5 #社论
+	picture = GFX_report_event_fra_charlotte_7
+	title = Fontaine_empire_normal.5.t
+	desc = Fontaine_empire_normal.5.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.5.a 
+		add_political_power = -10 
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.02 
+		}
+		custom_effect_tooltip = Fontaine_empire_normal.5.tt
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.6 #布鲁姆被殴打
+	picture = GFX_report_event_fra_right_3
+	title = Fontaine_empire_normal.6.t 
+	desc = Fontaine_empire_normal.6.d 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			set_country_flag = fra_blum_wounded
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_normal.6.a 
+		custom_effect_tooltip = Fontaine_empire_normal.6.tt
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.02 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.7 #阴影中的暗流
+	title = Fontaine_empire_normal.7.t
+	desc = Fontaine_empire_normal.7.d 
+	picture = GFX_report_event_spr_Caballero 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.7.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.8 #投票日
+	is_triggered_only = yes 
+	trigger = {
+		original_tag = FRA
+		has_completed_focus = FRA_because_her_morality 
+		has_country_flag = fra_furina_come_to_france 
+		date > 1936.1.1
+		date < 1937.1.1
+		has_elections = yes 
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.9
+				days = 3 
+			}
+		}
+	}
+	title = Fontaine_empire_normal.8.t
+	desc = Fontaine_empire_normal.8.d 
+
+	picture = GFX_report_event_fra_right_4 
+	
+	option = {
+		name = Fontaine_empire_normal.8.a 
+		custom_effect_tooltip = Fontaine_empire_normal.8.tt 
+	}
+
+}
+
+country_event = {
+	id = Fontaine_empire_normal.9 #计票结果
+	title = Fontaine_empire_normal.9.t
+	desc = Fontaine_empire_normal.9.d 
+	is_triggered_only = yes 
+	immediate = {
+		hidden_effect = {
+			set_country_flag = fontaine_1936_election_has_finished
+			mark_focus_tree_layout_dirty = yes 
+		}
+	}
+
+	picture = GFX_report_event_fra_right_5 
+
+	option = {
+		name = Fontaine_empire_normal.9.a 
+		country_event = {
+			id = Fontaine_empire_normal.10
+			days = 3
+		}
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = yes 
+				}
+			}
+			remove_ideas = assemblee_nationale 
+		}
+		add_ideas = Peruere_Snezhevna 
+		set_country_leader_ideology = guided_democracy  
+		set_party_name = {
+			ideology = democratic 
+			long_name = national_union_democratic
+			name = national_union_democratic
+		}
+		hidden_effect = {
+			FRA_Assemblee_nationale = {
+				set_can_be_fired_in_advisor_role = {
+					value = no 
+				}
+			}
+		}
+   		custom_effect_tooltip = Fontaine_empire_normal.9.tt 
+		hidden_effect = {
+			news_event = Fontaine_empire_news.1 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.10 #第一天
+	picture = GFX_report_event_fra_right_6 
+	title = Fontaine_empire_normal.10.t
+	desc = Fontaine_empire_normal.10.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.10.a 
+		add_political_power = -100 
+		add_ideas = fra_right_wing_strike 
+		country_event = {
+			id = Fontaine_empire_normal.11
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.11 #到巴黎去
+	picture = GFX_report_event_fra_commune_14 
+	title = Fontaine_empire_normal.11.t 
+	desc = Fontaine_empire_normal.11.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.11.a 
+		FRC = {
+			transfer_state = 29 
+			add_state_core = 29 
+		}
+		17 = { set_demilitarized_zone = yes }
+		1050 = { set_demilitarized_zone = yes }
+		1051 = { set_demilitarized_zone = yes }
+
+		country_event = {
+			id = Fontaine_empire_normal.12
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.12 #工作报告
+	picture = GFX_report_event_fra_right_7
+	title = Fontaine_empire_normal.12.t 
+	desc = Fontaine_empire_normal.12.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.12.a 
+		custom_effect_tooltip = Fontaine_empire_normal.12.tt
+		FRC = {
+			transfer_state = 17
+			add_state_core = 17
+			transfer_state = 1050
+			add_state_core = 1050
+			transfer_state = 1051
+			add_state_core = 1051
+		}
+		18 = { set_demilitarized_zone = yes }
+		27 = { set_demilitarized_zone = yes }
+		20 = { set_demilitarized_zone = yes }
+		17 = { set_demilitarized_zone = no }
+		1050 = { set_demilitarized_zone = no }
+		1051 = { set_demilitarized_zone = no }
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.13
+				days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.13 #戒严
+	picture = GFX_report_event_fra_right_8 
+	title = Fontaine_empire_normal.13.t
+	desc = Fontaine_empire_normal.13.d
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.13.a 
+		add_stability = 0.20 
+		swap_ideas = {
+			remove_idea = fra_right_wing_strike
+			add_idea = fra_martial_law 
+		}
+		FRC = {
+			transfer_state = 18
+			transfer_state = 27
+			transfer_state = 20
+			add_state_core = 18
+			add_state_core = 27
+			add_state_core = 20 
+			hidden_effect = {
+				load_oob = FRC_1936
+			}
+		}
+		18 = { set_demilitarized_zone = no }
+		27 = { set_demilitarized_zone = no }
+		20 = { set_demilitarized_zone = no }
+		hidden_effect = {
+			news_event = Fontaine_empire_news.2 
+		}
+		custom_effect_tooltip = Fontaine_empire_normal.13.tt2
+		set_country_flag = fontaine_martial_law_started
+		custom_effect_tooltip = Fontaine_empire_normal.13.tt 
+		hidden_effect = {
+			remove_ideas = FRA_full_employment
+			remove_ideas = FRA_inefficient_economy_2
+			remove_ideas = FRA_inefficient_economy_1 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.14 #心声
+	title = Fontaine_empire_normal.14.t
+	desc = Fontaine_empire_normal.14.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fra_right_9 
+	immediate = {
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = fra_martial_law 
+				add_idea = fra_martial_law_further 
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no 
+			}
+			set_popularities = {
+				neutrality = 65
+				fascism = 10 
+				democratic = 21
+				communism = 4
+			}
+			set_cosmetic_tag = Fontaine_under_martial_law 
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_normal.14.a 
+		add_country_leader_role = {
+			character = FRA_Furina_de_Fontaine
+			promote_leader = yes 
+			country_leader = {
+				ideology = furinaism  
+				traits = {
+					dim_star 
+				}
+			}
+		}
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = fra_martial_law 
+				add_idea = fra_martial_law_further 
+			}
+		}
+		country_event = {
+			id = Fontaine_empire_normal.15
+			days = 5 
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_normal.14.b
+		add_country_leader_role = {
+			character = FRA_Furina_de_Fontaine
+			promote_leader = yes 
+			country_leader = {
+				ideology = furinaism 
+				traits = {
+					dim_star 
+				}
+			}
+		}
+		hidden_effect = {
+			add_ideas = fra_collapse_of_grand_narrative
+		}
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = fra_martial_law 
+				add_idea = fra_martial_law_further 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.15 #在兰斯的废墟中
+	picture = GFX_report_event_fra_strike_3
+	title = Fontaine_empire_normal.15.t 
+	desc = Fontaine_empire_normal.15.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.15.a 
+		add_ideas = fra_collapse_of_grand_narrative 
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.01 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.16 #解严
+	picture = GFX_report_event_fra_commune_13 
+	title = Fontaine_empire_normal.16.t
+	desc = Fontaine_empire_normal.16.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.16.a 
+		add_political_power = 100 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.17 #加冕
+	picture = GFX_report_event_fra_right_10
+	title = Fontaine_empire_normal.17.t 
+	desc = Fontaine_empire_normal.17.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.17.a 
+		hidden_effect = {
+			set_cosmetic_tag = FRA_fontaine_empire 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.18 #法国提议攻击英国
+	title = Fontaine_empire_normal.18.t 
+	desc = Fontaine_empire_normal.18.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.18.a 
+		FRA = {
+			country_event = {
+				id = Fontaine_empire_normal.19 
+				days = 3
+			}
+		}
+		ai_chance = {
+			base = 1 
+		}
+	}
+
+	option = {
+		name = Fontaine_empire_normal.18.b 
+		FRA = {
+			country_event = {
+				id = Fontaine_empire_normal.20
+				days = 3
+			}
+		}
+		ai_chance = {
+			base = 4 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.19 
+	title = Fontaine_empire_normal.19.t 
+	desc = Fontaine_empire_normal.19.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_eng_blackshirt_march 
+
+	option = {
+		name = Fontaine_empire_normal.19.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.20 
+	title = Fontaine_empire_normal.20.t 
+	desc = Fontaine_empire_normal.20.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_eng_blackshirt_march 
+
+	option = {
+		name = Fontaine_empire_normal.20.a 
+		set_global_flag = fontaine_ireland_union
+		add_war_support = 0.05 
+		add_to_variable = { fontaine_military_power = 10 }
+		custom_effect_tooltip = fontaine_add_military_power_10 
+		IRE = {
+			add_ai_strategy = {
+				type = front_unit_request
+				tag = ENG 
+				value = 500 
+			}
+			add_war_support = 0.20 
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4 
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				producer = FRA 
+				amount = 3000 
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				producer = FRA 
+				amount = 500
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.21 #远东离心
+	hidden = yes 
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		days = 7 
+	}
+	trigger = {
+		original_tag = SOV 
+		surrender_progress > 0.69 
+		has_war_with = FRA 
+		FRA = { has_country_flag = fra_furina_come_to_france }
+	}
+	immediate = {
+		ZZZ = {
+			transfer_state = 564
+			transfer_state = 566 
+			transfer_state = 565 
+			transfer_state = 563
+			transfer_state = 561 
+			transfer_state = 657 
+			transfer_state = 560 
+			transfer_state = 409 
+			transfer_state = 408 
+			transfer_state = 655 
+			transfer_state = 574 
+			transfer_state = 562 
+			transfer_state = 874 
+			transfer_state = 637 
+			transfer_state = 822 
+			transfer_state = 875 
+			transfer_state = 644 
+			transfer_state = 877 
+			transfer_state = 876 
+			transfer_state = 575 
+			transfer_state = 576
+		}
+		country_event = {
+			id = Fontaine_empire_normal.22 
+			days = 5
+			random_days = 5 
+		}
+
+		country_event = {
+			id = Fontaine_empire_normal.23
+			days = 10
+			random_days = 10 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.22 #日本占领萨哈林
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		if = {
+			limit = {
+				JAP = {
+					controls_state = 537 
+				}
+			}
+			JAP = {
+				transfer_state = 655
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.23 #远东全俄罗斯政府
+	hidden = yes 
+	is_triggered_only = yes 
+
+	immediate = {
+		YAK = {
+			transfer_state = 563 
+			add_state_core = 563 
+			set_cosmetic_tag = RUS_government
+			set_politics = {
+				ruling_party = neutrality
+			}
+			set_popularities = {
+				neutrality = 56
+				democratic = 18
+				fascism = 6 
+				communism = 20 
+			}
+			kill_ideology_leader = neutrality
+			create_country_leader = {
+				name = "Anton Denikin"
+				picture = "gfx/leaders/SOV/portrait_SOV_anton_denikin.dds"
+				traits = {
+					member_of_the_suojeluskunta_improved
+				}
+				ideology = junta 
+			}
+			create_corps_commander = {
+				name = "Anton Denikin"
+				picture = "gfx/leaders/SOV/portrait_SOV_anton_denikin.dds"
+				skill = 4
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 2
+				traits = {
+					organizer
+					logistics_wizard 
+					career_officer
+					war_hero 
+				}
+			}
+			division_template = {
+				name = "Russia Guardian Army"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					artillery = {
+						x = 0 
+						y = 0 
+					}
+					engineer = {
+						x = 0 
+						y = 1 
+					}
+				}
+			}
+			set_capital = {
+				state = 563 
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Russia Guardian Army\" division_template = \"Russia Guardian Army\" start_experience_factor = 0.4"  
+					owner = YAK 
+				}
+				create_unit = {
+					division = "name = \"Russia Guardian Army\" division_template = \"Russia Guardian Army\" start_experience_factor = 0.4"  
+					owner = YAK 
+				}
+				create_unit = {
+					division = "name = \"Russia Guardian Army\" division_template = \"Russia Guardian Army\" start_experience_factor = 0.4"  
+					owner = YAK 
+				}
+				create_unit = {
+					division = "name = \"Russia Guardian Army\" division_template = \"Russia Guardian Army\" start_experience_factor = 0.4"  
+					owner = YAK 
+				}
+				create_unit = {
+					division = "name = \"Russia Guardian Army\" division_template = \"Russia Guardian Army\" start_experience_factor = 0.4"  
+					owner = YAK 
+				}
+			}
+		}
+		BYA = {
+			transfer_state = 564 
+			transfer_state = 566 
+		}
+		country_event = {
+			id = Fontaine_empire_normal.24 
+			days = 7 
+		}
+	}
+
+}
+
+country_event = {
+	id = Fontaine_empire_normal.24 #全俄罗斯政府扩张
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		YAK = {
+			declare_war_on = {
+				target = BYA  
+				type = annex_everything 
+			}
+			add_state_core = 564 
+			transfer_state = 565 
+			transfer_state = 574
+			add_state_core = 565
+			add_state_core = 574 
+			transfer_state = 575
+			add_state_core = 575
+		}
+		FER = {
+			set_cosmetic_tag = FER_far_east_military_government
+			add_ideas = russia_here_japanese_comes
+			add_ideas = russia_red_army_of_vasilevsky 
+			set_politics = {
+				ruling_party = communism 
+			}
+			set_popularities = {
+				communism = 78
+				neutrality = 22 
+			}
+			kill_ideology_leader = communism 
+			SOV = {
+				SOV_aleksandr_vasilevsky = {
+					set_nationality = FER 
+				}
+			}
+			SOV_aleksandr_vasilevsky = {
+				add_country_leader_role = {
+					promote_leader = yes 
+					country_leader = {
+						ideology = stalinism 
+						traits = {
+							jefe 
+						}
+					}
+				}
+			}
+			transfer_state = 561
+			transfer_state = 657
+			transfer_state = 560 
+			transfer_state = 409
+			transfer_state = 408 
+
+			load_oob = FarEast_RedArmy 
+
+			set_technology = {
+	interwar_artillery = 1 
+	artillery1 = 1
+	artillery2 = 1
+	artillery3 = 1
+						
+	interwar_antitank = 1 
+	antitank1 = 1
+	antitank2 = 1
+
+	armor_tech_1 = 1
+	armor_tech_2 = 1 
+	basic_medium_tank_chassis = 1 
+	improved_medium_tank_chassis = 1
+	basic_heavy_tank_chassis = 1
+	improved_heavy_tank_chassis = 1 
+
+	radio = 1
+	improved_radio = 1 
+	tech_maintenance_company = 1
+	tech_maintenance_company2 = 1 
+	tech_logistics_company = 1
+	tech_logistics_company2 = 1 
+
+	special_forces_mountaineers = 1
+
+	mechanised_infantry = 1 
+	mechanised_infantry2 = 1 
+}
+
+complete_special_project = sp:sp_air_helicopter
+complete_special_project = sp:sp_land_military_engineering_vehicles
+
+add_equipment_to_stockpile = {
+	type = train_equipment
+	amount = 20 
+}
+
+add_equipment_to_stockpile = {
+	type = motorbike_equipment
+	amount = 1000 
+}
+
+add_equipment_to_stockpile = {
+	type = helicopter_equipment
+	amount = 50 
+}
+
+set_technology = {
+	sp_armored_engineer_tech = 1 
+}
+
+country_lock_all_division_template = yes 
+
+create_equipment_variant = {
+	type = medium_tank_chassis_2 
+	name = "Tank Medium 1940"
+	modules = {
+		main_armament_slot = tank_medium_howitzer_2 
+		turret_type_slot = tank_medium_three_man_tank_turret
+		suspension_type_slot = tank_bogie_suspension 
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+		special_type_slot_1 = tank_radio_2
+		special_type_slot_2 = sloped_armor
+		special_type_slot_3 = secondary_turret_hmg   
+		special_type_slot_4 = easy_maintenance 
+	}
+	upgrades = {
+		tank_nsb_armor_upgrade = 4
+		tank_nsb_engine_upgrade = 0 
+	}
+}
+create_equipment_variant = {
+	name = "1942 Tank Destoryer"
+	type = heavy_tank_destroyer_chassis_2 
+	modules = {
+		main_armament_slot = tank_heavy_cannon_2 				#主武器
+		turret_type_slot = tank_heavy_three_man_tank_turret		#炮塔
+		suspension_type_slot = tank_bogie_suspension			#悬挂
+		armor_type_slot = tank_welded_armor						#装甲
+		engine_type_slot = tank_gasoline_engine				#引擎
+		special_type_slot_1 = easy_maintenance
+		special_type_slot_2 = sloped_armor 
+		special_type_slot_3 = expanded_fuel_tank 
+		special_type_slot_4 = dozer_blade 
+		}
+
+		upgrades = {
+			tank_nsb_engine_upgrade = 0 
+			tank_nsb_armor_upgrade = 9 
+		}
+	}
+
+			408 = {
+				set_demilitarized_zone = yes 
+			}
+			set_capital = {
+				state = 657 
+			}
+
+			country_event = {
+				id = Fontaine_empire_normal.25
+				days = 5 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.25 #进一步崩溃
+	is_triggered_only = yes 
+
+	immediate = {
+		YAK = {
+			annex_country = {
+				target = BAY 
+			}
+			transfer_state = 566
+			add_state_core = 566 
+			set_cosmetic_tag = RUS_government_long 
+		}
+		FER = {
+			transfer_state = 562
+			transfer_state = 874
+			transfer_state = 637 
+		}
+		country_event = {
+			id = Fontaine_empire_normal.26
+			days = 14 
+		}
+	}
+	option = {
+		news_event = Fontaine_empire_news.3 
+	}  
+}
+
+country_event = {
+	id = Fontaine_empire_normal.26 #中西伯利亚
+	is_triggered_only = yes 
+	immediate = {
+		TAY = {
+			transfer_state = 568
+			transfer_state = 567
+			add_state_core = 568
+			add_state_core = 567 
+			remove_state_core = 516
+			remove_state_core = 878
+			set_capital = {
+				state = 567 
+			}
+			kill_ideology_leader = communism 
+			set_party_name = {
+				ideology = communism 
+				long_name = "TAY_local_soviet"
+				name = "TAY_local_soviet"
+			}
+			create_country_leader = {
+				name = "安加拉地方自治苏维埃"
+				picture = "gfx/leaders/SOV/portrait_SOV_Angarsk_Local_Soviet.png"
+				ideology = anarchist_communism 
+			}
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = yes
+				election_frequency = 60 
+			}
+			set_popularities = {
+				communism = 54
+				neutrality = 46 
+			}
+			set_cosmetic_tag = Angarsk_Local_Soviet
+		}
+		ZZZ = {
+			transfer_state = 516
+			transfer_state = 878
+			transfer_state = 824
+			transfer_state = 577 
+		}
+		release = ALT 
+		ALT = {
+			transfer_state = 570
+			transfer_state = 569 
+			transfer_state = 578 
+			add_state_core = 570
+			add_state_core = 569
+			add_state_core = 578 
+			transfer_state = 40
+			transfer_state = 654
+			set_capital = {
+				state = 570 
+			}
+			set_popularities = {
+				neutrality = 78
+				communism = 22
+			}
+			set_politics = {
+				ruling_party = neutrality
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = "ALT_civilwar"
+				name = "ALT_civilwar"
+			}
+			kill_ideology_leader = neutrality
+			create_country_leader = {
+				name = "康斯坦丁·涅恰耶夫"
+				picture = "gfx/leaders/SOV/portrait_SOV_konstantin_nechayev.png"
+				ideology = junta 
+				traits = {
+					jefe 
+				}
+			}
+			set_cosmetic_tag = Siberia_junta
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.27 #贝利亚政变
+	fire_only_once = yes 
+	trigger = {
+		original_tag = SOV 
+		ALT = { exists = yes }
+		USG = { exists = no }
+		FRA = { 
+			has_war_with = SOV 
+			has_country_flag = fra_furina_come_to_france 
+		}
+		surrender_progress > 0.79 
+	}
+	immediate = {
+		retire_character = SOV_iosif_stalin
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no 
+		}
+		set_popularities = {
+			neutrality = 59
+			communism = 41
+		}
+		if = {
+			limit = {
+				has_dlc = "La Resistance"
+			}
+			add_country_leader_role = {
+				character = "SOV_lavrenty_beriya"
+				country_leader = {
+					ideology = oligarchism 
+					traits = { unscrupulous_orchestrator }
+					expire = "1953.12.23.1"
+				}
+				promote_leader = yes
+			}
+		}
+		else = {
+			add_country_leader_role = {
+				character = "SOV_lavrenty_beriya"
+				country_leader = {
+					ideology = oligarchism
+					traits = { unscrupulous_orchestrator_no_lar }
+					expire = "1953.12.23.1"
+				}
+				promote_leader = yes
+			}
+		}
+		set_cosmetic_tag = SOV_stalinist 
+		USG = {
+			add_state_core = 572
+			transfer_state = 572 
+			add_state_core = 403
+			transfer_state = 403
+			add_state_core = 653
+			transfer_state = 653
+			add_state_core = 580
+			transfer_state = 580
+			add_state_core = 579
+			transfer_state = 579
+			add_state_core = 571
+			transfer_state = 571
+			transfer_state = 573 
+			add_state_core = 573 
+			transfer_state = 581 
+			add_state_core = 581  
+			transfer_state = 577 
+			add_state_core = 577  
+			load_oob = USG 
+		}
+		SOV_nikolay_vatutin = {
+			set_nationality = USG 
+		}
+		SOV_ivan_konev = {
+			set_nationality = USG 
+		}
+		SOV_semyon_timoshenko = {
+			set_nationality = USG 
+		}
+		SOV_kliment_voroshilov = {
+			set_nationality = USG 
+		}
+		SOV_andrey_yeryomenko = {
+			set_nationality = USG 
+		}
+
+		KAZ = {
+			transfer_state = 407
+			transfer_state = 406 
+			transfer_state = 402 
+			transfer_state = 404 
+			transfer_state = 587 
+			transfer_state = 586 
+			transfer_state = 881 
+			transfer_state = 589 
+			transfer_state = 588 
+			transfer_state = 882 
+			transfer_state = 583 
+			transfer_state = 590 
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = no 
+			}
+			set_popularities = {
+				communism = 45
+				neutrality = 40
+				democratic = 15 
+			}
+			set_cosmetic_tag = KAZ_socialist_republican
+		}
+
+		TMS = {
+			transfer_state = 832
+			transfer_state = 584 
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no 
+			}
+			set_popularities = {
+				neutrality = 98
+				communism = 2 
+			}
+		}
+
+		KKP = {
+			transfer_state = 823
+			transfer_state = 831 
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = no 
+			}
+			set_popularities = {
+				communism = 68
+				democratic = 32
+			}
+		}
+
+		UZB = {
+			transfer_state = 585
+			transfer_state = 830
+			transfer_state = 405
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = no 
+			}
+			set_popularities = {
+				communism = 76
+				fascism = 20
+				democratic = 1
+				neutrality = 3
+			}
+		}
+
+		TAJ = {
+			transfer_state = 742
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = no 
+			}
+			set_popularities = {
+				communism = 76
+				fascism = 24
+			}
+		}
+
+		KYR = {
+			transfer_state = 732
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = no 
+			}
+			set_popularities = {
+				communism = 100
+			}
+		}
+
+		FRA = {
+			country_event = {
+				id = Fontaine_empire_normal.28
+				days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.28 #苏联已无有组织抵抗
+	title = Fontaine_empire_normal.28.t 
+	desc = Fontaine_empire_normal.28.d 
+	picture = GFX_report_event_SOV_mongolia_fortify_border
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.28.a 
+		white_peace = SOV 
+		transfer_state = 196
+		transfer_state = 137
+		UKR = {
+			transfer_state = 93
+			transfer_state = 194
+			transfer_state = 201
+			transfer_state = 199 
+			transfer_state = 198 
+			transfer_state = 834
+			transfer_state = 192
+			transfer_state = 197 
+			transfer_state = 202 
+			transfer_state = 193 
+			transfer_state = 203 
+			transfer_state = 226 
+			transfer_state = 200 
+			transfer_state = 227 
+			transfer_state = 218 
+			transfer_state = 228 
+			transfer_state = 221 
+			transfer_state = 240 
+			transfer_state = 259 
+			transfer_state = 225 
+			transfer_state = 1078 
+			transfer_state = 1079 
+			transfer_state = 94 
+		}
+		POL = {
+			transfer_state = 91
+			transfer_state = 89 
+			
+		}
+		BLR = {
+			#transfer_state = 1030 
+			transfer_state = 95 
+			transfer_state = 96 
+			
+			transfer_state = 207 
+			transfer_state = 206 
+			transfer_state = 204 
+		}
+		LAT = {
+			transfer_state = 189
+			transfer_state = 188 
+			transfer_state = 11
+			transfer_state = 814
+			transfer_state = 815
+			transfer_state = 808
+			transfer_state = 809 
+			transfer_state = 12 
+			transfer_state = 810
+			transfer_state = 190
+			transfer_state = 13
+			transfer_state = 191 
+			transfer_state = 812
+			transfer_state = 813
+			transfer_state = 811 
+			transfer_state = 784 
+			transfer_state = 1077 
+			transfer_state = 1073 
+			transfer_state = 97 
+		}
+		KUB = {
+			transfer_state = 234
+			transfer_state = 235
+			add_state_core = 234
+			add_state_core = 235
+			transfer_state = 1119 
+		}
+		GEO = {
+			transfer_state = 231
+			transfer_state = 826
+			transfer_state = 233
+			transfer_state = 827
+			transfer_state = 828
+			transfer_state = 821
+			transfer_state = 232
+			transfer_state = 230
+			transfer_state = 229 
+		}
+		RMC = {
+			transfer_state = 195
+			transfer_state = 208
+			transfer_state = 244
+			transfer_state = 264
+			transfer_state = 209
+			transfer_state = 263
+			transfer_state = 210
+			transfer_state = 246
+			transfer_state = 247
+			transfer_state = 242
+			transfer_state = 219
+			transfer_state = 241 
+			transfer_state = 248
+			transfer_state = 401 
+			transfer_state = 253
+			transfer_state = 243
+			transfer_state = 205
+			transfer_state = 223
+			transfer_state = 254
+			transfer_state = 255
+			transfer_state = 222
+			transfer_state = 258
+			transfer_state = 257
+			transfer_state = 224
+			transfer_state = 220
+			transfer_state = 260
+			transfer_state = 265
+			transfer_state = 239
+			transfer_state = 829
+			transfer_state = 265
+			transfer_state = 245
+			transfer_state = 217
+			transfer_state = 238
+			transfer_state = 237
+			transfer_state = 236
+		}
+
+		GSR = {
+			transfer_state = 252 
+			transfer_state = 256
+			transfer_state = 249 
+			#transfer_state = 651 
+			#transfer_state = 582 
+			transfer_state = 250 
+			transfer_state = 251 
+			transfer_state = 652
+			transfer_state = 1120 
+			load_oob = GSR 
+			add_ideas = russia_fertile_soil
+			add_ideas = russia_army_of_traitor 
+			every_owned_state = {
+				add_core_of = GSR 
+			}
+		}
+
+		BSK = {
+			transfer_state = 651 
+		}
+
+		MNG = {
+			transfer_state = 582 
+			add_state_core = 582 
+			load_oob = MNG 
+			GER = {
+				random_army_leader = {
+					set_nationality = MNG 
+				}
+			}
+		}
+
+		KAR = {
+			transfer_state = 213
+			transfer_state = 215
+			transfer_state = 216
+			transfer_state = 879
+			every_owned_state = {
+				add_core_of = KAR 
+			}
+
+			recruit_character = KAR_Vladimir_Kirpichnikov
+			KAR_Vladimir_Kirpichnikov = {
+				promote_character = yes 
+			}
+			set_politics = {
+				ruling_party = neutrality 
+			}
+			set_popularities = {
+				neutrality = 98
+				communism = 2 
+			}
+			add_ideas = russia_walking_on_the_ice 
+			set_cosmetic_tag = KAR_Junta 
+			set_party_name = {
+				ideology = neutrality
+				long_name = KAR_neutrality_party_junta
+				name = KAR_neutrality_party_junta
+			}
+		}
+
+		set_province_name = {
+			id = 3529 
+			name = RKM_VICTORY_POINTS_3529 
+		}
+
+		set_province_name = {
+			id = 3151
+			name = RKM_VICTORY_POINTS_3151
+		}
+
+		set_autonomy = {
+			target = UKR 
+			autonomy_state = autonomy_colony
+		}
+		set_autonomy = {
+			target = BLR  
+			autonomy_state = autonomy_colony
+		}
+		set_autonomy = {
+			target = LAT  
+			autonomy_state = autonomy_colony
+		}
+		set_autonomy = {
+			target = RMC  
+			autonomy_state = autonomy_colony
+		}
+		set_autonomy = {
+			target = GEO  
+			autonomy_state = autonomy_colony
+		}
+		set_autonomy = {
+			target = KUB  
+			autonomy_state = autonomy_colony
+		}
+
+		RMC = {
+			FRA = {
+				FRA_charles_huntziger = {
+					set_nationality = RMC 
+				}
+			}
+			FRA_charles_huntziger = {
+				add_country_leader_role = {
+					promote_leader = yes 
+					country_leader = {
+						ideology = junta 
+					}
+				}
+			}
+			set_cosmetic_tag = RMC_reconstruct_government
+		}
+		LAT = {
+			activate_decision = form_baltic_federation 
+		}
+		GEO = {
+			activate_decision = form_transcaucasian_republic
+		}
+		SOV = {
+			set_capital = {
+				state = 400 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.29 #罪名研究
+	title = Fontaine_empire_normal.29.t
+	desc = Fontaine_empire_normal.29.d 
+	picture = GFX_report_event_fra_right_20 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.29.a 
+		country_event = {
+			id = Fontaine_empire_normal.30
+			days = 3 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.30 #审判以后
+	title = Fontaine_empire_normal.30.t
+	desc = Fontaine_empire_normal.30.d 
+	picture = GFX_report_event_fra_right_19
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.30.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.31 
+				days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.31 #一具普通的尸体
+	title = Fontaine_empire_normal.31.t
+	desc = Fontaine_empire_normal.31.d 
+	picture = GFX_report_event_fra_right_18 
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.31.a 
+		ITA = {
+			retire_character = ITA_benito_mussolini 
+			add_popularity = {
+				ideology = fascism 
+				popularity = -0.30 
+			}
+			add_war_support = -0.10 
+			add_stability = 0.20 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.32 #年轻者
+	title = Fontaine_empire_normal.32.t 
+	desc = Fontaine_empire_normal.32.d 
+	picture = GFX_report_event_fra_right_21
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.32.a 
+		country_event = {
+			id = Fontaine_empire_normal.33 
+			days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.33 #爱慕者
+	title = Fontaine_empire_normal.33.t 
+	desc = Fontaine_empire_normal.33.d 
+	picture = GFX_report_event_fra_right_22
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.33.a 
+		country_event = {
+			id = Fontaine_empire_normal.34
+			days = 7 
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.34 #洞察者
+	title = Fontaine_empire_normal.34.t 
+	desc = Fontaine_empire_normal.34.d 
+	picture = GFX_report_event_fra_right_23
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.34.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.35 #关于枫丹新人的形成
+	title = Fontaine_empire_normal.35.t 
+	desc = Fontaine_empire_normal.35.d 
+	picture = GFX_report_event_fra_right_25
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_coordination 
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	option = {
+		name = Fontaine_empire_normal.35.a 
+		hidden_effect = {
+			country_event = {
+				id = Fontaine_empire_normal.36 
+				days = 30
+				random_days = 20 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.36 #关于枫丹新人的形成 - 记录
+	title = Fontaine_empire_normal.36.t 
+	desc = Fontaine_empire_normal.36.d 
+	picture = GFX_report_event_fra_right_24
+	is_triggered_only = yes 
+
+	option = {
+		name = Fontaine_empire_normal.36.a 
+	}
+}
+
+country_event = {
+	id = Fontaine_empire_normal.37 #
+	title = Fontaine_empire_normal.37.t 
+	desc = Fontaine_empire_normal.37.d 
+	picture = GFX_report_event_fra_right_26
+	fire_only_once = yes
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_a_great_promise 
+	}
+	mean_time_to_happen = {
+		days = 50
+	}
+
+	option = {
+		name = Fontaine_empire_normal.37.a 
+	}
+}

@@ -1,0 +1,17 @@
+state = {
+	id = 1069
+	name = 1069_Hwy_1
+	manpower = 10 
+	state_category = wasteland
+	history = {
+		owner = FAG 
+		add_core_of = ALG 
+		buildings = {
+			infrastructure = 4 
+		}
+		add_dynamic_modifier = {
+			modifier = Sahara_HighWay 
+		}
+	}
+	provinces = { 13415 13416 13417 13418 13419 13420 13421 }
+}

@@ -1,0 +1,175 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_vieille_garde_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_vieille_garde.png"
+	}
+	spriteType = { 
+		name = "GFX_div_templ_121_large"	
+		textureFile = "gfx/interface/counters/division_templates_large/custom_template_109.png" 
+	}
+	spriteType = {
+		name = "GFX_unit_vieille_garde_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_vieille_garde.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_vieille_garde_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_vieille_garde.png"
+		noOfFrames = 2 
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_unit_vieille_garde_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_vieille_garde.png"
+		noOfFrames = 2 
+	}
+	###
+	spriteType = {
+		name = "GFX_support_air_assault_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_air_assault_company_icon.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_air_assault_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_air_assault_company_icon.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_air_assault_company_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_air_assault_company_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_support_medium_tank_antiair_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_medium_tank_antiair_icon.dds" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_medium_tank_antiair_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_medium_tank_antiair_icon.dds" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_medium_tank_antiair_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_medium_tank_antiair_icon.dds"
+	}
+	###
+	spriteType = {
+		name = "GFX_archetype_Attack_Helicopter_medium"
+		texturefile = "gfx/interface/technologies/Attack_Helicopter.png"
+	}	
+	spriteType = {
+		name = "GFX_Attack_Helicopter_medium"
+		textureFile = "gfx/interface/technologies/Attack_Helicopter.png"
+	}
+	###
+	spriteType = {
+		name = "GFX_mechanized_vieille_garde_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mechanized_vieille_garde.png"
+	}
+	spriteType = {
+		name = "GFX_unit_mechanized_vieille_garde_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mechanized_vieille_garde.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_mechanized_vieille_garde_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mechanized_vieille_garde.png"
+		noOfFrames = 2 
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_unit_mechanized_vieille_garde_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mechanized_vieille_garde.png"
+		noOfFrames = 2 
+	}
+	###
+	spriteType = {
+		name = "GFX_fontaine_artillery_machinery_medium"
+		textureFile = "gfx/interface/technologies/Fontaine_artillery_machinery.png"
+	}
+	spriteType = {
+		name = "GFX_archetype_fontaine_artillery_machinery_medium"
+		textureFile = "gfx/interface/technologies/Fontaine_artillery_machinery.png"
+	}
+	spriteType = {
+		name = "GFX_fontaine_attackive_machinery_medium"
+		textureFile = "gfx/interface/technologies/Fontaine_attactive_machinery.png"
+	}
+	spriteType = {
+		name = "GFX_fontaine_defence_machinery_medium"
+		textureFile = "gfx/interface/technologies/Fontaine_defence_machinery.png"
+	}
+	spriteType = {
+		name = "GFX_unit_defence_machinery_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_fontaine_defence_machinery.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_defence_machinery_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_defence_machinery.png"
+		noOfFrames = 2 
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_unit_defence_machinery_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_defence_machinery.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_attackive_machinery_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_fontaine_attactive_machinery.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_attackive_machinery_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fontaine_attactive_machinery.png"
+		noOfFrames = 2 
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_unit_attackive_machinery_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fontaine_attactive_machinery.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_artillery_machinery_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_fontaine_artillery_machinery.png" 
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_unit_artillery_machinery_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fontaine_artillery_machinery.png"
+		noOfFrames = 2 
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_unit_artillery_machinery_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fontaine_artillery_machinery.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_SMI_ship_water_battery_heavy"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/heavy_battery_icn_4.dds"
+	}
+	spriteType = {
+		name = "GFX_SMI_ship_water_secondaries"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/secondary_battery_icn_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tech_equipment_attack_helicopter_medium"
+		textureFile = "gfx/interface/technologies/tech_equipment_attack_helicopter_medium.png"
+	}
+	spriteType = {
+		name = "GFX_tech_unit_attack_helicopter_support_company_1_medium"
+		textureFile = "gfx/interface/technologies/tech_unit_attack_helicopter_support_company_1.png"
+	}
+	spriteType = {
+		name = "GFX_tech_unit_attack_helicopter_support_company_2_medium"
+		textureFile = "gfx/interface/technologies/tech_unit_attack_helicopter_support_company_2.png"
+	}
+	spriteType = {
+		name = "GFX_tech_unit_attack_helicopter_support_company_3_medium"
+		textureFile = "gfx/interface/technologies/tech_unit_attack_helicopter_support_company_3.png"
+	}
+}

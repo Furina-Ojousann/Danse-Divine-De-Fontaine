@@ -1,0 +1,22 @@
+Fontaine_special = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	can_use = {
+		ROOT = {
+			has_country_flag = fra_furina_come_to_france
+			has_completed_focus = FRA_Furina_de_Fontaine_class_battleship 
+		}
+	}
+
+	for_countries = { FRA }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }			
+
+	prefix = "FRN "
+	fallback_name = "FRN Cuirassés %d"					
+
+	unique = {											
+		"芙卡洛斯" "枫丹" "雷穆利亚" "梅洛皮斯" "白露" "莫尔泰" "亥珀波瑞亚" "玛丽安娜" "马提尼翁" "尚蒂伊" "巴士底" "布洛涅" "协和" "罗兰" "唐吉诃德" "德普雷奥" "波伏娃"
+	}
+}

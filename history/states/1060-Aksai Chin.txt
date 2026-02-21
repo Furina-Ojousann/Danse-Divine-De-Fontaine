@@ -1,0 +1,19 @@
+state = {
+	id = 1060
+	name = 1060_Aksai-Chin
+	manpower = 1980
+	state_category = wasteland
+	history = {
+		owner = RAJ
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
+		add_core_of = PAK
+		add_core_of = KAS
+		add_core_of = KHL 
+		buildings = {
+			infrastructure = 0 
+		}
+	}
+	provinces = { 5042 }
+}

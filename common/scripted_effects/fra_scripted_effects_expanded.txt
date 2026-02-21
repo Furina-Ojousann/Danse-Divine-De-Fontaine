@@ -1,0 +1,1086 @@
+refresh_gui = {
+	clear_array = ROOT.party_pie_chart 
+
+			set_temp_variable = { party_Croix_de_Feu_temp = party_Croix_de_Feu }
+			set_temp_variable = { party_Rassemblement_National_temp = party_Rassemblement_National }
+			set_temp_variable = { party_Parti_radical_temp = party_Parti_radical }
+			set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Section_Francaise_de_l_Internationale_Ouvriere }
+			set_temp_variable = { party_french_communist_party_temp = party_french_communist_party }
+			set_temp_variable = { party_Fontaine_temp = party_Fontaine }
+			set_temp_variable = { party_Action_francaise_temp = party_Action_francaise }
+
+			add_to_temp_variable = { total_seats = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { total_seats = party_Rassemblement_National_temp }
+			add_to_temp_variable = { total_seats = party_Parti_radical_temp }
+			add_to_temp_variable = { total_seats = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { total_seats = party_french_communist_party_temp }
+			add_to_temp_variable = { total_seats = party_Fontaine_temp }
+			add_to_temp_variable = { total_seats = party_Action_francaise_temp }
+
+			set_variable = { total_seat_in_parliament = total_seats }
+			
+			divide_temp_variable = { party_Croix_de_Feu_temp = total_seats }
+			divide_temp_variable = { party_Rassemblement_National_temp = total_seats }
+			divide_temp_variable = { party_Parti_radical_temp = total_seats }
+			divide_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = total_seats }
+			divide_temp_variable = { party_french_communist_party_temp = total_seats }
+			divide_temp_variable = { party_Fontaine_temp = total_seats }
+
+			multiply_temp_variable = { party_Croix_de_Feu_temp = 100 }
+			multiply_temp_variable = { party_Rassemblement_National_temp = 100 }
+			multiply_temp_variable = { party_Parti_radical_temp = 100 }
+			multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = 100 }
+			multiply_temp_variable = { party_french_communist_party_temp = 100 }
+			multiply_temp_variable = { party_Fontaine_temp = 100 }
+
+			set_variable = { party_Croix_de_Feu_factor = party_Croix_de_Feu_temp }
+			set_variable = { party_Fontaine_temp_factor = party_Fontaine_temp }
+			set_variable = { party_Parti_radical_temp_factor = party_Parti_radical_temp }
+			set_variable = { party_Rassemblement_National_temp_factor = party_Rassemblement_National_temp }
+			set_variable = { party_french_communist_party_temp_factor = party_french_communist_party_temp }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_factor = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+
+			set_temp_variable = { total_factor = 100 }
+
+			subtract_from_temp_variable = { total_factor = party_Croix_de_Feu_temp }
+			subtract_from_temp_variable = { total_factor = party_Fontaine_temp }
+			subtract_from_temp_variable = { total_factor = party_Parti_radical_temp }
+			subtract_from_temp_variable = { total_factor = party_Rassemblement_National_temp }
+			subtract_from_temp_variable = { total_factor = party_french_communist_party_temp }
+			subtract_from_temp_variable = { total_factor = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+
+			set_variable = { party_Action_francaise_factor = total_factor }
+
+			round_temp_variable = party_Croix_de_Feu_temp
+			round_temp_variable = party_Fontaine_temp
+			round_temp_variable = party_Parti_radical_temp
+			round_temp_variable = party_Rassemblement_National_temp
+			round_temp_variable = party_french_communist_party_temp 
+			round_temp_variable = party_Section_Francaise_de_l_Internationale_Ouvriere_temp 
+
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Parti_radical_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_french_communist_party_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Croix_de_Feu_temp }
+
+			add_to_temp_variable = { party_Parti_radical_temp = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_french_communist_party_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_Fontaine_temp }
+
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_french_communist_party_temp }
+
+			add_to_temp_variable = { party_french_communist_party_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_french_communist_party_temp = party_Croix_de_Feu_temp }
+
+			add_to_temp_variable = { party_Fontaine_temp = party_Croix_de_Feu_temp }
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Croix_de_Feu_temp 
+				value = 1 
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Fontaine_temp 
+				value = 2
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_french_communist_party_temp 
+				value = 3
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Section_Francaise_de_l_Internationale_Ouvriere_temp 
+				value = 4
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Parti_radical_temp 
+				value = 5
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Rassemblement_National_temp 
+				value = 6
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = 100 
+				value = 7
+			}
+
+
+			#支持度饼图
+
+			clear_array = fra_support_pie_chart 
+
+			set_temp_variable = { fra_support_party = party_Fontaine }
+			add_to_temp_variable = { fra_support_party = party_Parti_radical }
+			add_to_temp_variable = { fra_support_party = party_Section_Francaise_de_l_Internationale_Ouvriere }
+			add_to_temp_variable = { fra_support_party = party_french_communist_party }
+
+			set_variable = { fra_total_support_seat = fra_support_party }
+
+			set_temp_variable = { total_parties = fra_support_party }
+			add_to_temp_variable = { total_parties = party_Action_francaise }
+			add_to_temp_variable = { total_parties = party_Croix_de_Feu }
+			add_to_temp_variable = { total_parties = party_Rassemblement_National }
+
+			divide_temp_variable = {
+				fra_support_party = total_parties 
+			}
+
+			multiply_temp_variable = {
+				fra_support_party = 100 
+			}
+
+			set_variable = { fra_support_party_factor = fra_support_party }
+
+			set_temp_variable = { fra_total_popularity = 100 }
+
+			subtract_from_temp_variable = {
+				fra_total_popularity = fra_support_party 
+			}
+
+			set_variable = {
+				fra_oppose_factor = fra_total_popularity
+			}
+
+			round_temp_variable = fra_support_party 
+
+			resize_array = {
+				array = fra_support_pie_chart 
+				size = fra_support_party 
+				value = 1 
+			}
+
+			resize_array = {
+				array = fra_support_pie_chart 
+				size = 100 
+				value = 2 
+			}
+}
+
+economic_modifier_cal = {
+	set_temp_variable = { france_economy_inflation_temp = france_economy_inflation }
+	subtract_from_temp_variable = { france_economy_inflation_temp = france_economy_growth }
+	multiply_temp_variable = { france_economy_inflation_temp = -2 }
+	set_variable = { FRA_economic_modifier_consumer_goods_factor = france_economy_inflation_temp }
+	multiply_temp_variable = { france_economy_inflation_temp = france_economy_inflation_to_consumer_factor }
+	set_variable = { FRA_economic_modifier_stability_factor = france_economy_inflation_temp }
+	if = {
+		limit = {
+			check_variable = {
+				FRA_economic_modifier_stability_factor > 0
+			}
+		}
+		multiply_variable = {
+			FRA_economic_modifier_stability_factor = -1
+		}
+	}
+	set_temp_variable = { france_economy_inflation_temp_2 = france_economy_inflation }	
+	multiply_temp_variable = { france_economy_inflation_temp_2 = france_economy_inflation_to_build_speed_factor }
+	set_variable = { FRA_economic_modifier_production_speed_buildings_factor = france_economy_inflation_temp_2 }
+	set_temp_variable = { france_economy_unemployment_temp = france_economy_unemployment }
+	multiply_temp_variable = { france_economy_unemployment_temp = france_economy_unemployment_to_army_factor }
+	set_variable = { FRA_economic_modifier_conscription_factor = france_economy_unemployment_temp }
+
+	if = {
+		limit = {  
+			check_variable = {
+				france_economy_inflation > 0.1999
+			}
+		}
+		add_ideas = economic_bad_inflation 
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				france_economy_inflation < 0 
+			}
+		}
+		add_ideas = economic_deflation 
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				france_economy_unemployment < 0.04 
+			}
+		}
+		add_ideas = economic_lowerunemployment 
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				france_economy_unemployment > 0.099
+			}
+		}
+		add_ideas = economic_hyperunemployment 
+	}
+
+	set_temp_variable = {  
+		france_government_debt_temp = france_government_debt 
+	}
+
+	divide_temp_variable = {
+		france_government_debt_temp = france_debt_cost_divisor 
+	}
+
+	divide_temp_variable = {
+		france_government_debt_temp = 100 
+	}
+
+	set_variable = { FRA_economic_modifier_political_power_cost = france_government_debt_temp }
+}
+
+calculate_the_modifier = {
+	### liberity ###
+	set_temp_variable = { fontaine_liberty_progress_temp = fontaine_liberty_progress }
+	set_temp_variable = { fontaine_equality_progress_temp = fontaine_equality_progress }
+	set_temp_variable = { fontaine_fraternity_progress_temp = fontaine_fraternity_progress }
+
+	multiply_temp_variable = { fontaine_liberty_progress_temp = 0.01 }
+	multiply_temp_variable = { fontaine_equality_progress_temp = 0.01 }
+	multiply_temp_variable = { fontaine_fraternity_progress_temp = 0.01 }
+	
+	set_temp_variable = { liberity_party_popularity_stability_factor_temp = fontaine_liberty_progress_temp }
+	set_temp_variable = { liberity_political_power_factor_temp = fontaine_liberty_progress_temp }
+
+	multiply_temp_variable = { liberity_party_popularity_stability_factor_temp = 0.15 }
+	set_variable = { liberity_party_popularity_stability_factor = liberity_party_popularity_stability_factor_temp }
+
+	multiply_temp_variable = { liberity_political_power_factor_temp = 0.10 }
+	set_variable = { liberity_political_power_factor = liberity_political_power_factor_temp }
+	
+	### equality ###
+	set_temp_variable = { equality_production_factory_efficiency_gain_factor_temp = fontaine_equality_progress_temp }
+	set_temp_variable = { equality_industrial_capacity_factory_temp = fontaine_equality_progress_temp }
+	set_temp_variable = { equality_industrial_capacity_dockyard_temp = fontaine_equality_progress_temp }
+
+	multiply_temp_variable = { equality_production_factory_efficiency_gain_factor_temp = 0.10 }
+	set_variable = { equality_production_factory_efficiency_gain_factor = equality_production_factory_efficiency_gain_factor_temp }
+
+	multiply_temp_variable = { equality_industrial_capacity_factory_temp = 0.15 }
+	set_variable = { equality_industrial_capacity_factory = equality_industrial_capacity_factory_temp }
+
+	multiply_temp_variable = { equality_industrial_capacity_dockyard_temp = 0.15 }
+	set_variable = { equality_industrial_capacity_dockyard = equality_industrial_capacity_dockyard_temp }
+
+	### fraternity ###
+	set_temp_variable = { fraternity_compliance_growth_temp = fontaine_fraternity_progress_temp }
+	set_temp_variable = { fraternity_required_garrison_factor_temp = fontaine_fraternity_progress_temp }
+
+	multiply_temp_variable = { fraternity_compliance_growth_temp = 0.002 }
+	set_variable = { fraternity_compliance_growth = fraternity_compliance_growth_temp }
+
+	multiply_temp_variable = { fraternity_required_garrison_factor_temp = -0.20 }
+	set_variable = { fraternity_required_garrison_factor = fraternity_required_garrison_factor_temp }
+}
+
+expand_our_influence_in_spain = {
+	custom_effect_tooltip = expand_our_influence_in_spain
+	if = {
+		limit = {
+			not = {
+				has_idea = fra_the_influence_of_fontaine_1
+				has_idea = fra_the_influence_of_fontaine_2
+				has_idea = fra_the_influence_of_fontaine_3
+				has_idea = fra_the_influence_of_fontaine_4
+				has_idea = fra_the_influence_of_fontaine_5
+			}
+		}
+		add_ideas = fra_the_influence_of_fontaine_1 
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_the_influence_of_fontaine_1 
+		}
+		swap_ideas = {
+			remove_idea = fra_the_influence_of_fontaine_1 
+			add_idea = fra_the_influence_of_fontaine_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_the_influence_of_fontaine_2 
+		}
+		swap_ideas = {
+			remove_idea = fra_the_influence_of_fontaine_2 
+			add_idea = fra_the_influence_of_fontaine_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_the_influence_of_fontaine_3
+		}
+		swap_ideas = {
+			remove_idea = fra_the_influence_of_fontaine_3 
+			add_idea = fra_the_influence_of_fontaine_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_the_influence_of_fontaine_4 
+		}
+		swap_ideas = {
+			remove_idea = fra_the_influence_of_fontaine_4  
+			add_idea = fra_the_influence_of_fontaine_5
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = fra_the_influence_of_fontaine_5 
+		}
+		FRA = {
+			set_autonomy = {
+				target = ROOT 
+				autonomy_state = autonomy_puppet 
+			}
+		}
+	}
+}
+
+calculate_the_corruption_modifier = {
+	clamp_variable = {
+		var = the_corruption_of_party 
+		min = 0 
+		max = 100 
+	}
+	### 重新计算腐败修正 ###
+	set_temp_variable = { the_corruption_of_party_temp = the_corruption_of_party }
+	multiply_temp_variable = { the_corruption_of_party_temp = 0.01 }
+	set_temp_variable = { corruption_political_power_cost_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_party_popularity_stability_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_neutrality_drift_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_production_speed_buildings_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_army_org_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_experience_gain_army_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_experience_gain_navy_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_experience_gain_air_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_consumer_goods_factor_temp = the_corruption_of_party_temp }
+	set_temp_variable = { corruption_research_speed_factor_temp = the_corruption_of_party_temp }
+
+	multiply_temp_variable = { corruption_political_power_cost_temp = 1 }
+	multiply_temp_variable = { corruption_party_popularity_stability_factor_temp = -0.10 }
+	multiply_temp_variable = { corruption_neutrality_drift_temp = 0.15 }
+	multiply_temp_variable = { corruption_production_speed_buildings_factor_temp = -0.10 }
+	multiply_temp_variable = { corruption_army_org_factor_temp = -0.10 }
+	multiply_temp_variable = { corruption_experience_gain_army_factor_temp = -0.15 }
+	multiply_temp_variable = { corruption_experience_gain_navy_factor_temp = -0.15 }
+	multiply_temp_variable = { corruption_experience_gain_air_factor_temp = -0.15 }
+	multiply_temp_variable = { corruption_consumer_goods_factor_temp = 0.20 }
+	multiply_temp_variable = { corruption_research_speed_factor_temp = -0.05 }
+
+	set_variable = { corruption_political_power_cost = corruption_political_power_cost_temp }
+	set_variable = { corruption_party_popularity_stability_factor = corruption_party_popularity_stability_factor_temp }
+	set_variable = { corruption_neutrality_drift = corruption_neutrality_drift_temp }
+	set_variable = { corruption_production_speed_buildings_factor = corruption_production_speed_buildings_factor_temp }
+	set_variable = { corruption_army_org_factor = corruption_army_org_factor_temp }
+	set_variable = { corruption_experience_gain_navy_factor = corruption_experience_gain_navy_factor_temp }
+	set_variable = { corruption_experience_gain_air_factor = corruption_experience_gain_air_factor_temp }
+	set_variable = { corruption_experience_gain_army_factor = corruption_experience_gain_army_factor_temp }
+	set_variable = { corruption_consumer_goods_factor = corruption_consumer_goods_factor_temp }
+	set_variable = { corruption_research_speed_factor = corruption_research_speed_factor_temp }
+}
+
+refresh_the_state_unity_and_chao = {
+	set_temp_variable = { state_unity_1_temp = unity_1 }
+	set_temp_variable = { state_chao_1_temp = chao_1 }
+	multiply_temp_variable = { state_chao_1_temp = -1 }
+	add_to_temp_variable = { state_chao_1_temp = state_unity_1_temp }
+	if = { limit = { check_variable = { state_chao_1_temp > 89 } } set_variable = { state_1_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_1_temp > 74 } } set_variable = { state_1_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_1_temp > 59 } } set_variable = { state_1_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_1_temp > 44 } } set_variable = { state_1_level = 4 } }
+	else = { set_variable = { state_1_level = 5 } }
+
+	set_temp_variable = { state_unity_2_temp = unity_2 }
+	set_temp_variable = { state_chao_2_temp = chao_2 }
+	multiply_temp_variable = { state_chao_2_temp = -2 }
+	add_to_temp_variable = { state_chao_2_temp = state_unity_2_temp }
+	if = { limit = { check_variable = { state_chao_2_temp > 89 } } set_variable = { state_2_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_2_temp > 74 } } set_variable = { state_2_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_2_temp > 59 } } set_variable = { state_2_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_2_temp > 44 } } set_variable = { state_2_level = 4 } }
+	else = { set_variable = { state_2_level = 5 } }
+
+	set_temp_variable = { state_unity_3_temp = unity_3 }
+	set_temp_variable = { state_chao_3_temp = chao_3 }
+	multiply_temp_variable = { state_chao_3_temp = -1 }
+	add_to_temp_variable = { state_chao_3_temp = state_unity_3_temp }
+	if = { limit = { check_variable = { state_chao_3_temp > 89 } } set_variable = { state_3_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_3_temp > 74 } } set_variable = { state_3_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_3_temp > 59 } } set_variable = { state_3_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_3_temp > 44 } } set_variable = { state_3_level = 4 } }
+	else = { set_variable = { state_3_level = 5 } }
+
+	set_temp_variable = { state_unity_4_temp = unity_4 }
+	set_temp_variable = { state_chao_4_temp = chao_4 }
+	multiply_temp_variable = { state_chao_4_temp = -1 }
+	add_to_temp_variable = { state_chao_4_temp = state_unity_4_temp }
+	if = { limit = { check_variable = { state_chao_4_temp > 89 } } set_variable = { state_4_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_4_temp > 74 } } set_variable = { state_4_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_4_temp > 59 } } set_variable = { state_4_level = 4 } }
+	else_if = { limit = { check_variable = { state_chao_4_temp > 44 } } set_variable = { state_4_level = 4 } }
+	else = { set_variable = { state_4_level = 5 } }
+
+	set_temp_variable = { state_unity_5_temp = unity_5 }
+	set_temp_variable = { state_chao_5_temp = chao_5 }
+	multiply_temp_variable = { state_chao_5_temp = -1 }
+	add_to_temp_variable = { state_chao_5_temp = state_unity_5_temp }
+	if = { limit = { check_variable = { state_chao_5_temp > 89 } } set_variable = { state_5_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_5_temp > 74 } } set_variable = { state_5_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_5_temp > 59 } } set_variable = { state_5_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_5_temp > 44 } } set_variable = { state_5_level = 4 } }
+	else = { set_variable = { state_5_level = 5 } }
+
+	set_temp_variable = { state_unity_6_temp = unity_6 }
+	set_temp_variable = { state_chao_6_temp = chao_6 }
+	multiply_temp_variable = { state_chao_6_temp = -1 }
+	add_to_temp_variable = { state_chao_6_temp = state_unity_6_temp }
+	if = { limit = { check_variable = { state_chao_6_temp > 89 } } set_variable = { state_6_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_6_temp > 74 } } set_variable = { state_6_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_6_temp > 59 } } set_variable = { state_6_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_6_temp > 44 } } set_variable = { state_6_level = 4 } }
+	else = { set_variable = { state_6_level = 5 } }
+
+	set_temp_variable = { state_unity_7_temp = unity_7 }
+	set_temp_variable = { state_chao_7_temp = chao_7 }
+	multiply_temp_variable = { state_chao_7_temp = -1 }
+	add_to_temp_variable = { state_chao_7_temp = state_unity_7_temp }
+	if = { limit = { check_variable = { state_chao_7_temp > 89 } } set_variable = { state_7_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_7_temp > 74 } } set_variable = { state_7_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_7_temp > 59 } } set_variable = { state_7_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_7_temp > 44 } } set_variable = { state_7_level = 4 } }
+	else = { set_variable = { state_7_level = 5 } }
+
+	set_temp_variable = { state_unity_8_temp = unity_8 }
+	set_temp_variable = { state_chao_8_temp = chao_8 }
+	multiply_temp_variable = { state_chao_8_temp = -1 }
+	add_to_temp_variable = { state_chao_8_temp = state_unity_8_temp }
+	if = { limit = { check_variable = { state_chao_8_temp > 89 } } set_variable = { state_8_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_8_temp > 74 } } set_variable = { state_8_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_8_temp > 59 } } set_variable = { state_8_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_8_temp > 44 } } set_variable = { state_8_level = 4 } }
+	else = { set_variable = { state_8_level = 5 } }
+
+	set_temp_variable = { state_unity_9_temp = unity_9 }
+	set_temp_variable = { state_chao_9_temp = chao_9 }
+	multiply_temp_variable = { state_chao_9_temp = -1 }
+	add_to_temp_variable = { state_chao_9_temp = state_unity_9_temp }
+	if = { limit = { check_variable = { state_chao_9_temp > 89 } } set_variable = { state_9_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_9_temp > 74 } } set_variable = { state_9_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_9_temp > 59 } } set_variable = { state_9_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_9_temp > 44 } } set_variable = { state_9_level = 4 } }
+	else = { set_variable = { state_9_level = 5 } }
+
+	set_temp_variable = { state_unity_10_temp = unity_10 }
+	set_temp_variable = { state_chao_10_temp = chao_10 }
+	multiply_temp_variable = { state_chao_10_temp = -1 }
+	add_to_temp_variable = { state_chao_10_temp = state_unity_10_temp }
+	if = { limit = { check_variable = { state_chao_10_temp > 89 } } set_variable = { state_10_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_10_temp > 74 } } set_variable = { state_10_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_10_temp > 59 } } set_variable = { state_10_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_10_temp > 44 } } set_variable = { state_10_level = 4 } }
+	else = { set_variable = { state_10_level = 5 } }
+
+	set_temp_variable = { state_unity_11_temp = unity_11 }
+	set_temp_variable = { state_chao_11_temp = chao_11 }
+	multiply_temp_variable = { state_chao_11_temp = -1 }
+	add_to_temp_variable = { state_chao_11_temp = state_unity_11_temp }
+	if = { limit = { check_variable = { state_chao_11_temp > 89 } } set_variable = { state_11_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_11_temp > 74 } } set_variable = { state_11_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_11_temp > 59 } } set_variable = { state_11_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_11_temp > 44 } } set_variable = { state_11_level = 4 } }
+	else = { set_variable = { state_11_level = 5 } }
+
+	set_temp_variable = { state_unity_12_temp = unity_12 }
+	set_temp_variable = { state_chao_12_temp = chao_12 }
+	multiply_temp_variable = { state_chao_12_temp = -1 }
+	add_to_temp_variable = { state_chao_12_temp = state_unity_12_temp }
+	if = { limit = { check_variable = { state_chao_12_temp > 89 } } set_variable = { state_12_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_12_temp > 74 } } set_variable = { state_12_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_12_temp > 59 } } set_variable = { state_12_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_12_temp > 44 } } set_variable = { state_12_level = 4 } }
+	else = { set_variable = { state_12_level = 5 } }
+
+	set_temp_variable = { state_unity_13_temp = unity_13 }
+	set_temp_variable = { state_chao_13_temp = chao_13 }
+	multiply_temp_variable = { state_chao_13_temp = -1 }
+	add_to_temp_variable = { state_chao_13_temp = state_unity_13_temp }
+	if = { limit = { check_variable = { state_chao_13_temp > 89 } } set_variable = { state_13_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_13_temp > 74 } } set_variable = { state_13_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_13_temp > 59 } } set_variable = { state_13_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_13_temp > 44 } } set_variable = { state_13_level = 4 } }
+	else = { set_variable = { state_13_level = 5 } }
+
+	set_temp_variable = { state_unity_14_temp = unity_14 }
+	set_temp_variable = { state_chao_14_temp = chao_14 }
+	multiply_temp_variable = { state_chao_14_temp = -1 }
+	add_to_temp_variable = { state_chao_14_temp = state_unity_14_temp }
+	if = { limit = { check_variable = { state_chao_14_temp > 89 } } set_variable = { state_14_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_14_temp > 74 } } set_variable = { state_14_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_14_temp > 59 } } set_variable = { state_14_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_14_temp > 44 } } set_variable = { state_14_level = 4 } }
+	else = { set_variable = { state_14_level = 5 } }
+
+	set_temp_variable = { state_unity_15_temp = unity_15 }
+	set_temp_variable = { state_chao_15_temp = chao_15 }
+	multiply_temp_variable = { state_chao_15_temp = -1 }
+	add_to_temp_variable = { state_chao_15_temp = state_unity_15_temp }
+	if = { limit = { check_variable = { state_chao_15_temp > 89 } } set_variable = { state_15_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_15_temp > 74 } } set_variable = { state_15_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_15_temp > 59 } } set_variable = { state_15_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_15_temp > 44 } } set_variable = { state_15_level = 4 } }
+	else = { set_variable = { state_15_level = 5 } }
+
+	set_temp_variable = { state_unity_16_temp = unity_16 }
+	set_temp_variable = { state_chao_16_temp = chao_16 }
+	multiply_temp_variable = { state_chao_16_temp = -1 }
+	add_to_temp_variable = { state_chao_16_temp = state_unity_16_temp }
+	if = { limit = { check_variable = { state_chao_16_temp > 89 } } set_variable = { state_16_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_16_temp > 74 } } set_variable = { state_16_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_16_temp > 59 } } set_variable = { state_16_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_16_temp > 44 } } set_variable = { state_16_level = 4 } }
+	else = { set_variable = { state_16_level = 5 } }
+
+	set_temp_variable = { state_unity_17_temp = unity_17 }
+	set_temp_variable = { state_chao_17_temp = chao_17 }
+	multiply_temp_variable = { state_chao_17_temp = -1 }
+	add_to_temp_variable = { state_chao_17_temp = state_unity_17_temp }
+	if = { limit = { check_variable = { state_chao_17_temp > 89 } } set_variable = { state_17_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_17_temp > 74 } } set_variable = { state_17_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_17_temp > 59 } } set_variable = { state_17_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_17_temp > 44 } } set_variable = { state_17_level = 4 } }
+	else = { set_variable = { state_17_level = 5 } }
+
+	set_temp_variable = { state_unity_18_temp = unity_18 }
+	set_temp_variable = { state_chao_18_temp = chao_18 }
+	multiply_temp_variable = { state_chao_18_temp = -1 }
+	add_to_temp_variable = { state_chao_18_temp = state_unity_18_temp }
+	if = { limit = { check_variable = { state_chao_18_temp > 89 } } set_variable = { state_18_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_18_temp > 74 } } set_variable = { state_18_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_18_temp > 59 } } set_variable = { state_18_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_18_temp > 44 } } set_variable = { state_18_level = 4 } }
+	else = { set_variable = { state_18_level = 5 } }
+
+	set_temp_variable = { state_unity_19_temp = unity_19 }
+	set_temp_variable = { state_chao_19_temp = chao_19 }
+	multiply_temp_variable = { state_chao_19_temp = -1 }
+	add_to_temp_variable = { state_chao_19_temp = state_unity_19_temp }
+	if = { limit = { check_variable = { state_chao_19_temp > 89 } } set_variable = { state_19_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_19_temp > 74 } } set_variable = { state_19_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_19_temp > 59 } } set_variable = { state_19_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_19_temp > 44 } } set_variable = { state_19_level = 4 } }
+	else = { set_variable = { state_19_level = 5 } }
+
+	set_temp_variable = { state_unity_20_temp = unity_20 }
+	set_temp_variable = { state_chao_20_temp = chao_20 }
+	multiply_temp_variable = { state_chao_20_temp = -1 }
+	add_to_temp_variable = { state_chao_20_temp = state_unity_20_temp }
+	if = { limit = { check_variable = { state_chao_20_temp > 89 } } set_variable = { state_20_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_20_temp > 74 } } set_variable = { state_20_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_20_temp > 59 } } set_variable = { state_20_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_20_temp > 44 } } set_variable = { state_20_level = 4 } }
+	else = { set_variable = { state_20_level = 5 } }
+
+	set_temp_variable = { state_unity_21_temp = unity_21 }
+	set_temp_variable = { state_chao_21_temp = chao_21 }
+	multiply_temp_variable = { state_chao_21_temp = -1 }
+	add_to_temp_variable = { state_chao_21_temp = state_unity_21_temp }
+	if = { limit = { check_variable = { state_chao_21_temp > 89 } } set_variable = { state_21_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_21_temp > 74 } } set_variable = { state_21_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_21_temp > 59 } } set_variable = { state_21_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_21_temp > 44 } } set_variable = { state_21_level = 4 } }
+	else = { set_variable = { state_21_level = 5 } }
+
+	set_temp_variable = { state_unity_22_temp = unity_22 }
+	set_temp_variable = { state_chao_22_temp = chao_22 }
+	multiply_temp_variable = { state_chao_22_temp = -1 }
+	add_to_temp_variable = { state_chao_22_temp = state_unity_22_temp }
+	if = { limit = { check_variable = { state_chao_22_temp > 89 } } set_variable = { state_22_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_22_temp > 74 } } set_variable = { state_22_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_22_temp > 59 } } set_variable = { state_22_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_22_temp > 44 } } set_variable = { state_22_level = 4 } }
+	else = { set_variable = { state_22_level = 5 } }
+
+	set_temp_variable = { state_unity_23_temp = unity_23 }
+	set_temp_variable = { state_chao_23_temp = chao_23 }
+	multiply_temp_variable = { state_chao_23_temp = -1 }
+	add_to_temp_variable = { state_chao_23_temp = state_unity_23_temp }
+	if = { limit = { check_variable = { state_chao_23_temp > 89 } } set_variable = { state_23_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_23_temp > 74 } } set_variable = { state_23_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_23_temp > 59 } } set_variable = { state_23_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_23_temp > 44 } } set_variable = { state_23_level = 4 } }
+	else = { set_variable = { state_23_level = 5 } }
+
+	set_temp_variable = { state_unity_24_temp = unity_24 }
+	set_temp_variable = { state_chao_24_temp = chao_24 }
+	multiply_temp_variable = { state_chao_24_temp = -1 }
+	add_to_temp_variable = { state_chao_24_temp = state_unity_24_temp }
+	if = { limit = { check_variable = { state_chao_24_temp > 89 } } set_variable = { state_24_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_24_temp > 74 } } set_variable = { state_24_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_24_temp > 59 } } set_variable = { state_24_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_24_temp > 44 } } set_variable = { state_24_level = 4 } }
+	else = { set_variable = { state_24_level = 5 } }
+
+	set_temp_variable = { state_unity_25_temp = unity_25 }
+	set_temp_variable = { state_chao_25_temp = chao_25 }
+	multiply_temp_variable = { state_chao_25_temp = -1 }
+	add_to_temp_variable = { state_chao_25_temp = state_unity_25_temp }
+	if = { limit = { check_variable = { state_chao_25_temp > 89 } } set_variable = { state_25_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_25_temp > 74 } } set_variable = { state_25_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_25_temp > 59 } } set_variable = { state_25_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_25_temp > 44 } } set_variable = { state_25_level = 4 } }
+	else = { set_variable = { state_25_level = 5 } }
+
+	set_temp_variable = { state_unity_26_temp = unity_26 }
+	set_temp_variable = { state_chao_26_temp = chao_26 }
+	multiply_temp_variable = { state_chao_26_temp = -1 }
+	add_to_temp_variable = { state_chao_26_temp = state_unity_26_temp }
+	if = { limit = { check_variable = { state_chao_26_temp > 89 } } set_variable = { state_26_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_26_temp > 74 } } set_variable = { state_26_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_26_temp > 59 } } set_variable = { state_26_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_26_temp > 44 } } set_variable = { state_26_level = 4 } }
+	else = { set_variable = { state_26_level = 5 } }
+
+	set_temp_variable = { state_unity_27_temp = unity_27 }
+	set_temp_variable = { state_chao_27_temp = chao_27 }
+	multiply_temp_variable = { state_chao_27_temp = -1 }
+	add_to_temp_variable = { state_chao_27_temp = state_unity_27_temp }
+	if = { limit = { check_variable = { state_chao_27_temp > 89 } } set_variable = { state_27_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_27_temp > 74 } } set_variable = { state_27_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_27_temp > 59 } } set_variable = { state_27_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_27_temp > 44 } } set_variable = { state_27_level = 4 } }
+	else = { set_variable = { state_27_level = 5 } }
+
+	set_temp_variable = { state_unity_28_temp = unity_28 }
+	set_temp_variable = { state_chao_28_temp = chao_28 }
+	multiply_temp_variable = { state_chao_28_temp = -1 }
+	add_to_temp_variable = { state_chao_28_temp = state_unity_28_temp }
+	if = { limit = { check_variable = { state_chao_28_temp > 89 } } set_variable = { state_28_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_28_temp > 74 } } set_variable = { state_28_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_28_temp > 59 } } set_variable = { state_28_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_28_temp > 44 } } set_variable = { state_28_level = 4 } }
+	else = { set_variable = { state_28_level = 5 } }
+
+	set_temp_variable = { state_unity_29_temp = unity_29 }
+	set_temp_variable = { state_chao_29_temp = chao_29 }
+	multiply_temp_variable = { state_chao_29_temp = -1 }
+	add_to_temp_variable = { state_chao_29_temp = state_unity_29_temp }
+	if = { limit = { check_variable = { state_chao_29_temp > 89 } } set_variable = { state_29_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_29_temp > 74 } } set_variable = { state_29_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_29_temp > 59 } } set_variable = { state_29_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_29_temp > 44 } } set_variable = { state_29_level = 4 } }
+	else = { set_variable = { state_29_level = 5 } }
+
+	set_temp_variable = { state_unity_30_temp = unity_30 }
+	set_temp_variable = { state_chao_30_temp = chao_30 }
+	multiply_temp_variable = { state_chao_30_temp = -1 }
+	add_to_temp_variable = { state_chao_30_temp = state_unity_30_temp }
+	if = { limit = { check_variable = { state_chao_30_temp > 89 } } set_variable = { state_30_level = 1 } }
+	else_if = { limit = { check_variable = { state_chao_30_temp > 74 } } set_variable = { state_30_level = 2 } }
+	else_if = { limit = { check_variable = { state_chao_30_temp > 59 } } set_variable = { state_30_level = 3 } }
+	else_if = { limit = { check_variable = { state_chao_30_temp > 44 } } set_variable = { state_30_level = 4 } }
+	else = { set_variable = { state_30_level = 5 } }
+}
+
+france_parliament_initialization = {
+	resize_array = {
+		array = parliament_seats 
+		size = 600 
+		value = 1 
+	}
+	resize_array = {
+		array = seat_frame 
+		size = 600
+		value = 1 
+	}
+	set_variable = { SFIO_seats_num = 600 }
+	set_variable = { Right_seats_num = 0 }
+	set_variable = { Neu_seats_num = 0 }
+}
+
+france_parliament_stat_seat_from_ideology_support = { 
+
+	### 根据意识形态直接分配席位 ###
+
+	set_temp_variable = { france_dem_support = FRA.party_popularity@democratic }
+	set_temp_variable = { france_com_support = FRA.party_popularity@communism }
+	set_temp_variable = { france_neu_support = FRA.party_popularity@neutrality }
+	set_temp_variable = { france_fas_support = FRA.party_popularity@fascism }
+
+	set_temp_variable = { sfio_seats = 600 } ##民主原始席位
+	multiply_temp_variable = { sfio_seats = france_dem_support }
+
+	set_temp_variable = { com_seats = 600 } #共产党原始席位
+	multiply_temp_variable = { com_seats = france_com_support }
+
+	set_temp_variable = { neu_seats = 600 } #法兰西行动原始席位
+	multiply_temp_variable = { neu_seats = france_neu_support }
+
+	set_temp_variable = { fas_seats = 600 } #法西斯原始席位
+	multiply_temp_variable = { fas_seats = france_fas_support }
+
+	set_temp_variable = { non_seats = sfio_seats } #从民主中抽取中立人士
+	multiply_temp_variable = { non_seats = neu_rate }
+	subtract_from_temp_variable = { sfio_seats = non_seats }
+
+	set_variable = { SFIO_seats_num = sfio_seats } #人民阵线总席位
+	add_to_variable = { SFIO_seats_num = com_seats }
+	round_variable = SFIO_seats_num
+
+	set_variable = { Neu_seats_num = non_seats } #中立席位
+	round_variable = Neu_seats_num
+
+	set_variable = { Right_seats_num = neu_seats } #右翼席位
+	add_to_variable = { Right_seats_num = fas_seats }
+	round_variable = Right_seats_num 
+}
+
+france_parliament_stat_seat_and_frames = {
+
+	### 根据席位数量分配颜色 ###
+
+	set_temp_variable = { sfio_temp = SFIO_seats_num }
+	set_temp_variable = { neu_temp = Neu_seats_num }
+	set_temp_variable = { right_temp = 600 }
+
+	add_to_temp_variable = { neu_temp = sfio_temp }
+
+	clear_array = seat_frame
+
+	resize_array = {
+		array = seat_frame 
+		size = sfio_temp
+		value = 1 
+	}
+
+	resize_array = {
+		array = seat_frame 
+		size = neu_temp
+		value = 3 
+	}
+
+	resize_array = {
+		array = seat_frame 
+		size = 600 
+		value = 2 
+	}
+}
+
+#########################################
+### 		枫丹蓝线重置中采用的 		###
+#########################################
+
+R_Fontaine_Refresh_From_popularity = { #刷新席位数
+	set_temp_variable = { R_Fontaine_Communist_seats_temp = 600 }
+	set_temp_variable = { R_Fontaine_Socialist_seats_temp = 600 }
+	set_temp_variable = { R_Fontaine_Liberalist_seats_temp = 600 }
+	set_temp_variable = { R_Fontaine_Agrarianist_seats_temp = 600 }
+	set_temp_variable = { R_Fontaine_Toryism_seats_temp = 600 }
+	set_temp_variable = { R_Fontaine_Neutralist_seats_temp = 600 }
+
+	multiply_temp_variable = { R_Fontaine_Communist_seats_temp = R_Fontaine_Communist_support }
+	multiply_temp_variable = { R_Fontaine_Socialist_seats_temp = R_Fontaine_Socialist_support }
+	multiply_temp_variable = { R_Fontaine_Liberalist_seats_temp = R_Fontaine_Liberalist_support }
+	multiply_temp_variable = { R_Fontaine_Agrarianist_seats_temp = R_Fontaine_Agrarianist_support }
+	multiply_temp_variable = { R_Fontaine_Toryism_seats_temp = R_Fontaine_Toryism_support }
+	multiply_temp_variable = { R_Fontaine_Neutralist_seats_temp = R_Fontaine_Neutralist_support }
+
+	set_variable = { R_Fontaine_Communist_seats = R_Fontaine_Communist_seats_temp }
+	set_variable = { R_Fontaine_Socialist_seats = R_Fontaine_Socialist_seats_temp }
+	set_variable = { R_Fontaine_Liberalist_seats = R_Fontaine_Liberalist_seats_temp }
+	set_variable = { R_Fontaine_Agrarianist_seats = R_Fontaine_Agrarianist_seats_temp }
+	set_variable = { R_Fontaine_Toryism_seats = R_Fontaine_Toryism_seats_temp }
+	set_variable = { R_Fontaine_Neutralist_seats = R_Fontaine_Neutralist_seats_temp }
+
+	round_variable = R_Fontaine_Communist_seats
+	round_variable = R_Fontaine_Socialist_seats 
+	round_variable = R_Fontaine_Liberalist_seats 
+	round_variable = R_Fontaine_Agrarianist_seats
+	round_variable = R_Fontaine_Toryism_seats
+	round_variable = R_Fontaine_Neutralist_seats
+
+	set_temp_variable = { R_Fontaine_Toryism_seats_frame = R_Fontaine_Toryism_seats }
+	add_to_temp_variable = { R_Fontaine_Toryism_seats_frame = R_Fontaine_Agrarianist_seats }
+	add_to_temp_variable = { R_Fontaine_Toryism_seats_frame = R_Fontaine_Liberalist_seats }
+	add_to_temp_variable = { R_Fontaine_Toryism_seats_frame = R_Fontaine_Socialist_seats }
+	add_to_temp_variable = { R_Fontaine_Toryism_seats_frame = R_Fontaine_Communist_seats }
+
+	set_temp_variable = { R_Fontaine_Agrarianist_seats_frame = R_Fontaine_Agrarianist_seats }
+	add_to_temp_variable = { R_Fontaine_Agrarianist_seats_frame = R_Fontaine_Liberalist_seats }
+	add_to_temp_variable = { R_Fontaine_Agrarianist_seats_frame = R_Fontaine_Socialist_seats }
+	add_to_temp_variable = { R_Fontaine_Agrarianist_seats_frame = R_Fontaine_Communist_seats }
+
+	set_temp_variable = { R_Fontaine_Liberalist_seats_frame = R_Fontaine_Liberalist_seats }
+	add_to_temp_variable = { R_Fontaine_Liberalist_seats_frame = R_Fontaine_Socialist_seats }
+	add_to_temp_variable = { R_Fontaine_Liberalist_seats_frame = R_Fontaine_Communist_seats }
+
+	set_temp_variable = { R_Fontaine_Socialist_seats_frame = R_Fontaine_Socialist_seats }
+	add_to_temp_variable = { R_Fontaine_Socialist_seats_frame = R_Fontaine_Communist_seats }
+
+	clear_array = r_seat_frame 
+
+	resize_array = {
+		array = r_seat_frame
+		size = R_Fontaine_Communist_seats
+		value = 6
+	}
+
+	resize_array = {
+		array = r_seat_frame
+		size = R_Fontaine_Socialist_seats_frame
+		value = 5
+	}
+
+	resize_array = {
+		array = r_seat_frame
+		size = R_Fontaine_Liberalist_seats_frame
+		value = 4
+	}
+
+	resize_array = {
+		array = r_seat_frame
+		size = R_Fontaine_Agrarianist_seats_frame
+		value = 3
+	}
+
+	resize_array = {
+		array = r_seat_frame
+		size = R_Fontaine_Toryism_seats_frame
+		value = 2 
+	}
+
+	resize_array = {
+		array = r_seat_frame
+		size = 600 
+		value = 1
+	}
+}
+
+R_Fontaine_Bill_support = {
+	#计算支持某一法案的席位数
+	set_temp_variable = { R_Fontaine_Communist_seats_temp = R_Fontaine_Communist_seats }
+	set_temp_variable = { R_Fontaine_Socialist_seats_temp = R_Fontaine_Socialist_seats }
+	set_temp_variable = { R_Fontaine_Agrarianist_seats_temp = R_Fontaine_Agrarianist_seats }
+	set_temp_variable = { R_Fontaine_Liberalist_seats_temp = R_Fontaine_Liberalist_seats }
+	set_temp_variable = { R_Fontaine_Toryism_seats_temp = R_Fontaine_Toryism_seats }
+	set_temp_variable = { R_Fontaine_Neutralist_seats_temp = R_Fontaine_Neutralist_seats }
+
+	set_variable = { r_fontaine_bill_support_seats_AD = R_Fontaine_Toryism_seats_temp }
+	set_variable = { r_fontaine_bill_support_seats_FR = R_Fontaine_Agrarianist_seats_temp }
+	set_variable = { r_fontaine_bill_support_seats_CF = R_Fontaine_Liberalist_seats_temp }
+	set_variable = { r_fontaine_bill_support_seats_PF = R_Fontaine_Socialist_seats_temp }
+	set_variable = { r_fontaine_bill_support_seats_PTF = R_Fontaine_Communist_seats_temp }
+	set_variable = { r_fontaine_bill_support_seats_independent = R_Fontaine_Neutralist_seats_temp }
+
+	multiply_variable = { r_fontaine_bill_support_seats_AD = r_fontaine_bill_support_AD }
+	multiply_variable = { r_fontaine_bill_support_seats_FR = r_fontaine_bill_support_FR }
+	multiply_variable = { r_fontaine_bill_support_seats_CF = r_fontaine_bill_support_CF }
+	multiply_variable = { r_fontaine_bill_support_seats_PF = r_fontaine_bill_support_PF }
+	multiply_variable = { r_fontaine_bill_support_seats_PTF = r_fontaine_bill_support_PTF }
+	multiply_variable = { r_fontaine_bill_support_seats_independent = r_fontaine_bill_support_independent }
+
+	round_variable = r_fontaine_bill_support_seats_AD
+	round_variable = r_fontaine_bill_support_seats_FR 
+	round_variable = r_fontaine_bill_support_seats_CF
+	round_variable = r_fontaine_bill_support_seats_PF 
+	round_variable = r_fontaine_bill_support_seats_PTF 
+	round_variable = r_fontaine_bill_support_seats_independent
+}
+
+R_Fontaine_Bill_over_clear = {
+
+	### 一个提案完成表决后重新初始化 ###
+
+	set_variable = { r_fontaine_bill_support_CF = 0 } #枫丹联盟 对应 R_Fontaine_Liberalist
+			
+	set_variable = { r_fontaine_bill_support_AD = 0 } #民主联盟 对应 R_Fontaine_Toryism_support
+			
+	set_variable = { r_fontaine_bill_support_FR = 0 } #共和联盟 对应 R_Fontaine_Agrarianist_support
+			
+	set_variable = { r_fontaine_bill_support_PF = 0 } #人民阵线 对应 R_Fontaine_Socialist_support
+			
+	set_variable = { r_fontaine_bill_support_PTF = 0 } #枫丹工党 对应 R_Fontaine_Communist_support
+			
+	set_variable = { r_fontaine_bill_support_independent = 0 } #无所属 R_Fontaine_Neutralist_support
+	
+	set_variable = { r_fontaine_bill_support_seats_AD = 0 }
+	set_variable = { r_fontaine_bill_support_seats_FR = 0 }
+	set_variable = { r_fontaine_bill_support_seats_CF = 0 }
+	set_variable = { r_fontaine_bill_support_seats_PF = 0 }
+	set_variable = { r_fontaine_bill_support_seats_PTF = 0 }
+	set_variable = { r_fontaine_bill_support_seats_independent = 0 }
+
+	clr_country_flag = r_fontaine_any_bill_ongoing 
+
+	clr_country_flag = r_fontaine_bill_european_alliance
+	clr_country_flag = r_fontaine_bill_immigration_reform
+	clr_country_flag = r_fontaine_bill_labour_reform
+	clr_country_flag = r_fontaine_bill_president_system 
+}
+
+R_Fontaine_Start_Vote_Animation = {
+
+    # 1) 存档：原本各党席位（如果你需要动画结束后恢复）
+    set_variable = { r_fontaine_saved_comm_seats = R_Fontaine_Communist_seats }
+    set_variable = { r_fontaine_saved_soc_seats  = R_Fontaine_Socialist_seats }
+    set_variable = { r_fontaine_saved_lib_seats  = R_Fontaine_Liberalist_seats }
+    set_variable = { r_fontaine_saved_agr_seats  = R_Fontaine_Agrarianist_seats }
+    set_variable = { r_fontaine_saved_tory_seats = R_Fontaine_Toryism_seats }
+    set_variable = { r_fontaine_saved_neu_seats  = R_Fontaine_Neutralist_seats }
+
+    # 2) 计算：本次法案支持席位（复用你已有的方法）
+    R_Fontaine_Bill_support = yes
+
+    # 这里把“支持总席位”收拢成一个变量（你可按自己阵营定义支持方/反对方）
+    # 示例：把各党支持席位加总为 r_fontaine_vote_support_total
+    set_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_AD }
+    add_to_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_FR }
+    add_to_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_CF }
+    add_to_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_PF }
+    add_to_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_PTF }
+    add_to_temp_variable = { tmp_support_total = r_fontaine_bill_support_seats_independent }
+    round_temp_variable = var:tmp_support_total
+
+    set_variable = { r_fontaine_vote_support_total = tmp_support_total }
+
+    # 反对总席位 = 600 - 支持总席位
+    set_temp_variable = { tmp_oppose_total = 600 }
+    subtract_from_temp_variable = { tmp_oppose_total = tmp_support_total }
+    round_temp_variable = tmp_oppose_total
+    set_variable = { r_fontaine_vote_oppose_total = tmp_oppose_total }
+
+    # 3) UI 状态：标记“正在表决”（你 GUI 的 visible/trigger 会读这个 flag）【:contentReference[oaicite:4]{index=4}】
+    set_country_flag = r_fontaine_any_bill_ongoing
+
+    # 4) 清屏：全部置中立（frame=1）
+    clear_array = r_seat_frame
+    resize_array = { array = r_seat_frame size = 600 value = 1 }
+
+    # 5) 初始化步数并触发第一帧
+    set_variable = { r_fontaine_vote_step = 0 }
+    country_event = { id = R_fontaine_parliament.1001 hours = 1 }
+	log = "执行一次议会动画"
+}
+
+R_Fontaine_Vote_Animation_Refresh_Frames = {
+
+    # step: 1~10
+    set_temp_variable = { tmp_step = r_fontaine_vote_step }
+
+    # revealed_support = round( support_total * step / 10 )
+    set_temp_variable = { tmp_support = r_fontaine_vote_support_total }
+    multiply_temp_variable = { tmp_support = tmp_step }
+    divide_temp_variable   = { tmp_support = 10 }
+    round_temp_variable    = tmp_support
+
+    # revealed_oppose = round( oppose_total * step / 10 )
+    set_temp_variable = { tmp_oppose = r_fontaine_vote_oppose_total }
+    multiply_temp_variable = { tmp_oppose = tmp_step }
+    divide_temp_variable   = { tmp_oppose = 10 }
+    round_temp_variable    = tmp_oppose
+
+    # sum = revealed_oppose + revealed_support
+    set_temp_variable = { tmp_sum = tmp_oppose }
+    add_to_temp_variable = { tmp_sum = tmp_support }
+
+    # 重建 r_seat_frame：
+    # 红：反对（用 Communist 的帧值 6）【:contentReference[oaicite:6]{index=6}】
+    # 蓝：支持（用 Liberalist 的帧值 4）【:contentReference[oaicite:7]{index=7}】
+    # 灰：未展示/中立（帧值 1）【:contentReference[oaicite:8]{index=8}】
+    clear_array = r_seat_frame
+    resize_array = { array = r_seat_frame size = tmp_oppose value = 6 }
+    resize_array = { array = r_seat_frame size = tmp_sum   	value = 4 }
+    resize_array = { array = r_seat_frame size = 600       	value = 1 }
+}
+
+#########################################
+#########################################
+
+fontaine_national_mobilization_calculation = {
+	###Army Modifiers
+	set_variable = { FRA_wartime_mobilization_fighter_sortie_efficiency = 0.25 }
+	set_variable = { FRA_wartime_mobilization_army_core_defence_factor = 0.20 }
+	set_variable = { FRA_wartime_mobilization_army_attack_factor = 0.10 }
+	set_variable = { FRA_wartime_mobilization_convoy_escort_efficiency = 0.25 }
+	###Politics Modifiers
+	set_variable = { FRA_wartime_mobilization_decryption_power_factor = 0.30 }
+	set_variable = { FRA_wartime_mobilization_civilian_intel_to_others = -0.10 }
+	set_variable = { FRA_wartime_mobilization_army_intel_to_others = -0.10 }
+	set_variable = { FRA_wartime_mobilization_airforce_intel_to_others = -0.10 }
+	set_variable = { FRA_wartime_mobilization_navy_intel_to_others = -0.10 }
+	set_variable = { FRA_wartime_mobilization_agency_upgrade_time = -0.15 }
+	set_variable = { FRA_wartime_mobilization_mobilization_speed = 0.40 }
+	###Furina Modifiers
+	set_variable = { FRA_wartime_mobilization_industrial_capacity_factory = 0.20 }
+	set_variable = { FRA_wartime_mobilization_consumer_goods_factor = -0.35 }
+	set_variable = { FRA_wartime_mobilization_surrender_limit = 0.25 }
+	set_variable = { FRA_wartime_mobilization_resistance_damage_to_garrison = -0.30 }
+	set_variable = { FRA_wartime_mobilization_compliance_growth = 0.15 }
+
+	clamp_variable = { 
+		var = fontaine_military_power
+		max = 150
+		min = 0 
+	}
+
+	clamp_variable = {
+		var = fontaine_monarchy_power
+		min = 100 
+		max = 0 
+	}
+
+	clamp_variable = {
+		var = fontaine_theocracy_power
+		min = 100 
+		max = 0 
+	}
+
+	set_temp_variable = { fontaine_military_ratio = fontaine_military_power }
+	multiply_temp_variable = { fontaine_military_ratio = 0.01 }
+
+	set_temp_variable = { fontaine_theocracy_ratio = fontaine_theocracy_power }
+	multiply_temp_variable = { fontaine_theocracy_ratio = 0.01 }
+
+	set_temp_variable = { fontaine_monarchy_ratio = fontaine_monarchy_power }
+	multiply_temp_variable = { fontaine_monarchy_ratio = 0.01 }
+
+	multiply_variable = { FRA_wartime_mobilization_fighter_sortie_efficiency = fontaine_military_ratio }
+	multiply_variable = { FRA_wartime_mobilization_army_core_defence_factor = fontaine_military_ratio }
+	multiply_variable = { FRA_wartime_mobilization_army_attack_factor = fontaine_military_ratio }
+	multiply_variable = { FRA_wartime_mobilization_convoy_escort_efficiency = fontaine_military_ratio }
+	###Politics Modifiers
+	multiply_variable = { FRA_wartime_mobilization_decryption_power_factor = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_civilian_intel_to_others = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_army_intel_to_others = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_airforce_intel_to_others = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_navy_intel_to_others = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_agency_upgrade_time = fontaine_monarchy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_mobilization_speed = fontaine_monarchy_ratio }
+	###Furina Modifiers
+	multiply_variable = { FRA_wartime_mobilization_industrial_capacity_factory = fontaine_theocracy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_consumer_goods_factor = fontaine_theocracy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_surrender_limit = fontaine_theocracy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_resistance_damage_to_garrison = fontaine_theocracy_ratio }
+	multiply_variable = { FRA_wartime_mobilization_compliance_growth = fontaine_theocracy_ratio }
+}
+
+fontaine_useless = {
+	set_country_flag = fontaine_resetting_accomplish 
+}

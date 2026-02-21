@@ -1,0 +1,19 @@
+state = {
+	id = 1108
+	name = 1108_Nahariyya
+	manpower = 38900
+	state_category = rural
+	history = {
+		owner = PAL 
+		add_core_of = PAL
+		add_core_of = ISR
+		victory_points = {
+			1065 3 # Nazareth
+		}
+		buildings = {
+			industrial_complex = 1
+			infrastructure = 3
+		}
+	}
+	provinces = { 1065 }
+}

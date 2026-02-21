@@ -1,0 +1,23 @@
+state = {
+	id = 1096
+	name = 1096_Marche
+	manpower = 1027900
+	state_category = large_town 
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = PAP 
+		victory_points = {
+			925 1 
+		}
+		buildings = {
+			infrastructure = 6 
+			dockyard = 1 
+			industrial_complex = 1 
+			925 = {
+				naval_base = 4
+			}
+		}
+	}
+	provinces = { 925 967 }
+}

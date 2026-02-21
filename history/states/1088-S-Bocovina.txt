@@ -1,0 +1,14 @@
+state = {
+	id = 1088
+	name = 1088_S-Bocovina
+	manpower = 119000
+	state_category = rural 
+	history = {
+		owner = ROM
+		add_core_of = ROM 
+		buildings = {
+			infrastructure = 3 
+		}
+	}
+	provinces = { 6761 6584 11689 }
+}

@@ -1,0 +1,123 @@
+USA_the_1929_depression = {
+	icon = GFX_idea_usa_the_depression 
+	consumer_goods_factor = usa_depression_consumer_goods_factor
+	production_speed_buildings_factor = usa_depression_production_speed_buildings_factor 
+	political_power_cost = usa_depression_political_power_cost 
+	conscription_factor = usa_depression_conscription_factor 
+	industrial_capacity_factory = usa_depression_industrial_capacity_factory 
+	industrial_capacity_dockyard = usa_depression_industrial_capacity_dockyard 
+	local_resources_factor = usa_depression_local_resources_factor 
+	war_stability_factor = usa_depression_war_stability_factor 
+	fuel_gain_factor = usa_depression_fuel_gain_factor 
+	production_factory_efficiency_gain_factor = usa_depression_production_factory_efficiency_gain_factor 
+	production_factory_start_efficiency_factor = usa_depression_production_factory_start_efficiency_factor 
+	custom_modifier_tooltip = USA_the_1929_depression_tt
+	remove_trigger = {
+		or = {
+			check_variable = {
+				usa_the_depression_progress = 0
+			}
+			check_variable = {
+				usa_the_depression_progress < 0
+			}
+		}
+	}
+}
+
+USA_works_progress_administration_during_depression = {
+	icon = GFX_idea_SWE_all_cards_on_deck 
+	custom_modifier_tooltip = USA_works_progress_administration_during_depression_tt
+	consumer_goods_factor = wpa_consumer_goods_factor
+	production_factory_max_efficiency_factor = wpa_production_factory_max_efficiency_factor
+	production_factory_start_efficiency_factor = wpa_production_factory_start_efficiency_factor
+	production_factory_efficiency_gain_factor = wpa_production_factory_efficiency_gain_factor 
+	line_change_production_efficiency_factor = wpa_line_change_production_efficiency_factor 
+	production_speed_infrastructure_factor = wpa_production_speed_infrastructure_factor
+	production_speed_industrial_complex_factor = wpa_production_speed_industrial_complex_factor
+	global_building_slots_factor = wpa_global_building_slots_factor
+	political_power_cost = wpa_political_power_cost
+}
+
+USA_local_development = {
+	icon = GFX_modifiers_generic_military_plans 
+	state_production_speed_buildings_factor = 0.10 
+	local_building_slots = 2
+}
+
+USA_Dust_Bowl = {
+	icon = GFX_modifiers_RAJ_famine_state 
+	monthly_population = -0.30 
+	production_speed_buildings_factor = -0.50
+	truck_attrition_factor = 0.20 
+	supply_factor = -0.35 
+	local_supplies = -0.50 
+}
+
+USA_Operation_Olympic = {
+	icon = GFX_modifiers_SOV_armored_battery 
+	breakthrough_factor = 0.10
+	land_night_attack = 0.25 
+	pocket_penalty = -0.50 
+	air_superiority_bonus_in_combat = 0.30 
+	shore_bombardment_bonus = 0.25 
+	remove_trigger = {
+		1023 = { is_fully_controlled_by = USA }
+		1024 = { is_fully_controlled_by = USA }
+		282 = { is_fully_controlled_by = USA } 
+	}
+}
+
+USA_Operation_Coronet = {
+	icon = GFX_modifiers_SOV_armored_battery 
+	breakthrough_factor = 0.10
+	land_night_attack = 0.25 
+	pocket_penalty = -0.50 
+	air_superiority_bonus_in_combat = 0.30 
+	shore_bombardment_bonus = 0.25 
+	remove_trigger = {
+		528 = { is_fully_controlled_by = USA }
+	}
+}
+
+USA_isle_hopping_target = {
+	icon = GFX_modifiers_FIN_motti_tactics_modifier 
+	naval_invasion_penalty = -0.20
+	air_superiority_bonus_in_combat = 0.25 
+	shore_bombardment_bonus = 0.25 
+	local_supplies_for_controller = 0.30 
+}
+
+USA_front = {
+	icon = GFX_modifiers_FIN_motti_tactics_modifier 
+	naval_invasion_penalty = -0.20
+	air_superiority_bonus_in_combat = 0.25 
+	shore_bombardment_bonus = 0.25 
+	local_supplies_for_controller = 0.30 
+}
+
+USA_start_region_of_naval_invasion = {
+	icon = GFX_modifiers_SOV_armored_battery 
+	supply_factor = 0.35 
+	truck_attrition = -0.20 
+	local_supplies_for_controller = 0.45 
+	remove_trigger = {
+		controller = {
+			has_war = no 
+		}
+	}
+}
+
+USA_normany_landing = {
+	icon = GFX_modifiers_SOV_armored_battery 
+	floating_harbor_range = 0.25
+	floating_harbor_supply = 0.30 
+	supply_factor = 0.35 
+	truck_attrition = -0.20 
+	local_supplies_for_controller = 0.45 
+	naval_invasion_penalty = -0.20
+	air_superiority_bonus_in_combat = 0.25 
+	shore_bombardment_bonus = 0.25 
+	remove_trigger = {
+		15 = { or = { is_fully_controlled_by = USA is_fully_controlled_by = FRA is_fully_controlled_by = ENG } }
+	}
+}

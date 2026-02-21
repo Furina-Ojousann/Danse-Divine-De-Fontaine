@@ -1,0 +1,58 @@
+characters = {
+	RUS_Andrey_Zhdanov = {
+		name = RUS_Andrey_Zhdanov
+		portraits = {
+			civilian = {
+				large = GFX_portrait_rus_Andrey_Zhdanov
+			}
+		}
+		country_leader = {
+			ideology = stalinism 
+		}
+	}
+
+	RUS_Peter_Struve = {
+		name = RUS_Peter_Struve 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_rus_Peter_Struve 
+			}
+		}
+		country_leader = {
+			ideology = socialism
+		}
+		country_leader = {
+			ideology = populist_socialism_democratic_socialism 
+		}
+		country_leader = {
+			ideology = liberalism_temp_social_democracy 
+		}
+	}
+
+	RUS_anton_denikin = {
+		name = RUS_anton_denikin 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_rus_anton_denikin 
+			}
+		}
+		country_leader = {
+			ideology = national_conversatism 
+		}
+		country_leader = {
+			ideology = conservatism_temp_agrarianism 
+		}
+	}
+
+	RUS_Ivan_Ilyin = {
+		name = RUS_Ivan_Ilyin 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_rus_Ivan_Ilyin 
+			}
+		}
+		country_leader = {
+			ideology = nazism  
+		}
+	}
+}

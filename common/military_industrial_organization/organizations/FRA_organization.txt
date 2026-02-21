@@ -1,0 +1,1000 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+FRA_state_owned_aircraft_manufacturer = {
+	icon = GFX_mio_fra_state_owned_aircraft_manufacturer 
+	allowed = {
+		original_tag = FRA 
+	}
+	visible = {
+		FROM = {
+			has_completed_focus = FRA_boost_local_air_industry 
+		}
+	}
+	available = {
+		FROM = {
+			has_completed_focus = FRA_boost_local_air_industry 
+		}
+	}
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+		mio_cat_eq_all_medium_plane
+		helicopter_equipment 
+	}
+	research_categories = {
+		mio_cat_all_light_aircraft_and_modules
+		mio_cat_all_medium_aircraft_and_modules
+	}
+	research_bonus = 0.10
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			reliability_factor = -0.03
+		}
+	}
+	tree_header_text = {
+		text = light_air
+		x = 1
+	}
+	trait = {
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		name = small_plane_production
+		position = { x = 1 y = 0 }
+		token = small_plane_production 
+		production_bonus = {
+			production_cost_factor = -0.05 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_plane_cas_materials 
+		token = aluminum_improvement
+		name = aluminium_improvement
+		position = { x = 0 y = 1 }
+		available = {
+			FROM = {
+				has_completed_focus = FRA_effective_aluminum
+			}
+		}
+		special_trait_background = yes 
+		parent = {
+			traits = { small_plane_production }
+		}
+		equipment_bonus = {
+			reliability_factor = 0.10 
+		}
+		production_bonus = {
+			production_cost_factor = -0.05 
+			production_resource_need_factor = -0.10
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_plane_cas_line_efficiency
+		token = skilled_workers_cultivate
+		name = skilled_workers_cultivate 
+		position = { x = 2 y = 1 }
+		parent = {
+			traits = { small_plane_production }
+		}
+		production_bonus = {
+			production_cost_factor = -0.05 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_plane_light_engine 
+		name = product_equipment_improve
+		token = product_equipment_improve
+		position = { x = 1 y = 2 }
+		any_parent = {
+			skilled_workers_cultivate
+			aluminum_improvement
+		}
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_cap_factor = 0.10
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_air_agility 
+		name = stock_policy
+		token = stock_policy
+		relative_position_id = small_plane_production 
+		position = {
+			x = 2
+			y = 0
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.10 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_max_strength
+		name = ford_talor_policy
+		token = ford_talor_policy
+		relative_position_id = stock_policy
+		position = {
+			x = 0 
+			y = 1
+		}
+		parent = {
+			traits = { stock_policy }
+		}
+		organization_modifier = {
+			political_power_cost = 0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.10
+			production_efficiency_cap_factor = 0.10 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_trait_icon_efficiency_gain 
+		name = worker_union
+		token = worker_union
+		relative_position_id = ford_talor_policy
+		position = {
+			x = 0 
+			y = 1
+		}
+		parent = {
+			traits = { ford_talor_policy }
+		}
+		available = {
+			FROM = {
+				OR = {
+					AND = {
+						not = { has_government = fascism has_government = neutrality }
+						has_idea = state_monopoly_capitalism
+					}
+					has_government = communism 
+				}
+				
+			}
+		}
+		production_bonus = {
+			production_capacity_factor = -0.05 
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.05 
+		}
+	}
+
+	trait = {
+		icon = GFX_generic_mio_department_icon_helicopter
+		name = found_helicpoter_manufacture
+		token = found_helicpoter_manufacture 
+		relative_position_id = stock_policy 
+		position = {
+			x = 1
+			y = 0 
+		}
+		special_trait_background = yes 
+		available = {
+			FROM  ={
+				has_completed_focus = FRA_helicopter 
+			}
+		}
+		limit_to_equipment_type = {
+			helicopter_equipment 
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.10 
+		}
+	}
+
+}
+
+FRA_renault_organization = {
+	#include = generic_infantry_tank_organization
+	icon = GFX_idea_renault
+	allowed = {	
+		OR = {
+			tag = FRA 
+			AND = {
+				tag = ETH 
+				has_dlc = "By Blood Alone"
+			}
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+		}
+	}
+
+	visible = {
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+		}
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = FRA } }
+			}
+			FROM = { NOT = { has_war_with = FRA } }
+		}	
+
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_country_flag = has_invited_FRA_renault_organization_flag
+				}
+			}
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_renault_mio_flag
+				}
+			}
+		}
+	}
+
+	equipment_type = { armor }
+	research_categories = { mio_cat_tech_all_armor_and_modules }
+
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+		equipment_bonus = {
+			maximum_speed = 0.05 
+		}
+	}
+
+	tree_header_text = {
+		text = renault_header_text_wartime
+		x = 0
+	}
+
+	tree_header_text = {
+		text = renault_header_text_tank_design
+		x = 5
+	}
+
+	tree_header_text = {
+		text = renault_post_ww2_development
+		x = 9
+	}
+
+	trait = {
+		token = renault_wartime_nationalization
+		name = renault_wartime_nationalization 
+		icon = GFX_generic_mio_trait_icon_supply_consumption 
+		position = { x = 1 y = 0 }
+		available = {
+			FROM = {
+				has_idea = war_economy 
+				has_war_with_major = yes 
+				arms_factory > 29 
+			}
+		}
+		on_complete = {
+			FROM = {
+				add_political_power = -50 
+				random_core_state = {
+					limit = {
+						is_in_home_area = yes 
+						or = {
+							has_state_category = city 
+							has_state_category = large_city
+							has_state_category = megalopolis
+							has_state_category = metropolis 
+						}
+						free_building_slots = {
+							building = arms_factory 
+							size > 0 
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1 
+						instant_build = yes 
+					}
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.75
+			military_industrial_organization_design_team_change_cost = -0.75 
+			military_industrial_organization_policy_cost = -1 
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05 
+		}
+	}
+
+	trait = {
+		token = renault_transform_civil_use
+		name = renault_transform_civil_use 
+		icon = GFX_generic_mio_trait_icon_weight 
+		relative_position_id = renault_wartime_nationalization 
+		position = { x = 0 y = 1 }
+		parent = {
+			traits = { renault_wartime_nationalization }
+		}
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = renault_transform_civil_use 
+					bonus = -0.10 
+					uses = 1 
+					category = construction_tech 
+				}
+				random_core_state = {
+					limit = {
+						industrial_complex > 0 
+						is_in_home_area = yes 
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes 
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1 
+					}
+				}
+				random_core_state = {
+					limit = {
+						industrial_complex > 0 
+						is_in_home_area = yes 
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes 
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1 
+					}
+				}
+				random_core_state = {
+					limit = {
+						industrial_complex > 0 
+						is_in_home_area = yes 
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes 
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1 
+					}
+				}
+			}
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05 
+		}
+	}
+
+	trait = {
+		token = renault_national_tank_facture
+		name = renault_national_tank_facture 
+		icon = GFX_generic_mio_trait_icon_naval_range 
+		relative_position_id = renault_transform_civil_use 
+		position = { x = -1 y = 1 }
+		parent = { traits = { renault_transform_civil_use } }
+		mutually_exclusive = {
+			renault_face_the_future
+		}
+		on_complete = {
+			FROM = {
+				mio:FRA_renault_organization = {
+					set_mio_name_key = fra_renault_nationalized
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.20 
+			military_industrial_organization_funds_gain = 0.25
+			military_industrial_organization_research_bonus = 0.10 
+		}
+	}
+
+	trait = {
+		token = renault_face_the_future
+		name = renault_face_the_future
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		relative_position_id = renault_transform_civil_use
+		position = { x = 1 y = 1 }
+		parent = { traits = { renault_transform_civil_use } }
+		mutually_exclusive = {
+			renault_national_tank_facture 
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.20 
+		}
+	}
+
+	trait = {
+		token = renault_estienne_strategy
+		name = renault_estienne_strategy 
+		icon = GFX_generic_mio_trait_icon_breakthrough 
+		position = { x = 4 y = 0 }
+		equipment_bonus = {
+			maximum_speed = 0.05 
+			build_cost_ic = -0.05 
+		}
+	}
+
+	trait = {
+		token = renault_adaptable_turret_ring
+		name = generic_mio_trait_adaptable_turret_ring
+		icon = GFX_generic_mio_trait_icon_hard_attack
+		
+		position = { x=0  y=2 }
+		relative_position_id = renault_estienne_strategy
+		
+		parent = { traits = { renault_estienne_strategy } }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = renault_turret_sights
+		name = generic_mio_trait_turret_sights
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		
+		position = { x=0 y=2 }
+		relative_position_id = renault_adaptable_turret_ring
+
+		any_parent = { renault_adaptable_turret_ring }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			breakthrough = 0.05
+		}
+	}
+
+	trait = {
+		token = renault_close_support_role
+		name = generic_mio_trait_close_support_role
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		
+		position = { x=-1 y=1 }
+		relative_position_id = renault_estienne_strategy
+	
+		any_parent = { renault_estienne_strategy }
+		
+		equipment_bonus = {
+			soft_attack = 0.1
+		}
+	}
+
+	trait = {
+		token = renault_anti_tank_role
+		name = generic_mio_trait_anti_tank_role
+		icon = GFX_generic_mio_trait_icon_hard_attack
+		
+		position = { x=1 y=1 }
+		relative_position_id = renault_estienne_strategy
+		
+		any_parent = { renault_estienne_strategy }
+
+		limit_to_equipment_type = {
+			heavy_tank_chassis  
+		}
+
+		equipment_bonus = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+	}
+
+	trait = {
+		token = renault_large_size_equip
+		name = renault_large_size_equip 
+		icon = GFX_generic_mio_trait_icon_build_cost_ic 
+		relative_position_id = renault_close_support_role
+		position = { x = 0 y = 2 }
+		parent = {
+			traits = { renault_close_support_role }
+		}
+		equipment_bonus = {
+			breakthrough = 0.10 
+		}
+		production_bonus = {
+			production_cost_factor = -0.05 
+		}
+	}
+
+	trait = {
+		token = renault_advanced_quality
+		name = renault_advanced_quality 
+		icon = GFX_generic_mio_trait_icon_armor_value 
+		relative_position_id = renault_anti_tank_role
+		position = { x = 0 y = 2 }
+		parent = { traits = { renault_anti_tank_role } }
+		equipment_bonus = {
+			reliability = 0.05 
+			armor_value = 0.05 
+		}
+	}
+
+	trait = {
+		token = renault_single_engine
+		name = generic_mio_trait_single_engine
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=6 y=0 }
+
+		mutually_exclusive = { renault_dual_engine_redundancy }
+		
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+	}
+
+
+
+	trait = {
+		token = renault_dual_engine_redundancy
+		name = generic_mio_trait_dual_engine_redundancy
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=8 y=0 }
+
+		mutually_exclusive = { renault_single_engine }
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+
+	}
+
+	trait = {
+		token = renault_interleaved_track_wheels
+		name = generic_mio_trait_interleaved_track_wheels
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=2 }
+		relative_position_id = renault_single_engine
+
+		any_parent = { renault_single_engine renault_dual_engine_redundancy }
+
+		mutually_exclusive = { renault_overlapped_track_wheels }
+
+		equipment_bonus = {
+			maximum_speed = 0.1
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = renault_overlapped_track_wheels
+		name = generic_mio_trait_overlapped_track_wheels
+		icon = GFX_generic_mio_trait_icon_defense
+		
+		position = { x=0 y=2 }
+		relative_position_id = renault_dual_engine_redundancy
+		
+		any_parent = { renault_single_engine renault_dual_engine_redundancy }
+
+		mutually_exclusive = { renault_interleaved_track_wheels }
+
+		equipment_bonus = {
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = renault_Main_battle_tank
+		name = renault_Main_battle_tank 
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_production  
+		position = { x = 10 y = 0 }
+		available = {
+			FROM = {
+				has_tech = main_battle_tank_chassis 
+			}
+		}
+		limit_to_equipment_type = {
+			modern_tank_chassis 
+		}
+		equipment_bonus = {
+			soft_attack = 0.05 
+			hard_attack = 0.10 
+			armor_value = 0.10 
+		}
+	}
+
+	trait = {
+		token = renault_Self_propelled_artillery_theory
+		name = renault_Self_propelled_artillery_theory 
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_spg 
+		relative_position_id = renault_Main_battle_tank 
+		position = { x = 0 y = 2 }
+		parent = {
+			traits = { renault_Main_battle_tank }
+		}
+		limit_to_equipment_type = {
+			modern_tank_artillery_chassis
+		}
+		equipment_bonus = {
+			soft_attack = 0.20 
+		}
+	}
+}
+
+FRA_hotchkiss_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_3
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+	add_trait = { 
+		token = FRA_mio_trait_l_35
+		name = FRA_mio_trait_l_35
+		icon = GFX_generic_mio_department_icon_tank_general_weapons
+		any_parent = { generic_mio_enlarged_breech }
+		relative_position_id = generic_mio_enlarged_breech
+		position = { x=1 y=2 }  
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}  
+	}
+
+	override_trait = {
+		token = generic_mio_gunner_sight_improvements
+		position = { x=-1 y=2}
+	}
+}
+
+FRA_apx_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_FRA_atelier_puteaux
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_amx_organization = { 
+	include = generic_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_2
+	allowed = {	
+		tag = FRA 
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = { original_tag = FRA } 
+			}
+			FROM = { has_completed_focus = FRA_form_the_state_arsenals }
+		}
+	}
+}
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+FRA_fcm_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_fcm
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_aeb_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_FRA_aeb
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_acl_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_FRA_acl
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_acf_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_FRA_acf
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		OR = {
+			tag = FRA
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = FRA } }
+			}
+			FROM = { NOT = { has_war_with = FRA } }
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_acf_mio_flag
+				}
+			}
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+FRA_morane_saulnier_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_morane_saulnier
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_bloch_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_bloch
+	allowed = {	
+		OR = {
+			tag = FRA 
+			AND = {
+				tag = ETH 
+				has_dlc = "By Blood Alone"
+			}
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+		}
+	}
+
+	visible = {
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+		}
+	}
+	
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = FRA } }
+			}
+			FROM = { NOT = { has_war_with = FRA } }
+		}
+
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_country_flag = has_invited_FRA_bloch_organization_flag
+				}
+			}
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_bloch_mio_flag
+				}
+			}
+		}
+	}
+}
+
+FRA_amiot_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_amiot
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_levasseur_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_levasseur
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+FRA_SNCAC_organization = {
+	name = SNCAC
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_FRA_sncac
+	allowed = {	
+		tag = FRA 
+		has_dlc = "Arms Against Tyranny"
+	}
+	visible = {
+		FROM = { has_country_flag = FRA_SNCAC_formed }
+	}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+
+
+FRA_panhard_organization = {
+	include = generic_armored_car_organization
+	icon = GFX_idea_FRA_panhard
+	allowed = {	
+		tag = FRA 
+		has_dlc = "La Resistance"
+	}
+}
+
+FRA_somua_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_somua
+	
+	allowed = {	
+		OR = {
+			tag = FRA 
+			AND = {
+				tag = POL # If Poland sets up a local one
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
+			}
+		}
+	}
+
+	visible = {
+		IF = { 
+			limit = {
+				FROM = { tag = POL }
+			}
+			FROM = {
+				has_country_flag = POL_somua_motors
+			}
+		}
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = FRA } }
+			}
+			FROM = { NOT = { has_war_with = FRA } }
+		}
+	}
+}
+
+FRA_mas_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_mas
+	
+	allowed = {	 
+		OR = {
+			tag = FRA 
+			AND = {
+				tag = ETH
+				has_dlc = "By Blood Alone"
+			}
+		}
+	}
+	
+	visible = {
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+		}
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = FRA } }
+			}
+			FROM = { NOT = { has_war_with = FRA } }
+		}
+
+		IF = {
+			limit = {
+				FROM = { original_tag = ETH }
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_country_flag = has_invited_FRA_mas_organization_flag
+				}
+			}
+		}
+	}
+}
+
+FRA_schneider_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_schneider
+	allowed = {	
+		tag = FRA 
+	}
+}

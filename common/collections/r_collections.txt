@@ -1,0 +1,16 @@
+european_democratic_allies = {
+	input = game:all_countries
+	name = european_democratic_allies_name
+	operators = {
+		limit = {
+			or = {
+				has_government = democratic
+				has_government = populist_socialism
+				has_government = communism 
+			}
+			has_capitulated = no 
+			capital_scope = { is_on_continent = europe }
+			is_ally_with = ROOT  
+		}
+	}
+}

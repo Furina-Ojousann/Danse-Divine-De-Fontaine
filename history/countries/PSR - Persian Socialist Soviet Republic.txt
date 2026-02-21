@@ -1,0 +1,14 @@
+capital = 266 
+recruit_character = PSR_soleyman_mirza_eskandari 
+set_politics = {
+	ruling_party = communism 
+	elections_allowed = no 
+	last_election = 1918.1.1
+	election_frequency = 60 
+}
+set_popularities = {
+	communism = 44
+	neutrality = 42 
+	democratic = 10 
+	fascism = 4
+}

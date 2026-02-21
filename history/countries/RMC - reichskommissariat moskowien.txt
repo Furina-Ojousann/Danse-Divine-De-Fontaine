@@ -1,0 +1,88 @@
+capital = 219 
+
+recruit_character = RMC_Siegfried_Kasche
+recruit_character = PLY_Acheron
+recruit_character = PLY_Prince_of_Wales
+recruit_character = PLY_Raiden_Shogun
+recruit_character = PLY_Suffren
+recruit_character = PLY_otto_von_Bismarck
+recruit_character = PLY_sparkle
+recruit_character = PLY_topaz
+recruit_character = PLY_Bronya_Zaychik
+recruit_character = PLY_Nahida 
+recruit_character = CHI_Liang_shuming
+recruit_character = CHI_Song_qingling
+recruit_character = CHI_Zhang_junmai
+recruit_character = PLY_March_7th
+recruit_character = USA_John_Nance_Garner 
+
+recruit_character = PLY_Daiwasu_kareto
+recruit_character = PLY_Kitasan_Buraku
+recruit_character = PLY_Meisho_Udotou
+recruit_character = PLY_Mejiro_Makuin
+recruit_character = PLY_Oguri_Cup
+recruit_character = PLY_Satono_Daimondo
+recruit_character = PLY_Teiemu_operao
+recruit_character = PLY_enterprise 
+recruit_character = PLY_TokaiTeio 
+
+set_technology = {
+	basic_train = 1 
+	tech_support = 1 
+	tech_engineers = 1 
+	tech_recon = 1 
+	tech_military_police = 1 
+	gw_artillery = 1 
+	interwar_antiair = 1 
+	interwar_antitank = 1 
+	electronic_mechanical_engineering = 1 
+	mechanical_computing = 1 
+	radio = 1 
+	basic_machine_tools = 1 
+	infantry_weapons = 1 
+	infantry_weapons1 = 1 
+	tech_trucks = 1 
+	motorised_infantry = 1
+	tech_mountaineers = 1 
+}
+
+set_technology = {
+	#tanks
+	gwtank_chassis = 1 
+	basic_light_tank_chassis = 1 
+	basic_medium_tank_chassis = 1 
+	basic_heavy_tank_chassis = 1 
+	improved_light_tank_chassis = 1 
+	armor_tech_1 = 1 
+	engine_tech_1 = 1 
+}
+
+set_technology = {
+	#navy
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1 
+	sonar = 1 
+	basic_depth_charges = 1 
+	improved_depth_charges = 1 
+	basic_battery = 1 
+	basic_light_battery = 1
+	basic_light_shell = 1
+	basic_torpedo = 1 
+	improved_ship_torpedo_launcher = 1
+	magnetic_detonator = 1
+	mtg_transport = 1
+	basic_naval_mines = 1
+}
+
+set_politics = {
+	ruling_party = fascism 
+	election_frequency = 48
+	last_election = 1918.11.6
+	elections_allowed = no 
+}
+
+set_popularities = {
+	fascism = 78
+	communism = 10 
+	neutrality = 12
+}

@@ -1,0 +1,86 @@
+technologies = {
+	tech_nuclear_fasion_engine = {
+		allow = {
+			always = no 
+		}
+		research_cost = 1 
+		enable_equipment_modules = {
+			nuclear_fasion_engine_light
+			nuclear_fasion_engine_carrier
+			nuclear_fasion_engine_heavy
+			nuclear_fasion_engine_medium
+			nuclear_fasion_engine_sub
+		}
+	}
+	tech_fontaine_special_machinery = {
+		allow = {
+			always = no 
+		}
+		research_cost = 1 
+		enable_equipments = {
+			fontaine_artillery_machinery_1
+			fontaine_attackive_machinery_1
+			fontaine_defence_machinery_1
+		}
+		enable_subunits = {
+			defence_machinery
+			attackive_machinery
+			artillery_machinery 
+		}
+	}
+
+	tech_fontaine_improved_special_machinery = {
+		allow = {
+			always = no 
+		}
+		research_cost = 1 
+		enable_equipments = {
+			fontaine_artillery_machinery_2
+			fontaine_attackive_machinery_2
+			fontaine_defence_machinery_2
+		}
+	}
+
+	tech_french_experimental_406mm_naval_gun = {
+		allow = {
+			always = no 
+		}
+		research_cost = 1 
+		enable_equipment_modules = {
+			experimental_406mm_naval_gun
+		}
+	}
+
+	tech_unit_vieille_garde = {
+		allow = {
+			always = no 
+		}
+		research_cost = 1 
+		enable_subunits = {
+			vieille_garde 
+			mechanized_vieille_garde 
+		}
+	}
+
+	tech_unit_air_assault = {
+		allow = {
+			always = no 
+		}
+		enable_equipments = {
+			Attack_Helicopter 
+		}
+		enable_subunits = {
+			air_assault_company 
+		}
+	}
+
+	tech_experimental_antisubmarine_helicopter = {
+		allow = {
+			always = no 
+		}
+		enable_equipment_modules = {
+			tech_experimental_antisubmarine_helicopter_carrier
+			tech_experimental_antisubmarine_helicopter_charge 
+		}
+	}
+}

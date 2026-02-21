@@ -1,0 +1,23 @@
+state = {
+	id = 1091
+	name = 1091_Kent
+	manpower = 978000
+	state_category = city 
+	history = {
+		owner = ENG
+		add_core_of = ENG 
+		victory_points = { 
+			3501 3 # Dover
+		}
+		buildings = {
+			infrastructure = 7 
+			dockyard = 1
+			industrial_complex = 2 
+			3501 = {
+				naval_base = 6
+				coastal_bunker = 3
+			}
+		}
+	}
+	provinces = { 3501 }
+}

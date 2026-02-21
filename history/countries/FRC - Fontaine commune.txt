@@ -1,0 +1,73 @@
+capital = 16
+
+recruit_character = FRC_the_fontaine_people 
+recruit_character = FRC_Adrienne_Charlotte 
+recruit_character = FRC_charles_delestraint
+recruit_character = FRC_ernest_petit
+recruit_character = FRC_georges_blanchard 
+recruit_character = FRC_maurice_thorez 
+recruit_character = FRC_Marcel_Cachin 
+recruit_character = FRC_Leon_Jouhaux
+
+set_politics = {
+	ruling_party = communism 
+	elections_allowed = yes 
+	election_frequency = 48 
+}
+
+set_popularities = {
+	communism = 98 
+	democratic = 2 
+}
+
+add_dynamic_modifier = {
+	modifier = FRA_the_red_army 
+}
+
+set_variable = { FRA_the_red_army_army_core_attack_factor = 0 }
+set_variable = { FRA_the_red_army_army_core_defence_factor = 0 }
+set_variable = { FRA_the_red_army_max_planning = -0.10 }
+set_variable = { FRA_the_red_army_planning_speed = 0.25 }
+set_variable = { FRA_the_red_army_supply_consumption_factor = 0 }
+set_variable = { FRA_the_red_army_army_org_factor = -0.1 }
+set_variable = { FRA_the_red_army_army_morale_factor = 0 }
+set_variable = { FRA_the_red_army_conscription = 0 }
+set_variable = { FRA_the_red_army_mobilization_speed = 0 }
+set_variable = { FRA_the_red_army_breakthrough_factor = 0 }
+set_variable = { FRA_the_red_army_recon_factor = 0 }
+set_variable = { FRA_the_red_army_attrition = -0.05 }
+set_variable = { FRA_the_red_army_org_loss_at_low_org_factor = -0.2 }
+set_variable = { FRA_the_red_army_org_loss_when_moving = 0 }
+set_variable = { FRA_the_red_army_army_armor_defence_factor = 0 }
+set_variable = { FRA_the_red_army_army_armor_attack_factor = 0 }
+set_variable = { FRA_the_red_army_army_armor_speed_factor = 0 }
+set_variable = { FRA_the_red_army_army_infantry_defence_factor = 0 }
+
+add_ideas = {
+	fra_Chaotic_organization
+	fra_country_of_laborers 
+	war_economy
+	limited_conscription 
+	fra_furina_s_hand_frc 
+	total_equality 
+	planned_economy 
+	internationalism_policy 
+}
+
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 400 
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1 
+	amount = 2000 
+}
+
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 300 
+}
+
+set_stability = 0.4 
+set_war_support = 0.90 

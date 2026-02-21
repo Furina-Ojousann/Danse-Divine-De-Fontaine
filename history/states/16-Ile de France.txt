@@ -1,0 +1,88 @@
+state = {
+	id = 16
+	name = "STATE_16"
+	manpower = 7038500
+	
+	state_category = megalopolis
+	
+
+	history = {
+
+		owner = FRA
+		add_core_of = FRA
+
+		victory_points = {
+			11506 50 # Paris
+		}
+
+		victory_points = {
+			13390 5 
+		}
+
+		victory_points = {
+			13389 10 
+		}
+
+		victory_points = {
+			13391 5
+		}
+
+		victory_points = {
+			9523 15 
+		}
+
+		victory_points = {
+			9534 5 
+		}
+
+		victory_points = {
+			11491 5 
+		}
+
+		victory_points = {
+			11518 3 
+		}
+
+		victory_points = {
+			6949 3 
+		}
+
+		victory_points = {
+			9725 1 
+		}
+
+		buildings = {
+			infrastructure = 9
+			arms_factory = 4
+			industrial_complex = 4
+			anti_air_building = 3
+			air_base = 5
+
+            9523 = {
+			    landmark_eiffel_tower = {
+			        level = 1
+			        allowed = {
+			            has_dlc = "Gotterdammerung"
+			        }
+			    }
+			}
+			9534 = {
+				# The Renault factories on Île Seguin in Billancourt
+				land_facility = 1
+			}
+		}
+		
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 6
+			}
+		}
+	}
+
+	provinces = {
+		6949 9523 9534 9725 11491 11506 11518 13389 13390 13391
+	}
+
+	local_supplies = 0.0 
+}

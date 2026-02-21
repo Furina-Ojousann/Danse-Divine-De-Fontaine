@@ -1,0 +1,20 @@
+state = {
+	id = 1066
+	name = 1066_Bordj_Le_Prieur
+	manpower = 9870
+	state_category = pastoral 
+	history = {
+		owner = FAG 
+		add_core_of = ALG 
+		victory_points = {
+			13435 3 
+		}
+		buildings = {
+			infrastructure = 2 
+		}
+		add_dynamic_modifier = {
+			modifier = Self_sufficient_oasis 
+		}
+	}
+	provinces = { 13435 }
+}

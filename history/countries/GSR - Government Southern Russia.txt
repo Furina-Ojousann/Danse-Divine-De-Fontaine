@@ -1,0 +1,196 @@
+﻿capital = 251
+
+set_research_slots = 3
+
+create_country_leader = {
+	name = "Andrey Vlasov"
+	picture = "gfx/leaders/SOV/Portrait_Soviet_Andrey_Vlasov.dds"
+	ideology = junta 
+}
+
+diplomatic_relation = {
+	country = MNG 
+	relation = non_aggression_pact
+}
+
+diplomatic_relation = {
+	country = MNG 
+	relation = guarantee 
+}
+
+diplomatic_relation = {
+	country = MNG 
+	relation = military_access 
+}
+
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	fuel_silos = 1
+}
+set_technology = {
+	interwar_artillery = 1 
+	artillery1 = 1
+	artillery2 = 1
+	artillery3 = 1
+						
+	interwar_antitank = 1 
+	antitank1 = 1
+	antitank2 = 1
+
+	armor_tech_1 = 1
+	armor_tech_2 = 1 
+	basic_medium_tank_chassis = 1 
+	improved_medium_tank_chassis = 1
+	basic_heavy_tank_chassis = 1
+	improved_heavy_tank_chassis = 1 
+
+	radio = 1
+	improved_radio = 1 
+	tech_maintenance_company = 1
+	tech_maintenance_company2 = 1 
+	tech_logistics_company = 1
+	tech_logistics_company2 = 1 
+
+	special_forces_mountaineers = 1
+
+	mechanised_infantry = 1 
+	mechanised_infantry2 = 1 
+}
+
+complete_special_project = sp:sp_air_helicopter
+complete_special_project = sp:sp_land_military_engineering_vehicles
+
+add_equipment_to_stockpile = {
+	type = train_equipment
+	amount = 20 
+}
+
+add_equipment_to_stockpile = {
+	type = motorbike_equipment
+	amount = 1000 
+}
+
+add_equipment_to_stockpile = {
+	type = helicopter_equipment
+	amount = 50 
+}
+
+set_technology = {
+	sp_armored_engineer_tech = 1 
+}
+
+country_lock_all_division_template = yes 
+
+create_equipment_variant = {
+	type = medium_tank_chassis_2 
+	name = "Tank Medium 1940"
+	modules = {
+		main_armament_slot = tank_medium_howitzer_2 
+		turret_type_slot = tank_medium_three_man_tank_turret
+		suspension_type_slot = tank_bogie_suspension 
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+		special_type_slot_1 = tank_radio_2
+		special_type_slot_2 = sloped_armor
+		special_type_slot_3 = secondary_turret_hmg   
+		special_type_slot_4 = easy_maintenance 
+	}
+	upgrades = {
+		tank_nsb_armor_upgrade = 4
+		tank_nsb_engine_upgrade = 0 
+	}
+}
+create_equipment_variant = {
+	name = "1942 Tank Destoryer"
+	type = heavy_tank_destroyer_chassis_2 
+	modules = {
+		main_armament_slot = tank_heavy_cannon_2 				#主武器
+		turret_type_slot = tank_heavy_three_man_tank_turret		#炮塔
+		suspension_type_slot = tank_bogie_suspension			#悬挂
+		armor_type_slot = tank_welded_armor						#装甲
+		engine_type_slot = tank_gasoline_engine				#引擎
+		special_type_slot_1 = easy_maintenance
+		special_type_slot_2 = sloped_armor 
+		special_type_slot_3 = expanded_fuel_tank 
+		special_type_slot_4 = dozer_blade 
+		}
+
+		upgrades = {
+			tank_nsb_engine_upgrade = 0 
+			tank_nsb_armor_upgrade = 9 
+		}
+	}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_submarine = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
+	}
+}
+
+set_convoys = 0
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 87
+	communism = 13 
+}
+
+set_stability = 0.20 
+set_war_support = 0.60 
+

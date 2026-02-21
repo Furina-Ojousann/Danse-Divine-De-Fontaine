@@ -1,0 +1,15 @@
+state = {
+	id = 1100
+	name = 1100_Valle_d_Aosta
+	manpower = 98000
+	state_category = rural 
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = SPM 
+		buildings = {
+			infrastructure = 5
+		}
+	}
+	provinces = { 611 11570 }
+}

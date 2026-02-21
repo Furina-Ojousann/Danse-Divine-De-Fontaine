@@ -1,0 +1,73 @@
+focus_tree = {
+	id = french_indochina
+	country = {
+		base = 0 
+		modifier = {
+			original_tag = FIC 
+			add = 10 
+		}
+	}
+
+	focus = {
+		id = FIC_serve_for_france 
+		icon = GFX_focus_chi_reach_out_to_france 
+		cost = 5
+		x = 3
+		y = 0
+		available = {
+			OVERLORD = {
+				original_tag = FRA 
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+			FRA = { add_political_power = 50 }
+		}
+	}
+
+	focus = {
+		id = FIC_forced_labour
+		icon = GFX_goal_generic_forceful_treaty 
+		cost = 5
+		relative_position_id = FIC_serve_for_france 
+		prerequisite = {
+			focus = FIC_Conciliatory_Policy
+			focus = FIC_repressive_policy 
+		}
+		x = 0 
+		y = 2
+		completion_reward = { }
+	}
+
+	focus = {
+		id = FIC_Conciliatory_Policy
+		icon = GFX_focus_SWE_form_rfsu
+		cost = 5
+		relative_position_id = FIC_serve_for_france
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = FIC_serve_for_france
+		}
+		mutually_exclusive = {
+			focus = FIC_repressive_policy 
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = FIC_repressive_policy
+		icon = GFX_focus_generic_full_social_mobilization 
+		cost = 5
+		relative_position_id = FIC_serve_for_france
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = FIC_serve_for_france
+		}
+		mutually_exclusive = {
+			focus = FIC_Conciliatory_Policy 
+		}
+		completion_reward = { }
+	}
+}

@@ -1,0 +1,23 @@
+focus_tree = {
+	id = Inazuma 
+	country = {
+		factor = 0 
+	}
+	initial_show_position = {
+		x = 5
+		y = 0 
+	}
+	focus = {
+		id = JAP_happy_new_year_prime_minister
+		icon = GFX_goal_jap_happy_new_year
+		cost = 7
+		available = {
+			has_idea = Mejiro_McQueen
+		}
+		x = 5 
+		y = 0 
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+}

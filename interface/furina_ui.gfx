@@ -1,0 +1,1183 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_task_consumption"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_consumption.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_finance"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_finance.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_price"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_price.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_trade"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_trade.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_trust"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_trust.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_labour"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_labour.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_task_tax"
+		textureFile = "gfx/interface/goals/FRA/tasks/task_tax.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_faction_icon_union_europeenne"
+		textureFile = "gfx/interface/factions/faction_logos/faction_icon_union_europeenne.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_background_blank"
+		textureFile = "gfx/interface/background_blank.png"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_picture_author"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_author.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_1"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_1.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_2"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_2.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_3"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_3.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_4"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_4.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_1_text"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_1_text.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_2_text"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_2_text.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_3_text"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_3_text.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_4_text"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_4_text.png"
+	}
+	spriteType = {
+		name = "GFX_r_parliament_bill_bg"
+		textureFile = "gfx/interface/elections/renew_parliament/bill_bg.png"
+	}
+	spriteType = {
+		name = "GFX_faction_icon_union_europeenne_miniature"
+		textureFile = "gfx/interface/factions/faction_logos/faction_icon_union_europeenne_miniature.png"
+	}
+	spriteType = {
+		name = "GFX_empiral_three_force"
+		textureFile = "gfx/interface/empire/empiral_three_force.png"
+	}
+	spriteType = {
+		name = "GFX_anarchy"
+		textureFile = "gfx/interface/anarchy.png"
+	}
+	spriteType = {
+		name = "GFX_ability_FRA_cold_protection"
+		textureFile = "gfx/interface/abilitylist/ability_FRA_cold_protection.png"
+	}
+	spriteType = {
+		name = "GFX_trait_winter_preparation"
+		textureFile = "gfx/interface/traits/trait_winter_preparation.png"
+	}
+	spriteType = {
+		name = "GFX_autonomy_Freie_und_Hansestadt"
+		textureFile = "gfx/interface/autonomy/autonomy_Freie_und_Hansestadt.png"
+	}
+	spriteType = {
+		name = "GFX_autonomy_comrade"
+		textureFile = "gfx/interface/autonomy/autonomy_comrade.dds"
+	}
+	spriteType = {
+		name = "GFX_seats"
+		textureFile = "gfx/interface/elections/renew_parliament/seats.png"
+		noOfFrames = 6
+	}
+	spriteType = {
+		name = "GFX_decision_r_parliament"
+		textureFile = "gfx/interface/decisions/decision_r_parliament.png"
+	}
+	spriteType = {
+		name = "GFX_R_Fontaine_Background"
+		textureFile = "gfx/interface/elections/renew_parliament/background.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_fra_Neuvillette_text"
+		textureFile = "gfx/leaders/FRA/portrait_fra_Neuvillette_text.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_R_Fontaine_Speaker"
+		textureFile = "gfx/interface/elections/renew_parliament/speaker.png"
+	}
+	spriteType = {
+		name = "GFX_seat_num_2"
+		textureFile = "gfx/interface/elections/renew_parliament/seat_num.png"
+	}
+	spriteType = {
+		name = "GFX_anarchy_dip_action"
+		textureFile = "gfx/interface/anarchy_dip_action.png"
+	}
+	spriteType = {
+		name = "GFX_texticon_feminism"
+		textureFile = "gfx/texticons/texticon_feminism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_navia"
+		textureFile = "gfx/texticons/texticon_navia.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_syndicalism"
+		textureFile = "gfx/texticons/texticon_syndicalism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_nationalism"
+		textureFile = "gfx/texticons/texticon_nationalism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_military_power"
+		textureFile = "gfx/texticons/fontaine_design_military_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_monarchy_power"
+		textureFile = "gfx/texticons/fontaine_design_monarchy_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_theocracy_power"
+		textureFile = "gfx/texticons/fontaine_design_theocracy_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_empire_army"
+		textureFile = "gfx/interface/empire/empire_army.png"
+	}
+	spriteType = {
+		name = "GFX_empire_furina"
+		textureFile = "gfx/interface/empire/empire_furina.png"
+	}
+	spriteType = {
+		name = "GFX_empire_Peruere_Snezhevna"
+		textureFile = "gfx/interface/empire/empire_Peruere_Snezhevna.png"
+	}
+	spriteType = {
+		name = "GFX_empire_army_design"
+		textureFile = "gfx/interface/empire/empire_army_design.png"
+	}
+	spriteType = {
+		name = "GFX_empire_furina_design"
+		textureFile = "gfx/interface/empire/empire_furina_design.png"
+	}
+	spriteType = {
+		name = "GFX_empire_Peruere_Snezhevna_design"
+		textureFile = "gfx/interface/empire/empire_Peruere_Snezhevna_design.png"
+	}
+	spriteType = {
+		name = "GFX_empire_background"
+		textureFile = "gfx/interface/empire/background.png"
+	}
+	spriteType = {
+		name = "GFX_empire_light"
+		textureFile = "gfx/interface/empire/light.png"
+	}
+	spriteType = {
+		name = "GFX_empire_bookmark"
+		textureFile = "gfx/interface/empire/bookmark.png"
+	}
+	spriteType = {
+		name = "GFX_france_Dunkerque_class"
+		textureFile = "gfx/interface/technologies/france_Dunkerque_class.png"
+	}
+	spriteType = {
+		name = "GFX_france_Furinaina_class"
+		textureFile = "gfx/interface/technologies/france_Furinaina_class.png"
+	}
+	spriteType = {
+		name = "GFX_france_LaGalissonniere_class"
+		textureFile = "gfx/interface/technologies/france_LaGalissonniere_class.png"
+	}
+	spriteType = {
+		name = "GFX_france_Richelieu_class"
+		textureFile = "gfx/interface/technologies/france_Richelieu_class.png"
+	}
+	spriteType = {
+		name = "GFX_france_Mogador_class"
+		textureFile = "gfx/interface/technologies/france_Mogador_class.png"
+	}
+	spriteType = {
+		name = "GFX_congress_seat"
+		textureFile = "gfx/interface/elections/congress/congress_seat.png"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_congress_left"
+		textureFile = "gfx/interface/elections/congress/left_wing.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_congress_centre"
+		textureFile = "gfx/interface/elections/congress/centre.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_congress_right"
+		textureFile = "gfx/interface/elections/congress/right_wing.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_seat_num"
+		textureFile = "gfx/interface/elections/congress/seat_num.png"
+	}
+	spriteType = {
+		name = "GFX_congress_bg"
+		textureFile = "gfx/interface/elections/congress/bg.png"
+	}
+	spriteType = {
+		name = "GFX_left_symbol"
+		textureFile = "gfx/interface/elections/congress/left_symbol.png"
+	}
+	spriteType = {
+		name = "GFX_right_symbol"
+		textureFile = "gfx/interface/elections/congress/right_symbol.png"
+	}
+	spriteType = {
+		name = "GFX_experimental_406mm_naval_gun"
+		textureFile = "gfx/interface/technologies/tech_experimental_406mm_naval_gun.png"
+	}
+	spriteType = {
+		name = "GFX_SMI_experimental_406mm_naval_gun"
+		textureFile = "gfx/interface/technologies/tech_experimental_406mm_naval_gun.png"
+	}
+	spriteType = {
+		name = "GFX_experimental_406mm_naval_gun_medium"
+		textureFile = "gfx/interface/technologies/tech_experimental_406mm_naval_gun.png"
+	}
+	spriteType = {
+		name = "GFX_load_furina_show"
+		textureFile = "gfx/loadingscreens/load_furina_show.png"
+	}
+	spriteType = {
+		name = "GFX_furina_1"
+		textureFile = "gfx/interface/furina_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_furina_2"
+		textureFile = "gfx/interface/furina_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_furina_3"
+		textureFile = "gfx/interface/furina_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ending_gui"
+		textureFile = "gfx/interface/ending_gui.png"
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_computer_1"
+		textureFile = "gfx/interface/fontaine_science_computer_1.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_neuroscience"
+		textureFile = "gfx/texticons/fontaine_science_neuroscience.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_integrated_circuit"
+		textureFile = "gfx/texticons/fontaine_science_integrated_circuit.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_computational_number_theory"
+		textureFile = "gfx/texticons/fontaine_science_computational_number_theory.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_ai"
+		textureFile = "gfx/texticons/fontaine_science_ai.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_covered"
+		textureFile = "gfx/texticons/fontaine_science_covered.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_science_furina_signature"
+		textureFile = "gfx/texticons/fontaine_science_furina_signature.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_other_info"
+		textureFile = "gfx/interface/other_info.png"
+	}
+
+	spriteType = {
+		name = "GFX_plans_button"
+		textureFile = "gfx/interface/plans_button.png"
+	}
+
+	spriteType = {
+		name = "GFX_the_ending"
+		textureFile = "gfx/interface/the_ending.png"
+	}
+
+	spriteType = {
+		name = "GFX_flag_overlay_stateview_large"
+		textureFile = "gfx/interface/flag_overlay_stateview_large.dds"
+	}
+
+	spriteType = {
+		name = "GFX_japan_background"
+		textureFile = "gfx/interface/JAPAN/background.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_Empire"
+		textureFile = "gfx/interface/JAPAN/Empire.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_lamp"
+		textureFile = "gfx/interface/JAPAN/lamp.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_man"
+		textureFile = "gfx/interface/JAPAN/man.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_map"
+		textureFile = "gfx/interface/JAPAN/map.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_ojyu"
+		textureFile = "gfx/interface/JAPAN/ojyu.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_sakura"
+		textureFile = "gfx/interface/JAPAN/sakura.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_light"
+		textureFile = "gfx/interface/JAPAN/light.png"
+	}
+
+	spriteType = {
+		name = "GFX_japan_text_background"
+		textureFile = "gfx/interface/JAPAN/text_bg.png"
+	}
+
+	spriteType = {
+		name = "GFX_modern_warfare_bg"
+		textureFile = "gfx/interface/modern_warfare_bg.png"
+	}
+
+	spriteType = {
+		name = "GFX_close_ending_gui_com"
+		textureFile = "gfx/interface/close_ending_gui_com.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_picture_FRA_the_europe_unite"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_FRA_the_europe_unite.png"
+	}
+
+	spriteType = {
+		name = "GFX_close_ending_gui_dem"
+		textureFile = "gfx/interface/close_ending_gui_dem.png"
+	}
+
+	spriteType = {
+		name = "GFX_close_ending_gui_fas"
+		textureFile = "gfx/interface/close_ending_gui_fas.png"
+	}
+
+	spriteType = {
+		name = "GFX_close_ending_gui_neu"
+		textureFile = "gfx/interface/close_ending_gui_neu.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_fra_communist_task"
+		textureFile = "gfx/interface/decisions/decision_fra_communist_task.png"
+	}
+
+	spriteType = {
+		name = "GFX_load_furina"
+		textureFile = "gfx/loadingscreens/load_furina.png"
+	}
+
+	spriteType = {
+		name = "GFX_parliament"
+		textureFile = "gfx/interface/parliament.png"
+	}
+
+	spriteType = {
+		name = "GFX_communist_background"
+		textureFile = "gfx/interface/fontaine_parties/communist_background.png"
+	}
+	spriteType = {
+		name = "GFX_communist_charlotte"
+		textureFile = "gfx/interface/fontaine_parties/communist_charlotte.png"
+	}
+	spriteType = {
+		name = "GFX_communist_thorez"
+		textureFile = "gfx/interface/fontaine_parties/communist_thorez.png"
+	}
+	spriteType = {
+		name = "GFX_communist_the_chairman_cachin"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_cachin.png"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_communist_jouhaux"
+		textureFile = "gfx/interface/fontaine_parties/communist_jouhaux.png"
+	}
+	spriteType = {
+		name = "GFX_communist_corruption_of_the_party"
+		textureFile = "gfx/interface/fontaine_parties/communist_corruption_of_the_party.png"
+	}
+	spriteType = {
+		name = "GFX_communist_corruption_of_the_party_texticon" #£communist_corruption_of_the_party_texticon
+		textureFile = "gfx/texticons/communist_corruption_of_the_party.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_map_africa_picture"
+		textureFile = "gfx/interface/small_map/map_africa_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_north_america_picture"
+		textureFile = "gfx/interface/small_map/map_north_america_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_south_america_picture"
+		textureFile = "gfx/interface/small_map/map_south_america_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_europe_picture"
+		textureFile = "gfx/interface/small_map/map_europe_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_middle_east_picture"
+		textureFile = "gfx/interface/small_map/map_middle_east_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_russia_picture"
+		textureFile = "gfx/interface/small_map/map_russia_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_far_east_picture"
+		textureFile = "gfx/interface/small_map/map_far_east_picture.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_map_oceania_picture"
+		textureFile = "gfx/interface/small_map/map_oceania_picture.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_gui_map_africa"
+		textureFile = "gfx/interface/small_map/map_africa.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_gui_map_north_america"
+		textureFile = "gfx/interface/small_map/map_north_america.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_gui_map_south_america"
+		textureFile = "gfx/interface/small_map/map_south_america.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_gui_map_far_east"
+		textureFile = "gfx/interface/small_map/map_far_east.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_gui_map_middle_east"
+		textureFile = "gfx/interface/small_map/map_middle_east.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_gui_map_europe"
+		textureFile = "gfx/interface/small_map/map_europe.png"
+	}
+	spriteType = {
+		name = "GFX_gui_map_russia"
+		textureFile = "gfx/interface/small_map/map_russia.png"
+	}
+	spriteType = {
+		name = "GFX_gui_map_oceania"
+		textureFile = "gfx/interface/small_map/map_oceania.png"
+	}
+	spriteType = {
+		name = "GFX_gui_map_background"
+		textureFile = "gfx/interface/small_map/background.png"
+	}
+
+	spriteType = {
+		name = "GFX_motion_close"
+		textureFile = "gfx/interface/fontaine_parties/motion_close.png"
+	}
+
+	spriteType = {
+		name = "GFX_motion_of_no_confidence"
+		textureFile = "gfx/interface/fontaine_parties/motion_of_no_confidence.png"
+	}
+
+	spriteType = {
+		name = "GFX_musicstation_furina_de_fontaine"
+		textureFile = "gfx/interface/topbar/musicplayer/musicstation_furina_de_fontaine.dds"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_charlotte"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_charlotte.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman.png"
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_clorinde"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_clorinde.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_furina"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_furina.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_gualle"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_gualle.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_navia"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_navia.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_thorez"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_thorez.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_communist_the_chairman_gamelin"
+		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_gamelin.png"
+		noOfFrames = 2 
+	}
+
+	spriteType = {
+		name = "GFX_election_states_1"
+		textureFile = "gfx/interface/elections/1.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_2"
+		textureFile = "gfx/interface/elections/2.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_3"
+		textureFile = "gfx/interface/elections/3.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_4"
+		textureFile = "gfx/interface/elections/4.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_5"
+		textureFile = "gfx/interface/elections/5.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_6"
+		textureFile = "gfx/interface/elections/6.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_7"
+		textureFile = "gfx/interface/elections/7.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_8"
+		textureFile = "gfx/interface/elections/8.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_9"
+		textureFile = "gfx/interface/elections/9.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_10"
+		textureFile = "gfx/interface/elections/10.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_11"
+		textureFile = "gfx/interface/elections/11.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_12"
+		textureFile = "gfx/interface/elections/12.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_13"
+		textureFile = "gfx/interface/elections/13.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_14"
+		textureFile = "gfx/interface/elections/14.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_15"
+		textureFile = "gfx/interface/elections/15.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_16"
+		textureFile = "gfx/interface/elections/16.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_17"
+		textureFile = "gfx/interface/elections/17.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_18"
+		textureFile = "gfx/interface/elections/18.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_19"
+		textureFile = "gfx/interface/elections/19.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_20"
+		textureFile = "gfx/interface/elections/20.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_21"
+		textureFile = "gfx/interface/elections/21.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_22"
+		textureFile = "gfx/interface/elections/22.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_23"
+		textureFile = "gfx/interface/elections/23.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_24"
+		textureFile = "gfx/interface/elections/24.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_25"
+		textureFile = "gfx/interface/elections/25.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_28"
+		textureFile = "gfx/interface/elections/28.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_27"
+		textureFile = "gfx/interface/elections/27.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_29"
+		textureFile = "gfx/interface/elections/29.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_30"
+		textureFile = "gfx/interface/elections/30.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_31"
+		textureFile = "gfx/interface/elections/31.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_32"
+		textureFile = "gfx/interface/elections/32.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_33"
+		textureFile = "gfx/interface/elections/33.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_34"
+		textureFile = "gfx/interface/elections/34.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_35"
+		textureFile = "gfx/interface/elections/35.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_36"
+		textureFile = "gfx/interface/elections/36.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_37"
+		textureFile = "gfx/interface/elections/37.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_38"
+		textureFile = "gfx/interface/elections/38.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_39"
+		textureFile = "gfx/interface/elections/39.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_40"
+		textureFile = "gfx/interface/elections/40.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_41"
+		textureFile = "gfx/interface/elections/41.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_42"
+		textureFile = "gfx/interface/elections/42.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_43"
+		textureFile = "gfx/interface/elections/43.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_44"
+		textureFile = "gfx/interface/elections/44.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_45"
+		textureFile = "gfx/interface/elections/45.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_46"
+		textureFile = "gfx/interface/elections/46.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_47"
+		textureFile = "gfx/interface/elections/47.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_48"
+		textureFile = "gfx/interface/elections/48.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_49"
+		textureFile = "gfx/interface/elections/49.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_50"
+		textureFile = "gfx/interface/elections/50.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_51"
+		textureFile = "gfx/interface/elections/51.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_52"
+		textureFile = "gfx/interface/elections/52.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_states_53"
+		textureFile = "gfx/interface/elections/53.png"
+		noOfFrames = 4 
+	}
+	spriteType = {
+		name = "GFX_election_map"
+		textureFile = "gfx/interface/elections/election_map.png" 
+	}
+	spriteType = {
+		name = "GFX_bookmark_fontiane_tale"
+		textureFile = "gfx/interface/bookmark_fontiane_tale.png"
+	}
+	spriteType = {
+		name = "GFX_bookmark_miserable_world"
+		textureFile = "gfx/interface/bookmark_miserable_world.png"
+	}
+
+	spriteType = {
+		name = "GFX_occupation_policy_icon_strip"
+		textureFile = "gfx/interface/occupation/occupation_policy_icon_strip.dds"
+		noOfFrames = 14
+	}
+
+	spriteType = {
+		name = "GFX_anarchist_map_0"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/0.png"
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_1"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/1.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_2"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/2.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_3"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/3.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_4"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/4.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_5"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/5.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_6"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/6.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_7"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/7.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_8"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/8.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_9"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/9.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_10"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/10.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_11"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/11.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_12"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/12.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_13"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/13.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_14"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/14.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_15"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/15.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_16"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/16.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_17"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/17.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_18"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/18.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_19"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/19.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_20"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/20.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_21"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/21.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_22"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/22.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_23"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/23.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_24"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/24.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_25"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/25.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_26"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/26.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_27"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/27.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_28"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/28.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_29"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/29.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_map_30"
+		textureFile = "gfx/interface/fontaine_parties/anarchist_map/30.png"
+		noOfFrames = 6 
+	}
+	spriteType = {
+		name = "GFX_anarchist_border"
+		textureFile = "gfx/interface/anarchist_border.png" 
+	}
+	spriteType = {
+		name = "GFX_anarchist_bg"
+		textureFile = "gfx/interface/anarchist_bg.png"
+	}
+
+	spriteType = {
+		name = "GFX_anarchist"
+		textureFile = "gfx/interface/anarchist.png"
+	}
+
+	progressbartype = {
+		name = "GFX_fontaine_subtechnologies_progress_1"
+		textureFile1 = "gfx/interface/research_progressbar.dds"
+		textureFile2 = "gfx/interface/research_progressbar_bg.dds"
+		size = { x = 377 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	progressbartype = {
+		name = "GFX_fontaine_subtechnologies_progress_2"
+		textureFile1 = "gfx/interface/research_progressbar.dds"
+		textureFile2 = "gfx/interface/research_progressbar_bg.dds"
+		size = { x = 377 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	progressbartype = {
+		name = "GFX_fontaine_subtechnologies_progress_3"
+		textureFile1 = "gfx/interface/research_progressbar.dds"
+		textureFile2 = "gfx/interface/research_progressbar_bg.dds"
+		size = { x = 377 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	progressbartype = {
+		name = "GFX_fontaine_subtechnologies_progress_4"
+		textureFile1 = "gfx/interface/research_progressbar.dds"
+		textureFile2 = "gfx/interface/research_progressbar_bg.dds"
+		size = { x = 377 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	progressbartype = {
+		name = "GFX_Anarchist_state_chao_progress"
+		textureFile1 = "gfx/interface/anarchist_state_chao.png"
+		textureFile2 = "gfx/interface/anarchist_state_empty.png"
+		size = { x = 100 y = 400 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	progressbartype = {
+		name = "GFX_Anarchist_state_unity_progress"
+		textureFile1 = "gfx/interface/anarchist_state_unity.png"
+		textureFile2 = "gfx/interface/anarchist_state_empty.png"
+		size = { x = 100 y = 400 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no 
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_zeal_1"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_1.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_2"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_2.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_3"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_3.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_4"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_4.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_5"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_5.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_1_active"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_1_active.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_2_active"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_2_active.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_3_active"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_3_active.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_4_active"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_4_active.png"
+	}
+	spriteType = {
+		name = "GFX_idea_fra_zeal_5_active"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_zeal_5_active.png"
+	}
+
+	spriteType = {
+		name = "GFX_country_selection_book"
+		textureFile = "gfx/interface/country_selection_book.png"
+	}
+}
+

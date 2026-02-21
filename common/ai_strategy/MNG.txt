@@ -1,0 +1,13 @@
+MNG_Dont_Cant_Template = {
+	allowed = {
+		original_tag = MNG 
+	}
+	enable = {
+		always = yes 
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority 	#陆军经验花费优先级
+		id = division_template 			#编辑陆军编制
+		value = -9999					#千万不要花在这里
+	}
+}

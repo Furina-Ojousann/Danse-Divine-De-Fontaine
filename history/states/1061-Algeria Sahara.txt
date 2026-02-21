@@ -1,0 +1,23 @@
+state = {
+	id = 1061
+	name = 1061_Algeria_Sahara
+	manpower = 39800
+	state_category = wasteland
+	history = {
+		owner = FAG 
+		add_core_of = ALG
+		buildings = {
+			infrastructure = 4 
+		}
+		add_dynamic_modifier = {
+			modifier = Sahara_HighWay 
+		}
+		victory_points = {
+			13394 2 
+		}
+		victory_points = {
+			13393 3 
+		}
+	}
+	provinces = { 13393 13394 13395 13396 13397 13398 13399 }
+}

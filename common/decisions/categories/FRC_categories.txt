@@ -1,0 +1,7 @@
+FRC_war_cant_be_avoided = {
+	icon = GFX_decision_the_war_cant_be_avoided 
+	priority = 99 
+	visible = {
+		has_completed_focus = FRC_a_important_step 
+	}
+}

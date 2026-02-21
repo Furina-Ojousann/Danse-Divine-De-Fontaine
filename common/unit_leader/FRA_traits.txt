@@ -1,0 +1,128 @@
+leader_traits = {
+	considerate = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = {
+			always = yes 
+		}
+		modifier = {
+			supply_consumption_factor = 0.05 
+			army_morale_factor = 0.1 
+		}
+		new_commander_weight = {
+			factor = 1
+		}
+	}
+	justice = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = {
+			always = yes 
+		}
+		non_shared_modifier = {
+			experience_gain_factor = 0.25 
+			promote_cost_factor = 0.5 
+		}
+		new_commander_weight = {
+			factor = 1 
+		}
+	}
+	cautious = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = {
+			always = yes 
+		}
+		modifier = {
+			planning_speed = -0.20
+			max_planning_factor = 0.05
+			wounded_chance_factor = -0.5
+		}
+		new_commander_weight = {
+			factor = 1
+			
+			modifier = {
+				has_trait = trait_reckless
+				factor = 0 
+			}
+			modifier = {
+				FROM = { has_idea = best_of_the_best_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = academy_scholarships_spirit }
+				factor = 0
+			}
+		}
+		
+		defense_skill_factor = 1
+		logistics_skill_factor = 1
+	}
+	winter_preparation = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = {
+			always = yes 
+		}
+		enable_ability = requisition_winter_gear 
+		modifier = {
+			winter_attrition_factor = -0.10 
+			supply_consumption_factor = -0.05 
+			custom_modifier_tooltip = winter_preparation_tt
+		}
+		new_commander_weight = {
+			factor = 0 
+		}
+	}
+	operative_magician = {
+		type = operative 
+		trait_type = basic_trait 
+		allowed = {
+			always = no  
+		}
+		modifier = {
+			operation_infiltrate_outcome = 0.5
+			operation_infiltrate_risk = -0.75
+		}
+	}
+	modder = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = {
+			FROM = { is_ai = no }
+		}
+		non_shared_modifier = {
+			experience_gain_factor = 0.45
+		}
+		trait_xp_factor = {
+			trickster = 0.65     #+0.6500%
+			commando = 0.65     #+0.6500%
+			panzer_leader = 0.65 
+			infantry_leader = 0.65 
+			cavalry_leader = 0.65 
+			organizer = 0.65 
+			trait_engineer = 0.65 
+			skilled_staffer = 0.65 
+		}
+		planning_skill = 1 
+		attack_skill_factor = 1 
+		planning_skill_factor = 1 
+		new_commander_weight = {
+			factor = 0 
+		} 
+	}
+	rising_young_officer = {
+		type = { land navy }
+		trait_type = personality_trait 
+		allowed = {
+			always = no 
+		}
+		non_shared_modifier = {
+			experience_gain_factor = 0.25
+			terrain_trait_xp_gain_factor = 0.15
+		}
+		new_commander_weight = {
+			factor = 0.1
+		}
+	}
+}

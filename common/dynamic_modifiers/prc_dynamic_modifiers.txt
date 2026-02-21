@@ -1,0 +1,22 @@
+PRC_base_area_war_economy = {
+	icon = GFX_idea_base_area_war_economy 
+	consumer_goods_factor = PRC_base_area_war_economy_consumer_goods_factor
+	industrial_capacity_factory = PRC_base_area_war_economy_industrial_capacity_factory
+	line_change_production_efficiency_factor = PRC_base_area_war_economy_line_change_production_efficiency_factor
+	production_factory_max_efficiency_factor = PRC_base_area_war_economy_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = PRC_base_area_war_economy_production_factory_efficiency_gain_factor
+	conscription_factor = PRC_base_area_war_economy_conscription_factor
+	mobilization_speed = PRC_base_area_war_economy_mobilization_speed
+	war_support_factor = PRC_base_area_war_economy_war_support_factor
+	defensive_war_stability_factor = PRC_base_area_war_economy_defensive_war_stability_factor
+	research_speed_factor = PRC_base_area_war_economy_research_speed_factor
+	min_export = PRC_base_area_war_economy_min_export
+	political_power_cost = PRC_base_area_war_economy_political_power_cost
+}
+
+CHI_area_not_interested = {
+	icon = GFX_modifiers_BEL_eben_emael_raided
+	army_core_defence_factor = 10
+	army_core_attack_factor = 0.25
+	enemy_army_speed_factor = -0.80
+}

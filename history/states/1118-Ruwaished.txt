@@ -1,0 +1,18 @@
+state = {
+	id = 1118 
+	name = 1118_Ruwaished
+	manpower = 31900
+	state_category = wasteland
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = JOR 
+		victory_points = {
+			11976 1 # Ma'an
+		}
+		buildings = {
+			infrastructure = 1 
+		}
+	}
+	provinces = { 1544 4440 4562 11976 4603 }
+}

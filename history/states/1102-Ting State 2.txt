@@ -1,0 +1,14 @@
+state = {
+	id = 1102
+	name = 1102_TS_2
+	manpower = 300
+	state_category = tiny_state   
+	history = {
+		owner = PAP 
+		add_core_of = PAP 
+		buildings = {
+			infrastructure = 10 
+		}
+	}
+	provinces = { 13444 }
+}

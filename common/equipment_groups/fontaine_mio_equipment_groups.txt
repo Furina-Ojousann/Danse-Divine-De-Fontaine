@@ -1,0 +1,7 @@
+mio_fontaine_energy_equipements = {
+	equipment_type = {
+		fontaine_artillery_machinery 
+		fontaine_attackive_machinery 
+		fontaine_defence_machinery 
+	}
+}

@@ -1,0 +1,8344 @@
+FRA_enable_the_mod = {
+	summon_furina = {
+		icon = GFX_decision_summon_furina 
+		fire_only_once = yes 
+		ai_will_do = {
+			factor = 0 
+		}
+		complete_effect = {
+			country_event = French.3 
+		}
+	}
+	enable_the_revolutionary_fontaine = {
+		fire_only_once = yes 
+		visible = {
+			is_ai = no 
+			is_debug = yes 
+			has_country_flag = fra_furina_come_to_france 
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_idea = FRA_disjointed_government 
+				}
+				remove_ideas = FRA_disjointed_government 
+			}
+			if = {
+				limit = {
+					has_idea = FRA_victors_of_wwi 
+				}
+				remove_ideas = FRA_victors_of_wwi 
+			}
+			if = {
+				limit = {
+					has_idea = FRA_inefficient_economy_1 
+				}
+				remove_ideas = FRA_inefficient_economy_1 
+			}
+			if = {
+				limit = {
+					has_idea = FRA_inefficient_economy_2
+				}
+				remove_ideas = FRA_inefficient_economy_2 
+			}
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = yes 
+				election_frequency = 48 
+			}
+			set_popularities = {
+				communism = 90 
+				democratic = 10 
+			}
+			set_variable = { total_seat_in_parliament = 604 }
+			custom_effect_tooltip = election_by_the_popularity
+			# democracy #
+			set_temp_variable = { total_democratic_support = party_popularity@democratic }
+			multiply_temp_variable = { total_democratic_support = total_seat_in_parliament }
+			set_temp_variable = { party_fontaine_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Parti_radical_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Rassemblement_National_temp_seat = total_democratic_support } 
+			multiply_temp_variable = { party_fontaine_temp_seat = 0.8 }
+			multiply_temp_variable = { party_Parti_radical_temp_seat = 0.1 }
+			multiply_temp_variable = { party_Rassemblement_National_temp_seat = 0.1 }
+			set_variable = { party_Fontaine = party_fontaine_temp_seat }
+			set_variable = { party_Rassemblement_National = party_Rassemblement_National_temp_seat }
+			set_variable = { party_Parti_radical = party_Parti_radical_temp_seat }
+			round_variable = party_Fontaine 
+			round_variable = party_Rassemblement_National 
+			round_variable = party_Parti_radical 
+			# communsim #
+			set_temp_variable = { total_communst_support = party_popularity@communism }
+			multiply_temp_variable = { total_communst_support = total_seat_in_parliament }
+			set_temp_variable = { party_french_communist_party_temp_seat = total_communst_support }
+			set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = total_communst_support }
+			multiply_temp_variable = { party_french_communist_party_temp_seat = 0.6 }
+			multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = 0.4 }
+			set_variable = { party_french_communist_party = party_french_communist_party_temp_seat }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat }
+			round_variable = party_french_communist_party 
+			round_variable = party_Section_Francaise_de_l_Internationale_Ouvriere 
+			# neu #
+			set_temp_variable = { total_neutrality_support = party_popularity@neutrality }
+			multiply_temp_variable = { total_neutrality_support = total_seat_in_parliament }
+			set_variable = { party_Action_francaise = total_neutrality_support }
+			round_variable = party_Action_francaise 
+			# fascism # 
+			set_temp_variable = { total_fascism_support = party_popularity@fascism }
+			multiply_temp_variable = { total_fascism_support = total_seat_in_parliament }
+			set_variable = { party_Croix_de_Feu = total_fascism_support }
+			round_variable = party_Croix_de_Feu 
+			refresh_gui = yes 
+			set_variable_to_random = {
+				var = the_corruption_of_party 
+				max = 10 
+				min = 0
+			}
+			add_dynamic_modifier = {
+				modifier = FRA_dissenters 
+			}
+			set_global_flag = fontaine_socialist
+			calculate_the_corruption_modifier = yes 
+			add_dynamic_modifier = { modifier = FRA_the_corruption }
+			FRA_Furina_de_Fontaine = {
+				add_country_leader_role = {
+					promote_leader = yes 
+					country_leader = {
+						desc = furina_sinner_desc 
+						ideology = marxism 
+						traits = {
+							Fontaine_star 
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = GFX_opera_of_trial 
+					}
+					add_country_leader_trait = {
+						ideology = communism 
+						trait = the_focus_of_the_world 
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = Neuvillette_political 
+				}
+				FRA_Neuvillette = {
+					set_can_be_fired_in_advisor_role = {
+						value = yes
+					}
+				}
+				remove_ideas = Neuvillette_political 
+				add_ideas = provisional_government 
+				FRA_Neuvillette = {
+					set_can_be_fired_in_advisor_role = {
+						value = no 
+					}
+				}
+			}
+			set_country_flag = charlotte_as_the_second_leader 
+			if = {
+				limit = {
+					has_idea = assemblee_nationale  
+				}
+				FRA_Assemblee_nationale = {
+					set_can_be_fired_in_advisor_role = {
+						value = yes
+					}
+				}
+				remove_ideas = assemblee_nationale 
+				add_ideas = provisional_government 
+				FRA_Assemblee_nationale = {
+					set_can_be_fired_in_advisor_role = {
+						value = no 
+					}
+				}
+			}
+			set_cosmetic_tag = fontaine_people_s_republic 
+			add_dynamic_modifier = {
+				modifier = FRA_the_red_army 
+			}
+			set_variable = {
+				FRA_the_red_army_army_core_attack_factor = FRC.FRA_the_red_army_army_core_attack_factor
+			}
+			set_variable = {
+				FRA_the_red_army_army_core_defence_factor = FRC.FRA_the_red_army_army_core_defence_factor
+			}
+			set_variable = {
+				FRA_the_red_army_army_morale_factor = FRC.FRA_the_red_army_army_morale_factor
+			}
+			set_variable = {
+				FRA_the_red_army_army_org_factor = FRC.FRA_the_red_army_army_org_factor
+			}
+			set_variable = {
+				FRA_the_red_army_experience_gain_irregular_infantry_combat_factor = FRC.FRA_the_red_army_experience_gain_irregular_infantry_combat_factor
+			}
+			set_variable = {
+				FRA_the_red_army_max_command_power = FRC.FRA_the_red_army_max_command_power
+			}
+			set_variable = {
+				FRA_the_red_army_max_planning = FRC.FRA_the_red_army_max_planning 
+			}
+			set_variable = {
+				FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor = FRC.FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor
+			}
+			set_variable = {
+				FRA_the_red_army_planning_speed = FRC.FRA_the_red_army_planning_speed
+			}
+			set_variable = {
+				FRA_the_red_army_political_power_factor = FRC.FRA_the_red_army_political_power_factor
+			}
+			set_variable = {
+				FRA_the_red_army_supply_consumption_factor = FRC.FRA_the_red_army_supply_consumption_factor
+			}
+			multiply_variable = {
+				FRA_the_red_army_army_core_attack_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_army_core_defence_factor = 0.4
+			}
+			multiply_variable = {
+				FRA_the_red_army_army_morale_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_army_org_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_experience_gain_irregular_infantry_combat_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_max_command_power = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_max_planning = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_planning_speed = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_political_power_factor = 0.4 
+			}
+			multiply_variable = {
+				FRA_the_red_army_supply_consumption_factor = 0.4 
+			}
+			if = {
+				limit = {
+					FRC = {
+						has_idea = fra_continue_philosophy_education
+					}
+				}
+				add_ideas = fra_continue_philosophy_education 
+			}
+			FRC = {
+				FRC_Marcel_Cachin = {
+					set_nationality = FRA 
+				}
+				FRC_Leon_Jouhaux = {
+					set_nationality = FRA 
+				}
+			}
+			FRA_maurice_thorez = {
+				add_trait = {
+					slot = political_advisor 
+					trait = proletariat_internationalist
+				}
+				remove_trait = {
+					trait = communist_revolutionary 
+					slot = political_advisor 
+				}
+			}
+			mark_focus_tree_layout_dirty = yes 
+		}
+	}
+	choose_the_portrait_of_furina = {
+		visible = {
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine 
+				ruling_only = yes 
+			}
+		}
+		complete_effect = {
+			set_country_flag = load_portrait_preview
+			country_event = {
+				id = french.test.1 
+			}
+		}
+	}
+}
+
+FRA_fontaine_three_force_decision = {
+	#枫丹三权
+	fra_the_task_from_military = {
+		icon = GFX_decision_eng_blackshirt_march 
+		days_mission_timeout = 90 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		cancel_trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = fra_the_task_from_military_tt
+				always = no 
+			}
+			num_of_military_factories  > fontaine_num_military_factories_aim 
+		}
+		timeout_effect = {
+			activate_mission = fra_the_task_from_military 
+			if = {
+				limit = {
+					or = {
+						num_of_military_factories  > fontaine_num_military_factories_aim 
+						num_of_military_factories = fontaine_num_military_factories_aim
+					}
+				}
+				custom_effect_tooltip = fontaine_add_military_power_10
+				add_to_variable = { fontaine_military_power = 10 }
+				add_war_support = 0.025
+				custom_effect_tooltip = fra_the_task_from_military_tt_2
+				random_list = {
+					33 = {
+						add_tech_bonus = {
+							name = fra_the_task_from_military 
+							category = mio_cat_artillery
+							bonus = 1 
+							uses = 1 
+						}
+						modifier = {
+							factor = 0 
+							not = { artillery_equipment_is_outdated = yes }
+						}
+						modifier = {
+							factor = 0 
+							or = {
+								infantry_equipment_is_outdated = yes 
+								armor_equipment_is_outdated = yes 
+							}
+							or = {
+								has_country_flag = fra_infantry_priority 
+								has_country_flag = fra_armor_priority 
+							}
+						}
+					}
+					33 = {
+						add_tech_bonus = {
+							name = fra_the_task_from_military 
+							category = mio_cat_tech_medium_armor_and_modules 
+							bonus = 1 
+							uses = 1 
+						}
+						modifier = {
+							factor = 0 
+							not = { armor_equipment_is_outdated = yes }
+						}
+						modifier = {
+							factor = 0 
+							or = {
+								infantry_equipment_is_outdated = yes 
+								artillery_equipment_is_outdated = yes 
+							}
+							or = {
+								has_country_flag = fra_infantry_priority 
+								has_country_flag = fra_armor_priority  
+							}
+						}
+					}
+					33 = {
+						add_tech_bonus = {
+							name = fra_the_task_from_military 
+							category = infantry_weapons 
+							bonus = 1 
+							uses = 1 
+						}
+						modifier = {
+							factor = 0 
+							not = { infantry_equipment_is_outdated = yes }
+						}
+						modifier = {
+							factor = 0 
+							or = {
+								artillery_equipment_is_outdated = yes 
+								armor_equipment_is_outdated = yes 
+							}
+							or = {
+								has_country_flag = fra_artillery_priority 
+								has_country_flag = fra_armor_priority 
+							}
+						}
+					}
+					0 = {
+						add_offsite_building = {
+							type = arms_factory 
+							level = 1 
+						}
+						modifier = {
+							not = {
+								infantry_equipment_is_outdated = yes 
+								artillery_equipment_is_outdated = yes 
+								armor_equipment_is_outdated = yes 
+							}
+							add = 1 
+						}
+					}
+				}
+			}
+			else = {
+				add_war_support = -0.02
+				custom_effect_tooltip = fontaine_minus_military_power_5
+				add_to_variable = { fontaine_military_power = -5 }
+			}
+		}
+	}
+	fra_discuss_the_priority_of_technology = {
+		icon = GFX_decision_generic_army_support 
+		visible = { has_country_flag = fontaine_design_show_army_decisions has_completed_focus = FRA_under_the_army }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = fontaine_military_power_more_than_20
+				check_variable = { fontaine_military_power > 19 }
+			}
+		}
+		complete_effect = {
+			set_country_flag = is_discussing_tech_priotity
+			custom_effect_tooltip = fra_discuss_the_priority_of_technology_tt
+			add_to_variable = { fontaine_military_power = -20 }
+			custom_effect_tooltip = fontaine_minus_military_power_20
+		}
+	}
+	fra_infantry_priority = {
+		icon = GFX_decision_generic_prepare_civil_war 
+		visible = {
+			has_country_flag = fontaine_design_show_army_decisions
+			has_country_flag = is_discussing_tech_priotity 
+		}
+		complete_effect = {
+			set_country_flag = fra_infantry_priority
+			clr_country_flag = is_discussing_tech_priotity 
+			clr_country_flag = fra_armor_priority
+			clr_country_flag = fra_artillery_priority
+		}
+	}
+	fra_artillery_priority = {
+		icon = GFX_decision_generic_wreckers  
+		visible = {
+			has_country_flag = fontaine_design_show_army_decisions
+			has_country_flag = is_discussing_tech_priotity 
+		}
+		complete_effect = {
+			set_country_flag = fra_artillery_priority
+			clr_country_flag = is_discussing_tech_priotity 
+			clr_country_flag = fra_infantry_priority
+			clr_country_flag = fra_armor_priority
+		}
+	}
+	fra_armor_priority = {
+		icon = GFX_decision_generic_tank   
+		visible = {
+			has_country_flag = fontaine_design_show_army_decisions
+			has_country_flag = is_discussing_tech_priotity 
+		}
+		complete_effect = {
+			set_country_flag = fra_armor_priority
+			clr_country_flag = is_discussing_tech_priotity 
+			clr_country_flag = fra_infantry_priority
+			clr_country_flag = fra_armor_priority 
+		}
+	}
+
+	fra_start_up_national_mobilization = {
+		icon = GFX_decision_generic_reorganize_irregulars 
+		visible = { 
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_a_great_promise 
+			not = { has_active_mission = fra_joint_wartime }
+			has_war = no 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_20
+				check_variable = { fontaine_monarchy_power > 19 }
+			}
+		}
+		days_remove = 14 
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -20 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_20
+		}
+		modifier = {
+			war_support_weekly = 0.05
+			political_power_cost = 0.20 
+		}
+		remove_effect = {
+			activate_mission = fra_joint_wartime 
+		}
+	}
+
+	fra_joint_wartime = {
+		icon = GFX_decision_ger_military_buildup 
+		days_mission_timeout = 180 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		cancel_trigger = {
+			has_war_with_major = yes 
+		}
+		cancel_effect = {
+			add_dynamic_modifier = {
+				modifier = FRA_wartime_mobilization 
+			}
+			activate_mission = fra_war_lasting 
+		}
+		timeout_effect = {
+			add_war_support = -0.10
+			add_ideas = partial_economic_mobilisation
+			custom_effect_tooltip = fontaine_minus_monarchy_power_20
+			add_to_variable = { fontaine_monarchy_power = -20 }
+			custom_effect_tooltip = fontaine_minus_military_power_20
+			add_to_variable = { fontaine_military_power = -20 }
+		}
+	}
+
+	fra_war_lasting = {
+		icon = GFX_decision_generic_scorched_earth 
+		days_mission_timeout = 30 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		cancel_trigger = {
+			or = {
+				has_war_with_major = no 
+				has_capitulated = yes 
+			}
+		}
+		timeout_effect = {
+			activate_mission = fra_war_lasting 
+			custom_effect_tooltip = fra_war_lasting_tt 
+			add_to_variable = { fontaine_monarchy_power = fontaine_monarchy_power_basic_decrease }
+			add_to_variable = { fontaine_theocracy_power = fontaine_theocracy_power_basic_decrease }
+			fontaine_national_mobilization_calculation = yes 
+		}
+	}
+
+	fra_women_volunteer_service = {
+		icon = GFX_decision_SWI_support_humanitarian_efforts
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_work_for_furina 
+		}
+		days_remove = 14 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_5 
+				check_variable = { fontaine_monarchy_power > 4 }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -5 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_5
+		}
+		custom_cost_trigger = {
+			check_variable = { fontaine_monarchy_power > 4 }
+		}
+		custom_cost_text = fontaine_monarchy_power_cost_5
+
+		remove_effect = {
+			add_stability = -0.01 
+			if = {
+				limit = {
+					has_idea = fra_wartime_equality_4 
+				}
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_4
+					add_idea = fra_wartime_equality_5
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_3 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_3
+					add_idea = fra_wartime_equality_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_2 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_2
+					add_idea = fra_wartime_equality_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality
+					add_idea = fra_wartime_equality_2
+				}
+			}
+			else = {
+				add_ideas = fra_wartime_equality 
+			}
+		}
+	}
+
+	fra_encourage_labour_women = {
+		fire_only_once = yes 
+		icon = GFX_decision_hol_exchange_intelligence_data 
+		visible = {
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_work_for_furina 
+		}
+		days_remove = 21 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_5 
+				check_variable = { fontaine_monarchy_power > 4 }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -5 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_5
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_monarchy_power_cost_5
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT 
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			if = {
+				limit = {
+					has_idea = fra_wartime_equality_4 
+				}
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_4
+					add_idea = fra_wartime_equality_5
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_3 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_3
+					add_idea = fra_wartime_equality_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_2 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_2
+					add_idea = fra_wartime_equality_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality
+					add_idea = fra_wartime_equality_2
+				}
+			}
+			else = {
+				add_ideas = fra_wartime_equality 
+			}
+		}
+	}
+
+	fra_women_spy = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_work_for_furina 
+		}
+		days_remove = 28 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_10
+				check_variable = { fontaine_monarchy_power > 9  }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -10 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_10
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_monarchy_power_cost_10 
+		remove_effect = {
+			gain_random_agency_upgrade = yes 
+			every_enemy_country = {
+				ROOT = {
+					add_collaboration = {
+						target = PREV 
+						value = 0.10
+					}
+				}
+			} 
+			if = {
+				limit = {
+					has_idea = fra_wartime_equality_4 
+				}
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_4
+					add_idea = fra_wartime_equality_5
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_3 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_3
+					add_idea = fra_wartime_equality_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_2 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_2
+					add_idea = fra_wartime_equality_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality
+					add_idea = fra_wartime_equality_2
+				}
+			}
+			else = {
+				add_ideas = fra_wartime_equality 
+			}
+		}
+	}
+
+	fra_fontaine_nursery = {
+		icon = GFX_decision_generic_consumer_goods 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_work_for_furina 
+		}
+		days_remove = 56 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_10
+				check_variable = { fontaine_monarchy_power > 9  }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -10 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_10
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_monarchy_power_cost_10 
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					or = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = megalopolis
+						has_state_category = metropolis 
+					}
+				}
+				add_extra_state_shared_building_slots = 1 
+			}
+			if = {
+				limit = {
+					has_idea = fra_wartime_equality_4 
+				}
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_4
+					add_idea = fra_wartime_equality_5
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_3 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_3
+					add_idea = fra_wartime_equality_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_2 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_2
+					add_idea = fra_wartime_equality_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality
+					add_idea = fra_wartime_equality_2
+				}
+			}
+			else = {
+				add_ideas = fra_wartime_equality 
+			}
+		}
+	}
+
+	fra_apporve_women_joint_fight = {
+		icon = GFX_decision_CHL_mapuche_liberate_isthmo_amerindia 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_design_show_peruere_decisions 
+			has_completed_focus = FRA_work_for_furina 
+			has_idea = fra_wartime_equality_4 
+		}
+		days_remove = 7 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fontaine_monarchy_power_more_than_10
+				check_variable = { fontaine_monarchy_power > 9  }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_monarchy_power = -10 }
+			custom_effect_tooltip = fontaine_minus_monarchy_power_10
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_monarchy_power_cost_10 
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = fra_wartime_equality_4 
+				}
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_4
+					add_idea = fra_wartime_equality_5
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_3 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_3
+					add_idea = fra_wartime_equality_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality_2 }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality_2
+					add_idea = fra_wartime_equality_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = fra_wartime_equality }
+				swap_ideas = {
+					remove_idea = fra_wartime_equality
+					add_idea = fra_wartime_equality_2
+				}
+			}
+			else = {
+				add_ideas = fra_wartime_equality 
+			}
+		}
+	}
+
+	fra_army_saar_offensive = {
+		icon = GFX_decision_generic_intelligence_operation 
+		visible = {
+			has_completed_focus = FRA_blood_for_fontaine 
+			has_country_flag = fontaine_design_show_army_decisions 
+			not = { controls_state = 42 }
+		}
+		days_re_enable = 280 
+		available = {
+			any_country = {
+				owns_state = 42 
+				has_war_with = ROOT 
+			}
+			not = { has_active_mission = fra_army_Ruhrgebiet_Offensive_mission }
+			not = { has_active_mission = fra_army_Flamande_Offensive_mission }
+		}
+		modifier = {
+			industrial_capacity_factory = -0.15
+			planning_speed = -0.35
+			command_power_gain_mult = -0.75
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 42 
+			}
+		}
+		days_remove = 7 
+		remove_effect = {
+			42 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Saar_Offensive 
+					scope = FRA 
+				}
+			}
+			activate_mission = fra_army_saar_offensive_mission 
+		}
+	}
+	fra_army_saar_offensive_mission = {
+		icon = GFX_decision_generic_intelligence_operation 
+		days_mission_timeout = 60 
+		activation =  { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = 42 
+			}
+		}
+		cancel_trigger = {
+			controls_state = 42
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			42 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Saar_Offensive 
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 42 
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				random_country = {
+					limit = {
+						owns_state = 42
+						has_war_with = ROOT 
+					}
+					add_war_support = -0.05 
+				}
+				42 = {
+					add_compliance = 10 
+				}
+			}
+			else = {
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10 
+				random_country = {
+					limit = {
+						owns_state = 42
+						has_war_with = ROOT 
+					}
+					add_war_support = 0.05 
+				}
+			}
+			fontaine_national_mobilization_calculation = yes 
+		}
+	}
+
+	fra_army_Ruhrgebiet_Offensive = {
+		icon = GFX_decision_generic_intelligence_operation 
+		visible = {
+			has_completed_focus = FRA_blood_for_fontaine 
+			has_country_flag = fontaine_design_show_army_decisions 
+			not = { controls_state = 51 }
+		}
+		days_re_enable = 280 
+		available = {
+			not = { has_active_mission = fra_army_Flamande_Offensive_mission }
+			not = { has_active_mission = fra_army_saar_offensive_mission }
+			any_country = {
+				owns_state = 51 
+				has_war_with = ROOT 
+			}
+			any_controlled_state = {
+				any_neighbor_state = {
+					state = 51 
+				}
+			}
+		}
+		modifier = {
+			industrial_capacity_factory = -0.15
+			planning_speed = -0.35
+			command_power_gain_mult = -0.75
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 51 
+			}
+		}
+		days_remove = 7 
+		remove_effect = {
+			51 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+					scope = FRA 
+				}
+			}
+			activate_mission = fra_army_Ruhrgebiet_Offensive_mission 
+		}
+	}
+
+	fra_army_Ruhrgebiet_Offensive_mission = {
+		icon = GFX_decision_generic_intelligence_operation 
+		days_mission_timeout = 60 
+		activation =  { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = 51 
+			}
+		}
+		cancel_trigger = {
+			controls_state = 51
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			51 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 51 
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				random_country = {
+					limit = {
+						owns_state = 51
+						has_war_with = ROOT 
+					}
+					add_war_support = -0.05 
+				}
+				51 = {
+					add_compliance = 10 
+				}
+			}
+			else = {
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10 
+				random_country = {
+					limit = {
+						owns_state = 51
+						has_war_with = ROOT 
+					}
+					add_war_support = 0.05 
+				}
+			}
+			fontaine_national_mobilization_calculation = yes 
+		}
+	}
+
+	fra_army_Flamande_Offensive = {
+		icon = GFX_decision_generic_intelligence_operation 
+		visible = {
+			has_completed_focus = FRA_blood_for_fontaine 
+			has_country_flag = fontaine_design_show_army_decisions 
+			not = {
+				controls_state = 6
+				controls_state = 34
+				controls_state = 977
+				controls_state = 980 
+			}
+		}
+		days_re_enable = 280 
+		available = {
+			has_war_with = BEL 
+			not = { has_active_mission = fra_army_Ruhrgebiet_Offensive_mission }
+			not = { has_active_mission = fra_army_saar_offensive_mission }
+		}
+		modifier = {
+			industrial_capacity_factory = -0.15
+			planning_speed = -0.35
+			command_power_gain_mult = -0.75
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 6
+				state = 34
+				state = 977
+				state = 980 
+			}
+		}
+		days_remove = 7 
+		remove_effect = {
+			6 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+					scope = FRA 
+				}
+			}
+			34 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+					scope = FRA 
+				}
+			}
+			977 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+					scope = FRA 
+				}
+			}
+			980 = {
+				add_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+					scope = FRA 
+				}
+			}
+			activate_mission = fra_army_Flamande_Offensive_mission 
+		}
+	}
+
+	fra_army_Flamande_Offensive_mission = {
+		icon = GFX_decision_generic_intelligence_operation 
+		days_mission_timeout = 60 
+		activation =  { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = 6
+				state = 34
+				state = 977
+				state = 980 
+			}
+		}
+		cancel_trigger = {
+			controls_state = 6
+			controls_state = 34
+			controls_state = 977
+			controls_state = 980 
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			6 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+				}
+			}
+			34 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+				}
+			}
+			977 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+				}
+			}
+			980 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_Ruhrgebiet_Offensive  
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 6
+					controls_state = 34
+					controls_state = 977
+					controls_state = 980 
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				BEL = { add_war_support = -0.10 }
+			}
+			else = {
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10 
+			}
+			fontaine_national_mobilization_calculation = yes 
+		}
+	}
+
+	fra_north_fontaine_defense_plan = {
+		icon = GFX_decision_generic_protection 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_blood_for_fontaine 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			any_state = {
+				or = {
+					state = 29 
+					state = 18 
+				}
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT 
+						not = {
+							tag = BEL 
+						}
+					}
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 29
+				state = 18 
+				state = 17 
+			}
+		}
+		days_remove = 7
+		remove_effect = {
+			29 = {
+				add_dynamic_modifier = {
+					modifier = FRA_north_defense
+					scope = FRA
+					days = 280 
+				}
+			}
+			18 = {
+				add_dynamic_modifier = {
+					modifier = FRA_north_defense
+					scope = FRA
+					days = 280 
+				}
+			}
+			17 = {
+				add_dynamic_modifier = {
+					modifier = FRA_north_defense
+					scope = FRA
+					days = 280 
+				}
+			}
+		}
+	}
+
+	fra_de_watch_for_rhine = {
+		icon = GFX_decision_hol_war_on_pacifism 
+		days_mission_timeout = 180 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = 6
+				state = 977
+				state = 34
+				state = 980
+				state = 1020
+				state = 8
+				state = 35
+				state = 51
+				state = 42
+			}
+		}
+		cancel_trigger = {
+			6 = { is_controlled_by_ROOT_or_ally = yes }
+			977 = { is_controlled_by_ROOT_or_ally = yes }
+			34 = { is_controlled_by_ROOT_or_ally = yes }
+			980 = { is_controlled_by_ROOT_or_ally = yes }
+			#1020 = { is_controlled_by_ROOT_or_ally = yes }
+			8 = { is_controlled_by_ROOT_or_ally = yes }
+			35 = { is_controlled_by_ROOT_or_ally = yes }
+			51 = { is_controlled_by_ROOT_or_ally = yes }
+			42 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+		cancel_effect = {
+			every_state = {
+				limit = {
+					or = {
+						state = 6
+						state = 977
+						state = 34
+						state = 980
+						#state = 1020
+						state = 8
+						state = 35
+						state = 51
+						state = 42
+					}
+				}
+				add_core_of = FRA 
+
+			}
+			set_province_name = {
+				id = 6598
+				name = VICTORY_POINTS_6598_FRA
+			}
+			set_province_name = {
+				id = 3262 
+				name = VICTORY_POINTS_3262_FRA
+			}
+			set_province_name = {
+				id = 516
+				name = VICTORY_POINTS_516_FRA
+			}
+			set_province_name = {
+				id = 11519
+				name = VICTORY_POINTS_11519_FRA
+			}
+			set_province_name = {
+				id = 6583 
+				name = VICTORY_POINTS_6583_FRA 
+			}
+			set_province_name = {
+				id = 11531 
+				name = VICTORY_POINTS_11531_FRA 
+			}
+			every_controlled_state = {
+				limit = {
+					or = {
+						state = 6
+						state = 977
+						state = 34
+						state = 980
+						#state = 1020
+						state = 8
+						state = 35
+						state = 51
+						state = 42
+					}
+				}
+				transfer_state_to = FRA 
+			}
+		}
+		timeout_effect = {
+			add_war_support = -0.05 
+			add_to_variable = { fontaine_military_power = -20 }
+			custom_effect_tooltip = fontaine_minus_military_power_20
+			every_controlled_state = {
+				limit = {
+					or = {
+						state = 6
+						state = 977
+						state = 34
+						state = 980
+						#state = 1020
+						state = 8
+						state = 35
+						state = 51
+						state = 42
+					}
+				}
+				add_resistance = 5 
+				add_resistance_target = 10 
+			}
+		}
+	}
+
+	fra_invasion_prepareness_for_spain = {
+		icon = GFX_decision_hol_draw_up_staff_plans 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_design_show_army_decisions 
+			has_completed_focus = FRA_Hammer_and_anvil 
+		}
+		available = {
+			SPR = {
+				not = {
+					is_in_faction_with = FRA 
+				}
+			}
+		}
+		days_remove = 14 
+		modifier = {
+			command_power_gain_mult = -0.75 
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 9999
+					}
+					has_equipment = {
+						medium_tank_chassis > 1800
+					}
+				}
+				add_manpower = -40000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment 
+					amount = -10000
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis 
+					amount = -1800
+				}
+				set_country_flag = will_create_mountaineer_units
+			}
+		}
+		remove_effect = {
+			activate_mission = fra_activate_invasion_of_spain 
+			custom_effect_tooltip = fra_invasion_prepareness_for_spain_tt
+			if = {
+				limit = {
+					has_country_flag = will_create_mountaineer_units 
+				}
+				division_template = {
+					name = "Empiral Specialized Mountaineer Force"
+					priority = 2 
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+						mountaineers = { x = 0 y = 3 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+						mountaineers = { x = 1 y = 3 }
+						mountaineers = { x = 2 y = 0 }
+						mountaineers = { x = 2 y = 1 }
+						mountaineers = { x = 2 y = 2 }
+						mountaineers = { x = 2 y = 3 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+						medium_armor = { x = 3 y = 2 }
+						medium_armor = { x = 4 y = 0 }
+						medium_armor = { x = 4 y = 1 }
+						medium_armor = { x = 4 y = 2 }
+					}
+					support = {
+						rangers_support = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				31 = {
+					create_unit = {
+						division = "name = \"Fontaine Empiral 1re Guardian Mountaine Specialized\" division_template = \"Empiral Specialized Mountaineer Forcen\" start_experience_factor = 0.7"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Fontaine Empiral 2re Guardian Mountaine Specialized\" division_template = \"Empiral Specialized Mountaineer Forcen\" start_experience_factor = 0.7"  
+						owner = ROOT
+					}
+				}
+				
+			}
+		}
+	}
+
+	fra_activate_invasion_of_spain = {
+		icon = GFX_decision_generic_tank 
+		days_mission_timeout = 30 
+		selectable_mission = yes 
+		activation = { always = no }
+		available = {
+			SPR = {
+				not = {
+					is_in_faction_with = FRA 
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 165
+				state = 794 
+				state = 166 
+				state = 172 
+				state = 792 
+				state = 176 
+				state = 167 
+			}
+		}
+		complete_effect = {
+			declare_war_on = {
+				target = SPR 
+				type = puppet_wargoal_focus 
+			}
+			activate_mission = fra_attack_plan_finish 
+			every_state = {
+				limit = {
+					or = {
+						state = 165
+						state = 794 
+						state = 166 
+						state = 172 
+						state = 792 
+						state = 176 
+						state = 167 
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_fontaine_blitzkrieg 
+					scope = FRA 
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			add_war_support = -0.05 
+			add_to_variable = { fontaine_military_power = -10 }
+			custom_effect_tooltip = fontaine_minus_military_power_10 
+		}
+	}
+
+	fra_attack_plan_finish = {
+		icon = GFX_decision_eng_blackshirt_march 
+		days_mission_timeout = 45
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = 165
+				state = 41 
+				state = 790
+				state = 167
+				state = 176 
+			}
+			highlight_provinces = {
+				3938
+				9764
+				11707
+				885
+				6906 
+			}
+			highlight_only_provinces = yes 
+		}
+		cancel_trigger = {
+			hidden_trigger = { always = no }
+			or = {
+				AND = {
+					controls_province = 3938 
+					controls_province = 9764
+					controls_province = 11707 
+					controls_province = 885 
+					controls_province = 6906
+				}
+				SPR = {
+					is_in_faction_with = FRA 
+				}
+			}
+			
+		}
+		cancel_effect = {
+			custom_effect_tooltip = fra_attack_plan_finish_tt
+		}
+		timeout_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = FRA_fontaine_blitzkrieg 
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = FRA_fontaine_blitzkrieg 
+				}
+			}
+			if = {
+				limit = {
+					or = {
+						AND = {
+							controls_province = 3938 
+							controls_province = 9764
+							controls_province = 11707 
+							controls_province = 885 
+							controls_province = 6906
+						}
+						SPR = {
+							is_in_faction_with = FRA 
+						}
+					}
+				}
+				white_peace = SPR 
+				transfer_state = 165
+				set_autonomy = {
+					target = SPR 
+					autonomy_state = autonomy_colony 
+				}
+				SPR = {
+					set_cosmetic_tag = SPR_spanish_provisional_government 
+					hidden_effect = {
+						kill_ideology_leader = neutrality  
+						create_country_leader = {
+							name = "Spanish Provisional Government"
+							picture = "gfx/leaders/SPR/portrait_spr_provisional_government.png"
+							ideology = junta  
+						}
+					}	
+				}
+			}
+			else = {
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10 
+				if = {
+					limit = {
+						controls_province = 165 
+					}
+					transfer_state = 165 
+				}
+				
+				white_peace = SPR 
+				if = {
+					limit = {
+						SPR = {
+							is_in_faction = yes 
+						}
+					}
+					SPR = {
+						leave_faction = yes 
+					}
+				}
+			}
+		}
+	}
+
+	fra_coordinate_other_states = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		visible = {
+			has_completed_focus = FRA_we_bring_order
+			has_country_flag = fontaine_design_show_peruere_decisions 
+		}
+		available = {
+			FROM = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM 
+			}
+		}
+		target_trigger = {
+			FROM = {
+				or = {
+					state = 165 
+					state = 158 
+					state = 845 
+					state = 7 
+					state = 36 
+					state = 736 
+					state = 852 
+					state = 103 
+				}
+				not = { is_core_of = FRA }
+			}
+		}
+		state_target = yes 
+		target_array = controlled_states 
+		days_remove = 90 
+		modifier = {
+			political_power_cost = 0.15 
+		}
+		remove_effect = {
+			FROM = {
+				if = {
+					limit = { not = { is_controlled_by = FRA } }
+					transfer_state_to = FRA 
+				}
+				add_core_of = FRA 
+			}
+		}
+	}
+
+	fra_invasion_preparation_for_england = {
+		icon = GFX_decision_oppression 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_Trafalgar 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			ENG = {
+				not = { is_in_faction_with = ROOT }
+			}
+			check_variable = {
+				fontaine_military_power > 19 
+			}
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_minus_military_power_20 
+		days_remove = 14 
+		complete_effect = {
+			add_to_variable = { fontaine_military_power = -20 }
+			fontaine_national_mobilization_calculation = yes 
+		}
+		remove_effect = {
+			set_country_flag = fontaine_start_before_preparation
+			activate_mission = fra_invade_england 
+		}
+	}
+
+	fra_english_invasion_sea = {
+		icon = GFX_decision_generic_construction 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_start_before_preparation 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			ships_in_area = {
+				area = 18 
+				size > 99 
+			}
+		}
+		complete_effect = {
+			set_country_flag = fontaine_marine_preparation_accomplished
+			custom_effect_tooltip = when_at_war_TT 
+			effect_tooltip = {
+				add_ideas = fra_marine_invasion_for_britian 
+			}
+		}
+	}
+
+	fra_english_invasion_air = {
+		icon = GFX_decision_SWE_set_air_budget 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_start_before_preparation 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			has_deployed_air_force_size = {
+				type = fighter 
+				size > 1199
+			}
+			has_deployed_air_force_size = {
+				type = cas  
+				size > 599
+			}
+		}
+		complete_effect = {
+			set_country_flag = fontaine_air_preparation_accomplished
+			custom_effect_tooltip = when_at_war_TT 
+			effect_tooltip = {
+				add_ideas = fra_air_preparation_for_britain 
+			}
+		}
+	}
+
+	fra_ireland_partner = {
+		icon = GFX_decision_generic_reorganize_irregulars 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fontaine_start_before_preparation 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			IRE = {
+				exists = yes 
+				not = { is_in_faction_with = ENG }
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = fra_ireland_partner_tt
+			IRE = {
+				country_event = Fontaine_empire_normal.18 
+			}
+		}
+	}
+
+	fra_invade_england = {
+		icon = GFX_decision_hol_war_on_pacifism 
+		days_mission_timeout = 90 
+		activation = { always = no }
+		selectable_mission = yes 
+		available = {
+			ENG = {
+				exists = yes 
+				NOT = {
+					is_in_faction_with = FRA 
+				}
+			}
+		}
+		cancel_trigger = {
+			ENG = {
+				or = {
+					is_in_faction_with = ROOT 
+					exists = no 
+				}
+			}
+		}
+		complete_effect = {
+			declare_war_on = {
+				target = ENG 
+				type = puppet_wargoal_focus 
+			}
+			if = {
+				limit = {
+					has_country_flag = fontaine_marine_preparation_accomplished 
+				}
+				add_timed_idea = {
+					idea = fra_marine_invasion_for_britian 
+					days = 90 
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = fontaine_air_preparation_accomplished 
+				}
+				add_timed_idea = {
+					idea = fra_air_preparation_for_britain 
+					days = 90 
+				}
+			}
+		}
+	}
+
+	fra_alps_offensive_plan = {
+		icon = GFX_decision_SWI_swiss_military_tradition_campaign 
+		available = {
+			has_war_with = ITA 
+			check_variable = {
+				fontaine_military_power > 9
+			}
+		}
+		visible = {
+			has_country_flag = fontaine_design_show_army_decisions 
+			has_completed_focus = FRA_apennines 
+			not = { controls_state = 158 }
+			not = { has_active_mission = fra_alps_offensive_plan_actived }
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 158 
+			}
+		}
+		custom_cost_text = fontaine_minus_military_power_10 
+		fire_only_once = yes 
+		days_remove = 14
+		complete_effect = {
+			custom_effect_tooltip = fontaine_minus_military_power_10 
+			add_to_variable = { fontaine_military_power = -10 }
+		}
+		remove_effect = {
+			activate_mission = fra_alps_offensive_plan_actived 
+			158 = {
+				add_dynamic_modifier = {
+					modifier = FRA_alps_blitzkrieg 
+					scope = FRA 
+				}
+			}
+		}
+	}
+
+	fra_alps_offensive_plan_actived = {
+		icon = GFX_decision_SWE_set_army_budget 
+		activation = { always = no }
+		days_mission_timeout = 90 
+		available = { hidden_trigger = { always = no } }
+		cancel_trigger = {
+			controls_state = 158 
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 158 
+			}
+		}
+		timeout_effect = {
+			158 = {
+				remove_dynamic_modifier = {
+					modifier = FRA_alps_blitzkrieg 
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 158
+				}
+				transfer_state = 158 
+				add_state_core = 158 
+				add_to_variable = { fontaine_military_power = 20 }
+				custom_effect_tooltip = fontaine_add_military_power_20 
+				fontaine_national_mobilization_calculation = yes 
+			}
+			else = {
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10 
+				add_war_support = -0.05 
+				ITA = {
+					add_war_support = 0.10 
+				}
+			}
+		}
+	}
+
+	fra_ukraine_offensive_plan = {
+		icon = GFX_decision_generic_operation 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_Borodino 
+			has_country_flag = fontaine_design_show_army_decisions 
+		}
+		available = {
+			check_variable = {
+				fontaine_military_power > 9 
+			}
+		}
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_minus_military_power_10 
+		days_remove = 14
+		complete_effect = {
+			add_to_variable = { fontaine_military_power = -10 }
+		}
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = UKR 
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_ukraine_offensive 
+					scope = FRA 
+				}
+			}
+			activate_mission = fra_fontaine_control_ukraine 
+		}
+	}
+
+	fra_fontaine_control_ukraine = {
+		icon = GFX_decision_generic_operation 
+		days_mission_timeout = 120 
+		activation = {
+			always = no 
+		}
+		available = {
+			always = no 
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 202
+				state = 221
+				state = 137
+				state = 218 
+			}
+			highlight_provinces = {
+				525
+				418
+				3686
+				9417 
+			}
+			highlight_only_provinces = yes 
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fra_fontaine_control_ukraine_trigger
+			}
+			202 = { is_controlled_by_ROOT_or_ally = yes }
+			221 = { is_controlled_by_ROOT_or_ally = yes }
+			137 = { is_controlled_by_ROOT_or_ally = yes }
+			218 = { is_controlled_by_ROOT_or_ally = yes }
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = FRA_ukraine_offensive 
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = FRA_ukraine_offensive 
+				}
+			}
+			if = {
+				limit = {
+					202 = { is_controlled_by_ROOT_or_ally = yes }
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				add_war_support = 0.05 
+				every_state = {
+					limit = {
+						is_controlled_by = FRA 
+						or = {
+							state = 201
+							state = 202
+							state = 193
+							state = 203
+							state = 259 
+							state = 225
+						}
+					}
+					add_compliance = 10 
+				}
+				SOV = {
+					add_war_support = -0.05 
+				}
+				activate_mission = fra_centre_russia_offensive_plan 
+				every_state = {
+					limit = {
+						or = {
+							state = 241
+							state = 243 
+							state = 224 
+							state = 222
+							state = 220
+							state = 260
+							state = 246
+							state = 205
+							state = 223 
+							state = 258 
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = FRA_centre_russia_offensive 
+						scope = FRA 
+					}
+				}
+				if = {
+					limit = {
+						221 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					every_controlled_state = {
+						limit = {
+							or = {
+								state = 221
+								state = 240
+							}
+						}
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+				if = {
+					limit = {
+						137 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					every_controlled_state = {
+						limit = {
+							or = {
+								state = 196
+								state = 137
+							}
+						}
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+				if = {
+					limit = {
+						218 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					every_controlled_state = {
+						limit = {
+							state = 218 
+						}
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+			}
+			else = {
+				every_controlled_state = {
+					limit = {
+						is_core_of = UKR 
+					}
+					add_resistance = 5 
+				}
+				add_war_support = -0.05
+				SOV = { add_war_support = 0.10 }
+				add_to_variable = { fontaine_military_power = -20 }
+				custom_effect_tooltip = fontaine_minus_military_power_20 
+			}
+		}
+	}
+
+	fra_centre_russia_offensive_plan = {
+		icon = GFX_decision_generic_operation 
+		days_mission_timeout = 150 
+		activation = {
+			always = no 
+		}
+		available = {
+			always = no 
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 242
+				state = 220 
+				state = 246
+				state = 224
+				state = 260 
+			}
+			highlight_provinces = {
+				306
+				3580
+				11349
+				3335
+				413
+			}
+			highlight_only_provinces = yes 
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fra_centre_russia_offensive_plan_trigger
+			}
+			242 = { is_controlled_by_ROOT_or_ally = yes }
+			220 = { is_controlled_by_ROOT_or_ally = yes }
+			246 = { is_controlled_by_ROOT_or_ally = yes }
+			224 = { is_controlled_by_ROOT_or_ally = yes }
+			260 = { is_controlled_by_ROOT_or_ally = yes }
+			#controls_province = 306 #斯摩棱斯克
+			#controls_province = 3580 #库尔斯克
+			#controls_province = 11349 #勒热夫
+			#controls_province = 3335 #布良斯克
+			#controls_province = 413 #沃罗涅日
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		timeout_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = FRA_centre_russia_offensive
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = FRA_centre_russia_offensive 
+				}
+			}
+			if = {
+				limit = {
+					242 = { is_controlled_by_ROOT_or_ally = yes }
+					220 = { is_controlled_by_ROOT_or_ally = yes }
+				}
+				activate_mission = fra_occupy_msk
+				242 = {
+					add_compliance = 10 
+					add_building_construction = {
+						type = supply_node 
+						level = 1
+						province = 335 
+					}
+				}
+				220 = {
+					add_compliance = 10
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				add_war_support = 0.05 
+				SOV = {
+					add_war_support = -0.05 
+				}
+				if = {
+					limit = {
+						246 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					246 = {
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+				if = {
+					limit = {
+						224 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					224 = {
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+				if = {
+					limit = {
+						260 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					260 = {
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5 
+				}
+			}
+			else = {
+				add_war_support = -0.05
+				SOV = { add_war_support = 0.10 }
+				add_to_variable = { fontaine_military_power = -20 }
+				custom_effect_tooltip = fontaine_minus_military_power_20 
+			}
+		}
+	}
+
+	fra_occupy_msk = {
+		icon = GFX_decision_generic_operation 
+		days_mission_timeout = 30  
+		activation = {
+			always = no 
+		}
+		available = {
+			always = no 
+		}
+		cancel_trigger = {
+			219 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+		cancel_effect = {
+			add_to_variable = { fontaine_military_power = 10 }
+			custom_effect_tooltip = fontaine_add_military_power_10 
+			add_war_support = 0.05 
+			SOV = {
+				add_war_support = -0.10 
+			}
+			activate_mission = fra_novogrod_offensive_plan 
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = LAT 
+						is_core_of = EST 
+					}
+					is_controlled_by = SOV 
+					or = {
+						state = 195
+						state = 208
+						state = 244
+						state = 209
+						state = 263 
+						state = 264
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_north_russia_offensive 
+				}
+			}
+		}
+		timeout_effect = {
+			add_war_support = -0.05
+			SOV = { add_war_support = 0.10 }
+			add_to_variable = { fontaine_military_power = -20 }
+			custom_effect_tooltip = fontaine_minus_military_power_20 
+		}
+	}
+
+	fra_novogrod_offensive_plan = {
+		icon = GFX_decision_generic_operation 
+		days_mission_timeout = 120 
+		activation = {
+			always = no 
+		}
+		available = {
+			always = no 
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 195
+				state = 812
+				state = 808
+				state = 264
+			}
+			highlight_provinces = {
+				3151
+				3152
+				9340
+				3140
+			}
+			highlight_only_provinces = yes 
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fra_novogrod_offensive_plan_trigger
+			}
+			195 = { is_controlled_by_ROOT_or_ally = yes }
+			812 = { is_controlled_by_ROOT_or_ally = yes }
+			808 = { is_controlled_by_ROOT_or_ally = yes }
+			264 = { is_controlled_by_ROOT_or_ally = yes }
+			#controls_province = 3151 #列宁格勒
+			#controls_province = 3152 #塔林
+			#controls_province = 9340 #里加
+			#controls_province = 3140 #季赫温
+		}
+		timeout_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = FRA_north_russia_offensive 
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = FRA_north_russia_offensive 
+				}
+			}
+			if = {
+				limit = {
+					195 = { is_controlled_by_ROOT_or_ally = yes }
+				}
+				195 = {
+					add_resistance = -10
+				}
+				SOV = {
+					add_war_support = -0.15 
+				}
+				add_to_variable = { fontaine_military_power = 10 }
+				custom_effect_tooltip = fontaine_add_military_power_10 
+				if = {
+					limit = {
+						812 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					every_state = {
+						limit = { is_core_of = EST }
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5
+				}
+				if = {
+					limit = {
+						808 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					every_state = {
+						limit = { is_core_of = LAT }
+						add_compliance = 10 
+					}
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5
+				}
+				if = {
+					limit = {
+						264 = { is_controlled_by_ROOT_or_ally = yes }
+					}
+					264 = { add_compliance = 10 }
+					add_to_variable = { fontaine_military_power = 5 }
+					custom_effect_tooltip = fontaine_add_military_power_5
+				}
+			}
+			else = {
+				add_war_support = -0.05
+				SOV = { add_war_support = 0.10 }
+				add_to_variable = { fontaine_military_power = -10 }
+				custom_effect_tooltip = fontaine_minus_military_power_10  
+			}
+		}
+	}
+
+	fra_kuban_offensive_plan = {
+		icon = GFX_decision_generic_operation 
+		days_mission_timeout = 120 
+		activation = {
+			has_war_with = SOV 
+			controls_province = 6380 
+			controls_province = 3151
+		}
+		available = {
+			always = no 
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 217
+				state = 236
+				state = 233
+				state = 229 
+			}
+			highlight_provinces = {
+				3529
+				9753
+				9663
+				7661 
+			}
+			highlight_only_provinces = yes 
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fra_kuban_offensive_plan_trigger
+			}
+			217 = { is_controlled_by_ROOT_or_ally = yes }
+			236 = { is_controlled_by_ROOT_or_ally = yes }
+			233 = { is_controlled_by_ROOT_or_ally = yes }
+			229 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+		cancel_effect = {
+			custom_effect_tooltip = fra_kuban_offensive_plan_tt
+			add_to_variable = { fontaine_military_power = 20 }
+			custom_effect_tooltip = fontaine_add_military_power_20 
+			fontaine_national_mobilization_calculation = yes 
+			every_state = {
+				limit = { 
+					has_dynamic_modifier = {
+						modifier = FRA_south_russia_offensive 
+					}
+				 }
+				remove_dynamic_modifier = {
+					modifier = FRA_south_russia_offensive 
+				}
+			}
+		}
+		timeout_effect = {
+			add_war_support = -0.05
+			SOV = { add_war_support = 0.10 }
+			add_to_variable = { fontaine_military_power = -10 }
+			custom_effect_tooltip = fontaine_minus_military_power_10  
+		}
+	}
+
+	fra_furina_personal_holiday = {
+		icon = GFX_decision_summon_furina 
+		visible = {
+			has_completed_focus = FRA_care_for_the_marsiable_life 
+			has_country_flag = fontaine_design_show_furina_decisions 
+		}
+		fire_only_once = yes 
+		custom_cost_trigger = {
+			always = yes 
+		}
+		custom_cost_text = fontaine_minus_theocracy_power_20 
+		available = {
+			hidden_trigger = {
+				check_variable = {
+					fontaine_theocracy_power > 19 
+				}
+			}
+			has_war = no 
+			735 = {
+				controller = {
+					not = {
+						has_war_with = ROOT 
+					}
+				}
+			}
+		}
+		complete_effect = {
+			add_to_variable = { fontaine_theocracy_power = -20 }
+			country_event = {
+				id = Fontaine_empire_furina_personal.3 
+				days = 1 
+			}
+		}
+	}
+}
+
+FRA_Human_Unity = {
+	FRA_anarchist_make_cores_raise_compliance = {
+		icon = GFX_decision_generic_operation 
+		state_target = yes 
+		target_array = controlled_states 
+		on_map_mode = map_only 
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT 
+				not = {
+					is_core_of = ROOT 
+					occupation_law = fontaine_renormalization 
+				}
+			}
+		}
+		days_remove = 45 
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		remove_effect = {
+			FROM = {
+				add_compliance = 15 
+				if = {
+					limit = { not = { has_state_flag = has_raise_compliance } }
+					set_state_flag = has_raise_compliance
+				}
+			}
+		}
+	}
+}
+
+FRA_congress = {
+	fra_left_wing_won_support_from_labor = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_mission_timeout = 30 
+		activation = { always = no }
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = Blum_has_wounded
+				has_country_flag = fra_blum_wounded 
+			}
+		}
+		timeout_effect = {
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.01
+			}
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.01 
+			}
+			hidden_effect = {
+				activate_mission = fra_left_wing_won_support_from_labor 
+			}
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+	}
+	fra_sfio_strike = {
+		icon = GFX_decision_generic_political_discourse 
+		days_mission_timeout = 35 
+		activation = { always = no }
+		timeout_effect = {
+			custom_effect_tooltip = fra_sfio_strike_tt
+			activate_mission = fra_sfio_strike
+			add_political_power = -5 
+			add_to_variable = { strike_prepare_times = 1 }
+			if = {
+				limit = {
+					check_variable = {
+						strike_prepare_times = 2 
+					}
+				}
+				country_event = Fontaine_empire_normal.7 
+			}
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = 1936_election_finished
+				has_country_flag = fontaine_1936_election_has_finished 
+			}
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+	}
+}
+
+FRA_commune_military = {
+	fra_preempt_beligum_position = {
+		icon = GFX_decision_hol_war_on_pacifism 
+		fire_only_once = yes 
+		visible = {
+			BEl = { has_capitulated = no }
+			has_capitulated = no 
+		}
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			has_war_with = GER 
+			not = { has_war_with = GER }
+			GER = { has_war_with = BEL }
+			GER = { has_war_with = LUX }
+			BEL = { has_capitulated = no }
+			command_power > 29
+			divisions_in_border_state = {
+				size > 1 
+				state = 29
+				border_state = 6
+			}
+			divisions_in_border_state = {
+				size > 1 
+				state = 29
+				border_state = 34
+			}
+			divisions_in_border_state = {
+				size > 1 
+				state = 18
+				border_state = 34
+			}
+			divisions_in_border_state = {
+				size > 1 
+				state = 18
+				border_state = 980
+			}
+		}
+		days_remove = 14 
+		modifier = {
+			army_speed_factor = 0.15 
+			dig_in_speed_factor = 0.25 
+		}
+		complete_effect = {
+			add_command_power = -30 
+			declare_war_on = {
+				target = BEL 
+				type = annex_everything 
+			}
+			declare_war_on = {
+				target = LUX 
+				type = annex_everything 
+			}
+		}
+	}
+
+	fra_action_norman_conquest = {
+		icon = GFX_decision_eng_install_government 
+		fire_only_once = yes 
+		visible = {
+			has_war_with = ENG 
+			ENG = { has_capitulated = no }
+		}
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			has_war_with = ENG 
+			has_capitulated = no 
+			ships_in_state_ports = {
+				state = 14
+				size > 79
+			}
+			command_power > 29 
+		}
+		days_remove = 90 
+		targeted_modifier = {
+			tag = ENG 
+			attack_bonus_against = 0.15 
+			defense_bonus_against = 0.10 
+		}
+		modifier = {
+			naval_invasion_capacity = 10 
+			naval_invasion_prep_speed = 0.5
+			no_supply_grace = 72 
+			convoy_escort_efficiency = 0.25
+		}
+		complete_effect = {
+			add_command_power = -30 
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ENG = {
+						has_capitulated = no 
+					}
+				}
+				add_war_support = -0.05 
+				navy_experience = 25 
+			}
+			else = {
+				add_war_support = 0.05 
+				navy_experience = 50 
+			}
+		}
+	}
+
+	fra_action_cross_the_alps = {
+		icon = GFX_decision_generic_tank 
+		fire_only_once = yes 
+		visible = {
+			has_war_with = GER 
+			GER = { has_capitulated = no }
+		}
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			has_capitulated = no 
+			has_war_with = GER 
+			surrender_progress < 0.01 
+			command_power > 29 
+			GER = { 
+				surrender_progress > 0  
+				casualties > 300000
+			}
+		}
+		days_remove = 120 
+		targeted_modifier = {
+			tag = GER 
+			attack_bonus_against = 0.15 
+			defense_bonus_against = 0.10 
+		}
+		complete_effect = {
+			add_command_power = -30 
+		}
+		modifier = {
+			army_speed_factor = 0.10 
+			command_power_gain_mult = -0.75 
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					GER = { has_capitulated = yes  }
+				}
+				add_war_support = 0.10 
+				army_experience = 100 
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.05 
+				}
+			}
+		}
+	}
+
+	fra_action_solferino = {
+		icon = GFX_decision_generic_prepare_civil_war 
+		fire_only_once = yes 
+		visible = {
+			has_war_with = ITA 
+			ITA = { has_capitulated = no }
+		}
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			has_capitulated = no 
+			has_war_with = ITA 
+			ITA = { has_capitulated = no }
+			surrender_progress < 0.01
+			command_power > 29 
+		}
+		days_remove = 90 
+		targeted_modifier = {
+			tag = ITA 
+			attack_bonus_against = 0.15
+			defense_bonus_against = 0.10 
+			breakthrough_bonus_against = 0.10 
+		}
+		modifier = {
+			terrain_penalty_reduction = 0.15 
+			command_power_gain_mult = -0.15 
+		}
+		complete_effect = {
+			add_command_power = -30 
+		}
+	}
+
+	fra_call_milita = {
+		icon = GFX_decision_generic_industry 
+		days_remove = 7 
+		days_re_enable = 56 
+		target_array = states 
+		state_target = yes 
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT 
+				OR = {
+					state = 16  
+					state = 18 
+					state = 27 
+					state = 17 
+				}
+			}
+		}
+		available = {
+			has_war = yes 
+			surrender_progress > 0
+			has_completed_focus = FRA_anarchist_militia 
+			has_equipment = {
+				infantry_equipment > 999
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = -1200 
+			}
+			FROM = {
+				add_manpower = -3000
+			}
+		}
+		remove_effect = {
+			FROM = {
+				create_unit = {
+					division = "name = \"Fontaine Commune Militia\" division_template = \"Standard Militia Division\" start_experience_factor = 0.4"  
+					owner = ROOT
+					count = 3 
+				}
+			}
+		}
+	}
+
+	fra_terrain_training_desert = {
+		icon = GFX_decision_generic_reorganize_irregulars 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_country_flag = terrain_train_finished 
+			}
+		}
+		available = {
+			has_war = no 
+			OR = {
+				divisions_in_state = {
+					size > 9
+					state = 513
+				}
+				divisions_in_state = {
+					size > 9
+					state = 665
+				}
+				divisions_in_state = {
+					size > 9
+					state = 462
+				}
+			}
+		}
+		days_remove = 60 
+		complete_effect = {
+			if = {
+				limit = {
+					divisions_in_state = {
+						size > 9
+						state = 513
+					}
+				}
+				513 = {
+					set_state_flag = army_train_area_1
+					add_dynamic_modifier = { modifier = FRA_army_training_area }
+				}
+			}
+			if = {
+				limit = {
+					divisions_in_state = {
+						size > 9
+						state = 665
+					}
+				}
+				665 = {
+					set_state_flag = army_train_area_1
+					add_dynamic_modifier = { modifier = FRA_army_training_area }
+				}
+			}
+			if = {
+				limit = {
+					divisions_in_state = {
+						size > 9
+						state = 462
+					}
+				}
+				462 = {
+					set_state_flag = army_train_area_1
+					add_dynamic_modifier = { modifier = FRA_army_training_area }
+				}
+			}
+		}
+		cancel_trigger = {
+			any_state = {
+				has_state_flag = army_train_area_1
+			}
+		}
+		modifier = {
+			experience_gain_army = 0.5 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_terrain_training_desert_tt
+			add_to_variable = { terrain_adapt_to_add = 0.03 }
+			every_state = {
+				limit = {
+					has_state_flag = army_train_area_1 
+				}
+				clr_state_flag = army_train_area_1 
+				remove_dynamic_modifier = { modifier = FRA_army_training_area }
+			}
+		}
+	}
+
+	fra_terrain_training_jungle = {
+		icon = GFX_decision_generic_forestry 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_country_flag = terrain_train_finished 
+			}
+		}
+		available = {
+			has_war = no 
+			OR = {
+				divisions_in_state = {
+					size > 4 
+					state = 539 
+				}
+				divisions_in_state = {
+					size > 4 
+					state = 772 
+				}
+				divisions_in_state = {
+					size > 4 
+					state = 773 
+				}
+				divisions_in_state = {
+					size > 4 
+					state = 671 
+				}
+				divisions_in_state = {
+					size > 4 
+					state = 286 
+				}
+			}
+		}
+		days_remove = 60 
+		complete_effect = {
+			if = { limit = { divisions_in_state = { size > 4 state = 539 } } 539 = { set_state_flag = army_train_area_2 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 4 state = 772 } } 772 = { set_state_flag = army_train_area_2 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 4 state = 773 } } 773 = { set_state_flag = army_train_area_2 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 4 state = 671 } } 671 = { set_state_flag = army_train_area_2 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 4 state = 286 } } 286 = { set_state_flag = army_train_area_2 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+		}
+		cancel_trigger = {
+			any_state = {
+				has_state_flag = army_train_area_2
+			}
+		}
+		modifier = {
+			experience_gain_army = 0.5 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_terrain_training_jungle_tt
+			add_to_variable = { terrain_adapt_to_add = 0.03 }
+			every_state = {
+				limit = {
+					has_state_flag = army_train_area_2
+				}
+				clr_state_flag = army_train_area_2
+				remove_dynamic_modifier = { modifier = FRA_army_training_area }
+			}
+		}
+	}
+
+	fra_terrain_training_mountain = {
+		icon = GFX_decision_generic_fortification 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_country_flag = terrain_train_finished 
+			}
+		}
+		available = {
+			has_war = no 
+			OR = {
+				divisions_in_state = {
+					size > 9 
+					state = 735
+				}
+				divisions_in_state = {
+					size > 9 
+					state = 32
+				}
+			}
+		}
+		days_remove = 60 
+		complete_effect = {
+			if = { limit = { divisions_in_state = { size > 9 state = 735 } } 735 = { set_state_flag = army_train_area_3 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 9 state = 32 } } 32 = { set_state_flag = army_train_area_3 add_dynamic_modifier = { modifier = FRA_army_training_area } } }	
+		}
+		cancel_trigger = {
+			any_state = {
+				has_state_flag = army_train_area_3
+			}
+		}
+		modifier = {
+			experience_gain_army = 0.5 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_terrain_training_mountain_tt
+			add_to_variable = { terrain_adapt_to_add = 0.03 }
+			add_tech_bonus = {
+				name = fra_terrain_training_mountain 
+				bonus = 3
+				category = mountaineers_tech 
+				uses = 1 
+			}
+			every_state = {
+				limit = {
+					has_state_flag = army_train_area_3
+				}
+				clr_state_flag = army_train_area_3
+				remove_dynamic_modifier = { modifier = FRA_army_training_area }
+			}
+		}
+	}
+
+	fra_terrain_training_urban = {
+		icon = GFX_decision_generic_fortification 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_country_flag = terrain_train_finished 
+			}
+		}
+		available = {
+			has_war = no 
+			OR = {
+				divisions_in_state = {
+					size > 9 
+					state = 19
+				}
+				divisions_in_state = {
+					size > 9 
+					state = 21
+				}
+				divisions_in_state = {
+					size > 9 
+					state = 983
+				}
+			}
+		}
+		days_remove = 60 
+		complete_effect = {
+			if = { limit = { divisions_in_state = { size > 9 state = 19 } } 19 = { set_state_flag = army_train_area_4 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 9 state = 21 } } 21 = { set_state_flag = army_train_area_4 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 9 state = 983 } } 983 = { set_state_flag = army_train_area_4 add_dynamic_modifier = { modifier = FRA_army_training_area } } }		
+		}
+		cancel_trigger = {
+			any_state = {
+				has_state_flag = army_train_area_4
+			}
+		}
+		modifier = {
+			experience_gain_army = 0.5 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_terrain_training_urban_tt
+			add_to_variable = { terrain_adapt_to_add = 0.03 }
+			every_state = {
+				limit = {
+					has_state_flag = army_train_area_4
+				}
+				clr_state_flag = army_train_area_4
+				remove_dynamic_modifier = { modifier = FRA_army_training_area }
+			}
+		}
+	}
+
+	fra_terrain_training_woods = {
+		icon = GFX_decision_generic_intelligence_operation 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_country_flag = terrain_train_finished 
+			}
+		}
+		available = {
+			has_war = no 
+			OR = {
+				divisions_in_state = {
+					size > 9 
+					state = 33
+				}
+				divisions_in_state = {
+					size > 9 
+					state = 25
+				}
+				divisions_in_state = {
+					size > 9 
+					state = 26
+				}
+			}
+		}
+		days_remove = 60 
+		complete_effect = {
+			if = { limit = { divisions_in_state = { size > 9 state = 33 } } 33 = { set_state_flag = army_train_area_5 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 9 state = 25 } } 25 = { set_state_flag = army_train_area_5 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+			if = { limit = { divisions_in_state = { size > 9 state = 26 } } 26 = { set_state_flag = army_train_area_5 add_dynamic_modifier = { modifier = FRA_army_training_area } } }
+		}
+		cancel_trigger = {
+			any_state = {
+				has_state_flag = army_train_area_5
+				divisions_in_state = {
+					size < 10 
+					state = THIS  
+				}
+			}
+		}
+		modifier = {
+			experience_gain_army = 0.5 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_terrain_training_woods_tt
+			add_to_variable = { terrain_adapt_to_add = 0.03 }
+			every_state = {
+				limit = {
+					has_state_flag = army_train_area_5
+				}
+				clr_state_flag = army_train_area_5
+				remove_dynamic_modifier = { modifier = FRA_army_training_area }
+			}
+		}
+	}
+
+	fra_terrain_finished = {
+		icon = GFX_decision_generic_military 
+		fire_only_once = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_terrain_finished_trigger
+				not = { 
+					any_state = {
+						or = {
+							has_state_flag = army_train_area_1
+							has_state_flag = army_train_area_2
+							has_state_flag = army_train_area_3
+							has_state_flag = army_train_area_4
+							has_state_flag = army_train_area_5
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = fra_terrain_finished_tt
+			set_country_flag = terrain_train_finished 
+			set_temp_variable = { army_experience_likely_to_add = terrain_adapt_to_add }
+			multiply_temp_variable = { army_experience_likely_to_add = 1500 }
+			army_experience = army_experience_likely_to_add   
+			add_to_variable = { FRA_the_red_army_terrain_penalty_reduction = terrain_adapt_to_add }
+		}
+	}
+
+	fra_armor_training = {
+		icon = GFX_decision_generic_merge_plant_tank 
+		fire_only_once = yes 
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			if = { limit = { not = { has_dlc = "No Step Back" } } has_tech = basic_medium_tank }
+			else = { has_tech = basic_medium_tank_chassis }
+			has_army_experience > 99
+			command_power > 49
+		}
+		days_remove = 180 
+		remove_effect = {
+			custom_effect_tooltip = fra_armor_training_tt
+			add_to_variable = { FRA_the_red_army_army_armor_attack_factor = 0.10 }
+			add_to_variable = { FRA_the_red_army_army_armor_defence_factor = 0.05 }
+			add_to_variable = { FRA_the_red_army_army_armor_speed_factor = 0.10 }
+			set_country_flag = has_finished_armor_training
+		}
+		complete_effect = {
+			army_experience = -100
+			add_command_power = -50 
+		}
+	}
+
+	army_armor_training_advanced = {
+		icon = GFX_decision_generic_tank 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = has_finished_armor_training 
+		}
+		available = {
+			has_completed_focus = FRA_anarchist_Makhnovtsi 
+			has_war = yes 
+			any_character = {
+				has_trait = panzer_expert 
+			}
+			has_army_experience > 49 
+		}
+		days_remove = 60
+		complete_effect = {
+			army_experience = -50 
+		}
+		remove_effect = {
+			custom_effect_tooltip = army_armor_training_advanced_tt
+			add_to_variable = { FRA_the_red_army_army_armor_attack_factor = 0.05 }
+			add_to_variable = { FRA_the_red_army_army_armor_defence_factor = 0.10 }
+			add_to_variable = { FRA_the_red_army_army_armor_speed_factor = 0.10 }
+		}
+	}
+}
+
+political_actions = {
+	fra_upgrade_the_colony = {
+		icon = GFX_decision_generic_belgian_colonial_helmet
+		visible = {
+			has_completed_focus = FRA_aboard_provinces
+			any_state = {
+				is_owned_by = FRA
+				not = { is_core_of = FRA }
+			}
+		}
+		target_array = owned_states 
+		state_target = yes 
+	
+		target_trigger = {
+			FROM = {  
+				is_owned_by = ROOT 
+				not = { is_core_of = FRA }
+				not = { has_dynamic_modifier = { modifier = FRA_oversea_land } }
+				OR = {
+					state = 779
+					state = 272
+					state = 310
+					state = 635
+				}
+			}
+		}
+		available = {
+			FROM = {
+				compliance > 79
+				is_fully_controlled_by = ROOT 
+			}
+		}
+		days_remove = 60 
+		cost = 50 
+		remove_effect = {
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = FRA_oversea_land
+				}
+			}
+		}
+	}
+	fra_slove_the_economic_problem = {
+		icon = GFX_decision_generic_fundraising 
+		days_mission_timeout = 180 
+		activation = {
+			always = no 
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		cancel_trigger = {
+			if = {
+				limit = {
+					has_idea = FRA_inefficient_economy_1
+				}
+				not = {
+					has_idea = FRA_inefficient_economy_1 
+				}
+			}
+			if = {
+				limit = {
+					has_idea = FRA_inefficient_economy_2
+				}
+				not = {
+					has_idea = FRA_inefficient_economy_2 
+				}
+			}
+		}
+		cancel_effect = {
+			add_stability = 0.05 
+			add_political_power = 100 
+		}
+		timeout_effect = {
+			custom_effect_tooltip = fra_slove_the_economic_problem_tt
+			country_event = Fontaine_revolution.3
+		}
+	}
+	Normalization_spy = {
+		visible = {
+			has_idea = fra_french_spanish_intelligence_team 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = fra_french_spanish_intelligence_team 
+				add_idea = fra_french_spanish_intelligence_team_2 
+			}
+		}
+	}
+}
+
+economy_decisions = {
+	fra_open_chi_vit_channel = {
+		icon = GFX_decision_generic_construction
+		visible = {
+			has_completed_focus = FRA_interfere_china 
+		}
+		available = {
+			594 = {
+				not = {
+					is_controlled_by = JAP 
+				}
+			}
+			671 = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
+		}
+		days_remove = 30 
+		modifier = {
+			consumer_goods_factor = 0.02 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_open_chi_vit_channel_tt
+			set_country_flag = fra_channel_open_chi_vit
+			671 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 1185 
+				}
+			}
+			build_railway = {
+				level = 3 
+				path = { 4075 1185 }
+			}
+		}
+	}
+	fra_offer_chinese_weapon = {
+		icon = GFX_decision_generic_industry 
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = GXC
+					original_tag = YUN
+					original_tag = CHI
+					original_tag = PRC 
+				}
+				exists = yes 
+				is_subject = no 
+			}
+		}
+		visible = {
+			has_country_flag = fra_channel_open_chi_vit 
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 999
+			}
+		}
+		complete_effect = {
+			add_cic = 2500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		days_re_enable = 15
+		days_remove = 45
+		remove_effect = {
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+			}
+		}
+	}
+	fra_fuel_export = {
+		icon = GFX_decision_generic_consumer_goods
+		visible = {
+			has_completed_focus = FRA_middle_east_mission 
+		}
+		available = {
+			if = {
+				limit = {
+					has_country_flag = has_changed_fuel_policy 
+				}
+				has_country_flag = {
+					flag = has_changed_fuel_policy
+					days > 60
+				}
+			}
+		}
+		#days_re_enable = 60 
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = has_changed_fuel_policy 
+				}
+				clr_country_flag = has_changed_fuel_policy 
+			}
+			else = {
+				set_country_flag = has_changed_fuel_policy
+			}
+			#custom_effect_tooltip = need_60_days_to_change
+			if = {
+				limit = {
+					has_idea = fra_offer_fuel_for_army_first 
+				}
+				swap_ideas = {
+					remove_idea = fra_offer_fuel_for_army_first
+					add_idea = fra_export_fuel_first 
+				}
+				custom_effect_tooltip = need_60_days_to_change
+			}
+			else = {
+				add_ideas = fra_export_fuel_first 
+			}
+		}
+	}
+	fra_fuel_for_army = {
+		icon = GFX_decision_generic_consumer_goods
+		visible = {
+			has_completed_focus = FRA_middle_east_mission 
+		}
+		available = {
+			if = {
+				limit = {
+					has_country_flag = has_changed_fuel_policy 
+				}
+				has_country_flag = {
+					flag = has_changed_fuel_policy
+					days > 60
+				}
+			}
+		}
+		#days_re_enable = 60 
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = has_changed_fuel_policy 
+				}
+				clr_country_flag = has_changed_fuel_policy 
+			}
+			else = {
+				set_country_flag = has_changed_fuel_policy
+			}
+			#custom_effect_tooltip = need_60_days_to_change
+			if = {
+				limit = {
+					has_idea = fra_export_fuel_first 
+				}
+				swap_ideas = {
+					remove_idea = fra_export_fuel_first
+					add_idea = fra_offer_fuel_for_army_first 
+				}
+				custom_effect_tooltip = need_60_days_to_change
+			}
+			else = {
+				add_ideas = fra_offer_fuel_for_army_first 
+			}
+		}
+	}
+	fra_change_fiscal_policy = {
+		icon = GFX_decision_CHL_mapuche_liberate_nahua
+		allowed = {
+			original_tag = FRA 
+		}
+		visible = {
+			has_completed_focus = FRA_macroeconomic_policy 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = be_in_deflation
+				check_variable = { france_economy_inflation < 0 }
+			}
+		}
+		days_re_enable = 70 
+		days_remove = 70
+		modifier = { 
+			custom_modifier_tooltip = be_in_deflation_tt
+			political_power_cost = 0.05
+		} 
+		complete_effect = {
+			set_country_flag = take_action_on_deflation
+		}
+		remove_effect = {
+			add_stability = -0.01 
+			custom_effect_tooltip = be_in_deflation_tt_2
+			add_to_variable = { france_economy_growth = 0.01 }
+			clr_country_flag = take_action_on_deflation
+		}
+
+		ai_will_do = {
+			base = 0 
+			modifier = {
+				add = 10 
+				check_variable = {
+					france_economy_inflation < -0.02
+				}
+			}
+		}
+		
+	}
+}
+
+FRA_suppress_the_disrevolution_category = {
+	FRA_suppress_the_Croix_de_Feu = {
+		icon = GFX_decision_generic_arrest
+		available = {
+			has_equipment = {
+				infantry_equipment > 249 
+			}
+		}
+		fire_only_once = yes 
+		days_remove = 28 
+		cost = 10 
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250 
+			}
+		}
+		ai_will_do = {
+			factor = 200 
+		}
+		remove_effect = {
+			army_experience = 15 
+			add_popularity = {
+				ideology = fascism 
+				popularity = -0.05 
+			}
+			add_stability = 0.02 
+			set_country_flag = has_suppress_croix_de_feu 
+			unlock_decision_tooltip = FRA_improve_the_treatment_of_veteran 
+		}
+	}
+
+	FRA_improve_the_treatment_of_veteran = {
+		icon = GFX_decision_generic_consumer_goods
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = has_suppress_croix_de_feu
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2 
+		}
+		days_remove = 60 
+		modifier = {
+			civilian_factory_use = 3 
+		}
+		ai_will_do = {
+			factor = 50 
+		}
+		cost = 30 
+		remove_effect = {
+			add_stability = 0.03 
+			add_war_support = 0.05 
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.03 
+			}
+			army_experience = 5 
+		}
+	}
+
+	FRA_reorganize_the_parliament = {
+		icon = GFX_decision_generic_civil_support 
+		fire_only_once = yes 
+		cost = 50 
+		available = {
+			communism > 0.5 
+		}
+		days_remove = 5 
+		modifier = {
+			political_power_gain = -0.25 
+		}
+		ai_will_do = {
+			factor = 100 
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = democratic 
+				popularity = -0.5 
+			}
+			add_stability = 0.05 
+			add_political_power = 100 
+			if = {
+				limit = {
+					has_idea = FRA_political_violence 
+				}
+				remove_ideas = FRA_political_violence 
+			}
+			remove_trait = {
+				character = FRA_maurice_thorez
+				slot = political_advisor
+				trait = communist_revolutionary 
+			}
+			add_trait = {
+				character = FRA_maurice_thorez 
+				slot = political_advisor
+				trait = devoted_communist 
+			}
+		}
+	}
+
+	FRA_defeat_monarchists = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		cost = 50 
+		available = {
+			neutrality > 0 
+		}
+		days_remove = 30 
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			add_political_power = 50 
+			add_stability = 0.05 
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.35
+			}
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.25
+			}
+		}
+	}
+
+	FRA_reorganize_french_army = {
+		icon = GFX_decision_generic_police_action 
+		fire_only_once = yes 
+		cost = 100 
+		available = {
+			command_power > 79 
+		}
+		complete_effect = {
+			add_command_power = -80 
+		}
+		ai_will_do = {
+			factor = 200 
+		}
+		days_remove = 30 
+		modifier = {
+			command_power_gain_mult = -0.75 
+			political_power_cost = 0.15 
+			experience_gain_army_factor = -0.5 
+		}
+		remove_effect = {
+			retire_character = FRA_maurice_gamelin 
+			retire_character = FRA_maxime_weygand 
+			retire_character = FRA_alphonse_georges 
+			retire_character = FRA_antoinemariebenoit_besson 
+			retire_character = FRA_charles_huntziger 
+			add_political_power = 150 
+			army_experience = 200 
+			if = {
+				limit = {
+					has_idea = FRA_victors_of_wwi 
+				}
+				remove_ideas = FRA_victors_of_wwi 
+			}
+			FRA_charles_de_gaulle = {
+				promote_leader = yes 
+				add_planning = 1 
+			}
+			FRA_jean_de_lattre_de_tassigny = {
+				promote_leader = yes 
+				add_planning = 1 
+			}
+			FRA_alphonse_juin = {
+				promote_leader = yes 
+				add_planning = 1 
+			}
+			add_ideas = FRA_reorganize_the_headquarter 
+			set_country_flag = get_new_leader
+			effect_tooltip = {
+				create_corps_commander = {
+					name = "马里-皮埃尔·柯尼希"
+					GFX = GFX_portrait_fra_marie_pierre_koenig
+					skill = 3
+					traits = {  }
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "乔治·卡特鲁斯"
+					GFX = GFX_portrait_fra_georges_catroux
+					skill = 3
+					traits = {  }
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				}
+			}
+		}
+	}
+}
+
+FRA_colony_policy = {
+	FRA_colony_land_reform = {
+		icon = GFX_decision_eng_trade_unions_support 
+		target_array = owned_states 
+		state_target = yes 
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT 
+				or = {
+					is_core_of = IVO 
+					is_core_of = SEN 
+					is_core_of = GAB 
+					is_core_of = VEN 
+					is_core_of = CAM 
+					is_core_of = LAO 
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0 
+		}
+		days_remove = 30 
+		modifier = {
+			political_power_cost = 0.1 
+			civilian_factory_use = 1 
+		}
+		visible = {
+			FROM = {
+				check_variable = {
+					reform_times < 2 
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 2 
+				add_compliance = 5 
+				add_to_variable = {
+					reform_times = 1 
+				}
+			}
+		}
+	}
+	FRA_colony_urbanization = {
+		icon = GFX_decision_eng_trade_unions_support 
+		target_array = owned_states 
+		state_target = yes 
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT 
+				or = {
+					is_core_of = IVO 
+					is_core_of = SEN 
+					is_core_of = GAB 
+					is_core_of = VEN 
+					is_core_of = CAM 
+					is_core_of = LAO 
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0 
+		}
+		days_remove = 60 
+		modifier = {
+			political_power_cost = 0.1
+			civilian_factory_use = 1  
+		}
+		visible = {
+			FROM = {
+				check_variable = {
+					reform_times > 1
+				}
+				check_variable = {
+					reform_times < 3 
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_state_category = rural 
+					}
+					set_state_category = town 
+				}
+				else_if = {
+					limit = {
+						has_state_category = town 
+					}
+					set_state_category = large_town 
+				}
+				else_if = {
+					limit = {
+						has_state_category = pastoral 
+					}
+					set_state_category = rural  
+				}
+				else_if = {
+					limit = {
+						has_state_category = large_town 
+					}
+					set_state_category = city  
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+				}
+				add_compliance = 10 
+				add_to_variable = {
+					reform_times = 1 
+				}
+			}
+		}
+	}
+
+	FRA_get_colony_core = {
+		icon = GFX_decision_eng_trade_unions_support 
+		target_array = owned_states 
+		state_target = yes 
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT 
+				or = {
+					is_core_of = IVO 
+					is_core_of = SEN 
+					is_core_of = GAB 
+					is_core_of = VEN 
+					is_core_of = CAM 
+					is_core_of = LAO 
+				}
+			}
+		}
+		available = {
+
+		}
+		days_remove = 60 
+		modifier = {
+			political_power_cost = 0.15 
+		}
+		visible = {
+			FROM = {
+				check_variable = {
+					reform_times = 3 
+				}
+			}
+		}
+		remove_effect = {
+			add_stability = -0.01 
+			FROM = {
+				add_core_of = ROOT 
+				add_to_variable = {
+					reform_times = 1 
+				}
+			}
+		}
+	}
+}
+
+FRA_Furina_s_cruise = {
+	FRA_mission_to_Belgium = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 10 
+		cancel_trigger = {
+			or = {
+				has_war = yes 
+				BEL = {
+					or = {
+						has_war = yes 
+						exists = no 
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_war = yes 
+				}
+				country_event = French.11 
+			}
+			else_if = {
+				limit = {
+					BEL = {
+						or = {
+							has_war = yes 
+							exists = no 
+						}
+					}
+				}
+				activate_mission = FRA_mission_to_cze
+			}
+		}
+		timeout_effect = {
+			add_political_power = 10 
+			country_event = French.12 
+			activate_mission = FRA_mission_to_cze 
+		}
+	}
+
+	FRA_mission_to_cze = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 10 
+		cancel_trigger = {
+			or = {
+				has_war = yes 
+				CZE = {
+					or = {
+						has_war = yes 
+						exists = no 
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_war = yes 
+				}
+				country_event = French.11 
+			}
+			else_if = {
+				limit = {
+					CZE = {
+						or = {
+							has_war = yes 
+							exists = no 
+						}
+					}
+				}
+				activate_mission = FRA_mission_to_yug 
+			}
+		}
+		timeout_effect = {
+			add_political_power = 10 
+			country_event = French.13 
+			activate_mission = FRA_mission_to_yug 
+		}
+	}
+
+	FRA_mission_to_yug = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 10 
+		cancel_trigger = {
+			or = {
+				has_war = yes 
+				YUG = {
+					or = {
+						has_war = yes 
+						exists = no 
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_war = yes 
+				}
+				country_event = French.11 
+			}
+			else_if = {
+				limit = {
+					YUG = {
+						or = {
+							has_war = yes 
+							exists = no 
+						}
+					}
+				}
+				activate_mission = FRA_mission_to_spr 
+			}
+		}
+		timeout_effect = {
+			add_political_power = 10 
+			country_event = French.14
+			activate_mission = FRA_mission_to_spr 
+		}
+	}
+
+	FRA_mission_to_spr = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 30  
+		cancel_trigger = {
+			not = {
+				any_country = {
+					original_tag = SPR 
+					has_government = democratic 
+				}
+			}
+		}
+		cancel_effect = {
+			activate_mission = FRA_mission_to_rom 
+		}
+		timeout_effect = {
+			add_political_power = 10 
+			country_event = French.15
+			activate_mission = FRA_mission_to_rom 
+		}
+	}
+
+	FRA_mission_to_rom = {
+		icon = GFX_decision_SWI_expand_covert_operations 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 10 
+		cancel_trigger = {
+			or = {
+				has_war = yes 
+				ROM = {
+					or = {
+						has_war = yes 
+						exists = no 
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_war = yes 
+				}
+				country_event = French.11 
+			}
+		}
+		timeout_effect = {
+			add_political_power = 10 
+			country_event = French.16
+			hidden_effect = {
+				country_event = {
+					id = French.11 
+					days = 2 
+				}
+			}
+		}
+	}
+}
+
+FRA_Fontainebleau_conference_category = {
+	FRA_Fontainebleau_conference_is_carrying_on = {
+		icon = GFX_decision_SOV_place_hq 
+		activation = {
+			always = no 
+		}
+		available = {
+			has_war_with = GER 
+			has_war_with = ITA 
+		}
+		cancel_effect = {
+			custom_effect_tooltip = The_Conference_Finished
+			clr_country_flag = Fontainebleau_Conference_is_going_on 
+		}
+		days_mission_timeout = 60  
+		timeout_effect = {
+			custom_effect_tooltip = The_Conference_Finished
+			clr_country_flag = Fontainebleau_Conference_is_going_on 
+		}
+	}
+	FRA_Rhineland_proposal = {
+		icon = GFX_decision_eng_trade_unions_demand 
+		fire_only_once = yes 
+		days_remove = 10 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_voting
+				not = {
+					has_country_flag = is_voting 
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = is_voting
+			every_country = {
+				limit = {
+					has_country_flag = attend_the_conference 
+				}
+				country_event = {
+					id = French.27
+					days = 7 
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = just_wait_for_the_result
+			clr_country_flag = is_voting 
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							check_variable = {
+								FRA_disagreement < FRA_half_agreement 
+							}
+							check_variable = {
+								FRA_disagreement = FRA_half_agreement 
+							}
+						}					
+					}
+					country_event = French.28 
+				}
+				else_if = {
+					limit = {	
+						check_variable = {
+							FRA_disagreement > FRA_half_agreement 
+						}					
+					}
+					country_event = French.29 
+				}
+				set_variable = { FRA_disagreement = 0 }
+			}
+		}
+	}
+
+	FRA_austria_independence = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		days_remove = 10 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_voting
+				not = {
+					has_country_flag = is_voting 
+				}
+			}
+		}
+		visible = {
+			GER = {
+				has_completed_focus = GER_anschluss 
+			}
+		}
+		complete_effect = {
+			set_country_flag = is_voting 
+			set_global_flag = is_voting_austria_independence 
+			every_country = {
+				limit = {
+					has_country_flag = attend_the_conference 
+				}
+				country_event = French.83 
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = just_wait_for_the_result
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							check_variable = {
+								FRA_disagreement < FRA_half_agreement 
+							}
+							check_variable = {
+								FRA_disagreement = FRA_half_agreement 
+							}
+						}					
+					}
+					country_event = French.31 
+				}
+				else_if = {
+					limit = {	
+						check_variable = {
+							FRA_disagreement > FRA_half_agreement 
+						}					
+					}
+					country_event = French.32 
+				}
+			}
+			clr_global_flag = is_voting_austria_independence 
+			clr_country_flag = is_voting 
+		}
+	}
+
+	FRA_italian_colony_independence = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		days_remove = 15 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_voting
+				not = {
+					has_country_flag = is_voting 
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = is_voting 
+			set_global_flag = is_voting_italian_colony_independence 
+			every_country = {
+				limit = {
+					has_country_flag = attend_the_conference 
+				}
+				country_event = French.30 
+			}
+		}
+		remove_effect = {
+			clr_country_flag = is_voting 
+			custom_effect_tooltip = just_wait_for_the_result
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							check_variable = {
+								FRA_disagreement < FRA_half_agreement 
+							}
+							check_variable = {
+								FRA_disagreement = FRA_half_agreement 
+							}
+						}					
+					}
+					country_event = French.31 
+				}
+				else_if = {
+					limit = {	
+						check_variable = {
+							FRA_disagreement > FRA_half_agreement 
+						}					
+					}
+					country_event = French.32 
+				}
+			}
+			clr_global_flag = is_voting_italian_colony_independence 
+			set_variable = { FRA_disagreement = 0 }
+		}
+	}
+
+	FRA_germany_issue = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_voting
+				not = {
+					has_country_flag = is_voting 
+				}
+			}
+		}
+		complete_effect = {
+			country_event = French.33
+		}
+	}
+
+	FRA_germanunion = {
+		icon = GFX_decision_eng_trade_unions_support 
+		days_mission_timeout = 15 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		timeout_effect = {
+			custom_effect_tooltip = just_wait_for_the_result
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							check_variable = {
+								FRA_disagreement < FRA_half_agreement 
+							}
+							check_variable = {
+								FRA_disagreement = FRA_half_agreement 
+							}
+						}					
+					}
+					country_event = French.31 
+				}
+				else_if = {
+					limit = {	
+						check_variable = {
+							FRA_disagreement > FRA_half_agreement 
+						}					
+					}
+					country_event = French.32 
+				}
+			}
+			clr_country_flag = is_voting 
+			set_variable = { FRA_disagreement = 0 }
+		}
+	}
+
+	FRA_liberate_cze = {
+		icon = GFX_decision_eng_trade_unions_support 
+		visible = {
+			any_core_state = {
+				is_core_of = CZE 
+				is_owned_by = GER 
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = all_number_will_accpet
+				always = yes 
+			}
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			GER = {
+				add_popularity = {
+					ideology = fascism 
+					popularity = -0.02 
+				}
+			}
+			every_core_state = {
+				limit = {
+					is_core_of = CZE 
+					is_owned_by = GER 
+				}
+				transfer_state_to = CZE 
+			}
+		}
+	}
+
+	FRA_Rhine_federation = {
+		icon = GFX_decision_eng_trade_unions_support 
+		days_mission_timeout = 15 
+		available = {
+			always = no 
+		}
+		activation = {
+			always = no 
+		}
+		timeout_effect = {
+			custom_effect_tooltip = just_wait_for_the_result
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							check_variable = {
+								FRA_disagreement < FRA_half_agreement 
+							}
+							check_variable = {
+								FRA_disagreement = FRA_half_agreement 
+							}
+						}					
+					}
+					country_event = French.31 
+				}
+				else_if = {
+					limit = {	
+						check_variable = {
+							FRA_disagreement > FRA_half_agreement 
+						}					
+					}
+					country_event = French.32 
+				}
+			}
+			clr_country_flag = is_voting 
+			set_variable = { FRA_disagreement = 0 }
+		}
+	}
+}
+
+FRA_mediate_sino_japan_war = {
+	FRA_mediating = {
+		icon = GFX_decision_hol_war_on_pacifism 
+		days_mission_timeout = 60 
+		activation = {
+			always = no 
+		}
+		available = {
+			has_war_with = JAP 
+		}
+		cancel_effect = {
+			add_war_support = 0.05 
+		}
+		timeout_effect = {
+			custom_effect_tooltip = must_have_a_solution
+			add_political_power = -25 
+		}
+	}
+
+	FRA_operate_the_consensuses_machine = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+		}
+		days_remove = 30 
+		fire_only_once = yes 
+		cost = 20 
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+		}
+		remove_effect = {
+			every_country = {
+				limit = {
+					or = {
+						tag = CHI 
+						tag = PRC
+						is_chinese_warlord = yes 
+					}
+				}
+				add_war_support = 0.05 
+			}
+			USA = {
+				add_war_support = 0.03 
+			}
+			JAP = {
+				add_named_threat = {
+					threat = 0.05 
+					name = FRA_operate_the_consensuses_machine_tt
+				}
+			}
+		}
+	}
+
+	FRA_appeal_enbargo_japan = {
+		icon = GFX_decision_generic_operation 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+			not = {
+				has_war_with = JAP 
+			}
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+		}
+		cost = 20 
+		days_remove = 7 
+		modifier = {
+			political_power_cost = 1 
+		}
+		complete_effect = {
+			diplomatic_relation = {
+				country = JAP 
+				relation = embargo
+				active = yes 
+			}
+			every_country = {
+				limit = {
+					has_war_with = JAP 
+					or = {
+						tag = CHI 
+						tag = PRC 
+						is_chinese_warlord = yes 
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = embargo_our_enemy 
+				}
+			}
+			if = {
+				limit = {
+					HOL = {
+						is_subject = no 
+						not = {
+							has_war_with = ROOT 
+							has_war_with = JAP 
+						}
+					}
+				}
+				HOL = {
+					country_event = French.49 
+				}
+			}
+			if = {
+				limit = {
+					USA = {
+						is_subject = no 
+						not = {
+							has_war_with = ROOT 
+							has_war_with = JAP 
+						}
+					}
+				}
+				USA = {
+					country_event = French.49 
+				}
+			}
+			if = {
+				limit = {
+					SOV = {
+						is_subject = no 
+						not = {
+							has_war_with = ROOT 
+							has_war_with = JAP 
+						}
+					}
+				}
+				SOV = {
+					country_event = French.49 
+				}
+			}
+			if = {
+				limit = {
+					ENG = {
+						is_subject = no 
+						not = {
+							has_war_with = ROOT 
+							has_war_with = JAP 
+						}
+					}
+				}
+				ENG = {
+					country_event = French.49 
+				}
+			}
+		}
+	}
+
+	FRA_volunteers_to_china = {
+		icon = GFX_decision_generic_military 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+			not = {
+				has_war_with = JAP 
+			}
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+		}
+		days_remove = -1 
+		modifier = {
+			command_power_gain_mult = -0.1 
+			war_support_factor = 0.05 
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				add_relation_modifier = {
+					target = PRC 
+					modifier = FRA_send_volunteers_to_china 
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt
+				}
+				add_relation_modifier = {
+					target = CHI  
+					modifier = FRA_send_volunteers_to_china 
+				}
+			}
+		}
+		cancel_trigger = {
+			has_war = yes 
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				remove_relation_modifier = {
+					target = PRC 
+					modifier = FRA_send_volunteers_to_china 
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt
+				}
+				remove_relation_modifier = {
+					target = CHI  
+					modifier = FRA_send_volunteers_to_china 
+				}
+			}
+		}
+	}
+
+	FRA_offer_industrial_technology = {
+		icon = GFX_decision_generic_wreckers 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+		}
+		days_remove = -1 
+		modifier = {
+			war_support_factor = 0.05 
+		}
+		complete_effect = {
+			add_tech_bonus = {
+				name = french_industrial_guide 
+				bonus = 0.5 
+				category = industry 
+				uses = 2 
+			}
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					add_ideas = french_industrial_guide 
+					add_tech_bonus = {
+						name = french_industrial_guide 
+						bonus = 0.5 
+						category = industry 
+						uses = 2 
+					}
+					add_ai_strategy = {
+						type = befriend 
+						id = FRA  
+						value = 25
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt
+				}
+				CHI = {
+					add_ideas = french_industrial_guide 
+					add_tech_bonus = {
+						name = french_industrial_guide 
+						bonus = 0.5 
+						category = industry 
+						uses = 2 
+					}
+					add_ai_strategy = {
+						type = befriend 
+						id = FRA  
+						value = 25
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				all_core_state = {
+					is_core_of = PRC 
+					is_controlled_by = PRC 
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt  
+				}
+				all_core_state = {
+					is_core_of = CHI  
+					is_controlled_by = CHI  
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					remove_ideas = french_industrial_guide
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt  
+				}
+				CHI = {
+					remove_ideas = french_industrial_guide
+				}
+			}
+		}
+	}
+
+	FRA_offer_light_weapon = {
+		icon = GFX_decision_ger_military_buildup 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+			has_equipment = {
+				infantry_equipment > 499 
+			}
+		}
+		days_remove = 7 
+		days_re_enable = 60 
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = -500
+				producer = FRA 
+			}
+		}
+		remove_effect = {
+			army_experience = 15 
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment 
+						amount = 500 
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_light_weapon 
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt 
+				}
+				CHI = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment 
+						amount = 500 
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_light_weapon 
+					}
+				}
+			}
+		}
+	}
+
+	FRA_offer_heavy_weapon = {
+		icon = GFX_decision_ger_military_buildup 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+			has_equipment = {
+				artillery_equipment > 99 
+			}
+		}
+		days_remove = 7 
+		days_re_enable = 60 
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment  
+				amount = -100
+				producer = FRA 
+			}
+		}
+		remove_effect = {
+			army_experience = 25 
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment 
+						amount = 100 
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_heavy_weapon  
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt 
+				}
+				CHI = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment 
+						amount = 100 
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_heavy_weapon  
+					}
+				}
+			}
+		}
+	}
+
+	FRA_offer_support_equipment = {
+		icon = GFX_decision_hol_exchange_intelligence_data  
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = offer_weapon_for_chinese 
+		}
+		available = {
+			JAP = {
+				has_war_with = CHI 
+			}
+			any_state = {
+				is_core_of = CHI 
+				or = {
+					is_controlled_by = JAP 
+					controller = {
+						is_in_faction_with = JAP 
+					}
+				}
+			}
+			has_equipment = {
+				support_equipment > 149 
+			}
+		}
+		days_remove = 7 
+		days_re_enable = 60 
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment  
+				amount = -150
+				producer = FRA 
+			}
+			
+		}
+		remove_effect = {
+			army_experience = 25 
+			if = {
+				limit = {
+					has_country_flag = support_cpc 
+				}
+				PRC = {
+					add_equipment_to_stockpile = {
+						type = support_equipment 
+						amount = 150  
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_humanitarianist_help   
+					}
+					if = {
+						limit = {
+							check_variable = {
+								support_equipment_times = 0 
+							}
+						}
+						add_tech_bonus = {
+							name = offer_humanitarianist_help 
+							bonus = 1.5 
+							category = hospital_tech 
+							uses = 1 
+						}
+					}
+					set_variable = {
+						support_equipment_times = 1 
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = support_kmt 
+				}
+				CHI = {
+					add_equipment_to_stockpile = {
+						type = support_equipment 
+						amount = 150  
+						producer = FRA 
+					}
+					add_opinion_modifier = {
+						target = FRA 
+						modifier = offer_humanitarianist_help  
+					}
+					if = {
+						limit = {
+							check_variable = {
+								support_equipment_times = 0 
+							}
+						}
+						add_tech_bonus = {
+							name = offer_humanitarianist_help 
+							bonus = 1.5 
+							category = hospital_tech 
+							uses = 1 
+						}
+					}
+					set_variable = {
+						support_equipment_times = 1 
+					}
+				}
+			}
+		}
+	}
+
+	FRA_mediate_on_chinese_s_side = {
+		icon = GFX_decision_SWE_set_army_budget 
+		fire_only_once = yes 
+		available = {
+			has_war_support > 0.49 
+			JAP = {
+				any_enemy_country = {
+					or = {
+						tag = CHI 
+					    tag = PRC 
+					    is_chinese_warlord = yes 
+					}
+				}
+			}
+		}
+		complete_effect = {
+			set_temp_variable = {
+				full_ws = 1 
+			}
+			set_temp_variable = {
+				fra_ws = ROOT.has_war_support
+			}
+			subtract_from_temp_variable = {
+				full_ws = fra_ws 
+			}
+			multiply_temp_variable = {
+				full_ws = -0.3 
+			}
+			add_stability = full_ws 
+			add_to_war = {
+				targeted_alliance = CHI 
+				enemy = JAP 
+			}
+		}
+	}
+
+	FRA_declare_war_on_japan = {
+		icon = GFX_decision_generic_ignite_civil_war 
+		days_mission_timeout = 120 
+		activation = {
+			always = no 
+		}
+		available = {
+			has_war_with = JAP 
+		}
+		remove_trigger = {
+			has_war_with = JAP 
+		}
+		complete_effect = {
+			add_war_support = 0.05 
+			USA = {
+				add_war_support = 0.05 
+			}
+			every_country = {
+				limit = {
+					or = {
+						tag = CHI 
+						tag = PRC
+						is_chinese_warlord = yes 
+					}
+				}
+				add_war_support = 0.1 
+			}
+		}
+		timeout_effect = {
+			add_stability = -0.05 
+			add_war_support = -0.15 
+			if = {
+				limit = {
+					CHI = {
+						has_idea = the_success_of_kai_shek_s_plan 
+					}
+				}
+				remove_ideas = the_success_of_kai_shek_s_plan 
+				add_stability = -0.05 
+			}
+			diplomatic_relation = {
+				country = USA 
+				relation = guarantee
+				active = no 
+			}
+			USA = {
+				add_political_power = 50 
+				diplomatic_relation = {
+					country = FRA 
+					relation = guarantee 
+					active = no 
+				}
+			}
+		}
+	}
+}
+
+FRA_judge_the_war_crimes_category = {
+	FRA_convene_judges = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		days_remove = 7 
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		remove_effect = {
+			country_event = {
+				id = French.54 
+			}
+		}
+	}
+	FRA_someone_very_important_ger = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = has_called_judges 
+		}
+		available = {
+			not = {
+				has_war_with = GER 
+			}
+			GER = {
+				not = {
+					has_government = fascism 
+				}
+			}
+		}
+		days_remove = 3 
+		remove_effect = {
+			country_event = {
+				id = French.55
+			}
+		}
+	}
+	FRA_judge_italian_war_crimes = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = has_called_judges 
+		}
+		available = {
+			not = {
+				has_war_with = ITA 
+			}
+			ITA = {
+				not = {
+					has_government = fascism 
+				}
+			}
+		}
+		days_remove = 3 
+		remove_effect = {
+			country_event = {
+				id = French.75 
+			}
+		}
+	}
+	FRA_judge_japanese_war_crimes = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = has_called_judges 
+		}
+		available = {
+			not = {
+				has_war_with = JAP 
+			}
+			JAP = {
+				not = {
+					has_government = fascism 
+				}
+			}
+		}
+		days_remove = 3 
+		remove_effect = {
+			country_event = {
+				id = French.77 
+			}
+		}
+	}
+}
+
+FRA_National_parliament = {
+	#
+}
+
+#罢工决议
+FRA_the_whole_nation_strike = {
+	FRA_repress_commune = {
+		icon = GFX_decision_oppression
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 30 
+		available = {
+			FRC = {
+				exists = no 
+			}
+		}
+		timeout_effect = {
+			declare_war_on = {
+				target = FRC 
+				type = annex_everything 
+			}
+			clr_country_flag = fontaine_whole_nation_strike_start_up 
+		}
+	}
+	FRA_civilwar_is_coming = {
+		icon = GFX_decision_generic_assassination 
+		days_mission_timeout = 45 
+		activation = {
+			always = no 
+		}
+		available = {
+			has_government = communism 
+		}
+		cancel_effect = {
+			add_stability = 0.01 
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.02 
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				country_event = {
+					id = Fontaine_revolution.13 
+					days = 10 
+					random_days = 10
+				}
+			}
+			FRC = {
+				transfer_state = 29 
+				transfer_state = 18 
+				transfer_state = 785 
+				load_oob = FRC
+				every_state = {
+					limit = {
+						is_core_of = FRA 
+					}
+					add_core_of = FRC 
+				}
+				#add_state_core = 29 
+				set_capital = {
+					state = 29
+				}
+				inherit_technology = FRA 
+			}
+		}
+	}
+	FRA_appear_and_keep_calm = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_re_enable = 20 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = appear_times_less_than_3
+			}
+			not = {
+				country_exists = FRC 
+			}
+		}
+		visible = {
+			check_variable = {
+				appear_times < 3 
+			}
+		}
+		cost = 15 
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 20 
+			}
+			add_stability = -0.01 
+			add_to_variable = {
+				appear_times = 1 
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							appear_times = 1 
+						}
+					}
+					country_event = Fontaine_revolution.8 
+				}
+				if = {
+					limit = {
+						check_variable = {
+							appear_times = 2 
+						}
+					}
+					country_event = Fontaine_revolution.9 
+				}
+				if = {
+					limit = {
+						check_variable = {
+							appear_times = 3 
+						}
+					}
+					country_event = Fontaine_revolution.10 
+				}
+			}
+		}
+	}
+	FRA_offer_basic_customs = {
+		icon = GFX_decision_generic_consumer_goods 
+		fire_only_once = yes 
+		days_remove = 14 
+		days_re_enable = 2 
+		available = {
+			not = {
+				country_exists = FRC 
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.3 
+			stability_weekly = 0.02 
+			political_power_cost = 0.05 
+		}
+	}
+
+	FRA_open_negotiation_with_communists = {
+		icon = GFX_decision_SOV_place_hq 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_government = communism 
+				has_country_flag = fra_repress_the_communists
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_have_not_chosen_repress
+				not = {
+					has_country_flag = fra_repress_the_communists 
+				}
+			}
+		}
+		days_remove = 25 
+		modifier = {
+			communism_drift = 0.05 
+			political_power_cost = 0.4
+		}
+		complete_effect = {
+			set_country_flag = fra_negotiation_with_communists
+			custom_effect_tooltip = show_negotination_decisions
+			add_stability = 0.01 
+			add_political_power = 15 
+		}
+	}
+
+	FRA_yield_with_the_left_wing = {
+		icon = GFX_decision_FIN_stop_motti_tactics
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fra_negotiation_with_communists
+			not = { has_country_flag = has_tried_make_left_wing_collision }
+		}
+		complete_effect = {
+			set_country_flag = has_yield_with_the_left_wing
+			custom_effect_tooltip = FRA_yield_with_the_left_wing_tt
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 30 
+			}
+		}
+	}
+
+	FRA_try_make_left_wing_collision = {
+		icon = GFX_decision_hol_attract_foreign_investors 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fra_negotiation_with_communists
+			not = { has_country_flag = has_yield_with_the_left_wing }
+		}
+		complete_effect = {
+			set_country_flag = has_tried_make_left_wing_collision
+			custom_effect_tooltip = FRA_try_make_left_wing_collision_tt
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 30 
+			}
+		}
+	}
+
+	FRA_repress_communist = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_government = communism 
+				has_country_flag = fra_negotiation_with_communists 
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_have_not_start_open
+				not = {
+					has_country_flag = fra_negotiation_with_communists 
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = fra_repress_the_communists 
+			custom_effect_tooltip = show_repress_decisions
+		}
+	}
+
+	FRA_cabinet_resignation = {
+		icon = GFX_decision_generic_break_treaty 
+		available = {
+			has_idea = Neuvillette_political 
+		}
+		visible = {
+			not = {
+				has_government = communism 
+			}
+			has_country_flag = fra_negotiation_with_communists 
+			has_country_flag = has_yield_with_the_left_wing
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			custom_effect_tooltip = french_compliance_tt
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.15 
+			}
+			add_stability = -0.05 
+			custom_effect_tooltip = Neuvillette_would_retire
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 10 
+			}
+			hidden_effect = {
+				FRA_Neuvillette = {
+					set_can_be_fired_in_advisor_role = {
+						value = yes 
+					}
+				}
+				remove_ideas = Neuvillette_political 
+				add_ideas = assemblee_nationale 
+				FRA_Neuvillette = {
+					set_can_be_fired_in_advisor_role = {
+						value = no  
+					}
+				}
+				set_country_flag = cabinet_has_resigated
+			}
+		}
+	}
+
+	FRA_try_wooing_the_socialist = {
+		fire_only_once = yes 
+		icon = GFX_decision_generic_welfare 
+		visible = {
+			has_country_flag = fra_negotiation_with_communists 
+			has_country_flag = has_tried_make_left_wing_collision
+		}
+		cost = 100 
+		complete_effect = {
+			custom_effect_tooltip = try_collapse_the_socialist
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 30 
+			}
+		}
+		days_remove = 30 
+		remove_effect = {
+			set_country_flag = has_tried_wooing_the_socialist
+			show_ideas_tooltip = fra_marcel_deat 
+			add_stability = 0.03
+		}
+	}
+
+	FRA_collapse_the_union = {
+		fire_only_once = yes 
+		icon = GFX_decision_generic_political_address 
+		visible = {
+			has_country_flag = fra_negotiation_with_communists 
+			has_country_flag = has_tried_make_left_wing_collision
+		}
+		cost = 50 
+		complete_effect = {
+			custom_effect_tooltip = try_collapse_the_socialist
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 30 
+			}
+		}
+		days_remove = 60 
+		remove_effect = {
+			add_stability = 0.05 
+			set_country_flag = has_collapsed_the_union
+			swap_ideas = {
+				remove_idea = fra_whole_nation_strike 
+				add_idea = fra_whole_nation_strike_1 
+			}
+		}
+	}
+
+	FRA_support_SFIO = {
+		fire_only_once = yes 
+		icon = GFX_decision_hol_attract_foreign_investors
+		visible = {
+			has_country_flag = fra_negotiation_with_communists 
+			has_country_flag = has_tried_make_left_wing_collision
+		}
+		complete_effect = {
+			custom_effect_tooltip = try_collapse_the_socialist
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 60 
+			}
+			hidden_effect = {
+				country_event = {
+					id = French.84 
+					days = 10 
+					random_days = 10 
+				}
+			}
+		}
+		days_remove = 60 
+		modifier = {
+			consumer_goods_factor = 0.45 
+			political_power_cost = 2
+			industrial_capacity_factory = -0.25 
+			industrial_capacity_dockyard = -0.25 
+		}
+		remove_effect = {
+			add_stability = 0.05 
+			add_popularity = {
+				ideology = communism 
+				popularity = -0.1 
+			}
+			set_country_flag = has_suppotted_the_SFIO
+		}
+	}
+
+	FRA_arrest_the_communsit = {
+		icon = GFX_decision_generic_arrest 
+		fire_only_once = yes 
+		days_remove = 7 
+		visible = {
+			has_country_flag = has_suppotted_the_SFIO
+			has_country_flag = has_collapsed_the_union 
+			has_country_flag = has_tried_wooing_the_socialist
+		}
+		complete_effect = {
+			remove_mission = FRA_civilwar_is_coming 
+		}
+		modifier = {
+			political_power_cost = 1 
+		}
+		remove_effect = {
+			retire_character = FRA_maurice_thorez 
+			country_event = {
+				id = French.86
+				hours = 6 
+			}
+		}
+	}
+
+	FRA_dissolve_parliament = {
+		icon = GFX_decision_generic_break_treaty 
+		fire_only_once = yes 
+		visible = {
+			not = {
+				has_government = communism 
+			}
+			has_country_flag = fra_negotiation_with_communists 
+			has_country_flag = has_yield_with_the_left_wing
+		}
+		days_remove = 14
+		complete_effect = {
+			custom_effect_tooltip = french_compliance_tt
+			add_days_mission_timeout = {
+				mission = FRA_civilwar_is_coming 
+				days = 14  
+			}
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.15 
+			}
+			add_stability = -0.10 
+			set_country_flag = parilament_has_dissolved
+			set_variable = { total_seat_in_parliament = 604 }
+			custom_effect_tooltip = election_by_the_popularity
+			# democracy #
+			set_temp_variable = { total_democratic_support = party_popularity@democratic }
+			multiply_temp_variable = { total_democratic_support = total_seat_in_parliament }
+			set_temp_variable = { party_fontaine_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Parti_radical_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Rassemblement_National_temp_seat = total_democratic_support } 
+			multiply_temp_variable = { party_fontaine_temp_seat = 0.8 }
+			multiply_temp_variable = { party_Parti_radical_temp_seat = 0.1 }
+			multiply_temp_variable = { party_Rassemblement_National_temp_seat = 0.1 }
+			set_variable = { party_Fontaine = party_fontaine_temp_seat }
+			set_variable = { party_Rassemblement_National = party_Rassemblement_National_temp_seat }
+			set_variable = { party_Parti_radical = party_Parti_radical_temp_seat }
+			round_variable = party_Fontaine 
+			round_variable = party_Rassemblement_National 
+			round_variable = party_Parti_radical 
+			# communsim #
+			set_temp_variable = { total_communst_support = party_popularity@communism }
+			multiply_temp_variable = { total_communst_support = total_seat_in_parliament }
+			set_temp_variable = { party_french_communist_party_temp_seat = total_communst_support }
+			set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = total_communst_support }
+			multiply_temp_variable = { party_french_communist_party_temp_seat = 0.6 }
+			multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = 0.4 }
+			set_variable = { party_french_communist_party = party_french_communist_party_temp_seat }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat }
+			round_variable = party_french_communist_party 
+			round_variable = party_Section_Francaise_de_l_Internationale_Ouvriere 
+			# neu #
+			set_temp_variable = { total_neutrality_support = party_popularity@neutrality }
+			multiply_temp_variable = { total_neutrality_support = total_seat_in_parliament }
+			set_variable = { party_Action_francaise = total_neutrality_support }
+			round_variable = party_Action_francaise 
+			# fascism # 
+			set_temp_variable = { total_fascism_support = party_popularity@fascism }
+			multiply_temp_variable = { total_fascism_support = total_seat_in_parliament }
+			set_variable = { party_Croix_de_Feu = total_fascism_support }
+			round_variable = party_Croix_de_Feu 
+			refresh_gui = yes 
+		}
+	}
+
+	FRA_apponit_communist = {
+		icon = GFX_decision_SWI_no_elected_president 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = parilament_has_dissolved 
+			has_country_flag = cabinet_has_resigated 
+			has_country_flag = has_yield_with_the_left_wing
+		}
+		available = {
+			communism > 0.39 
+		}
+		days_remove = 7 
+		modifier = {
+			political_power_cost = 5 
+			communism_drift = 0.75 
+		}
+		remove_effect = {
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = yes 
+				election_frequency = 48 
+			}
+			remove_mission = FRA_civilwar_is_coming 
+			hidden_effect = {
+				add_country_leader_role = {
+					character = FRA_Furina_de_Fontaine 
+					promote_leader = yes 
+					country_leader = {
+						ideology = marxism 
+						traits = {
+							star_idol 
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = GFX_opera_of_trial 
+					}
+					add_country_leader_trait = the_focus_of_the_world 
+				}
+				set_cosmetic_tag = fontaine_people_s_republic 
+				news_event = Fontaine_revolution_news.1 
+				country_event = {
+					id = Fontaine_revolution.11 
+					days = 3 
+				}
+			}
+			if = {
+				limit = {
+					country_exists = FRC 
+				}
+				annex_country = {
+					target = FRC 
+				}
+			}
+			add_stability = 0.05 
+			#set_country_flag = show_second_leader 
+			set_country_flag = charlotte_as_the_second_leader 
+			set_variable_to_random = {
+				var = the_corruption_of_party 
+				max = 10 
+				min = 0
+			}
+			calculate_the_corruption_modifier = yes 
+			add_dynamic_modifier = { modifier = FRA_the_corruption }
+			effect_tooltip = {
+				add_ideas = provisional_government 
+			}
+			hidden_effect = {
+				FRC = {
+					FRC_Leon_Jouhaux = {
+						set_nationality = FRA 
+					}
+					FRC_Marcel_Cachin = {
+						set_nationality = FRA 
+					}
+				}
+				if = {
+					limit = {
+						has_idea = Neuvillette_political 
+					}
+					FRA_Neuvillette = {
+						set_can_be_fired_in_advisor_role = {
+							value = yes
+						}
+					}
+					remove_ideas = Neuvillette_political 
+					add_ideas = provisional_government 
+					FRA_Neuvillette = {
+						set_can_be_fired_in_advisor_role = {
+							value = no 
+						}
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = FRA_dissenters 
+				}
+				if = {
+					limit = {
+						has_idea = assemblee_nationale  
+					}
+					FRA_Assemblee_nationale = {
+						set_can_be_fired_in_advisor_role = {
+							value = yes
+						}
+					}
+					remove_ideas = assemblee_nationale 
+					add_ideas = provisional_government 
+					FRA_Assemblee_nationale = {
+						set_can_be_fired_in_advisor_role = {
+							value = no 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	FRA_dispatch_army_to_paris = {
+		icon = GFX_decision_generic_assassination 
+		visible = {
+			has_country_flag = fra_repress_the_communists 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = FRA_dispatch_army_to_paris_trigger
+				num_divisions_in_states = {
+					count > 0
+					states = { 16 }
+				}
+				num_divisions_in_states = {
+					count > 0 
+					states = { 1019 }
+				}
+			}
+			
+			command_power > 29
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			custom_effect_tooltip = what_would_happen
+			add_command_power = -30 
+			army_experience = 5 
+			add_stability = 0.01 
+			hidden_effect = {
+				country_event = {
+					id = Fontaine_revolution.12
+					days = 3 
+				}
+			}
+		}
+	}
+
+	FRA_remove_communsit_from_the_united_government = {
+		icon = GFX_decision_generic_army_support 
+		visible = {
+			has_country_flag = fra_repress_the_communists 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			add_popularity = {
+				ideology = communism 
+				popularity = -0.2 
+			}
+			add_stability = 0.05 
+			add_political_power = -25 
+			set_variable = { total_seat_in_parliament = 604 }
+			custom_effect_tooltip = election_by_the_popularity
+			# democracy #
+			set_temp_variable = { total_democratic_support = party_popularity@democratic }
+			multiply_temp_variable = { total_democratic_support = total_seat_in_parliament }
+			set_temp_variable = { party_fontaine_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Parti_radical_temp_seat = total_democratic_support }
+			set_temp_variable = { party_Rassemblement_National_temp_seat = total_democratic_support } 
+			multiply_temp_variable = { party_fontaine_temp_seat = 0.8 }
+			multiply_temp_variable = { party_Parti_radical_temp_seat = 0.1 }
+			multiply_temp_variable = { party_Rassemblement_National_temp_seat = 0.1 }
+			set_variable = { party_Fontaine = party_fontaine_temp_seat }
+			set_variable = { party_Rassemblement_National = party_Rassemblement_National_temp_seat }
+			set_variable = { party_Parti_radical = party_Parti_radical_temp_seat }
+			round_variable = party_Fontaine 
+			round_variable = party_Rassemblement_National 
+			round_variable = party_Parti_radical 
+			# communsim #
+			set_temp_variable = { total_communst_support = party_popularity@communism }
+			multiply_temp_variable = { total_communst_support = total_seat_in_parliament }
+			set_temp_variable = { party_french_communist_party_temp_seat = total_communst_support }
+			set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = total_communst_support }
+			multiply_temp_variable = { party_french_communist_party_temp_seat = 0.6 }
+			multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat = 0.4 }
+			set_variable = { party_french_communist_party = party_french_communist_party_temp_seat }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = party_Section_Francaise_de_l_Internationale_Ouvriere_temp_seat }
+			round_variable = party_french_communist_party 
+			round_variable = party_Section_Francaise_de_l_Internationale_Ouvriere 
+			# neu #
+			set_temp_variable = { total_neutrality_support = party_popularity@neutrality }
+			multiply_temp_variable = { total_neutrality_support = total_seat_in_parliament }
+			set_variable = { party_Action_francaise = total_neutrality_support }
+			round_variable = party_Action_francaise 
+			# fascism # 
+			set_temp_variable = { total_fascism_support = party_popularity@fascism }
+			multiply_temp_variable = { total_fascism_support = total_seat_in_parliament }
+			set_variable = { party_Croix_de_Feu = total_fascism_support }
+			round_variable = party_Croix_de_Feu 
+			refresh_gui = yes 
+		}
+	}
+}
+
+FRA_the_europe_unite = {
+	FRA_offer_load_for_rebuilding = {
+		icon = GFX_decision_generic_fundraising 
+		visible = {
+			has_completed_focus = FRA_Furina_Plan 
+		}
+		available = {
+			FROM = {
+				is_in_faction_with = ROOT  
+				is_subject_of = ROOT 
+			}
+		}
+		target_trigger = {
+			FROM = {
+				or = {
+					original_tag = ITA 
+					original_tag = GER 
+				}
+				not = {
+					has_government = fascism 
+				}
+				is_in_faction_with = FRA 
+			}
+		}
+		cost = 50 
+		days_remove = 7 
+		fire_only_once = yes 
+		remove_effect = {
+			custom_effect_tooltip = europe_unite_support_add_5
+			add_to_variable = { fra_support_of_eruope_unite = -5 }
+			FROM = {
+				add_stability = 0.05 
+				custom_effect_tooltip = hurt_improve_1
+				add_to_variable = { FRA_the_hurt_of_war_consumer_goods_factor = -0.15 }
+				add_to_variable = { FRA_the_hurt_of_war_production_speed_buildings_factor = 0.10 }
+				add_to_variable = { FRA_the_furina_plan_cic_to_overlord_factor = 0.10 }
+			}
+		}
+	}
+	FRA_utilize_the_plan = {
+		icon = GFX_decision_oppression 
+		visible = {
+			has_completed_focus = FRA_Furina_Plan 
+		}
+		available = {
+			FROM = {
+				is_in_faction_with = ROOT  
+				is_subject_of = ROOT 
+			}
+		}
+		target_trigger = {
+			FROM = {
+				or = {
+					original_tag = ITA 
+					original_tag = GER 
+				}
+				not = {
+					has_government = fascism 
+				}
+				is_in_faction_with = FRA 
+			}
+		}
+		cost = 50 
+		days_remove = 7 
+		fire_only_once = yes 
+		remove_effect = {
+			custom_effect_tooltip = add_consumer_good_10_neg
+			add_to_variable = { FRA_the_furina_plan_consumer_goods_factor = -0.10 }
+			FROM = {
+				custom_effect_tooltip = add_cic_10
+				add_to_variable = { FRA_the_furina_plan_cic_to_overlord_factor = 0.10 }
+			}
+			custom_effect_tooltip = europe_unite_support_decrease_5
+			add_to_variable = { fra_support_of_eruope_unite = 5 }
+		}
+	}
+	FRA_unite_propaganda = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_remove = 35 
+		modifier = {
+			political_power_cost = 0.15 
+		}
+		days_re_enable = 70 
+		remove_effect = {
+			custom_effect_tooltip = europe_unite_support_add_10
+			add_to_variable = { fra_support_of_eruope_unite = -10 }
+		}
+	}
+}
+
+FRA_the_task_of_communist_party = {
+	fra_consolidate_the_commune = {
+		icon = GFX_decision_SWI_no_elected_president 
+		days_mission_timeout = 365 
+		activation = {
+			always = no 
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = FRA_task_finished 
+		}
+
+		fire_only_once = yes 
+		cancel_if_not_visible = yes 
+
+		cancel_effect = {
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.05 
+			}
+			add_political_power = 120 
+			custom_effect_tooltip = party_corruption_decrease_10 
+			add_to_variable = { the_corruption_of_party = -10 }
+			clamp_variable = {
+				var = the_corruption_of_party 
+				min = 0 
+				max = 100 
+			}
+			calculate_the_corruption_modifier = yes 
+		}
+
+		timeout_effect = {
+			add_popularity = {
+				ideology = communism 
+				popularity = -0.10 
+			}
+			custom_effect_tooltip = party_corruption_increase_20 
+			add_to_variable = { the_corruption_of_party = 20 }
+			calculate_the_corruption_modifier = yes 
+		}
+	}
+
+	fra_start_normal_purge = {
+		icon = GFX_decision_generic_arrest 
+		days_remove = 60 
+		days_re_enable = 120 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = the_corruption_is_a_little_serious
+				check_variable = {
+					the_corruption_of_party > 29 
+				}
+			}
+			hidden_trigger = {
+				not = {
+					has_country_flag = start_massive_purge 
+				}
+			}
+		}
+		modifier = {
+			political_power_cost = 0.15 
+			stability_factor = -0.10 
+			custom_modifier_tooltip = monthly_corruption_change_de_20
+		}
+		complete_effect = {
+			set_country_flag = start_normal_purge 
+		}
+		remove_effect = {
+			add_stability = 0.01 
+			add_political_power = 20 
+			clr_country_flag = start_normal_purge 
+		}
+	}
+
+	fra_start_massive_purge = {
+		icon = GFX_decision_generic_arrest 
+		days_remove = 60 
+		days_re_enable = 120 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = the_corruption_is_quite_serious
+				check_variable = {
+					the_corruption_of_party > 49 
+				}
+			}
+			hidden_trigger = {
+				not = {
+					has_country_flag = start_normal_purge 
+				}
+			}
+		}
+		modifier = {
+			political_power_cost = 0.45 
+			stability_factor = -0.20 
+			command_power_gain = -0.25 
+			political_advisor_cost_factor = 0.20 
+			custom_modifier_tooltip = monthly_corruption_change_de_40
+		}
+		complete_effect = {
+			set_country_flag = start_massive_purge 
+		}
+		remove_effect = {
+			add_stability = 0.03 
+			add_political_power = 60 
+			clr_country_flag = start_massive_purge  
+		}
+	}
+
+	fra_support_antifascist_allies = {
+		icon = GFX_decision_ger_military_buildup 
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+			has_equipment = {
+				artillery_equipment > 99 
+			}
+		}
+		visible = {
+			has_completed_focus = FRA_defense_the_fascist_aggression 
+		}
+		days_remove = 7 
+		days_re_enable = 30 
+		target_trigger = {
+			FROM = {
+				not = {
+					has_government = fascism 
+				}
+				is_government_in_exile = no 
+				has_defensive_war = yes 
+				any_enemy_country = {
+					has_government = fascism 
+				}
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000 
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment 
+				amount = -100
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_war = no 
+				}
+				add_relation_modifier = {
+					target = FROM 
+					modifier = FRA_volunteer_common 
+				}
+			}
+			FROM = {
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.10 
+				}
+				add_ai_strategy = {
+					type = befriend 
+					id = FRA 
+					value = 50 
+				}
+				set_temp_variable_to_random = {
+					var = gun_to_the_stockpile
+					max = 2000 
+					min = 1800 
+				}
+				set_temp_variable_to_random = {
+					var = artillery_to_the_stockpile
+					max = 100 
+					min = 90 
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment 
+					producer = FRA 
+					amount = gun_to_the_stockpile 
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment 
+					producer = FRA 
+					amount = artillery_to_the_stockpile
+				}
+			}
+		}
+	}
+
+	fra_appeal_workers = {
+		icon = GFX_decision_eng_propaganda_campaigns
+		visible = {
+			has_completed_focus = FRA_accelerate_the_army_building 
+		}
+		available = {
+			any_country = {
+				has_government = fascism 
+				is_major = yes 
+			}
+		}
+		cost = 25 
+		days_remove = 180 
+		days_re_enable = 30 
+		modifier = {
+			political_power_cost = 0.20 
+			industrial_capacity_factory = 0.15 
+			industrial_capacity_dockyard = 0.15
+			production_factory_efficiency_gain_factor = 0.10
+		}
+	}
+
+	fra_strengthen_army_training = {
+		icon = GFX_decision_SWE_set_army_budget 
+		visible = {
+			has_completed_focus = FRA_accelerate_the_army_building 
+		}
+		available = {
+			any_country = {
+				has_government = fascism 
+				is_major = yes 
+			}
+		}
+		cost = 25 
+		days_remove = 180 
+		days_re_enable = 30 
+		modifier = {
+			training_time_factor = -0.20 
+			max_training = 0.25 
+		}
+	}
+}
+
+FRA_surpress_the_landlord = {
+	fra_surpress_the_local_landlord = {
+		icon = GFX_decision_generic_assassination 
+		available = {
+			has_equipment = {
+				infantry_equipment > 199 
+			}
+			check_variable = {
+				the_num_surpressing < 2
+			}
+		}
+		target_array = owned_states 
+		state_target = yes 
+		on_map_mode = map_and_decisions_view 
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 31 
+					state = 25
+					state = 33 
+					state = 26 
+					state = 20 
+					state = 22
+					state = 32 
+					state = 19 
+					state = 806 
+					state = 18
+				}
+				has_dynamic_modifier = {
+					modifier = FRA_landlord_resistance 
+				}
+			}
+		}
+		days_remove = 30 
+		complete_effect = {
+			add_manpower = -2000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = -200 
+			}
+			add_to_variable = { the_num_surpressing = 1  }
+		}
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		remove_effect = {
+			add_to_variable = {
+				the_num_surpressing = -1
+			}
+			if = {
+				limit = {
+					FROM = {
+						state = 806 
+					}
+				}
+				custom_effect_tooltip = 806_tt
+				set_temp_variable = {
+					the_weekly_stab_to_add = 2
+				}
+				multiply_temp_variable = {
+					the_weekly_stab_to_add = 0.01 
+				}
+				multiply_temp_variable = {
+					the_weekly_stab_to_add = 0.01 
+				}
+				add_to_variable = { fra_dissenters_stability_weekly_factor = the_weekly_stab_to_add }
+			}
+			else = {
+				custom_effect_tooltip = else_tt
+				set_temp_variable = {
+					the_weekly_stab_to_add = 5 
+				}
+				multiply_temp_variable = {
+					the_weekly_stab_to_add = 0.01 
+				}
+				multiply_temp_variable = {
+					the_weekly_stab_to_add = 0.01 
+				}
+				add_to_variable = { fra_dissenters_stability_weekly_factor = the_weekly_stab_to_add }
+			}
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = FRA_landlord_resistance 
+				}
+			}
+
+			set_temp_variable_to_random = {
+				var = the_manpower_to_return
+				max = 1990 
+				min = 1789 
+			}
+			set_temp_variable_to_random = {
+				var = the_equipment_to_return
+				max = 180 
+				min = 167  
+			}
+			add_manpower = the_manpower_to_return 
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = the_equipment_to_return 
+			}
+		}
+	}
+}
+
+FRA_revolution_world_map = {
+	fra_PSSR = {
+		icon = GFX_decision_CHL_carabineros 
+		fire_only_once = yes 
+		days_remove = 90 
+		cost = 50 
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_action_middle_asia
+		}
+		available = {
+			not = {
+				has_war_with = PER 
+			}
+			SOV = {
+				not = {
+					has_war_with = PER 
+				}
+			}
+			ENG = {
+				not = {
+					has_war_with = PER 
+				}
+			}
+			has_equipment = {
+				infantry_equipment > 999
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		remove_effect = {
+			set_global_flag = PSSR_has_set_up
+			effect_tooltip = {
+				PER = {
+					PSR_soleyman_mirza_eskandari = {
+						set_nationality = PSR 
+					}
+				}
+			}
+			PSR = {
+				custom_effect_tooltip = fra_PSSR_tt
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000 
+				}
+				every_state = {
+					limit = {
+						is_core_of = PER 
+					}
+					add_core_of = PSR 
+				}
+				hidden_effect = {
+					inherit_technology = PER 
+				}
+			}
+		}
+	}
+
+	fra_support_PSSR_war = {
+		icon = GFX_decision_generic_assassination 
+		fire_only_once = yes 
+		days_remove = 14 
+		cost = 50 
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_action_middle_asia
+			has_global_flag = PSSR_has_set_up 
+		}
+		available = {
+			command_power > 89
+			SOV = {
+				not = { has_war_with = PER  }
+			}
+			ENG = { not = { has_war_with = PER } }
+		}
+		complete_effect = {
+			add_command_power = -90 
+		}
+		remove_effect = {
+			PSR = {
+				add_ai_strategy = {
+					type = befriend 
+					id = FRA 
+					value = 150 
+				}
+				add_ai_strategy = {
+					type = alliance 
+					id = FRA 
+					value = 150 
+				}
+				transfer_state = 419 
+				transfer_state = 420 
+				add_war_support = 0.20 
+				add_offsite_building = {
+					type = arms_factory
+					level = 2 
+				}
+				hidden_effect = {
+					load_oob = PSR_civil_war 
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2000
+					}
+				}
+			}
+			PER = {
+				add_war_support = 0.20 
+				declare_war_on = {
+					target = PSR 
+					type = annex_everything
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = PER
+						original_tag = PSR 
+					}
+				}
+				add_ideas = fra_two_tag_civilwar 
+			}
+			add_relation_modifier = {
+				target = FRA
+				modifier = FRA_volunteer_common
+			}
+		}
+	}
+
+	fra_liberite_kur = {
+		icon = GFX_decision_CHL_grant_full_rights_to_the_mapuche 
+		fire_only_once = yes 
+		days_remove = 30 
+		cost = 25 
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_action_middle_asia 
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 999 
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		remove_effect = {
+			army_experience = 25 
+			every_core_state = {
+				limit = {
+					is_controlled_by = TUR 
+					is_core_of = KUR 
+				}
+				add_resistance = 0.10 
+			}
+			KUR = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000 
+				}
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.10 
+				}
+			}
+		}
+	}
+
+	fra_support_kurdish_a_home = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		days_remove = 14
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_action_middle_asia 
+		}
+		modifier = {
+			consumer_goods_factor = 0.10 
+		}
+		available = {
+			680 = {
+				is_controlled_by_ROOT_or_ally = yes 
+			}
+		}
+		remove_effect = {
+			set_global_flag = fontaine_support_kurdish 
+			diplomatic_relation = {
+				country = KUR 
+				relation = military_access  
+			}
+			diplomatic_relation = {
+				country = KUR 
+				relation = non_aggression_pact
+			}
+			KUR = {
+				add_ai_strategy = {
+					type = befriend 
+					id = FRA 
+					value = 150  
+				}
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.20 
+				}
+				transfer_state = 680 
+				add_offsite_building = {
+					type = arms_factory
+					level = 2 
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 3 
+				}
+				hidden_effect = {
+					inherit_technology = FRA 
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 200 
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment
+						amount = 500
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 2000 
+					}
+					division_template = {
+						name = "Kurdish Liberation Army Infantry"
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							recon = { x = 0 y = 2 }
+						}
+					}
+
+					division_template = {
+						name = "Kurdish Liberation Army Cavalry"
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+							cavalry = { x = 1 y = 0 }
+							cavalry = { x = 1 y = 1 }
+							cavalry = { x = 1 y = 2 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							recon = { x = 0 y = 2 }
+						}
+					}
+				}
+			}
+			680 = {
+				create_unit = {
+					division = "name = \"1st Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+					owner = KUR
+				}
+				create_unit = {
+					division = "name = \"2nd Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+					owner = KUR
+				}
+				create_unit = {
+					division = "name = \"3rd Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Infantry\" start_experience_factor = 0.4"  
+					owner = KUR
+				}
+				create_unit = {
+					division = "name = \"4th Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Cavalry\" start_experience_factor = 0.4"  
+					owner = KUR
+				}
+				create_unit = {
+					division = "name = \"5th Kurdish Liberation Army\" division_template = \"Kurdish Liberation Army Cavalry\" start_experience_factor = 0.4"  
+					owner = KUR
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+				}
+			}
+		}
+	}
+
+	fra_stop_the_war = {
+		icon = GFX_decision_FIN_stop_motti_tactics 
+		days_mission_timeout = 120 
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		is_good = no 
+		fire_only_once = yes 
+		activation = {
+			always = no 
+		}
+		cancel_trigger = {
+			OR = {
+				TUR = { has_capitulated = yes }
+				KUR = { has_capitulated = yes }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				news_event = Fontaine_revolution_news.2 
+				country_event = {
+					id = Fontaine_revolution.122 
+					days = 14 
+				}
+			}
+			custom_effect_tooltip = fra_stop_the_war_tt_1
+			KUR = {
+				if = {
+					limit = {
+						controls_state = 353
+					}
+					transfer_state = 353 
+				}
+				if = {
+					limit = {
+						controls_state = 800 
+					}
+					transfer_state = 800 
+				}
+				if = {
+					limit = {
+						controls_state = 344
+					}
+					transfer_state = 344 
+				}
+				white_peace = TUR  
+			}
+		}
+		cancel_effect = {
+			custom_effect_tooltip = fra_stop_the_war_tt_2 
+			effect_tooltip = {
+				KUR = {
+					white_peace = TUR 
+					transfer_state = 350 
+					transfer_state = 352
+					transfer_state = 353
+					transfer_state = 344 
+				}
+				set_autonomy = {
+					target = TUR 
+					autonomy_state = autonomy_dominion 
+				}
+				hidden_effect = {
+					news_event = Fontaine_revolution_news.2 
+					country_event = {
+						id = Fontaine_revolution.122 
+						days = 14 
+					}
+				}
+			}
+			custom_effect_tooltip = fra_stop_the_war_tt_3 
+			effect_tooltip = {
+				add_political_power = -200 
+				TUR = {
+					transfer_state = 350
+					transfer_state = 352 
+					add_state_core = 350 
+					add_state_core = 352 
+				}
+				SYR = {
+					transfer_state = 680 
+				}
+				TUR = {
+					set_autonomy = {
+						target = SYR 
+						autonomy_state = autonomy_integrated_puppet 
+					}
+				}
+			}
+			if = {
+				limit = {
+					TUR = {
+						has_capitulated = yes 
+					}
+				}
+				KUR = {
+					white_peace = TUR 
+					transfer_state = 350 
+					transfer_state = 352
+					transfer_state = 353
+					transfer_state = 344 
+				}
+				set_autonomy = {
+					target = TUR 
+					autonomy_state = autonomy_dominion 
+				}
+				hidden_effect = {
+					news_event = Fontaine_revolution_news.2 
+					country_event = {
+						id = Fontaine_revolution.122 
+						days = 14 
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					KUR = {
+						has_capitulated = yes 
+					}
+				}
+				hidden_effect = {
+					news_event = Fontaine_revolution_news.3 
+				}
+				add_political_power = -200 
+				TUR = {
+					transfer_state = 350
+					transfer_state = 352 
+					add_state_core = 350 
+					add_state_core = 352 
+				}
+				SYR = {
+					transfer_state = 680 
+				}
+				TUR = {
+					set_autonomy = {
+						target = SYR 
+						autonomy_state = autonomy_integrated_puppet 
+					}
+				}
+			}
+		}
+	}
+
+	fra_anti_monarchy_action = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_remove = 70
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_anti_monarchy 
+		}
+		target_trigger = {
+			FROM = {
+				or = {
+					original_tag = YEM 
+					original_tag = SAU 
+					original_tag = OMA 
+					original_tag = IRQ 
+				}
+				not = { has_government = communism  }
+			}
+		}
+		days_re_enable = 20   
+		complete_effect = {
+			custom_effect_tooltip = fra_anti_monarchy_action_tt
+			FROM = { set_country_flag = weekly_communism_increase }
+		}
+		remove_effect = {
+			FROM = { 
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.05 
+				}
+			 }
+		}
+	}
+
+	fra_arabs_coup = {
+		icon = GFX_decision_generic_assassination 
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_anti_monarchy 
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+			if = {
+				limit = {
+					FROM = { original_tag = SAU }
+				}
+				network_strength = {
+					target = SAU 
+					value > 0.19 
+				}
+			}
+			else_if = {
+				limit = { FROM = { original_tag = YEM } }
+				network_strength = {
+					target = YEM 
+					value > 0.19
+				}
+			}
+			else_if = {
+				limit = { FROM = { original_tag = IRQ } }
+				network_strength = {
+					target = YEM 
+					value > 0.19
+				}
+			}
+			else = {
+				network_strength = {
+					target = OMA 
+					value > 0.19
+				}
+			}
+			FROM = {
+				communism > 0.39 
+			}
+		}
+		days_remove = 14 
+		target_trigger = {
+			FROM = {
+				or = {
+					original_tag = YEM 
+					original_tag = SAU 
+					original_tag = OMA 
+					original_tag = IRQ 
+				}
+				not = { has_government = communism  }
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_arabs_coup_tt
+			hidden_effect = {
+				FROM = {
+					country_event = {
+						id = Fontaine_revolution.123 
+						days = 3 
+					}
+				}
+			}
+		}
+	}
+
+	fra_set_up_arabs_unite_republic = {
+		icon = GFX_decision_generic_nationalism 
+		fire_only_once = yes 
+		visible = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_baathism_research 
+		}
+		available = {
+			count_triggers = {
+				amount = 2 
+				YEM = { has_government = communism }
+				SAU = { has_government = communism }
+				IRQ = { has_government = communism }
+				OMA = { has_government = communism }
+			}
+		}
+		days_remove = 7 
+		cost = 50 
+		remove_effect = {
+			custom_effect_tooltip = fra_set_up_arabs_unite_republic_tt
+			hidden_effect = {
+				every_country = {
+					limit = {
+						has_government = communism 
+						or = {
+							original_tag = YEM 
+							original_tag = SAU 
+							original_tag = IRQ 
+							original_tag = OMA 
+						}
+					}
+					country_event = {
+						id = Fontaine_revolution.126 
+						days = 2 
+						random_hours = 18 
+					}
+				}
+			}
+		}
+	}
+
+	fra_transfer_new_state_to_arabs_unity = {
+		icon = GFX_decision_SWI_dismiss_council 
+		visible = {
+			has_global_flag = arabs_unity_has_set_up 
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+			has_completed_focus = FRA_baathism_research 
+			any_state = {
+				or = {
+					state = 659
+					state = 658
+					state = 765
+					state = 656
+				}
+				is_controlled_by = ROOT 
+			}
+		}
+		days_remove = 3 
+		remove_effect = {
+			every_state = {
+				limit = {
+					or = {
+						state = 659
+						state = 658
+						state = 765
+						state = 656
+					}
+					is_controlled_by = ROOT 
+				}
+				transfer_state_to = ARB 
+			}
+		}
+	}
+
+	#fra_lease_act_to_china = {
+	#	icon = GFX_decision_generic_industry 
+	#	visible = {
+	#		has_completed_focus = FRA_action_east_asia 
+	#		check_variable = { world_map_far_east_frame = 2 }
+	#	}
+	#}
+
+	fra_set_up_africa_nation_come_up = {
+		icon = GFX_decision_generic_political_address 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_action_africa 
+			check_variable = {
+				world_map_africa_frame = 2 
+			}
+		}
+		available = {
+			any_state = {
+				#limit = {
+					OR = {
+						state = 780
+						state = 779
+						state = 777 
+						state = 776
+						state = 274
+						state = 700
+					}
+					is_controlled_by = ROOT
+				#}
+
+			}
+		}
+		complete_effect = {
+			country_event = Fontaine_revolution.141 
+			add_political_power = 15 
+			effect_tooltip = {
+				random_state = {
+					limit = {
+						not = { is_core_of = FRA }
+						state = 779
+					}
+					add_resistance_target = 20
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 10 
+					#add_compliance = -10 
+				}
+				random_state = {
+					limit = {
+						not = { is_core_of = ENG  }
+						state = 274
+					}
+					add_resistance_target = 20
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 10 
+					#add_compliance = -10 
+				}
+				random_state = {
+					limit = {
+						not = { is_core_of = FRA }
+						state = 777
+					}
+					add_resistance_target = 20
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 10 
+					#add_compliance = -10 
+				}
+				random_state = {
+					limit = {
+						not = { is_core_of = ENG }
+						state = 700
+					}
+					add_resistance_target = 20
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 10 
+					#add_compliance = -10 
+				}
+				random_state = {
+					limit = {
+						not = { is_core_of = FRA }
+						state = 776
+					}
+					add_resistance_target = 20
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 10 
+					#add_compliance = -10 
+				}
+				random_state = {
+					limit = {
+						not = { is_core_of = FRA }
+						state = 80
+					}
+					add_resistance_target = 25
+					set_state_flag = africa_agricalture_union_is_here
+					#add_resistance = 15 
+					#add_compliance = -20  
+				}
+			}
+		}
+	}
+
+	fra_offer_weapon_to_revolutionary_farmer = {
+		icon = GFX_decision_generic_industry
+		days_remove = 14 
+		days_re_enable = 14 
+		visible = {
+			has_completed_focus = FRA_action_africa 
+			has_country_flag = afrcian_agriculture_union_has_set_up 
+			check_variable = {
+				world_map_africa_frame = 2 
+			}
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = fra_offer_weapon_to_revolutionary_farmer_tt
+			every_controlled_state = {
+				limit = {
+					has_state_flag = africa_agricalture_union_is_here 
+				}
+				add_resistance = 10
+				add_compliance = -5 
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+	}
+
+	fra_attack_pol_colony = {
+		icon = GFX_decision_eng_trade_unions_demand 
+		visible = {
+			has_completed_focus = FRA_integrate_colony_government 
+			POL = { controls_state = 296 } 
+			check_variable = {
+				world_map_africa_frame = 2 
+			}
+		}
+		available = {
+			POL = {
+				not = {
+					is_in_faction_with = ROOT 
+				}
+			}
+		}
+		days_remove = 14 
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500 
+			}
+		}
+		remove_effect = {
+			POL = {
+				set_rule = {
+					can_join_factions = no 
+				}
+			}
+			declare_war_on = {
+				target = POL 
+				type = take_claimed_state
+			}
+		}
+	}
+
+	
+}
+
+FRA_the_campaign_of_levant = {
+	levant_control_it = {
+		icon = GFX_decision_infiltrate_state 
+		fire_only_once = yes 
+		visible = {
+			ISR = { is_subject = no }
+		}
+		available = {
+			has_political_power > 34 
+			command_power > 49
+			custom_trigger_tooltip = {
+				tooltip = levant_control_it_tt
+			}
+			if = {
+				limit = {
+					original_tag = FRA 
+				}
+				check_variable = {
+					ISR.isr_condominium_fontaine > 99
+				}
+			}
+			else = {
+				check_variable = {
+					ISR.isr_condominium_england > 00
+				}
+			}
+		}
+		days_remove = 7 
+		complete_effect = {
+			add_command_power = -50 
+		}
+		modifier = {
+			political_power_cost = 5 
+		}
+		remove_effect = {
+			set_autonomy = {
+				target = ISR 
+				autonomy_state = autonomy_dominion 
+			}
+			ISR = { remove_ideas = isr_condominium }
+			hidden_effect = {
+				ISR = {
+					set_politics = {
+						ruling_party = democratic 
+					}
+					set_popularities = {
+						democratic = 43 
+						communism = 41 
+						neutrality = 16
+					}
+				}
+			}
+		}
+	}
+	levant_union_is_going_to_be_divided = {
+		icon = GFX_decision_generic_reorganize_irregulars
+		priority = 1000 
+		days_mission_timeout = 150 
+		activation = {
+			always = no 
+		}
+		is_good = no 
+		selectable_mission = yes 
+		cost = 300 
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					ISR = { has_country_flag = arabs_caused }
+				}
+				ISR = {
+					clr_country_flag = arabs_caused  
+					swap_ideas = {
+						remove_idea = isr_national_extreme_unbalance
+						add_idea = isr_nation_balance_arabs_2 
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ISR = { has_country_flag = jews_caused }
+				}
+				ISR = {
+					clr_country_flag = jews_caused   
+					swap_ideas = {
+						remove_idea = isr_national_extreme_unbalance
+						add_idea = isr_nation_balance_jews_2 
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			ISR = { not = { has_idea = isr_national_extreme_unbalance } }	
+		}
+		cancel_effect = {
+			ISR = { add_stability = 0.05 }
+		}
+		timeout_effect = {
+			country_event = {
+				id = Fontaine_revolution.131
+				hours = 12 
+			}
+		}
+	}
+	levant_invest_infrastructure = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		days_remove = 45 
+		available = {
+			num_of_civilian_factories_available_for_projects > 2 
+		}
+		days_re_enable = 15 
+		visible = {
+			any_state = {
+				is_fully_controlled_by = ISR 
+				infrastructure < 10
+			}
+		}
+		modifier = {
+			civilian_factory_use = 3 
+		}
+		remove_effect = {
+			custom_effect_tooltip = levant_invest_infrastructure_tt
+			if = {
+				limit = {
+					original_tag = FRA 
+				}
+				ISR = {
+					add_to_variable = {
+						isr_condominium_fontaine = 5 
+					}
+				}
+				
+			}
+			if = {
+				limit = {
+					original_tag = ENG 
+				}
+				ISR = {
+					add_to_variable = {
+						isr_condominium_england = 5 
+					}
+				}
+				
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_controlled_by = ISR 
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_controlled_by = ISR 
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+				}
+			}
+		}
+	}
+	levant_support_nationalize_monopoly_company = {
+		icon = GFX_decision_ger_military_buildup 
+		days_remove = 60 
+		fire_only_once = yes 
+		cost = 50 
+		modifier = {
+			consumer_goods_factor = 0.05 
+		}
+		visible = {
+			original_tag = FRA 
+		}
+		remove_effect = {
+			custom_effect_tooltip = levant_support_nationalize_monopoly_company_tt
+			ENG = {
+				unlock_decision_tooltip = levant_use_the_capitalist 
+			}
+			ISR = {
+				add_ideas = isr_state_steel_industry 
+				add_to_variable = { isr_condominium_fontaine = 15 }
+			}
+			random_state = {
+				limit = {
+					is_fully_controlled_by = ISR 
+					is_core_of = ISR 
+				}
+				add_extra_state_shared_building_slots = 1 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+			random_state = {
+				limit = {
+					is_fully_controlled_by = ISR 
+					is_core_of = ISR 
+				}
+				add_extra_state_shared_building_slots = 1 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+		}
+	}
+	levant_use_the_capitalist = {
+		icon = GFX_decision_gre_investment_decisions 
+		days_remove = 30 
+		fire_only_once = yes 
+		modifier = {
+			political_power_cost = 0.15 
+		}
+		visible = {
+			original_tag = ENG 
+		}
+		remove_effect = {
+			ISR = {
+				add_to_variable = { isr_condominium_england = 15 }
+				add_tech_bonus = {
+					name = levant_use_the_capitalist 
+					bonus = 1 
+					uses = 1 
+					category = industry 
+				}
+				add_popularity = {
+					ideology = communism 
+					popularity = -0.05 
+				}
+			}
+		}
+	}
+	levant_support_arabs = {
+		icon = GFX_decision_generic_speech 
+		days_remove = 60 
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = levant_support_arabs_trigger
+				not = { has_country_flag = arabs_caused }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ISR = { has_idea = isr_national_balance }
+				}
+				ISR = {  
+					swap_ideas = {
+						remove_idea = isr_national_balance
+						add_idea = isr_nation_balance_arabs_1 
+					}
+					
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 10 } }
+				}
+				custom_effect_tooltip = levant_add_10
+				
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_arabs_1 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_arabs_1
+						add_idea = isr_nation_balance_arabs_2 
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 10 } }
+				}
+				custom_effect_tooltip = levant_add_10	
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_arabs_2 }
+				}
+				ISR = {
+					set_country_flag = arabs_caused
+					swap_ideas = {
+						remove_idea = isr_nation_balance_arabs_2
+						add_idea = isr_national_extreme_unbalance 
+					}
+				}
+				custom_effect_tooltip = levant_add_15
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 15 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 15 } }
+				}
+				hidden_effect = {
+					activate_mission = levant_union_is_going_to_be_divided 
+				}
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_jews_2 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_jews_2 
+						add_idea = isr_nation_balance_jews_1 
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -5 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -5 } }
+				}
+				custom_effect_tooltip = levant_decrease_5	
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_jews_1 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_jews_1 
+						add_idea = isr_national_balance  
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -5 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -5 } }
+				}
+				custom_effect_tooltip = levant_decrease_5	
+			}
+			else = {
+				remove_ideas = isr_national_extreme_unbalance 
+				add_ideas = isr_nation_balance_jews_2 
+				custom_effect_tooltip = levant_decrease_10
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -10 } }
+				}
+			}
+		}
+	}
+	levant_support_jews = {
+		icon = GFX_decision_generic_speech 
+		days_remove = 60 
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.05 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = levant_support_jews_trigger
+				ISR = { not = { has_country_flag = jews_caused } }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ISR = { has_idea = isr_national_balance }
+				}
+				ISR = {  
+					swap_ideas = {
+						remove_idea = isr_national_balance
+						add_idea = isr_nation_balance_jews_1 
+					}
+					
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 10 } }
+				}
+				custom_effect_tooltip = levant_add_10
+				
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_jews_1 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_jews_1
+						add_idea = isr_nation_balance_jews_2 
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 10 } }
+				}
+				custom_effect_tooltip = levant_add_10	
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_jews_2 }
+				}
+				ISR = {
+					set_country_flag = jews_caused
+					swap_ideas = {
+						remove_idea = isr_nation_balance_jews_2
+						add_idea = isr_national_extreme_unbalance 
+					}
+				}
+				custom_effect_tooltip = levant_add_15
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = 15 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = 15 } }
+				}
+				hidden_effect = {
+					activate_mission = levant_union_is_going_to_be_divided 
+				}
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_arabs_2 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_arabs_2 
+						add_idea = isr_nation_balance_arabs_1 
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -5 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -5 } }
+				}
+				custom_effect_tooltip = levant_decrease_5	
+			}
+			else_if = {
+				limit = {
+					ISR = { has_idea = isr_nation_balance_arabs_1 }
+				}
+				ISR = {
+					swap_ideas = {
+						remove_idea = isr_nation_balance_arabs_1 
+						add_idea = isr_national_balance  
+					}
+				}
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -5 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -5 } }
+				}
+				custom_effect_tooltip = levant_decrease_5	
+			}
+			else = {
+				remove_ideas = isr_national_extreme_unbalance 
+				add_ideas = isr_nation_balance_arabs_2 
+				custom_effect_tooltip = levant_decrease_10
+				if = {
+					limit = { original_tag = FRA }
+					ISR = { add_to_variable = { isr_condominium_fontaine = -10 } }
+				}
+				else = {
+					ISR = { add_to_variable = { isr_condominium_england = -10 } }
+				}
+			}
+		}
+	}
+}
+
+FRA_interest_of_politics = {
+	fra_let_mumber_work = {
+		icon = GFX_decision_eng_blackshirt_march
+		cost = 25 
+		visible = {
+			has_completed_focus = FRA_from_the_people 
+		}
+		available = {
+			has_war_with_major = no 
+			has_government = communism  
+			political_power_daily > 0 
+		}
+		days_remove = 180 
+		complete_effect = {
+			set_country_flag = do_let_mumber_work
+		}
+		remove_effect = {
+			clr_country_flag = do_let_mumber_work 
+		}
+		modifier = {
+			custom_modifier_tooltip = fra_let_mumber_work_tt
+			political_power_gain = -0.10 
+		}
+		days_re_enable = 120 
+	}
+	fra_organize_meet_to_dam = {
+		icon = GFX_decision_CHL_mapuche_liberate_nahua 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_from_the_people 
+		}
+		cost = 50 
+		available = {
+			has_government = communism 
+		}
+		days_remove = 14 
+		remove_effect = {
+			country_event = Fontaine_revolution.133 
+		}
+	}
+	fra_raise_the_plan = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_re_enable = 365 
+		visible = {
+			has_completed_focus = FRA_from_the_people 
+		}
+		cost = 60 
+		available = {
+			not = {
+				has_active_mission = fra_raise_the_plan_mission 
+			}
+		}
+		complete_effect = {
+			country_event = Fontaine_revolution.134 
+		}
+	}
+	fra_raise_the_plan_mission = {
+		icon = GFX_decision_generic_train 
+		days_mission_timeout = 365 
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		is_good = no 
+		activation = {
+			always = no 
+		}
+		cancel_trigger = {
+			num_of_factories > the_goal_factory_number 
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_country_flag = add_10_percent 
+				}
+				add_political_power = 50 
+				add_stability = 0.05 
+				custom_effect_tooltip = add_people_zeal_10 
+				add_to_variable = {  
+					people_zeal_value = 10 
+				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = add_20_percent 
+				}
+				add_political_power = 100  
+				add_stability = 0.10  
+				custom_effect_tooltip = add_people_zeal_25 
+				add_to_variable = {  
+					people_zeal_value = 25 
+				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = add_50_percent 
+				}
+				add_political_power = 150  
+				add_stability = 0.20  
+				custom_effect_tooltip = add_people_zeal_50 
+				add_to_variable = {  
+					people_zeal_value = 50  
+				}
+			}
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = add_10_percent 
+				}
+				add_political_power = -300  
+				add_stability = -0.20  
+				custom_effect_tooltip = decrease_people_zeal_50 
+				add_to_variable = {  
+					people_zeal_value = -50  
+				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = add_20_percent 
+				}
+				add_political_power = -100   
+				add_stability = -0.05   
+				custom_effect_tooltip = decrease_people_zeal_25 
+				add_to_variable = {  
+					people_zeal_value = -25 
+				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = add_50_percent 
+				}
+				add_political_power = -150  
+				add_stability = -0.10   
+				custom_effect_tooltip = decrease_people_zeal_10 
+				add_to_variable = {  
+					people_zeal_value = -10   
+				}
+			}
+		}
+	}
+	fra_prepare_the_cruise = {
+		icon = GFX_decision_generic_consumer_goods 
+		fire_only_once = yes 
+		days_remove = 60
+		days_re_enable = 365
+		visible = {
+			has_completed_focus = FRA_from_the_people 
+		}
+		available = {
+			political_power_daily > 0.05 
+			surrender_progress < 0.10 
+		}
+		modifier = {
+			consumer_goods_factor = 0.10 
+			political_power_cost = 0.05 
+		}
+		remove_effect = {
+			custom_effect_tooltip = add_people_zeal_15 
+			add_to_variable = { people_zeal_value = 15 }
+		}
+	}
+
+	fra_strengthen_the_workplace_demoractory = {
+		icon = GFX_decision_generic_merge_plant_materiel 
+		visible = {
+			has_completed_focus = FRA_unit_as_basic_cell 
+		}
+		cancel_trigger = {
+			or = {
+				and = {
+					has_war_with_major = yes 
+					surrender_progress > 0.05 
+				}
+				not = { has_government = communism }
+			}
+			
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = do_strengthen_the_workplace_demoractory
+			}
+		}
+		cancel_effect = {
+			hidden_effect = {
+				clr_country_flag = do_strengthen_the_workplace_demoractory 
+			}
+		}
+		days_remove = -1 
+		cost = 50 
+		modifier = {
+			custom_modifier_tooltip = fra_strengthen_the_workplace_demoractory_tt
+			industrial_capacity_factory = -0.05
+			industrial_capacity_dockyard = -0.05 
+			production_factory_efficiency_gain_factor = 0.15 
+			production_factory_max_efficiency_factor = 0.05 
+		}
+	}
+	fra_graduate_assignment = {
+		icon = GFX_decision_generic_military 
+		visible = {
+			has_completed_focus = FRA_unit_as_basic_cell 
+		}
+		available = {
+			surrender_progress < 0.10 
+		}
+		complete_effect = {
+			set_country_flag = do_graduate_assignment
+			custom_effect_tooltip = add_people_zeal_10
+			add_to_variable = { people_zeal_value = 10 }
+			unlock_decision_tooltip = fra_cancel_graduate_assignment 
+		}
+		days_remove = -1 
+		cancel_trigger = {
+			not = { has_country_flag = do_graduate_assignment }
+		}
+		modifier = {
+			conscription_factor = -0.10 
+			research_speed_factor = 0.03 
+			production_factory_max_efficiency_factor = 0.05 
+		}
+	}
+	fra_cancel_graduate_assignment = {
+		icon = GFX_decision_generic_industry 
+		available = {
+			has_war_with_major = yes 
+		}
+		visible = {
+			has_country_flag = do_graduate_assignment 
+		}
+		complete_effect = {
+			clr_country_flag = do_graduate_assignment 
+		}
+	}
+
+	fra_let_youth_to_the_rural = {
+		icon = GFX_decision_generic_forestry 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_study_in_the_field 
+		}
+		available = {
+			has_idea = fra_to_the_rural 
+		}
+		cost = 50 
+		days_remove = 60 
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = fra_to_the_rural 
+				add_idea = fra_to_the_rural_1 
+			}
+			set_country_flag = to_the_rural_1_step
+		}
+	}
+
+	fra_rural_education_plan = {
+		icon = GFX_decision_generic_independence 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_study_in_the_field 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_rural_education_plan_trigger
+				has_country_flag = {
+					flag = to_the_rural_1_step
+					days > 365 
+				}
+			}
+		}
+		days_remove = 30 
+		remove_effect = {
+			add_political_power = 50 
+			swap_ideas = {
+				remove_idea = fra_to_the_rural_1 
+				add_idea = fra_to_the_rural_2 
+			}
+			clr_country_flag = to_the_rural_1_step 
+		}
+	}
+
+	fra_add_hospital_rural = {
+		icon = GFX_decision_SWI_no_elected_president 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_multifunctional_commune 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_add_hospital_rural_trigger
+				or = {
+					has_idea = fra_expand_the_investion_to_commune
+					has_idea = fra_expand_the_investion_to_commune_1 
+					has_idea = fra_expand_the_investion_to_commune_2 
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = fra_add_hospital_rural_tt
+			add_to_variable = { commune_value_to_add_monthly_population = 0.20 }
+			add_to_variable = { commune_value_to_add_conscription_factor = 0.05 }
+			if = {
+				limit = {
+					has_idea = fra_expand_the_investion_to_commune 
+				}
+				remove_ideas = fra_expand_the_investion_to_commune 
+				add_timed_idea = {
+					idea = fra_expand_the_investion_to_commune_1 
+					days = the_investion_days 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = fra_expand_the_investion_to_commune_1 
+				}
+				remove_ideas = fra_expand_the_investion_to_commune_1 
+				add_timed_idea = {
+					idea = fra_expand_the_investion_to_commune_2 
+					days = the_investion_days 
+				}
+			}
+		}
+	}
+
+	fra_add_school_rural = {
+		icon = GFX_decision_SWI_dismiss_council 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_multifunctional_commune 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_add_hospital_rural_trigger
+				or = {
+					has_idea = fra_expand_the_investion_to_commune
+					has_idea = fra_expand_the_investion_to_commune_1 
+					has_idea = fra_expand_the_investion_to_commune_2 
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = fra_add_school_rural_tt
+			add_to_variable = { commune_value_to_add_corruption = -0.15 }
+			add_to_variable = { commune_value_to_add_local_building_slots_factor = 0.05 }
+			if = {
+				limit = {
+					has_idea = fra_expand_the_investion_to_commune 
+				}
+				remove_ideas = fra_expand_the_investion_to_commune 
+				add_timed_idea = {
+					idea = fra_expand_the_investion_to_commune_1 
+					days = the_investion_days 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = fra_expand_the_investion_to_commune_1 
+				}
+				remove_ideas = fra_expand_the_investion_to_commune_1 
+				add_timed_idea = {
+					idea = fra_expand_the_investion_to_commune_2 
+					days = the_investion_days 
+				}
+			}
+		}
+	}
+
+	fra_get_labouror_ss = {
+		icon = GFX_decision_SWI_elect_confederation_president 
+		fire_only_once = yes 
+		visible = { has_completed_focus = FRA_reform_the_course_arrangement }
+		days_remove = 21 
+		cost = 50  
+		remove_effect = {
+			add_to_variable = { people_zeal_value = 15 }
+			custom_effect_tooltip = add_people_zeal_15
+			add_political_power = 50 
+			country_event = Fontaine_revolution.136 
+		}
+	}
+
+	fra_student_labor_points = {
+		icon = GFX_decision_SWI_support_humanitarian_efforts 
+		fire_only_once = yes 
+		cost = 25 
+		visible = { has_completed_focus = FRA_reform_the_course_arrangement }
+		days_remove = 60 
+		remove_effect = {
+			custom_effect_tooltip = fra_student_labor_points_tt 
+			add_to_variable = { monthly_zeal_change_by_economy = 0.75 }
+		}
+	}
+
+	fra_stalinist_defense_cynicism = {
+		icon = GFX_decision_SWI_elect_confederation_president 
+		visible = {
+			has_completed_focus = FRA_commune_stalinism 
+		}
+		days_remove = 360 
+		cost = 20 
+		days_re_enable = 30 
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = do_fra_stalinist_defense_cynicism 
+			}
+		}
+		modifier = {
+			political_power_gain = 0.05 
+			custom_modifier_tooltip = fra_stalinist_defense_cynicism_tt
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = do_fra_stalinist_defense_cynicism 
+			}
+		}
+	}
+
+	fra_stalinist_anti_trosky = {
+		icon = GFX_decision_hol_radio_oranje 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_commune_stalinism 
+		}
+		days_remove = 30 
+		cost = 50 
+		remove_effect = {
+			country_event = Fontaine_revolution.137 
+		}
+	}
+
+	fra_stalinist_expand_scienice = {
+		icon = GFX_decision_hol_draw_up_staff_plans 
+		visible = {
+			has_completed_focus = FRA_ussr_science_education 
+		}
+		cost = 50 
+		fire_only_once = yes 
+		days_remove = 730 
+		complete_effect = {
+			custom_effect_tooltip = decrease_people_zeal_10 
+			add_to_variable = { people_zeal_value = -10 }
+			set_country_flag = do_fra_stalinist_expand_scienice
+		}
+		modifier = {
+			research_speed_factor = 0.10 
+			custom_modifier_tooltip = fra_stalinist_expand_scienice_tt
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = do_fra_stalinist_expand_scienice 
+			}
+		}
+	}
+
+	fra_stalinist_expand_high_level_education = {
+		icon = GFX_decision_gre_paying_ifc_debt 
+		days_remove = -1 
+		visible = {
+			has_completed_focus = FRA_ussr_science_education 
+		}
+		cost = 50 
+		cancel_trigger = {
+			has_war_with_major = yes 
+			surrender_progress > 0.50 
+		}
+		modifier = {
+			research_speed_factor = 0.05 
+			consumer_goods_factor = 0.10 
+		}
+	}
+
+	fra_stalinist_invest_guyana = {
+		icon = GFX_decision_generic_motorized 
+		visible = {
+			has_completed_focus = FRA_reform_from_labor 
+		}
+		days_remove = 180 
+		available = {
+			controls_state = 310 
+		}
+		remove_effect = {
+			add_stability = 0.05 
+			310 = {
+				add_core_of = FRA 
+				add_manpower = 56730
+				add_victory_points = {
+					province = 12885 
+					value = 9 
+				}
+				add_extra_state_shared_building_slots = 5 
+				add_building_construction = {
+					type = naval_base
+					level = 4 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2 
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3 
+				}
+			}
+		}
+	}
+
+	fra_stalinist_political_commissar = {
+		icon = GFX_decision_generic_police_action 
+		visible = {
+			has_completed_focus = FRA_strengthen_the_law_of_party 
+		}
+		fire_only_once = yes 
+		days_remove = 120 
+		available = {
+			has_army_experience > 49 
+		}
+		cost = 50 
+		complete_effect = {
+			army_experience = -50 
+		}
+		modifier = {
+			training_time_factor = 0.10 
+			army_org_factor = -0.05 
+		}
+		remove_effect = {
+			custom_effect_tooltip = fra_stalinist_political_commissar_tt
+			add_to_variable = { FRA_the_red_army_army_org_factor = 0.10 }
+			add_to_variable = { FRA_the_red_army_max_planning = 0.10 }
+			add_to_variable = { FRA_the_red_army_political_power_factor = 0.15 }
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.50
+				name = fra_stalinist_political_commissar 
+				category = land_doctrine 
+			}
+		}
+	}
+
+	fra_stalinist_use_ss = {
+		icon = GFX_decision_generic_civil_support 
+		visible = {
+			has_completed_focus = FRA_strengthen_the_law_of_party 
+		}
+		fire_only_once = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_stalinist_use_ss_trigger
+				check_variable = {
+					the_corruption_of_party > 40 
+				}
+			}
+		}
+		#days_re_enable = 365 
+		days_remove = 60 
+		cost = 100 
+		remove_effect = {
+			country_event = Fontaine_revolution.138 
+			custom_effect_tooltip = will_decrease_the_soviet_10 
+			add_to_variable = { fra_strength_soviet = -10 }
+			custom_effect_tooltip = expand_the_influence_of_yanan_faction
+			add_to_variable = { fra_strength_yanan = 5 }
+			custom_effect_tooltip = expand_the_influence_of_anarchist_faction 
+			add_to_variable = { fra_strength_union = 5 }
+		}
+	}
+
+	fra_stalinist_start_democracy = {
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign 
+		activation = {
+			always = no 
+		}
+		days_mission_timeout = 360 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fra_stalinist_start_democracy_trigger
+				has_country_flag = attack_the_rights 
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = fra_stalinist_start_democracy_tt
+		}
+	}
+
+}
+
+foreign_influence = {
+	fra_claim_quebec = {
+		icon = GFX_decision_generic_independence
+		visible = {
+			has_completed_focus = FRA_speak_french 
+		}
+		fire_only_once = yes 
+		cost = 50 
+		complete_effect = {
+			hidden_effect = {
+				country_event = {
+					id = French.104 
+					days = 5 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = QUE 
+				}
+				add_claim_by = FRA 
+			}
+			CAN = {
+				swap_ideas = {
+					remove_idea = CAN_conscription_crisis
+					add_idea = CAN_conscription_crisis_worse 
+				}
+			}
+		}
+	}
+
+	fra_support_quebec_mission = {
+		icon = GFX_decision_CHL_mapuche_liberate_isthmo_amerindia 
+		days_mission_timeout = 60 
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		activation = {
+			always = no 
+		}
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fra_support_quebec_mission_trigger
+				always = no 
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = fra_support_quebec_mission_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							fra_quebec_interfere_strength = 1 
+						}
+					}
+					country_event = French.109
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							fra_quebec_interfere_strength = 2
+						}
+					}
+					country_event = French.110 
+				}
+				else = {
+					QUE = {
+						white_peace = CAN 
+						remove_ideas = fra_quebec_war_que 
+						add_ideas = fra_french_state 
+					}
+					CAN = {
+						add_stability = -0.10 
+						add_war_support = -0.10 
+						remove_ideas = fra_quebec_war_can 
+					}
+					set_autonomy = {
+						target = QUE 
+						autonomy_state = autonomy_dominion 
+					}
+				}
+			}
+		}
+	}
+}
+
+FRA_debug_decisions = {
+	r_fontaine_load_new_focus_tree = {
+		available = {
+			has_country_flag = fra_furina_come_to_france 
+		}
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = fontaine_resetting_accomplish }
+				clr_country_flag = fontaine_resetting_accomplish 
+			}
+			else = {
+				set_country_flag = fontaine_resetting_accomplish 
+			}
+			mark_focus_tree_layout_dirty = yes 
+			if = {
+				limit = { not = { has_country_flag = fontaine_resetting_accomplish } }
+				load_oob = Fontaine_force_focus_1 
+			}
+		}
+	}
+	r_fontaine_navia_liberalism_test = {
+		available = {
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine
+				ruling_only = yes 
+			}
+			has_government = liberalism_temp 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			set_country_leader_ideology = fontaine_liberalism_navia 
+			set_party_name = {
+				ideology = liberalism_temp 
+				long_name = fontaine_liberalism_navia_party_long
+				name = fontaine_liberalism_navia_party
+			}
+		}
+	}
+	r_fontaine_neuvillette_liberalism_test = {
+		available = {
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine
+				ruling_only = yes 
+			}
+			has_government = liberalism_temp 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			set_country_leader_ideology = fontaine_liberalism_neuvillette 
+			set_party_name = {
+				ideology = liberalism_temp 
+				long_name = fontaine_liberalism_neuvillette_party_long 
+				name = fontaine_liberalism_neuvillette_party 
+			}
+		}
+	}
+	r_fontaine_charlotte_liberalism_test = {
+		available = {
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine
+				ruling_only = yes 
+			}
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism 
+				elections_allowed = yes 
+			}
+			FRA_Furina_de_Fontaine = {
+				add_country_leader_role = {
+					promote_leader = yes 
+					country_leader = {
+						ideology = fontaine_liberalism_charlotte 
+					}
+				}
+			}
+			set_party_name = {
+				ideology = communism  
+				long_name = fontaine_liberalism_charlotte_party_long 
+				name = fontaine_liberalism_charlotte_party 
+			}
+		}
+	}
+	r_fontaine_load_parliament_gui = {
+		available = {
+			has_country_flag = fra_furina_come_to_france 
+		}
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = fontaine_show_parliament }
+				clr_country_flag = fontaine_show_parliament 
+			}
+			else = {
+				set_country_flag = fontaine_show_parliament
+			}
+		}
+	}
+	r_fontaine_clorinde_new_identity = {
+		available = {
+			has_country_flag = fra_furina_come_to_france 
+		}
+		complete_effect = {
+			FRA_Solenn_Clorinde = {
+				remove_unit_leader_role = yes 
+				remove_advisor_role = {
+					slot = political_advisor 
+				}
+				add_advisor_role = {
+					activate = yes 
+					advisor = {
+						slot = second_chief 
+						can_be_fired = no 
+						idea_token = Clorinde_PM
+						desc = clorinde_vice_president_desc
+						traits = {
+							constitutionalism_protector 
+						}
+					}
+				}
+			}
+		}
+	}
+	r_a_new_familiar_world = {
+		fire_only_once = yes 
+		complete_effect = {
+			GER = {
+				set_politics = {
+					ruling_party = democratic 
+				}
+				set_popularities = {
+					democratic = 54
+					populist_socialism = 46
+				}
+				set_party_name = {
+					ideology = populist_socialism 
+					long_name = GER_democratic_socialist_party_long
+					name = GER_democratic_socialist_party
+				}
+				recruit_character = SNA_Angela_Merkel 
+				SNA_Angela_Merkel = {
+					promote_character = yes 
+				}
+			}
+
+			FRA = {
+				recruit_character = SNA_Emmanuel_Macron 
+				SNA_Emmanuel_Macron = {
+					promote_character = yes 
+				}
+			}
+
+			JAP = {
+				set_politics = {
+					ruling_party = neutrality 
+					elections_allowed = yes 
+					election_frequency = 48 
+				}
+				set_popularities = {
+					neutrality = 48 
+					democratic = 46 
+					populist_socialism = 6 
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = JAP_liberal_democrats_long
+					name = JAP_liberal_democrats
+				}
+				recruit_character = SNA_Ikeda_Hayato
+				SNA_Ikeda_Hayato = {
+					promote_character = yes 
+				}
+			}
+		}
+	}
+}

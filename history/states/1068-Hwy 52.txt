@@ -1,0 +1,17 @@
+state = {
+	id = 1068
+	name = 1068_Hwy_52
+	manpower = 10
+	state_category = wasteland
+	history = {
+		owner = FAG 
+		add_core_of = ALG 
+		buildings = {
+			infrastructure = 4
+		}
+		add_dynamic_modifier = {
+			modifier = Sahara_HighWay 
+		}
+	 }
+	provinces = { 13412 13413 13414 }
+}

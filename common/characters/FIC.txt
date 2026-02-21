@@ -1,0 +1,73 @@
+characters = {
+	FIC_Eugene_Jean_Louis_Rene_Robin = {
+		name = FIC_Eugene_Jean_Louis_Rene_Robin 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fic_Eugene_Jean_Louis_Rene_Robin 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+			traits = { colonial_authority }
+		}
+	}
+
+	FIC_Achille_Louis_Auguste_Silvestre = {
+		name = FIC_Achille_Louis_Auguste_Silvestre 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fic_Achille_Louis_Auguste_Silvestre
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+			traits = { colonial_authority }
+		}
+	}
+
+	FIC_georges_catroux = {
+		name = FRA_Georges_Catroux 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_georges_catroux 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+			traits = { colonial_authority }
+		}
+	}
+
+	FIC_Jean_Decoux = {
+		name = FIC_Jean_Decoux 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fic_Jean_Decoux 
+			}
+		}
+		country_leader = {
+			ideology = oligarchism 
+			traits = { colonial_authority }
+		}
+	}
+
+	FIC_Georges_Albert_Ayme = {
+		name = FIC_Georges_Albert_Ayme
+		portraits = {
+			army = {
+				large = GFX_portrait_fic_Georges_Albert_Ayme
+				small = GFX_idea_fic_Georges_Albert_Ayme
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = {
+				career_officer 
+			}
+		}
+	}
+}

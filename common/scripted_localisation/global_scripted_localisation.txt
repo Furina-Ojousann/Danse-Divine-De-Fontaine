@@ -1,0 +1,4262 @@
+defined_text = {
+	name = GETcominternlevel
+	text = {
+		trigger = {
+			has_country_flag = comintern_leader 
+		}
+		localization_key = comintern_leader 
+	}
+	text = {
+		trigger = {
+			has_country_flag = comintern_partner 
+		}
+		localization_key = comintern_partner
+	}
+}
+
+defined_text = {
+	name = GetBritishAirForceName
+	text = {
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = fascism 
+				has_government = neutrality 
+				has_government = populist_socialism 
+			}
+		}
+		localization_key = United_Kingdom_AirForce
+	}
+	text = {
+		trigger = {
+			has_government = communism 
+		}
+		localization_key = Britain_Union_AirForce
+	}
+}
+
+defined_text = {
+	name = GetCurrentTechBackgroundLarge
+	text = {
+		trigger = {
+			date > 1941.12.31
+			not = { has_tech = tech_equipment_attack_helicopter }
+			is_special_project_completed = sp:sp_air_helicopter 
+		}
+		localization_key = GFX_technology_air_techs_folder_special_project_available_item_bg
+	}
+	text = {
+		trigger = {
+			has_tech = tech_equipment_attack_helicopter
+		}
+		localization_key = GFX_technology_bba_air_techs_folder_special_project_researched_item_bg
+	}
+	text = {
+		localization_key = GFX_technology_bba_air_techs_folder_special_project_unavailable_item_bg
+	}
+}
+
+defined_text = {
+	name = GetCurrentTechBackgroundHelicopter1
+	text = {
+		trigger = {
+			date > 1941.12.31
+			not = { has_tech = tech_unit_attack_helicopter_support_company_1 }
+			has_tech = tech_equipment_attack_helicopter
+		}
+		localization_key = GFX_technology_electronics_folder_special_project_available_item_bg
+	}
+	text = {
+		trigger = {
+			has_tech = tech_unit_attack_helicopter_support_company_1
+		}
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_researched_item_bg
+	}
+	text = {
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_unavailable_item_bg
+	}
+}
+
+defined_text = {
+	name = GetCurrentTechBackgroundHelicopter2
+	text = {
+		trigger = {
+			date > 1944.12.31
+			not = { has_tech = tech_unit_attack_helicopter_support_company_2 }
+			has_tech = tech_equipment_attack_helicopter
+			has_tech = tech_unit_attack_helicopter_support_company_1 
+		}
+		localization_key = GFX_technology_electronics_folder_special_project_available_item_bg
+	}
+	text = {
+		trigger = {
+			has_tech = tech_unit_attack_helicopter_support_company_2
+		}
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_researched_item_bg
+	}
+	text = {
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_unavailable_item_bg
+	}
+}
+
+defined_text = {
+	name = GetCurrentTechBackgroundHelicopter3
+	text = {
+		trigger = {
+			date > 1947.12.31
+			not = { has_tech = tech_unit_attack_helicopter_support_company_3 }
+			has_tech = tech_equipment_attack_helicopter
+			has_tech = tech_unit_attack_helicopter_support_company_1 
+			has_tech = tech_unit_attack_helicopter_support_company_2 
+		}
+		localization_key = GFX_technology_electronics_folder_special_project_available_item_bg
+	}
+	text = {
+		trigger = {
+			has_tech = tech_unit_attack_helicopter_support_company_3
+		}
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_researched_item_bg
+	}
+	text = {
+		localization_key = GFX_technology_nsb_armour_folder_special_project_small_unavailable_item_bg
+	}
+}
+
+defined_text = {
+	name = GetCurrentWorkplaceSubject
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+		}
+		localization_key = GFX_tech_equipment_attack_helicopter_medium
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+		}
+		localization_key = GFX_tech_unit_attack_helicopter_support_company_1_medium 
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+		}
+		localization_key = GFX_tech_unit_attack_helicopter_support_company_2_medium 
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3
+		}
+		localization_key = GFX_tech_unit_attack_helicopter_support_company_3_medium 
+	}
+}
+
+defined_text = {
+	name = GetCurrentWorkplaceSubjectName
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_equip
+		}
+		localization_key = tech_equipment_attack_helicopter 
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_1
+		}
+		localization_key = tech_unit_attack_helicopter_support_company_1 
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_2
+		}
+		localization_key = tech_unit_attack_helicopter_support_company_2 
+	}
+	text = {
+		trigger = {
+			has_country_flag = fontaine_subtech_is_displaying_helicopter_unit_3
+		}
+		localization_key = tech_unit_attack_helicopter_support_company_3 
+	}
+}
+
+defined_text = {
+	name = GetCurrentBill
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_european_alliance 
+		}
+		localization_key = GFX_r_parliament_bill_4 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_immigration_reform 
+		}
+		localization_key = GFX_r_parliament_bill_3 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_labour_reform 
+		}
+		localization_key = GFX_r_parliament_bill_2 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_president_system 
+		}
+		localization_key = GFX_r_parliament_bill_1 
+	}
+}
+
+defined_text = {
+	name = GetCurrentBillDescription
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_european_alliance 
+		}
+		localization_key = GFX_r_parliament_bill_4_text 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_immigration_reform 
+		}
+		localization_key = GFX_r_parliament_bill_3_text 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_labour_reform 
+		}
+		localization_key = GFX_r_parliament_bill_2_text 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_president_system 
+		}
+		localization_key = GFX_r_parliament_bill_1_text 
+	}
+}
+
+defined_text = {
+	name = GetCurrentBillTitle
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_european_alliance 
+		}
+		localization_key = r_parliament_bill_4_title 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_immigration_reform 
+		}
+		localization_key = r_parliament_bill_3_title 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_labour_reform 
+		}
+		localization_key = r_parliament_bill_2_title 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_president_system 
+		}
+		localization_key = r_parliament_bill_1_title 
+	}
+}
+
+defined_text = {
+	name = GetCurrentBillDetial
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_european_alliance 
+		}
+		localization_key = r_parliament_bill_4_detial
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_immigration_reform 
+		}
+		localization_key = r_parliament_bill_3_detial 
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_labour_reform 
+		}
+		localization_key = r_parliament_bill_2_detial
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_fontaine_bill_president_system 
+		}
+		localization_key = r_parliament_bill_1_detial
+	}
+}
+
+defiend_text = {
+	name = GetCurrentBillSituation
+	text = {
+		trigger = {
+			check_variable = { r_fontaine_vote_oppose_total > r_fontaine_vote_support_total }
+		}
+		localization_key = "R_Fontaine_Bill_Denial"
+	}
+	text = {
+		localization_key = "R_Fontaine_Bill_Successed"
+	}
+}
+
+defined_text = {
+	name = GetConsumptionFrame
+	text = {
+		trigger = {
+			check_variable = { R_Consumption_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetLabourFrame
+	text = {
+		trigger = {
+			check_variable = { R_Labour_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetPriceFrame
+	text = {
+		trigger = {
+			check_variable = { R_Price_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetFinanceFrame
+	text = {
+		trigger = {
+			check_variable = { R_Finance_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetTrustFrame
+	text = {
+		trigger = {
+			check_variable = { R_Trust_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetTaxFrame
+	text = {
+		trigger = {
+			check_variable = { R_Tax_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+defined_text = {
+	name = GetTradeFrame
+	text = {
+		trigger = {
+			check_variable = { R_Trade_frame = 2 }
+		}
+		localization_key = completed 
+	}
+	text = {
+		localization_key = uncompleted
+	}
+}
+
+defined_text = {
+	name = GetIndexedParty
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 6 }
+		}
+		localization_key = Labour_Party
+	}
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 5 }
+		}
+		localization_key = People_s_Front
+	}
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 4 }
+		}
+		localization_key = Fontaine_union
+	}
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 3 }
+		}
+		localization_key = Republican_Federation
+	}
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 2 }
+		}
+		localization_key = Democratic_Alliance
+	}
+	text = {
+		trigger = {
+			check_variable = { r_seat_frame^idx = 1 }
+		}
+		localization_key = Non_Affiliated
+	}
+}
+
+defined_text = {
+	name = GetRegnalLiberalist
+	text = {
+		trigger = {
+			check_variable = {
+				R_Liberalist_is_regnal = 1
+			}
+		}
+		localization_key = is_regnal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				R_Liberalist_is_regnal = 0 
+			}
+		}
+		localization_key = is_not_regnal 
+	}
+}
+defined_text = {
+	name = GetRegnalSocialist
+	text = {
+		trigger = {
+			check_variable = {
+				R_Socialist_is_regnal = 1
+			}
+		}
+		localization_key = is_regnal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				R_Socialist_is_regnal = 0 
+			}
+		}
+		localization_key = is_not_regnal 
+	}
+}
+defined_text = {
+	name = GetRegnalCommunist
+	text = {
+		trigger = {
+			check_variable = {
+				R_Communist_is_regnal = 1
+			}
+		}
+		localization_key = is_regnal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				R_Communist_is_regnal = 0 
+			}
+		}
+		localization_key = is_not_regnal 
+	}
+}
+defined_text = {
+	name = GetRegnalAgrarianist
+	text = {
+		trigger = {
+			check_variable = {
+				R_Agrarianist_is_regnal = 1
+			}
+		}
+		localization_key = is_regnal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				R_Agrarianist_is_regnal = 0 
+			}
+		}
+		localization_key = is_not_regnal 
+	}
+}
+defined_text = {
+	name = GetRegnalToryism
+	text = {
+		trigger = {
+			check_variable = {
+				R_Toryism_is_regnal = 1
+			}
+		}
+		localization_key = is_regnal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				R_Toryism_is_regnal = 0 
+			}
+		}
+		localization_key = is_not_regnal 
+	}
+}
+
+defined_text = {
+	name = GETconferencecountry
+	text = {
+		trigger = {
+			ENG = {
+				has_country_flag = attend_the_conference
+			}
+			USA = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+			SOV = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+		}
+		localization_key = ENG_ADJ 
+	}
+	text = {
+		trigger = {
+			ENG = {
+				has_country_flag = attend_the_conference
+			}
+			USA = {
+				has_country_flag = attend_the_conference
+			}
+			SOV = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+		}
+		localization_key = ENG_and_USA
+	}
+	text = {
+		trigger = {
+			ENG = {
+				has_country_flag = attend_the_conference
+			}
+			USA = {
+				has_country_flag = attend_the_conference
+			}
+			SOV = {
+				has_country_flag = attend_the_conference 
+			}
+		}
+		localization_key = ENG_and_USA_and_SOV
+	}
+	text = {
+		trigger = {
+			ENG = {
+				has_country_flag = attend_the_conference
+			}
+			SOV = {
+				has_country_flag = attend_the_conference 
+			}
+			USA = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+		}
+		localization_key = ENG_and_SOV
+	}
+	text = {
+		trigger = {
+			ENG = {
+				not = {
+					has_country_flag = attend_the_conference
+				}
+			}
+			SOV = {
+				has_country_flag = attend_the_conference 
+			}
+			USA = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+		}
+		localization_key = SOV_ADJ
+	}
+	text = {
+		trigger = {
+			ENG = {
+				not = {
+					has_country_flag = attend_the_conference
+				}
+			}
+			SOV = {
+				has_country_flag = attend_the_conference 
+			}
+			USA = {
+				has_country_flag = attend_the_conference 
+			}
+		}
+		localization_key = SOV_and_USA
+	}
+	text = {
+		trigger = {
+			ENG = {
+				not = {
+					has_country_flag = attend_the_conference
+				}
+			}
+			USA = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+			SOV = {
+				not = {
+					has_country_flag = attend_the_conference 
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GETsupport 
+	text = {
+		trigger = {
+			is_in_array = {
+				array = FRA_support_goverment 
+			}
+		}
+		localization_key = support_government
+	}
+	text = {
+		trigger = {
+			is_in_array = {
+				array = FRA_oppose_government_party 
+			}
+		}
+		localization_key = oppose_the_government
+	}
+	text = {
+		trigger = {
+			is_in_array = {
+				array = FRA_neutral_party 
+			}
+		}
+		localization_key = fra_neutral
+	}
+}
+
+defined_text = {
+	name = GetPortrait
+	text = {
+		trigger = {
+			has_country_flag = neuvillette_as_the_second_leader 
+		}
+		#localization_key = GFX_portrait_fra_Neuvillette 
+	}
+	text = {
+		trigger = {
+			has_country_flag = charlotte_as_the_second_leader 
+		}
+		#localization_key = GFX_portrait_fra_Adrienne_Charlotte 
+	}
+}
+
+defined_text = {
+	name = Getsecondleadername
+	text = {
+		trigger = {
+			has_country_flag = neuvillette_as_the_second_leader 
+		}
+		localization_key = FRA_Neuvillette 
+	}
+	text = {
+		trigger = {
+			has_country_flag = charlotte_as_the_second_leader 
+		}
+		localization_key = FRA_Adrienne_Charlotte 
+	}
+}
+
+defined_text = {
+	name = Getending
+	text = {
+		trigger = {
+			has_government = democratic 
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine 
+				ruling_only = yes 
+			}
+		}
+		localization_key = the_democratic_ending_normal
+	}
+}
+
+defined_text = {
+	name = Getendingtext
+	text = {
+		trigger = {
+			has_government = democratic 
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine 
+				ruling_only = yes 
+			}
+		}
+		localization_key = the_democratic_ending_normal_text
+	}
+	text = {
+		trigger = {
+			has_government = communism 
+		}
+		localization_key = the_communism_ending_normal_text
+	}
+	text = {
+		trigger = {
+			has_government = neutrality 
+		}
+		localization_key = the_neutrality_ending_normal_text
+	}
+}
+
+defined_text = {
+	name = GetStrengthYanan
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan = 0 
+			}
+		}
+		localization_key = fra_out 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 0 
+			}
+			check_variable = {
+				fra_strength_yanan < 20
+			}
+		}
+		localization_key = fra_irrelevant
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 19  
+			}
+			check_variable = {
+				fra_strength_yanan < 40  
+			}
+		}
+		localization_key = fra_weak  
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 39  
+			}
+			check_variable = {
+				fra_strength_yanan < 60  
+			}
+		}
+		localization_key = fra_average 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 59  
+			}
+			check_variable = {
+				fra_strength_yanan < 80  
+			}
+		}
+		localization_key = fra_strong 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 79  
+			}
+			check_variable = {
+				fra_strength_yanan < 100  
+			}
+		}
+		localization_key = fra_very_strong
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_yanan > 99  
+			}
+		}
+		localization_key = fra_extreme_strong
+	}
+}
+
+defined_text = {
+	name = GetStrengthSoviet
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet = 0 
+			}
+		}
+		localization_key = fra_out 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 0 
+			}
+			check_variable = {
+				fra_strength_soviet < 20
+			}
+		}
+		localization_key = fra_irrelevant
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 19  
+			}
+			check_variable = {
+				fra_strength_soviet < 40  
+			}
+		}
+		localization_key = fra_weak  
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 39  
+			}
+			check_variable = {
+				fra_strength_soviet < 60  
+			}
+		}
+		localization_key = fra_average 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 59  
+			}
+			check_variable = {
+				fra_strength_soviet < 80  
+			}
+		}
+		localization_key = fra_strong 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 79  
+			}
+			check_variable = {
+				fra_strength_soviet < 100  
+			}
+		}
+		localization_key = fra_very_strong
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_soviet > 99  
+			}
+		}
+		localization_key = fra_extreme_strong
+	}
+}
+
+defined_text = {
+	name = GetStrengthUnion
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union = 0 
+			}
+		}
+		localization_key = fra_out 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 0 
+			}
+			check_variable = {
+				fra_strength_union < 20
+			}
+		}
+		localization_key = fra_irrelevant
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 19  
+			}
+			check_variable = {
+				fra_strength_union < 40  
+			}
+		}
+		localization_key = fra_weak  
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 39  
+			}
+			check_variable = {
+				fra_strength_union < 60  
+			}
+		}
+		localization_key = fra_average 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 59  
+			}
+			check_variable = {
+				fra_strength_union < 80  
+			}
+		}
+		localization_key = fra_strong 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 79  
+			}
+			check_variable = {
+				fra_strength_union < 100  
+			}
+		}
+		localization_key = fra_very_strong
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				fra_strength_union > 99  
+			}
+		}
+		localization_key = fra_extreme_strong
+	}
+}
+
+defined_text = {
+	name = GetSelectedContinent
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_africa_frame = 2 
+			}
+		}
+		localization_key = africa_selected
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_far_east_frame = 2 
+			}
+		}
+		localization_key = far_east_selected 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_middle_east_frame = 2 
+			}
+		}
+		localization_key = middle_east_selected
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_north_america_frame = 2 
+			}
+		}
+		localization_key = north_america_selected
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_south_america_frame = 2 
+			}
+		}
+		localization_key = south_america_selected
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				world_map_africa_frame = 1 
+			}
+			check_variable = {
+				world_map_far_east_frame = 1 
+			}
+			check_variable = {
+				world_map_middle_east_frame = 1 
+			}
+			check_variable = {
+				world_map_north_america_frame = 1 
+			}
+			check_variable = {
+				world_map_south_america_frame = 1 
+			}
+		}
+		localization_key = no_continent_selected
+	}
+}
+
+
+defined_text = {
+	name = FrenchNavy
+	text = {
+		trigger = {
+			original_tag = FRA 
+			not = { has_country_flag = fra_furina_come_to_france }
+			OR = {
+				has_government = communism 
+				has_government = democratic 
+			}
+		}
+		localization_key = french_navy_republic
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			not = { has_country_flag = fra_furina_come_to_france }
+			OR = {
+				has_government = neutrality 
+				has_government = fascism 
+			}
+		}
+		localization_key = french_navy_nationalist
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			has_country_flag = fra_furina_come_to_france
+			OR = {
+				has_government = communism 
+				has_government = democratic 
+				has_government = liberalism_temp 
+				has_government = conservatism_temp 
+			}
+		}
+		localization_key = fontaine_navy_republican
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			has_country_flag = fra_furina_come_to_france
+			OR = {
+				has_government = neutrality 
+				has_government = fascism  
+			}
+		}
+		localization_key = fontaine_navy_royal
+	}
+}
+
+defined_text = {
+	name = FrenchAir
+	text = {
+		trigger = {
+			original_tag = FRA 
+			not = { has_country_flag = fra_furina_come_to_france }
+			OR = {
+				has_government = communism 
+				has_government = democratic 
+			}
+		}
+		localization_key = french_air_republic
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			not = { has_country_flag = fra_furina_come_to_france }
+			OR = {
+				has_government = neutrality 
+				has_government = fascism 
+			}
+		}
+		localization_key = french_air_nationalist
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			has_country_flag = fra_furina_come_to_france
+			OR = {
+				has_government = communism 
+				has_government = democratic 
+				has_government = liberalism_temp 
+				has_government = conservatism_temp 
+			}
+		}
+		localization_key = fontaine_air_republic
+	}
+	text = {
+		trigger = {
+			original_tag = FRA 
+			has_country_flag = fra_furina_come_to_france
+			OR = {
+				has_government = neutrality 
+				has_government = fascism  
+			}
+		}
+		localization_key = fontaine_air_nationalist
+	}
+}
+
+defined_text = {
+	name = GetHistoryPeriodJapan
+	text = {
+		trigger = { has_country_flag = japan_show_map }
+		localization_key = Japan_History_1878_1890 
+	}
+	text = {
+		trigger = { has_country_flag = japan_show_sakura }
+		localization_key = Japan_History_1890_1904
+	}
+	text = {
+		trigger = { has_country_flag = japan_show_ojyu }
+		localization_key = Japan_History_1905_1924 
+	}
+	text = {
+		trigger = { has_country_flag = japan_show_man }
+		localization_key = Japan_History_1924_Now 
+	}
+}
+
+defined_text = {
+	name = Getgrowth
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_growth < -0.089
+			}
+		}
+		localization_key = growth_crash 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_growth < 0
+			}
+			check_variable = {
+				france_economy_growth > -0.09
+			}
+		}
+		localization_key = growth_down
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_growth > -0.001
+			}
+			check_variable = {
+				france_economy_growth < 0.02
+			}
+		}
+		localization_key = growth_slow 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_growth > 0.019
+			}
+			check_variable = {
+				france_economy_growth < 0.06  
+			}
+		}
+		localization_key = growth_normal  
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_growth > 0.059
+			}
+		}
+		localization_key = growth_fast 
+	}
+}
+
+defined_text = {
+	name = Getinflation
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_inflation < 0 
+			}
+		}
+		localization_key = inflation_negative 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_inflation > -0.001
+			}
+			check_variable = {
+				france_economy_inflation < 0.05 
+			}
+		}
+		localization_key = inflation_normal 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_inflation > 0.0049 
+			}
+			check_variable = {
+				france_economy_inflation < 0.2
+			}
+		}
+		localization_key = inflation_high 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_inflation > 0.1999
+			}
+		}
+		localization_key = inflation_very_high 
+	}
+}
+
+defined_text = {
+	name = Getunemployment
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_unemployment < 0.03 
+			}
+		}
+		localization_key = unemployment_low 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_unemployment > 0.029
+			}
+			check_variable = {
+				france_economy_unemployment < 0.06
+			}
+		}
+		localization_key = unemployment_normal 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				france_economy_unemployment > 0.059
+			}
+		}
+		localization_key = unemployment_high 
+	}
+}
+
+defined_text = {
+	name = GetStateName
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 1 
+			}
+		}
+		localization_key = STATE_29 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 2
+			}
+		}
+		localization_key = STATE_785 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 3
+			}
+		}
+		localization_key = STATE_983 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 4
+			}
+		}
+		localization_key = STATE_17  
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 5
+			}
+		}
+		localization_key = STATE_28   
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 6
+			}
+		}
+		localization_key = STATE_16
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 7
+			}
+		}
+		localization_key = STATE_982
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 8
+			}
+		}
+		localization_key = STATE_18 
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 9
+			}
+		}
+		localization_key = STATE_984
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 10
+			}
+		}
+		localization_key = STATE_27
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 11
+			}
+		}
+		localization_key = STATE_24
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 12
+			}
+		}
+		localization_key = STATE_30
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 13
+			}
+		}
+		localization_key = STATE_15
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 14
+			}
+		}
+		localization_key = STATE_996
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 15
+			}
+		}
+		localization_key = STATE_14
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 16
+			}
+		}
+		localization_key = STATE_23
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 17
+			}
+		}
+		localization_key = STATE_33
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 18
+			}
+		}
+		localization_key = STATE_25
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 19
+			}
+		}
+		localization_key = STATE_19
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 20
+			}
+		}
+		localization_key = STATE_806
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 21
+			}
+		}
+		localization_key = STATE_31
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 22
+			}
+		}
+		localization_key = STATE_995
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 23
+			}
+		}
+		localization_key = STATE_735
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 24
+			}
+		}
+		localization_key = STATE_21
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 25
+			}
+		}
+		localization_key = STATE_851
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 26
+			}
+		}
+		localization_key = STATE_32
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 27
+			}
+		}
+		localization_key = STATE_20
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 28
+			}
+		}
+		localization_key = STATE_26
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 29
+			}
+		}
+		localization_key = STATE_22
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				show_state = 30
+			}
+		}
+		localization_key = STATE_1
+	}
+}
+
+defined_text = {
+	name = GETmotionsituationmil
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Gamelin_is_mil_minister 
+				}
+				not = { has_country_flag = gamelin_is_suspicious }
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Gaulle_is_mil_minister 
+				}
+				not = { has_country_flag = gaulle_is_suspicious }
+			}
+		}
+		localization_key = cant_execute
+	}
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Gamelin_is_mil_minister 
+				}
+				has_country_flag = gamelin_is_suspicious 
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Gaulle_is_mil_minister 
+				}
+				has_country_flag = gaulle_is_suspicious 
+			}
+		}
+		localization_key = can_execute
+	}
+}
+
+defined_text = {
+	name = GETmotionsituationpol
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Thorez_is_pol_minister 
+				}
+				not = { has_country_flag = Thorez_is_suspicious }
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Charlotte_is_pol_minister
+				}
+				not = { has_country_flag = charlotte_is_suspicious }
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Cachin_is_pol_minister
+				}
+				not = { has_country_flag = cachin_is_suspicious }
+			}
+			else = {
+				not = { has_country_flag = navia_is_suspicious }
+			}
+		}
+		localization_key = cant_execute 
+	}
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Thorez_is_pol_minister 
+				}
+				has_country_flag = Thorez_is_suspicious 
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Charlotte_is_pol_minister
+				}
+				has_country_flag = charlotte_is_suspicious 
+			}
+			else_if = {
+				limit = { 
+					has_country_flag = Cachin_is_pol_minister
+				}
+				has_country_flag = cachin_is_suspicious 
+			}
+			else = {
+				has_country_flag = navia_is_suspicious
+			}
+		}
+		localization_key = can_execute 
+	}
+}
+
+defined_text = {
+	name = GETmotionsituationdip
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Clorinde_is_dip_minister 
+				}
+				not = { has_country_flag = clorinde_is_suspicious } 
+			}
+		}
+		localization_key = cant_execute 
+	}
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					has_country_flag = Clorinde_is_dip_minister 
+				}
+				has_country_flag = clorinde_is_suspicious
+			}
+		}
+		localization_key = can_execute 
+	}
+}
+
+defined_text = {
+	name = GETmilminister
+	text = {
+		trigger = {
+			has_country_flag = Gamelin_is_mil_minister
+		}
+		localization_key = GFX_communist_the_chairman_gamelin 
+	}
+	text = {
+		trigger = {
+			has_country_flag = Gaulle_is_mil_minister
+		}
+		localization_key = GFX_communist_the_chairman_gualle
+	}
+}
+
+
+defined_text = {
+	name = GETmilministername
+	text = {
+		trigger = {
+			has_country_flag = Gamelin_is_mil_minister
+		}
+		localization_key = FRA_maurice_gamelin  
+	}
+	text = {
+		trigger = {
+			has_country_flag = Gaulle_is_mil_minister
+		}
+		localization_key = FRA_charles_de_gaulle 
+	}
+}
+
+defined_text = {
+	name = GETpolminister
+	text = {
+		trigger = {
+			has_country_flag = Charlotte_is_pol_minister 
+		}
+		localization_key = GFX_communist_the_chairman_charlotte 
+	}
+	text = {
+		trigger = {
+			has_country_flag = Navia_is_pol_minister
+		}
+		localization_key = GFX_communist_the_chairman_navia 
+	}
+	text = {
+		trigger = {
+			has_country_flag = Thorez_is_pol_minister
+		}
+		localization_key = GFX_communist_the_chairman_thorez 
+	}
+	text = {
+		trigger = {
+			has_country_flag = Cachin_is_pol_minister
+		}
+		localization_key = GFX_communist_the_chairman_cachin 
+	}
+}
+
+defined_text = {
+	name = GETpolministername
+	text = {
+		trigger = {
+			has_country_flag = Charlotte_is_pol_minister 
+		}
+		localization_key = FRA_Adrienne_Charlotte  
+	}
+	text = {
+		trigger = {
+			has_country_flag = Navia_is_pol_minister
+		}
+		localization_key = FRA_Navia_Caspar  
+	}
+	text = {
+		trigger = {
+			has_country_flag = Thorez_is_pol_minister
+		}
+		localization_key = FRA_maurice_thorez  
+	}
+	text = {
+		trigger = {
+			has_country_flag = Cachin_is_pol_minister
+		}
+		localization_key = FRC_Marcel_Cachin  
+	}
+}
+
+defined_text = {
+	name = GETdipminister
+	text = {
+		trigger = {
+			has_country_flag = Clorinde_is_dip_minister 
+		}
+		localization_key = GFX_communist_the_chairman_clorinde 
+	}
+}
+defined_text = {
+	name = GETdipministername
+	text = {
+		trigger = {
+			has_country_flag = Clorinde_is_dip_minister 
+		}
+		localization_key = FRA_Solenn_Clorinde  
+	}
+}
+
+
+
+defined_text = {
+	name = GETselectedstates
+	text = {
+		trigger = {
+			check_variable = { state_selected = 1 }
+		}
+		localization_key = GFX_election_states_1 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 2 }
+		}
+		localization_key = GFX_election_states_2 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 3 }
+		}
+		localization_key = GFX_election_states_3 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 4 }
+		}
+		localization_key = GFX_election_states_4 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 5 }
+		}
+		localization_key = GFX_election_states_5 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 6 }
+		}
+		localization_key = GFX_election_states_6 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 7 }
+		}
+		localization_key = GFX_election_states_7 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 8 }
+		}
+		localization_key = GFX_election_states_8 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 9 }
+		}
+		localization_key = GFX_election_states_9 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 10 }
+		}
+		localization_key = GFX_election_states_10 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 11 }
+		}
+		localization_key = GFX_election_states_11 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 12 }
+		}
+		localization_key = GFX_election_states_12 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 13 }
+		}
+		localization_key = GFX_election_states_13 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 14 }
+		}
+		localization_key = GFX_election_states_14 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 15 }
+		}
+		localization_key = GFX_election_states_15 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 16 }
+		}
+		localization_key = GFX_election_states_16 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 17 }
+		}
+		localization_key = GFX_election_states_17 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 18 }
+		}
+		localization_key = GFX_election_states_18 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 19 }
+		}
+		localization_key = GFX_election_states_19 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 20 }
+		}
+		localization_key = GFX_election_states_20 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 21 }
+		}
+		localization_key = GFX_election_states_21 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 22 }
+		}
+		localization_key = GFX_election_states_22 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 23 }
+		}
+		localization_key = GFX_election_states_23 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 24 }
+		}
+		localization_key = GFX_election_states_24 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 25 }
+		}
+		localization_key = GFX_election_states_25 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 27 }
+		}
+		localization_key = GFX_election_states_27 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 28 }
+		}
+		localization_key = GFX_election_states_28 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 29 }
+		}
+		localization_key = GFX_election_states_29 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 30 }
+		}
+		localization_key = GFX_election_states_30 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 31 }
+		}
+		localization_key = GFX_election_states_31 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 32 }
+		}
+		localization_key = GFX_election_states_32 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 33 }
+		}
+		localization_key = GFX_election_states_33 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 34 }
+		}
+		localization_key = GFX_election_states_34 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 35 }
+		}
+		localization_key = GFX_election_states_35 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 36 }
+		}
+		localization_key = GFX_election_states_36 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 37 }
+		}
+		localization_key = GFX_election_states_37 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 38 }
+		}
+		localization_key = GFX_election_states_38 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 39 }
+		}
+		localization_key = GFX_election_states_39 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 40 }
+		}
+		localization_key = GFX_election_states_40 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 41 }
+		}
+		localization_key = GFX_election_states_41 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 42 }
+		}
+		localization_key = GFX_election_states_42 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 43 }
+		}
+		localization_key = GFX_election_states_43 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 44 }
+		}
+		localization_key = GFX_election_states_44 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 45 }
+		}
+		localization_key = GFX_election_states_45 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 46 }
+		}
+		localization_key = GFX_election_states_46 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 47 }
+		}
+		localization_key = GFX_election_states_47 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 48 }
+		}
+		localization_key = GFX_election_states_48 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 49 }
+		}
+		localization_key = GFX_election_states_49 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 50 }
+		}
+		localization_key = GFX_election_states_50 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 51 }
+		}
+		localization_key = GFX_election_states_51 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 52 }
+		}
+		localization_key = GFX_election_states_52 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 53 }
+		}
+		localization_key = GFX_election_states_53 
+	}
+}
+
+defined_text = {
+	name = GETselectedstatesname
+	text = {
+		trigger = {
+			check_variable = { state_selected = 1 }
+		}
+		localization_key = selected_states_name_1 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 2 }
+		}
+		localization_key = GFX_election_states_2 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 3 }
+		}
+		localization_key = GFX_election_states_3 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 4 }
+		}
+		localization_key = GFX_election_states_4 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 5 }
+		}
+		localization_key = GFX_election_states_5 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 6 }
+		}
+		localization_key = GFX_election_states_6 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 7 }
+		}
+		localization_key = GFX_election_states_7 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 8 }
+		}
+		localization_key = GFX_election_states_8 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 9 }
+		}
+		localization_key = GFX_election_states_9 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 10 }
+		}
+		localization_key = GFX_election_states_10 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 11 }
+		}
+		localization_key = GFX_election_states_11 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 12 }
+		}
+		localization_key = GFX_election_states_12 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 13 }
+		}
+		localization_key = GFX_election_states_13 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 14 }
+		}
+		localization_key = GFX_election_states_14 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 15 }
+		}
+		localization_key = GFX_election_states_15 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 16 }
+		}
+		localization_key = GFX_election_states_16 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 17 }
+		}
+		localization_key = GFX_election_states_17 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 18 }
+		}
+		localization_key = GFX_election_states_18 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 19 }
+		}
+		localization_key = GFX_election_states_19 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 20 }
+		}
+		localization_key = GFX_election_states_20 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 21 }
+		}
+		localization_key = GFX_election_states_21 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 22 }
+		}
+		localization_key = GFX_election_states_22 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 23 }
+		}
+		localization_key = GFX_election_states_23 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 24 }
+		}
+		localization_key = GFX_election_states_24 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 25 }
+		}
+		localization_key = GFX_election_states_25 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 27 }
+		}
+		localization_key = GFX_election_states_27 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 28 }
+		}
+		localization_key = GFX_election_states_28 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 29 }
+		}
+		localization_key = GFX_election_states_29 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 30 }
+		}
+		localization_key = GFX_election_states_30 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 31 }
+		}
+		localization_key = GFX_election_states_31 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 32 }
+		}
+		localization_key = GFX_election_states_32 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 33 }
+		}
+		localization_key = GFX_election_states_33 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 34 }
+		}
+		localization_key = GFX_election_states_34 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 35 }
+		}
+		localization_key = GFX_election_states_35 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 36 }
+		}
+		localization_key = GFX_election_states_36 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 37 }
+		}
+		localization_key = GFX_election_states_37 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 38 }
+		}
+		localization_key = GFX_election_states_38 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 39 }
+		}
+		localization_key = GFX_election_states_39 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 40 }
+		}
+		localization_key = GFX_election_states_40 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 41 }
+		}
+		localization_key = GFX_election_states_41 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 42 }
+		}
+		localization_key = GFX_election_states_42 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 43 }
+		}
+		localization_key = GFX_election_states_43 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 44 }
+		}
+		localization_key = GFX_election_states_44 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 45 }
+		}
+		localization_key = GFX_election_states_45 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 46 }
+		}
+		localization_key = GFX_election_states_46 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 47 }
+		}
+		localization_key = GFX_election_states_47 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 48 }
+		}
+		localization_key = GFX_election_states_48 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 49 }
+		}
+		localization_key = GFX_election_states_49 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 50 }
+		}
+		localization_key = GFX_election_states_50 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 51 }
+		}
+		localization_key = GFX_election_states_51 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 52 }
+		}
+		localization_key = GFX_election_states_52 
+	}
+	text = {
+		trigger = {
+			check_variable = { state_selected = 53 }
+		}
+		localization_key = GFX_election_states_53 
+	}
+}
+
+defined_text = {
+	name = GETstate1party
+	text = {
+		trigger = {
+			check_variable = { 1.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 1.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 1.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 1.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate2party
+	text = {
+		trigger = {
+			check_variable = { 2.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 2.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 2.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 2.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate3party
+	text = {
+		trigger = {
+			check_variable = { 3.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 3.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 3.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 3.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate4party
+	text = {
+		trigger = {
+			check_variable = { 4.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 4.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 4.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 4.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate5party
+	text = {
+		trigger = {
+			check_variable = { 5.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 5.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 5.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 5.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate6party
+	text = {
+		trigger = {
+			check_variable = { 6.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 6.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 6.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 6.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate7party
+	text = {
+		trigger = {
+			check_variable = { 7.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 7.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 7.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 7.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate8party
+	text = {
+		trigger = {
+			check_variable = { 8.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 8.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 8.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 8.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate9party
+	text = {
+		trigger = {
+			check_variable = { 9.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 9.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 9.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 9.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate10party
+	text = {
+		trigger = {
+			check_variable = { 10.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 10.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 10.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 10.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate11party
+	text = {
+		trigger = {
+			check_variable = { 11.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 11.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 11.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 11.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate12party
+	text = {
+		trigger = {
+			check_variable = { 12.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 12.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 12.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 12.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate13party
+	text = {
+		trigger = {
+			check_variable = { 13.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 13.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 13.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 13.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate14party
+	text = {
+		trigger = {
+			check_variable = { 14.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 14.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 14.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 14.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate15party
+	text = {
+		trigger = {
+			check_variable = { 15.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 15.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 15.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 15.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate16party
+	text = {
+		trigger = {
+			check_variable = { 16.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 16.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 16.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 16.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate17party
+	text = {
+		trigger = {
+			check_variable = { 17.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 17.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 17.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 17.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate18party
+	text = {
+		trigger = {
+			check_variable = { 18.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 18.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 18.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 18.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate19party
+	text = {
+		trigger = {
+			check_variable = { 19.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 19.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 19.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 19.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate20party
+	text = {
+		trigger = {
+			check_variable = { 20.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 20.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 20.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 20.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = GETstate21party
+	text = {
+		trigger = {
+			check_variable = { 21.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 21.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 21.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 21.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+defined_text = {
+	name = GETstate22party
+	text = {
+		trigger = {
+			check_variable = { 22.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 22.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 22.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 22.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate23party
+	text = {
+		trigger = {
+			check_variable = { 23.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 23.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 23.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 23.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate24party
+	text = {
+		trigger = {
+			check_variable = { 24.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 24.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 24.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 24.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate25party
+	text = {
+		trigger = {
+			check_variable = { 25.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 25.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 25.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 25.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate26party
+	text = {
+		trigger = {
+			check_variable = { 26.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 26.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 26.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 26.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate27party
+	text = {
+		trigger = {
+			check_variable = { 27.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 27.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 27.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 27.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate28party
+	text = {
+		trigger = {
+			check_variable = { 28.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 28.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 28.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 28.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate29party
+	text = {
+		trigger = {
+			check_variable = { 29.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 29.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 29.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 29.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate30party
+	text = {
+		trigger = {
+			check_variable = { 30.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 30.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 30.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 30.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate31party
+	text = {
+		trigger = {
+			check_variable = { 31.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 31.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 31.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 31.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate32party
+	text = {
+		trigger = {
+			check_variable = { 32.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 32.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 32.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 32.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate33party
+	text = {
+		trigger = {
+			check_variable = { 33.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 33.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 33.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 33.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate34party
+	text = {
+		trigger = {
+			check_variable = { 34.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 34.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 34.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 34.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate35party
+	text = {
+		trigger = {
+			check_variable = { 35.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 35.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 35.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 35.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate36party
+	text = {
+		trigger = {
+			check_variable = { 36.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 36.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 36.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 36.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate37party
+	text = {
+		trigger = {
+			check_variable = { 37.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 37.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 37.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 37.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate38party
+	text = {
+		trigger = {
+			check_variable = { 38.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 38.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 38.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 38.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate39party
+	text = {
+		trigger = {
+			check_variable = { 39.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 39.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 39.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 39.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate40party
+	text = {
+		trigger = {
+			check_variable = { 40.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 40.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 40.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 40.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate41party
+	text = {
+		trigger = {
+			check_variable = { 41.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 41.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 41.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 41.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate42party
+	text = {
+		trigger = {
+			check_variable = { 42.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 42.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 42.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 42.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate43party
+	text = {
+		trigger = {
+			check_variable = { 43.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 43.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 43.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 43.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate44party
+	text = {
+		trigger = {
+			check_variable = { 44.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 44.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 44.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 44.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate45party
+	text = {
+		trigger = {
+			check_variable = { 45.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 45.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 45.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 45.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate46party
+	text = {
+		trigger = {
+			check_variable = { 46.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 46.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 46.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 46.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate47party
+	text = {
+		trigger = {
+			check_variable = { 47.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 47.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 47.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 47.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+defined_text = {
+	name = GETstate48party
+	text = {
+		trigger = {
+			check_variable = { 48.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 48.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 48.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 48.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+defined_text = {
+	name = GETstate49party
+	text = {
+		trigger = {
+			check_variable = { 49.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 49.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 49.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 49.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate50party
+	text = {
+		trigger = {
+			check_variable = { 50.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 50.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 50.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 50.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate51party
+	text = {
+		trigger = {
+			check_variable = { 51.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 51.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 51.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 51.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate52party
+	text = {
+		trigger = {
+			check_variable = { 52.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 52.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 52.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 52.party = 4 }
+		}
+		localization_key = no_election
+	}
+}defined_text = {
+	name = GETstate53party
+	text = {
+		trigger = {
+			check_variable = { 53.party = 1 }
+		}
+		localization_key = dem_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 53.party = 2 }
+		}
+		localization_key = com_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 53.party = 3 }
+		}
+		localization_key = neu_party
+	}
+	text = {
+		trigger = {
+			check_variable = { 53.party = 4 }
+		}
+		localization_key = no_election
+	}
+}
+
+defined_text = {
+	name = Getmanagerportrait
+	text = {
+		trigger = {
+			PLY_Bronya_Zaychik = {
+				has_character_flag = the_ply_manager 
+			}
+		}
+		localization_key = GFX_portrait_ply_Bronya_Zaychik 
+	}
+	text = {
+		trigger = {
+			PLY_Nahida = {
+				has_character_flag = the_ply_manager 
+			}
+		}
+		localization_key = GFX_portrait_ply_Nahida 
+	}
+}
+
+defined_text = {
+	name = Getmanagername
+	text = {
+		trigger = {
+			PLY_Bronya_Zaychik = {
+				has_character_flag = the_ply_manager 
+			}
+		}
+		localization_key = PLY_Bronya_Zaychik  
+	}
+	text = {
+		trigger = {
+			PLY_Nahida = {
+				has_character_flag = the_ply_manager 
+			}
+		}
+		localization_key = PLY_Nahida  
+	}
+}
+
+defined_text = {
+	name = GETsubideology
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "[GETsubDem]"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "[GETsubCom]"
+	}
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "[GETsubNeu]"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "[GETsubFas]"
+	}
+	text = {
+		trigger = {
+			has_government = populist_socialism 
+		}
+		localization_key = "[GETsubLep]"
+	}
+	text = {
+		trigger = {
+			has_government = liberalism_temp 
+		}
+		localization_key = "[GETLib]"
+	}
+	text = {
+		trigger = {
+			has_government = conservatism_temp 
+		}
+		localization_key = "[GETConver]"
+	}
+}
+
+defined_text = {
+	name = GETLib
+	text = {
+		trigger = {
+			has_country_leader_ideology = liberalism_temp_social_democracy 
+		}
+		localization_key = liberalism_temp_social_democracy
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = fontaine_liberalism_navia 
+		}
+		localization_key = fontaine_liberalism_navia 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = fontaine_liberalism_neuvillette 
+		}
+		localization_key = fontaine_liberalism_neuvillette 
+	}
+}
+
+defined_text = {
+	name = GETConver
+	text = {
+		trigger = {
+			has_country_leader_ideology = conservatism_temp 
+		}
+		localization_key = conservatism_temp_agrarianism 
+	}
+}
+
+defined_text = {
+	name = GETsubLep
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_left_wing_nationalism 
+		}
+		localization_key = populist_socialism_left_wing_nationalism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_left_wing_populism
+		}
+		localization_key = populist_socialism_left_wing_populism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_syndicalism
+		}
+		localization_key = populist_socialism_syndicalism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_pan_africanism 
+		}
+		localization_key = populist_socialism_pan_africanism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_arab_socialism 
+		}
+		localization_key = populist_socialism_arab_socialism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_revolutionary_front
+		}
+		localization_key = populist_socialism_revolutionary_front 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populist_socialism_democratic_socialism
+		}
+		localization_key = populist_socialism_democratic_socialism 
+	}
+}
+
+
+defined_text = {
+	name = GETsubDem
+	text = {
+		trigger = {
+			has_country_leader_ideology = conservatism
+		}
+		localization_key = conservatism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = agrarianism 
+		}
+		localization_key = agrarianism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = liberalism
+		}
+		localization_key = liberalism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = socialism
+		}
+		localization_key = socialism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = liberal_conservatism 
+		}
+		localization_key = liberal_conservatism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = populism
+		}
+		localization_key = populism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = constitutional_conservatism 
+		}
+		localization_key = constitutional_conservatism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = christian_democracy  
+		}
+		localization_key = christian_democracy 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = paternalistic_conservatism  
+		}
+		localization_key = paternalistic_conservatism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = liberal_radicalism 
+		}
+		localization_key = liberal_radicalism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = labour_zionism 
+		}
+		localization_key = labour_zionism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = guided_democracy
+		}
+		localization_key = guided_democracy 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = big_tent 
+		}
+		localization_key = big_tent 
+	}
+}
+
+defined_text = {
+	name = GETsubCom
+	text = {
+		trigger = {
+			has_country_leader_ideology = stalinism
+		}
+		localization_key = stalinism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = fontaine_liberalism_charlotte 
+		}
+		localization_key = fontaine_liberalism_charlotte 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = buddhist_socialism
+		}
+		localization_key = buddhist_socialism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = neo_democracy 
+		}
+		localization_key = neo_democracy 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = leninism
+		}
+		localization_key = leninism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = marxism
+		}
+		localization_key = marxism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = convertion_socialist
+		}
+		localization_key = convertion_socialist 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = agricultureal_socialism 
+		}
+		localization_key = agricultureal_socialism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = anti_revisionism
+		}
+		localization_key = anti_revisionism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = mao_zedong_thought 
+		}
+		localization_key = mao_zedong_thought 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = anarchist_communism
+		}
+		localization_key = anarchist_communism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = automation_communism 
+		}
+		localization_key = automation_communism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = baathism 
+		}
+		localization_key = baathism 
+	}
+}
+
+defined_text = {
+	name = GETsubFas
+	text = {
+		trigger = {
+			has_country_leader_ideology = nazism
+		}
+		localization_key = nazism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = gen_nazism
+		}
+		localization_key = gen_nazism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = emperor_fascism 
+		}
+		localization_key = emperor_fascism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = fascism_ideology
+		}
+		localization_key = fascism_ideology
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = falangism
+		}
+		localization_key = falangism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = rexism
+		}
+		localization_key = rexism
+	}
+}
+
+defined_text = {
+	name = GETsubNeu
+	text = {
+		trigger = {
+			has_country_leader_ideology = moderatism
+		}
+		localization_key = moderatism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = national_corporatism 
+		}
+		localization_key = national_corporatism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = japan_militarism_ideology 
+		}
+		localization_key = japan_militarism_ideology
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = oligarchism
+		}
+		localization_key = oligarchism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = xunzheng
+		}
+		localization_key = xunzheng 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = theocracy
+		}
+		localization_key = theocracy 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = bonapartheism 
+		}
+		localization_key = bonapartheism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = junta 
+		}
+		localization_key = junta 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = anarchism
+		}
+		localization_key = anarchism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = centrism
+		}
+		localization_key = centrism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = despotism
+		}
+		localization_key = despotism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = furinaism
+		}
+		localization_key = furinaism 
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = national_conversatism 
+		}
+		localization_key = national_conversatism 
+	}
+}

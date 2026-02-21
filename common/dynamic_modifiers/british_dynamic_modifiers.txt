@@ -1,0 +1,26 @@
+UK_RAF = {
+	icon = GFX_idea_eng_raf
+	ground_attack_factor = RAF_ground_attack_factor
+	air_accidents_factor = RAF_air_accidents_factor
+	air_ace_generation_chance_factor = RAF_air_ace_generation_chance_factor
+	air_attack_factor = RAF_air_attack_factor
+	air_agility_factor = RAF_air_agility_factor
+	air_cas_present_factor = RAF_air_cas_present_factor
+	air_cas_efficiency = RAF_air_cas_efficiency
+	air_defence_factor = RAF_air_defence_factor
+	air_power_projection_factor = RAF_air_power_projection_factor
+	air_range_factor = RAF_air_range_factor
+	air_strategic_bomber_bombing_factor = RAF_air_strategic_bomber_bombing_factor
+	air_ace_bonuses_factor = RAF_air_ace_bonuses_factor
+	air_nav_efficiency = RAF_air_nav_efficiency
+	naval_strike_attack_factor = RAF_naval_strike_attack_factor
+	air_manpower_requirement_factor = RAF_air_manpower_requirement_factor
+	new_battlefield_support_mastery_gain_factor = 0.15
+}
+
+UK_industrial_development = {
+	icon = GFX_modifiers_generic_industry 
+	state_production_speed_buildings_factor = 0.15 
+	local_building_slots = 2 
+	state_resources_factor = -0.10  
+}

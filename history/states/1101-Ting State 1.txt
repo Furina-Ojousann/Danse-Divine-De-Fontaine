@@ -1,0 +1,14 @@
+state = {
+	id = 1101
+	name = 1101_TS_1
+	manpower = 20980
+	state_category = city_state  
+	history = {
+		owner = SMO 
+		add_core_of = SMO 
+		buildings = {
+			infrastructure = 2 
+		}
+	}
+	provinces = { 13445 }
+}

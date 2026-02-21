@@ -1,0 +1,448 @@
+focus_tree = {
+	id = fontaine_commune_focus
+	country = {
+		factor = 0 
+		modifier = {
+			original_tag = FRC 
+			add = 10 
+		}
+	}
+	initial_show_position = {
+		x = 0
+	}
+	default = no 
+
+	focus = {
+		id = FRC_a_important_step
+		icon = GFX_goal_fra_an_important_step
+		cost = 2
+		x = 4
+		y = 0 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = the_repression_has_not_started
+				not = {
+					has_war_with = FRA 
+				}
+			}
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			unlock_decision_category_tooltip = FRC_war_cant_be_avoided 
+			add_political_power = 50 
+			hidden_effect = {
+				activate_mission = fra_immigrant_are_coming 
+				activate_mission = frc_the_supply_issue 
+			}
+			every_core_state = {
+				limit = {
+					is_core_of = FRA 
+					not = {
+						is_controlled_by = ROOT 
+					}
+				}
+				add_core_of = FRC 
+			}
+		}
+	}
+
+	focus = {
+		id = FRC_emergency_actions
+		icon = GFX_focus_DEN_heavy_regulations 
+		cost = 1 
+		relative_position_id = FRC_a_important_step 
+		x = -1
+		y = 1 
+		prerequisite = {
+			focus = FRC_a_important_step 
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = the_repression_has_not_started
+				not = {
+					has_war_with = FRA 
+				}
+			}
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			add_political_power = 25 
+			unlock_decision_tooltip = frc_demand_foodstuff 
+			unlock_decision_tooltip = frc_ban_private_trade 
+			unlock_decision_tooltip = frc_compulsory_labor 
+			unlock_decision_tooltip = frc_demand_capitans 
+		}
+	}
+
+	focus = {
+		id = FRC_commune_fighters
+		icon = GFX_goal_fra_commune_fighters
+		cost = 1
+		relative_position_id = FRC_a_important_step 
+		x = 1 
+		y = 1 
+		prerequisite = {
+			focus = FRC_a_important_step
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = the_repression_has_not_started
+				not = {
+					has_war_with = FRA 
+				}
+			}
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			army_experience = 25 
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5 
+				name = FRC_commune_fighters 
+				category = land_doctrine 
+			}
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = FRC_charles_delestraint
+				}
+				add_corps_commander_role = {
+					character = FRC_ernest_petit
+				}
+				add_corps_commander_role = {
+					character = FRC_georges_blanchard 
+				}
+				custom_effect_tooltip = copy_from_kaiserreich
+			}
+		}
+	}
+	focus = {
+		id = FRC_fcp_meeting
+		icon = GFX_goal_fra_fcp_meeting
+		cost = 2 
+		relative_position_id = FRC_a_important_step 
+		x = 0 
+		y = 2 
+		prerequisite = {
+			focus = FRC_emergency_actions
+			focus = FRC_commune_fighters
+		}
+		select_effect = {
+			country_event = {
+				id = Fontaine_revolution.19 
+			}
+		}
+		completion_reward = {
+			effect_tooltip = {
+				country_event = {
+					id = Fontaine_revolution.19 
+				}
+				remove_ideas = fra_Chaotic_organization 
+			}
+			add_political_power = 50 
+		}
+	}
+
+	focus = {
+		id = FRC_foodstuff_first
+		icon = GFX_goal_fra_foodstuff_first 
+		cost = 8 
+		relative_position_id = FRC_fcp_meeting 
+		x = 2
+		y = 1 
+		prerequisite = {
+			focus = FRC_fcp_meeting 
+		}
+		completion_reward = {
+			add_ideas = limited_exports 
+			if = {
+				limit = {
+					has_idea = fra_run_out_everything 
+				}
+				swap_ideas = {
+					remove_idea = fra_run_out_everything 
+					add_idea = fra_supply_issue 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = fra_supply_issue 
+				}
+				swap_ideas = {
+					remove_idea = fra_supply_issue 
+					add_idea = fra_short_of_consum 
+				}
+			}
+			else = {
+				remove_ideas = fra_short_of_consum 
+			}
+			add_days_mission_timeout = {
+				mission = frc_the_supply_issue 
+				days = 120 
+			}
+		}
+	}
+
+	focus = {
+		id = FRC_integrate_the_land_resource
+		icon = GFX_goal_fra_integrate_the_land_resource 
+		cost = 8 
+		relative_position_id = FRC_fcp_meeting 
+		x = 4 
+		y = 1 
+		prerequisite = {
+			focus = FRC_fcp_meeting 
+		}
+		completion_reward = {
+			every_core_state = {
+				add_extra_state_shared_building_slots = 2 
+			}
+			if = {
+				limit = {
+					has_idea = fra_run_out_everything 
+				}
+				swap_ideas = {
+					remove_idea = fra_run_out_everything 
+					add_idea = fra_supply_issue 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = fra_supply_issue 
+				}
+				swap_ideas = {
+					remove_idea = fra_supply_issue 
+					add_idea = fra_short_of_consum 
+				}
+			}
+			else = {
+				remove_ideas = fra_short_of_consum 
+			}
+			add_days_mission_timeout = {
+				mission = frc_the_supply_issue 
+				days = 120 
+			}
+		}
+	}
+
+	focus = {
+		id = FRC_the_team_of_the_party
+		icon = GFX_goal_fra_the_team_of_the_party 
+		cost = 4 
+		relative_position_id = FRC_fcp_meeting 
+		x = 0 
+		y = 1 
+		prerequisite = {
+			focus = FRC_fcp_meeting 
+		}
+		completion_reward = {
+			add_stability = 0.05 
+			show_ideas_tooltip = frc_marcel_cachin 
+			show_ideas_tooltip = frc_leon_jouhaux 
+		}
+	}
+
+	focus = {
+		id = FRC_walk_out_from_the_famine
+		icon = GFX_goal_fra_walk_from_the_famine 
+		cost = 4 
+		relative_position_id = FRC_foodstuff_first 
+		x = 1
+		y = 1 
+		bypass = {
+			not = {
+				has_idea = fra_short_of_consum
+				has_idea = fra_supply_issue
+				has_idea = fra_run_out_everything 
+				has_active_mission = frc_the_supply_issue 
+			}
+		}
+		prerequisite = {
+			focus = FRC_foodstuff_first 
+		}
+		prerequisite = {
+			focus = FRC_integrate_the_land_resource 
+		}
+		completion_reward = {
+			add_stability = 0.05 
+			remove_mission = frc_the_supply_issue 
+			if = {
+				limit = {
+					has_idea = fra_short_of_consum 
+				}
+				remove_ideas = fra_short_of_consum 
+			}
+			if = {
+				limit = {
+					has_idea = fra_supply_issue 
+				}
+				remove_ideas = fra_supply_issue 
+			}
+			if = {
+				limit = {
+					has_idea = fra_run_out_everything 
+				}
+				remove_ideas = fra_run_out_everything 
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3 
+			}
+		}
+	}
+
+	focus = {
+		id = FRC_expand_the_philosophy_education
+		icon = GFX_goal_fra_expand_the_philosophy_education
+		relative_position_id = FRC_the_team_of_the_party 
+		cost = 4 
+		x = 0 
+		y = 1 
+		prerequisite = {
+			focus = FRC_the_team_of_the_party
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = fra_continue_philosophy_education 
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = FRC_how_the_steel_was_tempered
+		icon = GFX_goal_fra_How_the_Steel_Was_Tempered 
+		cost = 4 
+		relative_position_id = FRC_fcp_meeting
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = has_learnt_sov
+				has_country_flag = fra_learn_sov 
+			}
+		}
+		x = -2 
+		y = 1 
+		prerequisite = {
+			focus = FRC_fcp_meeting 
+		}
+		mutually_exclusive = {
+			focus = FRC_serve_for_the_people 
+		}
+		completion_reward = {
+			army_experience = 50 
+			custom_effect_tooltip = FRC_how_the_steel_was_tempered_tt
+			add_to_variable = { FRA_the_red_army_max_planning = 0.15 }
+			add_to_variable = { FRA_the_red_army_planning_speed = -0.10 }
+		}
+	}
+	focus = {
+		id = FRC_serve_for_the_people
+		icon = GFX_goal_fra_serve_for_the_people 
+		cost = 4
+		relative_position_id = FRC_fcp_meeting 
+		x = -4 
+		y = 1 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = has_learnt_cpc
+				has_country_flag = fra_learn_cpc 
+			}
+		}
+		prerequisite = {
+			focus = FRC_fcp_meeting 
+		}
+		mutually_exclusive = {
+			focus = FRC_how_the_steel_was_tempered 
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRC_serve_for_the_people_tt
+			add_to_variable = { FRA_the_red_army_supply_consumption_factor = -0.10 }
+			add_to_variable = { FRA_the_red_army_army_morale_factor = 0.2 }
+			add_to_variable = { FRA_the_red_army_experience_gain_irregular_infantry_combat_factor = 0.1 }
+			add_to_variable = { FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor = 0.05 }
+		}
+	}
+
+	focus = {
+		id = FRC_absolute_leadership
+		icon = GFX_goal_fra_absolute_leadership 
+		cost = 2 
+		relative_position_id = FRC_serve_for_the_people 
+		x = 0
+		y = 1 
+		prerequisite = {
+			focus = FRC_serve_for_the_people 
+		}
+		completion_reward = {
+			add_stability = 0.05 
+			army_experience = 20
+			custom_effect_tooltip = FRC_absolute_leadership_tt
+			add_to_variable = { FRA_the_red_army_political_power_factor = 0.1 }
+			add_to_variable = { FRA_the_red_army_max_command_power = 50 }
+			add_to_variable = { FRA_the_red_army_max_planning = 0.05 }
+		}
+	}
+
+	focus = {
+		id = FRC_reorganize_our_force
+		icon = GFX_goal_fra_reorganize_our_force
+		cost = 2
+		relative_position_id = FRC_how_the_steel_was_tempered 
+		x = 0 
+		y = 1 
+		prerequisite = {
+			focus = FRC_how_the_steel_was_tempered 
+		}
+		completion_reward = {
+			custom_effect_tooltip = add_units_to_militia
+			add_units_to_division_template = {
+				template_name = "militia"
+				regiments = {
+					infantry = 0
+					infantry = 1
+					infantry = 2 
+				}
+				support = {
+					engineer = 0 
+				}
+			}
+			army_experience = 25 
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 200 
+				}
+			}
+			custom_effect_tooltip = FRC_reorganize_our_force_tt
+			add_to_variable = { FRA_the_red_army_army_org_factor = 0.20 }
+		}
+	}
+
+	focus = {
+		id = FRC_one_step_from_the_ideal
+		icon = GFX_goal_fra_one_step_away_from_the_ideal 
+		cost = 4 
+		relative_position_id = FRC_fcp_meeting 
+		x = 0 
+		y = 3 
+		prerequisite = {
+			focus = FRC_reorganize_our_force 
+			focus = FRC_absolute_leadership 
+		}
+		prerequisite = {
+			focus = FRC_expand_the_philosophy_education 
+		}
+		prerequisite = {
+			focus = FRC_walk_out_from_the_famine 
+		}
+		completion_reward = { 
+			custom_effect_tooltip = FRC_one_step_from_the_ideal_tt
+			add_timed_idea = {
+				idea = fra_the_last_strike 
+				days = 150
+			}
+			add_war_support = 0.1 
+		}
+	}
+}

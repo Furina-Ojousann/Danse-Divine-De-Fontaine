@@ -1,0 +1,53 @@
+characters = {
+	HEB_Song_zheyuan = {
+		name = HEB_Song_zheyuan 
+		portraits = {
+			army = {
+				large = GFX_portrait_heb_Song_zheyuan
+				small = GFX_idea_heb_Song_zheyuan
+			}
+		}
+		country_leader = {
+			ideology = junta 
+			traits = {
+				SWE_close_ties_to_the_military
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 1
+			traits = {
+				career_officer
+				cautious
+				infantry_officer 
+				war_hero 
+			}
+		}
+	}
+
+	HEB_Zhang_zizhong = {
+		name = HEB_Zhang_zizhong
+		portraits = {
+			army = {
+				large = GFX_portrait_heb_Zhang_zizhong
+				small = GFX_idea_heb_Zhang_zizhong 
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = {
+				career_officer 
+				trait_reckless 
+				infantry_officer
+				war_hero 
+			}
+		}
+	}
+}

@@ -1,0 +1,552 @@
+focus_tree = {
+	id = fontaine_resistance_organization
+	initial_show_position = {
+		x = 0 
+	}
+	default = no 
+	country = {
+		base = 0 
+		modifier = {
+			tag = FRO 
+			add = 10 
+		}
+	}
+
+	focus = {
+		id = FRO_patriots 
+		icon = GFX_focus_focus_fra_national_resistance_council 
+		cost = 4 
+		x = 4
+		y = 0 
+		available = {
+			has_war_with_major = yes 
+			16 = {
+				is_controlled_by_ROOT_or_ally = no 
+			}
+		}
+		completion_reward = {
+			add_ideas = fra_patriots 
+			add_manpower = 20000 
+			hidden_effect = {
+				random_country = {
+					limit = {
+						is_faction_leader = yes 
+						is_in_faction_with = FRO 
+						not = {
+							tag = ROOT 
+						}
+					}
+					set_country_flag = the_alliance_leader
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_liberate 
+		icon = GFX_focus_SWE_undermine_fascism 
+		cost = 4 
+		relative_position_id = FRO_patriots 
+		x = -4 
+		y = 1 
+		prerequisite = {
+			focus = FRO_patriots 
+		}
+		available = {
+			16 = {
+				is_controlled_by_ROOT_or_ally = yes 
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				every_character = {
+					set_nationality = FRA 
+				}
+			}
+			FRA = {
+				hidden_effect = {
+					annex_country = {
+						target = FRO 
+						transfer_troops = yes 
+					}
+					OVERLORD = {
+						set_autonomy = {
+							target = FRA 
+							autonomy_state = autonomy_free 
+						}
+					}
+					remove_ideas = vichy_pact 
+					leave_faction = yes 
+					random_country = {
+						limit = {
+							has_country_flag = the_alliance_leader 
+						}
+						add_to_faction = FRA 
+					}
+					drop_cosmetic_tag = yes 
+					set_cosmetic_tag = FRA_Fontaine  
+					set_politics = {
+						ruling_party = democratic 
+						elections_allowed = yes 
+						election_frequency = 48 
+					}
+					FRA_heinrich_himmler = {
+						set_can_be_fired_in_advisor_role = {
+							value = yes
+						}
+					}
+					remove_ideas = fra_heinrich_himmler 
+					set_popularities = {
+						democratic = 60  
+						communism = 40 
+					}
+				}
+				change_tag_from = ROOT 
+			}
+
+		}
+	}
+
+	focus = {
+		id = FRO_promise_national_independence
+		icon = GFX_focus_ETH_african_union 
+		cost = 5 
+		relative_position_id = FRO_patriots 
+		x = 0 
+		y = 1 
+		prerequisite = {
+			focus = FRO_patriots 
+		}
+		available = {
+			any_state = {
+				is_owned_by = FRA 
+				is_on_continent = africa 
+				not = {
+					is_core_of = FRA
+				}
+			}
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			add_political_power = 120 
+			FRA = {
+				add_stability = -0.10 
+			}
+			every_state = {
+				limit = {
+					is_owned_by = FRA 
+					is_on_continent = africa 
+					not = {
+						is_core_of = FRA 
+					}
+				}
+				add_compliance = -20 
+				add_resistance = 5 
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_central_africa 
+		icon = GFX_goal_fro_central_africa 
+		cost = 5 
+		relative_position_id = FRO_promise_national_independence 
+		x = 1 
+		y = 1 
+		prerequisite = {
+			focus = FRO_promise_national_independence 
+		}
+		available = {
+			FRA_controls_central_africa = no 
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			unlock_decision_tooltip = { decision = FRA_prepare_coup_in_central_africa }
+			unlock_decision_tooltip = { decision = FRA_promise_independence_to_central_africa }
+			unlock_decision_tooltip = { decision = FRA_invasion_in_central_africa }
+		}
+	}
+
+	focus = {
+		id = FRO_northern_africa
+		icon = GFX_goal_fro_north_africa 
+		cost = 5
+		relative_position_id = FRO_promise_national_independence 
+		x = 3 
+		y = 1 
+		prerequisite = {
+			focus = FRO_promise_national_independence 
+		}
+		available = {
+			FRA_controls_north_africa = no 
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = {
+			unlock_decision_tooltip = { decision = FRA_prepare_coup_in_north_africa }
+			unlock_decision_tooltip = { decision = FRA_promise_independence_to_north_africa }
+		}
+	}
+
+	focus = {
+		id = FRO_west_africa 
+		icon = GFX_goal_fro_west_africa  
+		cost = 5
+		relative_position_id = FRO_promise_national_independence 
+		x = -1 
+		y = 1 
+		prerequisite = {
+			focus = FRO_promise_national_independence 
+		}
+		available = {
+			NOT = {
+				FRA_controls_west_africa = yes 
+			}
+		}
+		bypass_if_unavailable = yes 
+		completion_reward = { 
+			unlock_decision_tooltip = { decision = FRA_prepare_coup_in_west_africa }
+			unlock_decision_tooltip = { decision = FRA_promise_independence_to_west_africa }
+			unlock_decision_tooltip = { decision = FRA_invasion_in_west_africa }
+		}
+	}
+
+	focus = {
+		id = FRO_indochina
+		icon = GFX_goal_fro_vietnam 
+		cost = 5
+		relative_position_id = FRO_promise_national_independence 
+		prerequisite = {
+			focus = FRO_promise_national_independence
+		}
+		available = {
+			671 = {
+				is_controlled_by_ROOT_or_ally = no 
+			}
+			670 = {
+				is_controlled_by_ROOT_or_ally = no 
+			}
+			741 = {
+				is_controlled_by_ROOT_or_ally = no 
+			}
+			286 = {
+				is_controlled_by_ROOT_or_ally = no 
+			}
+		}
+		bypass_if_unavailable = yes 
+		x = -3 
+		y = 1 
+		completion_reward = { 
+			add_political_power = -50 
+			if = {
+				limit = {
+					FRA = {
+						has_completed_focus = FRA_liberate_indochina 
+					}
+				}
+				set_autonomy = {
+					target = VIN
+					autonomy_state = autonomy_puppet 
+				}
+			}
+			else = {
+				671 = {
+					set_state_owner_to = FRO 
+					add_compliance = 15 
+				}
+				670 = {
+					set_state_owner_to = FRO 
+					add_compliance = 15
+				}
+				741 = {
+					set_state_owner_to = FRO 
+					add_compliance = 15
+				}
+				286 = {
+					set_state_owner_to = FRO 
+					add_compliance = 15
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_unite_for_the_liberity 
+		icon = GFX_focus_BRA_reach_out_to_military_dem 
+		cost = 5 
+		relative_position_id = FRO_promise_national_independence 
+		x = -1
+		y = 2 
+		prerequisite = {
+			focus = FRO_indochina 
+			focus = FRO_central_africa
+			focus = FRO_west_africa 
+			focus = FRO_northern_africa 
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					not = {
+						is_core_of = FRO 
+					}
+				}
+				add_compliance = 15 
+			}
+			add_stability = 0.05 
+			add_manpower = 40000 
+			add_offsite_building = {
+				type = arms_factory 
+				level = 4
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4 
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_navy_corperation
+		icon = GFX_focus_generic_refit_civilian_ships 
+		cost = 5 
+		relative_position_id = FRO_promise_national_independence 
+		prerequisite = {
+			focus = FRO_indochina 
+			focus = FRO_central_africa
+			focus = FRO_west_africa 
+			focus = FRO_northern_africa 
+		}
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_fontaine_original_colony
+					has_state_flag = fontaine_original_colony 
+				}
+				is_controlled_by_ROOT_or_ally = yes 
+			}
+		}
+		x = 1
+		y = 2 
+		completion_reward = {
+			navy_experience = 25 
+			add_offsite_building = {
+				type = dockyard 
+				level = 2 
+			}
+			add_equipment_to_stockpile = {
+				type = convoy 
+				amount = 250 
+			}
+			FRO_Georges_d_Argenlieu = {
+				add_naval_commander_role = {
+					skill = 4
+					attack_skill = 3
+					defense_skill = 4
+					maneuvering_skill = 4
+					coordination_skill = 4
+					traits = {
+						gentlemanly 
+						superior_tactician 
+						old_guard_navy 
+						ironside
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_support_of_our_ally 
+		icon = GFX_focus_hol_the_fourth_ally 
+		cost = 5 
+		relative_position_id = FRO_patriots 
+		x = 4
+		y = 1 
+		prerequisite = {
+			focus = FRO_patriots 
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRO_support_of_our_ally_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_owned_by = FRA 
+						not = {
+							is_core_of = FRA
+							is_on_continent = europe  
+						}
+					}
+					set_state_flag = fontaine_original_colony
+				}
+			}
+			activate_mission = FRO_prove_our_value_to_the_alliance 
+			custom_effect_tooltip = mission_accomplished 
+			effect_tooltip = {
+				add_stability = 0.05 
+			add_equipment_to_stockpile = {
+				type = infantry_equipment 
+				amount = 20000
+				producer = ENG 
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment 
+				amount = 1500 
+				producer = ENG 
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment 
+				amount = 750 
+				producer = ENG 
+			}
+			if = {
+				limit = {
+					USA = {
+						or = {
+							has_completed_focus = USA_lend_lease_act 
+							is_in_faction_with = ROOT  
+						}
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment 
+					amount = 40000
+					producer = USA 
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment 
+					amount = 4000 
+					producer = USA 
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment 
+					amount = 1500 
+					producer = USA  
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment 
+					amount = 2000 
+					producer = USA 
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment 
+					amount = 10000
+					producer = USA 
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment 
+					amount = 1000 
+					producer = USA 
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment 
+					amount = 300  
+					producer = USA  
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment 
+					amount = 500 
+					producer = USA 
+				}
+			}
+			}
+		}
+	}
+
+	focus = {
+		id = FRO_preparation_for_liberation
+		icon = GFX_goal_FRO_preparation_for_liberation
+		cost = 5
+		relative_position_id = FRO_promise_national_independence 
+		x = 0 
+		y = 3
+		prerequisite = {
+			focus = FRO_unite_for_the_liberity
+		}
+		prerequisite = {
+			focus = FRO_navy_corperation 
+		}
+		available = {
+			459 = {
+				controller = {
+					tag = ROOT 
+				}
+			}
+			divisions_in_state = {
+				size > 9 
+				state = 459 
+			}
+			ships_in_state_ports = {
+				state = 459 
+				size > 39 
+			}
+		}
+		completion_reward = {
+			set_capital = {
+				state = 459 
+			}
+			add_victory_points = {
+				province = 1145 
+				value = 5 
+			}
+			459 = {
+				add_manpower = 50000
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = air_base 
+					level = 5 
+				}
+				add_building_construction = {
+					type = naval_base 
+					level = 3 
+					province = 1145 
+				}
+			}
+			add_war_support = 0.15 
+			add_stability = 0.15 
+			add_offsite_building = {
+				type = arms_factory 
+				level = 2 
+			}
+			add_tech_bonus = {
+				name = FRO_preparation_for_liberation
+				category = tp_tech 
+				uses = 2 
+				bonus = 1 
+			}
+			set_technology = {
+				marines = 1 
+			}
+			add_ideas = fra_marines 
+		}
+	}
+
+	focus = {
+		id = FRO_long_road_to_hometown 
+		icon = GFX_goal_long_road_to_hometown
+		cost = 5
+		relative_position_id = FRO_preparation_for_liberation 
+		x = 0 
+		y = 1 
+		prerequisite = {
+			focus = FRO_preparation_for_liberation 
+		}
+		available = {
+			any_state = {
+				is_core_of = FRA 
+				is_on_continent = europe 
+				is_controlled_by_ROOT_or_ally = yes 
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fra_marines 
+				add_idea = fra_long_road_to_hometown_idea 
+			}
+		}
+	}
+}

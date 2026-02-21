@@ -1,0 +1,18 @@
+state = {
+	id = 1055
+	name = 1055_Magdeburg
+	manpower = 1539000
+	state_category = city 
+	history = {
+		owner = GER
+		add_core_of = GER 
+		add_core_of = PRE 
+		victory_points = {
+			3522 10 # Magdeburg
+		}
+		buildings = {
+			infrastructure = 6 
+		}
+	}
+	provinces = { 11359 9456 9560 3522 6487 9375 11468 }
+}

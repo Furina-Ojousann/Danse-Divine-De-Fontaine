@@ -1,0 +1,28 @@
+state = {
+	id = 1076
+	name = 1076_Splitsko-dalmatinska
+	manpower = 218900
+	state_category = town 
+	history = {
+		owner = YUG 
+		add_core_of = YUG 
+		add_core_of = CRO
+		add_claim_by = ITA 
+		victory_points = { #Split
+			3924 5
+		}
+		victory_points = { #Dubrovnik
+			6889 3 
+		}
+		buildings = {
+			infrastructure = 3
+			3924 = {
+				naval_base = 3
+			}
+			6889 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces = { 3868 11816 6889 3924 3974 }
+}

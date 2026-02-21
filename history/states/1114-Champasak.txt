@@ -1,0 +1,14 @@
+state = {
+	id = 1114
+	name = 1114_Champasak 
+	manpower = 21900
+	state_category = pastoral
+	history = {
+		owner = FIC 
+		add_core_of = LAO 
+		buildings = {
+			infrastructure = 1 
+		}
+	}
+	provinces = { 1592 }
+}

@@ -1,0 +1,17 @@
+guiTypes = {
+	containerWindowType = {
+		name = "Fontaine_superevents_window_view"
+		moveable = yes 
+		orientation = UPPER_LEFT  
+		position = { x = 554 y = 100 }
+		iconType = {
+			name = "superevents_window"
+			quadTextureSprite = GFX_superevents_window_1
+		}
+		buttonType = {
+			name = "superevents_opinion"
+			quadTextureSprite = GFX_superevents_opinion_1 
+			position = { x = 245 y = 692 }
+		}
+	}
+}

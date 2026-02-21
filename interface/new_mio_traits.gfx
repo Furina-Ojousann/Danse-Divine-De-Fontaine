@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_mio_wisdom"
+		textureFile = "gfx/interface/military_industrial_organization/department_icons/mio_wisdom.png"
+	}
+	spriteType = {
+		name = "GFX_mio_improve_productivity"
+		textureFile = "gfx/interface/military_industrial_organization/department_icons/mio_improve_productivity.png"
+	}
+	spriteType = {
+		name = "GFX_mio_fontaine_energy_equipements"
+		textureFile = "gfx/interface/military_industrial_organization/department_icons/mio_energy_machinery.png"
+	}
+}

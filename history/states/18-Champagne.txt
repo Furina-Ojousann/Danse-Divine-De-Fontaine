@@ -1,0 +1,33 @@
+
+state={
+	id=18
+	name="STATE_18"
+	manpower = 370800
+	
+	state_category = city
+
+	history={
+		owner = FRA
+		victory_points = {
+			9490 10
+		}
+		victory_points = {
+			551 3 
+		}
+		victory_points = {
+			3533 3 
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+			air_base = 10
+		}
+		add_core_of = FRA
+	}
+
+	provinces={
+		551 3533 6531 9490 11732 
+	}
+
+	local_supplies=0.0 
+}

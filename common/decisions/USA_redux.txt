@@ -1,0 +1,568 @@
+USA_rural_moderation_category = {
+	usa_deep_south_america = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 371
+				state = 370
+				state = 367
+				state = 365
+				state = 366
+				state = 364
+			}
+		}
+		days_remove = 365
+		modifier = {
+			political_power_cost = 0.05
+			conscription_factor = -0.10
+		}
+		remove_effect = {
+			custom_effect_tooltip = usa_depression_progress_back_5
+			add_to_variable = { usa_the_depression_progress = -0.05 }
+			add_political_power = 100 
+			371 = {
+				add_resource = {
+					type = oil 
+					amount = 21 
+				}
+				add_building_construction = {
+					type = fuel_silo 
+					level = 1 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+			}
+			370 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+			367 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+			365 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+			366 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+			364 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+				}
+			}
+
+		}
+	}
+
+	usa_upper_south_america = {
+		icon = GFX_decision_eng_trade_unions_support 
+		fire_only_once = yes 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 373
+				state = 372
+				state = 368
+				state = 369
+				state = 363
+				state = 362
+				state = 816
+			}
+		}
+		days_remove = 365
+		modifier = {
+			political_power_cost = 0.05
+			conscription_factor = -0.10
+		}
+		remove_effect = {
+			custom_effect_tooltip = usa_depression_progress_back_5
+			add_to_variable = { usa_the_depression_progress = -0.05 }
+			362 = {
+				add_extra_state_shared_building_slots = 4 
+				add_building_construction = {
+					type = dockyard
+					level = 3 
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+			}
+			363 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			368 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			369 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			372 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			373 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			816 = {
+				set_state_category = city 
+				add_building_construction = {
+					type = infrastructure
+					level = 2 
+				}
+			}
+		}
+	}
+
+	usa_centre_america = {
+		icon = GFX_decision_eng_trade_unions_support
+		fire_only_once = yes 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 381
+				state = 382
+				state = 383
+				state = 384
+				state = 376
+				state = 374
+				state = 388
+				state = 389
+				state = 390
+				state = 375
+			}
+		}
+		days_remove = 365
+		modifier = {
+			political_power_cost = 0.05
+			conscription_factor = -0.10
+		}
+		remove_effect = {
+			set_country_flag = standard_oil_california_has_combined_with_TEX 
+			custom_effect_tooltip = usa_centre_america_tt
+			custom_effect_tooltip = remove_industrial_concern
+			show_ideas_tooltip = standard_oil_california
+			custom_effect_tooltip = available_industrial_concern 
+			show_ideas_tooltip = usa_caltex_corporation  
+			375 = {
+				add_dynamic_modifier = {
+					modifier = USA_local_development 
+				}
+			}
+			376 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			381 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			382 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			383 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			384 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			374 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			388 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			389 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+			390 = {
+				add_extra_state_shared_building_slots = 3 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+		}
+	}
+}
+
+USA_over_there_category = {
+	usa_complete_operation_olympic = {
+		icon = GFX_decision_eng_puppet_usa
+		days_mission_timeout = 120 
+		activation = {
+			always = no 
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		cancel_trigger = {
+			528 = { is_fully_controlled_by = ROOT }
+		}
+		cancel_effect = {
+			528 = {
+				add_building_construction = {
+					type = air_base 
+					level = 5 
+				}
+			}
+			JAP = {
+				add_war_support = -0.05 
+			}
+			1023 = { 
+				add_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+			1024 = {
+				add_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+			282 = {
+				add_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+			activate_mission = usa_complete_operation_coronet 
+		}
+		timeout_effect = {
+			528 = { remove_dynamic_modifier = { modifier = USA_Operation_Olympic } }
+		}
+	}
+
+	usa_complete_operation_coronet = {
+		icon = GFX_decision_eng_puppet_usa 
+		days_mission_timeout = 120 
+		activation = {
+			always = no 
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		cancel_trigger = {
+			1023 = { is_fully_controlled_by = ROOT }
+			1024 = { is_fully_controlled_by = ROOT }
+			282 = { is_fully_controlled_by = ROOT }
+		}
+		cancel_effect = {
+			JAP = {
+				add_war_support = -0.10
+				complete_national_focus = JAP_bet_the_fate 
+			}
+		}
+		timeout_effect = {
+			JAP = {
+				add_war_support = 0.10 
+			}
+			1023 = {
+				remove_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+			1024 = {
+				remove_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+			282 = {
+				remove_dynamic_modifier = {
+					modifier = USA_Operation_Coronet 
+				}
+			}
+		}
+	}
+
+	usa_set_up_china_war_region = {
+		icon = GFX_decision_hol_exchange_intelligence_data 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = USA_Pacific_war 
+		}
+		available = {
+			CHI = {
+				has_war_with = JAP 
+			}
+		}
+		complete_effect = {
+			CHI = { complete_national_focus = CHI_declare_war_to_jap add_command_power = 50 }
+			add_command_power = 50 
+		}
+	}
+
+	usa_acpuire_china_airports = {
+		icon = GFX_decision_hol_draw_up_staff_plans 
+		fire_only_once = yes 
+		days_remove = 180 
+		visible = {
+			CHI = { is_in_faction_with = ROOT }
+		}
+		remove_effect = {
+			CHI = { CHI_hyper_inflation_level_up = yes }
+			random_state = {
+				limit = {
+					is_controlled_by = CHI 
+					state = 602
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3 
+				}
+			}
+			random_state = {
+				limit = {
+					is_controlled_by = CHI 
+					state = 605
+				}
+				add_building_construction = {
+					type = air_base
+					level = 5
+				}
+			}
+			random_state = {
+				limit = {
+					is_controlled_by = CHI 
+					state = 620
+				}
+				add_building_construction = {
+					type = air_base
+					level = 5
+				}
+			}
+		}
+	}
+
+	usa_offer_china_weapon = {
+		icon = GFX_decision_ger_military_buildup 
+		days_remove = 30 
+		days_re_enable = 90 
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999 
+			}
+			has_equipment = {
+				artillery_equipment > 199
+			}
+			has_equipment = {
+				support_equipment > 99 
+			}
+		}
+		remove_effect = {
+			CHI = {
+				country_event = Modify_Extra.2 
+				add_ai_strategy = {
+					type = alliance 
+					id = USA 
+					value = 30 
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = USA 
+					value = 30 
+				}
+			}
+			send_equipment = {
+				equipment = infantry_equipment 
+				amount = 2000 
+				target = CHI 
+				old_prioritised = yes 
+			}
+			send_equipment = {
+				equipment = artillery_equipment 
+				amount = 200 
+				target = CHI 
+				old_prioritised = yes 
+			}
+			send_equipment = {
+				amount = 100
+				equipment = support_equipment 
+				target = CHI 
+			}
+		}
+	}
+
+	usa_offer_debt_china = {
+		icon = GFX_decision_hol_attract_foreign_investors 
+		cost = 50 
+		visible = {
+			CHI = {
+				or = {
+					has_idea = CHI_hyper_inflation_1
+					has_idea = CHI_hyper_inflation_2
+					has_idea = CHI_hyper_inflation_3
+					has_idea = CHI_hyper_inflation_4
+					has_idea = CHI_hyper_inflation_5
+				}
+			}
+		}
+		days_remove = 7 
+		remove_effect = {
+			CHI = { CHI_hyper_inflation_level_down = yes add_stability = 0.10 }
+		}
+	}
+
+	usa_defense_in_phi = {
+		icon = GFX_decision_generic_speech 
+		days_mission_timeout = 180 
+		activation = {
+			always = no 
+		}
+		available = {
+			hidden_trigger = {
+				always = no 
+			}
+		}
+		cancel_trigger = {
+			PHI = { has_capitulated = yes }
+		}
+		cancel_effect = {
+			JAP = {
+				add_timed_idea = {
+					idea = usa_attack_success
+					days = 300 
+				}
+				add_ai_strategy = {
+					type = conquer 
+					id = INS 
+					value = 300 
+				}
+				add_ai_strategy = {
+					type = conquer 
+					id = MAL 
+					value = 300 
+				}
+			}
+		}
+		timeout_effect = {
+			JAP = {
+				add_timed_idea = {
+					idea = usa_attack_failed 
+					days = 210 
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,132 @@
+ideas = {
+	country = {
+		sia_constitution_defense = {
+			picture = ETH_peacekeeping_forces
+			available = {
+				or = {
+					has_government = democratic 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+				drift_defence_factor = 0.25 
+				communism_drift = -0.01 
+				fascism_drift = -0.01 
+			}
+		}
+		sia_political_moderization = {
+			picture = generic_democratic_opposition
+			available = {
+				or = {
+					has_government = fascism  
+					has_government = neutrality
+				}
+			}
+			modifier = {
+				trade_laws_cost_factor = -0.33 
+				economy_cost_factor = -0.33 
+				political_advisor_cost_factor = -0.33 
+				political_power_factor = -0.10
+				democratic_drift = 0.03 
+				neutrality_drift = 0.03 
+			}
+		}
+		sia_economic_moderization = {
+			picture = ARG_construction_guilds
+			modifier = {
+				production_speed_infrastructure_factor = 0.20 
+				production_speed_industrial_complex_factor = 0.10 
+				production_speed_steel_mill_factor = 0.10 
+				stability_factor = -0.05 
+				communism_drift = 0.02 
+			}
+			research_bonus = {
+				industry = 0.20 
+				electronics = 0.05 
+				infantry_tech = 0.15
+				mio_cat_tech_all_destroyer_and_modules = 0.10
+				artillery = 0.10 
+			}
+		}
+		sia_rural_backward_5 = {
+			picture = generic_prisoner
+			modifier = {
+				research_speed_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.20 
+				conscription_factor = -0.25
+			}
+		}
+		sia_rural_backward_4 = {
+			picture = generic_prisoner
+			modifier = {
+				research_speed_factor = -0.12
+				production_factory_efficiency_gain_factor = -0.16
+				conscription_factor = -0.20
+			}
+		}
+		sia_rural_backward_3 = {
+			picture = generic_prisoner
+			modifier = {
+				research_speed_factor = -0.09
+				production_factory_efficiency_gain_factor = -0.12
+				conscription_factor = -0.15
+			}
+		}
+		sia_rural_backward_2 = {
+			picture = generic_prisoner
+			modifier = {
+				research_speed_factor = -0.06
+				production_factory_efficiency_gain_factor = -0.08 
+				conscription_factor = -0.10
+			}
+		}
+		sia_rural_backward_1 = {
+			picture = generic_prisoner
+			modifier = {
+				research_speed_factor = -0.03
+				production_factory_efficiency_gain_factor = -0.04 
+				conscription_factor = -0.05
+			}
+		}
+		sia_strengthen_Thailand_nationalism = {
+			picture = generic_fascist_workers
+			available = {
+				or = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				war_support_factor = 0.10 
+				mobilization_speed = 0.25 
+				army_core_attack_factor = 0.15
+				conscription_factor = -0.10 
+			}
+		}
+		sia_royal_capital_4 = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = -0.40 
+			}
+		}
+		sia_royal_capital_3 = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = -0.30
+			}
+		}
+		sia_royal_capital_2 = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = -0.20
+			}
+		}
+		sia_royal_capital_1 = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = -0.10 
+			}
+		}
+	}
+}

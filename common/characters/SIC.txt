@@ -1,0 +1,68 @@
+characters = {
+	SIC_liu_xiang = {
+		name = SIC_liu_xiang
+		
+		portraits = {
+			army = {
+				large = GFX_portrait_sic_liu_xiang 
+				small = GFX_idea_sic_liu_xiang 
+			}
+		}
+		country_leader = {
+			ideology = conservatism 
+			traits = {
+				warlord 
+			}
+			expire = 1938.1.20
+		}
+		country_leader = {
+			ideology = despotism  
+			traits = {
+				warlord 
+			}
+			expire = 1938.1.20
+		}
+		country_leader = {
+			ideology = agricultureal_socialism  
+			traits = {
+				warlord 
+			}
+			expire = 1938.1.20
+		}
+		country_leader = {
+			ideology = fascism_ideology  
+			traits = {
+				warlord 
+			}
+			expire = 1938.1.20
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			traits = {
+				career_officer 
+				politically_connected 
+				war_hero 
+				infantry_officer 
+			}
+			expire = 1938.1.20
+		}
+		advisor = {
+			slot = army_chief 
+			idea_token = Liu_xiang_chief
+			traits = {
+				army_chief_entrenchment_2 
+			}
+		}
+		advisor = {
+			slot = high_command  
+			idea_token = Liu_xiang_command
+			traits = {
+				army_regrouping_2 
+			}
+		}
+	}
+}

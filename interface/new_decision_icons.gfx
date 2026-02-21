@@ -1,0 +1,42 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_decision_cat_picture_enable_the_mod"
+		textureFile = "gfx/interface/decisions/decision_cat_picture_enable_the_mod.png"
+	}
+	spriteType = {
+		name = "GFX_decision_enable_the_mod"
+		textureFile = "gfx/interface/decisions/decision_enable_the_mod.png"
+	}
+	spriteType = {
+		name = "GFX_decision_summon_furina"
+		textureFile = "gfx/interface/decisions/decision_summon_furina.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_1"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_1.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_2"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_2.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_3"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_3.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_4"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_4.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_5"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_5.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_6"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_6.png"
+	}
+	spriteType = {
+		name = "GFX_decision_navia_plan_7"
+		textureFile = "gfx/interface/decisions/decision_navia_plan_7.png"
+	}
+}

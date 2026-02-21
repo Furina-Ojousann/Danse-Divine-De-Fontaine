@@ -1,0 +1,25 @@
+state = {
+	id = 1112
+	name = 1112_TelAviv_Yafo
+	manpower = 389000
+	state_category = large_town 
+	history = {
+		owner = PAL 
+		add_core_of = PAL 
+		add_core_of = ISR
+		victory_points = {
+			4206 15 # Tel Aviv
+		}
+		victory_points = {
+			13456 5 
+		}
+		buildings = {
+			infrastructure = 3 
+			air_base = 6
+			4206 = {
+				naval_base = 3
+			}
+		}
+	}
+	provinces = { 13456 4206 }
+}

@@ -1,0 +1,60 @@
+PRC_boost_resistance = {
+	allowed = {
+		tag = PRC
+	}
+	
+	enable = {
+		has_war_with = JAP
+		#or = {
+		#	any_state = {
+		#		is_core_of = ROOT
+		#		resistance > 0
+		#		owner = { has_war_with = ROOT }
+		#	}
+		#	any_state = {
+		#		is_core_of = ROOT
+		#		resistance > 0
+		#		controller = { has_war_with = ROOT }
+		#	}
+		#}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = JAP
+	}
+	#ai_strategy = {
+	#	type = operative_operation
+	#	operation = operation_make_resistance_contacts
+	#	value = 3000
+	#	operation_target = JAP
+	#}
+	#ai_strategy = {
+	#	type = operative_operation
+	#	operation = operation_targeted_sabotage_industry#破坏工业
+	#	value = 2000
+	#	operation_target = JAP
+	#}
+	#ai_strategy = {
+	#	type = operative_operation
+	#	operation = operation_targeted_sabotage_infrastructure#破坏基建
+	#	value = 2500
+	#	operation_target = JAP
+	#}
+	#ai_strategy = {
+	#	type = operative_operation
+	#	operation = operation_targeted_sabotage_resources#破坏资源
+	#	value = 1500
+	#	operation_target = JAP
+	#}
+	#ai_strategy = {
+	#	type = operative_operation
+	#	operation = operation_boost_resistance#加强抵抗
+	#	value = 2800
+	#	operation_target = JAP
+	#}
+}

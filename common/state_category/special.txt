@@ -1,0 +1,24 @@
+state_categories = {
+	city_state = {
+		local_building_slots = 1 
+		color = { 123 187 58 }
+	}
+	tiny_state = {
+		local_building_slots = 0 
+		color = { 123 187 58 }
+	}
+	large_industrial_centre = {
+		local_building_slots = 20 
+		buildings_max_level = {
+			air_base = 5 
+		}
+		color = { 182 68 42 }
+	}
+	regional_industrial_centre = {
+		local_building_slots = 18
+		buildings_max_level = {
+			air_base = 10 
+		}
+		color = { 51 141 225 }
+	}
+}

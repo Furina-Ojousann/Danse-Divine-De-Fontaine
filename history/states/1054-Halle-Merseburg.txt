@@ -1,0 +1,28 @@
+state = {
+	id = 1054
+	name = 1054_Halle-Merseburg
+	manpower = 1897000
+	state_category = city 
+	history = {
+		owner = GER
+		add_core_of = GER 
+		add_core_of = PRE 
+		victory_points = { 
+			425 3 # Weimar
+		}
+
+		victory_points = { 
+			538 3 # Jena
+		}
+		victory_points = {
+			6582 5 
+		}
+		buildings = {
+			infrastructure = 6 
+			industrial_complex = 1 
+		}
+	}
+	provinces = {
+		6441 11545 425 6501 6582 538
+	}
+}

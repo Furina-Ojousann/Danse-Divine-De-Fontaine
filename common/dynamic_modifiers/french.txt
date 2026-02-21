@@ -1,0 +1,580 @@
+### Country scope ###
+
+FRA_her_gentle_yoke = { ###牧羊人温和的轭
+	icon = GFX_idea_fra_her_gentle_yoke 
+	political_power_factor = FRA_her_gentle_yoke_political_power_factor
+	consumer_goods_factor = FRA_her_gentle_consumer_goods_factor
+	stability_factor = FRA_her_gentle_stability_factor
+	production_factory_efficiency_gain_factor = FRA_her_gentle_production_factory_efficiency_gain_factor
+	production_factory_max_efficiency_factor = FRA_her_gentle_production_factory_max_efficiency_factor
+	conscription_factor = FRA_her_gentle_conscription_factor
+	production_speed_buildings_factor = FRA_her_gentle_production_speed_buildings_factor
+	stability_weekly = FRA_her_gentle_stability_weekly
+	war_support_weekly = FRA_her_gentle_war_support_weekly
+	war_stability_factor = FRA_her_gentle_war_stability_factor
+	
+	political_advisor_cost_factor = FRA_her_gentle_political_advisor_cost_factor
+	trade_laws_cost_factor = FRA_her_gentle_trade_laws_cost_factor
+    economy_cost_factor = FRA_her_gentle_economy_cost_factor
+	mobilization_laws_cost_factor = FRA_her_gentle_mobilization_laws_cost_factor
+	research_speed_factor = FRA_her_gentle_research_speed_factor
+	special_project_speed_factor = FRA_her_gentle_special_project_speed_factor
+	industrial_capacity_factory = FRA_her_gentle_industrial_capacity_factory
+	industrial_capacity_dockyard = FRA_her_gentle_industrial_capacity_dockyard
+	high_command_cost_factor = FRA_her_gentle_high_command_cost_factor
+	air_chief_cost_factor = FRA_her_gentle_air_chief_cost_factor
+	army_chief_cost_factor = FRA_her_gentle_army_chief_cost_factor
+	navy_chief_cost_factor = FRA_her_gentle_navy_chief_cost_factor
+	monthly_population = FRA_her_gentle_monthly_population
+	resistance_growth = FRA_her_gentle_resistance_growth
+	compliance_gain = FRA_her_gentle_compliance_gain
+	custom_modifier_tooltip = FRA_her_gentle_FRA_her_gentle_yoke_tt
+}
+
+FRA_wartime_mobilization = { ###战时动员
+	icon = GFX_idea_fra_national_mobilization 
+	fighter_sortie_efficiency = FRA_wartime_mobilization_fighter_sortie_efficiency 
+	army_core_defence_factor = FRA_wartime_mobilization_army_core_defence_factor 
+	army_attack_factor = FRA_wartime_mobilization_army_attack_factor
+	convoy_escort_efficiency = FRA_wartime_mobilization_convoy_escort_efficiency 
+
+	decryption_power_factor = FRA_wartime_mobilization_decryption_power_factor
+	civilian_intel_to_others = FRA_wartime_mobilization_civilian_intel_to_others
+	army_intel_to_others = FRA_wartime_mobilization_army_intel_to_others
+	airforce_intel_to_others = FRA_wartime_mobilization_airforce_intel_to_others
+	navy_intel_to_others = FRA_wartime_mobilization_navy_intel_to_others 
+	agency_upgrade_time = FRA_wartime_mobilization_agency_upgrade_time
+	mobilization_speed = FRA_wartime_mobilization_mobilization_speed
+	
+	industrial_capacity_factory = FRA_wartime_mobilization_industrial_capacity_factory
+	consumer_goods_factor = FRA_wartime_mobilization_consumer_goods_factor
+	surrender_limit = FRA_wartime_mobilization_surrender_limit 
+	resistance_damage_to_garrison = FRA_wartime_mobilization_resistance_damage_to_garrison
+	compliance_growth = FRA_wartime_mobilization_compliance_growth
+
+}
+
+FRA_economic_modifier = { ###经济修正
+	consumer_goods_factor = FRA_economic_modifier_consumer_goods_factor
+	production_speed_buildings_factor = FRA_economic_modifier_production_speed_buildings_factor
+	stability_factor = FRA_economic_modifier_stability_factor
+	conscription_factor = FRA_economic_modifier_conscription_factor 
+	political_power_cost = FRA_economic_modifier_political_power_cost
+}
+FRA_DM_Navia_Economic_Proposal = {
+	#娜維婭計劃
+	icon = GFX_idea_fra_navia_economic_proposal 
+	#来自低效的经济
+	industrial_capacity_factory = NEP_industrial_capacity_factory 
+	industrial_capacity_dockyard = NEP_industrial_capacity_dockyard
+	#来自劳动法
+	consumer_goods_factor = NEP_consumer_goods_factor 
+	production_factory_max_efficiency_factor = NEP_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = NEP_production_factory_efficiency_gain_factor 
+	stability_factor = NEP_stability_factor 
+	war_stability_factor = NEP_war_stability_factor 
+	political_power_cost = NEP_political_power_cost 
+	#独立
+	global_building_slots_factor = NEP_global_building_slots_factor
+	line_change_production_efficiency_factor = NEP_line_change_production_efficiency_factor
+	min_export = NEP_min_export
+}
+
+FRA_land_stragegy_defense = { ###防御战略
+	icon = GFX_idea_SWE_land_air_warfare 
+	army_infantry_defence_factor = 0.10 
+	army_org_factor = 0.05 
+	army_artillery_attack_factor = FRA_land_stragegy_army_artillery_attack_factor
+	army_artillery_defence_factor = FRA_land_stragegy_army_artillery_defence_factor 
+	max_dig_in = FRA_land_stragegy_max_dig_in 
+	dig_in_speed_factor = FRA_land_stragegy_dig_in_speed_factor 
+	max_planning_factor = FRA_land_stragegy_max_planning_factor 
+	weekly_casualties_war_support = FRA_land_stragegy_weekly_casualties_war_support 
+	army_armor_attack_factor = FRA_land_stragegy_army_armor_attack_factor 
+	army_armor_defence_factor = FRA_land_stragegy_army_armor_defence_factor 
+	army_armor_speed_factor = FRA_land_stragegy_army_armor_speed_factor 
+	land_reinforce_rate = FRA_land_stragegy_land_reinforce_rate 
+	special_forces_attack_factor = FRA_land_stragegy_special_forces_attack_factor 
+	special_forces_defence_factor = FRA_land_stragegy_special_forces_defence_factor 
+	supply_node_range = FRA_land_stragegy_supply_node_range 
+	#supply_factor = FRA_land_stragegy_supply_factor 
+	supply_consumption_factor = FRA_land_stragegy_supply_consumption_factor 
+	air_cas_efficiency = FRA_land_stragegy_air_cas_efficiency 
+	air_cas_present_factor = FRA_land_stragegy_air_cas_present_factor 
+	air_weather_penalty = FRA_land_stragegy_air_weather_penalty
+	recon_factor = FRA_land_stragegy_recon_factor 
+	non_core_manpower = FRA_land_stragegy_non_core_manpower
+	heat_attrition = FRA_land_stragegy_heat_attrition
+	terrain_penalty_reduction = FRA_land_stragegy_terrain_penalty_reduction
+}
+
+FRA_land_stragegy_aggressive = {
+	icon = GFX_idea_SWE_land_air_warfare 
+	army_infantry_attack_factor = 0.05 
+	breakthrough_factor = 0.05
+	army_artillery_attack_factor = FRA_land_stragegy_army_artillery_attack_factor
+	army_artillery_defence_factor = FRA_land_stragegy_army_artillery_defence_factor 
+	max_dig_in = FRA_land_stragegy_max_dig_in 
+	dig_in_speed_factor = FRA_land_stragegy_dig_in_speed_factor 
+	max_planning_factor = FRA_land_stragegy_max_planning_factor 
+	weekly_casualties_war_support = FRA_land_stragegy_weekly_casualties_war_support 
+	army_armor_attack_factor = FRA_land_stragegy_army_armor_attack_factor 
+	army_armor_defence_factor = FRA_land_stragegy_army_armor_defence_factor 
+	army_armor_speed_factor = FRA_land_stragegy_army_armor_speed_factor 
+	land_reinforce_rate = FRA_land_stragegy_land_reinforce_rate 
+	special_forces_attack_factor = FRA_land_stragegy_special_forces_attack_factor 
+	special_forces_defence_factor = FRA_land_stragegy_special_forces_defence_factor 
+	supply_node_range = FRA_land_stragegy_supply_node_range 
+	#supply_factor = FRA_land_stragegy_supply_factor 
+	supply_consumption_factor = FRA_land_stragegy_supply_consumption_factor 
+	air_cas_efficiency = FRA_land_stragegy_air_cas_efficiency 
+	air_cas_present_factor = FRA_land_stragegy_air_cas_present_factor 
+	air_weather_penalty = FRA_land_stragegy_air_weather_penalty
+	recon_factor = FRA_land_stragegy_recon_factor 
+	non_core_manpower = FRA_land_stragegy_non_core_manpower
+	heat_attrition = FRA_land_stragegy_heat_attrition
+	terrain_penalty_reduction = FRA_land_stragegy_terrain_penalty_reduction
+}
+
+FRA_Fontaine_Energy_Engineering_Science_Research_Institute_dynamic_modifier = {
+	icon = GFX_idea_fra_Fontaine_Energy_Engineering_Science_Research_Institute 
+	research_speed_factor = SRI_research_speed_factor 
+	local_resources_factor = SRI_local_resources_factor 
+	production_speed_buildings_factor = SRI_production_speed_buildings_factor 
+	local_building_slots_factor = SRI_local_building_slots_factor 
+	political_power_cost = SRI_political_power_cost 
+	industrial_capacity_factory = SRI_industrial_capacity_factory 
+	industrial_capacity_dockyard = SRI_industrial_capacity_dockyard 
+	production_factory_max_efficiency_factor = SRI_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = SRI_production_factory_efficiency_gain_factor
+	consumer_goods_factor = SRI_consumer_goods_factor
+}
+
+FRA_Fontaine_Energy_Engineering_Science_Research_Institute_dynamic_modifier_2 = {
+	icon = GFX_idea_fra_Fontaine_Energy_Engineering_Science_Research_Institute 
+	research_speed_factor = SRI_research_speed_factor 
+	local_resources_factor = SRI_local_resources_factor 
+	production_speed_buildings_factor = SRI_production_speed_buildings_factor 
+	local_building_slots_factor = SRI_local_building_slots_factor 
+	political_power_cost = SRI_political_power_cost 
+	industrial_capacity_factory = SRI_industrial_capacity_factory 
+	industrial_capacity_dockyard = SRI_industrial_capacity_dockyard 
+	production_factory_max_efficiency_factor = SRI_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = SRI_production_factory_efficiency_gain_factor
+	consumer_goods_factor = SRI_consumer_goods_factor
+	custom_modifier_tooltip = FRA_Fontaine_Energy_Engineering_Science_Research_Institute_dynamic_modifier_2_tt
+	
+}
+
+FRA_Marianne_modifier = {
+	icon = GFX_idea_fra_Marianne
+	### liberity ###
+	party_popularity_stability_factor = liberity_party_popularity_stability_factor
+	political_power_factor = liberity_political_power_factor
+	### equality ###
+	production_factory_efficiency_gain_factor = equality_production_factory_efficiency_gain_factor
+	industrial_capacity_factory = equality_industrial_capacity_factory
+	industrial_capacity_dockyard = equality_industrial_capacity_dockyard
+	### fraternity ###
+	compliance_growth = fraternity_compliance_growth 
+	required_garrison_factor = fraternity_required_garrison_factor
+}
+
+FRA_virtue = {
+	icon = GFX_idea_fra_virtue 
+	stability_factor = fra_virtue_stability_factor
+	war_support_factor = fra_virtue_war_support_factor 
+	research_speed_factor = fra_virtue_research_speed_factor
+	opinion_gain_monthly_factor = fra_virtue_opinion_gain_monthly_factor
+	surrender_limit = fra_virtue_surrender_limit
+}
+
+FRA_judicial_reform = {
+	icon = GFX_idea_BRA_dasp
+	monthly_population = fra_judicial_reform_monthly_population
+	political_power_gain = fra_judicial_reform_political_power_gain
+	production_speed_buildings_factor = fra_judicial_reform_production_speed_buildings_factor
+	stability_factor = fra_judicial_reform_stability_factor
+	war_support_factor = fra_judicial_reform_war_support_factor
+	industry_free_repair_factor = fra_judicial_reform_industry_free_repair_factor
+}
+
+FRA_the_red_army = {
+	icon = GFX_idea_generic_communist_army 
+	army_core_attack_factor = FRA_the_red_army_army_core_attack_factor
+	army_core_defence_factor = FRA_the_red_army_army_core_defence_factor
+	max_planning = FRA_the_red_army_max_planning
+	planning_speed = FRA_the_red_army_planning_speed
+	supply_consumption_factor = FRA_the_red_army_supply_consumption_factor
+	army_org_factor = FRA_the_red_army_army_org_factor
+	army_morale_factor = FRA_the_red_army_army_morale_factor
+	political_power_factor = FRA_the_red_army_political_power_factor
+	max_command_power = FRA_the_red_army_max_command_power
+	experience_gain_irregular_infantry_combat_factor = FRA_the_red_army_experience_gain_irregular_infantry_combat_factor
+	modifier_army_sub_unit_irregular_infantry_attack_factor = FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor
+	conscription = FRA_the_red_army_conscription 
+	mobilization_speed = FRA_the_red_army_mobilization_speed 
+	breakthrough_factor = FRA_the_red_army_breakthrough_factor 
+	recon_factor = FRA_the_red_army_recon_factor 
+	attrition = FRA_the_red_army_attrition 
+	org_loss_at_low_org_factor = FRA_the_red_army_org_loss_at_low_org_factor 
+	org_loss_when_moving = FRA_the_red_army_org_loss_when_moving 
+	army_armor_defence_factor = FRA_the_red_army_army_armor_defence_factor 
+	army_armor_attack_factor = FRA_the_red_army_army_armor_attack_factor 
+	army_armor_speed_factor = FRA_the_red_army_army_armor_speed_factor 
+	army_infantry_defence_factor = FRA_the_red_army_army_infantry_defence_factor 
+	terrain_penalty_reduction = FRA_the_red_army_terrain_penalty_reduction 
+}
+
+FRA_the_black_army = {
+	icon = GFX_idea_fra_anarchist_black_army 
+	army_core_attack_factor = FRA_the_red_army_army_core_attack_factor
+	army_core_defence_factor = FRA_the_red_army_army_core_defence_factor
+	max_planning = FRA_the_red_army_max_planning
+	planning_speed = FRA_the_red_army_planning_speed
+	supply_consumption_factor = FRA_the_red_army_supply_consumption_factor
+	army_org_factor = FRA_the_red_army_army_org_factor
+	army_morale_factor = FRA_the_red_army_army_morale_factor
+	political_power_factor = FRA_the_red_army_political_power_factor
+	max_command_power = FRA_the_red_army_max_command_power
+	experience_gain_irregular_infantry_combat_factor = FRA_the_red_army_experience_gain_irregular_infantry_combat_factor
+	modifier_army_sub_unit_irregular_infantry_attack_factor = FRA_the_red_army_modifier_army_sub_unit_irregular_infantry_attack_factor
+	conscription = FRA_the_red_army_conscription 
+	mobilization_speed = FRA_the_red_army_mobilization_speed 
+	breakthrough_factor = FRA_the_red_army_breakthrough_factor 
+	recon_factor = FRA_the_red_army_recon_factor 
+	attrition = FRA_the_red_army_attrition 
+	org_loss_at_low_org_factor = FRA_the_red_army_org_loss_at_low_org_factor 
+	org_loss_when_moving = FRA_the_red_army_org_loss_when_moving 
+	army_armor_defence_factor = FRA_the_red_army_army_armor_defence_factor 
+	army_armor_attack_factor = FRA_the_red_army_army_armor_attack_factor 
+	army_armor_speed_factor = FRA_the_red_army_army_armor_speed_factor 
+	army_infantry_defence_factor = FRA_the_red_army_army_infantry_defence_factor 
+	army_infantry_attack_factor = FRA_the_red_army_army_infantry_attack_factor 
+	neutrality_drift = FRA_the_red_army_neutrality_drift
+	terrain_penalty_reduction = FRA_the_red_army_terrain_penalty_reduction 
+}
+
+FRA_the_hurt_of_war = {
+	icon = GFX_idea_fra_the_hurt_of_war 
+	production_speed_buildings_factor = FRA_the_hurt_of_war_production_speed_buildings_factor
+	stability_factor = FRA_the_hurt_of_war_stability_factor
+	war_support_factor = FRA_the_hurt_of_war_war_support_factor 
+	industrial_capacity_factory = FRA_the_hurt_of_war_industrial_capacity_factory 
+	industrial_capacity_dockyard = FRA_the_hurt_of_war_industrial_capacity_dockyard 
+	conscription_factor = FRA_the_hurt_of_war_conscription_factor 
+	consumer_goods_factor = FRA_the_hurt_of_war_consumer_goods_factor
+}
+
+FRA_the_furina_plan = {
+	icon = GFX_idea_fra_furina_plan 
+	trade_opinion_factor = FRA_the_furina_plan_trade_opinion_factor
+	political_power_gain = FRA_the_furina_plan_political_power_gain
+	industry_free_repair_factor = FRA_the_furina_plan_industry_free_repair_factor 
+	production_speed_industrial_complex_factor = FRA_the_furina_plan_production_speed_industrial_complex_factor 
+	monthly_population = FRA_the_furina_plan_monthly_population
+	local_resources_factor = FRA_the_furina_plan_local_resources_factor 
+	research_speed_factor = FRA_the_furina_plan_research_speed_factor 
+	consumer_goods_factor = FRA_the_furina_plan_consumer_goods_factor 
+	democratic_drift = FRA_the_furina_plan_democratic_drift 
+	cic_to_overlord_factor = FRA_the_furina_plan_cic_to_overlord_factor
+	mic_to_overlord_factor = FRA_the_furina_plan_mic_to_overlord_factor 
+	overlord_trade_cost_factor = FRA_the_furina_plan_overlord_trade_cost_factor 
+	autonomy_gain_trade_factor = FRA_the_furina_plan_autonomy_gain_trade_factor 
+	industrial_capacity_factory = FRA_the_furina_plan_industrial_capacity_factory 
+}
+
+FRA_the_unite = {
+	icon = GFX_idea_EST_democratic_opposition 
+	political_power_gain = FRA_the_unite_political_power_gain
+	stability_factor = FRA_the_unite_stability_factor
+}
+
+FRA_the_corruption = {
+	remove_trigger = {
+		or = {
+			has_government = democratic
+			has_government = fascism 
+		}
+	}
+	political_power_cost = corruption_political_power_cost
+	party_popularity_stability_factor = corruption_party_popularity_stability_factor
+	neutrality_drift = corruption_neutrality_drift 
+	production_speed_buildings_factor = corruption_production_speed_buildings_factor 
+	army_org_factor = corruption_army_org_factor 
+	experience_gain_army_factor = corruption_experience_gain_army_factor 
+	experience_gain_navy_factor = corruption_experience_gain_navy_factor 
+	experience_gain_air_factor = corruption_experience_gain_air_factor 
+	consumer_goods_factor = corruption_consumer_goods_factor 
+	research_speed_factor = corruption_research_speed_factor
+}
+
+FRA_the_commune_economy = {
+	icon = GFX_idea_fra_the_commune_economy
+	production_speed_industrial_complex_factor = commune_economy_production_speed_industrial_complex_factor
+	production_speed_infrastructure_factor = commune_economy_production_speed_infrastructure_factor 
+	production_speed_arms_factory_factor = commune_economy_production_speed_arms_factory_factor 
+	production_speed_dockyard_factor = commune_economy_production_speed_dockyard_factor 
+	production_speed_synthetic_refinery_factor = commune_economy_production_speed_synthetic_refinery_factor 
+	production_factory_max_efficiency_factor = commune_economy_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = commune_economy_production_factory_efficiency_gain_factor
+	industry_free_repair_factor = commune_economy_industry_free_repair_factor
+	economy_cost_factor = commune_economy_economy_cost_factor 
+	repair_speed_factor = commune_economy_repair_speed_factor
+	consumer_goods_factor = commune_economy_consumer_goods_factor 
+	production_oil_factor = commune_economy_production_oil_factor 
+	local_building_slots_factor = commune_economy_local_building_slots_factor 
+	communism_drift = commune_economy_communism_drift 
+	local_resources_factor = commune_economy_local_resources_factor 
+	supply_factor = commune_economy_supply_factor
+	min_export = commune_economy_min_export
+	industrial_capacity_dockyard = commune_economy_industrial_capacity_dockyard 
+	industrial_capacity_factory = commune_economy_industrial_capacity_factory 
+	monthly_population = commune_economy_monthly_population 
+	conscription_factor = commune_economy_conscription_factor 
+	custom_modifier_tooltip = monthly_corruption_change
+	custom_modifier_tooltip = monthly_zeal_change
+}
+
+FRA_anarchist_economy = {
+	icon = GFX_idea_fra_anarchist_economy 
+	production_speed_industrial_complex_factor = commune_economy_production_speed_industrial_complex_factor
+	production_speed_infrastructure_factor = commune_economy_production_speed_infrastructure_factor 
+	production_speed_arms_factory_factor = commune_economy_production_speed_arms_factory_factor 
+	production_speed_dockyard_factor = commune_economy_production_speed_dockyard_factor 
+	production_speed_synthetic_refinery_factor = commune_economy_production_speed_synthetic_refinery_factor 
+	production_factory_max_efficiency_factor = commune_economy_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = commune_economy_production_factory_efficiency_gain_factor
+	industry_free_repair_factor = commune_economy_industry_free_repair_factor
+	economy_cost_factor = commune_economy_economy_cost_factor 
+	repair_speed_factor = commune_economy_repair_speed_factor
+	consumer_goods_factor = commune_economy_consumer_goods_factor 
+	production_oil_factor = commune_economy_production_oil_factor 
+	local_building_slots_factor = commune_economy_local_building_slots_factor 
+	communism_drift = commune_economy_communism_drift 
+	local_resources_factor = commune_economy_local_resources_factor 
+	supply_factor = commune_economy_supply_factor
+	min_export = commune_economy_min_export
+	industrial_capacity_dockyard = commune_economy_industrial_capacity_dockyard 
+	industrial_capacity_factory = commune_economy_industrial_capacity_factory 
+	custom_modifier_tooltip = monthly_corruption_change
+}
+
+FRA_dissenters = {
+	icon = GFX_idea_fra_dissenters 
+	political_power_factor = fra_dissenters_political_power_factor 
+	stability_weekly_factor = fra_dissenters_stability_weekly_factor
+	stability_factor = fra_dissenters_stability_factor 
+	foreign_subversive_activites = fra_dissenters_foreign_subversive_activites
+	drift_defence_factor = fra_dissenters_drift_defence_factor
+	neutrality_drift = fra_dissenters_neutrality_drift 
+	custom_modifier_tooltip = fra_dissenters_custom_modifier_tooltip 
+}
+
+FRA_navy_force = {
+	icon = GFX_idea_fra_french_navy_force 
+	custom_modifier_tooltip = FRA_navy_force_tt
+	naval_hit_chance = FRA_navy_force_naval_hit_chance
+	#navy_intel_factor = FRA_navy_force_navy_intel_factor
+	experience_gain_navy_factor = FRA_navy_force_experience_gain_navy_factor
+	naval_defense_factor = FRA_navy_force_naval_defense_factor
+	naval_morale_factor = FRA_navy_force_naval_morale_factor
+	naval_detection = FRA_navy_force_naval_detection
+	navy_org_factor = FRA_navy_force_navy_org_factor
+	navy_max_range_factor = FRA_navy_force_navy_max_range_factor
+	navy_capital_ship_attack_factor = FRA_navy_force_navy_capital_ship_attack_factor
+	navy_capital_ship_defence_factor = FRA_navy_force_navy_capital_ship_defence_factor
+	air_nav_efficiency = FRA_navy_force_air_nav_efficiency
+	naval_strike_attack_factor = FRA_navy_force_naval_strike_attack_factor
+	navy_submarine_detection_factor = navy_submarine_detection_factor
+}
+
+FRA_air_force = {
+	icon = GFX_idea_fra_french_air_force 
+	custom_modifier_tooltip = FRA_air_force_tt
+	air_accidents_factor = FRA_air_force_air_accidents_factor
+	air_manpower_requirement_factor = FRA_air_force_air_manpower_requirement_factor
+	air_mission_efficiency = FRA_air_force_air_mission_efficiency
+	air_training_xp_gain_factor = FRA_air_force_air_training_xp_gain_factor
+	experience_gain_air_factor = FRA_air_force_experience_gain_air_factor
+	air_equipment_upgrade_xp_cost = FRA_air_force_air_equipment_upgrade_xp_cost
+	air_superiority_detect_factor = FRA_air_force_air_superiority_detect_factor
+	air_cas_efficiency = FRA_air_force_air_cas_efficiency
+	air_cas_present_factor = FRA_air_force_air_cas_present_factor
+	air_ace_generation_chance_factor = FRA_air_force_air_ace_generation_chance_factor
+	air_agility_factor = FRA_air_force_air_agility_factor
+	sp_air_helicopter_speed_factor = FRA_air_force_sp_air_helicopter_speed_factor
+	air_range_factor = FRA_air_force_air_range_factor
+}
+
+### State Scope ###
+
+FRA_army_training_area = {
+	icon = GFX_decision_generic_intelligence_operation 
+	attrition = 0.15 
+}
+
+Self_sufficient_oasis = {
+	icon = GFX_modifiers_generic_supply
+	local_supplies_for_controller = 1.00
+	attrition_for_controller = -0.30
+}
+
+Sahara_HighWay = {
+	icon = GFX_modifiers_generic_supply 
+	attrition_for_controller = -0.20 
+	supply_factor = 0.25 
+	local_supplies_for_controller = 0.20 
+	army_speed_factor_for_controller = 0.45
+}
+
+FRA_oversea_land = {
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense 
+	local_building_slots = 3
+	local_building_slots_factor = 0.50
+	local_resources_factor = 0.10
+	non_core_manpower = 0.20
+	resistance_activity = -0.75
+	resistance_target = -0.75
+}
+
+FRA_capital_of_FEESRI_modifier = { ## state modifier ##
+	icon = GFX_idea_fra_Fontaine_Energy_Engineering_Science_Research_Institute 
+	state_resources_factor = COF_state_resources_factor
+	local_manpower = COF_local_manpower
+	local_building_slots_factor = COF_local_building_slots_factor 
+	state_production_speed_buildings_factor = COF_state_production_speed_buildings_factor
+}
+
+FRA_total_machinerizd_district = {
+	icon = GFX_idea_fra_total_machinerizd_district 
+	state_resources_factor = COF_state_resources_factor
+	local_manpower = COF_local_manpower
+	state_production_speed_buildings_factor = COF_state_production_speed_buildings_factor
+}
+
+FRA_algeria_resistance_organization = {
+	icon = GFX_idea_fra_algeria_resistance_organization 
+	remove_trigger = {
+		if = {
+			limit = {
+				ALG = {
+					is_subject = no 
+				}
+			}
+			is_controlled_by = ALG 
+		} 
+	}
+	attrition_for_controller = FRA_algeria_resistance_organization_attrition_for_controller
+	compliance_growth = FRA_algeria_resistance_organization_compliance_growth
+	local_factories = FRA_algeria_resistance_organization_local_factories
+	local_manpower = FRA_algeria_resistance_organization_local_manpower
+	local_resources = FRA_algeria_resistance_organization_local_resources
+	local_supplies_for_controller = FRA_algeria_resistance_organization_local_supplies_for_controller
+}
+
+FRA_landlord_resistance = {
+	icon = GFX_modifiers_generic_fascist_corporatism 
+	local_supplies = -0.25 
+	local_factories = -0.10 
+	local_resources_factor = -0.20 
+	local_manpower = -0.15
+	enemy_local_supplies = 0.40 
+	attrition = 0.05
+}
+
+FRA_strike_area = {
+	icon = GFX_idea_ICE_general_strike 
+	remove_trigger = {
+		has_government = communism 
+	}
+	local_factories = -0.75 
+	local_manpower = -0.25 
+	local_resources = -0.5 
+}
+
+FRA_aviation_industry_centre = {
+	icon = GFX_modifier_fra_aviation_industry 
+	state_resources_aluminium_factor = 0.40 
+	state_production_speed_buildings_factor = 0.10
+	local_manpower = -0.05 
+	local_building_slots = 3 
+}
+
+FRA_Saar_Offensive = {
+	icon = GFX_modifiers_generic_military_plans 
+	breakthrough_factor = 0.10
+	army_armor_attack_factor = 0.10 
+	local_supplies_for_controller = 0.15 
+}
+
+FRA_Ruhrgebiet_Offensive = { 
+	icon = GFX_modifiers_generic_military_plans 
+	breakthrough_factor = 0.05
+	army_armor_attack_factor = 0.05
+	industry_air_damage_factor = -0.25 
+	local_factories = 0.10  
+	local_supplies_for_controller = 0.15 
+}
+
+FRA_Flamande_Offensive = {
+	icon = GFX_modifiers_generic_military_plans 
+	breakthrough_factor = 0.05
+	army_speed_factor_for_controller = 0.20 
+	local_supplies_for_controller = 0.15 
+}
+
+FRA_north_defense = {
+	icon = GFX_modifiers_generic_military_plans 
+	enemy_army_speed_factor = -0.15
+	modifier_army_sub_unit_infantry_defence_factor = 0.10
+	army_artillery_defence_factor = 0.15
+	army_armor_defence_factor = 0.10
+}
+
+FRA_fontaine_blitzkrieg = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	terrain_penalty_reduction = 0.45 
+	modifier_army_sub_unit_mountaineers_attack_factor = 0.10 
+	modifier_army_sub_unit_mountaineers_defence_factor = 0.15
+	army_speed_factor = 0.20 
+	attrition = -0.35 
+	truck_attrition_factor = -0.40 
+}
+
+FRA_alps_blitzkrieg = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	terrain_penalty_reduction = 0.25 
+	army_attack_speed_factor = 0.10
+	army_speed_factor = 0.10 
+}
+
+FRA_ukraine_offensive = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	army_armor_attack_factor = 0.10 
+	army_armor_speed_factor = 0.10 
+	supply_factor = 0.15 
+}
+
+FRA_centre_russia_offensive = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	army_armor_attack_factor = 0.05 
+	army_armor_speed_factor = 0.10 
+	supply_factor = 0.10 
+	terrain_penalty_reduction = 0.15 
+}
+
+FRA_north_russia_offensive = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	winter_attrition_factor = -0.15
+	truck_attrition_factor = -0.20 
+	supply_factor = 0.10 
+	terrain_penalty_reduction = 0.15 
+}
+
+FRA_south_russia_offensive = {
+	icon = GFX_modifiers_GER_blitzkrieg 
+	no_supply_grace = 36 
+	supply_factor = 0.10 
+	terrain_penalty_reduction = 0.15 
+}

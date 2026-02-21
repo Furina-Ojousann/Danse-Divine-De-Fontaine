@@ -1,0 +1,1184 @@
+Expanded_Debug_Categories = {
+	EDC_show_polity = {
+		visible = {
+			not = { has_country_flag = edc_show_polity }
+		}
+		complete_effect = {
+			set_country_flag = edc_show_polity 
+		}
+	}
+	EDC_hide_polity = {
+		visible = {
+			has_country_flag = edc_show_polity 
+		}
+		complete_effect = {
+			clr_country_flag = edc_show_polity 
+		}
+	}
+	EDC_change_to_monarchy = {
+		visible = {
+			not = { has_idea = polity_monarchy }
+			has_country_flag = edc_show_polity 
+		}
+		complete_effect = {
+			add_ideas = polity_monarchy 
+		}
+	}
+	EDC_change_to_republic = {
+		visible = {
+			not = { has_idea = polity_republic }
+			has_country_flag = edc_show_polity 
+		}
+		complete_effect = {
+			add_ideas = polity_republic
+		}
+	}
+
+	EDC_show_regierungssystem = {
+		visible = {
+			not = { has_country_flag = edc_show_regierungssystem }
+		}
+		complete_effect = {
+			set_country_flag = edc_show_regierungssystem
+		}
+	}
+	EDC_hide_regierungssystem = {
+		visible = {
+			has_country_flag = edc_show_regierungssystem
+		}
+		complete_effect = {
+			clr_country_flag = edc_show_regierungssystem 
+		}
+	}
+	EDC_change_to_presidential = {
+		visible = {
+			not = { has_idea = regierungssystem_presidential }
+			has_country_flag = edc_show_regierungssystem 
+		}
+		complete_effect = {
+			add_ideas = regierungssystem_presidential 
+		}
+	}
+	EDC_change_to_parliamentary = {
+		visible = {
+			not = { has_idea = regierungssystem_parliamentary }
+			has_country_flag = edc_show_regierungssystem 
+		}
+		complete_effect = {
+			add_ideas = regierungssystem_parliamentary
+		}
+	}
+	EDC_change_to_civilian_dictatorship = {
+		visible = {
+			not = { has_idea = regierungssystem_civilian_dictatorship }
+			has_country_flag = edc_show_regierungssystem 
+		}
+		complete_effect = {
+			add_ideas = regierungssystem_civilian_dictatorship
+		}
+	}
+	EDC_change_to_military_dictatorship = {
+		visible = {
+			not = { has_idea = regierungssystem_military_dictatorship }
+			has_country_flag = edc_show_regierungssystem 
+		}
+		complete_effect = {
+			add_ideas = regierungssystem_military_dictatorship
+		}
+	}
+	EDC_change_to_monarchy_dictatorship = {
+		visible = {
+			not = { has_idea = regierungssystem_monarchy_dictatorship }
+			has_country_flag = edc_show_regierungssystem 
+		}
+		complete_effect = {
+			add_ideas = regierungssystem_monarchy_dictatorship
+		}
+	}
+
+	EDC_hide_generic_decision_categories = {
+		icon = GFX_decision_generic_arrest 
+		visible = {
+			not = { has_country_flag = edc_hide_generic_decision_categories }
+		}
+		complete_effect = {
+			custom_effect_tooltip = EDC_hide_generic_decision_categories_tt
+			set_country_flag = edc_hide_generic_decision_categories
+		}
+	}
+
+	EDC_show_generic_decision_categories = {
+		icon = GFX_decision_generic_arrest
+		visible = {
+			has_country_flag = edc_hide_generic_decision_categories
+		}
+		complete_effect = {
+			custom_effect_tooltip = EDC_show_generic_decision_categories_tt
+			clr_country_flag = edc_hide_generic_decision_categories 
+		}
+	}
+}
+
+generic_peace_conference = {
+	peace_ger_usa_german_better = { ##针对欧洲国家的优势和平
+		icon = GFX_decision_FIN_stop_motti_tactics
+		allowed = {
+			not = {
+				original_tag = USA 
+				original_tag = ENG 
+			}
+			capital_scope = {
+				is_on_continent = europe 
+			}
+		}
+		visible = {
+			is_faction_leader = yes 
+			USA = { has_war_with = ROOT }
+			ENG = { has_war_with = ROOT }
+			FRA = { has_capitulated = yes }
+			surrender_progress < 0.01
+			not = {
+				any_state = {
+					OR = {
+						is_core_of = ITA 
+						is_core_of = FRA 
+						is_core_of = HOL 
+						is_core_of = BEL 
+					}
+					controller = {
+						has_war_with = ROOT 
+					}
+				}
+			}
+		}
+		available = {
+			is_faction_leader = yes 
+			USA = { has_war_with = ROOT }
+			ENG = { has_war_with = ROOT }
+			FRA = { has_capitulated = yes }
+			surrender_progress < 0.01
+			not = {
+				any_state = {
+					OR = {
+						is_core_of = ITA 
+						is_core_of = FRA 
+						is_core_of = HOL 
+						is_core_of = BEL 
+					}
+					controller = {
+						has_war_with = ROOT 
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100 
+			modifier = {
+				any_state = {
+					is_core_of = USA 
+					is_controlled_by = ROOT 
+				}
+				factor = 0 
+			}
+			modifier = {
+				date < 1944.1.1 
+				factor = 0 
+			}
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_ally = yes 
+					OWNER = {
+						has_war_with = ROOT 
+						any_allied_country = {
+							is_faction_leader = yes 
+							or = {
+								original_tag = USA 
+								original_tag = ENG 
+							}
+						}
+					}
+				}
+				transfer_state_to = ROOT 
+			}
+			random_enemy_country = {
+				limit = {
+					is_faction_leader = yes 
+					has_war_with = ROOT 
+					or = {
+						original_tag = USA 
+						original_tag = ENG 
+					}
+				}
+				white_peace = ROOT 
+			}
+		}
+	}
+
+	peace_europe_draw = { #针对欧洲国家的平局和平会议
+		icon = GFX_decision_FIN_stop_motti_tactics
+		allowed = {
+			not = {
+				original_tag = USA 
+				original_tag = ENG 
+			}
+			capital_scope = {
+				is_on_continent = europe 
+			}
+		}
+		visible = {
+			is_faction_leader = yes 
+			USA = { has_war_with = ROOT }
+			ENG = { has_war_with = ROOT }
+			surrender_progress < 0.05
+			16 = {
+				not = { is_controlled_by = ROOT }
+			}
+			any_state = {
+				or = {
+					is_core_of = FRA 
+					is_core_of = ITA 
+					is_core_of = BEL 
+					is_core_of = HOL 
+				}
+				or = {
+					is_controlled_by = USA 
+					is_controlled_by = ENG 
+				}
+			}
+		}
+		available = {
+			is_faction_leader = yes 
+			USA = { has_war_with = ROOT }
+			ENG = { has_war_with = ROOT }
+			surrender_progress < 0.05
+			16 = {
+				not = { is_controlled_by = ROOT }
+			}
+			any_state = {
+				or = {
+					is_core_of = FRA 
+					is_core_of = ITA 
+					is_core_of = BEL 
+					is_core_of = HOL 
+				}
+				or = {
+					is_controlled_by = USA 
+					is_controlled_by = ENG 
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100 
+			modifier = {
+				date < 1944.1.1
+				factor = 0 
+			}
+		}
+		complete_effect = {
+			random_enemy_country = {
+				limit = {
+					is_faction_leader = yes 
+					has_war_with = ROOT 
+					or = {
+						original_tag = USA 
+						original_tag = ENG 
+					}
+				}
+				white_peace = ROOT 
+			}
+		}
+	}
+}
+
+political_actions = {
+	express_neutrality = {
+		icon = GFX_decision_generic_arrest
+		visible = {
+			not = {
+				has_government = neutrality 
+			}
+		}
+		available = {
+			neutrality > 0.1 
+		}
+		days_remove = 120 
+		modifier = {
+			neutrality_drift = -0.1
+			stability_weekly = 0.007
+		}
+		cost = 50 
+		complete_effect = {
+			add_stability = -0.1 
+		}
+		ai_will_do = {
+			base = 3 
+			modifier = {
+				has_government = democratic
+				neutrality > 0.15 
+				add = 2 
+			}
+			modifier = {
+				has_government = communism 
+				factor = 4 
+			}
+		}
+		ai_will_do = {
+			base = 5 
+			modifier = {
+				political_power_daily > 0.74 
+				factor = 3
+			}
+			modifier = {
+				political_power_daily < 0.5 
+				factor = 0.2 
+			}
+		}
+	}
+
+	gain_people_s_support = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		days_remove = 120 
+		modifier = {
+			political_power_cost = 0.15
+		}
+		cost = 25 
+		days_re_enable = 30 
+		remove_effect = {
+			add_stability = 0.02 
+			if = {
+				limit = { 
+					has_government = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05 
+				}
+			}
+			if = {
+				limit = { 
+					has_government = communism
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05 
+				}
+			}
+			if = {
+				limit = { 
+					has_government = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.05 
+				}
+			}
+			if = {
+				limit = { 
+					has_government = fascism 
+				}
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.05 
+				}
+			}
+		}
+		ai_will_do = {
+			base = 5 
+			modifier = {
+				political_power_daily > 0.74 
+				factor = 3
+			}
+			modifier = {
+				political_power_daily < 0.5 
+				factor = 0.2 
+			}
+		}
+	}
+
+	expand_the_tech_cash = {
+		icon = GFX_decision_generic_welfare
+		days_remove = 365 
+		available = {
+			political_power_daily > 0.25 
+		}
+		cancel_trigger = {
+			political_power_daily < 0.25 
+		}
+		cost = 15 
+		modifier = {
+			research_speed_factor = 0.075 
+			political_power_cost = 0.25 
+			consumer_goods_factor = 0.1 
+		}
+		ai_will_do = {
+			base = 5 
+			modifier = {
+				political_power_daily > 0.74 
+				factor = 3
+			}
+			modifier = {
+				political_power_daily < 0.5 
+				factor = 0.2 
+			}
+		}
+	}
+
+	focus_on_industry = {
+		icon = GFX_decision_generic_construction 
+		days_remove = 365 
+		available = {
+			political_power_daily > 0.25
+		}
+		cancel_trigger = {
+			political_power_daily < 0.25 
+		}
+		cost = 50 
+		modifier = {
+			production_speed_buildings_factor = 0.1 
+			stability_factor = -0.02
+			political_power_cost = 0.25 
+		}
+		ai_will_do = {
+			base = 5 
+			modifier = {
+				political_power_daily > 0.74 
+				factor = 3
+			}
+			modifier = {
+				political_power_daily < 0.5 
+				factor = 0.2 
+			}
+		}
+	}
+}
+
+foreign_influence = {
+	generic_specialize_subject = {
+		icon = GFX_decision_eng_trade_unions_demand 
+		available = {
+			is_ai = no 
+		}
+		target_trigger = {
+			FROM = {
+				is_ai = yes 
+				is_subject_of = ROOT 
+				has_completed_focus = generic_you_can_load_focus_tree 
+			}
+		}
+		complete_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_completed_focus = generic_the_task_from_overload 
+					}
+					uncomplete_national_focus = {
+						focus = generic_the_task_from_overload 
+					}
+				}
+				complete_national_focus = generic_the_task_from_overload 
+			}
+		}
+	}
+}
+
+debug_decisions = {
+	a_stranger = {
+		visible = {
+			is_ai = no 
+		}
+		fire_only_once = yes 
+		complete_effect = {
+			recruit_character = Satono
+		}
+	}
+	Optimize_frame_rate = {
+		visible = {
+			is_ai = no 
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					is_ai = yes 
+					is_major = no 
+					num_of_factories < 30 
+					not = {
+						tag = CHI 
+						tag = PRC 
+						tag = VIC 
+						tag = FRA 
+						tag = MEX 
+						tag = NOR 
+						tag = FIN
+						tag = SWE 
+						tag = BRA 
+						tag = ARG 
+						tag = MAN 
+						tag = SPR 
+						tag = SPA 
+						tag = SPD 
+						tag = SPB 
+						tag = SPC 
+						tag = HOL 
+						tag = BEL 
+						tag = LUX 
+						tag = AUS 
+						tag = CZE 
+						tag = HUN 
+						tag = GRE 
+						tag = TUR 
+						tag = YUG 
+						tag = BUL 
+						tag = POL 
+					}
+				}
+				add_ideas = ai_limit 
+			}
+		}
+	}
+	SOV_western_russian_war = {
+		fire_only_once = yes 
+		allowed = {
+			original_tag = SOV 
+		}
+		complete_effect = {
+			SOV = {
+				release = UKR 
+				release = BLR 
+				release = GEO 
+				annex_country = {
+					target = TAN 
+				}
+			}
+			BLR = {
+				transfer_state = 94
+				transfer_state = 95 
+				transfer_state = 96 
+				transfer_state = 784 
+				annex_country = {
+					target = LIT 
+				}
+				annex_country = {
+					target = LAT 
+				}
+				annex_country = {
+					target = EST 
+				}
+				every_owned_state = {
+					add_core_of = BLR 
+				}
+			}
+			RMC = {
+				transfer_state = 208
+				transfer_state = 209 
+				transfer_state = 210 
+				transfer_state = 195 
+				transfer_state = 244 
+				transfer_state = 263
+				transfer_state = 246 
+				transfer_state = 264 
+				transfer_state = 247
+				transfer_state = 248
+				transfer_state = 242
+				transfer_state = 219 
+				transfer_state = 253
+				transfer_state = 243
+				transfer_state = 912 
+				transfer_state = 401 
+				transfer_state = 224
+				transfer_state = 205 
+				transfer_state = 223
+				transfer_state = 222
+				transfer_state = 220
+				transfer_state = 254
+				transfer_state = 258
+				transfer_state = 260
+				transfer_state = 257
+				transfer_state = 237
+				transfer_state = 239
+				transfer_state = 265
+				transfer_state = 245
+				transfer_state = 829
+				transfer_state = 255 
+				transfer_state = 217
+				transfer_state = 241 
+				transfer_state = 236
+				transfer_state = 238
+				every_owned_state = {
+					add_core_of = RMC 
+				}
+			}
+			GEO = {
+				transfer_state = 229 
+				transfer_state = 232 
+				transfer_state = 821
+				transfer_state = 828 
+				transfer_state = 827 
+				transfer_state = 233 
+				transfer_state = 234 
+				transfer_state = 235 
+				every_owned_state = {
+					add_core_of = GEO 
+				}
+			}
+			JAP = {
+				transfer_state = 655 
+			}
+			MAN = {
+				transfer_state = 408
+				transfer_state = 409 
+				transfer_state = 560
+				transfer_state = 561 
+				transfer_state = 657 
+			}
+			MEN = {
+				transfer_state = 621
+				transfer_state = 746
+				transfer_state = 817
+				transfer_state = 819 
+
+			}
+			TUR = {
+				transfer_state = 230 
+			}
+			FIN = {
+				transfer_state = 213
+				transfer_state = 215
+				transfer_state = 216 
+			}
+			UKR = {
+				transfer_state = 93 
+				transfer_state = 240
+				transfer_state = 218 
+			}
+			SLO = {
+				transfer_state = 71 
+				transfer_state = 70 
+				add_state_core = 70 
+				add_state_core = 71 
+			}
+			HUN = {
+				transfer_state = 664
+				transfer_state = 73 
+				transfer_state = 45 
+			}
+			ROM = {
+				transfer_state = 192 
+				transfer_state = 198 
+				transfer_state = 834 
+			}
+			BUL = {
+				transfer_state = 106
+				transfer_state = 803 
+			}
+			CRO = {
+				transfer_state = 109
+				transfer_state = 104
+				transfer_state = 804 
+			}
+			ITA = {
+				transfer_state = 103 
+				transfer_state = 853 
+				transfer_state = 105 
+				transfer_state = 802 
+				annex_country = {
+					target = ALB 
+				}
+				set_autonomy = {
+					target = CRO 
+					autonomy_state = autonomy_satellite 
+				}
+			}
+			SER = {
+				annex_country = {
+					target = YUG 
+					transfer_troops = yes 
+				}
+			}
+			GER = {
+				set_cosmetic_tag = GER_greater_german_reich 
+				set_faction_name = "团结协定"
+				complete_national_focus = GER_remilitarize_the_rhineland 
+				annex_country = {
+					target = AUS 
+					transfer_troops = yes 
+				}
+				transfer_state = 102 
+				transfer_state = 69 
+				transfer_state = 74 
+				transfer_state = 72 
+				transfer_state = 762
+				transfer_state = 86 
+				transfer_state = 87 
+				transfer_state = 85 
+				transfer_state = 807 
+				transfer_state = 97 
+				transfer_state = 98 
+				transfer_state = 188 
+				transfer_state = 8 
+				transfer_state = 28 
+				transfer_state = 976 
+				transfer_state = 102 
+				every_owned_state = {
+					add_core_of = GER 
+				}
+				transfer_state = 196 
+				transfer_state = 137 
+				set_autonomy = {
+					target = CZE 
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = SLO  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = UKR  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = BLR  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = RMC  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = GEO  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = SER  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+				set_autonomy = {
+					target = POL  
+					autonomy_state = autonomy_reichskommissariat 
+				}
+			}
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+	}
+}
+
+Formable_Italy = {
+	form_italy = {
+		icon = GFX_decision_ITA_reorganize_ascari 
+		available = {
+			is_subject = no 
+			158 = { is_controlled_by = ROOT }
+			159 = { is_controlled_by = ROOT }
+			160 = { is_controlled_by = ROOT }
+			161 = { is_controlled_by = ROOT }
+			162 = { is_controlled_by = ROOT }
+			2 = { is_controlled_by = ROOT }
+			1037 = { is_controlled_by = ROOT }
+			1038 = { is_controlled_by = ROOT }
+			157 = { is_controlled_by = ROOT }
+			117 = { is_controlled_by = ROOT }
+			849 = { is_controlled_by = ROOT }
+			156 = { is_controlled_by = ROOT }
+			115 = { is_controlled_by = ROOT }
+			114 = { is_controlled_by = ROOT }
+		}
+		complete_effect = {
+			set_global_flag = italy_has_reunitied
+			set_cosmetic_tag = ITA_united
+			every_state = {
+				limit = {
+					or = {
+						state = 158
+						state = 159
+						state = 160
+						state = 161
+						state = 162
+						state = 2
+						state = 1037
+						state = 1038 
+						state = 157
+						state = 117 
+						state = 849
+						state = 156
+						state = 115
+						state = 114
+					}
+				}
+				add_core_of = ROOT 
+			}
+		}
+	}
+
+	formable_ita_south_tyrol = {
+		icon = GFX_decision_ITA_reorganize_ascari 
+		visible = {
+			has_global_flag = italy_has_reunitied 
+		}
+		available = {
+			39 = { is_controlled_by = ROOT }
+			850 = { is_controlled_by = ROOT }
+		}
+		complete_effect = {
+			39 = { add_core_of = ROOT }
+			850 = { add_core_of = ROOT }
+		}
+	}
+
+	formable_ita_coast_area = {
+		visible = {
+			has_global_flag = italy_has_reunitied 
+		}
+		available = {
+			736 = { is_controlled_by = ROOT }
+			852 = { is_controlled_by = ROOT }
+			103 = { is_controlled_by = ROOT }
+			163 = { is_controlled_by = ROOT }
+		}
+		complete_effect = {
+			736 = { add_core_of = ROOT }
+			852 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			163 = { add_core_of = ROOT }
+		}
+	}
+
+	formable_ita_get_france_area = {
+		visible = {
+			has_global_flag = italy_has_reunitied 
+		}
+		available = {
+			735 = { is_controlled_by = ROOT }
+			1 =   { is_controlled_by = ROOT }
+		}
+		complete_effect = {
+			735 = { add_core_of = ROOT }
+			1 =   { add_core_of = ROOT }
+		}
+	}
+
+	formable_ita_colony = {
+		visible = {
+			has_global_flag = italy_has_reunitied 
+		}
+		complete_effect = {
+			add_threat = 3 
+			add_state_claim = 458
+			add_state_claim = 665
+			add_state_claim = 116
+			every_state = {
+				limit = {
+					is_core_of = LBA 
+				}
+				add_claim_by = ROOT 
+			}
+		}
+	}
+}
+
+formable_balkans = {
+	unity_balkans = {
+		icon = GFX_decision_CHL_grant_full_rights_to_the_mapuche 
+		fire_only_once = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = unity_balkans_trigger 
+				controls_state = 102
+				controls_state = 103
+				controls_state = 104
+				controls_state = 105
+				controls_state = 107
+				controls_state = 108
+				controls_state = 109
+				controls_state = 1076
+				controls_state = 853
+				controls_state = 804
+				controls_state = 802
+				controls_state = 970
+				controls_state = 106
+				controls_state = 803
+				controls_state = 764
+				controls_state = 163
+				controls_state = 81
+				controls_state = 82
+				controls_state = 83
+				controls_state = 84
+				controls_state = 76
+				controls_state = 77
+				controls_state = 78
+				controls_state = 79
+				controls_state = 80
+				controls_state = 56
+				controls_state = 1088
+				controls_state = 971
+				controls_state = 766
+				controls_state = 211
+				controls_state = 212
+				controls_state = 48
+				controls_state = 801
+				controls_state = 44
+				controls_state = 805
+				controls_state = 934
+				controls_state = 47
+				controls_state = 182
+				controls_state = 184
+				controls_state = 164
+				controls_state = 185
+				controls_state = 186
+				controls_state = 731
+				controls_state = 187
+				controls_state = 45
+			}
+			
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+				state = 102
+			    state = 103
+			    state = 104
+			    state = 105
+			    state = 107
+			    state = 108
+			    state = 109
+			    state = 1076
+			    state = 853
+			    state = 804
+			    state = 802
+			    state = 970
+			    state = 106
+			    state = 803
+			    state = 764
+			    state = 163
+			    state = 81
+			    state = 82
+			    state = 83
+			    state = 84
+			    state = 76
+			    state = 77
+			    state = 78
+			    state = 79
+			    state = 80
+				state = 45
+			    state = 46
+			    state = 1088
+			    state = 971
+			    state = 766
+			    state = 211
+			    state = 212
+			    state = 48
+			    state = 801
+			    state = 44
+			    state = 805
+			    state = 934
+			    state = 47
+			    state = 182
+			    state = 184
+			    state = 164
+			    state = 185
+			    state = 186
+			    state = 731
+			    state = 187
+				}
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = UBF_united_balkan_federation
+			custom_effect_tooltip = unity_balkans_tt
+			add_state_core = 102
+			add_state_core = 103
+			add_state_core = 104
+			add_state_core = 105
+			add_state_core = 107
+			add_state_core = 108
+			add_state_core = 109
+			add_state_core = 1076
+			add_state_core = 853
+			add_state_core = 804
+			add_state_core = 45
+			add_state_core = 802
+			add_state_core = 970
+			add_state_core = 106
+			add_state_core = 803
+			add_state_core = 764
+			add_state_core = 163
+			add_state_core = 81
+			add_state_core = 82
+			add_state_core = 83
+			add_state_core = 84
+			add_state_core = 76
+			add_state_core = 77
+			add_state_core = 78
+			add_state_core = 79
+			add_state_core = 80
+			add_state_core = 56
+			add_state_core = 1088
+			add_state_core = 971
+			add_state_core = 766
+			add_state_core = 211
+			add_state_core = 212
+			add_state_core = 48
+			add_state_core = 801
+			add_state_core = 44
+			add_state_core = 805
+			add_state_core = 934
+			add_state_core = 47
+			add_state_core = 182
+			add_state_core = 184
+			add_state_core = 164
+			add_state_core = 185
+			add_state_core = 186
+			add_state_core = 731
+			add_state_core = 187
+		}
+	}
+}
+
+war_measures = {
+	women_in_the_workforce = {
+
+		icon = generic_industry
+
+        allowed = {
+            always = yes
+        }
+
+        available = {
+            has_war = yes
+            if = {
+				limit = {
+					NOT = { original_tag = GER }
+				}
+        		has_idea = tot_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					original_tag = GER
+				}
+				OR = {
+        			has_idea = tot_economic_mobilisation
+					has_idea = totaler_krieg_economy
+				}
+				NOT = { has_completed_focus = GER_womens_rights_and_equality }
+			}
+            OR = {
+                AND = {
+                    has_government = democratic
+                    has_war_support > 0.79
+                }
+                AND = {
+                    has_government = communism
+                    has_war_support > 0.79
+                }
+                AND = {
+                    has_government = fascism
+                    OR = {
+                        has_war_support > 0.89
+                        surrender_progress > 0
+                    }
+                }
+                AND = {
+                    has_government = neutrality
+                    has_war_support > 0.84
+                    has_stability > 0.7
+                }
+            }
+        }
+        visible = {
+            has_war = yes
+            if = {
+            	limit = {
+            		original_tag = GER
+            	}
+            	NOT = { has_completed_focus = GER_womens_rights_and_equality }
+            }
+			not = { has_idea = total_equality }
+        }
+        cost = 100
+        days_remove = -1
+        remove_trigger = {
+            if = {
+            	limit = {
+            		original_tag = GER
+            	}
+        		OR = {
+        			has_war = no
+        			AND = {
+        				NOT = { has_idea = tot_economic_mobilisation }
+        				NOT = { has_idea = totaler_krieg_economy }
+        			}
+        			has_completed_focus = GER_womens_rights_and_equality
+        		}
+            }
+        	else = {
+	        	OR = {
+	            	has_war = no
+	            	NOT = { has_idea = tot_economic_mobilisation }
+	            }
+        	}
+        }
+        modifier = {
+            conscription = 0.03
+            stability_factor = -0.05
+        }
+        ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				has_manpower < 100000
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					tag = CAN
+				}
+				country_event = { id = canada_vanilla.1 hours = 6 } # Ronnie the Bren Gun Girl
+			}
+        }
+   }
+}
+
+SOV_paranoia_system = {
+	SPS_boost_union_democracy = {
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign 
+		cost = 30
+		days_re_enable = 105 
+		complete_effect = {
+			SOV_paranoia_medium_decrease_effect = yes 
+		}
+	}
+
+	SPS_defense_the_party_leadership = {
+		icon = GFX_decision_SOV_place_hq 
+		days_re_enable = 70
+		days_remove = 7 
+		modifier = {
+			political_power_cost = 1 
+		}
+		complete_effect = {
+			SOV_paranoia_low_decrease_effect = yes 
+		}
+	}
+
+	SPS_persecute_low_nobility = {
+		icon = GFX_decision_POL_organize_strike_two 
+		days_re_enable = 140 
+		cost = 25 
+		complete_effect = {
+			add_stability = -0.025
+			SOV_paranoia_low_increase_effect = yes 
+		}
+		days_remove = 14 
+		remove_effect = {
+			add_stability = 0.05 
+			SOV_paranoia_high_decrease_effect = yes 
+		}
+	}
+}

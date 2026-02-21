@@ -1,0 +1,588 @@
+ideas = {
+
+	polity = {
+
+		law = yes 
+		use_list_view = yes 
+
+		polity_monarchy = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			#default = yes 
+			available = {
+				not = { has_government = communism } 
+
+			}
+			modifier = {
+				stability_factor = 0.02 
+				political_power_factor = -0.01
+			}
+		}
+
+		polity_republic = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			default = yes 
+			modifier = {
+				stability_factor = -0.01
+				political_power_factor = 0.02 
+			}
+		}
+
+	}
+
+	regierungssystem = {
+
+		law = yes 
+		use_list_view = yes 
+
+		null = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_country_leader_ideology = anarchism 
+			}
+			visible = {
+				has_country_leader_ideology = anarchism 
+			}
+		}
+
+		regierungssystem_presidential = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_idea = polity_republic 
+				OR = {
+					has_government = democratic 
+					has_government = liberalism_temp 
+					has_government = conservatism_temp 
+					has_country_leader_ideology = national_conversatism 
+					has_country_leader_ideology = moderatism
+				}
+			}
+			modifier = {
+				political_power_factor = 0.10 
+			}
+		}
+
+		regierungssystem_parliamentary = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_idea = polity_republic 
+				OR = {
+					has_government = democratic 
+					has_government = communism 
+					has_government = liberalism_temp 
+					has_government = conservatism_temp 
+					has_country_leader_ideology = national_conversatism 
+					has_country_leader_ideology = moderatism
+				}
+			}
+			modifier = {
+				party_popularity_stability_factor = 0.10 
+			}
+		}
+
+		regierungssystem_civilian_dictatorship = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_government = fascism 
+				OR = {
+					has_country_leader_ideology = oligarchism 
+					has_country_leader_ideology = national_corporatism 
+					has_country_leader_ideology = furinaism 
+					has_country_leader_ideology = emperor_fascism 
+					has_country_leader_ideology = centrism 
+				}
+			}
+			modifier = {
+				economy_cost_factor = -0.10 
+				mobilization_laws_cost_factor = -0.10
+				trade_laws_cost_factor = -0.10 
+				political_advisor_cost_factor = -0.10 
+			}
+		}
+
+		regierungssystem_military_dictatorship = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_idea = polity_republic 
+				OR = {
+					has_country_leader_ideology = junta
+					has_country_leader_ideology = japan_militarism_ideology 
+					has_country_leader_ideology = xunzheng
+					has_country_leader_ideology = despotism 
+					has_country_leader_ideology = centrism 
+				}
+			}
+			modifier = {
+				party_popularity_stability_factor = -0.15 
+				army_chief_cost_factor = -1 
+				navy_chief_cost_factor = -1 
+				air_chief_cost_factor = -1
+				high_command_cost_factor = -1 
+				theorist_cost_factor = -1 
+			}
+		}
+
+		regierungssystem_monarchy_dictatorship = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			default = yes 
+			available = {
+				has_idea = polity_monarchy 
+				OR = {
+					has_country_leader_ideology = despotism 
+					has_country_leader_ideology = bonapartheism
+				}
+			}
+			modifier = {
+				party_popularity_stability_factor = -0.15 
+				army_chief_cost_factor = -1 
+				navy_chief_cost_factor = -1 
+				air_chief_cost_factor = -1
+				high_command_cost_factor = -1 
+				theorist_cost_factor = -1 
+			}
+		}
+
+	}
+
+	economy_model = {
+
+		law = yes 
+		use_list_view = yes 
+
+		economic_anarchism = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				OR = {
+					has_country_leader_ideology = anarchism
+					has_country_leader_ideology = anarchist_communism 
+				}
+			}
+			modifier = {
+				mobilization_speed = -0.50 
+				conscription_factor = 0.25
+				global_building_slots_factor = 0.20 
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15 
+				production_factory_max_efficiency_factor = -0.10 
+				production_factory_efficiency_gain_factor = 0.25
+				political_power_gain = -0.25 
+			}
+		}
+
+		economic_corporatism = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				OR = {
+					has_government = fascism 
+					has_country_leader_ideology = national_corporatism 
+					has_country_leader_ideology = national_conversatism 
+					has_country_leader_ideology = japan_militarism_ideology 
+					if = {
+						limit = { 
+							original_tag = FRA 
+							has_country_flag = fra_furina_come_to_france 
+						}
+						has_country_leader_ideology = furinaism 
+					}
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10 
+				consumer_goods_factor = -0.35 
+				industrial_capacity_factory = 0.10 
+				industrial_capacity_dockyard = 0.10 
+				stability_factor = -0.10 
+				war_stability_factor = 0.30 
+				political_power_factor = -0.10 
+			}
+		}
+
+		economic_state_socialism = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				OR = {
+					has_government = communism 
+					AND = {
+						has_government = populist_socialism
+						populist_socialism > 67
+					}
+					AND = {
+						OR = {
+							has_country_leader_ideology = socialism 
+							has_country_leader_ideology = labour_zionism 
+						}
+						threat > 0.79
+						has_war_support > 0.89 
+						OR = {
+							has_idea = tot_economic_mobilisation
+							has_idea = war_economy 
+						}
+					}
+				}
+			}
+			modifier = {
+				political_power_factor = -0.05 
+				consumer_goods_factor = 0.10 
+				production_factory_max_efficiency_factor = 0.10 
+				production_speed_buildings_factor = 0.10 
+				conversion_cost_civ_to_mil_factor = -0.50 
+				conversion_cost_mil_to_civ_factor = -0.50
+				war_stability_factor = 0.20 
+				mobilization_speed = 0.25 
+			}
+		}
+
+		economic_monopoly = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				OR = {
+					has_government = democratic 
+					has_government = liberalism_temp
+					has_government = conservatism_temp 
+					has_government = populist_socialism 
+					has_government = neutrality 
+					has_country_leader_ideology = convertion_socialist 
+				}
+			}
+			modifier = {
+				political_power_factor = -0.05 
+				consumer_goods_factor = 0.10 
+				production_speed_infrastructure_factor = 0.25
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.05 
+				production_factory_max_efficiency_factor = 0.05 
+				production_factory_start_efficiency_factor = 0.20
+				conversion_cost_civ_to_mil_factor = -0.25 
+				conversion_cost_mil_to_civ_factor = -0.25
+			}
+		}
+
+		economic_laissez_faire = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			default = yes 
+			available = {
+				OR = {
+					has_government = democratic 
+					has_government = liberalism_temp
+					has_government = conservatism_temp 
+					#has_government = populist_socialism 
+					has_government = neutrality 
+				}
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.25 
+				conversion_cost_mil_to_civ_factor = -0.50 
+				research_speed_factor = 0.03
+				production_speed_industrial_complex_factor = 0.15
+				stability_factor = -0.05 
+			}
+		}
+
+		economic_isolated = {
+			allowed_to_remove = { always = no }
+			removal_cost = -1 
+			available = {
+				has_country_leader_ideology = despotism 
+				has_country_leader_ideology = theocracy 
+			}
+			modifier = {
+				min_export = -0.10 
+				stability_factor = 0.05 
+				research_speed_factor = -0.05 
+				trade_opinion_factor = -0.50 
+			}
+		}
+
+	}
+
+	woman_rights = {
+		law = yes 
+		use_list_view = yes 
+		patriarchy = {
+			available = {
+				OR = {
+					has_government = fascism 
+					has_government = neutrality 
+				}
+				not = {
+					has_country_leader_ideology = anarchism 
+				}
+			}
+			modifier = {
+				political_power_gain = 0.2 
+				stability_factor = 0.05 
+				consumer_goods_factor = -0.10
+				monthly_population = 0.15
+				conscription_factor = -0.05 
+				industrial_capacity_dockyard = -0.05 
+				industrial_capacity_factory = -0.05 
+			}
+		}
+		limit_woman_rights = {
+			default = yes 
+			available = {
+				not = {
+					has_government = communism 
+					has_country_leader_ideology = anarchism 
+				}
+			}
+			modifier = {
+				political_power_gain = 0.05 
+				stability_factor = 0.03 
+				monthly_population = 0.05 
+			}
+		}
+		equality_in_law = {
+			available = {
+				not = { has_government = fascism }
+				not = { has_country_leader_ideology = anarchism }
+			}
+			modifier = {
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.05 
+				conscription_factor = 0.05 
+				industrial_capacity_dockyard = 0.05 
+				industrial_capacity_factory = 0.05 
+			}
+		}
+		total_equality = {
+			available = {
+				if = {
+					limit = {
+						original_tag = FRA
+						has_country_flag = fra_furina_come_to_france
+					}
+					OR = {
+						has_completed_focus = FRA_work_for_furina
+						has_completed_focus = FRA_renew_navia_reform_2
+					}
+				}
+				else = {
+					OR = {
+						has_government = communism 
+						has_country_leader_ideology = liberal_radicalism 
+						has_country_leader_ideology = socialism
+						has_country_leader_ideology = labour_zionism 
+					}
+				}
+				
+			}
+			modifier = {
+				political_power_cost = 0.1 
+				stability_factor = -0.05
+				consumer_goods_factor = 0.1 
+				conscription = 0.03 
+				industrial_capacity_dockyard = 0.1 
+				industrial_capacity_factory = 0.1 
+				custom_modifier_tooltip = total_equality_tt
+			}
+		}
+	}
+
+	national_policy = {
+		law = yes 
+		use_list_view = yes 
+		extreme_nationalism = {
+			available = {
+				or = {
+					has_government = fascism 
+					AND = {
+						has_government = neutrality 
+						not = { has_country_leader_ideology = anarchism }
+						has_war = yes 
+						any_enemy_country = {
+							ic_ratio = {
+								tag = ROOT  
+								ratio = 0.80 
+							}
+							strength_ratio = {
+								tag = ROOT 
+								ratio = 0.80 
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				war_stability_factor = 0.20
+				war_support_factor = 0.10
+				political_power_gain = 0.15
+				non_core_manpower = -0.05 
+				compliance_growth = -0.15 
+				compliance_growth_on_our_occupied_states = -0.25
+			}
+		}
+		nationalism_policy = {
+			available = {
+				not = {
+					has_government = communism 
+					has_country_leader_ideology = anarchism
+				}
+			}
+			modifier = {
+				war_stability_factor = 0.10
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+				compliance_growth = -0.02 
+				non_core_manpower = -0.01 
+				compliance_growth_on_our_occupied_states = -0.15
+			}
+		}
+		comprehensive = {
+			default = yes 
+			available = {
+				not = {
+					has_government = communism 
+					has_government = fascism 
+					has_country_leader_ideology = anarchism 
+				}
+			}
+			modifier = {
+				stability_factor = 0.05
+				war_stability_factor = 0.05 
+				political_power_gain = 0.05 
+				research_speed_factor = 0.03 
+				non_core_manpower = 0.01 
+				subversive_activites_upkeep = 0.05 
+			}
+		}
+		internationalism_policy = {
+			available = {
+				or = {
+					has_government = communism 
+					has_country_leader_ideology = anarchism 
+					has_country_leader_ideology = liberal_radicalism 
+					AND = {
+						has_idea = equality_in_law
+						has_idea = planned_economy 
+					}
+				}
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.20 
+				offensive_war_stability_factor = -0.05 
+				research_speed_factor = 0.05
+				non_core_manpower = 0.03
+				compliance_growth = 0.02
+				subversive_activites_upkeep = -0.25
+			}
+		}
+	}
+
+	labour_law = {
+		use_list_view = yes 
+		law = yes 
+		labour_law_non_exist_labour_law = {
+			picture = FRA_factory_strikes 
+			allowed_to_remove = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15 
+				monthly_population = -0.15
+				consumer_goods_factor = -0.20
+			}
+		}
+		labour_law_low = {
+			picture = generic_intel_bonus 
+			allowed_to_remove = { always = no }
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.05
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				consumer_goods_factor = -0.10 
+			}
+		}
+		labour_law_medium = {
+			picture = generic_production_bonus 
+			allowed_to_remove = { always = no }
+			default = yes 
+		}
+		labour_law_relatively_high = {
+			picture = generic_goods_red_bonus
+			allowed_to_remove = { always = no }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10 
+				production_factory_efficiency_gain_factor = 0.05 
+				stability_factor = 0.05 
+				war_support_factor = 0.05 
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05 
+				consumer_goods_factor = 0.10 
+			}
+		}
+		labour_law_high = {
+			picture = generic_economic_increase 
+			allowed_to_remove = { always = no }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.10
+				stability_factor = 0.15 
+				war_support_factor = 0.10 
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				consumer_goods_factor = 0.20
+				monthly_population = 0.15
+			}
+		}
+
+		FRA_matignon_agreements = {
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = FRA 
+			}
+			visible = {
+				has_completed_focus = FRA_reform_the_labour_laws
+				not = { has_completed_focus = FRA_general_work_council }
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				stability_factor = 0.1
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		FRA_matignon_agreements_2 = {
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = FRA 
+			}
+			visible = {
+				has_completed_focus = FRA_general_work_council 
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+	}
+}

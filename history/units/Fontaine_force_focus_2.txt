@@ -1,0 +1,4 @@
+focus = {
+	current = FRA_renew_the_parliament_issue  
+	progress = 0 
+}

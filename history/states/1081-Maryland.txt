@@ -1,0 +1,29 @@
+state = {
+	id = 1081
+	name = 1081_Maryland
+	manpower = 1289000
+	state_category = large_city 
+	history = {
+		owner = USA 
+		add_core_of = USA 
+		victory_points = {
+			6984 15 
+		}
+		buildings = {
+			dockyard = 1 
+			air_base = 5 
+			infrastructure = 7 #was: 7
+			industrial_complex = 5
+			dockyard = 1
+			6984 = {
+				naval_base = 2
+			}
+			3957 = {
+				naval_base = 1
+				# United States Naval Research Laboratory (NRL)
+				naval_facility = 1
+			}
+		}
+	}
+	provinces = { 6823 6892 6929 6984 9758 11892  }
+}

@@ -1,0 +1,36 @@
+faction_goal_come_up_european_unity = {
+	name = come_up_european_unity 
+	description = come_up_european_unity_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = {
+			original_tag = FRA 
+			has_country_leader = {
+				character = FRA_Furina_de_Fontaine
+				ruling_only = yes 
+			}
+			has_government = democratic 
+		}
+	}
+	completed = {
+		custom_trigger_tooltip = {
+			tooltip = all_UE_need_states_are_controlled
+			not = {
+				any_state = {
+					has_state_flag = UC_essential_original_core_state
+					not = { is_controlled_by_ROOT_or_subject = yes }
+				}
+			}
+		}
+		#not = {
+		#	any_state = {
+		#		has_state_flag = UC_essential_original_core_state
+		#		not = { is_controlled_by_ROOT_or_subject = yes }
+		#	}
+		#}
+	}
+	complete_effect = {
+		add_faction_power_projection = 2500
+	}
+}

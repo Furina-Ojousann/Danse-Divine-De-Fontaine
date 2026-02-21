@@ -1,0 +1,37 @@
+characters = {
+	SKR_Syngman_Rhee = {
+		name = SKR_Syngman_Rhee
+		portraits = {
+			civilian = {
+				large = GFX_portrait_kor_Syngman_Rhee
+			}
+		}
+		country_leader = {
+			ideology = centrism 
+			traits = {
+				great_mathematician 
+			}
+		}
+		country_leader = {
+			ideology = conservatism 
+			traits = {
+				great_mathematician 
+			}
+		}
+	}
+
+	SKR_Kim_Ku = {
+		name = SKR_Kim_Ku
+		portraits = {
+			civilian = {
+				large = GFX_portrait_kor_kim_ku
+			}
+		}
+		country_leader = {
+			ideology = socialism 
+			traits = {
+				pater_patriae_korean 
+			}
+		}
+	}
+}

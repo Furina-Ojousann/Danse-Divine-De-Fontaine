@@ -1,0 +1,92 @@
+ideas = {
+	country = {
+		mng_the_heart = {
+			allowed = { original_tag = MNG }
+			modifier = {
+				army_attack_factor = 0.10 
+				army_defence_factor = 0.10 
+				conscription_factor = -0.25 
+				monthly_population = -0.20 
+				party_popularity_stability_factor = -0.15 
+			}
+		}
+		mng_the_iron = {
+			allowed = { original_tag = MNG }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15 
+				industrial_capacity_factory = 0.20 
+				local_resources_factor = 0.20 
+			}
+		}
+
+		russia_red_army_of_vasilevsky = {
+			allowed = { original_tag = FER }
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.20 
+				supply_node_range = 0.25 
+				terrain_penalty_reduction = 0.20
+				winter_attrition = -0.25 
+			}
+		}
+
+		russia_here_japanese_comes = {
+			allowed = { original_tag = FER }
+			modifier = {
+				war_support_factor = 0.20 
+				mobilization_speed = 0.25 
+				trade_opinion_factor = -0.75
+				min_export = -0.25 
+			}
+			targeted_modifier = {
+				tag = JAP 
+				defense_bonus_against = 0.05 
+			}
+		}
+
+		russia_free_bashkortostan = {
+			allowed = { original_tag = BSK }
+			modifier = {
+				army_core_attack_factor = 0.10 
+				army_core_defence_factor = 0.10  
+				army_org_regain = 0.05 
+			}
+		}
+
+		russia_walking_on_the_ice = {
+			allowed = { original_tag = KAR }
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.20 
+				supply_node_range = 0.25 
+				terrain_penalty_reduction = 0.20
+				winter_attrition = -0.25 
+			}
+		}
+
+		russia_army_of_traitor = {
+			allowed = { original_tag = GSR }
+			modifier = {
+				army_org_factor = -0.10 
+				no_supply_grace = 12 
+				org_loss_when_moving = -0.25
+			}
+		}
+
+		russia_fertile_soil = {
+			allowed = { original_tag = GSR }
+			available = {
+				count_triggers = {
+					amount = 2
+					controls_state = 652
+					controls_state = 1120
+					controls_state = 651
+					controls_state = 582
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.15 
+				monthly_population = 0.10 
+				conscription_factor = 0.15 
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+state = {
+	id = 1050 
+	name = 1050_Ardenne_Lorraine
+	resources = {
+		coal = 41 
+		steel = 48 
+	}
+	manpower = 2187900
+	state_category = metropolis  
+	history = {
+		owner = FRA 
+		add_core_of = FRA 
+		victory_points = {
+			13011 15
+		}
+		victory_points = {
+			9472 3 
+		}
+		victory_points = {
+			3560 1
+		}
+		victory_points = {
+			6545 3 
+		}
+		victory_points = {
+			5291 5 
+		}
+		buildings = {
+			infrastructure = 7 
+			industrial_complex = 4 
+			arms_factory = 1 
+		}
+	}
+	provinces = { 9472 9505 3546 3560 6545 13011 5291 13495 13496 }
+}

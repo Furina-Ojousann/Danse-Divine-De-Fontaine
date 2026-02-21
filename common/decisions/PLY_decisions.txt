@@ -1,0 +1,191 @@
+PLY_the_power_outside_our_timeline = {
+	PLY_let_bronya_become_leader = {
+		visible = {
+			check_variable = {
+				ply_strength > 299
+			}
+		}
+		cost = 50 
+		fire_only_once = yes 
+		complete_effect = {
+			if = {
+				limit = {
+					has_government = democratic 
+				}
+				if = {
+					limit = {
+						PLY_Bronya_Zaychik = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Bronya_Zaychik 
+						promote_leader = yes 
+						country_leader = {
+							ideology = socialism 
+							traits = {
+								economy_reformer 
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						PLY_Nahida = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Nahida 
+						promote_leader = yes 
+						country_leader = {
+							ideology = liberalism  
+							traits = {
+								innocent_god  
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism 
+				}
+				if = {
+					limit = {
+						PLY_Bronya_Zaychik = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Bronya_Zaychik 
+						promote_leader = yes 
+						country_leader = {
+							ideology = leninism  
+							traits = {
+								economy_reformer 
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						PLY_Nahida = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Nahida 
+						promote_leader = yes 
+						country_leader = {
+							ideology = marxism   
+							traits = {
+								innocent_god  
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = fascism 
+				}
+				if = {
+					limit = {
+						PLY_Bronya_Zaychik = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Bronya_Zaychik 
+						promote_leader = yes 
+						country_leader = {
+							ideology = falangism   
+							traits = {
+								economy_reformer 
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						PLY_Nahida = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Nahida 
+						promote_leader = yes 
+						country_leader = {
+							ideology = rexism    
+							traits = {
+								innocent_god  
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = neutrality  
+				}
+				if = {
+					limit = {
+						PLY_Bronya_Zaychik = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Bronya_Zaychik 
+						promote_leader = yes 
+						country_leader = {
+							ideology = moderatism    
+							traits = {
+								economy_reformer 
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						PLY_Nahida = {
+							has_character_flag = the_ply_manager 
+						}
+					}
+					add_country_leader_role = {
+						character = PLY_Nahida 
+						promote_leader = yes 
+						country_leader = {
+							ideology = bonapartheism     
+							traits = {
+								innocent_god  
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	PLY_get_tech = {
+		days_remove = 30 
+		days_re_enable = 120 
+		cost = 100 
+		remove_effect = {
+			add_to_variable = {
+				ply_strength = 20 
+			}
+			add_tech_bonus = {
+				name = PLY_get_tech 
+				category = industry 
+				bonus = 0.5 
+				uses = 1 
+			}
+			add_tech_bonus = {
+				name = PLY_get_tech 
+				category = electronics 
+				bonus = 0.5 
+				uses = 1 
+			}
+		}
+	}
+}

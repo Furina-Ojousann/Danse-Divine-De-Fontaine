@@ -1,0 +1,103 @@
+FRA_historical_plan = {
+	name = "France historical plan"
+	desc = "Historical behavior for France"
+
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = FRA_ai_behavior
+					option = DEFAULT
+				}	
+			}
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+			has_country_flag = FRA_AI_DEMOCRATIC_HISTORICAL
+		}
+	}
+	abort = {
+		GER = {
+			has_civil_war = yes 
+		}
+		has_game_rule = {
+			rule = FRA_ai_behavior
+			option = DEFAULT
+		}
+	}
+
+	ai_national_focuses = {
+		FRA_cancel_gold_standard
+		FRA_macroeconomic_policy 
+		FRA_national_investment
+		FRA_french_expressway
+		FRA_industry_core_north 
+		FRA_long_term_supply_strengthening
+		FRA_reform_the_labour_laws 
+		FRA_womens_suffrage 
+		FRA_nationalize_key_industry 
+		FRA_the_blum_viollette_proposal 
+		FRA_intervention_in_spain 
+		FRA_review_foreign_policy 
+		FRA_buy_time 
+		FRA_go_with_britain 
+		FRA_begin_rearmament 
+		FRA_defensive_focus
+		FRA_artillery_boom
+		FRA_defense_equipment 
+		FRA_armor_action 
+		FRA_development_under_the_naval_treaty 
+		FRA_new_generation_of_crusiers
+		FRA_Mogador_destoryer 
+		FRA_the_location_of_air_force 
+		FRA_independence_building_plan 
+		FRA_form_air_command 
+		FRA_replace_old_verison_fighters 
+		FRA_mobilization_for_war 
+		FRA_industry_core_north 
+		FRA_manufacturing_development 
+		FRA_reorganize_the_aviation_industry
+		FRA_form_the_state_arsenals
+		FRA_general_work_council
+		FRA_national_champions 
+		FRA_expand_the_citizenship 
+		FRA_encourage_immigration 
+		FRA_unbreakable_popular_front 
+		FRA_plan_considerated_war 
+	}
+	focus_factors = {
+		FRA_right_wing_rhetoric = 0
+		FRA_leftist_rhetoric = 0
+	}
+	research = {
+		electronics = 200 
+		industry = 300 
+		armor = 200 
+		support_tech = 150 
+	}
+
+	ideas = {
+		FRA_maurice_gauche = 50 
+		FRA_felix_gouin = 200  
+		FRA_zivony_peshkov = 150 
+		FRA_gaston_henry_haye = 250 
+		FRA_vincent_auriol = 100 
+		georges_bonnet = 100 
+		maxime_weygand = 200
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

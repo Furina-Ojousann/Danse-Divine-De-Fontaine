@@ -1,0 +1,419 @@
+debug_decisions = {
+	get_nuclear_tech = {
+		visible = {
+			not = {
+				has_tech = tech_nuclear_fasion_engine 
+			}
+		}
+		complete_effect = {
+			set_technology = {
+				tech_nuclear_fasion_engine = 1 
+			}
+		}
+	}
+	show_fontainebleau_conference_decision_category = {
+		complete_effect = {
+			FRA = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+			SOV = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+			GER = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+			ITA = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+			ENG = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+			USA = {
+				add_to_array = {
+					array = grid_Fontainebleau_conference_number_array 
+				}
+			}
+		}
+	}
+	show_pie_chart = {
+		visible = {
+			tag = FRA 
+		}
+		complete_effect = {
+			add_to_array = {
+				FRA_support_goverment = party_Fontaine
+			}
+			add_to_array = {
+				FRA_support_goverment = party_Parti_radical
+			}
+			add_to_array = {
+				FRA_support_goverment = party_Section_Francaise_de_l_Internationale_Ouvriere
+			}
+			add_to_array = {
+				FRA_neutral_party = party_french_communist_party
+			}
+			add_to_array = {
+				FRA_oppose_government_party = party_Rassemblement_National 
+			}
+			add_to_array = {
+				FRA_oppose_government_party = party_Action_francaise 
+			}
+			add_to_array = {
+				FRA_oppose_government_party = party_Croix_de_Feu 
+			}
+			clear_array = ROOT.party_pie_chart 
+			set_variable = { party_Fontaine = 287 }
+			set_variable = { party_Action_francaise = 24 }
+			set_variable = { party_Croix_de_Feu = 5 }
+			set_variable = { party_Rassemblement_National = 122 }
+			set_variable = { party_Parti_radical = 86 }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = 108 }
+			set_variable = { party_french_communist_party = 120 }
+
+			set_temp_variable = { party_Croix_de_Feu_temp = party_Croix_de_Feu }
+			set_temp_variable = { party_Rassemblement_National_temp = party_Rassemblement_National }
+			set_temp_variable = { party_Parti_radical_temp = party_Parti_radical }
+			set_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Section_Francaise_de_l_Internationale_Ouvriere }
+			set_temp_variable = { party_french_communist_party_temp = party_french_communist_party }
+			set_temp_variable = { party_Fontaine_temp = party_Fontaine }
+			set_temp_variable = { party_Action_francaise_temp = party_Action_francaise }
+
+			add_to_temp_variable = { total_seats = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { total_seats = party_Rassemblement_National_temp }
+			add_to_temp_variable = { total_seats = party_Parti_radical_temp }
+			add_to_temp_variable = { total_seats = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { total_seats = party_french_communist_party_temp }
+			add_to_temp_variable = { total_seats = party_Fontaine_temp }
+			add_to_temp_variable = { total_seats = party_Action_francaise_temp }
+			
+
+			divide_temp_variable = { party_Croix_de_Feu_temp = total_seats }
+			divide_temp_variable = { party_Rassemblement_National_temp = total_seats }
+			divide_temp_variable = { party_Parti_radical_temp = total_seats }
+			divide_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = total_seats }
+			divide_temp_variable = { party_french_communist_party_temp = total_seats }
+			divide_temp_variable = { party_Fontaine_temp = total_seats }
+
+			multiply_temp_variable = { party_Croix_de_Feu_temp = 100 }
+			multiply_temp_variable = { party_Rassemblement_National_temp = 100 }
+			multiply_temp_variable = { party_Parti_radical_temp = 100 }
+			multiply_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = 100 }
+			multiply_temp_variable = { party_french_communist_party_temp = 100 }
+			multiply_temp_variable = { party_Fontaine_temp = 100 }
+
+			set_variable = { party_Croix_de_Feu_factor = party_Croix_de_Feu_temp }
+			set_variable = { party_Fontaine_temp_factor = party_Fontaine_temp }
+			set_variable = { party_Parti_radical_temp_factor = party_Parti_radical_temp }
+			set_variable = { party_Rassemblement_National_temp_factor = party_Rassemblement_National_temp }
+			set_variable = { party_french_communist_party_temp_factor = party_french_communist_party_temp }
+			set_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp_factor = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+
+			set_temp_variable = { total_factor = 100 }
+
+			subtract_from_temp_variable = { total_factor = party_Croix_de_Feu_temp }
+			subtract_from_temp_variable = { total_factor = party_Fontaine_temp }
+			subtract_from_temp_variable = { total_factor = party_Parti_radical_temp }
+			subtract_from_temp_variable = { total_factor = party_Rassemblement_National_temp }
+			subtract_from_temp_variable = { total_factor = party_french_communist_party_temp }
+			subtract_from_temp_variable = { total_factor = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+
+			set_variable = { party_Action_francaise_factor = total_factor }
+
+			round_temp_variable = party_Croix_de_Feu_temp
+			round_temp_variable = party_Fontaine_temp
+			round_temp_variable = party_Parti_radical_temp
+			round_temp_variable = party_Rassemblement_National_temp
+			round_temp_variable = party_french_communist_party_temp 
+			round_temp_variable = party_Section_Francaise_de_l_Internationale_Ouvriere_temp 
+
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Parti_radical_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_french_communist_party_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_Rassemblement_National_temp = party_Croix_de_Feu_temp }
+
+			add_to_temp_variable = { party_Parti_radical_temp = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_Section_Francaise_de_l_Internationale_Ouvriere_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_french_communist_party_temp }
+			add_to_temp_variable = { party_Parti_radical_temp = party_Fontaine_temp }
+
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_Croix_de_Feu_temp }
+			add_to_temp_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere_temp = party_french_communist_party_temp }
+
+			add_to_temp_variable = { party_french_communist_party_temp = party_Fontaine_temp }
+			add_to_temp_variable = { party_french_communist_party_temp = party_Croix_de_Feu_temp }
+
+			add_to_temp_variable = { party_Fontaine_temp = party_Croix_de_Feu_temp }
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Croix_de_Feu_temp 
+				value = 1 
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Fontaine_temp 
+				value = 2
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_french_communist_party_temp 
+				value = 3
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Section_Francaise_de_l_Internationale_Ouvriere_temp 
+				value = 4
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Parti_radical_temp 
+				value = 5
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = party_Rassemblement_National_temp 
+				value = 6
+			}
+
+			resize_array = {
+				array = party_pie_chart  
+				size = 100 
+				value = 7
+			}
+
+
+			#支持度饼图
+
+			clear_array = fra_support_pie_chart 
+
+			set_temp_variable = { fra_support_party = party_Fontaine }
+			add_to_temp_variable = { fra_support_party = party_Parti_radical }
+			add_to_temp_variable = { fra_support_party = party_Section_Francaise_de_l_Internationale_Ouvriere }
+			add_to_temp_variable = { fra_support_party = party_french_communist_party }
+
+			set_temp_variable = { total_parties = fra_support_party }
+			add_to_temp_variable = { total_parties = party_Action_francaise }
+			add_to_temp_variable = { total_parties = party_Croix_de_Feu }
+			add_to_temp_variable = { total_parties = party_Rassemblement_National }
+
+			divide_temp_variable = {
+				fra_support_party = total_parties 
+			}
+
+			multiply_temp_variable = {
+				fra_support_party = 100 
+			}
+
+			set_variable = { fra_support_party_factor = fra_support_party }
+
+			set_temp_variable = { fra_total_popularity = 100 }
+
+			subtract_from_temp_variable = {
+				fra_total_popularity = fra_support_party 
+			}
+
+			set_variable = {
+				fra_oppose_factor = fra_total_popularity
+			}
+
+			round_temp_variable = fra_support_party 
+
+			resize_array = {
+				array = fra_support_pie_chart 
+				size = fra_support_party 
+				value = 1 
+			}
+
+			resize_array = {
+				array = fra_support_pie_chart 
+				size = 100 
+				value = 2 
+			}
+		}
+	}
+	get_fontaine_tech = {
+		visible = {
+			not = {
+				has_tech = tech_fontaine_special_machinery 
+			}
+		}
+		ai_will_do = {
+			factor = 0 
+		}
+		complete_effect = {
+			set_technology = {
+				tech_fontaine_special_machinery = 1 
+			}
+		}
+	}
+	show_new_character = {
+		visible = {
+			not = {
+				has_global_flag = show_this_character
+			}
+		}
+		complete_effect = {
+			set_global_flag = show_this_character
+			every_country = {
+				limit = {
+					is_ai = no 
+				}
+				RMC = {
+					PLY_Nahida = {
+						set_nationality = ROOT 
+					}
+					PLY_Bronya_Zaychik = {
+						set_nationality = ROOT 
+						set_character_flag = the_ply_manager
+					}
+					PLY_Acheron = {
+						set_nationality = ROOT 
+					}
+					PLY_otto_von_Bismarck = {
+						set_nationality = ROOT 
+					}
+					PLY_Prince_of_Wales = {
+						set_nationality = ROOT 
+					}
+					PLY_Raiden_Shogun = {
+						set_nationality = ROOT 
+					}
+					PLY_sparkle = {
+						set_nationality = ROOT 
+					}
+					PLY_Suffren = {
+						set_nationality = ROOT 
+					}
+					PLY_topaz = {
+						set_nationality = ROOT 
+					}
+					PLY_March_7th = {
+						set_nationality = ROOT 
+					}
+
+					PLY_Daiwasu_kareto = {
+						set_nationality = ROOT 
+					}
+					PLY_Satono_Daimondo = {
+						set_nationality = ROOT 
+					}
+					PLY_Meisho_Udotou = {
+						set_nationality = ROOT 
+					}
+					PLY_Kitasan_Buraku = {
+						set_nationality = ROOT 
+					}
+					PLY_Mejiro_Makuin = {
+						set_nationality = ROOT 
+					}
+					PLY_Oguri_Cup = {
+						set_nationality = ROOT 
+					}
+					PLY_Teiemu_operao = {
+						set_nationality = ROOT 
+					}
+					PLY_TokaiTeio = {
+						set_nationality = ROOT 
+					}
+					PLY_enterprise = {
+						set_nationality = ROOT 
+					}
+				}
+			}
+			set_variable = { ply_strength = 20 }
+		}
+	}
+}
+
+prc_the_third_world_cooperation_category = {
+	prc_support_independence = {
+		icon = GFX_decision_SWI_support_humanitarian_efforts 
+		target_trigger = {
+			FROM = {
+				is_subject = yes 
+				NOT = {
+					is_subject_of = SOV 
+					tag = CAN 
+					tag = AUS 
+					tag = NZL 
+				}
+				capital_scope = {
+					not = {
+						is_on_continent = europe 
+					}
+				}
+			}
+		}
+		fire_only_once = yes 
+		days_remove = 25 
+		modifier = {
+			political_power_cost = 0.10 
+		}
+		cost = 10 
+		remove_effect = {
+			FROM = {
+				set_country_flag = china_supported
+				country_event = {
+					id = SRC.2 
+					days = 3 
+					random_days = 7 
+				}
+				effect_tooltip = {
+					add_ideas = CHI_chinese_support
+					add_autonomy_score = {
+						value = 300 
+					} 
+				}
+			}
+		}
+	}
+	prc_economy_cooperation_decision = {
+		icon = GFX_decision_generic_motorized 
+		visible = {
+			has_completed_focus = PRC_economy_cooperation 
+		}
+		target_trigger = {
+			FROM = {
+				has_country_flag = china_supported 
+				is_subject = no 
+				has_idea = western_blockade 
+			}
+		}
+		fire_only_once = yes 
+		days_remove = 30 
+		modifier = {
+			political_power_cost = 0.25 
+		}
+		remove_effect = {
+			FROM = {
+				add_stability = 0.05 
+				add_ai_strategy = {
+					type = befriend 
+					id = PRC 
+					value = 50 
+				}
+				swap_ideas = {
+					remove_idea = western_blockade 
+					add_idea = western_blockade_2 
+				}
+			}
+		}
+	}
+}

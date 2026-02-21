@@ -1,0 +1,236 @@
+characters = {
+	FRC_the_fontaine_people = {
+		name = FRC_the_fontaine_people 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_the_commune  
+			}
+		}
+		country_leader = {
+			ideology = anarchist_communism 
+			traits = {
+				fight_until_death 
+			}
+		}
+	}
+	FRC_Adrienne_Charlotte = {
+		name = FRC_Adrienne_Charlotte  
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_Adrienne_Charlotte_pol 
+			}
+			army = {
+				large = GFX_portrait_fra_Adrienne_Charlotte 
+				small = GFX_idea_fra_Adrienne_Charlotte 
+			}
+		}
+		country_leader = {
+			ideology = automation_communism 
+		}
+		corps_commander = {
+			skill = 3 
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			traits = {
+				justice 
+				media_personality 
+			}
+		}
+		advisor = {
+			slot = second_chief  
+			idea_token = FRC_adrienne_charlotte
+			traits = {
+				star_reporter 
+			}
+		}
+	}
+	FRC_charles_delestraint = {
+		name = FRC_charles_delestraint 
+		portraits = {
+			army = {
+				large = GFX_portrait_FRA_charles_delestraint 
+				small = GFX_idea_fra_charles_delestraint 
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer panzer_leader career_officer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			visible = {
+				has_completed_focus = FRC_commune_fighters 
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = FRA_charles_delestraint_army_chief
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			traits = { army_chief_maneuver_3 }
+			cost = 200
+			visible = {
+				has_completed_focus = FRC_commune_fighters 
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = FRA_charles_delestraint_theorist
+			ledger = army
+			available = {
+				not_already_hired_except_as = theorist
+			}
+			traits = { mobile_warfare_expert }
+			cost = 150
+			visible = {
+				has_completed_focus = FRC_commune_fighters 
+			}
+		}
+	}
+	FRC_ernest_petit = {
+		name = FRC_ernest_petit
+		portraits = {
+			army = {
+				large = GFX_portrait_FRA_ernest_petit 
+				small = GFX_idea_fra_ernest_petit 
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected career_officer infantry_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			visible = {
+				has_completed_focus = FRC_commune_fighters
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = FRA_ernest_petit
+			ledger = army
+			traits = { army_infantry_2 }
+			cost = 100
+			visible = {
+				has_completed_focus = FRC_commune_fighters
+			}
+		}
+	}
+	FRC_georges_blanchard = {
+		name = FRC_georges_blanchard
+		portraits = {
+			army = {
+				large = GFX_portrait_FRA_georges_blanchard 
+				small = GFX_idea_fra_georges_blanchard 
+			}
+		}
+		corps_commander = {
+			traits = { skilled_staffer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			visible = {
+				has_completed_focus = FRC_commune_fighters
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = FRA_georges_blanchard
+			ledger = army
+			traits = { army_logistics_2 }
+			cost = 50
+			visible = {
+				has_completed_focus = FRC_commune_fighters
+			}
+		}
+	}
+	FRC_maurice_thorez = {
+		name = FRA_maurice_thorez 
+		portraits={
+			army={
+				small="GFX_idea_maurice_thorez"
+			}
+			civilian={
+				large="GFX_portrait_fra_maurice_thorez"
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				politically_connected 
+				JAP_communist_sympathizer 
+				trait_cautious
+			}
+		}
+		country_leader = {
+			ideology = stalinism 
+			traits = {
+				first_secretary 
+			}
+		}
+	}
+	FRC_Marcel_Cachin = {
+		name = FRC_Marcel_Cachin 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_Marcel_Cachin
+				small = GFX_idea_fra_Marcel_Cachin  
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = frc_marcel_cachin 
+			available = {
+				not = {
+					has_idea = frc_marcel_cachin_second_leader 
+					has_country_leader = FRC_Marcel_Cachin 
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						tag = FRC
+					}
+					has_completed_focus = FRC_the_team_of_the_party 
+				}
+			}
+			traits = {
+				conscience_of_fontaine 
+			}
+		}
+	}
+	FRC_Leon_Jouhaux = {
+		name = FRC_Leon_Jouhaux 
+		portraits = {
+			civilian = {
+				small = GFX_idea_fra_Leon_Jouhaux
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = frc_leon_jouhaux 
+			visible = {
+				if = {
+					limit = {
+						tag = FRC
+					}
+					has_completed_focus = FRC_the_team_of_the_party 
+				}
+			}
+			traits = {
+				chair_of_the_unions
+			}
+		}
+	}
+}

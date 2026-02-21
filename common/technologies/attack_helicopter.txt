@@ -1,0 +1,74 @@
+technologies = {
+	tech_equipment_attack_helicopter = {
+		research_cost = 2.5 #275day
+		enable_equipments = {
+			attack_helicopter_1 
+		}
+		allow = {
+	 		ROOT = {
+				is_special_project_completed = sp:sp_air_helicopter
+			}
+		}
+		start_year = 1942 
+		categories = {
+			support_tech
+			helicopter_tech 
+		}
+		folder = {
+			name = support_folder 
+			position = {
+				x = 0
+				y = 0
+			}
+		}
+	}
+
+	tech_unit_attack_helicopter_support_company_1 = {
+		research_cost = 2 
+		enable_subunits = {
+			air_assault_company 
+		}
+		start_year = 1942
+		dependencies = {
+			tech_equipment_attack_helicopter = 1 
+		}
+		path = {
+			leads_to_tech = tech_unit_attack_helicopter_support_company_2 
+		}
+		folder = {
+			name = support_folder 
+			position = { x = 0 y = 0 }
+		}
+	}
+
+	tech_unit_attack_helicopter_support_company_2 = {
+		research_cost = 2 
+		start_year = 1945
+		air_assault_company = {
+			soft_attack = 0.10
+			hard_attack = 0.10 
+			max_organisation = 5 
+		}
+		path = {
+			leads_to_tech = tech_unit_attack_helicopter_support_company_3
+		}
+		folder = {
+			name = support_folder 
+			position = { x = 0 y = 3 }
+		}
+	}
+
+	tech_unit_attack_helicopter_support_company_3 = {
+		research_cost = 2 
+		start_year = 1948 
+		air_assault_company = {
+			soft_attack = 0.15
+			hard_attack = 0.15
+			max_organisation = 5 
+		}
+		folder = {
+			name = support_folder 
+			position = { x = 0 y = 6 }
+		}
+	}
+}

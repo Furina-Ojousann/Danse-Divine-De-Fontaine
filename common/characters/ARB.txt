@@ -1,0 +1,16 @@
+characters = {
+	ARB_Yusuf_Salman_Yusuf = {
+		name = "ARB_Yusuf_Salman_Yusuf"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_arb_Yusuf_Salman_Yusuf 
+			}
+		}
+		country_leader = {
+			ideology = baathism  
+		}
+		country_leader = {
+			ideology = socialism
+		}
+	}
+}

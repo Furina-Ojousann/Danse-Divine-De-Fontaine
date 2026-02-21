@@ -1,0 +1,6 @@
+sub_unit_categories = {
+	category_all_machinery
+	category_defence_machinery
+	category_attackive_machinery
+	category_artillery_machinery
+}

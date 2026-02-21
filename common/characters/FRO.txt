@@ -1,0 +1,41 @@
+characters = {
+	FRO_Solenn_Clorinde = {
+		name = FRO_Solenn_Clorinde 
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_Solenn_Clorinde_politics 
+				small = GFX_idea_fra_Solenn_Clorinde 
+			}
+			army = {
+				large = GFX_portrait_fra_Solenn_Clorinde
+			}
+		}
+		country_leader = {
+			ideology = paternalistic_conservatism 
+			traits = {
+				resister
+			}
+		}
+		field_marshal = {
+			skill = 5 
+			attack_skill = 7
+			defense_skill = 4
+			planning_skill = 6
+			logistics_skill = 3
+			traits = {
+				brilliant_strategist 
+				organizer
+				trait_cautious 
+			}
+		}
+	}
+	FRO_Georges_d_Argenlieu = {
+		name = FRO_Georges_d_Argenlieu 
+		portraits = {
+			army = {
+				large = GFX_portrait_fra_Georges_d_Argenlieu 
+				small = GFX_idea_fra_Georges_d_Argenlieu 
+			}
+		}
+	}
+}

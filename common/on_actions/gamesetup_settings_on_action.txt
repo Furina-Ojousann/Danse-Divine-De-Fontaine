@@ -1,0 +1,701 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			GER = {
+				add_ideas = polity_republic
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_corporatism 
+				add_ideas = labour_law_low 
+				recruit_character = GER_Karl_Schmitt 
+				recruit_character = GER_Alfried_Krupp 
+				recruit_character = GER_Ernst_Schafer 
+				every_core_state = {
+					set_state_flag = UC_essential_original_core_state
+				}
+			}
+			ITA = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship
+				add_ideas = economic_corporatism 
+				add_ideas = labour_law_medium 
+				every_core_state = {
+					set_state_flag = UC_essential_original_core_state
+				}
+			}
+			FRA = {
+				add_ideas = polity_republic
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+				every_core_state = {
+					set_state_flag = UC_essential_original_core_state
+				}
+			}
+			USA = {
+				add_ideas = polity_republic
+				add_ideas = regierungssystem_presidential
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_medium 
+			}
+			ENG = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_medium 
+			}
+			JAP = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_low 
+			}
+			BEL = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_medium 
+			}
+			HOL = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			LUX = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			YUG = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			BUL = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			ROM = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			GRE = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			DEN = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_relatively_high 
+			}
+			NOR = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_relatively_high 
+			}
+			SWE = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_relatively_high 
+			}
+			MOR = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_monarchy_dictatorship
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_non_exist_labour_law 
+			}
+			EGY = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_monarchy_dictatorship
+				add_ideas = economic_isolated
+				add_ideas = labour_law_non_exist_labour_law 
+			}
+			PER = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_monarchy_dictatorship
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			AFG = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_monarchy_dictatorship
+				add_ideas = economic_isolated
+				add_ideas = labour_law_non_exist_labour_law 
+			}
+			SIA = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			AST = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+			}
+			NZL = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+			}
+			CAN = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+			}
+			MAL = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_non_exist_labour_law 
+			}
+			SAF = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			ALB = {
+				add_ideas = polity_monarchy
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			HUN = {
+				add_ideas = polity_monarchy 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			SPR = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_medium 
+			}
+			POR = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+			}
+			SWI = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_relatively_high 
+			}
+			IRE = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_laissez_faire 
+			}
+			AUS = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+			}
+			CZE = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_presidential 
+				add_ideas = economic_laissez_faire 
+			}
+			CHI = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_laissez_faire 
+				add_ideas = labour_law_low 
+			}
+			PRC = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_parliamentary 
+				add_ideas = economic_state_socialism 
+				add_ideas = labour_law_medium 
+			}
+			TUR = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_civilian_dictatorship 
+				add_ideas = economic_monopoly 
+				add_ideas = labour_law_medium 
+			}
+			SOV = {
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_parliamentary
+				add_ideas = economic_state_socialism 
+				add_ideas = labour_law_relatively_high 
+			}
+			every_country = {
+				limit = { is_chinese_warlord = yes }
+				add_ideas = polity_republic 
+				add_ideas = regierungssystem_military_dictatorship
+				add_ideas = economic_isolated 
+			}
+			every_country = {
+				limit = { capital_scope = { is_on_continent = south_america } }
+				add_ideas = polity_republic
+				if = {
+					limit = { has_government = democratic }
+					add_ideas = regierungssystem_presidential
+				}
+				else = { add_ideas = regierungssystem_civilian_dictatorship }
+				add_ideas = economic_laissez_faire 
+			}
+			#BEL = {
+			#	every_core_state = {
+			#		set_state_flag = UC_essential_original_core_state
+			#	}
+			#}
+			#HOL = {
+			#	every_core_state = {
+			#		set_state_flag = UC_essential_original_core_state
+			#	}
+			#}
+			#LUX = {
+			#	every_core_state = {
+			#		set_state_flag = UC_essential_original_core_state
+			#	}
+			#}
+			every_state = {
+				if = {
+					limit = {
+						THIS = { has_state_category = megalopolis infrastructure < 5 }
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 4
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = metropolis infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 4
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = large_city infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = city infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = large_town infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = town infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+					}
+				}
+				else_if = {
+					limit = { THIS = { has_state_category = rural infrastructure < 5 } }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					is_ai = yes 
+				}
+				add_ideas = ai_easy_experience 
+			}
+			every_country = {
+				limit = {
+					not = {
+						original_tag = JAP 
+						original_tag = FRA 
+					}
+				}
+				random_character = {
+					limit = {
+						has_ideology_group = communism 
+					}
+					add_country_leader_role = {
+						promote_leader = yes 
+						country_leader = {
+							ideology = populist_socialism_revolutionary_front 
+						}
+					}
+				}
+				set_party_name = {
+					ideology = populist_socialism 
+					long_name = populist_socialism_tempoary 
+					name = populist_socialism_tempoary 
+				}
+			}
+			GER = {
+				GER_werner_von_blomberg = {
+					add_country_leader_role = {
+						promote_leader = yes 
+						country_leader = {
+							ideology = junta 
+							traits = {
+								sotamarsalkka_improved
+							}
+						}
+					}
+				}
+			}
+			SHX = {
+				give_military_access = CHI 
+			}
+			SIC = {
+				give_military_access = CHI 
+			}
+			FRA = { country_event = french.test.5 }
+			every_country = {
+				limit = {
+					not = {
+						tag = SAF 
+					}
+					not = {
+						tag = ETH 
+					}
+					OR = {
+						is_chinese_warlord = yes 
+						tag = CHI 
+						tag = PRC 
+						tag = TIB 
+						tag = MEN 
+						capital_scope = {
+							is_on_continent = africa 
+						}
+						capital_scope = {
+							is_on_continent = middle_east 
+						}
+					}
+					not = {
+						tag = TUR 
+						tag = PAL 
+						tag = EGY 
+					}
+				}
+				#add_ideas = CHI_industry_1 
+			}
+			YUN = {
+				add_country_leader_trait = warlord 
+			}
+			SHX = {
+				add_country_leader_trait = warlord 
+			}
+			XSM = {
+				add_country_leader_trait = warlord 
+			}
+			SIK = {
+				add_country_leader_trait = warlord 
+			}
+			ENG = {
+				set_autonomy = {
+					target = EGY 
+					autonomy_state = autonomy_dominion 
+				}
+			}
+			EGY = {
+				load_oob = EGY_1936 
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = "ITA" 
+					value = 300 
+				}
+				add_ai_strategy = {
+					type = front_unit_request 
+					tag = ITA 
+					value = 300 
+				}
+				add_ai_strategy = {
+					type = garrison 
+					value = -100 
+				}
+				set_politics = {
+					ruling_party = neutrality 
+					elections_allowed = no 
+				}
+				set_popularities = {
+					neutrality = 67 
+					democratic = 21 
+					communism = 12
+				}
+				add_ideas = decadent_country 
+			}
+			IRQ = {
+				add_ideas = decadent_country 
+			}
+			TIB = {
+				add_ideas = decadent_country 
+			}
+			MAL = {
+				add_ideas = decadent_country 
+			}
+			INS = {
+				add_ideas = decadent_country 
+			}
+			FRA = {
+				add_ideas = assemblee_nationale 
+				country_event = {
+					id = French.64 
+					days = 286 
+				}
+			}
+			every_country = {
+				limit = {
+					has_government = communism 
+				}
+				add_ideas = internationalism_policy
+			}
+			FRA = { add_ideas = nationalism_policy }
+			GER = {
+				 add_ideas = { extreme_nationalism state_monopoly_capitalism ger_ai_balance patriarchy }  
+				 set_technology = {
+					interwar_antitank = 1 
+				 }
+			}
+			JAP = { add_ideas = { nationalism_policy patriarchy } set_country_flag = jap_this_is_used }
+			SOV = {
+				SOV_mikhail_kalinin = {
+					add_advisor_role = {
+						activate = yes 
+						advisor = { 
+							slot = second_chief 
+							can_be_fired = no 
+							cost = 0 
+							idea_token = mikhail_kalinin 
+							traits = {
+								popular_figurehead 
+							}
+						}
+					}
+				}
+			}
+			CHI = {
+				#add_ideas = CHI_national_health_issue_1 
+				CHI_lin_sen = {
+					add_advisor_role = {
+						activate = yes 
+						advisor = { 
+							slot = second_chief 
+							can_be_fired = no 
+							cost = 0 
+							idea_token = CHI_lin_sen 
+							traits = {
+								popular_figurehead 
+							}
+						}
+					}
+				}
+			}
+			RMC = {
+				USA_John_Nance_Garner = {
+					set_nationality = USA 
+				}
+			}
+			USA = {
+				add_ideas = nance_garner 
+			}
+			ITA = {
+				remove_ideas = vittorio_emanuele 
+				add_advisor_role = {
+					character = ITA_vittorio_emanuele_iii 
+					activate = yes 
+					advisor = { 
+						slot = second_chief 
+						idea_token = vittorio_emanuele 
+						can_be_fired = no
+						cost = 0 
+						traits = {
+							the_soldier_king
+						}
+					}
+				}
+			}
+			GER = { recruit_character = GER_Der_Deutsche_Bundestag add_ideas = Der_Deutsche_Bundestag }
+			ITA = { add_ideas = nationalism_policy }
+			USA = { add_ideas = state_monopoly_capitalism }
+			POL = { add_ideas = nationalism_policy }
+			CZE = {
+				set_country_leader_name = {
+					name = CZE_edvard_benesh_rename
+				}
+				swap_ideas = {
+					remove_idea = CZE_skoda_works
+					add_idea = cze_skoda_industry_resetted 
+				}
+				add_ideas = cze_defense_of_democratic 
+				recruit_character = CZE_milan_hodza 
+				recruit_character = CZE_vladimir_matous 
+				add_ideas = Milan_Hodza 
+			}
+			every_country = {
+				limit = {
+					tag = AFG 
+					tag = SAU 
+					tag = EGY 
+					tag = YEM 
+					tag = OMA 
+					tag = RAJ 
+					tag = PER  
+				}
+				add_ideas = feudalism 
+			}
+			GER = {
+				set_variable = { FRA_the_hurt_of_war_production_speed_buildings_factor = -0.30 }
+				set_variable = { FRA_the_hurt_of_war_stability_factor = -0.20 }
+				set_variable = { FRA_the_hurt_of_war_war_support_factor = -0.50 }
+				set_variable = { FRA_the_hurt_of_war_industrial_capacity_factory = -0.15 }
+				set_variable = { FRA_the_hurt_of_war_industrial_capacity_dockyard = -0.15 }
+				set_variable = { FRA_the_hurt_of_war_conscription_factor = -0.65 }
+				set_variable = { FRA_the_hurt_of_war_consumer_goods_factor = 0.30 }
+			}
+			ITA = {
+				set_variable = { FRA_the_hurt_of_war_production_speed_buildings_factor = -0.30 }
+				set_variable = { FRA_the_hurt_of_war_stability_factor = -0.20 }
+				set_variable = { FRA_the_hurt_of_war_war_support_factor = -0.50 }
+				set_variable = { FRA_the_hurt_of_war_industrial_capacity_factory = -0.15 }
+				set_variable = { FRA_the_hurt_of_war_industrial_capacity_dockyard = -0.15 }
+				set_variable = { FRA_the_hurt_of_war_conscription_factor = -0.65 }
+				set_variable = { FRA_the_hurt_of_war_consumer_goods_factor = 0.30 }
+			}
+			CHI = {
+				set_country_leader_ideology = xunzheng 
+			}
+			PRC = {
+				set_country_leader_ideology = mao_zedong_thought 
+			}
+			SOV = {
+				set_country_flag = comintern_leader 
+				SOV_vasily_chuykov = {
+					add_trait = {
+						trait = rising_young_officer 
+					}
+				}
+				SOV_ivan_chernyakhovsky = {
+					add_trait = {
+						trait = rising_young_officer 
+					}
+				}
+			}
+			MON = {
+				set_country_flag = comintern_partner 
+			}
+			TAN = {
+				set_country_flag = comintern_partner 
+			}
+			FRA = {
+				set_variable = { national_emergency_frame = 1 }
+				set_variable = { the_investion_days = 365 }
+				set_variable = { commune_value_to_add_consume = -0.05 } #生活消费品
+				set_variable = { commune_value_to_add_local_building_slots_factor = 0.05 }
+				set_variable = { commune_value_to_add_monthly_population = 0 }
+				set_variable = { commune_value_to_add_conscription_factor = 0 }
+				set_variable = { commune_value_to_add_corruption = 0 }
+
+				set_variable = { commune_economy_monthly_population = 0 }
+				set_variable = { commune_economy_conscription_factor = 0 }
+			}
+			every_country = {
+				every_character = {
+					limit = {
+						has_trait = army_chief_planning_1 
+					}
+					remove_trait = {
+						trait = army_chief_planning_1 
+						slot = army_chief 
+					}
+					add_trait = {
+						trait = re_army_chief_planning_1
+						slot = army_chief 
+					}
+				}
+				every_character = {
+					limit = {
+						has_trait = army_chief_planning_2 
+					}
+					remove_trait = {
+						trait = army_chief_planning_2
+						slot = army_chief 
+					}
+					add_trait = {
+						trait = re_army_chief_planning_2
+						slot = army_chief 
+					}
+				}
+				every_character = {
+					limit = {
+						has_trait = army_chief_planning_3
+					}
+					remove_trait = {
+						trait = army_chief_planning_3 
+						slot = army_chief 
+					}
+					add_trait = {
+						trait = re_army_chief_planning_3
+						slot = army_chief 
+					}
+				}
+				every_character = {
+					limit = {
+						has_trait = army_logistics_1
+					}
+					remove_trait = {
+						trait = army_logistics_1 
+						slot = high_command 
+					}
+					add_trait = {
+						trait = re_army_logistics_1 
+						slot = high_command  
+					}
+				}
+				every_character = {
+					limit = {
+						has_trait = army_logistics_2
+					}
+					remove_trait = {
+						trait = army_logistics_2 
+						slot = high_command 
+					}
+					add_trait = {
+						trait = re_army_logistics_2
+						slot = high_command  
+					}
+				}
+				every_character = {
+					limit = {
+						has_trait = army_logistics_3
+					}
+					remove_trait = {
+						trait = army_logistics_3 
+						slot = high_command 
+					}
+					add_trait = {
+						trait = re_army_logistics_3
+						slot = high_command  
+					}
+				}
+			}
+		}
+	}
+}

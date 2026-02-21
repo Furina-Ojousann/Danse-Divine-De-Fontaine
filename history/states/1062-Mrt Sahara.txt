@@ -1,0 +1,17 @@
+state = {
+	id = 1062
+	name = 1062_Mrt_Sahara
+	manpower = 10
+	state_category = wasteland
+	history = {
+		owner = FWA
+		add_core_of = MRT 
+		buildings = {
+			infrastructure = 4 
+		}
+		add_dynamic_modifier = {
+			modifier = Sahara_HighWay
+		}
+	}
+	provinces = { 13400 13401 13402 13403 13404 13405 13406 }
+}

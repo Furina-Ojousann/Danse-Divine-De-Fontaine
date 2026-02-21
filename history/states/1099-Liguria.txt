@@ -1,0 +1,28 @@
+state = {
+	id = 1099
+	name = 1099_Liguria
+	manpower = 1089900
+	state_category = metropolis 
+	resources = {
+		steel = 32
+	}
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = SPM 
+		victory_points = {
+			6788 20 
+		}
+		buildings = {
+			infrastructure = 8 
+			air_base = 10 
+			industrial_complex = 2 
+			dockyard = 2 
+			6788 = {
+				naval_facility = 1 # Genoa Facilities
+				naval_base = 8 
+			}
+		}
+	}
+	provinces = { 6788 3772 11891 }
+}

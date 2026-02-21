@@ -1,0 +1,19 @@
+state={
+	id=878
+	name="STATE_878"
+	provinces={
+		2900 4812 9224 11122 13065 
+	}
+	impassable = yes 
+	history = {
+		owner = SOV
+		add_core_of = SOV 
+		buildings = {
+			infrastructure = 2 
+		}
+	}
+	manpower=15974
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0
+}

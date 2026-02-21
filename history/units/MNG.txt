@@ -1,0 +1,80 @@
+division_template = {
+	name = "Wehrmacht Panzer Division"
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
+		mechanized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
+		mechanized = { x = 1 y = 3 }
+		medium_armor = { x = 2 y = 0 }
+		medium_armor = { x = 2 y = 1 }
+		medium_armor = { x = 2 y = 2 }
+		medium_armor = { x = 2 y = 3 }
+		medium_armor = { x = 3 y = 0 }
+		medium_armor = { x = 3 y = 1 }
+		medium_armor = { x = 3 y = 2 }
+		medium_armor = { x = 3 y = 3 }
+		heavy_tank_destroyer_brigade = { x = 4 y = 0 }
+		heavy_tank_destroyer_brigade = { x = 4 y = 1 }
+	}
+	support = {
+		armored_engineer = { x = 0 y = 0 }
+		anti_air = { x = 0 y = 1 }
+		field_hospital = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		helicopter_brigade = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Russische Fremdenlegion"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		location = 10142
+		division_template = "Wehrmacht Panzer Division" 
+		start_experience_factor = 0.60 
+	}
+	division = {
+		location = 7328
+		division_template = "Wehrmacht Panzer Division" 
+		start_experience_factor = 0.60 
+	}
+
+	division = {
+		location = 10142
+		division_template = "Russische Fremdenlegion"
+		start_experience_factor = 0.30 
+	}
+	division = {
+		location = 12200
+		division_template = "Russische Fremdenlegion"
+		start_experience_factor = 0.30 
+	}
+	division = {
+		location = 7401
+		division_template = "Russische Fremdenlegion"
+		start_experience_factor = 0.30 
+	}
+	division = {
+		location = 291
+		division_template = "Russische Fremdenlegion"
+		start_experience_factor = 0.30 
+	}
+}

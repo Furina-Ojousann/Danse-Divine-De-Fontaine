@@ -1,0 +1,24 @@
+### 欧洲联盟 Union Europeenne ###
+
+faction_template_UE = {
+	name = UE 
+	manifest = faction_manifest_UE_In_varietate_concordia
+	icon = GFX_faction_icon_union_europeenne 
+	visible = {
+		original_tag = FRA 
+		has_country_leader = {
+			character = FRA_Furina_de_Fontaine
+			ruling_only = yes 
+		}
+	}
+	goals = {
+		faction_goal_eastern_european_security
+		faction_goal_come_up_european_unity
+	}
+	default_rules = {
+		joining_rule_non_fascist
+		government_in_exile_allowed
+		change_leader_rule_manifest_below_35
+		change_leader_rule_industry
+	}
+}

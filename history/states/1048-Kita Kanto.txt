@@ -1,0 +1,28 @@
+state = {
+	id = 1048
+	name = 1048_Kita_Kanto
+	manpower = 4892000
+	state_category = city 
+	history = {
+		owner = JAP 
+		add_core_of = JAP 
+		victory_points = {
+			1097 10 
+		}
+		victory_points = {
+			993 5 
+		}
+		victory_points = {
+			7016 3
+		}
+		victory_points = {
+			11908 5 
+		}
+		buildings = {
+			infrastructure = 6 
+			dockyard = 1 
+			industrial_complex = 1 
+		}
+	}
+	provinces = { 993 1097 1113  4000 4100 7016 11908 4455 }
+}

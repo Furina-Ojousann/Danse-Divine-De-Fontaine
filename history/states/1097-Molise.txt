@@ -1,0 +1,15 @@
+state = {
+	id = 1097
+	name = 1097_Molise
+	manpower = 219800
+	state_category = town 
+	history = {
+		owner = ITA 
+		add_core_of = ITA 
+		add_core_of = TTS 
+		buildings = {
+			infrastructure = 5 
+		}
+	}
+	provinces = { 3923 3966 }
+}

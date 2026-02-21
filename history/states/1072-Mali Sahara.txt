@@ -1,0 +1,17 @@
+state = {
+	id = 1072
+	name = 1072_Mali_Sahara
+	manpower = 2890
+	state_category = wasteland
+	history = {
+		owner = FWA
+		add_core_of = MLI 
+		buildings = {
+			infrastructure = 4 
+		}
+		add_dynamic_modifier = {
+			modifier = Sahara_HighWay 
+		}
+	}
+	provinces = { 1115 10725 }
+}

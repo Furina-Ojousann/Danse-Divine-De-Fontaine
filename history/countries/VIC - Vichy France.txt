@@ -1,0 +1,15 @@
+capital = 16 
+
+recruit_character = FRA_Paul_Ramadier 
+recruit_character = FRA_Charles_Tillon
+recruit_character = FRA_Robert_Schuman 
+
+set_politics = {
+	ruling_party = fascism 
+	elections_allowed = no 
+}
+
+set_popularities = {
+	fascism = 56
+	neutrality = 44 
+}
