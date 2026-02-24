@@ -514,4 +514,129 @@ French_Fontaine_parliament = {
 			clamp_variable = { var = R_Fontaine_Trade_Monthly_Progress max = 1.00 min = 0.00 }
 		}
 	}
+
+	RFP_stirring_up_tensions_in_parliament = {
+		icon = GFX_decision_eng_propaganda_campaigns 
+		visible = {
+			has_country_flag = r_fontaine_bill_european_alliance
+		}
+		cost = RFP_stirring_up_tensions_in_parliament_cost
+		days_remove = 7 
+		modifier = {
+			war_support_weekly = 0.025
+		}
+		remove_effect = {
+			custom_effect_tooltip = POLITICAL_DECISION_COST_ADD_15
+			add_to_variable = { RFP_stirring_up_tensions_in_parliament_cost = 25 }
+		}
+	}
+}
+
+French_Fontaine_World_War_II_Strategies = {
+	FWWS_upcoming_invasion_against_belgium = {
+		icon = GFX_decision_generic_planted_spear 
+		days_mission_timeout = 70 
+		available = { hidden_trigger = { always = no } }
+		activation = {
+			always = no 
+		}
+		timeout_effect = {
+			set_global_flag = r_fontaine_invade_belgium
+			declare_war_on = {
+				target = BEL 
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = LUX 
+				type = annex_everything 
+			}
+			hidden_effect = {
+				GER = {
+					declare_war_on = {
+						target = BEL 
+						type = annex_everything 
+					}
+				}
+			}
+		}
+	}
+	FWWS_invade_belgium_immediately = {
+		icon = GFX_decision_generic_tank 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_invade_belgium 
+			not = { has_war_with = BEL }
+			not = { has_global_flag = r_fontaine_invade_belgium_finished }
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_CP_25
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = FWWS_upcoming_invasion_against_belgium 
+				days = -56
+			}
+		}
+	}
+	FWWS_bargain_with_holand = {
+		icon = GFX_decision_hol_draw_up_staff_plans 
+		fire_only_once = yes 
+		visible = {
+			has_completed_focus = FRA_renew_invade_belgium 
+			not = { has_war_with = BEL }
+			not = { has_global_flag = r_fontaine_invade_belgium_finished }
+			HOL = {
+				exists = yes 
+				is_subject = no 
+			}
+		}
+		cost = 30 
+		complete_effect = {
+			HOL = {
+				country_event = {
+					id = R_Fontaine_diplomacy.1 
+					days = 1 
+				}
+			}
+		}
+	}
+
+	FWWS_german_invasion_in_unknown_days = {
+		icon = GFX_decision_generic_tank
+		days_mission_timeout = 35 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		cancel_trigger = {
+			GER = {
+				OR = {
+					has_capitulated = yes 
+					exists = no 
+					is_ally_with = ROOT 
+				}
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = FWWS_german_invasion_in_unknown_days_tt
+			GER = {
+				declare_war_on = {
+					target = FRA 
+					type = puppet_wargoal_focus 
+				}
+				hidden_effect = {
+					declare_war_on = {
+						target = HOL 
+						type = puppet_wargoal_focus
+					}
+					country_event = {
+						id = R_Fontaine_diplomacy.8
+						hours = 3 
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = { id = R_Fontaine_news.2 hours = 6 }
+			}
+		}
+	}
 }

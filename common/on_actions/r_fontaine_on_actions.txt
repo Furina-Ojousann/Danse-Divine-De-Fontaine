@@ -28,4 +28,106 @@ on_actions = {
 			}
 		}
 	}
+
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = r_fontaine_invade_belgium 
+					ROOT = { original_tag = BEL }
+				}
+				BEL = { white_peace = FRA white_peace = GER }
+				if = {
+					limit = { BEL = { has_war_with = HOL } }
+					BEL = { white_peace = HOL }
+				}
+				FRA = {
+					transfer_state = 34 
+					transfer_state = 980
+					add_state_claim = 34
+					add_state_claim = 980
+					transfer_state = 8
+					add_state_claim = 8 
+				}
+				if = {
+					limit = { FRA = { has_country_flag = r_fontaine_diplomacy_holand_accepted } }
+					HOL = {
+						transfer_state = 977
+						add_state_core = 977
+						transfer_state = 1121
+						add_state_core = 1121 
+					}
+				}
+				else = {
+					FRA = {
+						transfer_state = 977
+						transfer_state = 1121
+					}
+				}
+				GER = {
+					transfer_state = 1053
+					add_state_core = 1053
+				}
+				remove_state_core = 34
+				remove_state_core = 980
+				remove_state_core = 977
+				remove_state_core = 1121
+				remove_state_core = 1053
+				FRA = {
+					set_autonomy = {
+						target = BEL 
+						autonomy_state = autonomy_collaboration_government
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.50 
+				}
+				set_cosmetic_tag = BEL_BRUSSELS
+				set_global_flag = r_fontaine_invade_belgium_finished
+				FRA = { country_event = R_Fontaine_diplomacy.5 }
+			}
+
+
+			if = {
+				limit = {
+					ROOT = { original_tag = HOL }
+					FROM = { original_tag = GER }
+					INS = { is_subject_of = ROOT }
+					FRA = { has_country_flag = r_fontaine_diplomacy_holand_accepted }
+				}
+				HOL = { leave_faction = yes white_peace = GER }
+				GER = {
+					annex_country = {
+						target = HOL 
+					}
+				}
+				RKN = {
+					transfer_state = 7
+					transfer_state = 36
+					transfer_state = 35
+					transfer_state = 977
+					transfer_state = 1121
+				}
+				GER = {
+					set_autonomy = {
+						target = RKN 
+						autonomy_state = autonomy_reichskommissariat
+					}
+				}
+				HOL = {
+					transfer_state = 309
+					transfer_state = 695 
+				}
+				FRA = {
+					country_event = {
+						id = R_Fontaine_diplomacy.9 
+					}
+				}
+			}
+		}
+	}
 }

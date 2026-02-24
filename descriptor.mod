@@ -1,0 +1,17 @@
+version="2.1 - Anew"
+tags={
+	"Alternative History"
+	"Events"
+	"Map"
+	"National Focuses"
+	"Technologies"
+	"Fixes"
+	"Balance"
+	"Military"
+	"Ideologies"
+}
+name="Danse Divine De Fontaine"
+picture="thumbnail.png"
+replace_path="gfx/loadingscreens"
+supported_version="1.17.*"
+remote_file_id="3610099475"

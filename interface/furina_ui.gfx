@@ -1179,5 +1179,52 @@ spriteTypes = {
 		name = "GFX_country_selection_book"
 		textureFile = "gfx/interface/country_selection_book.png"
 	}
+
+	#spriteType = {
+	#	name = "GFX_fontaine_world_war_ii_strategies_ui_background"
+	#	textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_background.png"
+	#}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_fontaine_world_war_ii_strategies_ui_background"
+		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_background.png"
+		noOfFrames = 3
+		animation_rate_fps = 9
+		looping = yes
+		play_on_show = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+		pause_on_loop = 0.0
+	}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_fontaine_world_war_ii_strategies_ui_symbol_fontaine"
+		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_symbol_fontaine.png"
+		noOfFrames = 20
+		animation_rate_fps = 20
+		looping = yes
+		play_on_show = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+		pause_on_loop = 0.0
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_world_war_ii_strategies_ui_symbol_german"
+		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_symbol_german.png"
+	}
+
+	#spriteType = {
+	#	name = "GFX_fontaine_world_war_ii_strategies_ui_symbol_fontaine"
+	#	textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_symbol_fontaine.png"
+	#}
+
+	spriteType = {
+		name = "GFX_fontaine_world_war_ii_strategies_ui_land_german"
+		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_land_german.png"
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_world_war_ii_strategies_ui_land_fontaine"
+		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_land_fontaine.png"
+	}
 }
 

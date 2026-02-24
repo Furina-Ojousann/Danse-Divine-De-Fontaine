@@ -16,6 +16,37 @@ GER_highered_armored_production = {
 	}
 }
 
+GER_War_with_Fontaine = {
+	allowed = {
+		original_tag = GER 
+	}
+	enable = {
+		has_opinion_modifier = hammer_to_fall 
+	}
+	ai_strategy = {
+		type = prepare_for_war 
+		id = FRA 
+		value = 500 
+	}
+	ai_strategy = {
+		type = front_unit_request 
+		id = FRA 
+		value = 500 
+	}
+	ai_strategy = {
+		type = front_control
+
+		state = 980 # close up maginot line
+
+		ratio = 0.6
+
+		priority = 500
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
 GER_dont_waste_experience_forming_templates = {
 	allowed = {
 		original_tag = GER 

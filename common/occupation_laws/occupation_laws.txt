@@ -114,7 +114,10 @@ autonomous_occupation = {
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
 
 	visible = {
-		has_government = democratic #? on design
+		#? on design
+		OR = {
+			has_elections = yes 
+		}
 	}
 
 	state_modifier = {
@@ -165,10 +168,11 @@ foreign_civilian_oversight = {
 local_police_force_garrison = {
 	icon = 11
 	sound_effect = "Martial_Law_Interface_Local_Police_Force_Garrison"
+	default_law = yes 
 	
 	state_modifier = {
 		resistance_target 				= -0.15
-		compliance_gain 				= -0.025
+		compliance_gain 				= -0.005
 		required_garrison_factor 		= -0.35
 		resistance_damage_to_garrison	= -0.5
 		local_factories 				= 0.00

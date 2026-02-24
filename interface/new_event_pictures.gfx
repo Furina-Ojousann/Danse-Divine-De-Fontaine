@@ -1,7 +1,85 @@
 spriteTypes = {
+	###########################################################################
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_1"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_2"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_2.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_3"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_3.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_4"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_4.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_5"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_5.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_6"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_6.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_7"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_7.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_8"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_8.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_9"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_9.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_10"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_10.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_11"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_11.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_14"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_14.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_15"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_15.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_16"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_16.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_17"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_17.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_18"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_18.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_19"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_19.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_fra_Furina_20"
+		textureFile = "gfx/event_pictures/report_event_fra_Furina_20.png"
+	}
+	###########################################################################
 	spriteType = {
 		name = "GFX_report_event_r_fontaine_1"
 		textureFile = "gfx/event_pictures/report_event_r_fontaine_1.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_r_fontaine_2"
+		textureFile = "gfx/event_pictures/report_event_r_fontaine_2.png"
 	}
 	spriteType = {
 		name = "GFX_report_event_fra_assemblee_1"
@@ -162,14 +240,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_fontaine_science_2"
 		textureFile = "gfx/event_pictures/report_event_fontaine_science_2.png"
-	}
-	spriteType = {
-		name = "GFX_report_event_fra_Furina_1"
-		textureFile = "gfx/event_pictures/report_event_fra_Furina_1.png"
-	}
-	spriteType = {
-		name = "GFX_report_event_fra_Furina_10"
-		textureFile = "gfx/event_pictures/report_event_fra_Furina_10.png"
 	}
 	spriteType = {
 		name = "GFX_report_event_fra_charlotte_2"
@@ -681,5 +751,15 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_soviet_death_of_stalin"
 		textureFile = "gfx/event_pictures/news_event_soviet_death_of_stalin.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_wallonia_crisis"
+		textureFile = "gfx/event_pictures/news_event_wallonia_crisis.png"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_parachute_army_of_germany"
+		textureFile = "gfx/event_pictures/news_event_parachute_army_of_germany.png"
 	}
 }

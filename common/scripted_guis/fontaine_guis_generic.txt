@@ -188,10 +188,27 @@ scripted_gui = {
 
 	}
 
+	Decision_Gifs_Waring_Displayer_UI = {
+		window_name = Decision_Gifs_Waring_Displayer 
+		context_type = decision_category 
+		properties = {
+			fontaine_world_war_ii_strategies_ui_land = {
+				image = "[GetFontaineWWIIUIland]"
+			}
+			GFX_fontaine_world_war_ii_strategies_ui_symbol = {
+				image = "[GetFontaineWWIIUISymbol]"
+			}
+		}
+	}
+
 	Renew_Fontaine_economic_task = {
 		window_name = R_Fontaine_Economy 
 		parent_window_token = national_focus  
+		ai_enabled = {
+			always = no 
+		}
 		visible = {
+			THIS = { original_tag = FRA }
 			original_tag = FRA 
 			has_idea = FRA_Navia_Caspar_political_advisor 
 			not = { has_country_flag = fontaine_resetting_accomplish }

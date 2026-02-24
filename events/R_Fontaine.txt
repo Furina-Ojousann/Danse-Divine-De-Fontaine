@@ -1,4 +1,6 @@
 add_namespace = R_Fontaine
+add_namespace = R_Fontaine_news
+add_namespace = R_Fontaine_diplomacy
 add_namespace = R_fontaine_parliament
 ##### 基础事件 ###
 country_event = {
@@ -50,6 +52,10 @@ unit_leader_event = {
 				}
 			}
 		}
+		reduce_focus_completion_cost = {
+			focus = FRA_aggressive_focus 
+			cost = 20 
+		}
 	}
 }
 
@@ -77,6 +83,10 @@ unit_leader_event = {
 					}
 				}
 			}
+		}
+		reduce_focus_completion_cost = {
+			focus = FRA_defensive_focus 
+			cost = 20 
 		}
 	}
 }
@@ -374,7 +384,7 @@ country_event = {
 		activate_shine_on_focus = FRA_renew_navia_reform_1 
 		reduce_focus_completion_cost = {
 			focus = FRA_renew_navia_reform_1
-			cost = 105
+			cost = -105
 		}
 	}
 }
@@ -532,6 +542,732 @@ country_event = {
 		}
 	}
 }
+
+###################################################################################
+#            		                枫丹外交事件                                   #
+###################################################################################
+
+country_event = {
+	id = R_Fontaine_diplomacy.1 #弗兰德斯
+	picture = GFX_report_event_hol_cabinet_de_geer 
+	title = R_Fontaine_diplomacy.1.t 
+	desc = R_Fontaine_diplomacy.1.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.1.a 
+		effect_tooltip = {
+			give_guarantee = FROM 
+			give_military_access = FROM 
+			FROM = { give_military_access = ROOT }
+		}
+		FROM = {
+			country_event = {
+				id = R_Fontaine_diplomacy.2 
+				days = 2 
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine_diplomacy.1.b
+		ai_chance = {
+			base = 0 
+		}
+		FROM = {
+			country_event = {
+				id = R_Fontaine_diplomacy.3
+				days = 2 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.2 #荷兰同意
+	picture = GFX_report_event_hol_cabinet_de_geer 
+	title = R_Fontaine_diplomacy.2.t 
+	desc = R_Fontaine_diplomacy.2.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.2.a 
+		give_guarantee = FROM 
+		give_military_access = FROM 
+		FROM = { give_military_access = ROOT }
+		set_country_flag = r_fontaine_diplomacy_holand_accepted
+		add_war_support = 0.05 
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.3 #荷兰拒绝
+	picture = GFX_report_event_hol_cabinet_de_geer 
+	title = R_Fontaine_diplomacy.3.t 
+	desc = R_Fontaine_diplomacy.3.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.3.a 
+		add_war_support = 0.05 
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.4 #意料之外的德国攻势
+	picture = GFX_report_event_german_troops_paris 
+	title = R_Fontaine_diplomacy.4.t
+	desc = R_Fontaine_diplomacy.4.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.4.a 
+		GER = {
+			add_named_threat = {
+				threat = 5 
+				name = FRA_renew_invade_belgium_threat
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.5 #对峙
+	picture = GFX_report_event_fra_Furina_17 
+	title = R_Fontaine_diplomacy.5.t 
+	desc = R_Fontaine_diplomacy.5.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.5.a 
+		custom_effect_tooltip = R_Fontaine_diplomacy.5.tt
+		activate_mission = FWWS_german_invasion_in_unknown_days
+		hidden_effect = { news_event = R_Fontaine_news.1 country_event = R_Fontaine_diplomacy.6 } 
+		add_opinion_modifier = {
+			target = GER 
+			modifier = hammer_to_fall
+		}
+		send_embargo = GER 
+		GER = {
+			add_opinion_modifier = {
+				target = FRA 
+				modifier = hammer_to_fall
+			}
+			send_embargo = FRA 
+			1053 = {
+				add_dynamic_modifier = {
+					modifier = FRA_build_defense_in_belgium 
+					scope = GER
+				}
+			}
+			51 = {
+				add_dynamic_modifier = {
+					modifier = FRA_build_defense_in_belgium 
+					scope = GER 
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = R_Fontaine_diplomacy.7 
+				days = 35
+				random_days = 14
+			}
+		}
+		980 = {
+			add_dynamic_modifier = {
+				modifier = FRA_build_defense_in_belgium 
+				scope = FRA 
+			}
+		}
+		34 = {
+			add_dynamic_modifier = {
+				modifier = FRA_build_defense_in_belgium 
+				scope = FRA 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.6 #随机化德国入侵时间
+	hidden = yes 
+	is_triggered_only = yes 
+	immediate = {
+		if = {
+			limit = { not = { has_war_with = GER } }
+			set_temp_variable = { current_mission_timeout = var:days_mission_timeout@FWWS_german_invasion_in_unknown_days }
+			if = {
+				limit = { check_variable = { current_mission_timeout > 20 } }
+				set_temp_variable_to_random = {
+					var = random_time_added
+					max = -10
+					min = -16
+				}
+				round_variable = random_time_added
+				add_days_mission_timeout = {
+					mission = FWWS_german_invasion_in_unknown_days
+					days = random_time_added 
+				}
+			}
+			else_if = {
+				limit = { check_variable = { current_mission_timeout < 5 } }
+				set_temp_variable_to_random = {
+					var = random_time_added
+					max = 30
+					min = 16
+				}
+				add_days_mission_timeout = {
+					mission = FWWS_german_invasion_in_unknown_days
+					days = random_time_added 
+				}
+			}
+			country_event = {
+				id = R_Fontaine_diplomacy.6
+				days = 3 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.7 #Hammer to fall
+	picture = GFX_report_event_r_fontaine_2 
+	title = R_Fontaine_diplomacy.7.t 
+	desc = R_Fontaine_diplomacy.7.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_diplomacy.7.a 
+		add_manpower = -1 
+		add_equipment_to_stockpile = {
+			type = small_plane_airframe
+			amount = -1 
+		}
+		add_war_support = 0.15 
+		add_days_mission_timeout = {
+			mission = FWWS_german_invasion_in_unknown_days 
+			days = -100 
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.8 #德国伞兵突击
+	hidden = yes 
+	is_triggered_only = yes 
+
+	immediate = {
+		GER = {
+			if = {
+				limit = { not = { has_tech = paratroopers } }
+				set_technology = {
+					paratroopers = 1 
+				}
+			}
+			load_oob = german_scripted_parachute_assault 
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine_diplomacy.9 #接管东印度
+	title = R_Fontaine_diplomacy.9.t 
+	desc = R_Fontaine_diplomacy.9.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_quebec 
+	option = {
+		name = R_Fontaine_diplomacy.9.a 
+		set_autonomy = {
+			target = HOL 
+			autonomy_state = autonomy_dominion 
+		}
+		hidden_effect = {
+			HOL = {
+				set_politics = {
+					ruling_party = democratic 
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.40
+				}
+			}
+		}
+		FIC = {
+			annex_country = {
+				target = INS 
+				transfer_troops = yes 
+			}
+			every_owned_state = {
+				limit = { is_core_of = INS }
+				add_compliance = 60 
+			}
+			set_cosmetic_tag = FIC_Austronesia_Union
+		}
+	}
+}
+
+add_namespace = R_Fontaine_diplomacy
+
+# ============================================================
+# 10: BEL 被告知“枫丹准备入侵”
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.10
+    title = R_Fontaine_diplomacy.10.t
+    desc  = R_Fontaine_diplomacy.10.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # a: 求助英国 -> ENG 11
+        name = R_Fontaine_diplomacy.10.a
+        hidden_effect = {
+            ENG = { country_event = { id = R_Fontaine_diplomacy.11 hours = 1 } }
+        }
+    }
+    option = { # b: 屈膝投降 -> FRA 12
+        name = R_Fontaine_diplomacy.10.b
+        hidden_effect = {
+            FRA = { country_event = { id = R_Fontaine_diplomacy.12 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 11: ENG 是否干预比利时（只有A：与枫丹协商）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.11
+    title = R_Fontaine_diplomacy.11.t
+    desc  = R_Fontaine_diplomacy.11.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 与枫丹协商 -> FRA 13
+        name = R_Fontaine_diplomacy.11.a
+        hidden_effect = {
+            # 可选：记一下英国确实介入过
+            set_country_flag = r_fon_diplo_eng_intervened
+
+            FRA = { country_event = { id = R_Fontaine_diplomacy.13 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 12: FRA 接受比利时投降（只有A）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.12
+    title = R_Fontaine_diplomacy.12.t
+    desc  = R_Fontaine_diplomacy.12.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = {
+        name = R_Fontaine_diplomacy.12.a
+        # 你可以在这里写实际效果：傀儡/吞并/和平条约等
+        set_autonomy = {
+			target = BEL 
+			autonomy_state = autonomy_supervised_state 
+		}
+    }
+}
+
+# ============================================================
+# 13: FRA 是否愿意谈判（A拒绝 -> ENG14；B同意 -> ENG15）
+# 注意：事件23要求“这次只有拒绝选项”，用flag隐藏B即可
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.13
+    title = R_Fontaine_diplomacy.13.t
+    desc  = R_Fontaine_diplomacy.13.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 拒绝谈判 -> ENG 14
+        name = R_Fontaine_diplomacy.13.a
+        hidden_effect = {
+            ENG = { country_event = { id = R_Fontaine_diplomacy.14 hours = 1 } }
+        }
+    }
+
+    option = { # B: 同意谈判 -> ENG 15
+        name = R_Fontaine_diplomacy.13.b
+        trigger = {
+            NOT = { has_country_flag = r_fon_diplo_no_more_talk } # 事件23会把这个flag打开
+        }
+        hidden_effect = {
+            ENG = { country_event = { id = R_Fontaine_diplomacy.15 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 14: ENG 的回应（A默许入侵 -> FRA16；B不让步 -> FRA17）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.14
+    title = R_Fontaine_diplomacy.14.t
+    desc  = R_Fontaine_diplomacy.14.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 默许 -> FRA 16（通知）
+        name = R_Fontaine_diplomacy.14.a
+        hidden_effect = {
+            FRA = { country_event = { id = R_Fontaine_diplomacy.16 hours = 1 } }
+        }
+    }
+
+    option = { # B: 不会让步 -> FRA 17
+        name = R_Fontaine_diplomacy.14.b
+        hidden_effect = {
+            FRA = { country_event = { id = R_Fontaine_diplomacy.17 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 16: FRA 收到“英国默许”的通知（无后续）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.16
+    title = R_Fontaine_diplomacy.16.t
+    desc  = R_Fontaine_diplomacy.16.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { name = R_Fontaine_diplomacy.16.a }
+}
+
+# ============================================================
+# 17: FRA 对英国强硬回应（A无视 -> ENG18；B回到谈判 -> ENG15）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.17
+    title = R_Fontaine_diplomacy.17.t
+    desc  = R_Fontaine_diplomacy.17.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 无视警告 -> ENG 18
+        name = R_Fontaine_diplomacy.17.a
+        hidden_effect = {
+            ENG = { country_event = { id = R_Fontaine_diplomacy.18 hours = 1 } }
+        }
+    }
+
+    option = { # B: 回到谈判 -> ENG 15
+        name = R_Fontaine_diplomacy.17.b
+        hidden_effect = {
+            ENG = { country_event = { id = R_Fontaine_diplomacy.15 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 18: ENG 最终立场/升级（这里按你需要写实际效果）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.18
+    title = R_Fontaine_diplomacy.18.t
+    desc  = R_Fontaine_diplomacy.18.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = {
+        name = R_Fontaine_diplomacy.18.a
+        hidden_effect = {
+            # 例如：保证比利时/加入战争/提高紧张度等
+            # guarantee = BEL
+        }
+    }
+}
+
+# ============================================================
+# 15: ENG 发起谈判（只有A：同时让 BEL 和 FRA 触发 19）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.15
+    title = R_Fontaine_diplomacy.15.t
+    desc  = R_Fontaine_diplomacy.15.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 提出方案 -> BEL/FRA 19
+        name = R_Fontaine_diplomacy.15.a
+        hidden_effect = {
+            # 清掉上一轮回应
+            BEL = {
+                clr_country_flag = r_fon_diplo_bel_accept
+                clr_country_flag = r_fon_diplo_bel_refuse
+            }
+            FRA = {
+                clr_country_flag = r_fon_diplo_fra_accept
+                clr_country_flag = r_fon_diplo_fra_refuse
+                clr_country_flag = r_fon_diplo_no_more_talk # 新一轮谈判恢复B选项
+            }
+
+            BEL = { country_event = { id = R_Fontaine_diplomacy.19 hours = 1 } }
+            FRA = { country_event = { id = R_Fontaine_diplomacy.19 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 19: 方案是否接受（同一事件同时用于 BEL 与 FRA）
+# 每次选择后都通知 ENG 去结算（隐藏事件 1900）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.19
+    title = R_Fontaine_diplomacy.19.t
+    desc  = R_Fontaine_diplomacy.19.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # A: 同意
+        name = R_Fontaine_diplomacy.19.a
+        hidden_effect = {
+            if = {
+                limit = { tag = BEL }
+                set_country_flag = r_fon_diplo_bel_accept
+                clr_country_flag = r_fon_diplo_bel_refuse
+            }
+            else = {
+                if = {
+                    limit = { tag = FRA }
+                    set_country_flag = r_fon_diplo_fra_accept
+                    clr_country_flag = r_fon_diplo_fra_refuse
+                }
+            }
+
+            ENG = { country_event = { id = R_Fontaine_diplomacy.1900 hours = 1 } }
+        }
+    }
+
+    option = { # B: 拒绝
+        name = R_Fontaine_diplomacy.19.b
+        hidden_effect = {
+            if = {
+                limit = { tag = BEL }
+                set_country_flag = r_fon_diplo_bel_refuse
+                clr_country_flag = r_fon_diplo_bel_accept
+            }
+            else = {
+                if = {
+                    limit = { tag = FRA }
+                    set_country_flag = r_fon_diplo_fra_refuse
+                    clr_country_flag = r_fon_diplo_fra_accept
+                }
+            }
+
+            ENG = { country_event = { id = R_Fontaine_diplomacy.1900 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 1900: ENG 隐藏结算事件（等两边都表态后分支）
+# 规则：
+# - BEL同意 & FRA同意 -> ENG20 -> FRA21
+# - BEL拒绝 & FRA同意 -> ENG & FRA 同时 22
+# - BEL同意 & FRA拒绝 -> ENG18
+# - BEL拒绝 & FRA拒绝 -> ENG23 -> FRA13(只剩拒绝选项)
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.1900
+    hidden = yes
+    is_triggered_only = yes
+
+    immediate = {
+        # 两边是否都已表态？
+        if = {
+            limit = {
+                OR = { BEL = { has_country_flag = r_fon_diplo_bel_accept } BEL = { has_country_flag = r_fon_diplo_bel_refuse } }
+                OR = { FRA = { has_country_flag = r_fon_diplo_fra_accept } FRA = { has_country_flag = r_fon_diplo_fra_refuse } }
+            }
+
+            # 结算分支
+            if = {
+                limit = {
+                    BEL = { has_country_flag = r_fon_diplo_bel_accept }
+                    FRA = { has_country_flag = r_fon_diplo_fra_accept }
+                }
+                country_event = { id = R_Fontaine_diplomacy.20 hours = 1 }
+            }
+            else_if = {
+                limit = {
+                    BEL = { has_country_flag = r_fon_diplo_bel_refuse }
+                    FRA = { has_country_flag = r_fon_diplo_fra_accept }
+                }
+                country_event = { id = R_Fontaine_diplomacy.22 hours = 1 }
+                FRA = { country_event = { id = R_Fontaine_diplomacy.22 hours = 1 } }
+            }
+            else_if = {
+                limit = {
+                    BEL = { has_country_flag = r_fon_diplo_bel_accept }
+                    FRA = { has_country_flag = r_fon_diplo_fra_refuse }
+                }
+                country_event = { id = R_Fontaine_diplomacy.18 hours = 1 }
+            }
+            else = { # 双方都拒绝
+                country_event = { id = R_Fontaine_diplomacy.23 hours = 1 }
+            }
+
+            # 清理回应，避免重复结算
+            BEL = {
+                clr_country_flag = r_fon_diplo_bel_accept
+                clr_country_flag = r_fon_diplo_bel_refuse
+            }
+            FRA = {
+                clr_country_flag = r_fon_diplo_fra_accept
+                clr_country_flag = r_fon_diplo_fra_refuse
+            }
+        }
+    }
+
+    option = { name = OK }
+}
+
+# ============================================================
+# 20: ENG 成功（触发 FRA21）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.20
+    title = R_Fontaine_diplomacy.20.t
+    desc  = R_Fontaine_diplomacy.20.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = {
+        name = R_Fontaine_diplomacy.20.a
+        hidden_effect = {
+            FRA = { country_event = { id = R_Fontaine_diplomacy.21 hours = 1 } }
+        }
+    }
+}
+
+# ============================================================
+# 21: FRA 收到结果（只有A）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.21
+    title = R_Fontaine_diplomacy.21.t
+    desc  = R_Fontaine_diplomacy.21.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { name = R_Fontaine_diplomacy.21.a }
+}
+
+# ============================================================
+# 22: ENG 与 FRA 同时触发（BEL拒绝、FRA同意）
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.22
+    title = R_Fontaine_diplomacy.22.t
+    desc  = R_Fontaine_diplomacy.22.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = { name = R_Fontaine_diplomacy.22.a }
+}
+
+# ============================================================
+# 23: ENG 双方都拒绝 -> 再次触发 FRA13，但这次只有拒绝选项
+# ============================================================
+country_event = {
+    id = R_Fontaine_diplomacy.23
+    title = R_Fontaine_diplomacy.23.t
+    desc  = R_Fontaine_diplomacy.23.d
+    picture = GFX_report_event_generic_diplomacy
+
+    is_triggered_only = yes
+
+    option = {
+        name = R_Fontaine_diplomacy.23.a
+        hidden_effect = {
+            FRA = {
+                set_country_flag = r_fon_diplo_no_more_talk
+                country_event = { id = R_Fontaine_diplomacy.13 hours = 1 }
+            }
+        }
+    }
+}
+
+###################################################################################
+#            		                枫丹新闻事件                                   #
+###################################################################################
+
+news_event = {
+	id = R_Fontaine_news.1 #德法对峙
+	picture = GFX_news_event_wallonia_crisis
+	title = R_Fontaine_news.1.t 
+	desc = R_Fontaine_news.1.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_news.1.a 
+		trigger = {
+			OR = {
+				original_tag = FRA 
+				is_ally_with = FRA 
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine_news.1.b 
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_ally_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine_news.1.c 
+		trigger = {
+			not = {
+				original_tag = GER
+				original_tag = FRA
+				is_ally_with = FRA
+				is_ally_with = GER 
+			}
+		}
+	}
+}
+
+news_event = {
+	id = R_Fontaine_news.2 #黄色方案
+	picture = GFX_news_event_parachute_army_of_germany
+	title = R_Fontaine_news.2.t 
+	desc = R_Fontaine_news.2.d 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine_news.2.a 
+	}
+}
+
+###################################################################################
+#            		                枫丹议会事件                                   #
+###################################################################################
 
 country_event = {
 	# 这个事件用于储存开始计数前的各政党支持率
@@ -710,6 +1446,16 @@ country_event = {
 			else = { add_ideas = fra_r_labour_law_version_3 set_country_flag = fra_r_labour_law_version_3_integrated }
 			clr_country_flag = r_fontaine_try_labour_bill
 		}
+
+
+		if = {
+			limit = { has_country_flag = r_fontaine_bill_european_alliance }
+			effect_tooltip = {
+				unlock_national_focus = FRA_renew_unity_and_get_ready 	
+			}
+			set_country_flag = r_fontaine_bill_european_alliance_accepted
+		}
+
 		custom_effect_tooltip = R_fontaine_parliament.vanish.tt
 		clr_country_flag = fontaine_show_player_context_parliament
 		clr_country_flag = r_fontaine_show_situation
@@ -750,6 +1496,14 @@ country_event = {
 			custom_effect_tooltip = r_fontaine_PF_bill_support_worsen_1
 			### 法案失败次数的计数 ###
 			add_to_variable = { r_fontaine_bill_labour_reform_fail_count = 1 }
+		}
+
+		if = {
+			limit = { has_country_flag = r_fontaine_bill_european_alliance }
+			effect_tooltip = {
+				unlock_national_focus = FRA_renew_individual_defense 
+			}
+			set_country_flag = r_fontaine_bill_european_alliance_objected
 		}
 
 		clr_country_flag = fontaine_show_player_context_parliament

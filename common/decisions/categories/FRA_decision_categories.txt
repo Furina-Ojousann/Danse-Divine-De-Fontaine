@@ -2,18 +2,6 @@
 ##### FRA ######
 ################
 
-FRA_debug_decisions = {
-	icon = GFX_decision_category_CHL_nacista_decisions
-	priority = 997 
-	allowed = {
-		original_tag = FRA 
-	}
-	visible = {
-		is_debug = yes 
-		is_ai = no 
-	}
-}
-
 FRA_civil_unrest_category = {
 	icon = power_struggle
 	allowed = {
@@ -79,23 +67,3 @@ FRA_decolonization = {
 	allowed = { original_tag = FRA }
 }
 
-#####################################################
-#		This is the only used parliament gui		#
-#####################################################
-
-### 国民议会 ###
-
-French_Fontaine_parliament = { 
-	icon = GFX_decision_r_parliament 
-	priority = 996 
-	allowed = {
-		original_tag = FRA
-		has_country_flag = fontaine_show_parliament #这个变量或是从国策中获取，或是从debug调试决议中解锁
- 	}
-	scripted_gui = Renew_Fontaine_Parliament
-	visible_when_empty = yes 
-}
-
-#####################################################
-# 说实话我真的有点做不动了，但还是会想办法把重置写出来的 #
-#####################################################

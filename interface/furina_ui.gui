@@ -12,6 +12,27 @@
 
 guiTypes = {
 	containerWindowType = {
+		name = "Decision_Gifs_Waring_Displayer"
+		size = { width = 500 height = 194 }
+		orientation = UPPER_LEFT 
+		position = { x = 0 y = 0 }
+		clipping = no 
+		background = {
+			name = "displayer_background"
+			quadTextureSprite = GFX_fontaine_world_war_ii_strategies_ui_background 
+		}
+		iconType = {
+			name = "fontaine_world_war_ii_strategies_ui_land"
+			quadTextureSprite = GFX_fontaine_world_war_ii_strategies_ui_land_fontaine 
+			position = { x = 174 y = 30 }
+		}
+		iconType = {
+			name = "GFX_fontaine_world_war_ii_strategies_ui_symbol"
+			quadTextureSprite = GFX_fontaine_world_war_ii_strategies_ui_symbol_fontaine 
+			position = { x = 196 y = 45 }
+		}
+	}
+	containerWindowType = {
 		name = "Call_Author"
 		size = { width = 114 height = 40 }
 		clipping = no 

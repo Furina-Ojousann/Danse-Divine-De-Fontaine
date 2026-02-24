@@ -15,6 +15,38 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetFontaineWWIIUIland
+	text = {
+		trigger = {
+			OR = {
+				has_capitulated = yes 
+				is_subject_of = GER 
+			}
+		}
+		localization_key = GFX_fontaine_world_war_ii_strategies_ui_land_german 
+	}
+	text = {
+		localization_key = GFX_fontaine_world_war_ii_strategies_ui_land_fontaine
+	}
+}
+
+defined_text = {
+	name = GetFontaineWWIIUISymbol
+	text = {
+		trigger = {
+			OR = {
+				has_capitulated = yes 
+				is_subject_of = GER 
+			}
+		}
+		localization_key = GFX_fontaine_world_war_ii_strategies_ui_symbol_german 
+	}
+	text = {
+		localization_key = GFX_fontaine_world_war_ii_strategies_ui_symbol_fontaine
+	}
+}
+
+defined_text = {
 	name = GetBritishAirForceName
 	text = {
 		trigger = {

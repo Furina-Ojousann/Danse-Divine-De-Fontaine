@@ -39,4 +39,9 @@ spriteTypes = {
 		name = "GFX_decision_navia_plan_7"
 		textureFile = "gfx/interface/decisions/decision_navia_plan_7.png"
 	}
+
+	spriteType = {
+		name = "GFX_decision_category_fontaine_world_war_ii_strategies"
+		textureFile = "gfx/interface/decisions/decision_category_fontaine_world_war_ii_strategies.png"
+	}
 }

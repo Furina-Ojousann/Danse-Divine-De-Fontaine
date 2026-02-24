@@ -521,6 +521,8 @@ spriteTypes = {
 		animation_rate_fps = 15
 		looping = yes
 		play_on_show = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+		pause_on_loop = 0.0
 	}
 
 	spriteType = {
