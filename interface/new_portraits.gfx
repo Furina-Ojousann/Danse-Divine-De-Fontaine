@@ -1061,4 +1061,35 @@ spriteTypes = {
 		name = "GFX_Portrait_Germany_Ernst_Schafer"
 		textureFile = "gfx/leaders/GER/Portrait_Germany_Ernst_Schafer.png"
 	}
+
+	spriteType = {
+		name = "GFX_portrait_fra_cerbere_wriothesley"
+		textureFile = "gfx/leaders/FRA/portrait_fra_cerbere_wriothesley.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Siam_Seni_Pramoj"
+		textureFile = "gfx/leaders/SIA/Portrait_Siam_Seni_Pramoj.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Siam_Phayom_Chulanont"
+		textureFile = "gfx/leaders/SIA/Portrait_Siam_Phayom_Chulanont.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Japan_Okinori_Kaya"
+		textureFile = "gfx/leaders/JAP/Portrait_Japan_Okinori_Kaya.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Japan_Korekiyo_Takahashi"
+		textureFile = "gfx/leaders/JAP/Portrait_Japan_Korekiyo_Takahashi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_fra_Lynette_Snezhevna_politics"
+		textureFile = "gfx/leaders/FRA/portrait_fra_Lynette_Snezhevna_politics.png"
+	}
 }

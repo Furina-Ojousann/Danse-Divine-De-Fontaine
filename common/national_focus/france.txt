@@ -56,6 +56,10 @@
 					promote_leader = yes 
 					country_leader = {
 						ideology = liberalism_temp_social_democracy 
+						desc = FURINA_REFORMATION_DESCRIPTION_STAGE_ONE 
+						traits = {
+							furina_star_of_midnight 
+						}
 					}
 				}
 			}
@@ -179,7 +183,7 @@
 			set_country_flag = r_fontaine_any_bill_ongoing 
 			set_country_flag = r_fontaine_bill_european_alliance
 			### 初始支持法案通过的比例 ###
-			set_variable = { r_fontaine_bill_support_CF = 0.60 } #枫丹联盟 对应 R_Fontaine_Liberalist
+			set_variable = { r_fontaine_bill_support_CF = 0.50 } #枫丹联盟 对应 R_Fontaine_Liberalist
 			set_variable = { r_fontaine_bill_support_AD = 0.2 } #民主联盟 对应 R_Fontaine_Toryism_support
 			set_variable = { r_fontaine_bill_support_FR = 0.1 } #共和联盟 对应 R_Fontaine_Agrarianist_support
 			set_variable = { r_fontaine_bill_support_PF = 0.25 } #人民阵线 对应 R_Fontaine_Socialist_support
@@ -197,11 +201,11 @@
 				set_country_flag = r_fontaine_any_bill_ongoing 
 				set_country_flag = r_fontaine_bill_european_alliance
 				### 初始支持法案通过的比例 ###
-				set_variable = { r_fontaine_bill_support_CF = 0.60 } #枫丹联盟 对应 R_Fontaine_Liberalist
+				set_variable = { r_fontaine_bill_support_CF = 0.50 } #枫丹联盟 对应 R_Fontaine_Liberalist
 				set_variable = { r_fontaine_bill_support_AD = 0.2 } #民主联盟 对应 R_Fontaine_Toryism_support
 				set_variable = { r_fontaine_bill_support_FR = 0.1 } #共和联盟 对应 R_Fontaine_Agrarianist_support
 				set_variable = { r_fontaine_bill_support_PF = 0.25 } #人民阵线 对应 R_Fontaine_Socialist_support
-				set_variable = { r_fontaine_bill_support_PTF = 1 } #枫丹工党 对应 R_Fontaine_Communist_support
+				set_variable = { r_fontaine_bill_support_PTF = 0.70 } #枫丹工党 对应 R_Fontaine_Communist_support
 				set_variable = { r_fontaine_bill_support_independent = 0.2 } #无所属 R_Fontaine_Neutralist_support
 
 				unlock_decision_tooltip = RFP_stirring_up_tensions_in_parliament
@@ -280,7 +284,15 @@
 		prerequisite = {
 			focus = FRA_renew_defense_overterrian  
 		}
-		completion_reward = { }
+		completion_reward = {
+			set_variable = { spain_war_stage_i_frame = 1 }
+			set_variable = { spain_war_stage_ii_frame = 1 }
+			set_variable = { spain_war_stage_iii_frame = 1 }
+			set_country_flag = r_fontaine_is_dealing_with_spain
+			unlock_decision_category_tooltip = French_Fontaine_Spainish_War_Interfere 
+			set_variable = { r_fontaine_tension_of_spanish_war = 20 }
+			country_event = R_Fontaine.20 
+		}
 	}
 
 	focus = {
@@ -300,7 +312,23 @@
 			focus = FRA_renew_unity_and_get_ready 
 		}
 		completion_reward = {
-			#
+			add_war_support = 0.10 
+			set_rule = {
+				can_send_volunteers = yes 
+				can_force_government = yes 
+				can_only_justify_war_on_threat_country = no 
+				can_puppet = yes 
+				can_declare_war_on_same_ideology = yes 
+			}
+			custom_effect_tooltip = FRA_renew_individual_defense_tt
+			hidden_effect = {
+				remove_dynamic_modifier = { modifier = FRA_DM_Navia_Economic_Proposal }
+				add_dynamic_modifier = { modifier = FRA_DM_Clorinde_Economic_Proposal }
+			}
+			add_to_variable = { NEP_industrial_capacity_factory = 0.10 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { NEP_industrial_capacity_dockyard = 0.10 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { NEP_production_factory_efficiency_gain_factor = -0.10 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { NEP_consumer_goods_factor = 0.20 tooltip = consumer_goods_factor_tt }
 		}
 	}
 
@@ -314,7 +342,13 @@
 		prerequisite = {
 			focus = FRA_renew_individual_defense
 		}
-		completion_reward = { }
+		completion_reward = {
+			custom_effect_tooltip = r_fontaine_modify_CEP_tooltip
+			add_to_variable = { NEP_production_speed_arms_factory_factor = 0.20 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { NEP_production_speed_industrial_complex_factor = -0.20 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { NEP_consumer_goods_factor = 0.20 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { NEP_political_power_cost = 0.15 tooltip = political_power_cost_tt }
+		}
 	}
 
 	focus = {
@@ -337,6 +371,7 @@
 				threat = 5
 				name = FRA_renew_invade_belgium_threat
 			}
+			BEL = { country_event = { id = R_Fontaine_diplomacy.10 days = 2 } }
 		}
 	}
 
@@ -353,7 +388,7 @@
 			focus = FRA_renew_advance_military_budget
 			focus = FRA_renew_ussr_alliance 
 		}
-		completion_reward = { }
+		completion_reward = {}
 	}
 
 	focus = {
@@ -374,6 +409,9 @@
 		}
 		completion_reward = {
 			create_faction_from_template = faction_template_UE
+			CZE = { country_event = { id = generic.5 days = 2 } }
+			ROM = { country_event = { id = generic.5 days = 2 } }
+			YUG = { country_event = { id = generic.5 days = 2 } }
 		}
 	}
 
@@ -387,7 +425,14 @@
 		prerequisite = {
 			focus = FRA_renew_unity_and_get_ready
 		}
-		completion_reward = { }
+		completion_reward = {
+			SOV = { country_event = lar_franco_soviet_treaty.1 }
+			effect_tooltip = {
+				SOV = { give_guarantee = ROOT }
+				give_guarantee = SOV
+				SOV = { custom_effect_tooltip = needs_approval  }
+			}
+		}
 	}
 
 	focus = {
@@ -413,7 +458,9 @@
 		}
 		x = -1
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			ENG = { country_event = lar_fra_join_the_ententes.1 }
+		}
 	}
 
 	focus = {
@@ -483,6 +530,7 @@
 			focus = FRA_renew_strengthen_the_president_power 
 		}
 		completion_reward = { 
+			add_political_power = 50 
 			country_event = { id = R_Fontaine.10 }
 		}
 	}
@@ -497,7 +545,20 @@
 		prerequisite = {
 			focus = FRA_renew_the_parliament_issue
 		}
-		completion_reward = { }
+		completion_reward = {
+			custom_effect_tooltip = FRA_renew_expand_metropolis_police_tt
+			add_stability = 0.10 
+			country_event = R_Fontaine.19
+			custom_effect_tooltip = available_political_advisor 
+			show_ideas_tooltip = cerbere_wriothesley_police_leader
+			FRA_Wriothesley = {
+				set_portraits = {
+					civilian = {
+						small = GFX_idea_fra_cerbere_wriothesley_police_leader 
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -510,7 +571,22 @@
 		prerequisite = {
 			focus = FRA_renew_expand_metropolis_police  
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.10 
+			custom_effect_tooltip = FRA_renew_secure_domestic_safety_tt
+			hidden_effect = {
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_anti_partisan
+				upgrade_intelligence_agency = upgrade_anti_partisan
+			}
+			set_technology = {
+				popup = no 
+				tech_enhance_military_police = 1 
+			}
+			custom_effect_tooltip = tech_enhance_military_police_tt
+			
+		}
 	}
 
 	focus = {
@@ -536,7 +612,23 @@
 		prerequisite = {
 			focus = FRA_renew_advance_military_budget 
 		}
-		completion_reward = { }
+		completion_reward = {
+			if = { limit = { has_idea = FRA_full_employment } remove_ideas = FRA_full_employment }
+			else_if = { limit = { has_idea = FRA_worker_shortage } remove_ideas = FRA_worker_shortage }
+			custom_effect_tooltip = r_fontaine_modify_CEP_tooltip
+			add_to_variable = { NEP_stability_factor = -0.10 tooltip = stability_factor_tt }
+			add_to_variable = { NEP_political_power_cost = 0.15 tooltip = political_power_cost_tt }
+			add_to_variable = { NEP_production_speed_anti_air_building_factor = 0.25 tooltip = production_speed_anti_air_building_factor_tt }
+			add_to_variable = { NEP_tech_air_damage_factor = -0.30 tooltip = tech_air_damage_factor_tt }
+			add_to_variable = { NEP_intel_network_gain_factor = 0.25 tooltip = intel_network_gain_factor_tt }
+			add_to_variable = { NEP_production_factory_start_efficiency_factor = 0.20 tooltip = production_factory_start_efficiency_factor_tt }
+
+			custom_effect_tooltip = FRA_renew_mandatory_military_training_tt
+			add_to_variable = { R_Fontaine_Liberalist_support = -0.20 }
+			add_to_variable = { R_Fontaine_Toryism_support = 0.10 }
+			add_to_variable = { R_Fontaine_Agrarianist_support = 0.10 }
+
+		}
 	}
 
 	focus = {
@@ -623,6 +715,9 @@
 		}
 		x = -2
 		y = 1
+		available = {
+			always = no 
+		}
 		mutually_exclusive = {
 			focus = FRA_renew_navia_plan 
 		}
@@ -804,6 +899,9 @@
 		}
 		completion_reward = {
 			add_ideas = comprehensive
+			add_to_variable = { R_Fontaine_Labour_Monthly_Progress = 0.02 tooltip = modify_labour_monly_tooltip }
+			add_to_variable = { R_Fontaine_Tax_Monthly_Progress = 0.03 tooltip = modify_tax_monly_tooltip }
+			add_to_variable = { R_Fontaine_Trust_Monthly_Progress = 0.03 tooltip = modify_trust_monly_tooltip }
 		}
 	}
 
@@ -864,6 +962,9 @@
 			}
 			add_to_variable = { R_Fontaine_Labour_Progress_Total = 0.20 tooltip = modify_labour_direct_tooltip }
 			add_to_variable = { R_Fontaine_Labour_Monthly_Progress = 0.03 tooltip = modify_labour_monly_tooltip }
+
+			add_to_variable = { R_Fontaine_Finance_Progress_Total = 0.20 tooltip = modify_finance_direct_tooltip }
+			add_to_variable = { R_Fontaine_Finance_Monthly_Progress = 0.03 tooltip = modify_finance_monly_tooltip }
 		}
 	}
 
@@ -878,7 +979,69 @@
 			has_completed_focus = FRA_renew_navia_plan 
 		}
 		completion_reward = {
-			#
+			add_stability = 0.05 
+			FAG = {
+				every_owned_state = {
+					add_compliance = 10 
+				}
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2 
+					add_building_construction = {
+						type = industrial_complex
+						level = 2 
+					}
+				}
+				459 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1 
+					}
+				}
+				460 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1 
+					}
+				}
+			}
+			FCA = {
+				every_owned_state = {
+					add_compliance = 10 
+				}
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2 
+					add_building_construction = {
+						type = industrial_complex
+						level = 2 
+					}
+				}
+				772 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+					}
+				}
+			}
+			FWA = {
+				every_owned_state = {
+					add_compliance = 10 
+				}
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2 
+					add_building_construction = {
+						type = industrial_complex
+						level = 2 
+					}
+				}
+				272 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+					}
+				}
+			}
+
+			add_to_variable = { R_Fontaine_Trade_Monthly_Progress = 0.05 tooltip = modify_trade_monly_tooltip }
 		}
 	}
 
@@ -892,9 +1055,41 @@
 		relative_position_id = FRA_renew_coordiantion_with_communists
 		x = 0
 		y = 4
+		available = {
+			has_war_with_major = yes 
+		}
 		completion_reward = {
 			set_variable = { FNDC_annex_tank_industry = 2 }
-			#
+			custom_effect_tooltip = available_mio_tt 
+			show_mio_tooltip = fontaine_national_defense_corp 
+			mio:fontaine_national_defense_corp = {
+				add_mio_size = 1 
+			}
+			random_state = {
+				limit = {
+					is_in_home_area = yes 
+					or = {
+						has_state_category = city 
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis 
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2 
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2 
+				}
+			}
+			add_war_support = 0.10 
+			add_ideas = economic_state_socialism 
+			reduce_focus_completion_cost = {
+				focus = FRA_mobilization_for_war
+				cost = 28 
+			}
 		}
 	}
 
@@ -911,6 +1106,12 @@
 		completion_reward = {
 			set_country_flag = r_fontaine_any_bill_ongoing
 			set_country_flag = r_fontaine_bill_immigration_reform
+			set_variable = { r_fontaine_bill_support_CF = 0.80 } #枫丹联盟 对应 R_Fontaine_Liberalist
+			set_variable = { r_fontaine_bill_support_AD = 0.60 } #民主联盟 对应 R_Fontaine_Toryism_support
+			set_variable = { r_fontaine_bill_support_FR = 0.0 } #共和联盟 对应 R_Fontaine_Agrarianist_support
+			set_variable = { r_fontaine_bill_support_PF = 0.40 } #人民阵线 对应 R_Fontaine_Socialist_support
+			set_variable = { r_fontaine_bill_support_PTF = 0.65 } #枫丹工党 对应 R_Fontaine_Communist_support
+			set_variable = { r_fontaine_bill_support_independent = 0.1 } #无所属 R_Fontaine_Neutralist_support
 		}
 	}
 
@@ -4397,7 +4598,7 @@
 			}
 			add_ideas = Neuvillette_political 
 			add_ideas = FRA_Solenn_Clorinde_political_advisor 
-			add_ideas = FRA_Navia_Caspar_political_advisor 
+			add_ideas = navia_caspar_original  
 			#set_country_flag = neuvillette_as_the_second_leader 
 			hidden_effect = {
 				FRA_Assemblee_nationale = {
@@ -22671,6 +22872,8 @@
 				transfer_state = 57
 				transfer_state = 59
 				transfer_state = 56
+				transfer_state = 1057
+				transfer_state = 1056
 				#transfer_state = 1031 
 			}
 			hidden_effect = {

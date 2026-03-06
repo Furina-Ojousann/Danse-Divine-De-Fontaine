@@ -48,6 +48,175 @@ ideas = {
 		}
 	}
 	country = {
+		fra_international_isolation = {
+			allowed = { original_tag = BEL }
+			rule = {
+				can_join_factions = no 
+			}
+		}
+		fra_operation_knight_myth_1 = {
+			allowed = { original_tag = FRA }
+			modifier = {
+				attrition = -0.25
+				terrain_penalty_reduction = 0.20
+				army_speed_factor = 0.15 
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.15 breakthrough_bonus_against = 0.20 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.15 breakthrough_bonus_against = 0.20 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.15 breakthrough_bonus_against = 0.20 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.15 breakthrough_bonus_against = 0.20 }
+		}
+
+		fra_operation_knight_myth_2 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = -0.20
+				terrain_penalty_reduction = 0.16
+				army_speed_factor = 0.12
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.12 breakthrough_bonus_against = 0.16 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.12 breakthrough_bonus_against = 0.16 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.12 breakthrough_bonus_against = 0.16 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.12 breakthrough_bonus_against = 0.16 }
+		}
+
+		fra_operation_knight_myth_3 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = -0.15
+				terrain_penalty_reduction = 0.12
+				army_speed_factor = 0.09
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.09 breakthrough_bonus_against = 0.12 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.09 breakthrough_bonus_against = 0.12 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.09 breakthrough_bonus_against = 0.12 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.09 breakthrough_bonus_against = 0.12 }
+		}
+
+		fra_operation_knight_myth_4 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = -0.10
+				terrain_penalty_reduction = 0.08
+				army_speed_factor = 0.06
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.06 breakthrough_bonus_against = 0.08 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.06 breakthrough_bonus_against = 0.08 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.06 breakthrough_bonus_against = 0.08 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.06 breakthrough_bonus_against = 0.08 }
+		}
+
+		fra_operation_knight_myth_5 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = -0.05
+				terrain_penalty_reduction = 0.04
+				army_speed_factor = 0.03
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.03 breakthrough_bonus_against = 0.04 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.03 breakthrough_bonus_against = 0.04 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.03 breakthrough_bonus_against = 0.04 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.03 breakthrough_bonus_against = 0.04 }
+		}
+
+		fra_operation_knight_myth_6 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.00
+				terrain_penalty_reduction = 0.00
+				army_speed_factor = 0.00
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = 0.00 breakthrough_bonus_against = 0.00 }
+			targeted_modifier = { tag = SPB attack_bonus_against = 0.00 breakthrough_bonus_against = 0.00 }
+			targeted_modifier = { tag = SPC attack_bonus_against = 0.00 breakthrough_bonus_against = 0.00 }
+			targeted_modifier = { tag = SPD attack_bonus_against = 0.00 breakthrough_bonus_against = 0.00 }
+		}
+
+		fra_operation_knight_myth_7 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.05
+				terrain_penalty_reduction = -0.04
+				army_speed_factor = -0.03
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = -0.03 breakthrough_bonus_against = -0.04 }
+			targeted_modifier = { tag = SPB attack_bonus_against = -0.03 breakthrough_bonus_against = -0.04 }
+			targeted_modifier = { tag = SPC attack_bonus_against = -0.03 breakthrough_bonus_against = -0.04 }
+			targeted_modifier = { tag = SPD attack_bonus_against = -0.03 breakthrough_bonus_against = -0.04 }
+		}
+
+		fra_operation_knight_myth_8 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.10
+				terrain_penalty_reduction = -0.08
+				army_speed_factor = -0.06
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = -0.06 breakthrough_bonus_against = -0.08 }
+			targeted_modifier = { tag = SPB attack_bonus_against = -0.06 breakthrough_bonus_against = -0.08 }
+			targeted_modifier = { tag = SPC attack_bonus_against = -0.06 breakthrough_bonus_against = -0.08 }
+			targeted_modifier = { tag = SPD attack_bonus_against = -0.06 breakthrough_bonus_against = -0.08 }
+		}
+
+		fra_operation_knight_myth_9 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.15
+				terrain_penalty_reduction = -0.12
+				army_speed_factor = -0.09
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = -0.09 breakthrough_bonus_against = -0.12 }
+			targeted_modifier = { tag = SPB attack_bonus_against = -0.09 breakthrough_bonus_against = -0.12 }
+			targeted_modifier = { tag = SPC attack_bonus_against = -0.09 breakthrough_bonus_against = -0.12 }
+			targeted_modifier = { tag = SPD attack_bonus_against = -0.09 breakthrough_bonus_against = -0.12 }
+		}
+
+		fra_operation_knight_myth_10 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.20
+				terrain_penalty_reduction = -0.16
+				army_speed_factor = -0.12
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = -0.12 breakthrough_bonus_against = -0.16 }
+			targeted_modifier = { tag = SPB attack_bonus_against = -0.12 breakthrough_bonus_against = -0.16 }
+			targeted_modifier = { tag = SPC attack_bonus_against = -0.12 breakthrough_bonus_against = -0.16 }
+			targeted_modifier = { tag = SPD attack_bonus_against = -0.12 breakthrough_bonus_against = -0.16 }
+		}
+
+		fra_operation_knight_myth_11 = {
+			allowed = { original_tag = FRA }
+			picture = fra_operation_knight_myth_1
+			name = fra_operation_knight_myth_1
+			modifier = {
+				attrition = 0.25
+				terrain_penalty_reduction = -0.20
+				army_speed_factor = -0.15
+			}
+			targeted_modifier = { tag = SPA attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
+			targeted_modifier = { tag = SPB attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
+			targeted_modifier = { tag = SPC attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
+			targeted_modifier = { tag = SPD attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
+		}
+		
 		fra_navia_economic_proposal = {
 			allowed = { original_tag = FRA }
 			modifier = {

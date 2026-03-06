@@ -28,6 +28,13 @@ ideas = {
 		}
 	}
 	country = {
+		SPR_hesitating = {
+			picture = POL_the_peasants_strike
+			modifier = {
+				ai_focus_aggressive_factor = -0.95
+				ai_focus_defense_factor = 0.95
+			}
+		}
 		cze_skoda_industry_resetted = {
 			modifier = {
 				global_building_slots_factor = 0.25 

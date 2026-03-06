@@ -1,0 +1,30 @@
+technologies = {
+	tech_enhance_military_police = {
+		military_police = {
+			max_organisation = 25
+			max_strength = 10 
+			suppression_factor = 0.25
+			battalion_mult = {
+				category = category_vehicle_infantry
+				suppression = 0.30 
+			}
+			battalion_mult = {
+				category = category_cavalry
+				suppression = 0.30 
+			}
+		}
+		motorized_military_police = {
+			max_organisation = 25
+			max_strength = 10 
+			suppression_factor = 0.25
+			battalion_mult = {
+				category = category_vehicle_infantry
+				suppression = 0.30 
+			}
+			battalion_mult = {
+				category = category_cavalry
+				suppression = 0.30 
+			}
+		}
+	}
+}

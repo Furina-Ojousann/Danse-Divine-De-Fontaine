@@ -1,0 +1,59 @@
+ideas = {
+	country = {
+		ex_germany_sichelschnittplan = {
+			picture = germany_wehrmacht_armor_action
+			cancel = {
+				FRA = { has_capitulated = yes }
+				HOL = { has_capitulated = yes }
+				16 = { is_controlled_by = GER }
+			}
+			modifier = {
+				custom_modifier_tooltip = ex_germany_sichelschnittplan_tt
+				command_power_gain_mult = -0.75
+				army_org_regain = -0.10 
+				ai_focus_aggressive_factor = 0.50 
+				stability_weekly = -0.005
+				army_speed_factor = 0.10 
+				hidden_modifier = {
+					modifier_army_sub_unit_paratrooper_attack_factor = 1
+					modifier_army_sub_unit_paratrooper_defence_factor = 1
+					modifier_army_sub_unit_paratrooper_max_org_factor = 1
+				}
+			}
+			targeted_modifier = {
+				tag = FRA 
+				attack_bonus_against = 0.10
+				breakthrough_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = 0.15
+				breakthrough_bonus_against = 0.20 
+			}
+
+			on_remove = {
+				if = {
+					limit = {
+						FRA = { has_capitulated = yes }
+						HOL = { has_capitulated = yes }
+					}
+					add_war_support = 0.10 
+					add_stability = 0.10 
+				}
+				else_if = {
+					limit = {
+						OR = {
+							FRA = { has_capitulated = yes }
+							HOL = { has_capitulated = yes }
+						}
+					}
+					add_war_support = 0.05
+				}
+				else = {
+					add_war_support = -0.10
+					add_stability = -0.10
+				}
+			}
+		}
+	}
+}

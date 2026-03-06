@@ -1,0 +1,23 @@
+on_actions = {
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { tag = SPA FROM = { tag = SPR } }
+				SPR = {
+					annex_country = {
+						target = SPA 
+					}
+				}
+			}
+
+			if = {
+				limit = { tag = SPR FROM = { tag = SPA } }
+				SPA = {
+					annex_country = {
+						target = SPR 
+					}
+				}
+			}
+		}
+	}
+}

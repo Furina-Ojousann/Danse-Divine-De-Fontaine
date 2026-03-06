@@ -61,6 +61,7 @@ FRA_economic_modifier = { ###经济修正
 	conscription_factor = FRA_economic_modifier_conscription_factor 
 	political_power_cost = FRA_economic_modifier_political_power_cost
 }
+
 FRA_DM_Navia_Economic_Proposal = {
 	#娜維婭計劃
 	icon = GFX_idea_fra_navia_economic_proposal 
@@ -78,6 +79,47 @@ FRA_DM_Navia_Economic_Proposal = {
 	global_building_slots_factor = NEP_global_building_slots_factor
 	line_change_production_efficiency_factor = NEP_line_change_production_efficiency_factor
 	min_export = NEP_min_export
+}
+
+FRA_DM_Clorinde_Economic_Proposal = {
+	#克洛琳德计划
+	icon = GFX_idea_fra_clorinde_economic_purpose
+	#来自低效的经济
+	industrial_capacity_factory = NEP_industrial_capacity_factory 
+	industrial_capacity_dockyard = NEP_industrial_capacity_dockyard
+	#来自劳动法
+	consumer_goods_factor = NEP_consumer_goods_factor 
+	production_factory_max_efficiency_factor = NEP_production_factory_max_efficiency_factor
+	production_factory_efficiency_gain_factor = NEP_production_factory_efficiency_gain_factor 
+	stability_factor = NEP_stability_factor 
+	war_stability_factor = NEP_war_stability_factor 
+	political_power_cost = NEP_political_power_cost 
+	#独立
+	global_building_slots_factor = NEP_global_building_slots_factor
+	line_change_production_efficiency_factor = NEP_line_change_production_efficiency_factor
+	min_export = NEP_min_export
+	production_speed_arms_factory_factor = NEP_production_speed_arms_factory_factor 
+	production_speed_industrial_complex_factor = NEP_production_speed_industrial_complex_factor 
+	intel_network_gain_factor = NEP_intel_network_gain_factor 
+	production_factory_start_efficiency_factor = NEP_production_factory_start_efficiency_factor
+	production_speed_anti_air_building_factor = NEP_production_speed_anti_air_building_factor
+	tech_air_damage_factor = NEP_tech_air_damage_factor 
+}
+
+FRA_Spain_Support_From_Fontaine = {
+	icon = GFX_idea_fra_the_influence_of_fontaine 
+	monthly_population = SSF_monthly_population
+	weekly_casualties_war_support = SSF_weekly_casualties_war_support
+	stability_weekly = SSF_stability_weekly
+	defensive_war_stability_factor = SSF_defensive_war_stability_factor
+	production_factory_max_efficiency_factor = SSF_production_factory_max_efficiency_factor
+	industrial_capacity_factory = SSF_industrial_capacity_factory
+	training_time_factor = SSF_training_time_factor
+	army_org_regain = SSF_army_org_regain
+	max_planning = SSF_max_planning
+	planning_speed = SSF_planning_speed
+	communism_drift = SSF_communism_drift
+	army_core_defence_factor = SSF_army_core_defence_factor
 }
 
 FRA_land_stragegy_defense = { ###防御战略

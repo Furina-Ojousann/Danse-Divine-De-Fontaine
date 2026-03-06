@@ -39,6 +39,11 @@ characters={
 			traits = { military_prime_minister_2 }
 			id = -1
 		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { military_prime_minister_2 }
+			id = -1
+		}
 		corps_commander = {
 			skill = 4
 			attack_skill = 4
@@ -49,6 +54,82 @@ characters={
 				politically_connected
 				infantry_officer
 				cautious 
+			}
+		}
+	}
+	SIA_Seni_Pramoj = {
+		name = SIA_Seni_Pramoj 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Siam_Seni_Pramoj 
+				small = GFX_idea_siam_seni_pramoj 
+			}
+		}
+		country_leader = {
+			ideology = liberal_conservatism 
+			traits = {
+				first_dissident  
+			}
+			id = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = siam_seni_pramoj
+			allowed = {
+				original_tag = SIA 
+			}
+			available = {
+				not = {
+					has_country_leader = {
+						character = SIA_Seni_Pramoj 
+						ruling_only = yes 
+					}
+				}
+				OR = {
+					is_exile_host = yes 
+					has_capitulated = yes 
+				}
+			}
+			traits = {
+				resistance_leader 
+			}
+		}
+	}
+	SIA_Phayom_Chulanont = {
+		name = SIA_Phayom_Chulanont
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Siam_Phayom_Chulanont 
+				small = GFX_idea_siam_phayom_chulanont 
+			}
+		}
+		country_leader = {
+			ideology = mao_zedong_thought 
+			id = 3 
+			traits = {
+				leftist_intellectuals
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = siam_phayom_chulanont
+			allowed = {
+				original_tag = SIA 
+			}
+			available = {
+				not = {
+					has_country_leader = {
+						character = SIA_Seni_Pramoj 
+						ruling_only = yes 
+					}
+				}
+				OR = {
+					is_exile_host = yes 
+					has_capitulated = yes 
+				}
+			}
+			traits = {
+				communist_orator
 			}
 		}
 	}

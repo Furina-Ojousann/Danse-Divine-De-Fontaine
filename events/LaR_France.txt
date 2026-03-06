@@ -3590,11 +3590,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = lar_non_intervention.2.a #agree
-		ai_chance = {
-			factor = 100
-		}
-		add_stability = 0.02
-		add_war_support = -0.01
+		add_stability = 0.01
 	}
 }
 #response event for France - country refuses
@@ -3606,9 +3602,183 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = lar_non_intervention.3.a #agree
-		ai_chance = {
-			factor = 80
+		custom_effect_tooltip = lar_non_intervention.3.tt
+	}
+}
+
+country_event = {
+	id = lar_non_intervention.4
+	title = lar_non_intervention.4.t 
+	desc = lar_non_intervention.4.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fascist_speech 
+
+	option = {
+		name = lar_non_intervention.4.a 
+		FROM = { country_event = { id = lar_non_intervention.5 days = 1 } }
+		effect_tooltip = {
+			random_country = {
+				limit = {
+					original_tag = SPR 
+					has_volunteers_amount_from = {
+						tag = ROOT 
+						count > 0 
+					}
+				}
+				ROOT = {
+					recall_volunteers_from = PREV
+				}
+			}
 		}
+	}
+
+	option = {
+		name = lar_non_intervention.4.b 
+		FROM = { country_event = { id = lar_non_intervention.6 days = 1 } }
+	}
+}
+
+country_event = {
+	id = lar_non_intervention.5
+	title = lar_non_intervention.5.t 
+	desc = lar_non_intervention.5.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fascist_speech 
+
+	option = {
+		name = lar_non_intervention.5.a 
+		add_war_support = 0.01 
+	}
+
+}
+
+country_event = {
+	id = lar_non_intervention.6
+	title = lar_non_intervention.6.t 
+	desc = lar_non_intervention.6.d 
+	is_triggered_only = yes 
+	picture = GFX_report_event_fascist_speech 
+
+	option = {
+		name = lar_non_intervention.6.a 
+		add_stability = 0.01 
+		FROM = {
+			random_country = {
+				limit = {
+					original_tag = SPR
+					has_volunteers_amount_from = {
+						tag = FROM 
+						count > 0
+					}
+				}
+				FROM = {
+					recall_volunteers_from = PREV 
+					add_ai_strategy = {
+						type = send_volunteers_desire 
+						id = SPA 
+						value = -999 
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire 
+						id = SPB
+						value = -999 
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire 
+						id = SPD
+						value = -999 
+					}
+				}
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = lar_non_intervention.7
+	title = lar_non_intervention.7.t 
+	desc = lar_non_intervention.7.d 
+	picture = GFX_report_event_fascist_speech 
+	fire_only_once = yes 
+	mean_time_to_happen = {
+		days = 1 
+	}
+	trigger = {
+		original_tag = FRA 
+		SPR_scw_in_progress = yes
+		has_country_flag = r_fontaine_is_dealing_with_spain 
+		any_country = {
+			has_country_flag = FRA_non_intervention_agreed 
+		}
+		any_country = {
+			tag = SPA 
+			has_volunteers_amount_from = {
+				tag = GER 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ITA
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ENG 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = FRA
+				count < 1 
+			}
+		}
+		any_country = {
+			tag = SPB
+			has_volunteers_amount_from = {
+				tag = GER 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ITA
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ENG 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = FRA
+				count < 1 
+			}
+		}
+		any_country = {
+			tag = SPD
+			has_volunteers_amount_from = {
+				tag = GER 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ITA
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = ENG 
+				count < 1 
+			}
+			has_volunteers_amount_from = {
+				tag = FRA
+				count < 1 
+			}
+		}
+	}
+
+	option = {
+		name = lar_non_intervention.7.a 
+		custom_effect_tooltip = lar_non_intervention.7.tt
+		add_stability = 0.10 
+		add_war_support = 0.10 
+		custom_effect_tooltip = ruling_party_became_more_welcomed 
+		add_to_variable = { R_Fontaine_Liberalist_support = 0.10 }
+		add_to_variable = { R_Fontaine_Toryism_support = -0.05 }
+		add_to_variable = { R_Fontaine_Agrarianist_support = -0.05 }
 	}
 }
 

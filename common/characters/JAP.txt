@@ -3584,7 +3584,16 @@ characters = {
 
 		portraits = {
 			civilian = {
+				large = GFX_Portrait_Japan_Korekiyo_Takahashi 
 				small = GFX_portrait_JAP_takahashi_korekiyo_small
+			}
+		}
+
+		country_leader = {
+			ideology = japan_militarism_ideology 
+			expire = 1944.12.20  
+			traits = {
+				economic_reformer
 			}
 		}
 
@@ -3606,6 +3615,10 @@ characters = {
 				NOT = {
 					has_country_flag = JAP_takahashi_korekiyo_was_killed
 					has_idea = JAP_okinori_kaya
+					has_country_leader = {
+						character = JAP_takahashi_korekiyo 
+						ruling_only = yes 
+					}
 				}
 			}
 
@@ -4545,7 +4558,16 @@ characters = {
 
 		portraits = {
 			civilian = {
+				large = GFX_Portrait_Japan_Okinori_Kaya 
 				small = GFX_portrait_JAP_okinori_kaya_small
+			}
+		}
+
+		country_leader = {
+			ideology = national_conversatism 
+			expire = 1977.4.28
+			traits = {
+				technocrat
 			}
 		}
 
@@ -4567,11 +4589,15 @@ characters = {
 				NOT = {
 					has_government = communism
 					has_idea = JAP_takahashi_korekiyo
+					has_country_leader = {
+						character = JAP_okinori_kaya 
+						ruling_only = yes 
+					}
 				}
 			}
 
 			traits = {
-				JAP_minister_of_finance
+				technocrat 
 			}
 			ai_will_do = {
 				base = 1.5

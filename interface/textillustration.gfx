@@ -69,4 +69,9 @@ spriteTypes = {
 		textureFile = "gfx/interface/textillustration/textillustration_fontaine_liberalism_neuvillette.png"
 		legacy_lazy_load = no 
 	}
+	spriteType = {
+		name = "GFX_textillustration_anti_war_campaign_desc"
+		textureFile = "gfx/interface/textillustration/textillustration_anti_war_campaign_desc.png"
+		legacy_lazy_load = no 
+	}
 }

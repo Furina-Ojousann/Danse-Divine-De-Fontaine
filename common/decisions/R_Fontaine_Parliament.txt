@@ -546,10 +546,6 @@ French_Fontaine_World_War_II_Strategies = {
 				target = BEL 
 				type = annex_everything
 			}
-			declare_war_on = {
-				target = LUX 
-				type = annex_everything 
-			}
 			hidden_effect = {
 				GER = {
 					declare_war_on = {
@@ -602,6 +598,23 @@ French_Fontaine_World_War_II_Strategies = {
 		}
 	}
 
+	FWWS_invade_luxembourg = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			LUX = { exists = yes }
+			has_completed_focus = FRA_renew_invade_belgium
+			has_active_mission = FWWS_upcoming_invasion_against_belgium 
+		}
+		days_remove = 7
+		cost = 30 
+		remove_effect = {
+			custom_effect_tooltip = FWWS_invade_luxembourg_tt
+			hidden_effect = {
+				country_event = R_Fontaine_diplomacy.24
+			}
+		}
+	}
+
 	FWWS_german_invasion_in_unknown_days = {
 		icon = GFX_decision_generic_tank
 		days_mission_timeout = 35 
@@ -639,4 +652,351 @@ French_Fontaine_World_War_II_Strategies = {
 			}
 		}
 	}
+}
+
+French_Fontaine_Spainish_War_Interfere = {
+	FSWI_promise_peace = {
+		icon = GFX_decision_generic_speech 
+		fire_only_once = yes 
+		visible = {
+			check_variable = { r_fontaine_tension_of_spanish_war < 50 }
+		}
+		cost = 15 
+		days_remove = 7 
+		remove_effect = {
+			add_stability = 0.03 
+			add_war_support = -0.02 
+			set_country_flag = fswi_has_promised_peace
+			add_to_variable = { r_fontaine_tension_of_spanish_war = -15 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+		}
+	}
+
+	FSWI_Stage_I_Offer_Humanistic_Support = {
+		icon = GFX_decision_generic_trucks 
+		fire_only_once = yes 
+		days_remove = -1 
+		remove_trigger = { not = { has_country_flag = fswi_offer_humanistic_support_for_spain } }
+		modifier = {
+			consumer_goods_factor = 0.01 
+			political_power_cost = 0.02
+		}
+		visible = {
+			not = { has_country_flag = fswi_offer_humanistic_support_for_spain }
+			SPD = { exists = yes }
+		}
+		complete_effect = {
+			set_country_flag = fswi_offer_humanistic_support_for_spain
+			add_to_variable = { r_fontaine_tension_of_spanish_war = 2.5 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+			if = { limit = { not = { SPD = { has_dynamic_modifier = { modifier = FRA_Spain_Support_From_Fontaine }  }} } SPD = { add_dynamic_modifier = { modifier = FRA_Spain_Support_From_Fontaine } } }
+			SPD = {
+				add_political_power = 25 
+				add_stability = 0.02 
+				custom_effect_tooltip = modify_fra_spain_support_from_fontaine
+				add_to_variable = { SSF_monthly_population = 0.10 tooltip = monthly_population_tt }
+				add_to_variable = { SSF_weekly_casualties_war_support = 0.002 tooltip = weekly_casualties_war_support_tt }
+			}
+		}
+	}
+
+	FSWI_Stage_I_Cancel_Humanistic_Support = {
+		icon = GFX_decision_generic_trucks 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fswi_offer_humanistic_support_for_spain 
+		}
+		complete_effect = {
+			clr_country_flag = fswi_offer_humanistic_support_for_spain 
+			add_to_variable = { r_fontaine_tension_of_spanish_war = -2.5 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+			SPD = {
+				custom_effect_tooltip = modify_fra_spain_support_from_fontaine
+				add_to_variable = { SSF_monthly_population = -0.10 tooltip = monthly_population_tt }
+				add_to_variable = { SSF_weekly_casualties_war_support = -0.002 tooltip = weekly_casualties_war_support_tt }
+			}
+		}
+	}
+
+	FSWI_Stage_I_Non_interfere_council = {
+		icon = GFX_decision_generic_nationalism 
+		fire_only_once = yes 
+		visible = {
+			check_variable = { r_fontaine_tension_of_spanish_war < 50 }
+		}
+		complete_effect = {
+			add_to_variable = { r_fontaine_tension_of_spanish_war = 5 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+			custom_effect_tooltip = FSWI_Stage_I_Non_interfere_council_tt
+			if = {
+				limit = {
+					SOV = { is_major = yes }
+				}
+				SOV = { country_event = { id = lar_non_intervention.1 days = 1 } }
+			}
+			if = {
+				limit = {
+					GER = { is_major = yes }
+				}
+				GER = { country_event = { id = lar_non_intervention.1 days = 1 } }
+			}
+			if = {
+				limit = {
+					ITA = { is_major = yes }
+				}
+				ITA = { country_event = { id = lar_non_intervention.1 days = 1 } }
+			}
+			if = {
+				limit = {
+					ENG = { is_major = yes }
+				}
+				ENG = { country_event = { id = lar_non_intervention.1 days = 1 } }
+			}
+		}
+	}
+
+	FSWI_Stage_I_Require_Stop_Interfere = {
+		icon = GFX_decision_generic_independence 
+		fire_only_once = yes 
+		visible = {
+			any_country = {
+				OR = {
+					original_tag = ENG 
+					original_tag = SOV
+					original_tag = ITA 
+					original_tag = GER 
+				}
+				has_country_flag = FRA_non_intervention_agreed 
+			}
+			not = {
+				any_country = {
+					has_country_flag = FRA_non_intervention_refused
+				}
+			}
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					any_country = {
+						original_tag = SPR 
+						has_volunteers_amount_from = {
+							tag = THIS
+							count > 0 
+						}
+					}
+				}
+				country_event = lar_non_intervention.4
+			}
+		}
+	}
+
+	FSWI_Stage_I_Found_Spy_Group = {
+		icon = GFX_decision_generic_political_discourse 
+		days_remove = -1 
+		visible = {
+			SPD = { has_war_with = SPA }
+		}
+		complete_effect = {
+			set_country_flag = fswi_has_founded_spy_group
+			add_to_variable = { r_fontaine_tension_of_spanish_war = 5 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+			if = {
+				limit = {
+					not = {
+						has_relation_modifier = {
+							target = SPA 
+							modifier = FRA_spy_network
+						}
+					}
+				}
+				add_relation_modifier = {
+					target = SPA 
+					modifier = FRA_spy_network
+				}
+			}
+			if = {
+				limit = {
+					not = {
+						any_operative_leader = {
+							has_trait = operative_magician 
+						}
+					}
+				}
+				create_operative_leader = {
+					name = FRA_Lynette_Snezhevna 
+					id = 178922 
+					GFX = GFX_portrait_fra_Lynette_Snezhevna 
+					traits = {
+						operative_magician
+						operative_well_groomed 
+						operative_linguist
+					}
+					female = yes 
+					skill = 2 
+					nationalities = {
+						FRA
+						SPR
+						SPA 
+						SPD 
+					}
+				}
+			}
+		}
+		modifier = {
+			operative_slot = 1 
+			agency_upgrade_time = -0.15 
+			political_power_cost = 0.02 
+		}
+		remove_trigger = {
+			not = { has_country_flag = fswi_has_founded_spy_group }
+			SPD = { has_war_with = SPA }
+		}
+		remove_effect = {
+			add_to_variable = { r_fontaine_tension_of_spanish_war = -5 tooltip = spain_war_tension_change }
+			FSWI_Stage_Check = yes 
+			clr_country_flag = fswi_has_founded_spy_group 
+			remove_relation_modifier = {
+				target = SPA 
+				modifier = FRA_spy_network
+			}
+		}
+	}
+
+	FSWI_Stage_I_Disband_Group = {
+		icon = GFX_decisions_generic_counter_infiltration 
+		visible = {
+			has_country_flag = fswi_has_founded_spy_group 
+		}
+		complete_effect = {
+			clr_country_flag = fswi_has_founded_spy_group 
+		}
+	}
+
+	FSWI_Stage_I_Promote_Lynette = {
+		icon = GFX_decision_SWI_support_humanitarian_efforts 
+		fire_only_once = yes 
+		visible = {
+			has_country_flag = fswi_has_founded_spy_group 
+			any_operative_leader = {
+				has_trait = operative_magician 
+			}
+		}
+		cost = 30 
+		complete_effect = {
+			recruit_character = FRA_Lynette_Snezhevna 
+			FRA_Lynette_Snezhevna = {
+				add_advisor_role = {
+					advisor = {
+						idea_token = Lynette_Snezhevna
+						slot = political_advisor 
+						cost = 100 
+						traits = {
+							lynette_operative_leader 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	FSWI_Stage
+
+	FSWI_Stage_III_Operation_Knight_Myth = {
+		icon = GFX_decision_SWE_set_air_budget 
+		fire_only_once = yes 
+		visible = {
+			check_variable = {
+				r_fontaine_tension_of_spanish_war > 94.5 
+			}
+			check_variable = {
+				spain_war_stage_iii_frame = 2 
+			}
+		}
+		available = {
+			SPD = {
+				communism > 49.9 
+				has_war_with = SPA 
+			}
+			SPC = { exists = yes }
+		}
+		days_remove = 14 
+		modifier = {
+			command_power_gain_mult = -0.75 
+			political_power_cost = 1 
+		}
+		remove_effect = {
+			add_ideas = fra_operation_knight_myth_1 
+			activate_mission = FSWI_Stage_III_Operation_Exhaustion 
+			add_to_variable = { r_fontaine_tension_of_spanish_war = 20 tooltip = spain_war_tension_change }
+			clamp_variable = {
+				var = r_fontaine_tension_of_spanish_war
+				max = 100 
+				min = 0 
+			}
+			FSWI_Stage_Check = yes 
+			declare_war_on = {
+				target = SPA 
+				type = annex_everything 
+			}
+			declare_war_on = {
+				target = SPD
+				type = annex_everything 
+			}
+			declare_war_on = {
+				target = SPC
+				type = annex_everything 
+			}
+			if = {
+				limit = { SPB = { exists = yes } }
+				declare_war_on = {
+					target = SPB
+					type = annex_everything 
+				}
+			}
+		}
+	}
+
+	FSWI_Stage_III_Operation_Exhaustion = {
+		icon = GFX_decision_FIN_stop_motti_tactics 
+		days_mission_timeout = 20
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		timeout_effect = {
+			FSWI_Operation_Weaker = yes 
+			add_war_support = -0.02 
+			activate_mission = FSWI_Stage_III_Operation_Exhaustion 
+			if = {
+				limit = {
+					has_idea = fra_operation_knight_myth_11 
+				}
+				activate_mission = FSWI_Stage_III_withdraw_from_spain
+				remove_mission = FSWI_Stage_III_Operation_Exhaustion 
+			}
+		}
+	}
+
+	FSWI_Stage_III_withdraw_from_spain = {
+		icon = GFX_decision_generic_belgian_colonial_helmet 
+		days_mission_timeout = 30 
+		activation = { always = no }
+		available = { hidden_trigger = { always = no } }
+		selectable_mission = yes 
+		complete_effect = {
+			white_peace = SPA 
+			white_peace = SPB
+			white_peace = SPC 
+			white_peace = SPD 
+			remove_ideas = fra_operation_knight_myth_11 
+		}
+		timeout_effect = {
+			add_stability = -0.05 
+			add_war_support = -0.10 
+			white_peace = SPA 
+			white_peace = SPB
+			white_peace = SPC 
+			white_peace = SPD 
+			remove_ideas = fra_operation_knight_myth_11 
+		}
+	}
+
 }

@@ -274,4 +274,13 @@
  SPS_persecute_low_nobility_desc: "白军，贵族，教士。前沙俄社会的上等阶层，在如今的社会是再好不过的攻击对象了。"
  SPS_advocate_social_compromission: "提倡社会和解"
  SPS_advocate_social_compromission_desc: "也许我们社会中有些人成分并不干净，但人无法决定自己的出身，而苏维埃社会也乐意欢迎那些愿意洗心革面，投入革命建设的旧社会人士。"
+
+ SPR_Civil_War_Start: "国家分裂"
+ SPR_Civil_War_Start_desc: "局势已经很明朗了，左右两派的冲突只有一场内战才能解决，谁赢得胜利，谁便能够主宰西班牙未来一百年的历史。"
+ SPR_Civil_War_Start_tt: "§r内战爆发§!"
+ SPR_hesitating: "犹豫的共和政府"
+ SPR_hesitating_desc: "尽管已经是非常明显的叛变，共和政府内部依旧对是否进行镇压犹豫不决。先前阿斯图里亚斯地图工人暴动被血腥镇压的情境，西班牙人民还牢记于心。新的左翼政府试图通过沟通解决病变，尽管是徒劳的。"
+ SPA_Jose_Sanjurjo: "何塞·桑胡尔霍"
+ SPR_recruit_civil_militia: "在[FROM.GetName]招募民兵"
+ SPR_train_qualified_division: "在[FROM.GetName]训练旅级编制"
  

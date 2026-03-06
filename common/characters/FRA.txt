@@ -2076,13 +2076,17 @@ characters={
 			}
 		}
 		field_marshal = {
-			skill = 2
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 3
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 			traits = {
-				media_personality 
+				media_personality
+				politically_connected
+				skilled_staffer 
+				expert_delegator
+				rising_young_officer 
 			}
 			visible = {
 				has_country_flag = fra_furina_come_to_france
@@ -2163,9 +2167,6 @@ characters={
 		advisor = {
 			slot = political_advisor 
 			idea_token = fra_sigewinne_clement 
-			available = {
-				has_idea = Neuvillette_political 
-			}
 			visible = {
 				has_character_flag = show_fontaine 
 			}
@@ -2338,6 +2339,18 @@ characters={
 			}
 		}
 		advisor = {
+			slot = political_advisor 
+			idea_token = navia_caspar_original
+			cost = 100 
+			visible = {
+				has_character_flag = show_fontaine 
+				has_country_flag = fontaine_resetting_accomplish
+			}
+			traits = {
+				flexible_contacter 
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = FRA_Navia_Caspar_political_advisor
 			cost = 100  
@@ -2354,6 +2367,22 @@ characters={
 					limit = { not = { has_country_flag = fontaine_resetting_accomplish } }
 					custom_effect_tooltip = EFFECT_LOAD_FOCUS_TREE
 				}
+				add_to_variable = { R_Fontaine_Consumption_Monthly_Progress = 0.02 tooltip = modify_consumption_monly_tooltip }
+				add_to_variable = { R_Fontaine_Labour_Monthly_Progress = 0.02 tooltip = modify_labour_monly_tooltip }
+				add_to_variable = { R_Fontaine_Price_Monthly_Progress = 0.02 tooltip = modify_price_monly_tooltip }
+				add_to_variable = { R_Fontaine_Finance_Monthly_Progress = 0.02 tooltip = modify_finance_monly_tooltip }
+				add_to_variable = { R_Fontaine_Trust_Monthly_Progress = 0.02 tooltip = modify_finance_monly_tooltip }
+				add_to_variable = { R_Fontaine_Tax_Monthly_Progress = 0.02 tooltip = modify_tax_monly_tooltip }
+				add_to_variable = { R_Fontaine_Trade_Monthly_Progress = 0.02 tooltip = modify_trade_monly_tooltip }
+			}
+			on_remove = {
+				add_to_variable = { R_Fontaine_Consumption_Monthly_Progress = -0.02 tooltip = modify_consumption_monly_tooltip }
+				add_to_variable = { R_Fontaine_Labour_Monthly_Progress = -0.02 tooltip = modify_labour_monly_tooltip }
+				add_to_variable = { R_Fontaine_Price_Monthly_Progress = -0.02 tooltip = modify_price_monly_tooltip }
+				add_to_variable = { R_Fontaine_Finance_Monthly_Progress = -0.02 tooltip = modify_finance_monly_tooltip }
+				add_to_variable = { R_Fontaine_Trust_Monthly_Progress = -0.02 tooltip = modify_finance_monly_tooltip }
+				add_to_variable = { R_Fontaine_Tax_Monthly_Progress = -0.02 tooltip = modify_tax_monly_tooltip }
+				add_to_variable = { R_Fontaine_Trade_Monthly_Progress = -0.02 tooltip = modify_trade_monly_tooltip }
 			}
 			traits = {
 				#flexible_contacter
@@ -2617,6 +2646,16 @@ characters={
 		}
 	}
 
+	FRA_Lynette_Snezhevna = {
+		name = FRA_Lynette_Snezhevna
+		portraits = {
+			civilian = {
+				large = GFX_portrait_fra_Lynette_Snezhevna_politics 
+				small = GFX_idea_fra_lynette_snezhevna
+			}
+		}
+	}
+
 	FRA_Wriothesley = {
 		name = FRA_Wriothesley 
 		portraits = {
@@ -2634,6 +2673,16 @@ characters={
 			}
 			traits = {
 				order_bureaucrat 
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = cerbere_wriothesley_police_leader
+			allowed = { original_tag = FRA }
+			visible = { has_completed_focus = FRA_renew_expand_metropolis_police }
+			cost = 150 
+			traits = {
+				heartless_repressor 
 			}
 		}
 		corps_commander = {

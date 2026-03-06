@@ -1,9 +1,10 @@
 ﻿l_simp_chinese:
 
- #abilities_l_english
- ABILITY_TOOLTIP_COST:0 "£command_power_texticon  指挥点数花费：$VALUE|H$"
+ ABILITY_TOOLTIP_COST: "£command_power_texticon  指挥点数花费：$VALUE|H$"
+ production_speed_arms_factory_factor_tt: "$modifier_production_speed_arms_factory_factor$：$RIGHT|+=%1$"
+ production_speed_industrial_complex_factor_tt: "$modifier_production_speed_industrial_complex_factor$：$RIGHT|+=%1$"
+ modifier_production_speed_anti_air_building_factor: "£anti_air_gun_texticon §Y防空阵地§!建设速度"
 
- #combat_l_english
  CURR_COMB_STR:0 "£strenght_texticon  战力：$VALUE|0%Y$"
  BM_ATTACK_VALUE:0 "£attack_texticon  攻击：$VALUE|+=%$"
  BM_DEFEND_VALUE:0 "£defence_texticon  防御力：$VALUE|+=%$"
@@ -353,8 +354,8 @@
  MODIFIER_LINE_CHANGE_PRODUCTION_EFFICIENCY_FACTOR:1 "£production_efficiency_loss_texticon  生产效率保持"
  MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR:0 "£construction_speed_texticon  建造速度"
  modifier_production_speed_infrastructure_factor:0 "£construction_speed_infrastructure_texticon  §Y基础设施§!建造速度"
- modifier_production_speed_arms_factory_factor:0 "£construction_speed_milfactory_texticon  §Y军用工厂§!建造速度"
- modifier_production_speed_industrial_complex_factor:0 "£construction_speed_civfactory_texticon  §Y民用工厂§!建造速度"
+ modifier_production_speed_arms_factory_factor:0 "£construction_speed_milfactory_texticon §Y军用工厂§!建造速度"
+ modifier_production_speed_industrial_complex_factor:0 "£construction_speed_civfactory_texticon §Y民用工厂§!建造速度"
  modifier_production_speed_air_base_factor:0 "£construction_speed_airbase_texticon  §Y空军基地§!建造速度"
  modifier_production_speed_naval_base_factor:0 "£construction_speed_navalbase_texticon  §Y海军基地§!建造速度"
  modifier_production_speed_bunker_factor:0 "£construction_speed_landfort_texticon  §Y陆上要塞§!建造速度"

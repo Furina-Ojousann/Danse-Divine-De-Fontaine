@@ -233,7 +233,7 @@ fontaine_national_defense_corp = {
 	icon = GFX_idea_fra_national_defense_corp 
 	allowed = { has_dlc = "Arms Against Tyranny" original_tag = FRA }
 	available = { FROM = { has_capitulated = no } }
-	#visible = { FROM = { has_completed_focus = FRA_renew_start_rearmament } }
+	visible = { FROM = { has_completed_focus = FRA_renew_start_rearmament } }
 	equipment_type = {
 		armor
 		infantry_equipment 

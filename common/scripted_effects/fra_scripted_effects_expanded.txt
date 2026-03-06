@@ -1010,6 +1010,138 @@ R_Fontaine_Vote_Animation_Refresh_Frames = {
     resize_array = { array = r_seat_frame size = 600       	value = 1 }
 }
 
+FSWI_Stage_Check = {
+
+	if = {
+		limit = {
+			check_variable = {
+				r_fontaine_tension_of_spanish_war > 4.5
+			}
+		}
+		set_variable = { spain_war_stage_i_frame = 2 }
+	}
+	else = {
+		set_variable = { spain_war_stage_i_frame = 1 }
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				r_fontaine_tension_of_spanish_war > 49.5
+			}
+		}
+		set_variable = { spain_war_stage_ii_frame = 2 }
+	}
+	else = {
+		set_variable = { spain_war_stage_ii_frame = 1 }
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				r_fontaine_tension_of_spanish_war > 94.5
+			}
+		}
+		set_variable = { spain_war_stage_iii_frame = 2 }
+	}
+	else = {
+		set_variable = { spain_war_stage_iii_frame = 1 }
+	}
+}
+
+FSWI_Operation_Weaker = {
+	if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_1 
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_1
+			add_idea = fra_operation_knight_myth_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_2
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_2
+			add_idea = fra_operation_knight_myth_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_3
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_3 
+			add_idea = fra_operation_knight_myth_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_4
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_4 
+			add_idea = fra_operation_knight_myth_5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_5
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_5 
+			add_idea = fra_operation_knight_myth_6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_6
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_6
+			add_idea = fra_operation_knight_myth_7
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_7 
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_7 
+			add_idea = fra_operation_knight_myth_8
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_8
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_8 
+			add_idea = fra_operation_knight_myth_9
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_9 
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_9 
+			add_idea = fra_operation_knight_myth_10
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = fra_operation_knight_myth_10
+		}
+		swap_ideas = {
+			remove_idea = fra_operation_knight_myth_10
+			add_idea = fra_operation_knight_myth_11
+		}
+	}
+}
+
 #########################################
 #########################################
 

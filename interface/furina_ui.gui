@@ -1,16 +1,69 @@
-### gui检索 ###
-### 世界革命选择地图 ###
-### 无政府地图 ###
-### elections ### 
-### leader gruop ###
-### sub ideologies ###
-### ply game ui ###
-### portraits ###
-### pie charts ###
-### the game ends ###
-### liberity equality ###
-
 guiTypes = {
+	containerWindowType = {
+		name = "fontaine_ui_spain_interfere"
+		size = { width = 500 height = 128 }
+		clipping = no
+		orientation = UPPER_LEFT
+		position = { x = 0 y = 10 }
+		iconType = {
+			name = "spain_war_stage_i"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_stage_i
+			pdx_tooltip = spain_war_stage_i_tooltip
+			pdx_tooltip_delayed = spain_war_stage_i_tooltip_delay
+			position = { x = 25 y = 10 }
+		}
+		iconType = {
+			name = "spain_war_stage_ii"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_stage_ii
+			pdx_tooltip = spain_war_stage_ii_tooltip
+			pdx_tooltip_delayed = spain_war_stage_ii_tooltip_delay
+			position = { x = 175 y = 10 }
+		}
+		iconType = {
+			name = "spain_war_stage_iii"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_stage_iii
+			pdx_tooltip = spain_war_stage_iii_tooltip
+			pdx_tooltip_delayed = spain_war_stage_iii_tooltip_delay 
+			position = { x = 325 y = 10 }
+		}
+		iconType = {
+			name = "spain_war_progress_bar"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_progress_bar 
+			pdx_tooltip = spain_war_progress_bar_tt
+			pdx_tooltip_delayed = spain_war_progress_bar_tt_delay 
+			position = { x = 46 y = 110 }
+		}
+		iconType = {
+			name = "spain_war_progress_threshold_1"
+			spriteType = GFX_fontaine_ui_spain_war_progress_bar_threshold 
+			pdx_tooltip = spain_war_progress_threshold_1_tt
+			position = { x = 66 y = 104 } #50+80
+		}
+		iconType = {
+			name = "spain_war_progress_threshold_2"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_progress_bar_threshold 
+			pdx_tooltip = spain_war_progress_threshold_2_tt
+			position = { x = 156 y = 104 } #50+80
+		}
+		iconType = {
+			name = "spain_war_progress_threshold_3"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_progress_bar_threshold 
+			pdx_tooltip = spain_war_progress_threshold_3_tt
+			position = { x = 246 y = 104 } #50+80
+		}
+		iconType = {
+			name = "spain_war_progress_threshold_4"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_progress_bar_threshold
+			pdx_tooltip = spain_war_progress_threshold_4_tt 
+			position = { x = 336 y = 104 } #50+80
+		}
+		iconType = {
+			name = "spain_war_progress_threshold_5"
+			quadTextureSprite = GFX_fontaine_ui_spain_war_progress_bar_threshold 
+			pdx_tooltip = spain_war_progress_threshold_5_tt
+			position = { x = 424 y = 104 } #50+80
+		}
+	}
 	containerWindowType = {
 		name = "Decision_Gifs_Waring_Displayer"
 		size = { width = 500 height = 194 }

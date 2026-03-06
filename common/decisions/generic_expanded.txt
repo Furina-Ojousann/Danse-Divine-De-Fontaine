@@ -1182,3 +1182,43 @@ SOV_paranoia_system = {
 		}
 	}
 }
+
+foreign_politics = {
+	SPR_join_axis_modified = {
+		fire_only_once = yes 
+		allowed = { original_tag = SPR }
+		visible = {
+			SPR = { is_ai = yes }
+			is_in_faction = no 
+			is_subject = no 
+			not = {
+				has_war_with = SPB 
+				has_war_with = SPC 
+				has_war_with = SPD 
+			}
+			GER = {
+				has_government = fascism 
+				is_faction_leader = yes 
+			}
+		}
+		ai_will_do = {
+			base = 100 
+		}
+		available = {
+			FRA = {
+				has_country_flag = fra_furina_come_to_france 
+				not = { has_country_flag = fontaine_resetting_accomplish }
+			}
+			OR = {
+				has_government = fascism 
+				has_government = neutrality 
+			}
+		}
+		complete_effect = {
+			GER = { country_event = generic.2 }
+			remove_ideas = SPA_recovering_from_civil_war
+			remove_ideas = SPA_recovering_from_civil_war_2
+			remove_ideas = SPA_recovering_from_civil_war_3
+		}
+	}
+}

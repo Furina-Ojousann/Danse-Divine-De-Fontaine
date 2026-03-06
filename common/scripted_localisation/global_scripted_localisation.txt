@@ -31,6 +31,51 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetFontaineSpainActivationStageI
+	text = {
+		trigger = {
+			check_variable = {
+				spain_war_stage_i_frame = 2
+			}
+		}
+		localization_key = spain_war_activation_true 
+	}
+	text = {
+		localization_key = spain_war_activation_false 
+	}
+}
+
+defined_text = {
+	name = GetFontaineSpainActivationStageII
+	text = {
+		trigger = {
+			check_variable = {
+				spain_war_stage_ii_frame = 2
+			}
+		}
+		localization_key = spain_war_activation_true 
+	}
+	text = {
+		localization_key = spain_war_activation_false 
+	}
+}
+
+defined_text = {
+	name = GetFontaineSpainActivationStageIII
+	text = {
+		trigger = {
+			check_variable = {
+				spain_war_stage_iii_frame = 2
+			}
+		}
+		localization_key = spain_war_activation_true 
+	}
+	text = {
+		localization_key = spain_war_activation_false 
+	}
+}
+
+defined_text = {
 	name = GetFontaineWWIIUISymbol
 	text = {
 		trigger = {

@@ -22,6 +22,8 @@ if = {
 
 recruit_character = SIA_phraya_phahon
 recruit_character = SIA_Plaek_Phibunsongkhram 
+recruit_character = SIA_Phayom_Chulanont
+recruit_character = SIA_Seni_Pramoj
 recruit_character = SIA_nangklao_chichalerm
 recruit_character = SIA_chao_phonphayuhasena
 recruit_character = SIA_nangklao_suriyawongse

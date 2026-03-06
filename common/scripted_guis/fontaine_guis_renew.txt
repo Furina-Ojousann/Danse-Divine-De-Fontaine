@@ -1,0 +1,167 @@
+scripted_gui = {
+
+	Renew_Fontaine_spain_war = {
+		window_name = fontaine_ui_spain_interfere 
+		context_type = decision_category
+		properties = {
+			spain_war_stage_i = {
+				frame = spain_war_stage_i_frame
+			}
+			spain_war_stage_ii = {
+				frame = spain_war_stage_ii_frame
+			}
+			spain_war_stage_iii = {
+				frame = spain_war_stage_iii_frame
+			}
+			spain_war_progress_bar = {
+				frame = r_fontaine_tension_of_spanish_war
+			}
+		}
+	}
+
+	Renew_Fontaine_economic_task = {
+		window_name = R_Fontaine_Economy 
+		parent_window_token = national_focus  
+		ai_enabled = {
+			always = no 
+		}
+		visible = {
+			THIS = { original_tag = FRA }
+			original_tag = FRA 
+			has_idea = FRA_Navia_Caspar_political_advisor 
+			not = { has_country_flag = fontaine_resetting_accomplish }
+		}
+		properties = {
+			Consumption = {
+				frame = R_Consumption_frame 
+			}
+			Finance = {
+				frame = R_Finance_frame
+			}
+			Labour = {
+				frame = R_Labour_frame 
+			}
+			Price = {
+				frame = R_Price_frame 
+			}
+			Tax = {
+				frame = R_Tax_frame 
+			}
+			Trade = {
+				frame = R_Trade_frame 
+			}
+			Trust = {
+				frame = R_Trust_frame 
+			}
+		}
+	}
+
+	Renew_Fontaine_Parliament_Used_In_PlayerContext = {
+		window_name = Renew_Fontaine_Parliament_PlayerContext 
+		context_type = player_context 
+		visible = { original_tag = FRA is_ai = no has_country_flag = fontaine_show_parliament has_country_flag = fontaine_show_player_context_parliament }
+
+		dynamic_lists = {
+			playerContext_renew_parliament_grid = {
+				array = r_parliament_seats
+				change_scope = no
+				entry_container = renew_parliament_seat_container
+				index = idx
+			}
+		}
+
+		triggers = {
+			R_bill_ongoing_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing } #若有在表决的提案，显示
+			}
+			R_bill_description_bg_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_Bill_on_going_name_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_bill_support_situation_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing has_country_flag = r_fontaine_show_situation }
+			}
+			R_Fontaine_Parliament_desc_visible = {
+				ROOT = { not = { has_country_flag = r_fontaine_any_bill_ongoing } }
+			}
+			R_Fontaine_Bill_desc_visible = {
+				ROOT = { has_country_flag = r_fontaine_show_situation }
+			}
+		}
+
+		properties = {
+			renew_parliament_icon = {
+				x = r_seat_x^idx
+				y = r_seat_y^idx
+				frame = r_seat_frame^idx
+			}
+
+			R_bill_ongoing = {
+				image = "[GetCurrentBill]"
+			}
+
+			R_Bill_on_going_name = {
+				image = "[GetCurrentBillDescription]"
+			}
+		}
+	}
+
+	Renew_Fontaine_Parliament = {
+		window_name = Renew_Fontaine_Parliament_grid
+		#parent_scripted_gui = Renew_Fontaine_Parliament_Decorations_UI 
+		#parent_window_name = Renew_Fontaine_Parliament_Decorations
+		
+		context_type = decision_category 
+		visible = {
+			original_tag = FRA 
+		}
+		dynamic_lists = {
+			renew_parliament_grid = {
+				array = r_parliament_seats
+				change_scope = no
+				entry_container = renew_parliament_seat_container
+				index = idx
+			}
+		}
+
+		triggers = {
+			R_bill_ongoing_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing } #若有在表决的提案，显示
+			}
+			R_bill_description_bg_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_Bill_on_going_name_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing }
+			}
+			R_bill_support_situation_visible = {
+				ROOT = { has_country_flag = r_fontaine_any_bill_ongoing has_country_flag = r_fontaine_show_situation }
+			}
+			R_Fontaine_Parliament_desc_visible = {
+				ROOT = { not = { has_country_flag = r_fontaine_any_bill_ongoing } }
+			}
+			R_Fontaine_Bill_desc_visible = {
+				ROOT = { has_country_flag = r_fontaine_show_situation }
+			}
+		}
+
+		properties = {
+			renew_parliament_icon = {
+				x = r_seat_x^idx
+				y = r_seat_y^idx
+				frame = r_seat_frame^idx
+			}
+
+			R_bill_ongoing = {
+				image = "[GetCurrentBill]"
+			}
+
+			R_Bill_on_going_name = {
+				image = "[GetCurrentBillDescription]"
+			}
+		}
+
+	}
+}

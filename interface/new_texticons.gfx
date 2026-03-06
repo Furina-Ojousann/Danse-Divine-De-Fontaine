@@ -1,0 +1,100 @@
+spriteTypes = {
+	### use £ but - 'GFX_' to applicate texticons ###
+	spriteType = {
+		name = "GFX_texticon_feminism"
+		textureFile = "gfx/texticons/texticon_feminism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_navia"
+		textureFile = "gfx/texticons/texticon_navia.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_syndicalism"
+		textureFile = "gfx/texticons/texticon_syndicalism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_texticon_nationalism"
+		textureFile = "gfx/texticons/texticon_nationalism.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_military_power"
+		textureFile = "gfx/texticons/fontaine_design_military_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_monarchy_power"
+		textureFile = "gfx/texticons/fontaine_design_monarchy_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_design_theocracy_power"
+		textureFile = "gfx/texticons/fontaine_design_theocracy_power.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_neuroscience"
+		textureFile = "gfx/texticons/fontaine_science_neuroscience.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_integrated_circuit"
+		textureFile = "gfx/texticons/fontaine_science_integrated_circuit.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_computational_number_theory"
+		textureFile = "gfx/texticons/fontaine_science_computational_number_theory.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_ai"
+		textureFile = "gfx/texticons/fontaine_science_ai.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_covered"
+		textureFile = "gfx/texticons/fontaine_science_covered.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_science_furina_signature"
+		textureFile = "gfx/texticons/fontaine_science_furina_signature.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_metropolis_police"
+		textureFile = "gfx/texticons/fontaine_metropolis_police.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_furina"
+		textureFile = "gfx/texticons/fontaine_furina.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_communist_corruption_of_the_party_texticon" #£communist_corruption_of_the_party_texticon
+		textureFile = "gfx/texticons/communist_corruption_of_the_party.png"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_fontaine_tension"
+		textureFile = "gfx/texticons/fontaine_tension.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_communist"
+		textureFile = "gfx/texticons/fontaine_communist.png"
+		legacy_lazy_load = no 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_anti_war"
+		textureFile = "gfx/texticons/fontaine_anti_war.png"
+		legacy_lazy_load = no 
+	}
+}

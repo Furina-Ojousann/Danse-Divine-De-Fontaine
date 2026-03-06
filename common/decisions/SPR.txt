@@ -1,0 +1,5865 @@
+ ##  ### #   # ### #       #   #  ##  ###       ##  ### ### ### #  #  ## ### #   # ###  ## 
+#  #  #  #   #  #  #       #   # #  # #  #     #  # #   #   #   ## # #    #  #   # #   #   
+#     #   # #   #  #       # # # #### ###      #  # ##  ##  ##  # ##  #   #   # #  ##   #  
+#  #  #   # #   #  #       # # # #  # #  #     #  # #   #   #   #  #   #  #   # #  #     # 
+ ##  ###   #   ### ###      # #  #  # #  #      ##  #   #   ### #  # ##  ###   #   ### ##  
+
+SPR_civil_war_offensives = {
+
+	SPR_recruit_civil_militia = {
+		icon = GFX_decision_generic_industry 
+		ai_will_do = {
+			base = 0 
+			modifier = {
+				has_equipment = {
+					infantry > 999 
+				}
+				add = 100 
+			}
+			modifier = {
+				any_controlled_state = {
+					has_state_flag = is_training_militia 
+				}
+				factor = 0 
+			}
+		}
+		allowed = {
+			OR = {
+				original_tag = SPA 
+				original_tag = SPR 
+			}
+		}
+		visible = {
+			SPR_scw_in_progress = yes 
+			OR = {
+				has_war_with = SPA 
+				has_war_with = SPR 
+			}
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 399
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT 
+			}
+		}
+		state_target = yes 
+		on_map_mode = map_and_decisions_view 
+		days_remove = 7 
+		complete_effect = {
+			FROM = { set_state_flag = is_training_militia }
+		}
+		remove_effect = {
+			if = {
+				limit = { not = { has_template = "Civil Milita" } }
+				division_template = {
+					name = "Civil Milita"
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+					}
+				}
+			}
+			FROM = {
+				create_unit = {
+					division = "name = \"Milita Brigade\" division_template = \"Civil Milita\" start_experience_factor = 0.1"  
+					owner = ROOT 
+				}
+				clr_state_flag = is_training_militia 
+			}
+		}
+	}
+
+	SPR_train_qualified_division = {
+		icon = GFX_decision_generic_intelligence_operation 
+		ai_will_do = {
+			base = 0 
+			modifier = {
+				has_equipment = {
+					infantry > 799 
+				}
+				has_equipment = {
+					artillery_equipment > 11 
+				}
+				has_equipment = {
+					support_equipment > 24
+				}
+				add = 100 
+			}
+		}
+		allowed = {
+			OR = {
+				original_tag = SPA 
+				original_tag = SPR 
+			}
+		}
+		visible = {
+			SPR_scw_in_progress = yes 
+			OR = {
+				has_war_with = SPA 
+				has_war_with = SPR 
+			}
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 599
+			}
+			has_equipment = {
+				artillery_equipment > 11 
+			}
+			has_equipment = {
+				support_equipment > 24 
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT 
+			}
+		}
+		state_target = yes 
+		on_map_mode = map_and_decisions_view 
+		days_remove = 35 
+		remove_effect = {
+			if = {
+				limit = { not = { has_template = "Standard Division" } }
+				division_template = {
+					name = "Standard Division"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 1 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+					}
+				}
+			}
+			FROM = {
+				create_unit = {
+					division = "name = \"Brigade\" division_template = \"Standard Division\" start_experience_factor = 0.3"  
+					owner = ROOT 
+				}
+			}
+		}
+	}
+
+### ### ### ### #  #      ##   ##  #   #  # #   # #  #     ###  ###  ##  ###  ## ###  ##  #  #  ## 
+#    #  #    #  #  #     #  # #  # #   #  # ## ## ## #     #  # #   #  #  #  #    #  #  # ## # #   
+##   #  ##   #  ####     #    #  # #   #  # # # # # ##     #  # ##  #     #   #   #  #  # # ##  #  
+#    #  #    #  #  #     #  # #  # #   #  # #   # #  #     #  # #   #  #  #    #  #  #  # #  #   # 
+#   ### #    #  #  #      ##   ##  ###  ##  #   # #  #     ###  ###  ##  ### ##  ###  ##  #  # ##  
+
+	SPA_activate_galicia_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			171 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ 			highlight_state_targets = { state = 171 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			171 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			171 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_asturias_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			790 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ 			highlight_state_targets = { state = 790 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			790 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			790 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_leon_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			174 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 174 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			174 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			174 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_valladolid_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			791 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 791 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			791 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			791 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_burgos_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			176 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 176 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			176 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			176 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_pais_vasco_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			792 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 792 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			792 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			792 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_navarra_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			172 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 172 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			172 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			172 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_western_aragon_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			166 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 166 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			166 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			166 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_eastern_aragon_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			794 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 794 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			794 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			794 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_catalunya_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			165 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 165 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			165 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			165 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_salamanca_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			788 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 788 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			788 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			788 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_madrid_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			41 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 41 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			41 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			41 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\" start_experience_factor = 0 start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+					
+	SPA_activate_guadalajara_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			793 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 793 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			793 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			793 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_valencia_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			167 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 167 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			167 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			167 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_extremadura_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			170 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 170 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			170 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			170 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_ciudad_real_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			175 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 175 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			175 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			175 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_murcia_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			168 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 168 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			168 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			168 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_sevilla_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			169 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 169 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			169 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			169 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_cordoba_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			789 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 789 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			789 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			789 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SPA_activate_granada_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			173 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 173 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			173 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			173 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+political_actions = {
+	
+	SPA_carlist_uprising_mission = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_completed_focus = SPA_the_phalanx_ascendant
+				}
+				hidden_trigger = { always = no }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+				}
+				has_completed_focus = SPA_fuse_the_parties
+			}
+		}
+
+		priority = 10
+
+		fire_only_once = yes
+
+		days_mission_timeout = 316
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			if = {
+				limit = {
+					has_completed_focus = SPA_the_phalanx_ascendant
+				}
+				NOT = { has_completed_focus = SPA_eliminate_the_carlists }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+				}
+				NOT = { has_completed_focus = SPA_fuse_the_parties }
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					num_of_controlled_states > 4
+				}
+				country_event = lar_spain.7
+			}
+			else = {
+				activate_mission = SPA_carlist_uprising_mission
+				add_days_mission_timeout = {
+					mission = SPA_carlist_uprising_mission
+					days = -316
+				}
+			}
+		}
+	}
+
+	SPR_anarchist_uprising_mission = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		priority = 10
+
+		fire_only_once = yes
+
+		days_mission_timeout = 246
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPD
+			NOT = { has_completed_focus = SPR_crush_the_revolution }
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				country_event = lar_spain.9
+			}
+			else = {
+				activate_mission = SPR_anarchist_uprising_mission
+				add_days_mission_timeout = {
+					mission = SPR_anarchist_uprising_mission
+					days = -211
+				}
+			}
+		}
+	}
+
+	SPA_fascist_crackdown_mission = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		priority = 10
+
+		fire_only_once = yes
+
+		days_mission_timeout = 316
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			NOT = { has_completed_focus = SPA_no_compromise_on_carlist_ideals }
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					num_of_controlled_states > 4
+				}
+				country_event = lar_spain.8
+			}
+			else = {
+				activate_mission = SPA_fascist_crackdown_mission
+				add_days_mission_timeout = {
+					mission = SPA_fascist_crackdown_mission
+					days = -316
+				}
+			}
+		}
+	}
+
+	SPR_government_crackdown_mission = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		priority = 10
+
+		fire_only_once = yes
+
+		days_mission_timeout = SPR_communists_uprising_mission_var?246
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPD
+			NOT = { has_completed_focus = SPR_masters_of_our_own_fate }
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				country_event = lar_spain.10
+			}
+			else = {
+				activate_mission = SPR_government_crackdown_mission
+				add_days_mission_timeout = {
+					mission = SPR_government_crackdown_mission
+					days = -211
+				}
+			}
+		}
+	}
+
+	SPA_save_the_alcazar_mission = {
+
+		name = SPA_save_the_alcazar
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			controls_province = 858
+		}
+
+		fire_only_once = yes
+
+		days_mission_timeout = 140
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			has_completed_focus = SPA_save_the_alcazar
+		}
+
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.1
+			add_political_power = 100
+			complete_national_focus = SPA_caudillo_of_spain
+			add_days_mission_timeout = {
+				mission = SPA_carlist_uprising_mission
+				days = 70
+			}
+		}
+
+		timeout_effect = {
+		}
+	}
+
+}
+
+SPA_reassert_american_dominance = {
+	
+	SPA_reassert_dominance = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			strength_ratio = {
+			    tag = FROM
+			    ratio > 2
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				capital_scope = {
+					OR = {
+						is_on_continent = south_america
+						is_on_continent = north_america
+					}
+				}
+				NOT = { is_subject_of = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_war_with = ROOT }
+				NOT = {
+					original_tag = HOL
+					original_tag = DEN
+					original_tag = FRA
+					original_tag = ENG
+					original_tag = BRA
+					original_tag = BOL
+					original_tag = CAN
+					original_tag = ARG
+					original_tag = CHL
+					original_tag = PRU
+					original_tag = VEN
+					original_tag = COL
+					original_tag = MEX
+					original_tag = USA
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = SPA_reassert_american_dominance
+			tag = SPA
+		}
+
+		complete_effect = {
+			FROM = { country_event = lar_spain.19 }
+		}
+	}
+
+}
+
+SPR_expand_resource_extraction = {
+
+	expand_basque_steel_works = { #792
+		
+		icon = steel
+
+		allowed = {
+
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 792
+		} 
+}
+
+		available = {
+			has_tech = construction3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 792
+			controls_state = 792
+		}
+
+		visible = {
+			owns_state = 792
+			controls_state = 792
+			792 = {
+				NOT = {
+					has_state_flag = basque_steel_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			792 = { set_state_flag = basque_steel_developed }
+			792 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	expand_western_aragon_steel_works = { #166
+		
+		icon = steel
+
+		allowed = {
+
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 166
+		} 
+}
+
+		available = {
+			has_tech = construction3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 166
+			controls_state = 166
+		}
+
+		visible = {
+			owns_state = 166
+			controls_state = 166
+			166 = {
+				NOT = {
+					has_state_flag = western_aragon_steel_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			166 = { set_state_flag = western_aragon_steel_developed }
+			166 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	expand_granada_steel_works = { #173
+		
+		icon = steel
+
+		allowed = {
+
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 173
+		} 
+}
+
+		available = {
+			has_tech = construction3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 173
+			controls_state = 173
+		}
+
+		visible = {
+			owns_state = 173
+			controls_state = 173
+			173 = {
+				NOT = {
+					has_state_flag = granada_steel_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			173 = { set_state_flag = granada_steel_developed }
+			173 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	develop_salamanca_tungsten_deposits = { #788
+		
+		icon = tungsten
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 788
+			controls_state = 788
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 788
+		} 
+}
+
+		visible = {
+			owns_state = 788
+			controls_state = 788
+			788 = {
+				NOT = {
+					has_state_flag = salamanca_tungsten_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = ENG
+				has_war = no
+				factor = 0
+			}
+		}
+
+		remove_effect = {
+			788 = { set_state_flag = salamanca_tungsten_developed }
+			788 = {
+				add_resource = {
+					type = tungsten
+					amount = 12
+				}
+			}
+		}
+	}
+
+	develop_valladolid_tungsten_deposits = { #791
+		
+		icon = tungsten
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 791
+			controls_state = 791
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 791
+		} 
+}
+
+		visible = {
+			owns_state = 791
+			controls_state = 791
+			791 = {
+				NOT = {
+					has_state_flag = valladolid_tungsten_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = ENG
+				has_war = no
+				factor = 0
+			}
+		}
+
+		remove_effect = {
+			791 = { set_state_flag = valladolid_tungsten_developed }
+			791 = {
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+			}
+		}
+	}
+
+	develop_galicia_tungsten_deposits = { #171
+		
+		icon = tungsten
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 171
+			controls_state = 171
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 171
+		} 
+}
+
+		visible = {
+			owns_state = 171
+			controls_state = 171
+			171 = {
+				NOT = {
+					has_state_flag = galicia_tungsten_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = ENG
+				has_war = no
+				factor = 0
+			}
+		}
+
+		remove_effect = {
+			171 = { set_state_flag = galicia_tungsten_developed }
+			171 = {
+				add_resource = {
+					type = tungsten
+					amount = 12
+				}
+			}
+		}
+	}
+
+	expand_extremadura_tungsten_mines = { #170
+		
+		icon = tungsten
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 170
+			controls_state = 170
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 170
+		} 
+}
+
+		visible = {
+			owns_state = 170
+			controls_state = 170
+			170 = {
+				NOT = {
+					has_state_flag = extremadura_tungsten_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = ENG
+				has_war = no
+				factor = 0
+			}
+		}
+
+		remove_effect = {
+			170 = { set_state_flag = extremadura_tungsten_developed }
+			170 = {
+				add_resource = {
+					type = tungsten
+					amount = 12
+				}
+			}
+		}
+	}
+	
+	expand_madrid_bauxite_mines = { #41
+		
+		icon = aluminium
+
+		allowed = {
+			
+		}
+
+		highlight_states = {
+ highlight_state_targets = {
+			state = 41
+		} 
+}
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 41
+			controls_state = 41
+		}
+
+		visible = {
+			owns_state = 41
+			controls_state = 41
+			41 = {
+				NOT = {
+					has_state_flag = madrid_aluminium_developed
+				}
+			}
+			OR = {
+				has_completed_focus = SPR_communal_autarky
+				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
+				has_completed_focus = SPA_support_the_war_industry
+				has_completed_focus = SPA_encourage_local_mining
+				has_completed_focus = SPR_exploit_spains_riches
+				has_completed_focus = SPR_fuel_for_the_war_machine
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			41 = { set_state_flag = madrid_aluminium_developed } 
+			41 = {
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+		}
+	}
+
+}
+
+SPA_preparing_the_carlist_insurrection = {
+
+	SPA_establish_galicia_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 171
+			171 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			171 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 171 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			171 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_asturias_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 790
+			790 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			790 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 790 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			790 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_leon_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 174
+			174 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			174 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 174 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			174 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_valladolid_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 791
+			791 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			791 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 791 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			791 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_burgos_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 176
+			176 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			176 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 176 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			176 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_pais_vasco_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 792
+			792 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			792 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 792 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			792 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_navarra_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 172
+			172 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			172 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 172 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			172 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_western_aragon_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 166
+			166 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			166 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 166 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			166 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_eastern_aragon_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 794
+			794 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			794 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 794 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			794 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_catalunya_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 165
+			165 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			165 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 165 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			165 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_salamanca_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 788
+			788 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			788 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 788 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			788 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_madrid_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 41
+			41 = {
+				NOT = { 
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			41 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 41 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			41 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_guadalajara_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 793
+			793 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			793 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 793 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			793 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_valencia_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 167
+			167 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			167 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 167 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			167 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_extremadura_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 170
+			170 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			170 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 170 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			170 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_ciudad_real_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 175
+			175 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			175 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 175 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			175 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_murcia_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 168
+			168 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			168 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 168 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			168 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_sevilla_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 169
+			169 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			169 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 169 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			169 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_cordoba_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 789
+			789 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			789 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 789 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			789 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+	SPA_establish_granada_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 173
+			173 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			173 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 173 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			173 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
+
+}
+
+SPR_foreign_arms_purchases = {
+
+	SPR_purchase_infantry_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			OR = {
+				tag = SPD
+				tag = SPC
+			}
+			
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = ENG
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_arms_purchases_allowed } }
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = FRA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = SOV
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = USA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = SWE
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = GER
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					add_equipment_to_stockpile = {
+					    type = infantry_equipment
+					    amount = 1000
+					    producer = ITA
+					}
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+				    type = infantry_equipment
+				    amount = 1000
+				    producer = ENG
+				}
+			}
+		}
+
+	}
+
+	SPR_purchase_support_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPD
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = ENG
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_non_military_aid_allowed } }
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = FRA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = SOV
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = USA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = SWE
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = GER
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					add_equipment_to_stockpile = {
+					    type = support_equipment
+					    amount = 200
+					    producer = ITA
+					}
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+				    type = support_equipment
+				    amount = 200
+				    producer = ENG
+				}
+			}
+		}
+
+	}
+
+	SPR_purchase_artillery_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPD
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = ENG
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_arms_purchases_allowed } }
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = FRA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = SOV
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = USA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = SWE
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = GER
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					add_equipment_to_stockpile = {
+					    type = artillery_equipment
+					    amount = 200
+					    producer = ITA
+					}
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+				    type = artillery_equipment
+				    amount = 200
+				    producer = ENG
+				}
+			}
+		}
+
+	}
+
+	SPR_purchase_aircraft = {
+
+		icon = generic_air
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPD
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = ENG
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = ENG
+						    variant_name = "Gloster Gladiator"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_arms_purchases_allowed } }
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = FRA
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = FRA
+						    variant_name = "D.510"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = SOV
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = SOV
+						    variant_name = "I-15"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = USA
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_1
+						    amount = 25
+						    producer = USA
+						    variant_name = "P-36A"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = SWE
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = SWE
+						    variant_name = "Svenska Jaktfalken"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = GER
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = GER
+						    variant_name = "He 51"
+						}	
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "By Blood Alone" }
+						}
+						add_equipment_to_stockpile = {
+						    type = fighter_equipment_0
+						    amount = 25
+						    producer = ITA
+						}
+					}
+					else = {
+						add_equipment_to_stockpile = {
+						    type = small_plane_airframe_0
+						    amount = 25
+						    producer = ITA
+						    variant_name = "CR.32"
+						}	
+					}
+				}
+			}
+			effect_tooltip = {
+				if = {
+					limit = {
+						NOT = { has_dlc = "By Blood Alone" }
+					}
+					add_equipment_to_stockpile = {
+					    type = fighter_equipment_0
+					    amount = 25
+					    producer = ENG
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+					    type = small_plane_airframe_0
+					    amount = 25
+					    producer = ENG
+					    variant_name = "Gloster Gladiator"
+					}	
+				}
+			}
+		}
+
+	}
+
+	SPR_purchase_trucks = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPD
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = ENG
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_non_military_aid_allowed } }
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = FRA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = SOV
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = USA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = SWE
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = GER
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					add_equipment_to_stockpile = {
+					    type = motorized_equipment
+					    amount = 100
+					    producer = ITA
+					}
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+				    type = motorized_equipment
+				    amount = 100
+				    producer = ENG
+				}
+			}
+		}
+
+	}
+
+	SPR_purchase_tanks = {
+
+		icon = generic_tank
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPD
+			has_completed_focus = SPR_foreign_arms_purchases
+			NOT = { has_global_flag = scw_over }
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = ENG
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = FRA
+					}
+					modifier = {
+						factor = 0
+						FRA = { NOT = { has_country_flag = FRA_arms_purchases_allowed } }
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = FRA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SOV
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = SOV
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = USA
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = USA
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = SWE
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = SWE
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = GER
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = GER
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_government = fascism
+					}
+					modifier = {
+						factor = 0
+						has_war_with = ITA
+					}
+					add_equipment_to_stockpile = {
+					    type = light_tank_chassis
+					    amount = 50
+					    producer = ITA
+					}
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+				    type = light_tank_chassis
+				    amount = 50
+				    producer = ENG
+				}
+			}
+		}
+
+	}
+
+}
+
+SPR_the_seeds_of_revolution = {
+
+	SPR_integrate_commune_1 = {
+
+		name = SPR_integrate_commune
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			FROM = {
+				compliance > 50
+				OR = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		state_target = yes
+
+		on_map_mode = map_only
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = SPR_global_defense_council
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				OR = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+				OR = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					NOT = {
+						state = 41
+						state = 165
+						state = 166
+						state = 167
+						state = 168
+						state = 169
+						state = 170
+						state = 171
+						state = 172
+						state = 173
+						state = 174
+						state = 175
+						state = 176
+						state = 788
+						state = 789
+						state = 790
+						state = 791
+						state = 792
+						state = 793
+						state = 794
+					}
+				}
+				compliance > 35
+			}
+		}
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 60
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		visible = {
+			tag = SPC
+			has_completed_focus = SPR_global_defense_council
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+			transfer_state = FROM
+		}
+	}
+
+	SPR_integrate_commune_2 = {
+
+		name = SPR_integrate_commune
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			FROM = {
+				compliance > 50
+				NOT = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		state_target = yes
+
+		on_map_mode = map_only
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = SPR_global_defense_council
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				NOT = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+				OR = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					NOT = {
+						state = 41
+						state = 165
+						state = 166
+						state = 167
+						state = 168
+						state = 169
+						state = 170
+						state = 171
+						state = 172
+						state = 173
+						state = 174
+						state = 175
+						state = 176
+						state = 788
+						state = 789
+						state = 790
+						state = 791
+						state = 792
+						state = 793
+						state = 794
+					}
+				}
+				compliance > 35
+			}
+		}
+
+		cost = 150
+
+		fire_only_once = yes
+
+		days_remove = 90
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		visible = {
+			tag = SPC
+			has_completed_focus = SPR_global_defense_council
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+			transfer_state = FROM
+		}
+	}
+
+	SPR_ignite_uprising = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			FROM = {
+				has_civil_war = no
+				any_controlled_state = {
+					is_in_home_area = yes
+					is_capital = no
+				}
+			}
+			has_equipment = {
+			    infantry_equipment > 19999
+			}
+			any_controlled_state = {
+				NOT = { has_state_flag = anarchist_uprising }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war_with = ROOT
+				any_controlled_state = {
+					is_in_home_area = yes
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		cost = 150
+
+		fire_only_once = yes
+
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		target_root_trigger = {
+			tag = SPC
+			has_completed_focus = SPR_plant_the_seeds_of_revolution
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+			    type = infantry_equipment
+			    amount = -20000
+			}
+			hidden_effect = {
+				FROM = {
+					set_country_flag = SPR_ignite_uprising_timer_flag
+					activate_mission = SPR_ignite_uprising_timer_mission
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					FROM = {
+						any_controlled_state = {
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						is_controlled_by = FROM
+						is_in_home_area = yes
+						is_capital = no
+						NOT = { has_state_flag = anarchist_uprising }
+						any_state = {
+							is_controlled_by = ROOT
+							NOT = { has_state_flag = anarchist_uprising }
+							distance_to = {
+								target = PREV
+								value < 750
+							}
+						}
+					}
+					set_state_flag = anarchist_uprising
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						any_controlled_state = {
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						is_controlled_by = FROM
+						is_in_home_area = yes
+						is_capital = no
+						NOT = { has_state_flag = anarchist_uprising }
+						any_state = {
+							is_controlled_by = ROOT
+							NOT = { has_state_flag = anarchist_uprising }
+							distance_to = {
+								target = PREV
+								value < 1500
+							}
+						}
+					}
+					set_state_flag = anarchist_uprising
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else = {
+				random_state = {
+					limit = {
+						is_controlled_by = FROM
+						is_in_home_area = yes
+						is_capital = no
+						NOT = { has_state_flag = anarchist_uprising }
+						any_state = {
+							is_controlled_by = ROOT
+							NOT = { has_state_flag = anarchist_uprising }
+						}
+					}
+					set_state_flag = anarchist_uprising
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = { num_of_controlled_states > 4 }
+				}
+				if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 750
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 1500
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else = {
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { num_of_controlled_states > 7 }
+				}
+				if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 750
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 1500
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else = {
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { num_of_controlled_states > 11 }
+				}
+				if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 750
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 1500
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else = {
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { num_of_controlled_states > 19 }
+				}
+				if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 750
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 750
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							any_controlled_state = {
+								is_in_home_area = yes
+								is_capital = no
+								NOT = { has_state_flag = anarchist_uprising }
+								any_state = {
+									is_controlled_by = ROOT
+									NOT = { has_state_flag = anarchist_uprising }
+									distance_to = {
+										target = PREV
+										value < 1500
+									}
+								}
+							}
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+								distance_to = {
+									target = PREV
+									value < 1500
+								}
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+				else = {
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_state = {
+						limit = {
+							is_controlled_by = FROM
+							is_in_home_area = yes
+							is_capital = no
+							NOT = { has_state_flag = anarchist_uprising }
+							any_state = {
+								is_controlled_by = ROOT
+								NOT = { has_state_flag = anarchist_uprising }
+							}
+						}
+						set_state_flag = anarchist_uprising
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+						create_unit = {
+							division = "division_template = \"Anarchist Militia\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	SPR_ignite_uprising_timer_mission = {
+
+		icon = generic_ignite_civil_war
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 90
+
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			has_country_flag = SPR_ignite_uprising_timer_flag
+		}
+
+		cancel_if_not_visible = no
+
+		is_good = yes
+
+		timeout_effect = {
+			clr_country_flag = SPR_ignite_uprising_timer_flag
+			custom_effect_tooltip = SPR_ignite_uprising_timer_mission_tt
+		}
+	}
+
+}
+
+SPR_anti_fascist_unity = {
+
+	SPR_concessions_to_the_anarchists = {
+
+		icon = eng_trade_unions_support
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			OR = {
+				country_exists = SPA
+				country_exists = SPB
+			}
+		}
+
+		cost = 150
+
+		fire_only_once = no
+
+		modifier = {
+			
+		}
+
+		visible = {
+			has_completed_focus = SPR_anti_fascist_unity
+			NOT = { has_global_flag = scw_over }
+			NOT = { has_global_flag = scw_early_end }
+		}
+
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = SPR_anarchist_uprising_mission
+				days = 70
+			}
+		}
+
+	}
+
+}
+
+SPR_recovering_from_civil_war = {
+
+	SPR_eliminate_guerrillas = {
+
+		icon = generic_civil_support
+
+		available = {
+			FROM = {
+				compliance > 35
+			}
+			has_equipment = {
+			    infantry_equipment > 2000
+			}
+			has_army_experience > 10
+		}
+
+		state_target = yes
+
+		targets = { 41 165 166 167 168 169 170 171 172 173 174 175 176 177 178 788 789 790 791 792 793 794 }
+
+		target_trigger = {
+			OR = {
+				has_completed_focus = SPA_strengthen_the_supreme_reality_of_spain
+				has_completed_focus = SPA_stamp_out_the_maquis
+				has_completed_focus = SPR_the_inevitable_counterblow
+				has_completed_focus = SPR_all_must_do_their_part
+				has_completed_focus = SPR_red_bulwark_in_the_west
+				has_completed_focus = SPR_stabilize_the_nation
+				has_country_flag = SPR_agreed_to_be_annexed
+			}
+			FROM = {
+				is_owned_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+
+		cost = 40
+
+		fire_only_once = yes
+
+		days_remove = 70
+
+		ai_will_do = {
+			base = 200
+		}
+
+		modifier = {
+			weekly_manpower = -300
+		}
+
+		visible = {
+			OR = {
+				has_completed_focus = SPA_strengthen_the_supreme_reality_of_spain
+				has_completed_focus = SPA_stamp_out_the_maquis
+				has_completed_focus = SPR_the_inevitable_counterblow
+				has_completed_focus = SPR_all_must_do_their_part
+				has_completed_focus = SPR_red_bulwark_in_the_west
+				has_completed_focus = SPR_stabilize_the_nation
+				has_country_flag = SPR_agreed_to_be_annexed
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+			    type = infantry_equipment
+			    amount = -2000
+			}
+			army_experience = -10
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+	}
+
+}

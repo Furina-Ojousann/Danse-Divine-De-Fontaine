@@ -1,0 +1,144 @@
+SPA_focus_on_mainland = {
+	allowed = {
+		original_tag = SPA 
+	}
+	enable = {
+		has_war_with = SPD  
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = europe 
+		value = 999 
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = north_africa 
+		value = -999 
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = africa  
+		value = -999 
+	}
+	ai_strategy = {
+		type = area_priority 
+		id = north_america  
+		value = -999 
+	}
+}
+
+SPA_prepare_for_republican_attack = {
+	allowed = { original_tag = SPA }
+	enable = {
+		has_war_with = SPD  
+		any_controlled_state = {
+			is_on_continent = europe 
+		}
+	}
+	ai_strategy = {
+		type = front_unit_request 
+		id = SPD 
+		value = 999 
+	}
+}
+
+SPA_dont_start_attack_too_early = {
+	allowed = { original_tag = SPA }
+	enable = {
+		has_war_with = SPD  
+		any_controlled_state = {
+			is_on_continent = europe 
+		}
+	}
+	abort = {
+		strength_ratio = {
+			tag = SPD 
+			ratio > 1
+		}
+		date > 1938.8.1 
+	}
+	ai_strategy = {
+		type = front_control 
+		state = 41
+		state = 793 
+		state = 794
+		state = 175
+		state = 789
+		state = 173
+		ratio = 1.0 
+		priority = 100 
+		ordertype = front 
+		state_trigger = {
+			always = yes 
+		}
+		execute_order = no 
+		execution_type = careful 
+	}
+}
+
+SPA_link_the_south_and_north = {
+	allowed = { original_tag = SPA }
+	enable = {
+		has_war_with = SPD  
+		170 = { is_controlled_by = SPD }
+		788 = { is_controlled_by = SPA }
+		169 = { is_controlled_by = SPA }
+		any_controlled_state = {
+			is_on_continent = europe 
+		}
+	}
+	abort = {
+		controls_state = 170
+	}
+	ai_strategy = {
+		type = front_control 
+		state = 170
+		ratio = 1.0 
+		priority = 150 
+		ordertype = front 
+		state_trigger = {
+			always = yes 
+		}
+		execute_order = yes  
+		execution_type = careful  
+	}
+}
+
+SPA_attack_north_first = {
+	allowed = { original_tag = SPA }
+	enable = {
+		has_war_with = SPD 
+		790 = { is_controlled_by = SPD }
+		792 = { is_controlled_by = SPD }
+		792 = {
+			any_neighbor_state = {
+				is_controlled_by = ROOT 
+			}
+		}
+		790 = {
+			any_neighbor_state = {
+				is_controlled_by = ROOT 
+			}
+		}
+		any_controlled_state = {
+			is_on_continent = europe 
+		}
+	}
+	abort = {
+		controls_state = 790
+		controls_state = 792 
+	}
+	ai_strategy = {
+		type = front_control 
+		state = 792
+		state = 790 
+		ratio = 1.0 
+		priority = 150 
+		ordertype = front 
+		state_trigger = {
+			always = yes 
+		}
+		execute_order = yes  
+		execution_type = careful  
+	}
+}

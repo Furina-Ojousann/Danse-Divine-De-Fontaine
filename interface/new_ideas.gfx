@@ -1475,4 +1475,49 @@ spriteTypes = {
 		name = "GFX_idea_germany_ernst_schafer"
 		textureFile = "gfx/interface/ideas/idea_germany_ernst_schafer.png"
 	}
+
+	spriteType = {
+		name = "GFX_idea_germany_wehrmacht_armor_action"
+		textureFile = "gfx/interface/ideas/idea_germany_wehrmacht_armor_action.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_clorinde_economic_purpose"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_clorinde_economic_purpose.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_siam_seni_pramoj"
+		textureFile = "gfx/interface/ideas/idea_siam_seni_pramoj.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_siam_phayom_chulanont"
+		textureFile = "gfx/interface/ideas/idea_siam_phayom_chulanont.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_cerbere_wriothesley_police_leader"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_cerbere_wriothesley_police_leader.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_JAP_okinori_kaya_small"
+		textureFile = "gfx/interface/ideas/portrait_JAP_okinori_kaya_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_lynette_snezhevna"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_lynette_snezhevna.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_operation_knight_myth"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_operation_knight_myth.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_spr_manuel_azana"
+		textureFile = "gfx/interface/ideas/idea_spr_manuel_azana.dds"
+	}
 }

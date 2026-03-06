@@ -33,4 +33,10 @@ FRA_relation_with_communist_china = {
 	lend_lease_tension = -0.75
 }
 
+FRA_spy_network = {
+	intel_network_gain_factor = 0.25 
+	intelligence_operation_speed = 0.20 
+	operative_death_on_capture_chance = -1 
+}
+
 

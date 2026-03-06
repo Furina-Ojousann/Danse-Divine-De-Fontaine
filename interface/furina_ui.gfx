@@ -142,41 +142,6 @@ spriteTypes = {
 		textureFile = "gfx/interface/anarchy_dip_action.png"
 	}
 	spriteType = {
-		name = "GFX_texticon_feminism"
-		textureFile = "gfx/texticons/texticon_feminism.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_texticon_navia"
-		textureFile = "gfx/texticons/texticon_navia.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_texticon_syndicalism"
-		textureFile = "gfx/texticons/texticon_syndicalism.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_texticon_nationalism"
-		textureFile = "gfx/texticons/texticon_nationalism.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_fontaine_design_military_power"
-		textureFile = "gfx/texticons/fontaine_design_military_power.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_fontaine_design_monarchy_power"
-		textureFile = "gfx/texticons/fontaine_design_monarchy_power.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_fontaine_design_theocracy_power"
-		textureFile = "gfx/texticons/fontaine_design_theocracy_power.png"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
 		name = "GFX_empire_army"
 		textureFile = "gfx/interface/empire/empire_army.png"
 	}
@@ -281,10 +246,6 @@ spriteTypes = {
 		textureFile = "gfx/interface/technologies/tech_experimental_406mm_naval_gun.png"
 	}
 	spriteType = {
-		name = "GFX_load_furina_show"
-		textureFile = "gfx/loadingscreens/load_furina_show.png"
-	}
-	spriteType = {
 		name = "GFX_furina_1"
 		textureFile = "gfx/interface/furina_1.png"
 	}
@@ -307,42 +268,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_fontaine_science_computer_1"
 		textureFile = "gfx/interface/fontaine_science_computer_1.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_neuroscience"
-		textureFile = "gfx/texticons/fontaine_science_neuroscience.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_integrated_circuit"
-		textureFile = "gfx/texticons/fontaine_science_integrated_circuit.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_computational_number_theory"
-		textureFile = "gfx/texticons/fontaine_science_computational_number_theory.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_ai"
-		textureFile = "gfx/texticons/fontaine_science_ai.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_covered"
-		textureFile = "gfx/texticons/fontaine_science_covered.png"
-		legacy_lazy_load = no 
-	}
-
-	spriteType = {
-		name = "GFX_fontaine_science_furina_signature"
-		textureFile = "gfx/texticons/fontaine_science_furina_signature.png"
 		legacy_lazy_load = no 
 	}
 
@@ -481,12 +406,6 @@ spriteTypes = {
 		name = "GFX_communist_corruption_of_the_party"
 		textureFile = "gfx/interface/fontaine_parties/communist_corruption_of_the_party.png"
 	}
-	spriteType = {
-		name = "GFX_communist_corruption_of_the_party_texticon" #£communist_corruption_of_the_party_texticon
-		textureFile = "gfx/texticons/communist_corruption_of_the_party.png"
-		legacy_lazy_load = no 
-	}
-
 	spriteType = {
 		name = "GFX_map_africa_picture"
 		textureFile = "gfx/interface/small_map/map_africa_picture.png"
@@ -631,271 +550,6 @@ spriteTypes = {
 		name = "GFX_communist_the_chairman_gamelin"
 		textureFile = "gfx/interface/fontaine_parties/communist_the_chairman_gamelin.png"
 		noOfFrames = 2 
-	}
-
-	spriteType = {
-		name = "GFX_election_states_1"
-		textureFile = "gfx/interface/elections/1.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_2"
-		textureFile = "gfx/interface/elections/2.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_3"
-		textureFile = "gfx/interface/elections/3.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_4"
-		textureFile = "gfx/interface/elections/4.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_5"
-		textureFile = "gfx/interface/elections/5.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_6"
-		textureFile = "gfx/interface/elections/6.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_7"
-		textureFile = "gfx/interface/elections/7.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_8"
-		textureFile = "gfx/interface/elections/8.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_9"
-		textureFile = "gfx/interface/elections/9.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_10"
-		textureFile = "gfx/interface/elections/10.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_11"
-		textureFile = "gfx/interface/elections/11.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_12"
-		textureFile = "gfx/interface/elections/12.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_13"
-		textureFile = "gfx/interface/elections/13.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_14"
-		textureFile = "gfx/interface/elections/14.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_15"
-		textureFile = "gfx/interface/elections/15.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_16"
-		textureFile = "gfx/interface/elections/16.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_17"
-		textureFile = "gfx/interface/elections/17.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_18"
-		textureFile = "gfx/interface/elections/18.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_19"
-		textureFile = "gfx/interface/elections/19.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_20"
-		textureFile = "gfx/interface/elections/20.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_21"
-		textureFile = "gfx/interface/elections/21.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_22"
-		textureFile = "gfx/interface/elections/22.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_23"
-		textureFile = "gfx/interface/elections/23.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_24"
-		textureFile = "gfx/interface/elections/24.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_25"
-		textureFile = "gfx/interface/elections/25.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_28"
-		textureFile = "gfx/interface/elections/28.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_27"
-		textureFile = "gfx/interface/elections/27.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_29"
-		textureFile = "gfx/interface/elections/29.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_30"
-		textureFile = "gfx/interface/elections/30.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_31"
-		textureFile = "gfx/interface/elections/31.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_32"
-		textureFile = "gfx/interface/elections/32.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_33"
-		textureFile = "gfx/interface/elections/33.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_34"
-		textureFile = "gfx/interface/elections/34.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_35"
-		textureFile = "gfx/interface/elections/35.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_36"
-		textureFile = "gfx/interface/elections/36.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_37"
-		textureFile = "gfx/interface/elections/37.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_38"
-		textureFile = "gfx/interface/elections/38.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_39"
-		textureFile = "gfx/interface/elections/39.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_40"
-		textureFile = "gfx/interface/elections/40.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_41"
-		textureFile = "gfx/interface/elections/41.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_42"
-		textureFile = "gfx/interface/elections/42.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_43"
-		textureFile = "gfx/interface/elections/43.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_44"
-		textureFile = "gfx/interface/elections/44.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_45"
-		textureFile = "gfx/interface/elections/45.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_46"
-		textureFile = "gfx/interface/elections/46.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_47"
-		textureFile = "gfx/interface/elections/47.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_48"
-		textureFile = "gfx/interface/elections/48.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_49"
-		textureFile = "gfx/interface/elections/49.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_50"
-		textureFile = "gfx/interface/elections/50.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_51"
-		textureFile = "gfx/interface/elections/51.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_52"
-		textureFile = "gfx/interface/elections/52.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_states_53"
-		textureFile = "gfx/interface/elections/53.png"
-		noOfFrames = 4 
-	}
-	spriteType = {
-		name = "GFX_election_map"
-		textureFile = "gfx/interface/elections/election_map.png" 
 	}
 	spriteType = {
 		name = "GFX_bookmark_fontiane_tale"
@@ -1081,6 +735,20 @@ spriteTypes = {
 	}
 
 	progressbartype = {
+		name = "GFX_fontaine_ui_spain_war_progress_bar"
+		textureFile1 = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_progress_bar.png"
+		textureFile2 = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_progress_bar_blank.png"
+		size = { x = 408 y = 8 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes 
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_ui_spain_war_progress_bar_threshold"
+		textureFile = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_progress_bar_threshold.png"
+	}
+
+	progressbartype = {
 		name = "GFX_fontaine_subtechnologies_progress_1"
 		textureFile1 = "gfx/interface/research_progressbar.dds"
 		textureFile2 = "gfx/interface/research_progressbar_bg.dds"
@@ -1225,6 +893,27 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_fontaine_world_war_ii_strategies_ui_land_fontaine"
 		textureFile = "gfx/interface/UI/fontaine_world_war_ii_strategies_ui/fontaine_world_war_ii_strategies_ui_land_fontaine.png"
+	}
+
+	spriteType = {
+		name = "GFX_fontaine_ui_spain_war_stage_i"
+		textureFile = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_stage_i.png"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_fontaine_ui_spain_war_stage_ii"
+		textureFile = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_stage_ii.png"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_fontaine_ui_spain_war_stage_iii"
+		textureFile = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_spain_war_stage_iii.png"
+		noOfFrames = 2 
+	}
+	spriteType = {
+		name = "GFX_fontaine_ui_portrait_caballero"
+		textureFile = "gfx/interface/UI/fontaine_spain_interfere/fontaine_ui_portrait_caballero.png"
+		legacy_lazy_load = no 
 	}
 }
 

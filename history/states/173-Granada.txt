@@ -12,10 +12,19 @@ state={
 			9979 5
 		}
 		victory_points = {
-			12038 1 
+			7153 3 
 		}
 		victory_points = {
-			1176 3
+			12038 3
+		}
+		victory_points = {
+			1176 10
+		}
+		victory_points = {
+			747 1 
+		}
+		victory_points = {
+			10063 1 
 		}
 		buildings = {
 			infrastructure = 3 #was: 6
@@ -24,6 +33,9 @@ state={
 			9979 = {
 				naval_base = 2
 
+			}
+			7153 = {
+				naval_base = 1 
 			}
 			12038 = {
 				naval_base = 1

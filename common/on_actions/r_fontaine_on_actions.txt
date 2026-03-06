@@ -109,8 +109,13 @@ on_actions = {
 					transfer_state = 7
 					transfer_state = 36
 					transfer_state = 35
-					transfer_state = 977
-					transfer_state = 1121
+					if = {
+						limit = { FRA = { has_country_flag = r_fontaine_diplomacy_holand_accepted owns_state = 34 owns_state = 980 } }
+						transfer_state = 977
+						transfer_state = 1121
+					}
+					#transfer_state = 977
+					#transfer_state = 1121
 				}
 				GER = {
 					set_autonomy = {

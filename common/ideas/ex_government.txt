@@ -212,15 +212,12 @@ ideas = {
 			available = {
 				OR = {
 					has_government = communism 
+					has_completed_focus = FRA_renew_start_rearmament 
 					AND = {
 						has_government = populist_socialism
 						populist_socialism > 67
 					}
 					AND = {
-						OR = {
-							has_country_leader_ideology = socialism 
-							has_country_leader_ideology = labour_zionism 
-						}
 						threat > 0.79
 						has_war_support > 0.89 
 						OR = {

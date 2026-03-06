@@ -1,0 +1,170 @@
+division_template = {
+	name = "Requetés"
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Northern Garrison"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Civil Militia"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+	}
+}
+
+units = {
+
+	### Standard Divisions ###
+
+	### Requetés ###
+
+	division = {
+		location = 3820 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 13277 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 11806 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 3859 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 11766 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 813 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 11737 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 794 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 9699 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 13220 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 3874 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 738 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 3737 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 11843 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	### Militia ###
+
+	division = {
+		location = 729 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 9770 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 813 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 3816 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 11737 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 9812 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+	division = {
+		location = 948 
+		division_template = "Civil Militia"
+		start_experience_factor = 0.10 
+	}
+
+}

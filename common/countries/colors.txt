@@ -32,6 +32,18 @@ SMO = {
 	color = rgb { 94 182 230 }
 	color_ui = rgb { 94 182 230 }
 }
+SPA = {
+	color = rgb { 200 100 31 }
+	color_ui = rgb { 245 123 38 }
+}
+SPB = {
+	color = rgb { 255 128 0 }
+	color_ui = rgb { 255 255 122 }
+}
+SPC = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 35 35 35 }
+}
 MCO = {
 	color = rgb { 230 70 70 }
 	color_ui = rgb { 230 70 70 }
