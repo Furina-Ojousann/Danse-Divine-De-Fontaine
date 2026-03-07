@@ -11925,6 +11925,12 @@ country_event = {
 						allow_spawning_on_enemy_provs = yes
 						count = 3
 					}
+					create_unit = {
+						division = "division_template = \"Requetés\" start_experience_factor = 0.2" 
+						owner = SPA 
+						allow_spawning_on_enemy_provs = yes
+						count = 3
+					}
 				}
 			}
 		}
@@ -12196,10 +12202,8 @@ country_event = {
 			regiments = {
 				irregular_infantry = { x = 0 y = 0 }
 				irregular_infantry = { x = 0 y = 1 }
-				irregular_infantry = { x = 0 y = 2 }
 				irregular_infantry = { x = 1 y = 0 }
 				irregular_infantry = { x = 1 y = 1 }
-				irregular_infantry = { x = 1 y = 2 }
 			}
 		}
 		every_controlled_state = {
