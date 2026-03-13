@@ -9,13 +9,7 @@ SPR_civil_war_offensives = {
 	SPR_recruit_civil_militia = {
 		icon = GFX_decision_generic_industry 
 		ai_will_do = {
-			base = 0 
-			modifier = {
-				has_equipment = {
-					infantry > 999 
-				}
-				add = 100 
-			}
+			base = 10
 			modifier = {
 				any_controlled_state = {
 					has_state_flag = is_training_militia 
@@ -37,9 +31,7 @@ SPR_civil_war_offensives = {
 			}
 		}
 		available = {
-			has_equipment = {
-				infantry_equipment > 399
-			}
+			NOT={has_country_flag=recruit_civil_militia}
 		}
 		target_trigger = {
 			FROM = {
@@ -48,11 +40,13 @@ SPR_civil_war_offensives = {
 		}
 		state_target = yes 
 		on_map_mode = map_and_decisions_view 
-		days_remove = 7 
+		days_remove = 21 
 		complete_effect = {
 			FROM = { set_state_flag = is_training_militia }
+			set_country_flag=recruit_civil_militia
 		}
 		remove_effect = {
+			clr_country_flag=recruit_civil_militia
 			if = {
 				limit = { not = { has_template = "Civil Milita" } }
 				division_template = {
@@ -66,6 +60,10 @@ SPR_civil_war_offensives = {
 				}
 			}
 			FROM = {
+				create_unit = {
+					division = "name = \"Milita Brigade\" division_template = \"Civil Milita\" start_experience_factor = 0.1"  
+					owner = ROOT 
+				}
 				create_unit = {
 					division = "name = \"Milita Brigade\" division_template = \"Civil Milita\" start_experience_factor = 0.1"  
 					owner = ROOT 
