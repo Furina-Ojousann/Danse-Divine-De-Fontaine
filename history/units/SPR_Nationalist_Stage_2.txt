@@ -123,6 +123,48 @@ units = {
 		start_experience_factor = 0.30  
 	}
 
+	division = {
+		location = 3933
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 13219
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 9840
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 11809 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 6901 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 9846
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
+	division = {
+		location = 885 
+		division_template = "Requetés" 
+		start_experience_factor = 0.30  
+	}
+
 	### Militia ###
 
 	division = {
