@@ -125,4 +125,27 @@ leader_traits = {
 			factor = 0.1
 		}
 	}
+	volunteer_leader = {
+		type = { land }
+		trait_type = personality_trait 
+		allowed = { always = no }
+		modifier = {
+			army_attack_speed_factor = -0.10 
+		}
+		non_shared_modifier = {
+			experience_gain_factor = 0.15
+			terrain_trait_xp_gain_factor = 0.15 
+		}
+		trait_xp_factor = {
+			trickster = 0.10     #+0.6500%
+			commando = 0.10     #+0.6500%
+			panzer_leader = 0.10 
+			organizer = 0.10 
+			trait_engineer = 0.10
+			skilled_staffer = 0.10 
+		}
+		new_commander_weight = {
+			factor = 0 
+		}
+	}
 }

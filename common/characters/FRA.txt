@@ -1377,6 +1377,26 @@ characters={
 		}
 	}
 
+	FRA_charles_lacheroy = {
+		name = FRA_charles_lacheroy 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_France_Charles_Lacheroy 
+				small = GFX_idea_fra_charles_lacheroy 
+			}
+		}
+	}
+
+	FRA_henri_dentz = {
+		name = FRA_henri_dentz 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_France_Henri_Dentz 
+				small = GFX_idea_fra_henri_dentz 
+			}
+		}
+	}
+
 	FRA_rene_prioux={
 		name=FRA_rene_prioux
 		portraits={

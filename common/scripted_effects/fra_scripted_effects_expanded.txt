@@ -1019,6 +1019,11 @@ FSWI_Stage_Check = {
 			}
 		}
 		set_variable = { spain_war_stage_i_frame = 2 }
+		if = {
+			limit = { not = { has_country_flag = fswi_has_triggered_event_1 } }
+			country_event = { id = R_Fontaine.20 }
+		}
+		#country_event = { id = R_Fontaine.20 }
 	}
 	else = {
 		set_variable = { spain_war_stage_i_frame = 1 }
@@ -1031,6 +1036,10 @@ FSWI_Stage_Check = {
 			}
 		}
 		set_variable = { spain_war_stage_ii_frame = 2 }
+		if = {
+			limit = { not = { has_country_flag = fswi_has_triggered_event_2 } }
+			country_event = { id = R_Fontaine.21 }
+		}
 	}
 	else = {
 		set_variable = { spain_war_stage_ii_frame = 1 }
@@ -1043,6 +1052,10 @@ FSWI_Stage_Check = {
 			}
 		}
 		set_variable = { spain_war_stage_iii_frame = 2 }
+		if = {
+			limit = { not = { has_country_flag = fswi_has_triggered_event_3 } }
+			country_event = { id = R_Fontaine.22 }
+		}
 	}
 	else = {
 		set_variable = { spain_war_stage_iii_frame = 1 }

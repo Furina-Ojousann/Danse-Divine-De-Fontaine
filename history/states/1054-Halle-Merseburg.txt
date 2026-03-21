@@ -3,6 +3,11 @@ state = {
 	name = 1054_Halle-Merseburg
 	manpower = 1897000
 	state_category = city 
+	resources = {
+		steel = 21 
+		chromium = 7
+		aluminium = 2
+	}
 	history = {
 		owner = GER
 		add_core_of = GER 

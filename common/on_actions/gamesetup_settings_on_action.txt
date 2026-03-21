@@ -234,6 +234,11 @@ on_actions = {
 				add_ideas = economic_state_socialism 
 				add_ideas = labour_law_relatively_high 
 			}
+			EST = {
+				add_ideas = polity_republic
+				add_ideas = regierungssystem_presidential 
+				add_country_leader_trait = estonia_silent_era
+			}
 			every_country = {
 				limit = { is_chinese_warlord = yes }
 				add_ideas = polity_republic 
@@ -535,7 +540,7 @@ on_actions = {
 			GER = { recruit_character = GER_Der_Deutsche_Bundestag add_ideas = Der_Deutsche_Bundestag }
 			ITA = { add_ideas = nationalism_policy }
 			USA = { add_ideas = state_monopoly_capitalism }
-			POL = { add_ideas = nationalism_policy }
+			POL = { add_ideas = nationalism_policy add_country_leader_trait = poland_chemist_president }
 			CZE = {
 				set_country_leader_name = {
 					name = CZE_edvard_benesh_rename

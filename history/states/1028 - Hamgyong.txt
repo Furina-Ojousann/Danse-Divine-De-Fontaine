@@ -1,6 +1,6 @@
 state = {
 	id = 1028
-	name = "STATE_1028"
+	name = "STATE_1028" 
 	manpower = 2258066
 	state_category = rural
 
@@ -14,6 +14,7 @@ state = {
 
 		owner = JAP
 		add_core_of = KOR
+		add_core_of = SKR 
 
 		buildings = {
 			infrastructure = 2
@@ -33,7 +34,7 @@ state = {
 	}
 
 	provinces = {
-		861 848 852 898 906 959 978 3803 3852 3860 3981 3904 6928 6922 6944 6822 9899 11878 10083 11770 11775 
+		861 848 852 898 906 959 978 3803 3852 3860 3981 3904 6928 6922 6944 6822 9899 11878 10083 11770 11775 11958 11624 11629
 	}
 
 	local_supplies = 0.0 

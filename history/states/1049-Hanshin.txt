@@ -3,6 +3,9 @@ state = {
 	name = 1049_Hanshin
 	manpower = 6890000
 	state_category = megalopolis 
+	resources = {
+		steel = 21
+	}
 	history = {
 		owner = JAP 
 		add_core_of = JAP 

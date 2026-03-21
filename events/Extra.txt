@@ -356,6 +356,969 @@ country_event = {
 }
 
 country_event = {
+	id = Modify_Extra.13 #经验转换
+	desc = Modify_Extra.13.d 
+	title = Modify_Extra.13.t 
+	picture = GFX_report_event_usa_pearl_harbor_airphoto  
+
+	is_triggered_only = yes 
+
+	option = {
+		name = Modify_Extra.13.a 
+		trigger = {
+			not = { has_country_flag = transfer_land_experience }
+		}
+		set_country_flag = transfer_land_experience
+		country_event = Modify_Extra.14 
+	}
+
+	option = {
+		name = Modify_Extra.13.b 
+		trigger = {
+			not = { has_country_flag = transfer_air_experience }
+		}
+		set_country_flag = transfer_navy_experience
+		country_event = Modify_Extra.14 
+	}
+
+	option = {
+		name = Modify_Extra.13.c 
+		trigger = {
+			not = { has_country_flag = transfer_navy_experience }
+		}
+		set_country_flag = transfer_air_experience
+		country_event = Modify_Extra.14 
+	}
+}
+
+country_event = {
+	id = Modify_Extra.14 #分支
+	title = Modify_Extra.14.t
+	desc = Modify_Extra.14.desc 
+	is_triggered_only = yes 
+	picture = GFX_report_event_spr_army_of_africa 
+
+	### 陆军 ###
+
+	option = {
+		name = Modify_Extra.14.a 
+		set_country_flag = transfer_land_experience_type_1
+		country_event = Modify_Extra.15 
+		trigger = {
+			has_country_flag = transfer_land_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.b 
+		set_country_flag = transfer_land_experience_type_2
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_land_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.c 
+		set_country_flag = transfer_land_experience_type_3
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_land_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.d 
+		set_country_flag = transfer_land_experience_type_4
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_land_experience 
+		}
+	}
+
+	### 海军 ###
+
+	option = {
+		name = Modify_Extra.14.e 
+		set_country_flag = transfer_navy_experience_type_1 
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.f
+		set_country_flag = transfer_navy_experience_type_2
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.g 
+		set_country_flag = transfer_navy_experience_type_3
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.h 
+		set_country_flag = transfer_navy_experience_type_4 
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_navy_experience 
+		}
+	}
+
+	### 空军 ###
+
+	option = {
+		name = Modify_Extra.14.i 
+		set_country_flag = transfer_air_experience_type_1 
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_air_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.j  
+		set_country_flag = transfer_air_experience_type_2 
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_air_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.k 
+		set_country_flag = transfer_air_experience_type_3 
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_air_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.14.h 
+		set_country_flag = transfer_air_experience_type_4
+		country_event = Modify_Extra.15
+		trigger = {
+			has_country_flag = transfer_air_experience 
+		}
+	}
+
+}
+
+country_event = {
+	id = Modify_Extra.15 #数目
+	title = Modify_Extra.15.t 
+	desc = Modify_Extra.15.desc
+	is_triggered_only = yes 
+	picture = GFX_report_event_ast_army 
+
+	option = {
+		name = Modify_Extra.15.a 
+		trigger = {
+			if = {
+				limit = { has_country_flag = transfer_air_experience }
+				has_air_experience > 249 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_land_experience }
+				has_army_experience > 249 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_navy_experience }
+				has_navy_experience > 249 
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = transfer_land_experience 
+			}
+			army_experience = -250
+			set_country_flag = {
+				flag = is_transfering_land
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = infantry 
+				}
+				clr_country_flag = transfer_land_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = combat_support  
+				}
+				clr_country_flag = transfer_land_experience_type_2
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = armor  
+				}
+				clr_country_flag = transfer_land_experience_type_3
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = operations  
+				}
+				clr_country_flag = transfer_land_experience_type_4
+			}
+
+			clr_country_flag = transfer_land_experience 
+
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_air_experience 
+			}
+			air_experience = -250 
+			set_country_flag = {
+				flag = is_transfering_air 
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = fighter_aircraft  
+				}
+				clr_country_flag = transfer_air_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = strike_aircraft  
+				}
+				clr_country_flag = transfer_air_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = medium_aircraft  
+				}
+				clr_country_flag = transfer_air_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					amount = 1
+					days = 100 
+					track = heavy_aircraft  
+				}
+				clr_country_flag = transfer_air_experience_type_4 
+			}
+			clr_country_flag = transfer_air_experience 
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_navy_experience 
+			}
+			set_country_flag = {
+				flag = is_transfering_navy 
+				days = 100
+			}
+			navy_experience = -250 
+			if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = submarines    
+					amount = 1  
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = screens     
+					amount = 1  
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = capital_ships      
+					amount = 1  
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = carriers      
+					amount = 1  
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_4 
+			}
+			clr_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.15.b 
+		trigger = {
+			if = {
+				limit = { has_country_flag = transfer_air_experience }
+				has_air_experience > 187 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_land_experience }
+				has_army_experience > 187 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_navy_experience }
+				has_navy_experience > 187  
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = transfer_land_experience 
+			}
+			army_experience = -187.5
+			set_country_flag = {
+				flag = is_transfering_land
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = infantry  
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = combat_support   
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_2
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = armor    
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_3
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = operations    
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_4
+			}
+
+			clr_country_flag = transfer_land_experience 
+
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_air_experience 
+			}
+			air_experience = -187.5 
+			set_country_flag = {
+				flag = is_transfering_air 
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = fighter_aircraft   
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = strike_aircraft    
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = medium_aircraft     
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = heavy_aircraft     
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_4 
+			}
+			clr_country_flag = transfer_air_experience 
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_navy_experience 
+			}
+			set_country_flag = {
+				flag = is_transfering_navy 
+				days = 100
+			}
+			navy_experience = -187.5 
+			if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = submarines    
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = screens     
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = capital_ships      
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = carriers      
+					amount = 0.75
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_4 
+			}
+			clr_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.15.c 
+		trigger = {
+			if = {
+				limit = { has_country_flag = transfer_air_experience }
+				has_air_experience > 125 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_land_experience }
+				has_army_experience > 125 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_navy_experience }
+				has_navy_experience > 125  
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = transfer_land_experience 
+			}
+			army_experience = -125
+			set_country_flag = {
+				flag = is_transfering_land
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = infantry  
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = combat_support   
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_2
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = armor    
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_3
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = operations    
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_4
+			}
+
+			clr_country_flag = transfer_land_experience 
+
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_air_experience 
+			}
+			air_experience = -125 
+			set_country_flag = {
+				flag = is_transfering_air 
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = fighter_aircraft   
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = strike_aircraft    
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = medium_aircraft     
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = heavy_aircraft     
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_4 
+			}
+			clr_country_flag = transfer_air_experience 
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_navy_experience 
+			}
+			set_country_flag = {
+				flag = is_transfering_navy 
+				days = 100
+			}
+			navy_experience = -125 
+			if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = submarines    
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = screens     
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = capital_ships      
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = carriers      
+					amount = 0.50
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_4 
+			}
+			clr_country_flag = transfer_navy_experience 
+		}
+	}
+
+	option = {
+		name = Modify_Extra.15.d 
+		trigger = {
+			if = {
+				limit = { has_country_flag = transfer_air_experience }
+				has_air_experience > 62 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_land_experience }
+				has_army_experience > 62 
+			}
+			else_if = {
+				limit = { has_country_flag = transfer_navy_experience }
+				has_navy_experience > 62 
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = transfer_land_experience 
+			}
+			army_experience = -62.5 
+			set_country_flag = {
+				flag = is_transfering_land
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = infantry  
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = combat_support   
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_2
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = armor    
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_3
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_land_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = operations    
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_land_experience_type_4
+			}
+
+			clr_country_flag = transfer_land_experience 
+
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_air_experience 
+			}
+			air_experience = -62.5 
+			set_country_flag = {
+				flag = is_transfering_air 
+				days = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = fighter_aircraft   
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = strike_aircraft    
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = medium_aircraft     
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_air_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = heavy_aircraft     
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_air_experience_type_4 
+			}
+			clr_country_flag = transfer_air_experience 
+		}
+
+		if = {
+			limit = {
+				has_country_flag = transfer_navy_experience 
+			}
+			set_country_flag = {
+				flag = is_transfering_navy 
+				days = 100
+			}
+			navy_experience = -62.5 
+			if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_1 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = submarines    
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_2 
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = screens     
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_2 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_3
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = capital_ships      
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_3 
+			}
+			else_if = {
+				limit = {
+					has_country_flag = transfer_navy_experience_type_4
+				}
+				add_daily_mastery = {
+					name = experience_transfered 
+					track = carriers      
+					amount = 0.25
+					days = 100 
+				}
+				clr_country_flag = transfer_navy_experience_type_4 
+			}
+			clr_country_flag = transfer_navy_experience 
+		}
+	}
+}
+
+country_event = {
 	id = Ex_Soviet.1 #更换斯大林肖像
 	hidden = yes 
 	fire_only_once = yes 

@@ -11,7 +11,7 @@ FRA_alg_fra_trade = {
 }
 
 FRA_volunteers_to_spain = {
-	send_volunteer_size = 5 
+	send_volunteer_size = 3 
 }
 
 FRA_volunteer_common = {

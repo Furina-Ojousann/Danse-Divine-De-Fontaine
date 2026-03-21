@@ -1,0 +1,21 @@
+state = {
+	id = 1126
+	name = 1126_Haeju
+	manpower = 209800
+	state_category = rural 
+	history = {
+		owner = JAP 
+		add_core_of = KOR
+		add_core_of = SKR 
+		victory_points = {
+			1003 1 # Kaishū
+		}
+		buildings = {
+			infrastructure = 2 
+			1003 = {
+				naval_base = 2
+			}
+		}
+	}
+	provinces = { 1003 4107 }
+}

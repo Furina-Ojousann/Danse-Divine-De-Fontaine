@@ -67,7 +67,7 @@ characters={
 		}
 
 		country_leader={ #This country leader role is copied as Non-Aligned if Churchill is sent to RAJ - Changes here should be applied in event GOE_RAJ_loyalist.11
-			ideology=conservatism
+			ideology = progressive_conservatism 
 			traits = {
 				british_bulldog
 			}
@@ -84,7 +84,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=liberalism
+			ideology = progressive_conservatism
 			traits={ conservative_grandee }
 			expire="1938.1.1.1"
 			id=-1
@@ -189,7 +189,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=liberalism
+			ideology = progressive_conservatism 
 			traits = { chamberlain_appeaser rearmer }
 			expire="1965.1.1.1"
 			id=-1

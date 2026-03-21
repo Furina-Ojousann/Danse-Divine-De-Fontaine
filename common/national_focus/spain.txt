@@ -121,7 +121,12 @@ focus_tree = {
 		#		}
 		#		set_nationality = SPA 
 		#	}
+			remove_ideas = SPR_military_disloyalty 
+			remove_ideas = SPA_carlism_1 
+			remove_ideas = SPR_political_violence 
+			remove_ideas = SPR_national_strikes_3 
 			SPA = {
+				add_ideas = SPA_carlism_1 
 				SPA_miguel_cabanellas = {
 					add_country_leader_role = {
 						promote_leader = yes 

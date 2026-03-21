@@ -27,4 +27,28 @@ technologies = {
 			}
 		}
 	}
+
+	tech_fm_enhance_defense = {
+		defence_machinery = {
+			max_strength = 18 
+		}
+		attackive_machinery = {
+			max_strength = 15
+		}
+		artillery_machinery = {
+			max_strength = 10 
+		}
+	}
+
+	tech_fm_integrate_troops = {
+		defence_machinery = {
+			max_organisation = 20
+		}
+		attackive_machinery = {
+			max_organisation = 20 
+		}
+		artillery_machinery = {
+			max_organisation = 10 
+		}
+	}
 }

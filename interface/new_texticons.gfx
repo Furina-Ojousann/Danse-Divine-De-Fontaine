@@ -97,4 +97,10 @@ spriteTypes = {
 		textureFile = "gfx/texticons/fontaine_anti_war.png"
 		legacy_lazy_load = no 
 	}
+
+	spriteType = {
+		name = "GFX_fontaine_furina_skilled"
+		textureFile = "gfx/texticons/fontaine_furina_skilled.png"
+		legacy_lazy_load = no 
+	}
 }

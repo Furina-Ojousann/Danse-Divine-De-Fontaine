@@ -4,6 +4,10 @@ state = {
 	manpower = 7174000 # was 6174000
 	state_category = megalopolis 
 
+	resources = {
+		steel = 6
+	}
+
 	history = {
 
 		owner = JAP

@@ -468,6 +468,14 @@ spriteTypes = {
 		textureFile = "gfx/interface/traits/trait_rising_young_officer.png"
 	}
 	spriteType = {
+		name = "GFX_trait_volunteer_leader"
+		textureFile = "gfx/interface/traits/personal/trait_SOV_foreign_military_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_usa_albert_einstein"
+		textureFile = "gfx/interface/ideas/idea_usa_albert_einstein.png"
+	}
+	spriteType = {
 		name = "GFX_trait_modder"
 		textureFile = "gfx/interface/traits/trait_modder.png"
 	}
@@ -1519,5 +1527,20 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_spr_manuel_azana"
 		textureFile = "gfx/interface/ideas/idea_spr_manuel_azana.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_henri_dentz"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_henri_dentz.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_charles_lacheroy"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_charles_lacheroy.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fra_focus_on_furina"
+		textureFile = "gfx/interface/ideas/FRA/idea_fra_focus_on_furina.png"
 	}
 }

@@ -40,15 +40,19 @@ state = {
 		}
 		
 		victory_points = {
-			1092 20 # Hiroshima
+			1092 15 # Hiroshima
 		}
 
 		victory_points = {
-			7212 10 # Okayama
+			7212 15 # Okayama
 		}
 
 		victory_points = {
-			11985 2 # Shimonoseki
+			11985 10 # Shimonoseki
+		}
+
+		victory_points = {
+			11946 5 
 		}
 
 		1939.1.1 = {

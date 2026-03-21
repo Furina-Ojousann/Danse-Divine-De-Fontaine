@@ -25,6 +25,10 @@ SPA_focus_on_mainland = {
 		id = north_america  
 		value = -999 
 	}
+	ai_strategy = {
+		type = garrison
+		value = -999 
+	}
 }
 
 SPA_prepare_for_republican_attack = {
@@ -88,12 +92,17 @@ SPA_link_the_south_and_north = {
 		}
 	}
 	abort = {
-		controls_state = 170
+		OR = {
+			controls_state = 170
+			not = { controls_state = 788 } 	#萨拉曼卡
+			not = { controls_state = 169 } 	#塞维利亚
+		}
+		
 	}
 	ai_strategy = {
 		type = front_control 
 		state = 170
-		ratio = 1.0 
+		ratio = 0.60							#少放点部队
 		priority = 150 
 		ordertype = front 
 		state_trigger = {
@@ -140,5 +149,137 @@ SPA_attack_north_first = {
 		}
 		execute_order = yes  
 		execution_type = careful  
+	}
+}
+
+SPA_dont_change_template = {
+	allowed = {
+		OR = {
+			original_tag = SPR 
+			original_tag = SPA 
+		}
+	}
+	enable = {
+		SPR = { has_war_with = SPA }
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = SPR
+				SPA = { exists = no }
+			}
+			AND = {
+				original_tag = SPA
+				SPR = { exists = no }
+			}
+		}
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority 	#陆军经验花费优先级
+		id = division_template 			#编辑陆军编制
+		value = -9999					#千万不要花在这里
+	}
+}
+
+SPA_dont_execute_mandatory_attack = {
+	allowed = {
+		OR = {
+			original_tag = SPR 
+			original_tag = SPA 
+		}
+	}
+	enable = {
+		SPR = { has_war_with = SPA }
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = SPR
+				SPA = { exists = no }
+			}
+			AND = {
+				original_tag = SPA
+				SPR = { exists = no }
+			}
+		}
+	}
+	ai_strategy = {					
+		type = save_equipment
+		id = infantry_equipment 
+		value = 999
+	}
+}
+
+SPA_actively_purchase_equipment = {
+	allowed = {
+		OR = {
+			original_tag = SPR 
+		}
+	}
+	enable = {
+		SPR = { has_war_with = SPA }
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = SPR
+				SPA = { exists = no }
+			}
+			AND = {
+				original_tag = SPA
+				SPR = { exists = no }
+			}
+		}
+	}
+	ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 5  # Factor for the EQUIPMENT_MARKET_MAX_CIVS_FOR_PURCHASES_RATIO define (value = 20 results in a factor of 1.2)
+	}
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = FRA  # desired trade partner
+		value = 30  # Increases the acceptance and desire values by this
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = infantry_equipment  # equipment archetype
+		value = 300  # Absolute number of units
+	}
+}
+
+SPA_actively_purchase_equipment = {
+	allowed = {
+		OR = {
+			original_tag = SPA 
+		}
+	}
+	enable = {
+		SPA = { has_war_with = SPR }
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = SPR
+				SPA = { exists = no }
+			}
+			AND = {
+				original_tag = SPA
+				SPR = { exists = no }
+			}
+		}
+	}
+	ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 5  # Factor for the EQUIPMENT_MARKET_MAX_CIVS_FOR_PURCHASES_RATIO define (value = 20 results in a factor of 1.2)
+	}
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = GER  # desired trade partner
+		value = 30  # Increases the acceptance and desire values by this
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = infantry_equipment  # equipment archetype
+		value = 300  # Absolute number of units
 	}
 }

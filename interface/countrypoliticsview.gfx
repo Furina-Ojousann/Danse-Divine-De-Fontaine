@@ -475,6 +475,16 @@ spriteTypes = {
 	}	
 
 	spriteType = {
+		name = "GFX_ideology_stalinism"
+		texturefile = "gfx/interface/ideologies/ideology_stalinism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_progressive_conservatism"
+		texturefile = "gfx/interface/ideologies/ideology_progressive_conservatism.png"
+	}
+
+	spriteType = {
 		name = "GFX_ideology_fontaine_liberalism_charlotte"
 		textureFile = "gfx/interface/ideologies/ideology_fontaine_liberalism_charlotte.png"
 	}

@@ -3603,6 +3603,10 @@ country_event = {
 	option = {
 		name = lar_non_intervention.3.a #agree
 		custom_effect_tooltip = lar_non_intervention.3.tt
+		if = {
+			limit = { has_country_flag = r_fontaine_is_dealing_with_spain }
+			add_to_variable = { r_fontaine_tension_of_spanish_war = 5 tooltip = spain_war_tension_change }
+		}
 	}
 }
 
@@ -3663,33 +3667,23 @@ country_event = {
 		name = lar_non_intervention.6.a 
 		add_stability = 0.01 
 		FROM = {
-			random_country = {
-				limit = {
-					original_tag = SPR
-					has_volunteers_amount_from = {
-						tag = FROM 
-						count > 0
-					}
-				}
-				FROM = {
-					recall_volunteers_from = PREV 
-					add_ai_strategy = {
-						type = send_volunteers_desire 
-						id = SPA 
-						value = -999 
-					}
-					add_ai_strategy = {
-						type = send_volunteers_desire 
-						id = SPB
-						value = -999 
-					}
-					add_ai_strategy = {
-						type = send_volunteers_desire 
-						id = SPD
-						value = -999 
-					}
-				}
+			add_ai_strategy = {
+				type = send_volunteers_desire 
+				id = SPA 
+				value = -999 
 			}
+			add_ai_strategy = {
+				type = send_volunteers_desire 
+				id = SPB
+				value = -999 
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire 
+				id = SPD
+				value = -999 
+			}
+			recall_volunteers_from = SPA 
+			recall_volunteers_from = SPR
 		}
 	}
 

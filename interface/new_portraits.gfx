@@ -70,6 +70,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_Portrait_France_Paul_Reynaud_Afterwar"
+		textureFile = "gfx/leaders/FRA/Portrait_France_Paul_Reynaud_Afterwar.dds"
+	}
+
+	spriteType = {
 		name = "GFX_portrait_fra_Furina_de_Fontaine_A"
 		textureFile = "gfx/leaders/FRA/portrait_fra_Furina_de_Fontaine_A.png"
 	}
@@ -1091,5 +1096,20 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_portrait_fra_Lynette_Snezhevna_politics"
 		textureFile = "gfx/leaders/FRA/portrait_fra_Lynette_Snezhevna_politics.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_France_Henri_Dentz"
+		textureFile = "gfx/leaders/FRA/Portrait_France_Henri_Dentz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_France_Charles_Lacheroy"
+		textureFile = "gfx/leaders/FRA/Portrait_France_Charles_Lacheroy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_USA_Albert_Einstein"
+		textureFile = "gfx/leaders/USA/Portrait_USA_Albert_Einstein.png"
 	}
 }

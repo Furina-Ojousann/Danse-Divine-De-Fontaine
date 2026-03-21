@@ -3,6 +3,10 @@ state = {
 	name = 1055_Magdeburg
 	manpower = 1539000
 	state_category = city 
+	resources = {
+		steel = 11
+		chromium = 4
+	}
 	history = {
 		owner = GER
 		add_core_of = GER 

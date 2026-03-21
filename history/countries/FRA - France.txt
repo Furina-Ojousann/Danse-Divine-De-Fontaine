@@ -960,6 +960,8 @@ recruit_character = FRA_paul_baudouin
 recruit_character = FRA_maurice_gauche
 recruit_character = FRA_jacques_duclos
 recruit_character = FRA_marcel_bucard
+recruit_character = FRA_charles_lacheroy 
+recruit_character = FRA_henri_dentz 
 
 ################################################
 #		对的，我们模组总共只添加了这些人物        #

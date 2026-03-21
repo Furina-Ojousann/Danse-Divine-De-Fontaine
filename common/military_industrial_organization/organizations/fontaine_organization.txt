@@ -45,13 +45,44 @@ fontaine_military_organization = {
 		}
 	}
 	trait = {
+		token = fm_previous_theorical_preparation
+		icon = GFX_generic_mio_trait_icon_unique 
+		name = fm_previous_theorical_preparation
+		position = { x = 3 y = 0 }
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -1 
+		}
+	}
+	trait = {
+		token = fm_experimental_auto_machinery
+		icon = GFX_generic_mio_trait_icon_surface_detection 
+		name = fm_experimental_auto_machinery 
+		position = {
+			x = 3
+			y = 1
+		}
+		parent = { traits = { fm_previous_theorical_preparation } }
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.10 
+		}
+		on_complete = {
+			FROM = {
+				set_technology = {
+					tech_fontaine_special_machinery = 1 
+					popup = no 
+				}
+			}
+		}
+	}
+	trait = {
 		token = wisdom_machinery 
 		name = wisdom_machinery
 		icon = GFX_mio_wisdom 
 		position = {
 			x = 1
-			y = 0
+			y = 1
 		}
+		parent = { traits = { fm_experimental_auto_machinery } }
 		equipment_bonus = {
 			breakthrough = 0.10 
 			defense = 0.15 
@@ -69,6 +100,8 @@ fontaine_military_organization = {
 		token = improve_productivity
 		name = improve_productivity 
 		icon = GFX_mio_improve_productivity 
+		relative_position_id = wisdom_machinery
+		parent = { traits = { fm_experimental_auto_machinery } }
 		position = {
 			x = 4
 			y = 0
@@ -87,8 +120,9 @@ fontaine_military_organization = {
 		token = combat_skill
 		name = combat_skill 
 		icon = GFX_generic_mio_department_icon_infantry_technology 
+		relative_position_id = wisdom_machinery 
 		position = {
-			x = 0
+			x = 1
 			y = 1 
 		}
 		all_parents = {
@@ -106,8 +140,9 @@ fontaine_military_organization = {
 		token = efficient_bomb
 		name = efficient_bomb 
 		icon = GFX_generic_mio_department_icon_tank_general_spg 
+		relative_position_id = improve_productivity 
 		position = {
-			x = 2
+			x = -1
 			y = 1 
 		}
 		all_parents = {
@@ -129,7 +164,7 @@ fontaine_military_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_armor 
 		relative_position_id = improve_productivity 
 		position = {
-			x = 0 
+			x = 1
 			y = 1 
 		}
 		all_parents = {
@@ -142,82 +177,17 @@ fontaine_military_organization = {
 	}
 
 	trait = {
-		token = tank_research
-		name = tank_research 
-		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
-		relative_position_id = improve_productivity 
-		position = {
-			x = 5
-			y = 0 
-		}
-		limit_to_equipment_type = {
-			medium_tank_chassis
-			heavy_tank_chassis 
-		}
-		equipment_bonus = {
-			hardness = 0.05 
-			armor_value = 0.05 
-		}
-	}
-
-	trait = {
-		token = anti_infantry
-		name = anti_infantry 
-		icon = GFX_generic_mio_department_icon_tank_heavy_tank_spg 
-		relative_position_id = tank_research 
-		position = {
-			x = -1 
-			y = 1 
-		}
-		all_parents = {
-			tank_research 
-		}
-		limit_to_equipment_type = {
-			medium_tank_chassis
-			heavy_tank_chassis 
-		}
-		equipment_bonus = {
-			soft_attack = 0.10 
-		}
-	}
-
-	trait = {
-		token = anti_armor 
-		name = anti_armor 
-		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at 
-		relative_position_id = tank_research 
-		position = {
-			x = 1
-			y = 1 
-		}
-		all_parents = {
-			tank_research 
-		}
-		limit_to_equipment_type = {
-			medium_tank_chassis
-			heavy_tank_chassis 
-		}
-		equipment_bonus = {
-			ap_attack = 0.15 
-		}
-	}
-
-	trait = {
 		token = auto_manufacture
 		name = auto_manufacture 
 		icon = GFX_generic_mio_trait_icon_efficiency_cap 
-		relative_position_id = tank_research 
+		relative_position_id = wisdom_machinery  
 		position = {
-			x = -3
+			x = -1
 			y = 1 
 		}
 		all_parents = {
 			improve_productivity
-			tank_research 
-		}
-		limit_to_equipment_type = {
-			medium_tank_chassis
-			heavy_tank_chassis 
+			wisdom_machinery 
 		}
 		production_bonus = {
 			production_efficiency_gain_factor = 0.15 
@@ -226,6 +196,74 @@ fontaine_military_organization = {
 		equipment_bonus = {
 			build_cost_ic = -0.10 
 		}
+	}
+
+	trait = {
+		token = fm_new_generation_of_auto_machinery
+		icon = GFX_generic_mio_trait_icon_reliability
+		name = fm_experimental_auto_machinery 
+		relative_position_id = fm_experimental_auto_machinery 
+		position = { x = 0 y = 2 }
+		all_parents = { auto_manufacture combat_skill efficient_bomb special_steel }
+		equipment_bonus = {
+			soft_attack = 0.05 
+			hard_attack = 0.05 
+		}
+		on_complete = {
+			FROM = {
+				set_technology = {
+					tech_fontaine_improved_special_machinery = 1 
+				}
+			}
+		}
+	}
+
+	trait = {
+		token = fm_enhance_survivability
+		icon = GFX_generic_mio_trait_icon_max_strength 
+		name = fm_enhance_survivability 
+		relative_position_id = fm_new_generation_of_auto_machinery 
+		position = { x = -2 y = 1 }
+		equipment_bonus = {
+			defense = 0.10 
+		}
+		parent = { traits = { fm_new_generation_of_auto_machinery } }
+		mutually_exclusive = {
+			fm_integrate_into_large_troop_formation
+		}
+		on_complete = {
+			FROM = {
+				set_technology = {
+					tech_fm_enhance_defense = 1 
+				}
+				custom_effect_tooltip = tech_fm_enhance_defense_tt
+			}
+		}
+	}
+
+	trait = {
+		token = fm_integrate_into_large_troop_formation
+		icon = GFX_generic_mio_trait_icon_maximum_speed 
+		name = fm_integrate_into_large_troop_formation 
+		relative_position_id = fm_new_generation_of_auto_machinery 
+		parent = { traits = { fm_new_generation_of_auto_machinery } }
+		position = { x = 2 y = 1 }
+		equipment_bonus = {
+			soft_attack = 0.05 
+			hard_attack = 0.05
+		}
+		mutually_exclusive = {
+			fm_enhance_survivability 
+		}
+		on_complete = {
+			FROM = {
+				set_technology = {
+					tech_fm_integrate_troops = 1
+				}
+				custom_effect_tooltip = tech_fm_integrate_troops_tt
+			}
+		}
+
 	}
 }
 

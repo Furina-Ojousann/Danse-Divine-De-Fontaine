@@ -1040,6 +1040,30 @@ formable_balkans = {
 }
 
 war_measures = {
+
+	transfer_army_experience_into_mastery = {
+		icon = GFX_decision_generic_army_support 
+		allowed = { always = yes }
+		available = {
+			OR = {
+				has_army_experience > 62.5 
+				has_navy_experience > 62.5
+				has_air_experience > 62.5
+			}
+			NOT = {
+				OR = {
+					has_country_flag = is_transfering_air
+					has_country_flag = is_transfering_land
+					has_country_flag = is_transfering_navy 
+				}
+			}
+		}
+		complete_effect = {
+			country_event = Modify_Extra.13 
+		}
+
+	}
+
 	women_in_the_workforce = {
 
 		icon = generic_industry

@@ -10,8 +10,10 @@
 		}
 	}
 
+	shared_focus = FRA_renew_revolution 
+	
 	initial_show_position = {
-		x = 0
+		focus = FRA_form_the_popular_front 
 	}
 
 	default = no
@@ -425,6 +427,14 @@
 		prerequisite = {
 			focus = FRA_renew_unity_and_get_ready
 		}
+		available = {
+			SOV = {
+				not = { is_in_faction_with = GER }
+				not = { has_idea = SOV_molotov_ribbentrop_pact }
+				not = { has_war_with = ROOT }
+				not = { has_completed_focus = SOV_liberation_of_the_european_proletariat }
+			}
+		}
 		completion_reward = {
 			SOV = { country_event = lar_franco_soviet_treaty.1 }
 			effect_tooltip = {
@@ -441,6 +451,31 @@
 		cost = 5
 		x = 0
 		y = 1
+		available = {
+			OR = {
+				any_state = {
+					is_fully_controlled_by = ROOT 
+					is_on_continent = asia 
+					OR = {
+						is_core_of = VIN 
+						is_core_of = CAM
+						is_core_of = LAO
+						is_core_of = INS
+						is_core_of = MAL
+						is_core_of = SNG 
+						is_core_of = SIA 
+						is_core_of = PHI 
+						is_core_of = CHI 
+					}
+				}
+				OR = {
+					has_non_aggression_pact_with = SOV 
+					SOV = { has_guaranteed = FRA }
+					has_military_access_to = SOV 
+				}
+			}
+			
+		}
 		relative_position_id = FRA_renew_ussr_alliance 
 		prerequisite = {
 			focus = FRA_renew_ussr_alliance 
@@ -458,6 +493,15 @@
 		}
 		x = -1
 		y = 1
+		available = {
+			ENG = {
+				not = {
+					is_in_faction_with = GER 
+					has_completed_focus = ENG_alliance_with_germany
+					has_war_with = ROOT 
+				}
+			}
+		}
 		completion_reward = {
 			ENG = { country_event = lar_fra_join_the_ententes.1 }
 		}
@@ -476,7 +520,14 @@
 			focus = FRA_renew_advance_military_budget
 			focus = FRA_renew_ussr_alliance 
 		}
-		completion_reward = { }
+		completion_reward = {
+			USA = {
+				country_event = {
+					id = R_Fontaine.26 
+					days = 1 
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -599,7 +650,10 @@
 		prerequisite = {
 			focus = FRA_renew_secure_domestic_safety 
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = fra_focus_on_furina 
+			custom_effect_tooltip = FRA_renew_form_a_new_kind_of_worship_tt
+		}
 	}
 
 	focus = {
@@ -3651,6 +3705,9 @@
 		relative_position_id = FRA_core_arabs  
 		x = -5
 		y = 1
+		allow_branch = {
+			has_country_flag = fontaine_resetting_accomplish
+		}
 		prerequisite = {
 			focus = FRA_core_arabs
 		}
@@ -5341,19 +5398,12 @@
 			}
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					not = {
-						has_government = communism 
-					}
-				}
-				add_stability = -0.15 
-			}
-			#add_stability = -0.15 
-			add_manpower = 100000
 			custom_effect_tooltip = FRA_Fontaine_Energy_Physical_Mechines_tt
 			custom_effect_tooltip = available_mio_tt 
 			show_mio_tooltip = fontaine_military_organization 
+			mio:fontaine_military_organization = {
+				add_mio_size = 1 
+			}
 			add_tech_bonus = {
 				name = FRA_Fontaine_Energy_Physical_Mechines 
 				category = construction_tech 
@@ -5390,88 +5440,18 @@
 		}
 	}
 
-	focus = {
-		id = FRA_deal_the_issue_of_workers
-		icon = GFX_focus_generic_workers 
-		cost = 8
-		relative_position_id = FRA_Fontaine_Energy_Physical_Mechines 
-		x = -1 
-		y = 1
-		bypass = {
-			has_government = communism 
-		}
-		prerequisite = {
-			focus = FRA_Fontaine_Energy_Physical_Mechines 
-		}
-		completion_reward = {
-			add_timed_idea = {
-				idea = reemployment_of_laid_off_workers 
-				days = 365 
-			}
-		}
-	}
 
-	focus = {
-		id = FRA_state_production_allocation_committee
-		icon = GFX_goal_generic_positive_trade_relations 
-		cost = 8 
-		relative_position_id = FRA_Fontaine_Energy_Physical_Mechines 
-		x = 1
-		y = 1
-		bypass = {
-			has_government = communism 
-		}
-		prerequisite = {
-			focus = FRA_Fontaine_Energy_Physical_Mechines 
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = democratic
-				popularity = -0.05 
-			}
-			custom_effect_tooltip = FRA_state_production_allocation_committee_tt
-			add_to_variable = { SRI_political_power_cost = 0.15 }
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = ROOT 
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = ROOT 
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-				}
-			}
-			add_stability = 0.1 
-			add_political_power = 50 
-			custom_effect_tooltip = FRA_state_production_allocation_committee_tt
-			add_to_variable = { party_Fontaine = -30 }
-			add_to_variable = { party_Section_Francaise_de_l_Internationale_Ouvriere = 20 }
-			add_to_variable = { party_french_communist_party = 10 }
-			refresh_gui = yes 
-		}
-	}
 
 	focus = {
 		id = FRA_self_control_machinery
 		icon = GFX_goal_fra_self_control_machinery
 		cost = 8
 		relative_position_id = FRA_Fontaine_Energy_Physical_Mechines
+		prerequisite = {
+			focus = FRA_Fontaine_Energy_Engineering_Science_Research_Institute
+		}
 		x = 0
-		y = 2 
-		prerequisite = {
-			focus = FRA_deal_the_issue_of_workers 
-		}
-		prerequisite = {
-			focus = FRA_state_production_allocation_committee 
-		}
+		y = 1
 		completion_reward = {
 			custom_effect_tooltip = unlock_the_production_of_machinery
 			hidden_effect = {
@@ -5480,10 +5460,6 @@
 				}
 				add_dynamic_modifier = {
 					modifier = FRA_Fontaine_Energy_Engineering_Science_Research_Institute_dynamic_modifier_2
-				}
-				set_technology = {
-					tech_fontaine_special_machinery = 1 
-					popup = no 
 				}
 			}
 			mio:fontaine_military_organization = {

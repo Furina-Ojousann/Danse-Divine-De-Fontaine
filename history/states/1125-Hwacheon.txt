@@ -1,0 +1,18 @@
+state = {
+	id = 1125
+	name = 1125_Kwacheon
+	manpower = 289000
+	state_category = rural 
+	history = {
+		owner = JAP 
+		add_core_of = KOR 
+		add_core_of = SKR 
+		buildings = {
+			infrastructure = 1 
+		}
+		victory_points = {
+			4004 2 
+		}
+	}
+	provinces = { 9981 4004 11904 }
+}

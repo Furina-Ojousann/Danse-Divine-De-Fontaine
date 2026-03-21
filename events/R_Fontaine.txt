@@ -51,10 +51,26 @@ unit_leader_event = {
 					}
 				}
 			}
+			remove_unit_leader_role = yes 
 		}
 		reduce_focus_completion_cost = {
 			focus = FRA_aggressive_focus 
 			cost = 20 
+		}
+		custom_effect_tooltip = R_Fontaine.2.tooltip
+		FRA_charles_lacheroy = {
+			add_corps_commander_role = {
+				skill = 2
+				attack_skill = 2 
+				defense_skill = 2 
+				logistics_skill = 1
+				planning_skill = 3 
+				traits = {
+					career_officer
+					armor_officer 
+					rising_young_officer
+				}
+			}
 		}
 	}
 }
@@ -83,10 +99,26 @@ unit_leader_event = {
 					}
 				}
 			}
+			remove_unit_leader_role = yes 
 		}
 		reduce_focus_completion_cost = {
 			focus = FRA_defensive_focus 
 			cost = 20 
+		}
+		custom_effect_tooltip = R_Fontaine.3.tooltip
+		FRA_henri_dentz = {
+			add_corps_commander_role = {
+				skill = 2 
+				attack_skill = 2 
+				defense_skill = 3 
+				logistics_skill = 1
+				planning_skill = 1 
+				traits = {
+					career_officer
+					infantry_officer
+					old_guard 
+				}
+			}
 		}
 	}
 }
@@ -579,6 +611,7 @@ country_event = {
 	option = {
 		name = R_Fontaine.20.a 
 		custom_effect_tooltip = fontaine_spanish_war_stage_up
+		set_country_flag = fswi_has_triggered_event_1
 		set_variable = { spain_war_stage_i_frame = 2 }
 	}
 }
@@ -593,6 +626,7 @@ country_event = {
 	option = {
 		name = R_Fontaine.21.a 
 		custom_effect_tooltip = fontaine_spanish_war_stage_up
+		set_country_flag = fswi_has_triggered_event_2
 		set_variable = { spain_war_stage_ii_frame = 2 }
 	}
 }
@@ -607,7 +641,134 @@ country_event = {
 	option = {
 		name = R_Fontaine.22.a 
 		custom_effect_tooltip = fontaine_spanish_war_stage_up
+		set_country_flag = fswi_has_triggered_event_3
 		set_variable = { spain_war_stage_iii_frame = 2 }
+	}
+}
+
+country_event = {
+	id = R_Fontaine.23
+	title = R_Fontaine.23.t 
+	desc = R_Fontaine.23.d 
+	picture = GFX_report_event_fra_2 
+	fire_only_once = yes 
+	trigger = {
+		original_tag = FRA 
+		has_completed_focus = FRA_renew_the_parliament_issue
+		has_war = no 
+		divisions_in_state = {
+			size > 0 
+			state = 977
+		}
+	}
+	mean_time_to_happen = {
+		days = 3 
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = R_Fontaine.24 
+				days = 7 
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine.23.a 
+	}
+}
+
+country_event = {
+	id = R_Fontaine.24
+	title = R_Fontaine.24.t
+	desc = R_Fontaine.24.d 
+	picture = GFX_report_event_fra_3 
+	fire_only_once = yes 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.24.a 
+	}
+}
+
+unit_leader_event = {
+	id = R_Fontaine.25 #勒克莱尔被任命
+	title = R_Fontaine.25.t 
+	desc = R_Fontaine.25.d 
+	is_triggered_only = yes 
+	picture = GFX_portrait_FRA_philippe_leclerc 
+
+	option = {
+		name = R_Fontaine.25.a 
+		FRA_philippe_leclerc = {
+			add_trait = {
+				trait = volunteer_leader 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.26 #邀请爱因斯坦
+	title = R_Fontaine.26.t
+	desc = R_Fontaine.26.d 
+	picture = GFX_report_event_fra_4 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.26.a 
+		FROM = {
+			country_event = {
+				id = R_Fontaine.27
+				days = 2
+			}
+		}
+	}
+
+	option = {
+		name = R_Fontaine.26.b 
+		FROM = {
+			country_event = {
+				id = R_Fontaine.28
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = R_Fontaine.27 #邀请爱因斯坦 - 成功
+	title = R_Fontaine.27.t
+	desc = R_Fontaine.27.d 
+	picture = GFX_report_event_fra_4 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.27.a 
+		add_popularity = {
+			ideology = communism 
+			popularity = 0.01 
+		}
+		add_tech_bonus = {
+			name = R_Fontaine.27.t 
+			category = nuclear 
+			uses = 1 
+			bonus = 3 
+		}
+		recruit_character = USA_Albert_Einstein
+	}
+}
+
+country_event = {
+	id = R_Fontaine.28 #邀请爱因斯坦 - 失败
+	title = R_Fontaine.28.t
+	desc = R_Fontaine.28.d 
+	picture = GFX_report_event_fra_4 
+	is_triggered_only = yes 
+
+	option = {
+		name = R_Fontaine.28.a 
+		add_political_power = -5 
 	}
 }
 

@@ -283,4 +283,8 @@
  SPA_Jose_Sanjurjo: "何塞·桑胡尔霍"
  SPR_recruit_civil_militia: "在[FROM.GetName]招募民兵"
  SPR_train_qualified_division: "在[FROM.GetName]训练旅级编制"
- 
+ populist_socialism_drift: "£boost_popularity_texticon 每日§R$populist_socialism$§!支持率"
+ communism_drift: "£boost_popularity_texticon  每日§r共产主义§!支持率"
+ democratic_drift: "£boost_popularity_texticon  每日§B民主主义§!支持率"
+ fascism_drift: "£boost_popularity_texticon  每日§Y法西斯主义§!支持率"
+ neutrality_drift: "£boost_popularity_texticon  每日§g中立主义§!支持率"

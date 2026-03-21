@@ -27,13 +27,21 @@ state = {
 		}
 
 		victory_points = {
+			11925 5 # Kumamoto
+		}
+
+		victory_points = {
+			10092 3 
+		}
+
+		victory_points = {
 			1020 2 # Miyazaki
 		}
 
 	}
 
 	provinces = {
-		1020 1183 4102 4198 7178 11949 12006 12032 
+		1020 1183 4102 4198 7178 11949 12006 12032 11925 10092 10020 4027
 	}
 
 	local_supplies = 10.0 

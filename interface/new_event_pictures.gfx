@@ -541,6 +541,30 @@ spriteTypes = {
 
 	###########################################################################
 
+	### 通用配图 - FRA ###
+
+	spriteType = {
+		name = "GFX_report_event_fra_1"
+		textureFile = "gfx/event_pictures/report_event_fra_1.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_2"
+		textureFile = "gfx/event_pictures/report_event_fra_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_3"
+		textureFile = "gfx/event_pictures/report_event_fra_3.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_4"
+		textureFile = "gfx/event_pictures/report_event_fra_4.png"
+	}
+
+	###########################################################################
+
 	spriteType = {
 		name = "GFX_report_event_karl_marx"
 		textureFile = "gfx/event_pictures/report_event_karl_marx.png"
@@ -584,10 +608,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_fra_library"
 		textureFile = "gfx/event_pictures/report_event_fra_library.png"
-	}
-	spriteType = {
-		name = "GFX_report_event_fra_1"
-		textureFile = "gfx/event_pictures/report_event_fra_1.png"
 	}
 	spriteType = {
 		name = "GFX_report_event_spr_1"

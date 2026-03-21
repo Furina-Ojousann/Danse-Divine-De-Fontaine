@@ -48,6 +48,21 @@ ideas = {
 		}
 	}
 	country = {
+		fra_bomber_action = {
+			picture = SWE_marauder_bombers
+			available = {
+				FRA = {
+					is_subject = no 
+					not = { is_ally_with = ROOT }
+				}
+			}
+			modifier = {
+				war_support_weekly = -0.002
+				industrial_capacity_factory = -0.20 
+				production_factory_max_efficiency_factor = -0.10 
+				army_org_factor = -0.05
+			}
+		}
 		fra_international_isolation = {
 			allowed = { original_tag = BEL }
 			rule = {
@@ -215,6 +230,10 @@ ideas = {
 			targeted_modifier = { tag = SPB attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
 			targeted_modifier = { tag = SPC attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
 			targeted_modifier = { tag = SPD attack_bonus_against = -0.15 breakthrough_bonus_against = -0.20 }
+		}
+
+		fra_focus_on_furina = {
+			allowed = { original_tag = FRA }
 		}
 		
 		fra_navia_economic_proposal = {

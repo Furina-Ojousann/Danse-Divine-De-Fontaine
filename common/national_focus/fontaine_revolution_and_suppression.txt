@@ -1,0 +1,71 @@
+
+
+	shared_focus = {
+		id = FRA_renew_revolution
+		icon = GFX_goal_fra_renew_revolution 
+		allow_branch = {
+			not = { has_country_flag = fontaine_resetting_accomplish }
+		}
+		cost = 1 
+		x = 54 
+		y = 14
+		completion_reward = { }
+	}
+
+	shared_focus = {
+		id = FRA_renew_and_the_history_is_staring_at_you 
+		icon = GFX_goal_fra_renew_history_is_staring_at_you 
+		cost = 5
+		relative_position_id = FRA_renew_revolution 
+		x = 0 
+		y = 2
+		prerequisite = {
+			focus = FRA_renew_revolution 
+		}
+		completion_reward = { }
+	}
+
+	shared_focus = {
+		id = FRA_renew_heart 
+		icon = GFX_goal_fra_renew_heart
+		cost = 5
+		relative_position_id = FRA_renew_revolution 
+		prerequisite = {
+			focus = FRA_renew_revolution 
+		}
+		x = -3
+		y = 3
+		mutually_exclusive = {
+			focus = FRA_renew_build_your_muscle_when_your_body_decay 
+		}
+		completion_reward = { }
+	}
+
+	shared_focus = {
+		id = FRA_renew_the_same_1871
+		icon = GFX_goal_fra_renew_the_same_1871 
+		cost = 5
+		relative_position_id = FRA_renew_and_the_history_is_staring_at_you 
+		x = 0 
+		y = 3
+		prerequisite = {
+			focus = FRA_renew_and_the_history_is_staring_at_you 
+		}
+		completion_reward = { }
+	}
+
+	shared_focus = {
+		id = FRA_renew_build_your_muscle_when_your_body_decay
+		icon = GFX_goal_fra_renew_build_your_muscle_when_your_body_decays
+		cost = 5
+		relative_position_id = FRA_renew_revolution 
+		x = 3
+		y = 3
+		prerequisite = {
+			focus = FRA_renew_revolution 
+		}
+		mutually_exclusive = {
+			focus = FRA_renew_heart 
+		}
+		completion_reward = { }
+	}

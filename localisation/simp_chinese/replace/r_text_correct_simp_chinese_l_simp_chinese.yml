@@ -41,3 +41,8 @@
  shore_bombardment_bonus_tt: " $MODIFIER_SHORE_BOMBARDMENT$：$RIGHT|+=%1$"
  recon_factor_while_entrenched_tt: " $MODIFIER_RECON_FACTOR_WHILE_ENTRENCHED$：$RIGHT|+=%1$"
  tech_air_damage_factor_tt: "$MODIFIER_TECH_AIR_DAMAGE_FACTOR$：$RIGHT|+=%1$"
+ populist_socialism_drift: "£boost_popularity_texticon 每日§R$populist_socialism$§!支持率"
+ communism_drift: "£boost_popularity_texticon  每日§r共产主义§!支持率"
+ democratic_drift: "£boost_popularity_texticon  每日§B民主主义§!支持率"
+ fascism_drift: "£boost_popularity_texticon  每日§Y法西斯主义§!支持率"
+ neutrality_drift: "£boost_popularity_texticon  每日§g中立主义§!支持率"

@@ -8289,6 +8289,18 @@ FRA_debug_decisions = {
 			}
 		}
 	}
+	r_furina_is_skilled_at_hoi4 = {
+		fire_only_once = yes 
+		available = {
+			has_country_leader_with_trait = furina_star_of_midnight 
+		}
+		complete_effect = {
+			swap_ruler_traits = {
+				remove = furina_star_of_midnight
+				add = furina_skill_at_hoi4 
+			}
+		}
+	}
 	r_a_new_familiar_world = {
 		fire_only_once = yes 
 		complete_effect = {

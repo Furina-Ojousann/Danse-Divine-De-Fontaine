@@ -1,0 +1,18 @@
+state = {
+	id = 1123 
+	name = 1123_Uijeongbu
+	manpower = 198000
+	state_category = town 
+	history = {
+		OWNER = JAP 
+		add_core_of = KOR 
+		add_core_of = SKR 
+		victory_points = {
+			9926 3 
+		}
+		buildings = {
+			infrastructure = 3  
+		}
+	}
+	provinces = { 9926 }
+}

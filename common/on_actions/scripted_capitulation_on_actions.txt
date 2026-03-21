@@ -8,6 +8,14 @@ on_actions = {
 						target = SPA 
 					}
 				}
+				if = {
+					limit = {
+						FRA = { has_country_flag = fswi_has_offered_charged_support }
+					}
+					FRA = {
+						add_cic = 7500
+					}
+				}
 			}
 
 			if = {

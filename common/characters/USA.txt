@@ -2029,4 +2029,36 @@ characters={
 		}
 	}
 
+	USA_Albert_Einstein = {
+		name = USA_Albert_Einstein 
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_USA_Albert_Einstein 
+				small = GFX_idea_usa_albert_einstein 
+			}
+		}
+		advisor = {
+			slot = political_advisor 
+			idea_token = Albert_Einstein_Political_Advisor 
+			cost = 0 
+			available = {
+				not = { has_idea = Albert_Einstein_Theorist }
+			}
+			traits = {
+				father_of_modern_physics_politics
+			}
+		}
+		advisor = {
+			slot = theorist 
+			idea_token = Albert_Einstein_Theorist 
+			cost = 0 
+			available = {
+				not = { has_idea = Albert_Einstein_Political_Advisor }
+			}
+			traits = {
+				father_of_modern_physics 
+			}
+		}
+	}
+
 }
